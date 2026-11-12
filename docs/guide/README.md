@@ -101,6 +101,64 @@ The **Result** panel on the right shows:
 
 Under the result, **Candidates** lists the engine and gearbox combinations by time, best first. **Select** swaps to another one if you prefer it. **Changes to try** lists single changes and their effect.
 
+### 3.4 The modules one by one
+
+Click a module card in step 2 to open it under the cards; **Close** or a second click folds it away. Each module shows the full detail of that part of the build, and most of it works the same in **Tuner picks** and **Improve**. When a module may change, the tuner fills it in; when it is locked, what you set here stays.
+
+**01 Car**
+
+![Car module](img/en/40-mod-car.webp)
+
+The car itself is fixed here; change it in step 1. You see stock mass, stock front weight, the centre of gravity height, wheelbase and track. **Weight reduction** and **Fuel tank** are picked by tier, with the mass change next to them. **Axle loads** shows how the weight sits on the axles at rest, under braking and under acceleration. **Game readings** takes the weight and front weight from the game's own menu so the model matches your car.
+
+**02 Engine**
+
+![Engine module](img/en/41-mod-engine.webp)
+
+- Pick the **engine**. **Limits** narrows the list to engines you own or can buy, or shows all of them; **Turbo**, **Racing fuel** and **Fuel stretch** switch those effects on and off.
+- The chart shows the build's torque and power over rpm. **Both**, **Torque** and **Power** choose what is drawn. The stock parts curve is dashed, and the shaded area shows where your parts gain (green) or lose (red) against stock.
+- **Fine-tune on route time** drives part and slider combinations on the route and keeps the fastest one.
+- **Parts for the class** lists every engine slot with its tier. Switch on **Choose yourself** to pick the parts by hand; a slot that cannot go up without leaving the class says so. Click a part to see its **Part setup** sliders.
+- **Component features** shows the same numbers as the game's engine view: peak power and torque, weight, torque at Low, Medium and High, rev limiter, peak rpm and boost.
+- **Compare engines** opens the engine curve page (3.5), and **Save engine build** keeps this engine to compare later.
+
+**03 Drivetrain**
+
+![Drivetrain module](img/en/42-mod-drivetrain.webp)
+
+Gearbox, drive layout and shift time. **Gear ratios** shows each gear and the final drive, and how far each one is from stock. The **gearing profile** picks a ready set of ratios or your own. The **shift chart** draws rpm against speed through the gears with the shift point and the limiter, and below it you see top speed on the route, 0–100 and 100–200 km/h. The **Differential** row shows the locks and preload; **Tune →** takes you to the diff in Tune, where you can drag it (5.5).
+
+**04 Aero and body**
+
+![Aero and body module](img/en/43-mod-aero.webp)
+
+Body kit, front and rear wing tiers and the downforce sliders, in the same order as the game's Part Setup. **Aero by speed** shows the extra load on each axle and the drag as speed rises, and the cards below give top speed on a straight, downforce at 200 km/h and the axle weights.
+
+**05 Suspension**
+
+![Suspension module](img/en/44-mod-suspension.webp)
+
+Suspension is always Prototype, because that is what lets you set everything. **Suspension state** draws the car at rest, under braking, under acceleration and at 200 km/h; **Bounce** shows how quickly the body settles. Below are the weight split, roll stiffness split (LLTD), natural frequencies, damping ratios and how far aero presses the car down at speed. Enter the game's **front weight** and, if you like, your own **front roll stiffness share** for the route time.
+
+**06 Tyres**
+
+![Tyres module](img/en/45-mod-tyres.webp)
+
+Width, profile and rim for each axle, and a spacer. The top view draws the tyres in scale with track, wheelbase and the room left inside the fender. **Tyre set** picks the compound; the grip of each set is shown next to it. **Compare sizes on the route** drives the route with every game size on the current build and lists the times.
+
+### 3.5 Compare engines: torque and power
+
+![Engine curve page](img/en/46-engine-compare.webp)
+
+**Compare engines** in the Engine module opens a page like the game's Component Features graph, with up to five engines on top of each other.
+
+1. Your current build is always the first card. **Edit as a copy** turns it into a card you can change without touching the build; **Save engine build** keeps it under a name.
+2. Pick more engines from **Add to compare…**: another engine with **Stock**, **Prototype** or **Own parts**, a saved engine build, or a curve read from the game. **Racing fuel** can be switched per card.
+3. **Both**, **Torque** and **Power** choose the curves. Solid lines are torque, dotted lines are power, dashed lines are read from the game. Click a name in the legend to hide or show its curve, and click a card to highlight its curve and dim the others.
+4. Each card lists the **Component features** next to a **Game value** column. Type in what the game shows: the difference to the model appears under it, green within 1 %, yellow up to 3 % and red beyond.
+
+After you change the build, the previous curve stays as a grey dashed line, and the change in power, torque and limiter is written under the chart.
+
 ## 4. Save and manage setups
 
 Press **Ctrl+S** (or **Save** in the top bar). The first save asks for a name and suggests car, class and route.
@@ -155,10 +213,17 @@ Adjust shows every setting with a slider. It has four folders: **Parts**, **Chas
 
 ![Adjust: Gearing](img/en/12-adjust-gearing.webp)
 
-- The **sawtooth** shows each gear's rpm against speed. Green dots are shifts that land in the power band.
-- Change the **final drive** and **shift time**; top speed, 0–100 km/h and the rpm drops update live.
-- The big numbers under the chart are the game's gear ratios.
-- The **diff** sits below: lock on acceleration, lock on deceleration and preload. The wheel diagram shows how torque is split.
+- The **sawtooth** shows each gear's rpm against speed, shifting at the limiter. The green band is the power band; a green dot is a shift that lands inside it, a grey dot one that falls below.
+- Pick the gears to work on: **1–3**, **3–4**, **4–5**, **5–6** or **All**, or tap two gears in the row under the charts to make your own range.
+- Drag the **circle at the top of a gear** left or right to make that gear shorter or longer. The arrow keys move it 0.01 at a time.
+- Drag the **◂ 1–3 ▸ pill** to move the whole range at once.
+- Drag one of the **end bars** at the bottom to change the spacing: that end moves and the other stays, and the gears in between keep the same proportions.
+- **Close up** and **Spread** tighten or open the range: its top gear stays and the lower gears move toward it or away from it. You see the change before you take it.
+- **Both**, **Rpm** and **Tractive force** choose the charts. Tractive force shows the pull of each gear against speed with the grip limit; **Accelerate** plays a full-throttle run through the gears.
+- The big numbers under the chart are the game's gear ratios, with the overall ratio and the rpm drop under each.
+- On the right, the **gearing profile**, **final drive** and **shift time**. **Effect** gives top speed, 0–100 km/h, how many shifts land in the power band and the rpm drop for each shift.
+- The **diff** sits below: lock on acceleration, lock on deceleration and preload. Drag the arcs on the wheel diagram, or use the sliders.
+- **Use in route time** runs the new ratios on the route; **Reset** restores the original ratios.
 
 **Other**
 
@@ -191,6 +256,41 @@ To game is the list you follow with the game open next to Touge.
 4. **Check in game** rows (weight, front weight) are readings: type the game's number into Touge so the model matches your car.
 
 **Share build as image** makes a picture of the build for posting. **Read from image** reads a Part Setup screenshot back in. The clipboard button copies the list as text.
+
+### 5.5 Views and dragging
+
+**View level.** The switch at the top of Tune and Analyse sets how much you see, and it applies across Touge (also in Settings > General):
+
+| Level | Shows |
+|---|---|
+| **Settings only** | every setting on one screen, no charts |
+| **Simple** | the settings and the key meters |
+| **Advanced** | every chart and detail; in Chassis a chart column **B** joins between the settings and Balance & KPI |
+
+![Advanced view: Chassis](img/en/16-view-advanced.webp)
+
+In **Advanced**, the chart in column B follows the group you open: springs, spring length, anti-roll bars, dampers, or camber and toe.
+
+**Moving panels.** Panels with a **⠿ handle** in their header can be moved. Drag the handle to another column, or down to the bottom row to make the panel full width. Clicking the handle (or Enter) opens a menu with the same moves and **Reset to the default order**. **–** folds a panel and **×** hides it. The order is remembered per view.
+
+![Panel menu](img/en/18-panel-menu.webp)
+
+**What you can drag**
+
+| Where | Drag | Does |
+|---|---|---|
+| Any setting slider | the knob, or the mouse wheel over it | sets the value; **Shift** + wheel moves 10 steps |
+| Weight, front weight, final drive, shift time | the row's slider | the same as − and + |
+| Chassis · C Balance & KPI · **LLTD** | the bar | moves the anti-roll bar split front to rear with the total kept |
+| Chassis · **Balance meters** | a meter | moves the front/rear split of springs or dampers with the axle sum kept |
+| Camber & toe chart (Advanced) | a wheel | front view tilts it for camber, top view turns it for toe |
+| Gearing · sawtooth | gear circle, range pill, end bars | see Gearing above |
+| Gearing · diff | the arcs | outer arc lock on acceleration, inner arc lock on deceleration |
+| Panels | the ⠿ handle | moves the panel |
+
+![Dragging camber and toe](img/en/19-camber-drag.webp)
+
+Values go to the game list when you let go, and the model time updates. To type an exact value instead, click the number next to a slider.
 
 ## 6. Time: drive, time and analyse
 
@@ -232,11 +332,43 @@ After a finished run, open **Analyse**. It compares the run against your own rec
 - **Next** suggests one setup change when the same pattern repeats across your runs. **Open Tune** takes you straight there.
 - **Target** shows what is left on the table: your theoretical best from your best corners combined.
 
+**Zoom into a corner.** Click a corner on the map, or its bar in the corner strip. The map zooms to that corner and colours it by your speed, with markers where braking starts, the apex and where the throttle opens. **Corner close-up** opens on the right: entry, apex and exit speed against the median, the likely reason, and throttle, brake and steering over the corner against your record. Click another corner to move there; **Whole route** or **Esc** zooms back out. Hovering a bar in the strip highlights the same corner on the map.
+
+![Corner close-up](img/en/25-analyse-zoom.webp)
+
+**Opening sections.** The sections below the latest run are folded so that Analyse opens on one decision. Click a section's title bar to open or close it; Touge remembers which ones you keep open. Each one also has a ⠿ handle to move it up or down.
+
 ![Practice list](img/en/24-practice.webp)
 
 The **Practice list** ranks the corners where your median run loses most to your best. Each one shows where the time goes (braking and entry, apex, or exit) and a close-up of throttle, brake and steering against your record. Mark a corner **Practised** when you have worked on it.
 
-**Speed on route** and **Run by corner** open the full speed trace and the per-corner table for any run.
+**Speed on route** shows the whole run as a speed trace against your record and median. Switch the lines on and off with the chips (record, median, focus corner, elevation, splits, model), and pick any run in **Compare run**. The focus corners from the practice list are marked on the trace.
+
+![Speed on route](img/en/26-speed-on-route.webp)
+
+**Run by corner** opens the per-corner table for the chosen run.
+
+### 6.4 Routes and your own routes
+
+**Routes** next to Drive and Analyse lists your own routes and North Touge AP004; **Show all game routes** lists every game route too.
+
+![Routes](img/en/27-routes.webp)
+
+Pick a route to see its shape, length, corners, hairpins, climb and descent, your best time and number of runs, and the splits. Write a **Description** (where the start is, tricky corners, where the gutters work) and add a **Start** and **Finish** screenshot so you find the spot again. **Select and drive** takes the route to Drive.
+
+**Make your own route**
+
+![Route editor](img/en/28-route-editor.webp)
+
+1. Press **＋ New route** (or **Edit or delete** on one of your own routes). The map shows every road the game's races use, with fuel stations, homes, clubs and dealers as landmarks. Drag to pan, use the wheel or **+ / −** to zoom.
+2. **Click the start** on a road. Then click the splits in order, and the finish last. The route follows the roads along the shortest path between the points.
+3. Clicking on the route inserts a split in between; clicking elsewhere extends the route. Drag a point to move it.
+4. If the route takes a shortcut you do not drive, add a **Via point**: it steers the route but is not timed. Each point can be switched between **Split** and **Via point**.
+5. A route needs a start, 3–6 splits and a finish. Give the route and each point a name; the panel shows length, corners, hairpins and climb.
+6. Tick **Also driveable in reverse** if you want the opposite direction in the route list too.
+7. **Save route**, or **Save and drive** to start timing it right away.
+
+Your own routes are saved in the `Routes` folder.
 
 ## 7. Settings and help
 

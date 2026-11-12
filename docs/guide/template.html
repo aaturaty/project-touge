@@ -105,8 +105,9 @@ figure a::before,figure a::after{content:"";position:absolute;width:12px;height:
 figure a::before{top:-4px;left:-4px;border-right:0;border-bottom:0}
 figure a::after{bottom:-4px;right:-4px;border-left:0;border-top:0}
 figure img{display:block;width:100%;height:auto}
-figure img[src*="06-candidates"],figure img[src*="07-save"],figure img[src*="31-help"],figure img[src*="03-route"]{max-width:520px}
-figure:has(img[src*="06-candidates"]) a,figure:has(img[src*="07-save"]) a,figure:has(img[src*="31-help"]) a,figure:has(img[src*="03-route"]) a{display:inline-block}
+figure img[src*="06-candidates"],figure img[src*="07-save"],figure img[src*="31-help"],figure img[src*="03-route"],figure img[src*="18-panel"],figure img[src*="19-camber"]{max-width:520px}
+figure img[src*="-mod-"]{max-width:760px}
+figure:has(img[src*="06-candidates"]) a,figure:has(img[src*="07-save"]) a,figure:has(img[src*="31-help"]) a,figure:has(img[src*="03-route"]) a,figure:has(img[src*="18-panel"]) a,figure:has(img[src*="19-camber"]) a,figure:has(img[src*="-mod-"]) a{display:inline-block}
 figcaption{font:400 12px var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--himmea);margin-top:9px}
 
 .tbl{overflow-x:auto;margin:6px 0 20px;max-width:72ch}

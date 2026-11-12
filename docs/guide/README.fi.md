@@ -103,6 +103,64 @@ Oikean reunan **Tulos**-paneeli näyttää:
 
 Tuloksen alla **Ehdokkaat** listaa moottori- ja vaihteistoyhdistelmät ajan mukaan, paras ensin. **Valitse** vaihtaa toiseen, jos pidät siitä enemmän. **Kokeile muutoksia** listaa yksittäiset muutokset ja niiden vaikutuksen.
 
+### 3.4 Moduulit yksi kerrallaan
+
+Napsauta vaiheen 2 moduulikorttia, niin se aukeaa korttien alle; **Sulje** tai toinen napsautus sulkee sen. Jokainen moduuli näyttää buildin sen osan kaikki tiedot, ja suurin osa toimii samoin tilassa **Laskuri valitsee** ja **Paranna**. Kun moduuli saa muuttua, laskuri täyttää sen; kun se on lukittu, tässä asettamasi arvot pysyvät.
+
+**01 Automalli**
+
+![Automalli-moduuli](img/fi/40-mod-car.webp)
+
+Auto on tässä kiinteä; vaihda se vaiheessa 1. Näet vakiomassan, vakioetupainon, painopisteen korkeuden, akselivälin ja raideleveyden. **Kevennys** ja **Polttoainesäiliö** valitaan tasoittain, ja massan muutos näkyy vieressä. **Akselikuormat** näyttää, miten paino jakautuu akseleille paikallaan, jarrutuksessa ja kiihdytyksessä. **Pelin lukemat** ottaa painon ja etupainon pelin omasta valikosta, jotta malli vastaa autoasi.
+
+**02 Moottori**
+
+![Moottori-moduuli](img/fi/41-mod-engine.webp)
+
+- Valitse **moottori**. **Rajaukset** rajaa listan moottoreihin, jotka omistat tai voit ostaa, tai näyttää kaikki; **Turbo**, **Kilpapolttoaine** ja **Polttoaineen venytys** kytkevät nämä vaikutukset päälle ja pois.
+- Kaavio näyttää buildin väännön ja tehon kierrosten mukaan. **Molemmat**, **Vääntö** ja **Teho** valitsevat, mitä piirretään. Vakio-osien käyrä on katkoviivalla, ja varjostus näyttää, missä osasi voittavat (vihreä) tai häviävät (punainen) vakioon verrattuna.
+- **Hienosäädä reittiajalla** ajaa osa- ja liukuriyhdistelmät reitillä ja pitää nopeimman.
+- **Osat luokkaan** listaa jokaisen moottorin osapaikan ja sen tason. Kytke **Valitse itse**, niin voit valita osat käsin; paikka, jonka taso ei voi nousta luokasta putoamatta, kertoo sen. Napsauta osaa, niin näet sen **Osan säätö** -liukurit.
+- **Component features** näyttää samat luvut kuin pelin moottorinäkymä: huipputeho ja -vääntö, paino, vääntö kohdissa Low, Medium ja High, rajoitin, Peak RPM ja ahto.
+- **Vertaa moottoreita** avaa moottorin käyräsivun (3.5), ja **Tallenna moottoribuildi** säilyttää tämän moottorin myöhempää vertailua varten.
+
+**03 Voimansiirto**
+
+![Voimansiirto-moduuli](img/fi/42-mod-drivetrain.webp)
+
+Vaihdelaatikko, vetotapa ja vaihtoaika. **Välitykset** näyttää jokaisen vaihteen ja vetopyörästön sekä niiden eron vakioon. **Välitysprofiili** valitsee valmiin välityssarjan tai omasi. **Välityskaavio** piirtää kierrokset nopeuden mukaan vaihteiden läpi vaihtopisteen ja rajoittimen kanssa, ja sen alla näet huippunopeuden reitillä sekä 0–100 ja 100–200 km/h. **Diffi**-rivi näyttää lukot ja esijännityksen; **Säädä →** vie Säädä-välilehden diffiin, jossa sitä voi raahata (5.5).
+
+**04 Aero ja kori**
+
+![Aero ja kori -moduuli](img/fi/43-mod-aero.webp)
+
+Korisarja, etu- ja takasiiven taso sekä alavoimaliukurit samassa järjestyksessä kuin pelin Part Setupissa. **Aero nopeuden mukaan** näyttää kummankin akselin lisäkuorman ja ilmanvastuksen nopeuden kasvaessa, ja alla olevat kortit kertovat huippunopeuden suoralla, alavoiman 200 km/h:ssa ja akselipainot.
+
+**05 Jousitus**
+
+![Jousitus-moduuli](img/fi/44-mod-suspension.webp)
+
+Jousitus on aina Prototype, koska sillä voi säätää kaiken. **Jousituksen tila** piirtää auton paikallaan, jarrutuksessa, kiihdytyksessä ja 200 km/h:ssa; **Pomppu** näyttää, kuinka nopeasti kori asettuu. Alla ovat painojakauma, kallistusjäykkyyden jako (LLTD), ominaistaajuudet, vaimennussuhteet ja kuinka paljon aero painaa autoa alas vauhdissa. Syötä pelin **etupaino** ja halutessasi oma **vakaajajako edessä** reittiaikaa varten.
+
+**06 Renkaat**
+
+![Renkaat-moduuli](img/fi/45-mod-tyres.webp)
+
+Leveys, profiili ja vanne kummallekin akselille sekä spacer. Yläkuva piirtää renkaat mittakaavassa raideleveyden, akselivälin ja lokasuojan sisälle jäävän tilan kanssa. **Rengassarja** valitsee seoksen, ja sarjan pito näkyy vieressä. **Vertaa kokoja reitillä** ajaa reitin jokaisella pelin koolla nykyisellä buildilla ja listaa ajat.
+
+### 3.5 Vertaa moottoreita: vääntö ja teho
+
+![Moottorin käyrä -sivu](img/fi/46-engine-compare.webp)
+
+Moottori-moduulin **Vertaa moottoreita** avaa sivun, joka on kuin pelin Component Features -graafi, ja siinä voi olla päällekkäin jopa viisi moottoria.
+
+1. Nykyinen buildisi on aina ensimmäinen kortti. **Muokkaa kopiona** tekee siitä kortin, jota voit muuttaa koskematta buildiin; **Tallenna moottoribuildi** säilyttää sen nimellä.
+2. Valitse lisää moottoreita valikosta **Lisää vertailuun…**: toinen moottori osilla **Vakio**, **Prototype** tai **Omat osat**, tallennettu moottoribuildi tai pelistä luettu käyrä. **Kilpapolttoaineen** voi kytkeä korttikohtaisesti.
+3. **Molemmat**, **Vääntö** ja **Teho** valitsevat käyrät. Yhtenäinen viiva on vääntö, pisteviiva teho ja katkoviiva pelistä luettu. Napsauta nimeä selitteessä, niin käyrä piiloutuu tai tulee näkyviin, ja napsauta korttia, niin sen käyrä korostuu ja muut himmenevät.
+4. Jokainen kortti listaa **Component features** -luvut ja niiden vieressä **Pelin lukema** -sarakkeen. Kirjoita siihen pelin näyttämä luku: ero malliin näkyy alla, vihreänä alle 1 %, keltaisena 3 %:iin asti ja punaisena sen yli.
+
+Kun muutat buildia, edellinen käyrä jää harmaaksi katkoviivaksi, ja tehon, väännön ja rajoittimen muutos kirjoitetaan kaavion alle.
+
 ## 4. Setupien tallennus ja hallinta
 
 Paina **Ctrl+S** (tai yläpalkin **Tallenna**). Ensimmäinen tallennus kysyy nimen ja ehdottaa autoa, luokkaa ja reittiä.
@@ -157,10 +215,17 @@ Säädä näyttää jokaisen säädön liukurina. Siinä on neljä kansiota: **O
 
 ![Säädä: Välitykset](img/fi/12-adjust-gearing.webp)
 
-- **Sahakaavio** näyttää jokaisen vaihteen kierrokset nopeuden mukaan. Vihreät pisteet ovat vaihtoja, jotka osuvat tehoalueelle.
-- Muuta **vetopyörästöä** ja **vaihtoaikaa**; huippunopeus, 0–100 km/h ja kierrospudotukset päivittyvät heti.
-- Kaavion alla isot luvut ovat pelin välityssuhteet.
-- **Diffi** on alempana: kaasulukko, jarrulukko ja esijännitys. Pyöräkuva näyttää, miten vääntö jakautuu.
+- **Sahakaavio** näyttää jokaisen vaihteen kierrokset nopeuden mukaan, kun vaihdetaan rajoittimella. Vihreä kaista on tehoalue; vihreä piste on vaihto, joka osuu sen sisään, harmaa sellainen, joka putoaa alle.
+- Valitse vaihteet, joita säädät: **1–3**, **3–4**, **4–5**, **5–6** tai **Kaikki**, tai napauta kahta vaihdetta kaavioiden alla olevalla rivillä, niin saat oman alueen.
+- Raahaa **vaihteen yläpään ympyrää** vasemmalle tai oikealle, niin vaihde lyhenee tai pitenee. Nuolinäppäimet siirtävät sitä 0,01 kerrallaan.
+- Raahaa **◂ 1–3 ▸ -nappia**, niin koko alue siirtyy kerralla.
+- Raahaa alareunan **päätypalkkia**, niin porrastus muuttuu: se pää liikkuu ja toinen pysyy, ja välissä olevat vaihteet säilyttävät suhteensa.
+- **Tiivistä** ja **Harvenna** kiristävät tai harventavat aluetta: sen ylin vaihde pysyy ja alemmat siirtyvät sitä kohti tai siitä pois. Näet muutoksen ennen kuin otat sen käyttöön.
+- **Molemmat**, **Kierrokset** ja **Vetovoima** valitsevat kaaviot. Vetovoima näyttää jokaisen vaihteen vedon nopeuden mukaan pitorajan kanssa; **Kiihdytä** toistaa täyskaasukiihdytyksen vaihteiden läpi.
+- Kaavion alla isot luvut ovat pelin välityssuhteet, ja niiden alla kokonaisvälitys ja kierrospudotus.
+- Oikealla ovat **välitysprofiili**, **vetopyörästö** ja **vaihtoaika**. **Vaikutus** kertoo huippunopeuden, 0–100 km/h, kuinka moni vaihto osuu tehoalueelle ja kunkin vaihdon kierrospudotuksen.
+- **Diffi** on alempana: kaasulukko, jarrulukko ja esijännitys. Raahaa pyöräkuvan kaaria tai käytä liukureita.
+- **Käytä reittiajassa** ajaa uudet välitykset reitillä; **Nollaa** palauttaa alkuperäiset välitykset.
 
 **Muut**
 
@@ -193,6 +258,41 @@ Peliin on lista, jota seuraat peli auki Tougen vieressä.
 4. **Tarkista pelistä** -rivit (paino, etupaino) ovat lukemia: kirjoita pelin luku Tougeen, niin malli vastaa autoasi.
 
 **Jaa buildi kuvana** tekee buildista kuvan jaettavaksi. **Lue kuvasta** lukee Part Setup -kuvakaappauksen takaisin. Leikepöytänappi kopioi listan tekstinä.
+
+### 5.5 Näkymät ja raahaus
+
+**Näkymän taso.** Säädä- ja Analysoi-näkymien yläreunan valitsin määrää, kuinka paljon näet, ja se pätee koko Tougessa (myös Asetukset > Yleiset):
+
+| Taso | Näyttää |
+|---|---|
+| **Vain säädöt** | kaikki säädöt yhdellä ruudulla, ei kaavioita |
+| **Simple** | säädöt ja tärkeimmät mittarit |
+| **Advanced** | kaikki kaaviot ja lisätiedot; Alustassa säätöjen ja Tasapaino & KPI:n väliin tulee kaaviosarake **B** |
+
+![Advanced-näkymä: Alusta](img/fi/16-view-advanced.webp)
+
+**Advanced**-tasolla sarakkeen B kaavio seuraa avaamaasi ryhmää: jouset, jousen pituus, vakaajat, vaimentimet tai camber ja toe.
+
+**Paneelien siirto.** Paneeleja, joiden otsikossa on **⠿-kahva**, voi siirtää. Vedä kahvasta toiseen sarakkeeseen tai alas alariville, niin paneeli levenee koko leveydelle. Kahvan napsautus (tai Enter) avaa valikon, jossa ovat samat siirrot ja **Palauta oletusjärjestys**. **–** pienentää paneelin ja **×** piilottaa sen. Järjestys muistetaan näkymäkohtaisesti.
+
+![Paneelin siirtovalikko](img/fi/18-panel-menu.webp)
+
+**Mitä voi raahata**
+
+| Missä | Raahaa | Tekee |
+|---|---|---|
+| Mikä tahansa säätöliukuri | nuppia tai rullaa hiirellä sen päällä | asettaa arvon; **Shift** + rulla siirtää 10 askelta |
+| Paino, etupaino, vetopyörästö, vaihtoaika | rivin liukuria | sama kuin − ja + |
+| Alusta · C Tasapaino & KPI · **LLTD** | palkkia | siirtää vakaajien etu–taka-jakoa kokonaisjäykkyys ennallaan |
+| Alusta · **Tasapainomittarit** | mittaria | siirtää jousten tai vaimentimien etu–taka-jakoa akselien summa ennallaan |
+| Camber ja toe -kaavio (Advanced) | pyörää | edestä-kuvassa kallistaa camberia, ylhäältä-kuvassa kääntää toeta |
+| Välitykset · sahakaavio | vaihteen ympyrää, aluenappia, päätypalkkeja | ks. Välitykset yllä |
+| Välitykset · diffi | kaaria | ulompi kaari kaasulukko, sisempi jarrulukko |
+| Paneelit | ⠿-kahvaa | siirtää paneelin |
+
+![Camberin ja toen raahaus](img/fi/19-camber-drag.webp)
+
+Arvot siirtyvät pelilistaan, kun päästät irti, ja mallin aika päivittyy. Jos haluat kirjoittaa tarkan arvon, napsauta liukurin vieressä olevaa lukua.
 
 ## 6. Ajanotto: aja, kellota ja analysoi
 
@@ -234,11 +334,43 @@ Avaa maaliin päättyneen ajon jälkeen **Analysoi**. Se vertaa ajoa omaan ennä
 - **Seuraavaksi** ehdottaa yhtä setupin muutosta, kun sama kuvio toistuu ajoissasi. **Avaa Säädä** vie suoraan sinne.
 - **Tavoite** näyttää, paljonko aikaa on vielä otettavissa: teoreettinen parhaasi parhaista mutkistasi yhdistettynä.
 
+**Zoomaa mutkaan.** Napsauta mutkaa kartalla tai sen palkkia mutkanauhassa. Kartta zoomaa mutkaan ja värittää sen nopeutesi mukaan, ja merkit näyttävät, missä jarrutus alkaa, missä on pohja ja missä kaasu aukeaa. Oikealle aukeaa **Mutkan tarkastelu**: sisääntulo-, pohja- ja ulostulonopeus mediaaniin verrattuna, todennäköinen syy sekä kaasu, jarru ja ohjaus mutkan matkalla ennätykseesi verrattuna. Napsauta toista mutkaa siirtyäksesi; **Koko reitti** tai **Esc** zoomaa takaisin. Kun viet hiiren nauhan palkin päälle, sama mutka korostuu kartalla.
+
+![Mutkan tarkastelu](img/fi/25-analyse-zoom.webp)
+
+**Osioiden avaus.** Viimeisimmän ajon alla olevat osiot ovat kiinni, jotta Analysoi aukeaa yhteen päätökseen. Napsauta osion otsikkoriviä, niin se aukeaa tai sulkeutuu; Touge muistaa, mitkä pidät auki. Jokaisessa on myös ⠿-kahva, jolla sen voi siirtää ylös tai alas.
+
 ![Harjoituslista](img/fi/24-practice.webp)
 
 **Harjoituslista** järjestää mutkat, joissa mediaaniajosi häviää eniten parhaalle. Jokainen kertoo, mihin aika menee (jarrutus ja sisääntulo, apex vai ulostulo), ja lähikuva näyttää kaasun, jarrun ja ohjauksen ennätykseesi verrattuna. Merkitse mutka **Harjoiteltu**, kun olet työstänyt sitä.
 
-**Nopeus reitillä** ja **Ajo mutkittain** avaavat minkä tahansa ajon koko nopeuskäyrän ja mutkakohtaisen taulukon.
+**Nopeus reitillä** näyttää koko ajon nopeuskäyränä ennätykseesi ja mediaaniisi verrattuna. Kytke viivoja päälle ja pois napeista (ennätys, mediaani, kehityskohta, korkeus, splitit, malli) ja valitse mikä tahansa ajo kohdasta **Vertaa ajoa**. Harjoituslistan kehityskohdat on merkitty käyrälle.
+
+![Nopeus reitillä](img/fi/26-speed-on-route.webp)
+
+**Ajo mutkittain** avaa valitun ajon mutkakohtaisen taulukon.
+
+### 6.4 Reitit ja omat reitit
+
+Aja- ja Analysoi-näkymien vieressä oleva **Reitit** listaa omat reittisi ja North Touge AP004:n; **Näytä kaikki pelin reitit** listaa myös jokaisen pelin reitin.
+
+![Reitit](img/fi/27-routes.webp)
+
+Valitse reitti, niin näet sen muodon, pituuden, mutkat, hiusneulat, nousun ja laskun, parhaan aikasi ja ajomäärän sekä splitit. Kirjoita **Kuvaus** (mistä lähtö alkaa, vaaralliset mutkat, missä gutterit toimivat) ja lisää **Lähtö**- ja **Maali**-kuvakaappaus, niin löydät kohdan uudelleen. **Valitse ja aja** vie reitin Aja-näkymään.
+
+**Tee oma reitti**
+
+![Reittieditori](img/fi/28-route-editor.webp)
+
+1. Paina **＋ Uusi reitti** (tai omalla reitillä **Muokkaa tai poista**). Kartta näyttää jokaisen tien, jota pelin kisat käyttävät, ja maamerkkeinä bensa-asemat, kodit, kerhot ja autoliikkeet. Raahaa siirtääksesi, rullalla tai **+ / −** -napeilla zoomaat.
+2. **Klikkaa lähtö** tielle. Klikkaa sitten splitit järjestyksessä ja viimeisenä maali. Reitti kulkee pisteiden välillä tietä pitkin lyhintä reittiä.
+3. Klikkaus reitin päällä lisää splitin väliin, muualla klikkaus jatkaa reittiä. Raahaa pistettä siirtääksesi sitä.
+4. Jos reitti oikaisee kohdasta, jota et aja, lisää **Ohjauspiste**: se ohjaa reittiä, mutta siinä ei oteta aikaa. Jokaisen pisteen voi vaihtaa **Splitiksi** tai **Ohjauspisteeksi**.
+5. Reitti tarvitsee lähdön, 3–6 splittiä ja maalin. Anna reitille ja jokaiselle pisteelle nimi; paneeli näyttää pituuden, mutkat, hiusneulat ja nousun.
+6. Rastita **Ajettavissa myös vastasuuntaan**, jos haluat reittilistaan myös vastakkaisen suunnan.
+7. **Tallenna reitti**, tai **Tallenna ja aja**, niin voit kellottaa sen heti.
+
+Omat reittisi tallentuvat `Routes`-kansioon.
 
 ## 7. Asetukset ja ohje
 

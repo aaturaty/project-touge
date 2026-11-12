@@ -14,7 +14,8 @@ Get the latest zip from **[Releases](../../releases/latest)**.
 2. Double-click **Project Touge.exe**. Touge opens in its own window.
 3. Close the window to quit.
 
-No installation and no Python needed. Requires Windows 10 or 11 with Microsoft Edge WebView2 (built into Windows 11 and every up-to-date Windows 10). If SmartScreen warns about an unknown publisher, choose **More info → Run anyway**.
+No installation and no Python needed. 
+Requires Windows 10 or 11 with Microsoft Edge WebView2 (built into Windows 11 and every up-to-date Windows 10). If SmartScreen warns about an unknown publisher, choose **More info → Run anyway**.
 
 ## What it does
 
@@ -42,7 +43,8 @@ Everything you save stays inside the Project Touge folder:
 | `Logs` | program logs; attach these when reporting a problem |
 
 **Update:** replace `App` and `Project Touge.exe`, keep your data folders.
-**Move:** copy the whole folder. **Uninstall:** delete the folder.
+**Move:** copy the whole folder. 
+**Uninstall:** delete the folder.
 
 ## Feedback
 
@@ -53,6 +55,3 @@ Found a bug or a value that is off in game? Open an [issue](../../issues) with y
 © aaturaty. All rights reserved. You may download and use Project Touge for free; please do not redistribute it or its code as your own.
 Game images and data are © CarX Technologies and included with their permission to the Project Touge community. Third-party fonts and libraries are listed in `Licenses.txt` inside the download.
 
----
-
-*Suomeksi: Project Touge on CarX Streetin epävirallinen apuohjelma auton rakentamiseen, säätämiseen ja ajanottoon. Lataa zip [Releases](../../releases/latest)-sivulta, pura minne haluat ja käynnistä Project Touge.exe. Kieli vaihdetaan yläpalkista (FI/EN).*

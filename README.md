@@ -25,6 +25,14 @@ Requires Windows 10 or 11 with Microsoft Edge WebView2 (built into Windows 11 an
 
 Values come from the game's own data and are checked in game. Anything not yet verified is marked as an estimate.
 
+## Tuning guide
+
+[![Project Touge Tuning guide](docs/tuning-guide/banner.png)](docs/tuning-guide/README.md)
+
+The **[Tuning guide](docs/tuning-guide/README.md)** is the long read behind the Tune tab: how CarX Street calculates the car and what each setting really does, from tyres and springs to anti-roll bars, dampers, camber and toe, the differential and body dimensions. Every claim is marked: ● confirmed in game or in the game code, ◐ simulation, ○ real-car theory.
+
+Read it here, as a [PDF](docs/tuning-guide/Project-Touge-Tuning-Guide.pdf), or inside Touge (Tune tab → Tuning guide). Also [in Finnish](docs/tuning-guide/fi/README.md).
+
 ## Timing and telemetry
 
 - Run the game borderless or full screen. A window works if the whole HUD is visible.

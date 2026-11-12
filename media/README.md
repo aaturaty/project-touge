@@ -5,9 +5,11 @@ Images for posts, profiles and link previews. Free to share when you talk about 
 | File | Size | Use |
 |---|---|---|
 | `banner-1500x500.png`, `banner-2…4-1500x500.png` | 1500 × 500 | X / Discord / YouTube header (four photos) |
+| `banner-5-water-cup-1500x500.png` | 1500 × 500 | Header with the "Don't spill the water cup." line |
 | `link-card-1200x630.png` | 1200 × 630 | Link preview (Open Graph, Reddit, Discord) |
 | `github-social-1280x640.png` | 1280 × 640 | GitHub social preview (Settings → Social preview) |
 | `flyer-1080x1350.png`, `flyer-2…4-1080x1350.png` | 1080 × 1350 | Single post: what Touge does and where to get it (four photos) |
+| `flyer-5-water-cup-1080x1350.png` | 1080 × 1350 | Flyer with the "Don't spill the water cup." line |
 | `feature-01-build-1080x1350.png` | 1080 × 1350 | Feature: Build |
 | `feature-02-tune-1080x1350.png` | 1080 × 1350 | Feature: Tune by symptom |
 | `feature-02b-chassis-1080x1350.png` | 1080 × 1350 | Feature: chassis settings and charts |

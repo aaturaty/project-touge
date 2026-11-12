@@ -370,6 +370,8 @@ Valitse reitti, niin näet sen muodon, pituuden, mutkat, hiusneulat, nousun ja l
 6. Rastita **Ajettavissa myös vastasuuntaan**, jos haluat reittilistaan myös vastakkaisen suunnan.
 7. **Tallenna reitti**, tai **Tallenna ja aja**, niin voit kellottaa sen heti.
 
+**Ensimmäinen ajo uudella reitillä.** Aja ensimmäinen ajo lähdöstä maaliin ja paina jokaisessa splitissä itse **F10**. Autosplit oppii splittien paikat tästä ajosta ja toimii itsestään seuraavasta ajosta alkaen. Sama pätee pelin reitteihin.
+
 Omat reittisi tallentuvat `Routes`-kansioon.
 
 ## 7. Asetukset ja ohje

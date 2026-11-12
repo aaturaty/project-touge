@@ -368,6 +368,8 @@ Pick a route to see its shape, length, corners, hairpins, climb and descent, you
 6. Tick **Also driveable in reverse** if you want the opposite direction in the route list too.
 7. **Save route**, or **Save and drive** to start timing it right away.
 
+**Your first run on a new route.** Drive the first run from start to finish and press **F10** yourself at each split. Auto splits learn the split points from that run and work by themselves from the next run on. The same goes for a game route.
+
 Your own routes are saved in the `Routes` folder.
 
 ## 7. Settings and help

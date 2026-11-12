@@ -17,6 +17,10 @@ Get the latest zip from **[Releases](../../releases/latest)**.
 No installation and no Python needed. 
 Requires Windows 10 or 11 with Microsoft Edge WebView2 (built into Windows 11 and every up-to-date Windows 10). If SmartScreen warns about an unknown publisher, choose **More info → Run anyway**.
 
+## User guide
+
+Step by step, page by page with screenshots: **[Project Touge user guide](docs/guide/README.md)** · [suomeksi](docs/guide/README.fi.md). The same guide as a branded offline page: `docs/guide/index.html`.
+
 ## What it does
 
 - **Build**: enter your car from screenshots or start from the model: engine, gearbox and diff, aero and body, suspension, tyres and route model. Values use the game's own names, order and units so you can type them straight into the game.

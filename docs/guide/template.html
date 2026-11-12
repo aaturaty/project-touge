@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project Touge user guide</title>
+<meta name="description" content="Step-by-step user guide for Project Touge, the build, tune and timing companion for CarX Street.">
+<link rel="icon" type="image/png" href="assets/touge-64.png">
+<!-- Built by build.py from README.md and README.fi.md. Edit those, not this file. -->
+<style>
+@font-face{font-family:"VCR OSD Mono";src:url(assets/VCR-OSD-Mono.woff2) format("woff2");font-display:swap}
+@font-face{font-family:"IBM Plex Mono";font-weight:400;src:url(assets/ibm-plex-mono-400-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap}
+@font-face{font-family:"IBM Plex Mono";font-weight:400;src:url(assets/ibm-plex-mono-400-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1E00-1E9F,U+2020,U+20A0-20AB,U+20AD-20C4,U+2C60-2C7F,U+A720-A7FF;font-display:swap}
+@font-face{font-family:"IBM Plex Mono";font-weight:500;src:url(assets/ibm-plex-mono-500-latin.woff2) format("woff2");font-display:swap}
+@font-face{font-family:"IBM Plex Mono";font-weight:600;src:url(assets/ibm-plex-mono-600-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+2000-206F,U+2212;font-display:swap}
+@font-face{font-family:"IBM Plex Mono";font-weight:600;src:url(assets/ibm-plex-mono-600-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA,U+1E00-1E9F;font-display:swap}
+@font-face{font-family:"Dela Gothic One";src:url(assets/dela-gothic-one-400-osajoukko.woff2) format("woff2");font-display:swap}
+
+:root{
+  --yo:#03120e; --hiili:#1a1d1a; --hiili-2:#212521; --metsa:#26413c;
+  --viiva:#2a312c; --viiva-2:#3d4a43;
+  --kerma:#fffdf7; --sumu:#c3c8b6; --himmea:#9aa58b;
+  --korostus:#839073; --korostus-hi:#a9b597; --korostus-kirkas:#c9d2b8; --salvia-vaalea:#b9c3a6;
+  --keltainen:#ffd84a; --natrium:#fb9f44;
+  --display:"VCR OSD Mono","IBM Plex Mono",ui-monospace,monospace;
+  --body:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --sym:"Segoe UI Symbol","Noto Sans Symbols 2","DejaVu Sans",sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--yo);color:var(--kerma);font:400 15px/1.65 var(--body);-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;
+  background:repeating-linear-gradient(to bottom,rgba(0,0,0,0) 0 2px,rgba(0,0,0,.12) 2px 3px);mix-blend-mode:multiply}
+a{color:var(--korostus-kirkas);text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{color:var(--kerma)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--korostus-hi);outline-offset:2px}
+
+/* Header: photo strip + logo lock-up, the same as the app */
+.hero{position:relative;min-height:340px;display:flex;align-items:flex-end;overflow:hidden;border-bottom:1px solid var(--viiva-2)}
+.hero::before{content:"";position:absolute;inset:0;background:url(assets/hero.webp) center 58%/cover no-repeat;filter:saturate(.65) brightness(.75)}
+.hero::after{content:"";position:absolute;inset:0;background:
+  linear-gradient(90deg,rgba(3,18,14,.96) 0%,rgba(3,18,14,.75) 45%,rgba(3,18,14,.25) 100%),
+  linear-gradient(0deg,var(--yo) 0%,rgba(3,18,14,0) 55%),
+  repeating-linear-gradient(to bottom,rgba(255,255,255,.035) 0 1px,rgba(0,0,0,0) 1px 4px)}
+.hero-in{position:relative;z-index:1;width:100%;max-width:1180px;margin:0 auto;padding:48px 24px 34px}
+.brand{display:flex;align-items:center;gap:18px}
+.kanji{font-family:"Dela Gothic One",serif;font-size:68px;line-height:1;color:var(--korostus-kirkas);transform:skewX(-8deg);
+  text-shadow:0 0 18px rgba(201,210,184,.45)}
+.brand small{display:block;font-family:var(--display);font-size:15px;color:var(--salvia-vaalea);letter-spacing:.04em;text-transform:lowercase}
+.brand h1{margin:2px 0 0;font:400 44px/1 var(--display);font-style:italic;letter-spacing:.04em;text-transform:uppercase;
+  text-shadow:-1.5px 0 rgba(255,80,80,.35),1.5px 0 rgba(80,200,255,.35);padding-bottom:8px;
+  background:linear-gradient(var(--korostus-hi),var(--korostus-hi)) left bottom/100% 2px no-repeat}
+.tag{margin:22px 0 0;max-width:620px;font-size:16px;color:var(--sumu)}
+.tag b{color:var(--kerma);font-weight:500}
+.stamp{position:absolute;right:24px;bottom:22px;z-index:1;font-family:var(--display);font-size:14px;color:var(--korostus-hi);
+  letter-spacing:.06em;text-shadow:0 0 6px rgba(169,181,151,.6)}
+
+/* Top bar */
+.bar{position:sticky;top:0;z-index:20;background:rgba(26,29,26,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--viiva-2)}
+.bar-in{max-width:1180px;margin:0 auto;padding:0 24px;height:56px;display:flex;align-items:center;gap:20px}
+.mini{font:400 15px var(--display);font-style:italic;letter-spacing:.04em;text-transform:uppercase;color:var(--kerma);text-decoration:none;white-space:nowrap}
+.mini span{font-family:"Dela Gothic One",serif;font-style:normal;color:var(--korostus-kirkas);margin-right:8px}
+.bar .doc{font:400 13px var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--himmea)}
+.spacer{flex:1}
+.lang{display:flex;border:1px solid var(--viiva-2)}
+.lang button{all:unset;cursor:pointer;font:400 13px var(--display);letter-spacing:.08em;padding:6px 11px;color:var(--himmea)}
+.lang button[aria-pressed="true"]{background:var(--korostus);color:var(--yo)}
+.lang button:hover{color:var(--kerma)}
+
+/* Layout */
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:230px minmax(0,1fr);gap:48px}
+nav.toc{position:sticky;top:76px;align-self:start;padding:28px 0;max-height:calc(100vh - 80px);overflow:auto}
+nav.toc h2{font:400 12px var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--himmea);margin:0 0 12px}
+nav.toc ol{list-style:none;margin:0;padding:0;border-left:1px solid var(--viiva-2)}
+nav.toc a{display:flex;gap:10px;padding:6px 0 6px 14px;margin-left:-1px;border-left:2px solid transparent;color:var(--sumu);text-decoration:none;font-size:13.5px;line-height:1.35}
+nav.toc a span{font-family:var(--display);color:var(--himmea);min-width:20px}
+nav.toc a:hover{color:var(--kerma)}
+nav.toc a.on{border-left-color:var(--korostus-hi);color:var(--kerma)}
+main{padding:28px 0 80px;min-width:0}
+main p{margin:0 0 14px;color:var(--sumu);max-width:72ch}
+main b{color:var(--kerma);font-weight:600}
+main i{color:var(--kerma);font-style:italic}
+main code{font:500 13px var(--body);background:var(--hiili-2);border:1px solid var(--viiva);padding:1px 5px;color:var(--korostus-kirkas)}
+.mk{font-family:var(--sym);color:var(--sumu)}
+
+section.ch{padding-top:20px;margin-top:22px;border-top:1px solid var(--viiva)}
+section.ch:first-of-type{border-top:0;margin-top:0}
+.band{height:120px;margin:4px 0 18px;background:center 55%/cover no-repeat;position:relative;filter:saturate(.6) brightness(.7);
+  border:1px solid var(--viiva-2)}
+.band::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,18,14,.85),rgba(3,18,14,.2) 70%),
+  repeating-linear-gradient(to bottom,rgba(255,255,255,.04) 0 1px,rgba(0,0,0,0) 1px 4px)}
+h2{font:400 26px/1.2 var(--display);letter-spacing:.04em;text-transform:uppercase;margin:6px 0 16px;display:flex;gap:14px;align-items:baseline}
+h2 .no{font-size:14px;color:var(--yo);background:var(--korostus);padding:3px 7px 2px;letter-spacing:.06em;transform:translateY(-3px)}
+h3{font:400 18px var(--display);letter-spacing:.06em;text-transform:uppercase;margin:30px 0 12px;color:var(--korostus-kirkas)}
+main ol,main ul{margin:0 0 16px;padding-left:22px;max-width:72ch;color:var(--sumu)}
+main li{margin:5px 0}
+main ol li::marker{font-family:var(--display);color:var(--korostus-hi)}
+main ul li::marker{color:var(--korostus)}
+
+figure{margin:18px 0 24px}
+figure a{display:block;border:1px solid var(--viiva-2);background:var(--hiili);position:relative}
+figure a::before,figure a::after{content:"";position:absolute;width:12px;height:12px;border:1px solid var(--korostus-hi);pointer-events:none}
+figure a::before{top:-4px;left:-4px;border-right:0;border-bottom:0}
+figure a::after{bottom:-4px;right:-4px;border-left:0;border-top:0}
+figure img{display:block;width:100%;height:auto}
+figure img[src*="06-candidates"],figure img[src*="07-save"],figure img[src*="31-help"],figure img[src*="03-route"]{max-width:520px}
+figure:has(img[src*="06-candidates"]) a,figure:has(img[src*="07-save"]) a,figure:has(img[src*="31-help"]) a,figure:has(img[src*="03-route"]) a{display:inline-block}
+figcaption{font:400 12px var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--himmea);margin-top:9px}
+
+.tbl{overflow-x:auto;margin:6px 0 20px;max-width:72ch}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th{font:400 12px var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--himmea);text-align:left;padding:8px 12px;border-bottom:1px solid var(--viiva-2)}
+td{padding:9px 12px;border-bottom:1px solid var(--viiva);color:var(--sumu);vertical-align:top}
+td:first-child{color:var(--kerma);white-space:nowrap}
+p.fine{font-size:13px;color:var(--himmea);margin-top:30px;padding-top:16px;border-top:1px solid var(--viiva)}
+
+[data-l]{display:none}
+html[lang="en"] [data-l="en"],html[lang="fi"] [data-l="fi"]{display:revert}
+html[lang="en"] main[data-l="en"],html[lang="fi"] main[data-l="fi"]{display:block}
+
+@media (max-width:900px){
+  .wrap{grid-template-columns:1fr;gap:0}
+  nav.toc{position:static;max-height:none;padding:20px 0 0}
+  .hero{min-height:280px}
+  .brand h1{font-size:32px}.kanji{font-size:52px}
+  .bar .doc{display:none}
+  .stamp{display:none}
+}
+@media (max-width:520px){
+  .wrap,.bar-in,.hero-in{padding-left:16px;padding-right:16px}
+  h2{font-size:21px}
+}
+@media print{
+  body::before,.bar,nav.toc,.band{display:none}
+  .wrap{display:block}
+  body{background:#fff;color:#000}
+}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-in">
+    <div class="brand"><span class="kanji" aria-hidden="true">峠</span><div><small>user guide</small><h1>Project Touge</h1></div></div>
+    <p class="tag"><b>Build, tune and improve your driving.</b><br>One gutter away from being the fastest on the touge.</p>
+  </div>
+  <div class="stamp" aria-hidden="true">v0.9 BETA</div>
+</header>
+<div class="bar"><div class="bar-in">
+  <a class="mini" href="#top"><span>峠</span>Project Touge</a>
+  <span class="doc" data-l="en">User guide</span><span class="doc" data-l="fi">Käyttöopas</span>
+  <span class="spacer"></span>
+  <div class="lang" role="group" aria-label="Language / Kieli">
+    <button type="button" data-set="fi" aria-pressed="false" lang="fi">FI</button>
+    <button type="button" data-set="en" aria-pressed="true" lang="en">EN</button>
+  </div>
+</div></div>
+<div class="wrap" id="top">
+  <nav class="toc" aria-label="Contents">
+    <div data-l="en"><h2>Contents</h2><ol>{{NAV_EN}}</ol></div>
+    <div data-l="fi"><h2>Sisältö</h2><ol>{{NAV_FI}}</ol></div>
+  </nav>
+  <div>
+    <main data-l="en" lang="en">
+{{BODY_EN}}
+    </main>
+    <main data-l="fi" lang="fi">
+{{BODY_FI}}
+    </main>
+  </div>
+</div>
+<script>
+(function () {
+  var KEY = 'touge-guide-lang';
+  function set(l, save) {
+    document.documentElement.lang = l;
+    document.title = l === 'fi' ? 'Project Touge – käyttöopas' : 'Project Touge user guide';
+    document.querySelector('.brand small').textContent = l === 'fi' ? 'käyttöopas' : 'user guide';
+    document.querySelectorAll('.lang button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.set === l)); });
+    if (save) { try { localStorage.setItem(KEY, l); } catch (e) {} }
+    spy();
+  }
+  var q = new URLSearchParams(location.search).get('lang'), saved = null;
+  try { saved = localStorage.getItem(KEY); } catch (e) {}
+  var start = q === 'fi' || q === 'en' ? q : saved || ((navigator.language || '').slice(0, 2) === 'fi' ? 'fi' : 'en');
+  document.querySelectorAll('.lang button').forEach(function (b) { b.addEventListener('click', function () { set(b.dataset.set, true); }); });
+  var links = [];
+  function spy() {
+    var l = document.documentElement.lang;
+    links = Array.prototype.slice.call(document.querySelectorAll('nav.toc [data-l="' + l + '"] a'));
+    onScroll();
+  }
+  function onScroll() {
+    var cur = null;
+    links.forEach(function (a) { var t = document.getElementById(decodeURIComponent(a.hash.slice(1))); if (t && t.getBoundingClientRect().top < 140) cur = a; });
+    links.forEach(function (a) { a.classList.toggle('on', a === cur); });
+  }
+  addEventListener('scroll', onScroll, { passive: true });
+  set(start, false);
+})();
+</script>
+</body>
+</html>

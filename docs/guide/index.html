@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project Touge user guide</title>
+<meta name="description" content="Step-by-step user guide for Project Touge, the build, tune and timing companion for CarX Street.">
+<link rel="icon" type="image/png" href="assets/touge-64.png">
+<!-- Built by build.py from README.md and README.fi.md. Edit those, not this file. -->
+<style>
+@font-face{font-family:"VCR OSD Mono";src:url(assets/VCR-OSD-Mono.woff2) format("woff2");font-display:swap}
+@font-face{font-family:"IBM Plex Mono";font-weight:400;src:url(assets/ibm-plex-mono-400-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap}
+@font-face{font-family:"IBM Plex Mono";font-weight:400;src:url(assets/ibm-plex-mono-400-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1E00-1E9F,U+2020,U+20A0-20AB,U+20AD-20C4,U+2C60-2C7F,U+A720-A7FF;font-display:swap}
+@font-face{font-family:"IBM Plex Mono";font-weight:500;src:url(assets/ibm-plex-mono-500-latin.woff2) format("woff2");font-display:swap}
+@font-face{font-family:"IBM Plex Mono";font-weight:600;src:url(assets/ibm-plex-mono-600-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+2000-206F,U+2212;font-display:swap}
+@font-face{font-family:"IBM Plex Mono";font-weight:600;src:url(assets/ibm-plex-mono-600-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA,U+1E00-1E9F;font-display:swap}
+@font-face{font-family:"Dela Gothic One";src:url(assets/dela-gothic-one-400-osajoukko.woff2) format("woff2");font-display:swap}
+
+:root{
+  --yo:#03120e; --hiili:#1a1d1a; --hiili-2:#212521; --metsa:#26413c;
+  --viiva:#2a312c; --viiva-2:#3d4a43;
+  --kerma:#fffdf7; --sumu:#c3c8b6; --himmea:#9aa58b;
+  --korostus:#839073; --korostus-hi:#a9b597; --korostus-kirkas:#c9d2b8; --salvia-vaalea:#b9c3a6;
+  --keltainen:#ffd84a; --natrium:#fb9f44;
+  --display:"VCR OSD Mono","IBM Plex Mono",ui-monospace,monospace;
+  --body:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --sym:"Segoe UI Symbol","Noto Sans Symbols 2","DejaVu Sans",sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--yo);color:var(--kerma);font:400 15px/1.65 var(--body);-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;
+  background:repeating-linear-gradient(to bottom,rgba(0,0,0,0) 0 2px,rgba(0,0,0,.12) 2px 3px);mix-blend-mode:multiply}
+a{color:var(--korostus-kirkas);text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{color:var(--kerma)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--korostus-hi);outline-offset:2px}
+
+/* Header: photo strip + logo lock-up, the same as the app */
+.hero{position:relative;min-height:340px;display:flex;align-items:flex-end;overflow:hidden;border-bottom:1px solid var(--viiva-2)}
+.hero::before{content:"";position:absolute;inset:0;background:url(assets/hero.webp) center 58%/cover no-repeat;filter:saturate(.65) brightness(.75)}
+.hero::after{content:"";position:absolute;inset:0;background:
+  linear-gradient(90deg,rgba(3,18,14,.96) 0%,rgba(3,18,14,.75) 45%,rgba(3,18,14,.25) 100%),
+  linear-gradient(0deg,var(--yo) 0%,rgba(3,18,14,0) 55%),
+  repeating-linear-gradient(to bottom,rgba(255,255,255,.035) 0 1px,rgba(0,0,0,0) 1px 4px)}
+.hero-in{position:relative;z-index:1;width:100%;max-width:1180px;margin:0 auto;padding:48px 24px 34px}
+.brand{display:flex;align-items:center;gap:18px}
+.kanji{font-family:"Dela Gothic One",serif;font-size:68px;line-height:1;color:var(--korostus-kirkas);transform:skewX(-8deg);
+  text-shadow:0 0 18px rgba(201,210,184,.45)}
+.brand small{display:block;font-family:var(--display);font-size:15px;color:var(--salvia-vaalea);letter-spacing:.04em;text-transform:lowercase}
+.brand h1{margin:2px 0 0;font:400 44px/1 var(--display);font-style:italic;letter-spacing:.04em;text-transform:uppercase;
+  text-shadow:-1.5px 0 rgba(255,80,80,.35),1.5px 0 rgba(80,200,255,.35);padding-bottom:8px;
+  background:linear-gradient(var(--korostus-hi),var(--korostus-hi)) left bottom/100% 2px no-repeat}
+.tag{margin:22px 0 0;max-width:620px;font-size:16px;color:var(--sumu)}
+.tag b{color:var(--kerma);font-weight:500}
+.stamp{position:absolute;right:24px;bottom:22px;z-index:1;font-family:var(--display);font-size:14px;color:var(--korostus-hi);
+  letter-spacing:.06em;text-shadow:0 0 6px rgba(169,181,151,.6)}
+
+/* Top bar */
+.bar{position:sticky;top:0;z-index:20;background:rgba(26,29,26,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--viiva-2)}
+.bar-in{max-width:1180px;margin:0 auto;padding:0 24px;height:56px;display:flex;align-items:center;gap:20px}
+.mini{font:400 15px var(--display);font-style:italic;letter-spacing:.04em;text-transform:uppercase;color:var(--kerma);text-decoration:none;white-space:nowrap}
+.mini span{font-family:"Dela Gothic One",serif;font-style:normal;color:var(--korostus-kirkas);margin-right:8px}
+.bar .doc{font:400 13px var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--himmea)}
+.spacer{flex:1}
+.lang{display:flex;border:1px solid var(--viiva-2)}
+.lang button{all:unset;cursor:pointer;font:400 13px var(--display);letter-spacing:.08em;padding:6px 11px;color:var(--himmea)}
+.lang button[aria-pressed="true"]{background:var(--korostus);color:var(--yo)}
+.lang button:hover{color:var(--kerma)}
+
+/* Layout */
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:230px minmax(0,1fr);gap:48px}
+nav.toc{position:sticky;top:76px;align-self:start;padding:28px 0;max-height:calc(100vh - 80px);overflow:auto}
+nav.toc h2{font:400 12px var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--himmea);margin:0 0 12px}
+nav.toc ol{list-style:none;margin:0;padding:0;border-left:1px solid var(--viiva-2)}
+nav.toc a{display:flex;gap:10px;padding:6px 0 6px 14px;margin-left:-1px;border-left:2px solid transparent;color:var(--sumu);text-decoration:none;font-size:13.5px;line-height:1.35}
+nav.toc a span{font-family:var(--display);color:var(--himmea);min-width:20px}
+nav.toc a:hover{color:var(--kerma)}
+nav.toc a.on{border-left-color:var(--korostus-hi);color:var(--kerma)}
+main{padding:28px 0 80px;min-width:0}
+main p{margin:0 0 14px;color:var(--sumu);max-width:72ch}
+main b{color:var(--kerma);font-weight:600}
+main i{color:var(--kerma);font-style:italic}
+main code{font:500 13px var(--body);background:var(--hiili-2);border:1px solid var(--viiva);padding:1px 5px;color:var(--korostus-kirkas)}
+.mk{font-family:var(--sym);color:var(--sumu)}
+
+section.ch{padding-top:20px;margin-top:22px;border-top:1px solid var(--viiva)}
+section.ch:first-of-type{border-top:0;margin-top:0}
+.band{height:120px;margin:4px 0 18px;background:center 55%/cover no-repeat;position:relative;filter:saturate(.6) brightness(.7);
+  border:1px solid var(--viiva-2)}
+.band::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,18,14,.85),rgba(3,18,14,.2) 70%),
+  repeating-linear-gradient(to bottom,rgba(255,255,255,.04) 0 1px,rgba(0,0,0,0) 1px 4px)}
+h2{font:400 26px/1.2 var(--display);letter-spacing:.04em;text-transform:uppercase;margin:6px 0 16px;display:flex;gap:14px;align-items:baseline}
+h2 .no{font-size:14px;color:var(--yo);background:var(--korostus);padding:3px 7px 2px;letter-spacing:.06em;transform:translateY(-3px)}
+h3{font:400 18px var(--display);letter-spacing:.06em;text-transform:uppercase;margin:30px 0 12px;color:var(--korostus-kirkas)}
+main ol,main ul{margin:0 0 16px;padding-left:22px;max-width:72ch;color:var(--sumu)}
+main li{margin:5px 0}
+main ol li::marker{font-family:var(--display);color:var(--korostus-hi)}
+main ul li::marker{color:var(--korostus)}
+
+figure{margin:18px 0 24px}
+figure a{display:block;border:1px solid var(--viiva-2);background:var(--hiili);position:relative}
+figure a::before,figure a::after{content:"";position:absolute;width:12px;height:12px;border:1px solid var(--korostus-hi);pointer-events:none}
+figure a::before{top:-4px;left:-4px;border-right:0;border-bottom:0}
+figure a::after{bottom:-4px;right:-4px;border-left:0;border-top:0}
+figure img{display:block;width:100%;height:auto}
+figure img[src*="06-candidates"],figure img[src*="07-save"],figure img[src*="31-help"],figure img[src*="03-route"]{max-width:520px}
+figure:has(img[src*="06-candidates"]) a,figure:has(img[src*="07-save"]) a,figure:has(img[src*="31-help"]) a,figure:has(img[src*="03-route"]) a{display:inline-block}
+figcaption{font:400 12px var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--himmea);margin-top:9px}
+
+.tbl{overflow-x:auto;margin:6px 0 20px;max-width:72ch}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th{font:400 12px var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--himmea);text-align:left;padding:8px 12px;border-bottom:1px solid var(--viiva-2)}
+td{padding:9px 12px;border-bottom:1px solid var(--viiva);color:var(--sumu);vertical-align:top}
+td:first-child{color:var(--kerma);white-space:nowrap}
+p.fine{font-size:13px;color:var(--himmea);margin-top:30px;padding-top:16px;border-top:1px solid var(--viiva)}
+
+[data-l]{display:none}
+html[lang="en"] [data-l="en"],html[lang="fi"] [data-l="fi"]{display:revert}
+html[lang="en"] main[data-l="en"],html[lang="fi"] main[data-l="fi"]{display:block}
+
+@media (max-width:900px){
+  .wrap{grid-template-columns:1fr;gap:0}
+  nav.toc{position:static;max-height:none;padding:20px 0 0}
+  .hero{min-height:280px}
+  .brand h1{font-size:32px}.kanji{font-size:52px}
+  .bar .doc{display:none}
+  .stamp{display:none}
+}
+@media (max-width:520px){
+  .wrap,.bar-in,.hero-in{padding-left:16px;padding-right:16px}
+  h2{font-size:21px}
+}
+@media print{
+  body::before,.bar,nav.toc,.band{display:none}
+  .wrap{display:block}
+  body{background:#fff;color:#000}
+}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-in">
+    <div class="brand"><span class="kanji" aria-hidden="true">峠</span><div><small>user guide</small><h1>Project Touge</h1></div></div>
+    <p class="tag"><b>Build, tune and improve your driving.</b><br>One gutter away from being the fastest on the touge.</p>
+  </div>
+  <div class="stamp" aria-hidden="true">v0.9 BETA</div>
+</header>
+<div class="bar"><div class="bar-in">
+  <a class="mini" href="#top"><span>峠</span>Project Touge</a>
+  <span class="doc" data-l="en">User guide</span><span class="doc" data-l="fi">Käyttöopas</span>
+  <span class="spacer"></span>
+  <div class="lang" role="group" aria-label="Language / Kieli">
+    <button type="button" data-set="fi" aria-pressed="false" lang="fi">FI</button>
+    <button type="button" data-set="en" aria-pressed="true" lang="en">EN</button>
+  </div>
+</div></div>
+<div class="wrap" id="top">
+  <nav class="toc" aria-label="Contents">
+    <div data-l="en"><h2>Contents</h2><ol><li><a href="#en-1-before-you-start"><span>01</span>Before you start</a></li><li><a href="#en-2-the-screen-at-a-glance"><span>02</span>The screen at a glance</a></li><li><a href="#en-3-build-get-your-car-in"><span>03</span>Build: get your car in</a></li><li><a href="#en-4-save-and-manage-setups"><span>04</span>Save and manage setups</a></li><li><a href="#en-5-tune-fix-what-you-feel"><span>05</span>Tune: fix what you feel</a></li><li><a href="#en-6-time-drive-time-and-analyse"><span>06</span>Time: drive, time and analyse</a></li><li><a href="#en-7-settings-and-help"><span>07</span>Settings and help</a></li><li><a href="#en-8-your-data"><span>08</span>Your data</a></li><li><a href="#en-9-when-something-is-off"><span>09</span>When something is off</a></li></ol></div>
+    <div data-l="fi"><h2>Sisältö</h2><ol><li><a href="#fi-1-ennen-kuin-aloitat"><span>01</span>Ennen kuin aloitat</a></li><li><a href="#fi-2-näkymä-yhdellä-silmäyksellä"><span>02</span>Näkymä yhdellä silmäyksellä</a></li><li><a href="#fi-3-rakenna-auto-sisään"><span>03</span>Rakenna: auto sisään</a></li><li><a href="#fi-4-setupien-tallennus-ja-hallinta"><span>04</span>Setupien tallennus ja hallinta</a></li><li><a href="#fi-5-säädä-korjaa-se-mitä-tunnet"><span>05</span>Säädä: korjaa se mitä tunnet</a></li><li><a href="#fi-6-ajanotto-aja-kellota-ja-analysoi"><span>06</span>Ajanotto: aja, kellota ja analysoi</a></li><li><a href="#fi-7-asetukset-ja-ohje"><span>07</span>Asetukset ja ohje</a></li><li><a href="#fi-8-datasi"><span>08</span>Datasi</a></li><li><a href="#fi-9-kun-jokin-ei-täsmää"><span>09</span>Kun jokin ei täsmää</a></li></ol></div>
+  </nav>
+  <div>
+    <main data-l="en" lang="en">
+<p>This guide walks through Project Touge page by page: how to get your car in, how to tune it from what you feel on the road, and how to time and analyse your runs. Every screenshot is taken from Touge itself; your numbers will differ.</p>
+
+<p>The everyday loop is short: <b>Build</b> the car once, <b>Tune</b> one thing, <b>Time</b> a few runs, look at <b>Analyse</b>, and go back to Tune with what the runs tell you.</p>
+<section class="ch" id="en-1-before-you-start">
+<h2><span class="no">01</span>Before you start</h2>
+<ol><li>Unzip the <b>Project Touge</b> folder anywhere you like and keep it together.</li><li>Double-click <b>Project Touge.exe</b>. Touge opens in its own window; close the window to quit.</li><li>Nothing needs installing. Windows 10 or 11 with Microsoft Edge WebView2 is enough. If SmartScreen warns about an unknown publisher, choose <b>More info → Run anyway</b>.</li></ol>
+<p>For timing, run CarX Street borderless or full screen so the whole HUD is visible. Touge reads the speedometer, gear and minimap from the screen, the same way you see them. It never reads, changes or injects anything into the game.</p>
+</section>
+<section class="ch" id="en-2-the-screen-at-a-glance">
+<h2><span class="no">02</span>The screen at a glance</h2>
+<figure><a href="img/en/01-overview.webp" target="_blank" rel="noopener"><img src="img/en/01-overview.webp" alt="Project Touge on first start" loading="lazy"></a><figcaption>Project Touge on first start</figcaption></figure>
+<ul><li><b>Tabs 01 Build, 02 Tune, 03 Time</b> follow the order you work in. Keys <b>1</b>, <b>2</b> and <b>3</b> switch between them.</li><li><b>Setup</b> (top right) shows the open setup. A green dot means saved, a yellow dot means unsaved changes. Click it for Save, Save as and All setups.</li><li><b>?</b> opens help with the shortcuts and the tuning guides. The <b>gear</b> opens Settings. <b>FI / EN</b> switches the language.</li><li>On a first start, a <b>Getting started</b> strip shows the three steps until you hide it.</li></ul>
+<p>Two marks appear everywhere and are worth learning first:</p>
+<div class="tbl"><table><thead><tr><th>Mark</th><th>Meaning</th></tr></thead><tbody><tr><td><span class="mk">◐</span></td><td>An estimate that has not been checked in the game yet. Treat it as a direction, not a promise.</td></tr><tr><td>Yellow value</td><td>Changed and not yet in your game. It turns normal once you have moved it into the game.</td></tr></tbody></table></div>
+<p>Values without a mark come from the game's own data. Names, order and units follow the game's Part Setup menu, so you can type them straight in.</p>
+</section>
+<section class="ch" id="en-3-build-get-your-car-in">
+<div class="band" style="background-image:url(assets/band-build.webp)" aria-hidden="true"></div>
+<h2><span class="no">03</span>Build: get your car in</h2>
+<p>Most of the time your car already exists in the game. Then choose <b>Enter from the game</b>. If you want Touge to suggest a whole build for a class, choose <b>Build with the model</b>.</p>
+<h3 id="en-31-car-class-and-route">3.1 Car, class and route</h3>
+<p>Click the car to search the full car list, and pick the class and route the same way. The power-to-weight bar above shows how close you are to the class limit.</p>
+<figure><a href="img/en/02-car-picker.webp" target="_blank" rel="noopener"><img src="img/en/02-car-picker.webp" alt="Car search" loading="lazy"></a><figcaption>Car search</figcaption></figure>
+<figure><a href="img/en/03-route-picker.webp" target="_blank" rel="noopener"><img src="img/en/03-route-picker.webp" alt="Route list" loading="lazy"></a><figcaption>Route list</figcaption></figure>
+<p>The route list shows the verified game routes first plus any routes of your own. Pick the route you actually drive: the model times, gearing checks and the Time tab all follow it.</p>
+<h3 id="en-32-enter-from-the-game">3.2 Enter from the game</h3>
+<figure><a href="img/en/04-enter-from-game.webp" target="_blank" rel="noopener"><img src="img/en/04-enter-from-game.webp" alt="Enter from the game" loading="lazy"></a><figcaption>Enter from the game</figcaption></figure>
+<ol><li>In CarX Street, open the car's <b>Part Setup</b> and take a screenshot of each screen: engine, gearbox, body and aero, suspension, tyres and Component features.</li><li>Paste them with <b>Ctrl+V</b>, drop them on the box, or use <b>Choose files</b>. Images are read on your computer and not stored. Rows read from the images replace the base values; the base is your previous setup for this car if you have one.</li><li>Check <b>Weight</b>, <b>Weight Distribution in Front</b> and <b>Center of Mass Height</b> against the game. These three readings decide how the car is modelled, so it pays to copy them exactly.</li><li>The <b>Check</b> row lists anything Touge could not read or is unsure of, in game order. You can also set things by hand: engine parts are one tap each on the tier row (S Stock, St Street, Sp Sport, R Racing, E Elite, U Ultimate, P Prototype), and the gearbox, body kit, suspension and tyres have their own sections below.</li><li>Save the setup (<b>Ctrl+S</b>).</li></ol>
+<p>From now on Tune works on <i>your</i> build, not on a model car.</p>
+<h3 id="en-33-build-with-the-model">3.3 Build with the model</h3>
+<p>Use this when you want a starting point for a new car or class.</p>
+<p><b>Step 1: car, class and route.</b> Pick the car, a preset, the class and the route. <b>By area</b> lets you choose a chassis, diff and gearing profile separately. <i>model</i> means Touge's own calculation; the presets are taste profiles on top of it. Press <b>Continue</b>.</p>
+<p><b>Step 2: what the tuner may change.</b></p>
+<figure><a href="img/en/05-build-model.webp" target="_blank" rel="noopener"><img src="img/en/05-build-model.webp" alt="Build with the model: modules and result" loading="lazy"></a><figcaption>Build with the model: modules and result</figcaption></figure>
+<ul><li><b>Tuner picks</b> searches parts and settings up to the class limit. <b>Improve</b> keeps your current build and shows the effect of each change within seconds.</li><li>Each module card (Car, Engine, Drivetrain, Aero and body, Suspension, Tyres) shows what is in the build now. Switch <b>May change</b> on for the modules the tuner is allowed to touch, or tick <b>All</b>.</li></ul>
+<p><b>Step 3: Calculate</b> (key <b>L</b>). The calculation takes from a few seconds to about half a minute.</p>
+<p>The <b>Result</b> panel on the right shows:</p>
+<ul><li><b>Model reference time</b>: the calculated estimate for this build on the chosen route. Real times live on the Time tab.</li><li><b>before / after</b> and what changed, for example a gearbox swap.</li><li><b>Timeline</b>: every calculation is kept, click one to go back to it.</li><li><b>Set as reference</b> makes this build the one you compare against; <b>Undo tuner picks</b> returns to where you were.</li><li>Mass, power, 0–100 km/h and weight distribution.</li></ul>
+<figure><a href="img/en/06-candidates.webp" target="_blank" rel="noopener"><img src="img/en/06-candidates.webp" alt="Candidates" loading="lazy"></a><figcaption>Candidates</figcaption></figure>
+<p>Under the result, <b>Candidates</b> lists the engine and gearbox combinations by time, best first. <b>Select</b> swaps to another one if you prefer it. <b>Changes to try</b> lists single changes and their effect.</p>
+</section>
+<section class="ch" id="en-4-save-and-manage-setups">
+<h2><span class="no">04</span>Save and manage setups</h2>
+<p>Press <b>Ctrl+S</b> (or <b>Save</b> in the top bar). The first save asks for a name and suggests car, class and route.</p>
+<figure><a href="img/en/07-save-dialog.webp" target="_blank" rel="noopener"><img src="img/en/07-save-dialog.webp" alt="Save as" loading="lazy"></a><figcaption>Save as</figcaption></figure>
+<p><b>Ctrl+O</b> opens <b>All setups</b>:</p>
+<figure><a href="img/en/08-all-setups.webp" target="_blank" rel="noopener"><img src="img/en/08-all-setups.webp" alt="All setups" loading="lazy"></a><figcaption>All setups</figcaption></figure>
+<ul><li>Search by name or car, filter by car on the left, sort by any column.</li><li>The panel on the right shows class, route, model time and your best run, and lets you <b>Open now</b>, <b>Rename</b> (F2), <b>Duplicate</b> or <b>Delete</b> (Del). Deleted setups go to <b>Trash</b> first.</li><li><b>Import…</b>, <b>Paste text</b>, <b>Export selected</b> and <b>Export all</b> move setups between computers or to a friend.</li></ul>
+<p>Setups are saved in the Project Touge folder as files, with dated backup copies.</p>
+</section>
+<section class="ch" id="en-5-tune-fix-what-you-feel">
+<div class="band" style="background-image:url(assets/band-tune.webp)" aria-hidden="true"></div>
+<h2><span class="no">05</span>Tune: fix what you feel</h2>
+<p>The Tune tab has four views in the order you usually need them: <b>Symptom</b>, <b>Adjust</b>, <b>Check</b> and <b>To game</b>. The view level switch next to them (<b>Settings only</b>, <b>Simple</b>, <b>Advanced</b>) decides how much detail you see. Simple is a good start.</p>
+<p>The route and the <b>model reference time</b> stay in the top right, so you see the effect of every change at once.</p>
+<h3 id="en-51-symptom">5.1 Symptom</h3>
+<figure><a href="img/en/10-symptom.webp" target="_blank" rel="noopener"><img src="img/en/10-symptom.webp" alt="Symptom" loading="lazy"></a><figcaption>Symptom</figcaption></figure>
+<ol><li>Pick where in the corner the car misbehaves: <b>Braking</b>, <b>Turn-in</b>, <b>Mid corner</b> or <b>Exit</b>.</li><li>Pick the symptom that matches what you feel, for example <i>Trail braking – understeer</i>. The corner diagram shows where it happens.</li><li><b>What changes</b> lists the settings Touge would move, each with a one-line reason and old → new value. The tuning guide above it says what to try first.</li><li><b>Apply</b> takes all of them. Tick <b>One at a time</b> to take only the biggest change, then time a run before the next one. <b>Cancel</b> leaves the setup as it was.</li></ol>
+<p><b>Whole car</b> covers symptoms that are not tied to one corner phase: overall understeer or oversteer, bouncing over bumps, kerbs and gutters, and a limiter or no acceleration on the straights.</p>
+<p><b>Advice for this build</b> points out settings that are worth a look on this particular build, with <b>Lower</b> and <b>Higher</b> buttons.</p>
+<p>The effects are estimates (<span class="mk">◐</span>). One change and one timed run at a time tells you more than five changes at once.</p>
+<h3 id="en-52-adjust">5.2 Adjust</h3>
+<p>Adjust shows every setting with a slider. It has four folders: <b>Parts</b>, <b>Chassis</b>, <b>Gearing</b> and <b>Other</b>.</p>
+<p><b>Chassis</b></p>
+<figure><a href="img/en/11-adjust-chassis.webp" target="_blank" rel="noopener"><img src="img/en/11-adjust-chassis.webp" alt="Adjust: Chassis" loading="lazy"></a><figcaption>Adjust: Chassis</figcaption></figure>
+<ul><li><b>A · Settings</b>: weight, front weight, spring length, springs, anti-roll bars, dampers and camber &amp; toe, in game order. Open <b>How this works</b> under a group for the mechanism behind it.</li><li><b>C · Balance &amp; KPI</b>: drag the bars to move the front/rear split while keeping the total stiffness. The dampers' ratio, roll gradient and ride frequency update as you go.</li><li><b>Overall chassis stiffness</b>: one control for softer or stiffer as a whole.</li><li><b>Save as preset</b> keeps this chassis as a preset you can pick again later. <b>Read from image</b> fills the values from a screenshot.</li></ul>
+<p><b>Gearing</b></p>
+<figure><a href="img/en/12-adjust-gearing.webp" target="_blank" rel="noopener"><img src="img/en/12-adjust-gearing.webp" alt="Adjust: Gearing" loading="lazy"></a><figcaption>Adjust: Gearing</figcaption></figure>
+<ul><li>The <b>sawtooth</b> shows each gear's rpm against speed. Green dots are shifts that land in the power band.</li><li>Change the <b>final drive</b> and <b>shift time</b>; top speed, 0–100 km/h and the rpm drops update live.</li><li>The big numbers under the chart are the game's gear ratios.</li><li>The <b>diff</b> sits below: lock on acceleration, lock on deceleration and preload. The wheel diagram shows how torque is split.</li></ul>
+<p><b>Other</b></p>
+<figure><a href="img/en/13-adjust-other.webp" target="_blank" rel="noopener"><img src="img/en/13-adjust-other.webp" alt="Adjust: Other" loading="lazy"></a><figcaption>Adjust: Other</figcaption></figure>
+<p>Steering (caster, Ackermann, steering angle), brakes, spacers, tyre sizes and your game readings for weight. The car diagram shows track, wheelbase and how much room the tyre has inside the fender, so you can stay within the usual players' rule of no tyres poking out.</p>
+<p>Press <b>Done</b> when you are happy; it takes you on to saving.</p>
+<h3 id="en-53-check">5.3 Check</h3>
+<figure><a href="img/en/14-check.webp" target="_blank" rel="noopener"><img src="img/en/14-check.webp" alt="Check" loading="lazy"></a><figcaption>Check</figcaption></figure>
+<p>Check reads through the whole build and explains it:</p>
+<ul><li><b>Gearing</b>: end speed in each gear at the limiter and whether the top gear is long enough for the route. Enter your own top speed on the route if you know it. <b>Calculate suggestions</b> tries full gear sets that use every gear.</li><li><b>Dampers</b>: damping ratios front and rear and what they mean for turn-in and settling. <b>If you feel this</b> gives a ready fix with <b>Apply</b> and <b>Show setting</b>.</li><li><b>Chassis and diff</b>: roll split, total stiffness and the diff settings, with the direction each one pushes the car.</li><li><b>Engine</b>: search the engine sliders, or let the engine parts change too, within the class.</li></ul>
+<h3 id="en-54-to-game">5.4 To game</h3>
+<figure><a href="img/en/15-to-game.webp" target="_blank" rel="noopener"><img src="img/en/15-to-game.webp" alt="To game" loading="lazy"></a><figcaption>To game</figcaption></figure>
+<p>To game is the list you follow with the game open next to Touge.</p>
+<ol><li>The four pages follow the game's menus: <b>Car &amp; engine</b>, <b>Transmission</b>, <b>Suspension</b>, <b>Wheels &amp; aero</b>.</li><li>Every row shows the value to set. The <b>Next</b> card on the right shows the next one; set it in the game and press <b>Mark as moved</b>. A section's <b>✓ Section in game</b> marks all of it at once.</li><li>Keep <b>Only not moved</b> on so the list shrinks as you go. <b>Next: Transmission</b> moves to the next page.</li><li><b>Check in game</b> rows (weight, front weight) are readings: type the game's number into Touge so the model matches your car.</li></ol>
+<p><b>Share build as image</b> makes a picture of the build for posting. <b>Read from image</b> reads a Part Setup screenshot back in. The clipboard button copies the list as text.</p>
+</section>
+<section class="ch" id="en-6-time-drive-time-and-analyse">
+<div class="band" style="background-image:url(assets/band-time.webp)" aria-hidden="true"></div>
+<h2><span class="no">06</span>Time: drive, time and analyse</h2>
+<h3 id="en-61-drive">6.1 Drive</h3>
+<figure><a href="img/en/20-drive.webp" target="_blank" rel="noopener"><img src="img/en/20-drive.webp" alt="Drive" loading="lazy"></a><figcaption>Drive</figcaption></figure>
+<ol><li>Pick the route on the right. The map and splits follow it.</li><li>Open CarX Street and drive to the start. The speedometer and minimap must be on screen.</li><li>Stop at the start and press <b>F9</b> (or your controller button). The timer starts when the car moves; auto splits mark the sections.</li><li><b>F10</b> splits by hand, <b>F11</b> finishes. <b>Space</b> runs the in-app stopwatch when the game timer is not running.</li></ol>
+<p>The splits on the right of the LCD show your comparison time for each section once you have a run to compare with.</p>
+<p><b>Settings</b> (top right of the Time tab) holds the timing options:</p>
+<figure><a href="img/en/21-timing-settings.webp" target="_blank" rel="noopener"><img src="img/en/21-timing-settings.webp" alt="Timing settings" loading="lazy"></a><figcaption>Timing settings</figcaption></figure>
+<ul><li><b>Auto splits</b> on or off, and <b>Mute timer</b> when you just want to cruise.</li><li><b>Controller</b>: press any button on the pad, then <b>Learn start / split / undo button</b>. They work while the game has focus.</li><li><b>Driving view</b> shows the timer large; <b>Pop out timer</b> puts it in its own small window.</li><li><b>Import</b> brings in an older timer file or LiveSplit splits, or restores runs from the backup. <b>Enter a time by hand</b> is there for runs timed elsewhere.</li></ul>
+<h3 id="en-62-leaderboard">6.2 Leaderboard</h3>
+<figure><a href="img/en/22-leaderboard.webp" target="_blank" rel="noopener"><img src="img/en/22-leaderboard.webp" alt="Leaderboard" loading="lazy"></a><figcaption>Leaderboard</figcaption></figure>
+<p>Below the timer: record, median, the average of your last five and your progress. <b>Top 10</b> lists runs with car and setup, and <b>Progress in run order</b> shows how your best has moved over time. <b>Cars and setups</b> compares them side by side.</p>
+<h3 id="en-63-analyse">6.3 Analyse</h3>
+<p>After a finished run, open <b>Analyse</b>. It compares the run against your own record and median, corner by corner.</p>
+<figure><a href="img/en/23-analyse.webp" target="_blank" rel="noopener"><img src="img/en/23-analyse.webp" alt="Analyse" loading="lazy"></a><figcaption>Analyse</figcaption></figure>
+<ul><li><b>Car</b> filters runs by car.</li><li><b>Latest run</b>: the time and its gap to your record and median. The map colours each corner green (faster) or red (slower) than your median, and the <b>corner strip</b> below does the same as bars.</li><li><b>Largest gaps to the median</b> names the corners where this run lost the most, and why: braking, entry, apex or exit.</li><li><b>Next</b> suggests one setup change when the same pattern repeats across your runs. <b>Open Tune</b> takes you straight there.</li><li><b>Target</b> shows what is left on the table: your theoretical best from your best corners combined.</li></ul>
+<figure><a href="img/en/24-practice.webp" target="_blank" rel="noopener"><img src="img/en/24-practice.webp" alt="Practice list" loading="lazy"></a><figcaption>Practice list</figcaption></figure>
+<p>The <b>Practice list</b> ranks the corners where your median run loses most to your best. Each one shows where the time goes (braking and entry, apex, or exit) and a close-up of throttle, brake and steering against your record. Mark a corner <b>Practised</b> when you have worked on it.</p>
+<p><b>Speed on route</b> and <b>Run by corner</b> open the full speed trace and the per-corner table for any run.</p>
+</section>
+<section class="ch" id="en-7-settings-and-help">
+<h2><span class="no">07</span>Settings and help</h2>
+<figure><a href="img/en/30-settings.webp" target="_blank" rel="noopener"><img src="img/en/30-settings.webp" alt="Settings" loading="lazy"></a><figcaption>Settings</figcaption></figure>
+<ul><li><b>General</b>: language, text size, view level for Tune and Analyse, and animations. Panels can be moved by dragging the handle in their header.</li><li><b>Data and backups</b>: where your data is and a button to open the folder.</li><li><b>Timing</b>: game timer and screen reader options.</li><li><b>Start and shut down</b>: shut down Touge and the game timer together.</li><li><b>About</b>: version and licences.</li></ul>
+<figure><a href="img/en/31-help.webp" target="_blank" rel="noopener"><img src="img/en/31-help.webp" alt="Help" loading="lazy"></a><figcaption>Help</figcaption></figure>
+<p><b>?</b> or <b>F1</b> opens help: the three steps, the tuning guides (anti-roll bars, springs, dampers, tyres, camber and toe, differential, body dimensions, the whole chassis) and the keyboard shortcuts.</p>
+<div class="tbl"><table><thead><tr><th>Key</th><th>Does</th></tr></thead><tbody><tr><td>1 · 2 · 3</td><td>Build, Tune, Time</td></tr><tr><td>L</td><td>Calculate (Build)</td></tr><tr><td>Ctrl+S</td><td>Save setup</td></tr><tr><td>Ctrl+Shift+S</td><td>Save as</td></tr><tr><td>Ctrl+O</td><td>All setups</td></tr><tr><td>F9 · F10 · F11</td><td>Game timer: start, split, finish</td></tr><tr><td>F1</td><td>Help</td></tr></tbody></table></div>
+</section>
+<section class="ch" id="en-8-your-data">
+<h2><span class="no">08</span>Your data</h2>
+<p>Everything you save stays inside the Project Touge folder:</p>
+<div class="tbl"><table><thead><tr><th>Folder</th><th>Contents</th></tr></thead><tbody><tr><td><code>Tunes</code></td><td>setups, presets, notes, route calibrations and settings</td></tr><tr><td><code>Runs</code></td><td>timed runs and their telemetry</td></tr><tr><td><code>Routes</code></td><td>your own routes</td></tr><tr><td><code>Logs</code></td><td>program logs; attach these when reporting a problem</td></tr></tbody></table></div>
+<p><b>Update</b>: replace <code>App</code> and <code>Project Touge.exe</code>, keep the data folders. <b>Move</b>: copy the whole folder. <b>Uninstall</b>: delete the folder.</p>
+</section>
+<section class="ch" id="en-9-when-something-is-off">
+<h2><span class="no">09</span>When something is off</h2>
+<ul><li><b>Game timer not responding</b>: start Project Touge again; the timer starts with it. Check that no other telemetry program is using the same port.</li><li><b>No speed or minimap</b>: run the game borderless or full screen with the HUD visible. Touge finds the HUD on the first run; tested resolutions are 3440×1440, 2560×1440, 2560×1080, 1920×1440 and 1920×1080.</li><li><b>A value does not match the game</b>: check for <span class="mk">◐</span> first. Type the game's own reading into the <b>Check in game</b> rows, and report the difference with your Touge version and the files from <code>Logs</code>.</li><li><b>Lost a setup</b>: look in <b>All setups → Trash</b>, or restore from the dated copies in <code>Tunes</code>.</li></ul>
+<p>Found a bug or a value that is off in game? Open an <a href="https://github.com/aaturaty/project-touge/issues" target="_blank" rel="noopener">issue</a> with your Touge version (shown in the header), what you did, and the files from <code>Logs</code>.</p>
+<p class="fine"><i>Project Touge is an unofficial fan-made tool. It is not a CarX Technologies product and is not affiliated with or endorsed by them.</i></p>
+</section>
+    </main>
+    <main data-l="fi" lang="fi">
+<p>Tämä opas käy Project Tougen läpi sivu kerrallaan: miten autosi saadaan sisään, miten sitä säädetään sen mukaan mitä tunnet tiellä ja miten ajot kellotetaan ja analysoidaan. Kuvat on otettu suoraan Tougesta suomenkielisellä näkymällä; omat lukusi ovat erilaiset.</p>
+
+<p>Arjen kierros on lyhyt: <b>Rakenna</b> auto kerran, <b>Säädä</b> yhtä asiaa, aja muutama ajo <b>Ajanotossa</b>, katso <b>Analysoi</b> ja palaa Säädä-välilehdelle sen kanssa, mitä ajot kertovat.</p>
+<p>Kieli vaihtuu yläpalkin <b>FI / EN</b> -kytkimestä. Pelin omat termit (esim. Part Setup, Weight Distribution in Front, osatasot Stock … Prototype) pysyvät englanniksi, jotta ne löytyvät pelistä samoilla nimillä.</p>
+<section class="ch" id="fi-1-ennen-kuin-aloitat">
+<h2><span class="no">01</span>Ennen kuin aloitat</h2>
+<ol><li>Pura <b>Project Touge</b> -kansio haluamaasi paikkaan ja pidä se kokonaisena.</li><li>Kaksoisnapsauta <b>Project Touge.exe</b>. Touge avautuu omaan ikkunaansa; sulje ikkuna lopettaaksesi.</li><li>Mitään ei tarvitse asentaa. Windows 10 tai 11 ja Microsoft Edge WebView2 riittävät. Jos SmartScreen varoittaa tuntemattomasta julkaisijasta, valitse <b>Lisätietoja → Suorita silti</b>.</li></ol>
+<p>Ajanottoa varten aja CarX Streetiä reunattomassa ikkunassa tai koko näytöllä niin, että koko HUD näkyy. Touge lukee nopeusmittarin, vaihteen ja minikartan näytöltä samalla tavalla kuin sinä ne näet. Se ei lue, muuta eikä syötä mitään peliin.</p>
+</section>
+<section class="ch" id="fi-2-näkymä-yhdellä-silmäyksellä">
+<h2><span class="no">02</span>Näkymä yhdellä silmäyksellä</h2>
+<figure><a href="img/fi/01-overview.webp" target="_blank" rel="noopener"><img src="img/fi/01-overview.webp" alt="Project Touge ensimmäisellä käynnistyksellä" loading="lazy"></a><figcaption>Project Touge ensimmäisellä käynnistyksellä</figcaption></figure>
+<ul><li><b>Välilehdet 01 Rakenna, 02 Säädä, 03 Ajanotto</b> ovat työjärjestyksessä. Näppäimet <b>1</b>, <b>2</b> ja <b>3</b> vaihtavat niiden välillä.</li><li><b>Setup</b> (oikealla ylhäällä) näyttää avoimen setupin. Vihreä piste = tallennettu, keltainen = tallentamattomia muutoksia. Napsauttamalla saat Tallenna, Tallenna nimellä ja Kaikki setupit.</li><li><b>?</b> avaa ohjeen pikanäppäimineen ja säätöoppaineen. <b>Ratas</b> avaa asetukset. <b>FI / EN</b> vaihtaa kielen.</li><li>Ensimmäisellä käynnistyksellä <b>Näin aloitat</b> -kaista näyttää kolme vaihetta, kunnes piilotat sen.</li></ul>
+<p>Kaksi merkkiä toistuu kaikkialla, ja ne kannattaa oppia ensin:</p>
+<div class="tbl"><table><thead><tr><th>Merkki</th><th>Tarkoittaa</th></tr></thead><tbody><tr><td><span class="mk">◐</span></td><td>Arvio, jota ei ole vielä todennettu pelissä. Pidä sitä suuntana, ei lupauksena.</td></tr><tr><td>Keltainen luku</td><td>Muutettu, ei vielä pelissäsi. Muuttuu tavalliseksi, kun olet siirtänyt sen peliin.</td></tr></tbody></table></div>
+<p>Merkitön luku tulee pelin omasta datasta. Nimet, järjestys ja yksiköt seuraavat pelin Part Setup -valikkoa, joten ne voi kirjoittaa peliin sellaisinaan.</p>
+</section>
+<section class="ch" id="fi-3-rakenna-auto-sisään">
+<div class="band" style="background-image:url(assets/band-build.webp)" aria-hidden="true"></div>
+<h2><span class="no">03</span>Rakenna: auto sisään</h2>
+<p>Useimmiten autosi on jo rakennettu pelissä. Valitse silloin <b>Syötä pelistä</b>. Jos haluat Tougen ehdottavan koko buildin luokkaan, valitse <b>Rakenna mallilla</b>.</p>
+<h3 id="fi-31-auto-luokka-ja-reitti">3.1 Auto, luokka ja reitti</h3>
+<p>Napsauta autoa ja hae koko autolistasta; luokka ja reitti valitaan samalla tavalla. Yläpuolen teho-paino-palkki näyttää, kuinka lähellä luokan rajaa olet.</p>
+<figure><a href="img/fi/02-car-picker.webp" target="_blank" rel="noopener"><img src="img/fi/02-car-picker.webp" alt="Auton haku" loading="lazy"></a><figcaption>Auton haku</figcaption></figure>
+<figure><a href="img/fi/03-route-picker.webp" target="_blank" rel="noopener"><img src="img/fi/03-route-picker.webp" alt="Reittilista" loading="lazy"></a><figcaption>Reittilista</figcaption></figure>
+<p>Reittilistassa ovat ensin pelissä todennetut reitit ja omat reittisi. Valitse se reitti, jota oikeasti ajat: mallin ajat, välitysten tarkistus ja Ajanotto-välilehti seuraavat sitä.</p>
+<h3 id="fi-32-syötä-pelistä">3.2 Syötä pelistä</h3>
+<figure><a href="img/fi/04-enter-from-game.webp" target="_blank" rel="noopener"><img src="img/fi/04-enter-from-game.webp" alt="Syötä pelistä" loading="lazy"></a><figcaption>Syötä pelistä</figcaption></figure>
+<ol><li>Avaa CarX Streetissä auton <b>Part Setup</b> ja ota kuvakaappaus jokaisesta sivusta: moottori, vaihteisto, kori ja aero, jousitus, renkaat ja Component features.</li><li>Liitä kuvat <b>Ctrl+V</b>:llä, pudota ne laatikkoon tai käytä <b>Valitse tiedostot</b>. Kuvat luetaan omalla koneellasi eikä niitä tallenneta. Kuvista luetut rivit korvaavat pohja-arvot; pohjana on tämän auton edellinen setup, jos sellainen on.</li><li>Tarkista <b>Weight</b>, <b>Weight Distribution in Front</b> ja <b>Center of Mass Height</b> pelistä. Nämä kolme lukemaa ratkaisevat, miten auto mallinnetaan, joten ne kannattaa kopioida tarkasti.</li><li><b>Tarkista</b>-rivi listaa pelin järjestyksessä kaiken, mitä Touge ei saanut luettua tai mistä se on epävarma. Voit asettaa asioita myös käsin: moottorin osat yhdellä napautuksella tasoriviltä (S Stock, St Street, Sp Sport, R Racing, E Elite, U Ultimate, P Prototype), ja vaihteistolla, korilla, jousituksella ja renkailla on omat osionsa alempana.</li><li>Tallenna setup (<b>Ctrl+S</b>).</li></ol>
+<p>Tästä eteenpäin Säädä-välilehti käsittelee <i>sinun</i> buildiasi, ei malliautoa.</p>
+<h3 id="fi-33-rakenna-mallilla">3.3 Rakenna mallilla</h3>
+<p>Käytä tätä, kun haluat lähtöpisteen uudelle autolle tai luokalle.</p>
+<p><b>Vaihe 1: auto, luokka ja reitti.</b> Valitse auto, preset, luokka ja reitti. <b>Alueittain</b> valitsee alustan, diffin ja välitysten profiilin erikseen. <i>model</i> tarkoittaa Tougen omaa laskentaa; presetit ovat makuprofiileja sen päällä. Paina <b>Jatka</b>.</p>
+<p><b>Vaihe 2: mitä laskuri saa muuttaa.</b></p>
+<figure><a href="img/fi/05-build-model.webp" target="_blank" rel="noopener"><img src="img/fi/05-build-model.webp" alt="Rakenna mallilla: moduulit ja tulos" loading="lazy"></a><figcaption>Rakenna mallilla: moduulit ja tulos</figcaption></figure>
+<ul><li><b>Laskuri valitsee</b> hakee osat ja säädöt luokan rajaan asti. <b>Paranna</b> pitää nykyisen buildisi ja näyttää jokaisen muutoksen vaikutuksen sekunneissa.</li><li>Jokainen moduulikortti (Auto, Moottori, Voimansiirto, Aero ja kori, Jousitus, Renkaat) näyttää, mitä buildissa on nyt. Kytke <b>Saa muuttaa</b> niihin moduuleihin, joihin laskuri saa koskea, tai ruksaa <b>Kaikki</b>.</li></ul>
+<p><b>Vaihe 3: Laske</b> (näppäin <b>L</b>). Laskenta kestää muutamasta sekunnista noin puoleen minuuttiin.</p>
+<p>Oikean reunan <b>Tulos</b>-paneeli näyttää:</p>
+<ul><li><b>Mallin vertailuaika</b>: laskettu arvio tämän buildin ajasta valitulla reitillä. Oikeat ajat ovat Ajanotto-välilehdellä.</li><li><b>ennen / jälkeen</b> ja mikä muuttui, esimerkiksi vaihteiston vaihto.</li><li><b>Aikajana</b>: jokainen laskenta säilyy, napsauta palataksesi siihen.</li><li><b>Aseta vertailuksi</b> tekee tästä buildista vertailukohdan; <b>Peru laskurin valinnat</b> palaa lähtötilaan.</li><li>Massa, teho, 0–100 km/h ja painojakauma.</li></ul>
+<figure><a href="img/fi/06-candidates.webp" target="_blank" rel="noopener"><img src="img/fi/06-candidates.webp" alt="Ehdokkaat" loading="lazy"></a><figcaption>Ehdokkaat</figcaption></figure>
+<p>Tuloksen alla <b>Ehdokkaat</b> listaa moottori- ja vaihteistoyhdistelmät ajan mukaan, paras ensin. <b>Valitse</b> vaihtaa toiseen, jos pidät siitä enemmän. <b>Kokeile muutoksia</b> listaa yksittäiset muutokset ja niiden vaikutuksen.</p>
+</section>
+<section class="ch" id="fi-4-setupien-tallennus-ja-hallinta">
+<h2><span class="no">04</span>Setupien tallennus ja hallinta</h2>
+<p>Paina <b>Ctrl+S</b> (tai yläpalkin <b>Tallenna</b>). Ensimmäinen tallennus kysyy nimen ja ehdottaa autoa, luokkaa ja reittiä.</p>
+<figure><a href="img/fi/07-save-dialog.webp" target="_blank" rel="noopener"><img src="img/fi/07-save-dialog.webp" alt="Tallenna nimellä" loading="lazy"></a><figcaption>Tallenna nimellä</figcaption></figure>
+<p><b>Ctrl+O</b> avaa <b>Kaikki setupit</b>:</p>
+<figure><a href="img/fi/08-all-setups.webp" target="_blank" rel="noopener"><img src="img/fi/08-all-setups.webp" alt="Kaikki setupit" loading="lazy"></a><figcaption>Kaikki setupit</figcaption></figure>
+<ul><li>Hae nimellä tai autolla, rajaa autolla vasemmalta ja lajittele minkä tahansa sarakkeen mukaan.</li><li>Oikea paneeli näyttää luokan, reitin, mallin ajan ja parhaan ajosi. Siitä voit avata setupin, <b>Nimetä uudelleen</b> (F2), <b>Monistaa</b> tai <b>Poistaa</b> (Del). Poistetut menevät ensin <b>Roskakoriin</b>.</li><li><b>Tuo…</b>, <b>Liitä teksti</b>, <b>Vie valitut</b> ja <b>Vie kaikki</b> siirtävät setupeja koneelta toiselle tai kaverille.</li></ul>
+<p>Setupit tallentuvat Project Touge -kansioon tiedostoina, ja niistä jää päivätyt varmuuskopiot.</p>
+</section>
+<section class="ch" id="fi-5-säädä-korjaa-se-mitä-tunnet">
+<div class="band" style="background-image:url(assets/band-tune.webp)" aria-hidden="true"></div>
+<h2><span class="no">05</span>Säädä: korjaa se mitä tunnet</h2>
+<p>Säädä-välilehdellä on neljä näkymää siinä järjestyksessä, jossa niitä yleensä tarvitsee: <b>Oire</b>, <b>Säädä</b>, <b>Tarkista</b> ja <b>Peliin</b>. Niiden vieressä oleva näkymätaso (<b>Vain säädöt</b>, <b>Simple</b>, <b>Advanced</b>) päättää, kuinka paljon yksityiskohtia näet. Simple on hyvä alku.</p>
+<p>Reitti ja <b>mallin vertailuaika</b> pysyvät oikealla ylhäällä, joten näet jokaisen muutoksen vaikutuksen heti.</p>
+<h3 id="fi-51-oire">5.1 Oire</h3>
+<figure><a href="img/fi/10-symptom.webp" target="_blank" rel="noopener"><img src="img/fi/10-symptom.webp" alt="Oire" loading="lazy"></a><figcaption>Oire</figcaption></figure>
+<ol><li>Valitse, missä kohtaa mutkaa auto käyttäytyy väärin: <b>Jarrutus</b>, <b>Sisääntulo</b>, <b>Keskikohta</b> vai <b>Ulostulo</b>.</li><li>Valitse oire, joka vastaa tuntumaa, esimerkiksi <i>Jarrutus mutkaan – aliohjaa</i>. Mutkakuva näyttää, missä se tapahtuu.</li><li><b>Mitä muuttuu</b> listaa säädöt, joita Touge siirtäisi, jokaisella yhden rivin syy ja vanha → uusi arvo. Säätöopas sen yläpuolella kertoo, mitä kokeilla ensin.</li><li><b>Käytä</b> ottaa ne kaikki. Ruksaa <b>Yksi kerrallaan</b>, niin otat vain suurimman muutoksen ja voit kellottaa ajon ennen seuraavaa. <b>Peruuta</b> jättää setupin ennalleen.</li></ol>
+<p><b>Koko auto</b> kattaa oireet, jotka eivät liity yhteen mutkan vaiheeseen: yleinen ali- tai yliohjaus, pomppiminen kuopissa, reunakivissä ja guttereissa sekä rajoitin tai kiihtyvyyden puute suorilla.</p>
+<p><b>Neuvot tälle buildille</b> nostaa esiin säätöjä, jotka kannattaa katsoa juuri tässä buildissa, ja niissä on <b>Pienemmäksi</b>- ja <b>Suuremmaksi</b>-napit.</p>
+<p>Vaikutukset ovat arvioita (<span class="mk">◐</span>). Yksi muutos ja yksi kellotettu ajo kerrallaan kertoo enemmän kuin viisi muutosta kerralla.</p>
+<h3 id="fi-52-säädä">5.2 Säädä</h3>
+<p>Säädä näyttää jokaisen säädön liukurina. Siinä on neljä kansiota: <b>Osat</b>, <b>Alusta</b>, <b>Välitykset</b> ja <b>Muut</b>.</p>
+<p><b>Alusta</b></p>
+<figure><a href="img/fi/11-adjust-chassis.webp" target="_blank" rel="noopener"><img src="img/fi/11-adjust-chassis.webp" alt="Säädä: Alusta" loading="lazy"></a><figcaption>Säädä: Alusta</figcaption></figure>
+<ul><li><b>A · Säädöt</b>: paino, etupaino, jousen pituus, jouset, vakaajat, vaimentimet sekä camber ja toe pelin järjestyksessä. Avaa ryhmän alta <b>Miten tämä toimii</b>, niin näet mekanismin.</li><li><b>C · Tasapaino &amp; KPI</b>: vedä palkkeja siirtääksesi etu-/takajakoa niin, että kokonaisjäykkyys säilyy. Vaimennussuhde, kallistusgradientti ja jousituksen taajuus päivittyvät samalla.</li><li><b>Alustan yleisjäykkyys</b>: yksi säädin koko alustan pehmentämiseen tai jäykistämiseen.</li><li><b>Tallenna presetiksi</b> säilyttää tämän alustan presettinä, jonka voi valita myöhemmin uudelleen. <b>Lue kuvasta</b> täyttää arvot kuvakaappauksesta.</li></ul>
+<p><b>Välitykset</b></p>
+<figure><a href="img/fi/12-adjust-gearing.webp" target="_blank" rel="noopener"><img src="img/fi/12-adjust-gearing.webp" alt="Säädä: Välitykset" loading="lazy"></a><figcaption>Säädä: Välitykset</figcaption></figure>
+<ul><li><b>Sahakaavio</b> näyttää jokaisen vaihteen kierrokset nopeuden mukaan. Vihreät pisteet ovat vaihtoja, jotka osuvat tehoalueelle.</li><li>Muuta <b>vetopyörästöä</b> ja <b>vaihtoaikaa</b>; huippunopeus, 0–100 km/h ja kierrospudotukset päivittyvät heti.</li><li>Kaavion alla isot luvut ovat pelin välityssuhteet.</li><li><b>Diffi</b> on alempana: kaasulukko, jarrulukko ja esijännitys. Pyöräkuva näyttää, miten vääntö jakautuu.</li></ul>
+<p><b>Muut</b></p>
+<figure><a href="img/fi/13-adjust-other.webp" target="_blank" rel="noopener"><img src="img/fi/13-adjust-other.webp" alt="Säädä: Muut" loading="lazy"></a><figcaption>Säädä: Muut</figcaption></figure>
+<p>Ohjaus (caster, Ackermann, ohjauskulma), jarrut, spacerit, rengaskoot ja pelistä luetut painolukemat. Autokuva näyttää raideleveyden, akselivälin ja kuinka paljon tilaa renkaalla on lokasuojan sisällä, jotta pysyt pelaajien tavallisessa säännössä: renkaat eivät törrötä lokasuojan ulkopuolelle.</p>
+<p>Paina <b>Valmis</b>, kun olet tyytyväinen; se vie tallennukseen.</p>
+<h3 id="fi-53-tarkista">5.3 Tarkista</h3>
+<figure><a href="img/fi/14-check.webp" target="_blank" rel="noopener"><img src="img/fi/14-check.webp" alt="Tarkista" loading="lazy"></a><figcaption>Tarkista</figcaption></figure>
+<p>Tarkista käy koko buildin läpi ja selittää sen:</p>
+<ul><li><b>Välitykset</b>: jokaisen vaihteen loppunopeus rajoittimella ja riittääkö ylin vaihde reitille. Syötä oma huippunopeutesi reitillä, jos tiedät sen. <b>Laske ehdotukset</b> kokeilee kokonaisia välityssarjoja, joissa kaikki vaihteet ovat käytössä.</li><li><b>Vaimentimet</b>: vaimennussuhteet edessä ja takana ja mitä ne merkitsevät sisäänmenolle ja rauhoittumiselle. <b>Jos koet tämän</b> antaa valmiin korjauksen <b>Käytä</b>- ja <b>Näytä säädin</b> -napeilla.</li><li><b>Alusta ja diffi</b>: kallistusjako, kokonaisjäykkyys ja diffin säädöt sekä suunta, johon kukin vie autoa.</li><li><b>Moottori</b>: hae moottorin liukurit tai anna myös moottorin osien muuttua luokan sisällä.</li></ul>
+<h3 id="fi-54-peliin">5.4 Peliin</h3>
+<figure><a href="img/fi/15-to-game.webp" target="_blank" rel="noopener"><img src="img/fi/15-to-game.webp" alt="Peliin" loading="lazy"></a><figcaption>Peliin</figcaption></figure>
+<p>Peliin on lista, jota seuraat peli auki Tougen vieressä.</p>
+<ol><li>Neljä sivua seuraa pelin valikoita: <b>Auto ja moottori</b>, <b>Voimansiirto</b>, <b>Jousitus</b>, <b>Renkaat ja aero</b>.</li><li>Jokainen rivi näyttää asetettavan arvon. Oikean reunan <b>Seuraavaksi</b>-kortti näyttää seuraavan; aseta se pelissä ja paina <b>Merkitse siirretyksi</b>. Osion <b>✓ Osio pelissä</b> merkitsee koko osion kerralla.</li><li>Pidä <b>Vain siirtämättömät</b> päällä, niin lista lyhenee edetessä. <b>Seuraava</b>-nappi alhaalla vie seuraavalle sivulle.</li><li><b>Tarkista pelistä</b> -rivit (paino, etupaino) ovat lukemia: kirjoita pelin luku Tougeen, niin malli vastaa autoasi.</li></ol>
+<p><b>Jaa buildi kuvana</b> tekee buildista kuvan jaettavaksi. <b>Lue kuvasta</b> lukee Part Setup -kuvakaappauksen takaisin. Leikepöytänappi kopioi listan tekstinä.</p>
+</section>
+<section class="ch" id="fi-6-ajanotto-aja-kellota-ja-analysoi">
+<div class="band" style="background-image:url(assets/band-time.webp)" aria-hidden="true"></div>
+<h2><span class="no">06</span>Ajanotto: aja, kellota ja analysoi</h2>
+<h3 id="fi-61-aja">6.1 Aja</h3>
+<figure><a href="img/fi/20-drive.webp" target="_blank" rel="noopener"><img src="img/fi/20-drive.webp" alt="Aja" loading="lazy"></a><figcaption>Aja</figcaption></figure>
+<ol><li>Valitse reitti oikealta. Kartta ja splitit seuraavat sitä.</li><li>Avaa CarX Street ja aja lähtöön. Nopeusmittarin ja minikartan pitää näkyä ruudulla.</li><li>Pysähdy lähtöön ja paina <b>F9</b> (tai opettamaasi ohjaimen nappia). Kello lähtee, kun auto liikkuu, ja autosplit merkitsee osuudet.</li><li><b>F10</b> splittaa käsin, <b>F11</b> on maali. <b>Väli</b> käyttää sovelluksen omaa sekuntikelloa, kun pelikello ei ole käynnissä.</li></ol>
+<p>LCD-kellon splittilista näyttää jokaisen osuuden vertailuajan, kun sinulla on ajo, johon verrata.</p>
+<p><b>Asetukset</b> (Ajanotto-välilehden oikeassa yläkulmassa) sisältää ajanoton valinnat:</p>
+<figure><a href="img/fi/21-timing-settings.webp" target="_blank" rel="noopener"><img src="img/fi/21-timing-settings.webp" alt="Ajanoton asetukset" loading="lazy"></a><figcaption>Ajanoton asetukset</figcaption></figure>
+<ul><li><b>Autosplit</b> päälle tai pois ja <b>Mykistä ajastin</b>, kun haluat vain ajella.</li><li><b>Ohjain</b>: paina mitä tahansa ohjaimen nappia ja sitten <b>Opettele käynnistysnappi / splitti-nappi / peru-nappi</b>. Ne toimivat, kun peli on aktiivisena.</li><li><b>Ajonäkymä</b> näyttää kellon isona; <b>Irrota ajastin</b> avaa sen omaan pieneen ikkunaan.</li><li><b>Tuo</b> hakee vanhan kellon tiedoston tai LiveSplit-splitit tai palauttaa ajat varmuuskopiosta. <b>Syötä aika käsin</b> on muualla kellotettuja ajoja varten.</li></ul>
+<h3 id="fi-62-tulostaulu">6.2 Tulostaulu</h3>
+<figure><a href="img/fi/22-leaderboard.webp" target="_blank" rel="noopener"><img src="img/fi/22-leaderboard.webp" alt="Tulostaulu" loading="lazy"></a><figcaption>Tulostaulu</figcaption></figure>
+<p>Kellon alla: ennätys, mediaani, viimeisten viiden keskiarvo ja kehitys. <b>Top 10</b> listaa ajot autoineen ja setupeineen, ja <b>Kehitys ajojärjestyksessä</b> näyttää, miten paras aikasi on parantunut. <b>Autot ja setupit</b> vertaa niitä rinnakkain.</p>
+<h3 id="fi-63-analysoi">6.3 Analysoi</h3>
+<p>Avaa maaliin päättyneen ajon jälkeen <b>Analysoi</b>. Se vertaa ajoa omaan ennätykseesi ja mediaaniisi mutka mutkalta.</p>
+<figure><a href="img/fi/23-analyse.webp" target="_blank" rel="noopener"><img src="img/fi/23-analyse.webp" alt="Analysoi" loading="lazy"></a><figcaption>Analysoi</figcaption></figure>
+<ul><li><b>Auto</b> rajaa ajot auton mukaan.</li><li><b>Viimeisin ajo</b>: aika ja ero ennätykseen ja mediaaniin. Kartta värittää jokaisen mutkan vihreäksi (nopeampi) tai punaiseksi (hitaampi) kuin mediaanisi, ja alla oleva <b>mutkanauha</b> näyttää saman palkkeina.</li><li><b>Ajon suurimmat erot mediaaniin</b> nimeää mutkat, joissa ajo hävisi eniten, ja syyn: jarrutus, sisääntulo, apex vai ulostulo.</li><li><b>Seuraavaksi</b> ehdottaa yhtä setupin muutosta, kun sama kuvio toistuu ajoissasi. <b>Avaa Säädä</b> vie suoraan sinne.</li><li><b>Tavoite</b> näyttää, paljonko aikaa on vielä otettavissa: teoreettinen parhaasi parhaista mutkistasi yhdistettynä.</li></ul>
+<figure><a href="img/fi/24-practice.webp" target="_blank" rel="noopener"><img src="img/fi/24-practice.webp" alt="Harjoituslista" loading="lazy"></a><figcaption>Harjoituslista</figcaption></figure>
+<p><b>Harjoituslista</b> järjestää mutkat, joissa mediaaniajosi häviää eniten parhaalle. Jokainen kertoo, mihin aika menee (jarrutus ja sisääntulo, apex vai ulostulo), ja lähikuva näyttää kaasun, jarrun ja ohjauksen ennätykseesi verrattuna. Merkitse mutka <b>Harjoiteltu</b>, kun olet työstänyt sitä.</p>
+<p><b>Nopeus reitillä</b> ja <b>Ajo mutkittain</b> avaavat minkä tahansa ajon koko nopeuskäyrän ja mutkakohtaisen taulukon.</p>
+</section>
+<section class="ch" id="fi-7-asetukset-ja-ohje">
+<h2><span class="no">07</span>Asetukset ja ohje</h2>
+<figure><a href="img/fi/30-settings.webp" target="_blank" rel="noopener"><img src="img/fi/30-settings.webp" alt="Asetukset" loading="lazy"></a><figcaption>Asetukset</figcaption></figure>
+<ul><li><b>Yleistiedot</b>: kieli, tekstin koko, Säädä- ja Analysoi-näkymien näkymätaso sekä animaatiot. Paneeleja voi siirtää vetämällä niiden otsikon kahvasta.</li><li><b>Data ja varmuuskopiot</b>: missä datasi on ja nappi kansion avaamiseen.</li><li><b>Ajanotto</b>: pelikellon ja näytönlukijan valinnat.</li><li><b>Käynnistys ja sammutus</b>: sammuttaa Tougen ja pelikellon yhdessä.</li><li><b>Tietoja</b>: versio ja lisenssit.</li></ul>
+<figure><a href="img/fi/31-help.webp" target="_blank" rel="noopener"><img src="img/fi/31-help.webp" alt="Ohje" loading="lazy"></a><figcaption>Ohje</figcaption></figure>
+<p><b>?</b> tai <b>F1</b> avaa ohjeen: kolme vaihetta, säätöoppaat (vakaajat, jouset, vaimentimet, renkaat, camber ja toe, tasauspyörästö, korin mitat, koko alusta) ja pikanäppäimet.</p>
+<div class="tbl"><table><thead><tr><th>Näppäin</th><th>Toiminto</th></tr></thead><tbody><tr><td>1 · 2 · 3</td><td>Rakenna, Säädä, Ajanotto</td></tr><tr><td>L</td><td>Laske (Rakenna)</td></tr><tr><td>Ctrl+S</td><td>Tallenna setup</td></tr><tr><td>Ctrl+Shift+S</td><td>Tallenna nimellä</td></tr><tr><td>Ctrl+O</td><td>Kaikki setupit</td></tr><tr><td>F9 · F10 · F11</td><td>Pelikello: aloita, splitti, maali</td></tr><tr><td>F1</td><td>Ohje</td></tr></tbody></table></div>
+</section>
+<section class="ch" id="fi-8-datasi">
+<h2><span class="no">08</span>Datasi</h2>
+<p>Kaikki tallentamasi jää Project Touge -kansioon:</p>
+<div class="tbl"><table><thead><tr><th>Kansio</th><th>Sisältö</th></tr></thead><tbody><tr><td><code>Tunes</code></td><td>setupit, presetit, muistiinpanot, reittien kalibroinnit ja asetukset</td></tr><tr><td><code>Runs</code></td><td>kellotetut ajot ja niiden telemetria</td></tr><tr><td><code>Routes</code></td><td>omat reitit</td></tr><tr><td><code>Logs</code></td><td>ohjelman lokit; liitä nämä, kun ilmoitat ongelmasta</td></tr></tbody></table></div>
+<p><b>Päivitys</b>: korvaa <code>App</code> ja <code>Project Touge.exe</code>, pidä datakansiot. <b>Siirto</b>: kopioi koko kansio. <b>Poisto</b>: poista kansio.</p>
+</section>
+<section class="ch" id="fi-9-kun-jokin-ei-täsmää">
+<h2><span class="no">09</span>Kun jokin ei täsmää</h2>
+<ul><li><b>Pelikello ei vastaa</b>: käynnistä Project Touge uudelleen; kello käynnistyy sen mukana. Tarkista, ettei mikään muu telemetriaohjelma käytä samaa porttia.</li><li><b>Nopeus tai minikartta ei tule</b>: aja peliä reunattomassa ikkunassa tai koko näytöllä niin, että HUD näkyy. Touge löytää HUDin ensimmäisellä ajolla; testatut resoluutiot ovat 3440×1440, 2560×1440, 2560×1080, 1920×1440 ja 1920×1080.</li><li><b>Luku ei vastaa peliä</b>: katso ensin, onko siinä <span class="mk">◐</span>. Kirjoita pelin oma lukema <b>Tarkista pelistä</b> -riveille ja ilmoita ero Tougen versiolla ja <code>Logs</code>-kansion tiedostoilla.</li><li><b>Setup katosi</b>: katso <b>Kaikki setupit → Roskakori</b> tai palauta päivätyistä kopioista <code>Tunes</code>-kansiossa.</li></ul>
+<p>Löysitkö vian tai luvun, joka ei täsmää pelissä? Avaa <a href="https://github.com/aaturaty/project-touge/issues" target="_blank" rel="noopener">issue</a> ja kerro Tougen versio (näkyy yläpalkissa), mitä teit, ja liitä <code>Logs</code>-kansion tiedostot.</p>
+<p class="fine"><i>Project Touge on epävirallinen fanien tekemä työkalu. Se ei ole CarX Technologiesin tuote, eikä CarX Technologies ole sidoksissa siihen tai suosittele sitä.</i></p>
+</section>
+    </main>
+  </div>
+</div>
+<script>
+(function () {
+  var KEY = 'touge-guide-lang';
+  function set(l, save) {
+    document.documentElement.lang = l;
+    document.title = l === 'fi' ? 'Project Touge – käyttöopas' : 'Project Touge user guide';
+    document.querySelector('.brand small').textContent = l === 'fi' ? 'käyttöopas' : 'user guide';
+    document.querySelectorAll('.lang button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.set === l)); });
+    if (save) { try { localStorage.setItem(KEY, l); } catch (e) {} }
+    spy();
+  }
+  var q = new URLSearchParams(location.search).get('lang'), saved = null;
+  try { saved = localStorage.getItem(KEY); } catch (e) {}
+  var start = q === 'fi' || q === 'en' ? q : saved || ((navigator.language || '').slice(0, 2) === 'fi' ? 'fi' : 'en');
+  document.querySelectorAll('.lang button').forEach(function (b) { b.addEventListener('click', function () { set(b.dataset.set, true); }); });
+  var links = [];
+  function spy() {
+    var l = document.documentElement.lang;
+    links = Array.prototype.slice.call(document.querySelectorAll('nav.toc [data-l="' + l + '"] a'));
+    onScroll();
+  }
+  function onScroll() {
+    var cur = null;
+    links.forEach(function (a) { var t = document.getElementById(decodeURIComponent(a.hash.slice(1))); if (t && t.getBoundingClientRect().top < 140) cur = a; });
+    links.forEach(function (a) { a.classList.toggle('on', a === cur); });
+  }
+  addEventListener('scroll', onScroll, { passive: true });
+  set(start, false);
+})();
+</script>
+</body>
+</html>

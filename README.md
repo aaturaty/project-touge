@@ -65,5 +65,5 @@ Found a bug or a value that is off in game? Open an [issue](../../issues) with y
 ## Licence
 
 © aaturaty. All rights reserved. You may download and use Project Touge for free; please do not redistribute it or its code as your own.
-Game images and data are © CarX Technologies and included with their permission to the Project Touge community. Third-party fonts and libraries are listed in `Licenses.txt` inside the download.
+CarX Street and its game images and data are © CarX Technologies and belong to their respective owners. Third-party fonts and libraries are listed in `Licenses.txt` inside the download.
 

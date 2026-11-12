@@ -1,6 +1,6 @@
 # Project Touge 峠
 
-**Build, tune and improve your driving. One gutter away from being the fastest.**
+**Build, tune and improve your driving. One gutter away from being the fastest on the touge.**
 
 Project Touge is a companion app for CarX Street on Windows. It helps you build a car for a class, tune its setup from what you feel on the road, and time your runs with splits and telemetry.
 

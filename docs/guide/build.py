@@ -86,7 +86,7 @@ def convert(md, lang):
         while i < len(L) and L[i].strip() and not re.match(r'(#|\||!\[|\d+\. |- |---)', L[i]):
             para.append(L[i]); i += 1
         txt = inline(' '.join(para))
-        if re.sub(r'[\s·]', '', txt) and '<b>Build, tune' not in txt:      # the tagline is in the header
+        if re.sub(r'[\s·]', '', txt) and '<b>One gutter away' not in txt:      # the tagline is in the header
             fine = 'unofficial fan-made' in txt or 'epävirallinen' in txt
             out.append(f'<p class="fine">{txt}</p>' if fine else f'<p>{txt}</p>')
     if open_sec: out.append('</section>')

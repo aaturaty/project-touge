@@ -1,6 +1,6 @@
 # Project Touge user guide
 
-**Build, tune and improve your driving. One gutter away from being the fastest on the touge.**
+**One gutter away from being the fastest on the touge.**
 
 [Suomeksi](README.fi.md) · [Branded version (HTML)](index.html)
 
@@ -214,7 +214,7 @@ Adjust shows every setting with a slider. It has four folders: **Parts**, **Chas
 ![Adjust: Gearing](img/en/12-adjust-gearing.webp)
 
 - The **sawtooth** shows each gear's rpm against speed, shifting at the limiter. The green band is the power band; a green dot is a shift that lands inside it, a grey dot one that falls below.
-- Pick the gears to work on: **1–3**, **3–4**, **4–5**, **5–6** or **All**, or tap two gears in the row under the charts to make your own range.
+- Pick the gears to work on: **1–3**, **3–4**, **4–5** and so on up to your top gear, or **All**, or tap two gears in the row under the charts to make your own range.
 - Drag the **circle at the top of a gear** left or right to make that gear shorter or longer. The arrow keys move it 0.01 at a time.
 - Drag the **◂ 1–3 ▸ pill** to move the whole range at once.
 - Drag one of the **end bars** at the bottom to change the spacing: that end moves and the other stays, and the gears in between keep the same proportions.
@@ -329,7 +329,7 @@ After a finished run, open **Analyse**. It compares the run against your own rec
 - **Car** filters runs by car.
 - **Latest run**: the time and its gap to your record and median. The map colours each corner green (faster) or red (slower) than your median, and the **corner strip** below does the same as bars.
 - **Largest gaps to the median** names the corners where this run lost the most, and why: braking, entry, apex or exit.
-- **Next** suggests one setup change when the same pattern repeats across your runs. **Open Tune** takes you straight there.
+- **Next** names one thing to do: usually the corner to practise first (**Open corner** zooms straight to it), or a setup change when the same pattern repeats across your runs (**Open Tune**).
 - **Target** shows what is left on the table: your theoretical best from your best corners combined.
 
 **Zoom into a corner.** Click a corner on the map, or its bar in the corner strip. The map zooms to that corner and colours it by your speed, with markers where braking starts, the apex and where the throttle opens. **Corner close-up** opens on the right: entry, apex and exit speed against the median, the likely reason, and throttle, brake and steering over the corner against your record. Click another corner to move there; **Whole route** or **Esc** zooms back out. Hovering a bar in the strip highlights the same corner on the map.

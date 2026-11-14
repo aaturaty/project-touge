@@ -37,7 +37,9 @@ For timing, run CarX Street borderless or full screen so the whole HUD is visibl
 - **Tabs 01 Build, 02 Tune, 03 Time** follow the order you work in. Keys **1**, **2** and **3** switch between them.
 - **Setup** (top right) shows the open setup. A green dot means saved, a yellow dot means unsaved changes. Click it for Save, Save as and All setups.
 - **?** opens help with the shortcuts and the tuning guides. The **gear** opens Settings. **FI / EN** switches the language.
-- On a first start, a **Getting started** strip shows the three steps until you hide it.
+- On a first start Touge is empty: **Choose a car** comes first, and the numbers appear once a car is chosen. A **Getting started** strip shows the three steps until you hide it.
+- Each page has a **Next** line near the top that says what to do next, with a link that takes you there.
+- Terms with an **i** button explain themselves: click it for a short description.
 
 Two marks appear everywhere and are worth learning first:
 
@@ -68,9 +70,10 @@ The route list shows the verified game routes first plus any routes of your own.
 
 1. In CarX Street, open the car's **Part Setup** and take a screenshot of each screen: engine, gearbox, body and aero, suspension, tyres and Component features.
 2. Paste them with **Ctrl+V**, drop them on the box, or use **Choose files**. Images are read on your computer and not stored. Rows read from the images replace the base values; the base is your previous setup for this car if you have one.
-3. Under **Basics**, below the steps, check **Weight**, **Weight Distribution in Front** and **Center of Mass Height** against the game. They come after the parts because the engine and gearbox change the weight. These three readings decide how the car is modelled, so it pays to copy them exactly.
-4. The **Check** row lists anything Touge could not read or is unsure of, in game order. You can also set things by hand: engine parts are one tap each on the tier row (S Stock, St Street, Sp Sport, R Racing, E Elite, U Ultimate, P Prototype), and the gearbox, body kit, suspension and tyres have their own sections below.
-5. Save the setup (**Ctrl+S**).
+3. Or enter the build by hand. Every row stays on screen in game order: the engine with a **Search engines…** box and one tap per part on the tier row (S Stock, St Street, Sp Sport, R Racing, E Elite, U Ultimate, P Prototype), the gearbox ratios exactly as the game shows them, the body kit, the suspension with front and rear side by side, and the tyres as **width / profile / rim** for front and rear. Sections you leave alone keep the model values.
+4. Under **Basics**, below the parts, check **Weight**, **Weight Distribution in Front** and **Center of Mass Height** against the game. They come after the parts because the engine and gearbox change the weight. These three readings decide how the car is modelled, so it pays to copy them exactly.
+5. The **Check** row lists anything Touge could not read or is unsure of, in game order.
+6. Give the build a name and press **Save** at the bottom (or **Ctrl+S**). Saving opens the Tune page. If the save says **Saved in this browser only**, the Touge program was not running: the setup is safe in this window, and **Export all setups** moves it to a file.
 
 From now on Tune works on *your* build, not on a model car.
 
@@ -91,7 +94,7 @@ Use this when you want a starting point for a new car or class.
 
 The **Result** panel on the right shows:
 
-- **Model reference time**: the calculated estimate for this build on the chosen route. Real times live on the Time tab.
+- **Model reference time**: the calculated estimate for this build on the chosen route. Until the route has been calibrated from your own runs, the time is shown as a difference to the reference build (for example **−1.0 s**): the model knows a new route's corners only from the racing line, so its total can be seconds off, but differences between builds still hold. Drive one run and open Time → Analyse to calibrate it. Real times live on the Time tab.
 - **before / after** and what changed, for example a gearbox swap.
 - **Timeline**: every calculation is kept, click one to go back to it.
 - **Set as reference** makes this build the one you compare against; **Undo tuner picks** returns to where you were.
@@ -179,7 +182,7 @@ Setups are saved in the Project Touge folder as files, with dated backup copies.
 
 The Tune tab has four views in the order you usually need them: **Symptom**, **Adjust**, **Check** and **To game**. Adjust has its own view level switch (**Settings only**, **Simple**, **Advanced**) that decides how much detail you see there; Simple is a good start. The other views always show everything.
 
-The route and the **model reference time** stay in the top right, so you see the effect of every change at once.
+The **Preset** picker sits at the top: *model* is Touge's own result, and changing the preset replaces the chassis and diff values. Your own presets are at the end of the list. While Tune works on a model car, a line at the top says so, and **Enter build** takes you to the Build tab to enter your own. Sliders show the game's slider limits as marks, so you can see how much room is left.
 
 ### 5.1 Symptom
 
@@ -187,14 +190,15 @@ The route and the **model reference time** stay in the top right, so you see the
 
 1. Pick where in the corner the car misbehaves: **Braking**, **Turn-in**, **Mid corner** or **Exit**.
 2. Pick the symptom that matches what you feel, for example *Trail braking – understeer*. The corner diagram shows where it happens.
-3. **What changes** lists the settings Touge would move, each with a one-line reason and old → new value. The tuning guide above it says what to try first.
-4. **Apply** takes all of them. Tick **One at a time** to take only the biggest change, then time a run before the next one. **Cancel** leaves the setup as it was.
+3. **What changes** opens on the right. It starts with the Tuning Bible's advice for that symptom (what to try first, then next), followed by the settings Touge would move, each with a one-line reason and old → new value.
+4. **One at a time** is on by default: **Apply first** takes only the biggest change, so you can time a run before the next one. Untick it to apply them all. **Cancel** leaves the setup as it was.
+5. When the symptom has a damper fix, an **If you feel this** card follows with **Apply** and **Show setting**, the same cards as on the Check page. The symptom, the advice and the check are one path, so you don't have to switch views.
 
 Already know what to change? **Adjust tune yourself** in the Handling header takes you straight to Adjust.
 
 **Whole car** covers symptoms that are not tied to one corner phase: overall understeer or oversteer, bouncing over bumps, kerbs and gutters, and a limiter or no acceleration on the straights.
 
-**Advice for this build** points out settings that are worth a look on this particular build, with **Lower** and **Higher** buttons.
+**General advice for this build** (open it with **Show advice**) points out settings that are worth a look on this particular build, with **Lower** and **Higher** buttons.
 
 The effects are estimates (◐). One change and one timed run at a time tells you more than five changes at once.
 
@@ -301,9 +305,11 @@ Values go to the game list when you let go, and the model time updates. To type 
 ![Drive](img/en/20-drive.webp)
 
 1. Pick the route on the right. The map and splits follow it.
-2. Open CarX Street and drive to the start. The speedometer and minimap must be on screen.
+2. Open CarX Street in a borderless window with the default HUD and drive to the start. Touge reads the speedometer and minimap from the screen, so they must be visible.
 3. Stop at the start and press **F9** (or your controller button). The timer starts when the car moves; auto splits mark the sections.
 4. **F10** splits by hand, **F11** finishes. **Space** runs the in-app stopwatch when the game timer is not running.
+
+The game timer starts by itself while Touge is open, and its small timer window stays on top of the game. **F8** hides and shows it, and **Ctrl+F8** lets you move it. If the window says **NO GAME DETECTED**, Touge cannot see the game's HUD; F8 or the window's **X** hides it. Pressing Start without the game shows a warning first, and **Start anyway** times without it.
 
 The splits on the right of the LCD show your comparison time for each section once you have a run to compare with.
 
@@ -401,6 +407,7 @@ Your own routes are saved in the `Routes` folder.
 | Ctrl+Shift+S | Save as |
 | Ctrl+O | All setups |
 | F9 · F10 · F11 | Game timer: start, split, finish |
+| F8 · Ctrl+F8 | Timer window: show or hide, move |
 | F1 | Help |
 
 ## 8. Your data

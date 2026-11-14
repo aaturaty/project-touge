@@ -39,7 +39,9 @@ Ajanottoa varten aja CarX Streetiä reunattomassa ikkunassa tai koko näytöllä
 - **Välilehdet 01 Rakenna, 02 Säädä, 03 Ajanotto** ovat työjärjestyksessä. Näppäimet **1**, **2** ja **3** vaihtavat niiden välillä.
 - **Setup** (oikealla ylhäällä) näyttää avoimen setupin. Vihreä piste = tallennettu, keltainen = tallentamattomia muutoksia. Napsauttamalla saat Tallenna, Tallenna nimellä ja Kaikki setupit.
 - **?** avaa ohjeen pikanäppäimineen ja säätöoppaineen. **Ratas** avaa asetukset. **FI / EN** vaihtaa kielen.
-- Ensimmäisellä käynnistyksellä **Näin aloitat** -kaista näyttää kolme vaihetta, kunnes piilotat sen.
+- Ensimmäisellä käynnistyksellä Touge on tyhjä: ensin **Valitse auto**, ja luvut tulevat näkyviin, kun auto on valittu. **Näin aloitat** -kaista näyttää kolme vaihetta, kunnes piilotat sen.
+- Jokaisen sivun yläosassa on **Seuraavaksi**-rivi, joka kertoo, mitä tehdä seuraavaksi, ja linkki vie sinne.
+- Termit, joiden vieressä on **i**-nappi, selittävät itsensä: napsauta sitä, niin saat lyhyen kuvauksen.
 
 Kaksi merkkiä toistuu kaikkialla, ja ne kannattaa oppia ensin:
 
@@ -70,9 +72,10 @@ Reittilistassa ovat ensin pelissä todennetut reitit ja omat reittisi. Valitse s
 
 1. Avaa CarX Streetissä auton **Part Setup** ja ota kuvakaappaus jokaisesta sivusta: moottori, vaihteisto, kori ja aero, jousitus, renkaat ja Component features.
 2. Liitä kuvat **Ctrl+V**:llä, pudota ne laatikkoon tai käytä **Valitse tiedostot**. Kuvat luetaan omalla koneellasi eikä niitä tallenneta. Kuvista luetut rivit korvaavat pohja-arvot; pohjana on tämän auton edellinen setup, jos sellainen on.
-3. Tarkista vaiheiden alla olevasta kohdasta **Perustiedot** **Weight**, **Weight Distribution in Front** ja **Center of Mass Height** pelistä. Ne ovat osien jälkeen, koska moottori ja vaihteisto muuttavat painoa. Nämä kolme lukemaa ratkaisevat, miten auto mallinnetaan, joten ne kannattaa kopioida tarkasti.
-4. **Tarkista**-rivi listaa pelin järjestyksessä kaiken, mitä Touge ei saanut luettua tai mistä se on epävarma. Voit asettaa asioita myös käsin: moottorin osat yhdellä napautuksella tasoriviltä (S Stock, St Street, Sp Sport, R Racing, E Elite, U Ultimate, P Prototype), ja vaihteistolla, korilla, jousituksella ja renkailla on omat osionsa alempana.
-5. Tallenna setup (**Ctrl+S**).
+3. Tai syötä buildi käsin. Kaikki rivit pysyvät näkyvissä pelin järjestyksessä: moottori **Hae moottoria…** -haulla ja osat yhdellä napautuksella tasoriviltä (S Stock, St Street, Sp Sport, R Racing, E Elite, U Ultimate, P Prototype), vaihteiston välitykset sellaisinaan kuin peli ne näyttää, korisarja, jousitus etu ja taka rinnakkain sekä renkaat muodossa **leveys / profiili / vanne** edessä ja takana. Osiot, joihin et koske, pitävät mallin arvot.
+4. Tarkista osien alla olevasta kohdasta **Perustiedot** **Weight**, **Weight Distribution in Front** ja **Center of Mass Height** pelistä. Ne ovat osien jälkeen, koska moottori ja vaihteisto muuttavat painoa. Nämä kolme lukemaa ratkaisevat, miten auto mallinnetaan, joten ne kannattaa kopioida tarkasti.
+5. **Tarkista**-rivi listaa pelin järjestyksessä kaiken, mitä Touge ei saanut luettua tai mistä se on epävarma.
+6. Anna buildille nimi ja paina alhaalla **Tallenna** (tai **Ctrl+S**). Tallennus avaa Säädä-sivun. Jos tallennus sanoo **Tallennettu vain selaimeen**, Touge-ohjelma ei ollut käynnissä: setup on tallessa tässä ikkunassa, ja **Vie kaikki setupit** siirtää sen tiedostoon.
 
 Tästä eteenpäin Säädä-välilehti käsittelee *sinun* buildiasi, ei malliautoa.
 
@@ -93,7 +96,7 @@ Käytä tätä, kun haluat lähtöpisteen uudelle autolle tai luokalle.
 
 Oikean reunan **Tulos**-paneeli näyttää:
 
-- **Mallin vertailuaika**: laskettu arvio tämän buildin ajasta valitulla reitillä. Oikeat ajat ovat Ajanotto-välilehdellä.
+- **Mallin vertailuaika**: laskettu arvio tämän buildin ajasta valitulla reitillä. Kunnes reitti on kalibroitu omista ajoistasi, aika näytetään erona vertailubuildiin (esimerkiksi **−1,0 s**): malli tuntee uuden reitin mutkat vain ajolinjasta, joten kokonaisaika voi heittää sekunteja, mutta buildien väliset erot pitävät. Aja yksi ajo ja avaa Ajanotto → Analysoi, niin reitti kalibroituu. Oikeat ajat ovat Ajanotto-välilehdellä.
 - **ennen / jälkeen** ja mikä muuttui, esimerkiksi vaihteiston vaihto.
 - **Aikajana**: jokainen laskenta säilyy, napsauta palataksesi siihen.
 - **Aseta vertailuksi** tekee tästä buildista vertailukohdan; **Peru laskurin valinnat** palaa lähtötilaan.
@@ -181,7 +184,7 @@ Setupit tallentuvat Project Touge -kansioon tiedostoina, ja niistä jää päiv�
 
 Säädä-välilehdellä on neljä näkymää siinä järjestyksessä, jossa niitä yleensä tarvitsee: **Oire**, **Säädä**, **Tarkista** ja **Peliin**. Säädä-näkymällä on oma näkymätason valitsin (**Vain säädöt**, **Perus**, **Laaja**), joka päättää, kuinka paljon yksityiskohtia siinä näet; Perus on hyvä alku. Muut näkymät näyttävät aina kaiken.
 
-Reitti ja **mallin vertailuaika** pysyvät oikealla ylhäällä, joten näet jokaisen muutoksen vaikutuksen heti.
+**Preset**-valitsin on ylhäällä: *malli* on Tougen oma tulos, ja presetin vaihto korvaa alustan ja diffin arvot. Omat presetit ovat listan lopussa. Kun Säädä toimii mallin autolla, yläreunan rivi kertoo sen, ja **Syötä buildi** vie Rakenna-välilehdelle syöttämään oman. Liukureissa on merkit pelin liukurien rajoista, joten näet, paljonko tilaa on jäljellä.
 
 ### 5.1 Oire
 
@@ -189,14 +192,15 @@ Reitti ja **mallin vertailuaika** pysyvät oikealla ylhäällä, joten näet jok
 
 1. Valitse, missä kohtaa mutkaa auto käyttäytyy väärin: **Jarrutus**, **Sisääntulo**, **Keskikohta** vai **Ulostulo**.
 2. Valitse oire, joka vastaa tuntumaa, esimerkiksi *Jarrutus mutkaan – aliohjaa*. Mutkakuva näyttää, missä se tapahtuu.
-3. **Mitä muuttuu** listaa säädöt, joita Touge siirtäisi, jokaisella yhden rivin syy ja vanha → uusi arvo. Säätöopas sen yläpuolella kertoo, mitä kokeilla ensin.
-4. **Käytä** ottaa ne kaikki. Ruksaa **Yksi kerrallaan**, niin otat vain suurimman muutoksen ja voit kellottaa ajon ennen seuraavaa. **Peruuta** jättää setupin ennalleen.
+3. **Mitä muuttuu** aukeaa oikealle. Se alkaa Tuning Biblen neuvolla tähän oireeseen (mitä kokeilla ensin, mitä sitten), ja sen alla ovat säädöt, joita Touge siirtäisi, jokaisella yhden rivin syy ja vanha → uusi arvo.
+4. **Yksi kerrallaan** on oletuksena päällä: **Käytä ensimmäinen** ottaa vain suurimman muutoksen, joten voit kellottaa ajon ennen seuraavaa. Poista ruksi, niin otat kaikki. **Peruuta** jättää setupin ennalleen.
+5. Jos oireeseen on vaimenninkorjaus, perässä tulee **Jos koet tämän** -kortti, jossa ovat **Käytä** ja **Näytä säädin**, samat kortit kuin Tarkista-sivulla. Oire, neuvo ja tarkistus ovat yksi polku, joten näkymää ei tarvitse vaihtaa.
 
 Tiedätkö jo, mitä haluat muuttaa? **Säädä setuppia itse** Ajotuntuma-otsikon vieressä vie suoraan Säädä-näkymään.
 
 **Koko auto** kattaa oireet, jotka eivät liity yhteen mutkan vaiheeseen: yleinen ali- tai yliohjaus, pomppiminen kuopissa, reunakivissä ja guttereissa sekä rajoitin tai kiihtyvyyden puute suorilla.
 
-**Neuvot tälle buildille** nostaa esiin säätöjä, jotka kannattaa katsoa juuri tässä buildissa, ja niissä on **Pienemmäksi**- ja **Suuremmaksi**-napit.
+**Yleisneuvot tälle buildille** (avaa **Näytä neuvot**) nostaa esiin säätöjä, jotka kannattaa katsoa juuri tässä buildissa, ja niissä on **Pienemmäksi**- ja **Suuremmaksi**-napit.
 
 Vaikutukset ovat arvioita (◐). Yksi muutos ja yksi kellotettu ajo kerrallaan kertoo enemmän kuin viisi muutosta kerralla.
 
@@ -303,9 +307,11 @@ Arvot siirtyvät pelilistaan, kun päästät irti, ja mallin aika päivittyy. Jo
 ![Aja](img/fi/20-drive.webp)
 
 1. Valitse reitti oikealta. Kartta ja splitit seuraavat sitä.
-2. Avaa CarX Street ja aja lähtöön. Nopeusmittarin ja minikartan pitää näkyä ruudulla.
+2. Avaa CarX Street reunattomassa ikkunassa oletus-HUD:lla ja aja lähtöön. Touge lukee nopeusmittarin ja minikartan näytöltä, joten niiden pitää näkyä.
 3. Pysähdy lähtöön ja paina **F9** (tai opettamaasi ohjaimen nappia). Kello lähtee, kun auto liikkuu, ja autosplit merkitsee osuudet.
 4. **F10** splittaa käsin, **F11** on maali. **Väli** käyttää sovelluksen omaa sekuntikelloa, kun pelikello ei ole käynnissä.
+
+Pelikello käynnistyy itsestään, kun Touge on auki, ja sen pieni ajastinikkuna pysyy pelin päällä. **F8** piilottaa ja tuo sen takaisin, **Ctrl+F8** siirtää sitä. Jos ikkunassa lukee **PELIÄ EI HAVAITTU**, Touge ei näe pelin HUD:ia; F8 tai ikkunan **X** piilottaa sen. Jos painat Käynnistä ilman peliä, saat ensin varoituksen, ja **Käynnistä silti** ottaa ajan ilman peliä.
 
 LCD-kellon splittilista näyttää jokaisen osuuden vertailuajan, kun sinulla on ajo, johon verrata.
 
@@ -403,6 +409,7 @@ Omat reittisi tallentuvat `Routes`-kansioon.
 | Ctrl+Shift+S | Tallenna nimellä |
 | Ctrl+O | Kaikki setupit |
 | F9 · F10 · F11 | Pelikello: aloita, splitti, maali |
+| F8 · Ctrl+F8 | Ajastinikkuna: näytä tai piilota, siirrä |
 | F1 | Ohje |
 
 ## 8. Datasi

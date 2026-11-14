@@ -1,4 +1,4 @@
-[![Project Touge Säätöopas](../banner.png)](README.md)
+[![Project Touge choriso's Tuning Bible](../banner.png)](README.md)
 
 [In English](../glossary.md)
 
@@ -24,7 +24,7 @@ Opas käyttää lyhyitä arkisanoja. Taulukko näyttää kunkin säädön nimen 
 | Preload | Preload | Diffin vakiolukko newtonmetreinä, myös kytkin pohjassa. |
 | Jarrujako | Front Brake Balance | Etuakselin osuus jarruväännöstä. |
 | Offset, spacer | Front / Rear Wheel Offset | Pyörän paikka ulospäin; raide = perusraide + offset. |
-| Rengaspaine | Pressure | Pito on suurimmillaan 2,0 barissa; korkeampi paine pienentää vierintävastusta. |
+| Rengaspaine | Pressure | Vaikutus pitoon on pieni (alle 1–2 %); korkeampi paine pienentää vierintävastusta ja on nopeampi suoralla. |
 | Rengasprofiili | Tire profile | Kyljen korkeus prosenttiyksikköinä (±10). |
 | Loppuvälitys, FD | Final drive | Viimeinen välitys; kokonaisvälitys = vaihde × loppuvälitys × renkaan säde. |
 | Painopiste | Center of Mass Height (Part Setup) | Prosentti korilaatikon korkeudesta, ei tuumia. |
@@ -49,12 +49,13 @@ Opas käyttää lyhyitä arkisanoja. Taulukko näyttää kunkin säädön nimen 
 | Yliohjaus | Perä antaa periksi ensin; auto kiertyy enemmän kuin ohjaat. "Perä lähtee." |
 | Kuormansiirto | Painon siirtyminen pyörien välillä jarrutuksessa, kiihdytyksessä ja mutkassa: m · a · h / raide (tai akseliväli). |
 | Kallistusjäykkyys | Kuinka voimakkaasti akseli vastustaa korin kallistusta: vakaajat + jouset, molemmat × raide². |
-| Vakaajajako, LLTD | Etuakselin osuus kallistusjäykkyydestä. Akseli, jonka osuus on suurempi, kantaa enemmän kaarteen kuormansiirrosta ja antaa periksi ensin. |
+| Vakaajajako, LLTD | LLTD = kallistusjäykkyyden etuosuus: kuinka suuri osa mutkan kuormansiirrosta kulkee etuakselin kautta. Suurempi = aliohjaavampi, pienempi = yliohjaavampi. |
+| Kallistus (°/g) | Montako astetta kori kallistuu yhden g:n sivukiihtyvyydellä. Pienempi = jäykemmät jouset ja vakaajat. |
 | Joustovara | Kuinka paljon jousitus voi vielä painua ennen rajoitinta: jousen pituus − painuma. |
 | Rajoitin | Joustovaran jäykkä pää. Siihen lyöminen heittää autoa ja vie pitoa. |
 | Painuma | Kuinka paljon auton paino painaa jousta levossa. |
-| Ominaistaajuus | √(jousi / massa) / 2π. Kun se pidetään samana, jousisetup siirtyy raskaampaan tai kevyempään autoon. |
-| Vaimennussuhde, ζ | Vaimennus suhteessa jouseen ja massaan; Touge siirtää sillä vaimentimet autosta toiseen. |
+| Taajuus (Hz), ominaistaajuus | Kuinka nopeasti kori heilahtaa jousillaan, jousi ja rengas yhdessä. Suurempi = jäykempi jousitus samalla painolla. Kun se pidetään samana, jousisetup siirtyy raskaampaan tai kevyempään autoon. |
+| Vaimennussuhde, ζ | Iskarin vaimennus suhteessa kriittiseen. 1 = kori asettuu ilman ylilyöntiä, alle 1 = keinuu, yli 1 = jäykkä. Touge siirtää sillä vaimentimet autosta toiseen. |
 | Polvi | Pyörän nopeus (0,1 m/s), jossa vaimennus vaihtuu slow-arvosta fast-arvoon. |
 | Kokonaisvälitys | Vaihde × loppuvälitys × renkaan säde; ainoa välitysluku, jota fysiikka käyttää. |
 | Vanneosa | Rengaskokoon valittu vanneosa; se määrää renkaan kitkalisän (+0,03…+0,08). |
@@ -65,8 +66,8 @@ Opas käyttää lyhyitä arkisanoja. Taulukko näyttää kunkin säädön nimen 
 
 | Merkki | Merkitys |
 | --- | --- |
-| ● | Vahvistettu pelissä tai pelin koodissa. |
-| ◐ | Natiivimalli tai päätelty, ei pelissä testattu. |
+| ● | Vahvistettu pelissä tai pelin koodista. |
+| ◐ | Arvio mallista tai simulaatiosta, ei vielä kokeiltu pelissä. |
 | ○ | Oikean auton teoria, vain taustaksi. |
 
 ---

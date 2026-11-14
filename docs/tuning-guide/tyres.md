@@ -1,4 +1,4 @@
-[![Project Touge Tuning guide](banner.png)](README.md)
+[![Project Touge choriso's Tuning Bible](banner.png)](README.md)
 
 [Suomeksi](fi/tyres.md)
 
@@ -20,7 +20,7 @@ Markers: ● confirmed in game or in the game code, ◐ native simulation or inf
 2. The same size often has two rim parts. The one with the lower base profile gives +0.08, the higher one +0.03–0.05 ●. For example 265 R16: base profile 40 = +0.08, base profile 45 = +0.03.
 3. The full +0.08 starts at 265 mm. 245–255 mm gets at most +0.05 and 225–235 mm +0.04 ●.
 4. Width adds grip with a power of 0.41: grip factor = (width / 185)^0.41 × friction ● (route model, matches the native code).
-5. Tyre grip peaks at 2.0 bar. 1.0 or 3.0 bar costs about 1–2.5 % grip ●.
+5. Tyre pressure is not a grip lever. In the friction formula the peak is at 2.0 bar, and 1.0 or 3.0 bar costs about 1–2.5 % ●, but on a whole car the difference stayed under 1–2 % ◐. On the straight higher pressure is faster, because rolling resistance drops ●: 3.0 bar was −0.02 s at 60–140 km/h and −0.11 s at 120–200 km/h, 2.0 bar +0.03 / +0.21 s ◐. Pressure is finishing.
 
 | Width | Highest friction bonus | Grip factor | Difference to 265 |
 | --- | --- | --- | --- |
@@ -95,7 +95,7 @@ Setup order: choose the tyre size and rim part first, then the offset so the tyr
 | Gearing | Only the total ratio matters ●, so a radius change is corrected with the final drive. |
 | Spring length | A larger radius raises the body by the same amount ●. Shorten the spring if you want the same height. |
 | Bars and springs | The tyre's vertical stiffness (p + 30 kPa) · (10 · width + 1) · r · 0.8 is in series with the suspension ●. A wide tyre is stiffer, and track stiffens roll with the square. Width and bar split overlapped by about a second in our experience ◐. |
-| Tyre pressure | Grip peaks at 2.0 bar ●. Pressure lowers rolling resistance (∝ 1 / pressure) ●, so 3.0 bar is fastest on a straight (0–150 km/h about 7 % quicker than at 2.0 bar). Tyre type does not change the pressure effect, and wear does not cost grip before condition reaches 0 ●. |
+| Tyre pressure | On a whole car the pressure effect on grip stayed under 1–2 % ◐. Pressure lowers rolling resistance (∝ 1 / pressure) ●, so higher pressure is faster on a straight (0–150 km/h 3.0 bar about 7 % quicker than 2.0 bar). Tyre type does not change the pressure effect, and wear does not cost grip before condition reaches 0 ●. |
 | Mass | A wide and large wheel weighs more. Mass costs about 2 % grip per 100 kg ◐, but the extra wheel mass is small next to the width gain. |
 | Camber | Camber costs 0.5 % longitudinal grip per degree and does not raise the lateral peak ●. |
 | Kerbs and gutters | Leaning on the rising outer edge of a corner added +14…+55 % grip in the native model, and an inside gutter +26 % ◐. The effect is larger than the tyre size. |
@@ -125,6 +125,8 @@ The widest tyre that fits inside the fender, with the lower-base-profile rim par
 - The track factor 1 (offset 10 cm = track +10 cm) is inferred, not read from the code ◐.
 - Tyre wear lowers friction (up to 40–60 % depending on the tyre series), but the exact formula is unverified and is not modelled in Touge or in native runs.
 - That width helps most in tight corners rests on a single native comparison.
+- A wide tyre costs on the straight ◐: 325/325 and 285/345 raised grip in slow corners but slowed 60–140 km/h acceleration by 0.04 s and 120–200 km/h by 0.13–0.18 s. A wide rear tyre lengthened the braking distance by 1.5 m in one comparison (uncertain).
+- Track ±10 cm on wide tyres changed grip by under 1 % ◐, so offset is not a grip lever. A narrower front track or a wider rear track calmed the rear under braking, but the test gave only a direction.
 
 ---
 

@@ -1,4 +1,4 @@
-[![Project Touge Säätöopas](../banner.png)](README.md)
+[![Project Touge choriso's Tuning Bible](../banner.png)](README.md)
 
 [In English](../dampers.md)
 
@@ -115,7 +115,7 @@ Muuta yhtä arvoa kerrallaan noin 15–20 % (puoli liukuriaskelta) ja aja sama m
 | --- | --- | --- | --- |
 | Jarrutus mutkaan | Keula sukeltaa nopeasti ja perä kevenee | Etu painuu ja taka nousee liian nopeasti | Nosta etu slow bumpia ja taka slow reboundia. |
 | Jarrutus mutkaan | Auto ei käänny trail brake -vaiheessa | Ulkoetu ottaa siirtymässä liikaa kuormaa | Laske etu slow bumpia ○. |
-| Sisääntulo | Perä lähtee heti käännössä | Sisätaka kevenee; perä ottaa siirtymässä liikaa | Laske taka slow reboundia ◐. |
+| Sisääntulo | Perä lähtee heti käännössä | Sisätaka kevenee; perä ottaa siirtymässä liikaa | Laske taka slow reboundia ◐. Jos perä lähtee nimenomaan jarrulla, vaimennin ei natiivimallissa auttanut (taka slow rebound ja etu slow bump ilman vaikutusta ◐): käytä jarrujakoa ja etuvakaajaa. |
 | Ulostulo, kaasun avaus | Keula työntää kaasulla nopeissa mutkissa | Keula nousee nopeasti ja menettää kuormaa | Nosta etu slow reboundia ●. |
 | Ulostulo, kaasun avaus | Perä kevenee ja lähtee, kun kaasu tulee | Perä puristuu hitaasti samalla kun diffi lukitsee | Laske taka slow bumpia, tai ensin diffin preloadia. |
 | Kuopat ja gutterit | Auto tuntuu kovalta ja pomppii kuoppasarjassa | Rebound ei päästä pyörää takaisin; jousitus pakkautuu rajoittimelle | Laske slow reboundia ● tai pidennä jousta. |
@@ -130,7 +130,7 @@ Kokemuksemme mukaan rebound on jokaisessa toimivassa setupissa selvästi bumpia 
 
 ## Varmistamatta
 
-- Etu slow reboundin suunta kaasulla on ristiriitainen: peli ja kirjallisuus sanovat, että vähemmän reboundia lisää kaasu-aliohjausta, natiivimalli näytti päinvastaista ◐. Tämä opas seuraa peliä.
+- Etu slow reboundin suunta kaasulla on ristiriitainen: peli ja kirjallisuus sanovat, että vähemmän reboundia lisää kaasu-aliohjausta, natiivimalli näytti päinvastaista ◐. Tämä opas seuraa peliä. Natiivimalli on sittemmin näyttänyt saman suunnan kahdella muulla autolla ◐, joten suuntaa testataan pelissä uudelleen. Ohje pysyy ennallaan, kunnes pelikoe on ajettu.
 - Näytetyn luvun ja natiivikertoimen suhde (2 × yhdellä autolla) on tarkistamatta muilla autoilla, joten opas ei laske vaimennussuhteita.
 - Kuoppia, guttereita ja pientareita ei ole ajettu natiivimallissa, joten fast-arvojen neuvot perustuvat yhteen pelikokeeseen ja yleiseen mekaniikkaan.
 - Vaihetaulukon suunnat tulevat oikean auton lähteistä (○). Pelin vaimenninkaava on sama, mutta jokaista suuntaa ei ole ajettu natiivimallissa.

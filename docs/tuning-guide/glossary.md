@@ -1,4 +1,4 @@
-[![Project Touge Tuning guide](banner.png)](README.md)
+[![Project Touge choriso's Tuning Bible](banner.png)](README.md)
 
 [Suomeksi](fi/glossary.md)
 
@@ -24,7 +24,7 @@ The guide uses short everyday words. This table shows the name of each setting i
 | Preload | Preload | Constant diff lock in newton-metres, also with the clutch pressed. |
 | Brake balance | Front Brake Balance | Share of brake torque on the front axle. |
 | Offset, spacer | Front / Rear Wheel Offset | Wheel position outwards; track = base track + offset. |
-| Tyre pressure | Pressure | Grip peaks at 2.0 bar; higher pressure lowers rolling resistance. |
+| Tyre pressure | Pressure | Small effect on grip (under 1–2 %); higher pressure lowers rolling resistance and is faster on the straight. |
 | Tyre profile | Tire profile | Sidewall height in percentage points (±10). |
 | Final drive, FD | Final drive | The last ratio; total ratio = gear × final drive × tyre radius. |
 | Centre of gravity | Center of Mass Height (Part Setup) | A percentage of the body box height, not inches. |
@@ -49,12 +49,13 @@ The guide uses short everyday words. This table shows the name of each setting i
 | Oversteer | The rear gives up first; the car rotates more than you steer. "The rear steps out." |
 | Load transfer | Weight moving between wheels under braking, acceleration and cornering: m · a · h / track (or wheelbase). |
 | Roll stiffness | How strongly an axle resists body roll: bars + springs, both × track². |
-| Bar split, LLTD | The front axle's share of roll stiffness. The axle with the larger share carries more of the cornering load transfer and lets go first. |
+| Bar split, LLTD | LLTD = front share of roll stiffness: how much of the cornering load transfer goes through the front axle. Higher = more understeer, lower = more oversteer. |
+| Roll gradient (°/g) | How many degrees the body rolls per g of cornering. Lower = stiffer springs and bars. |
 | Travel | How far the suspension can still compress before the bump stop: spring length − sag. |
 | Bump stop | The rigid end of travel. Hitting it throws the car and costs grip. |
 | Sag | How much the spring is compressed by the car's weight at rest. |
-| Natural frequency | √(spring / mass) / 2π. Keeping it equal moves a spring setup to a heavier or lighter car. |
-| Damping ratio, ζ | Damping relative to the spring and mass; Touge uses it to move dampers between cars. |
+| Ride frequency (Hz), natural frequency | How fast the body bobs on its springs, spring and tyre together. Higher = stiffer suspension for the same weight. Keeping it equal moves a spring setup to a heavier or lighter car. |
+| Damping ratio, ζ | Damper force relative to critical damping. 1 = the body settles without overshoot, below 1 = it bobs, above 1 = stiff. Touge uses it to move dampers between cars. |
 | Knee | The wheel speed (0.1 m/s) where damping changes from the slow to the fast value. |
 | Total ratio | Gear × final drive × tyre radius; the only gearing number the physics uses. |
 | Rim part | The wheel part chosen for a tyre size; it sets the tyre's friction bonus (+0.03…+0.08). |
@@ -65,8 +66,8 @@ The guide uses short everyday words. This table shows the name of each setting i
 
 | Marker | Meaning |
 | --- | --- |
-| ● | Confirmed in game or in the game code. |
-| ◐ | Native model or inferred, not tested in game. |
+| ● | Confirmed in the game or from the game code. |
+| ◐ | An estimate from the model or a simulation, not tried in the game yet. |
 | ○ | Real-car theory, used only as background. |
 
 ---

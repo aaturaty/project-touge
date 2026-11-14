@@ -1,4 +1,4 @@
-[![Project Touge Tuning guide](banner.png)](README.md)
+[![Project Touge choriso's Tuning Bible](banner.png)](README.md)
 
 [Suomeksi](fi/dampers.md)
 
@@ -115,7 +115,7 @@ Change one value at a time by about 15–20 % (half a slider step) and drive the
 | --- | --- | --- | --- |
 | Braking into the corner | The nose dives quickly and the rear goes light | The front drops and the rear rises too fast | Raise front slow bump and rear slow rebound. |
 | Braking into the corner | The car will not turn while trail braking | The outer front takes too much load in the transition | Lower front slow bump ○. |
-| Turn-in | The rear steps out right at turn-in | The inner rear goes light; the rear takes too much in the transition | Lower rear slow rebound ◐. |
+| Turn-in | The rear steps out right at turn-in | The inner rear goes light; the rear takes too much in the transition | Lower rear slow rebound ◐. If the rear steps out specifically on the brakes, the dampers did not help in the native model (rear slow rebound and front slow bump had no effect ◐): use brake balance and the front bar. |
 | Exit, opening the throttle | The nose pushes on throttle in fast corners | The nose rises quickly and loses load | Raise front slow rebound ●. |
 | Exit, opening the throttle | The rear goes light and steps out as the throttle comes in | The rear compresses slowly while the diff locks | Lower rear slow bump, or first the diff preload. |
 | Bumps and gutters | The car feels hard and bounces over a series of bumps | Rebound does not let the wheel back; the suspension packs onto the bump stop | Lower slow rebound ● or lengthen the spring. |
@@ -130,7 +130,7 @@ In our experience rebound is clearly larger than bump in every working setup, an
 
 ## Not yet confirmed
 
-- The direction of front slow rebound on throttle is in conflict: the game and the literature say less rebound adds throttle understeer, the native model showed the opposite ◐. This guide follows the game.
+- The direction of front slow rebound on throttle is in conflict: the game and the literature say less rebound adds throttle understeer, the native model showed the opposite ◐. This guide follows the game. The native model has since shown the same direction on two more cars ◐, so the direction is being tested in game again. The advice stays as it is until the game test has been run.
 - The ratio between the displayed number and the native coefficient (2 × on one car) is unchecked on other cars, so the guide does not compute damping ratios.
 - Bumps, gutters and verges have not been run in the native model, so the fast-value advice rests on one game test and general mechanics.
 - The phase table directions come from real-car sources (○). The game's damper formula is the same, but not every direction has been run in the native model.

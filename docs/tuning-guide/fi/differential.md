@@ -1,4 +1,4 @@
-[![Project Touge Säätöopas](../banner.png)](README.md)
+[![Project Touge choriso's Tuning Bible](../banner.png)](README.md)
 
 [In English](../differential.md)
 
@@ -56,7 +56,7 @@ Säädä ensin kaasulukko, toisena moottorijarrulukko ja viimeisenä preload. Jo
 | Välityssuhde ja vaihde | Lukko on osuus akselin väännöstä. Pieni vaihde kertoo väännön, joten sama kaasulukko lukitsee kakkosella paljon enemmän kuin nelosella. Tiukat neulat ajetaan pienellä vaihteella, joten siellä lukko tuntuu eniten. Preload ei muutu vaihteen mukana. |
 | Kaasutekniikka | On/off-kaasulla vääntö hyppää heti täyteen, joten kaasulukko päättää käytöksen ja preload näkyy vain avauksen alussa. Osakaasulla preload painaa enemmän. |
 | Kytkin ja vaihtaminen | Kytkin pohjassa T on nolla, joten ainoa lukko on preload. Kytkinvaihdoissa ja jarrutuksen alasvaihdoissa preload on ainoa lukko. |
-| Jarrujako | Jarrut eivät kulje diffin läpi, mutta takapainotteinen jako hidastaa takapyöriä. Natiivimallissa etu 40 antoi 10–15 % enemmän kiertoa ja 1–2° enemmän tulokulmaa kuin 60. Takapainotteinen jarru ja matala moottorijarrulukko kiertävät autoa yhdessä eniten. |
+| Jarrujako | Jarrut eivät kulje diffin läpi, mutta takapainotteinen jako hidastaa takapyöriä. Natiivimallissa etu 40 antoi 10–15 % enemmän kiertoa ja 1–2° enemmän tulokulmaa kuin 60. Takapainotteinen jarru ja matala moottorijarrulukko kiertävät autoa yhdessä eniten. Jarrutus + ohjaus 120 km/h:sta takavetoisella 50/50-autolla: jako 50 → kierto 60 °/s ja sortokulma 14°, 55 → 53 °/s ja 7,5°, 60 → 36 °/s ja 3° ◐. Jako on tehokkain yksittäinen säädin perän vakauteen jarrulla. Jarrutusmatkaan se vaikuttaa vähän: 48 → 58–60 lyhensi 160 → 60 km/h -matkaa 0,3 m ◐. |
 | ABS | ABS rajaa takapyörien lukkiutumisen, joten jarrujaon ääripäät eivät muuttaneet kierrosaikaa natiivimallissa. |
 | Takavakaaja ja takajouset | Jäykkä perä keventää sisäpyörää, joten se sutii helpommin ja kaasulukko kytkeytyy aiemmin. Pehmeämpi perä tarvitsee vähemmän lukkoa. |
 | Moottorin vääntö | Enemmän vääntöä = enemmän kaasulukkoa newtonmetreinä samalla asetuksella. Preload on kiinteä, joten tehokkaassa autossa sen suhteellinen osuus pienenee. |
@@ -68,7 +68,7 @@ Etsi ensin vaihe, jossa oire tulee. Vaihe kertoo, mikä lukko on päällä. Muut
 | Vaihe | Oire | Mitä pelissä tapahtuu | Muutos |
 | --- | --- | --- | --- |
 | Mutkaan tulo, kaasu pois | Keula työntää eikä auto käänny | Ulkopyörä pyörii nopeammin ja lukko jarruttaa sitä, mikä tekee oikaisevan momentin | Laske moottorijarrulukkoa. Jos se on jo matala, laske preloadia. |
-| Mutkaan tulo, kaasu pois | Perä liikkuu tai potkaisee jarrutuksessa ja alasvaihdoissa | Takapyörät pyörivät eri tahtia eikä lukko tasaa niitä | Nosta moottorijarrulukkoa tai preloadia. Siirrä jarrujakoa eteen. |
+| Mutkaan tulo, kaasu pois | Perä liikkuu tai potkaisee jarrutuksessa ja alasvaihdoissa | Takapyörät pyörivät eri tahtia eikä lukko tasaa niitä | Siirrä ensin jarrujakoa eteen noin 5 %-yks. (esimerkiksi 50 → 55, tarvittaessa 57–58) ◐. Nosta sitten moottorijarrulukkoa: 0,16 → 0,30 laski jarrukiertoa 53 → 41 °/s ◐. Preloadin lasku ei natiivimallissa auttanut. |
 | Kytkin pohjassa (vaihto, jarrutus) | Perä on levoton vain kytkin pohjassa | Ainoa lukko on preload | Nosta preloadia. |
 | Keskikohta, kevyt kaasu | Auto aliohjaa ja haluaa suoraan | Ulkopyörä on nopeampi, joten lukko siirtää vääntöä sisäpyörälle. Tässä lukko on enimmäkseen preloadia. | Laske preloadia. |
 | Kaasun avaus | Sisäpyörä sutii, kierrokset nousevat mutta auto ei vedä | Lukkoa ei ole tarpeeksi siirtämään vääntöä ulkopyörälle | Nosta preloadia (avauksen alku) tai kaasulukkoa (täysi kaasu). |
@@ -83,6 +83,7 @@ Natiivimallissa diffisäädöt tuskin muuttivat kierrosaikaa; vain kaasulukko 0 
 - Testaa aina samassa mutkassa samalla vaihteella, koska vaihde määrää lukon voiman.
 - Jos auto pyörähtää täydellä kaasulla, katso ensin kaasulukkoa ja sitten preloadia. Molemmat työntävät perää ulos.
 - Kokemuksemme mukaan kaasulukko 0,25–0,30, moottorijarrulukko 0,12–0,20 ja preload 45–100 on ollut pelissä helposti ajettava lähtöalue ●. Tougen diffipresetit kattavat tämän alueen sekä pehmeämmät ja jäykemmät sen ympärillä.
+- Jarrujaon tavallinen lähtöalue on 48–50 % edessä. Tiukkoihin neuloihin 44, ja jos perä on levoton jarrulla, 55–58 ◐. 2 %-yksikön muutos ei natiivimallissa vielä näkynyt.
 
 **Simulaatiokokemus ◐ (natiivimalli, ei pelissä testattu):** kun kaasulukko on yli 0, lukot ja preload ovat tuntumasäätöjä: kaasulukko 0,15–1,0, moottorijarrulukko 0–0,5 ja preload 0–250 pysyivät kaikki 0,4 s:n sisällä. Avoin diffi (kaasulukko 0) oli 2,4 s hitaampi, eniten hitaissa mutkissa. Poikkeus on jäykkä takavakaaja, joka halusi vähintään noin 0,3:n kaasulukon (ks. vakaajaluku).
 

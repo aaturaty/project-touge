@@ -1,4 +1,4 @@
-[![Project Touge Tuning guide](banner.png)](README.md)
+[![Project Touge choriso's Tuning Bible](banner.png)](README.md)
 
 [Suomeksi](fi/camber-and-toe.md)
 
@@ -6,7 +6,7 @@
 
 ## In short
 
-Camber and toe are small levers in this game. In the native model camber changes lateral grip by at most about 3.5 % and costs braking and traction grip 0.5 % per degree ●. In our experience camber −2 vs −5 was within noise on several cars ◐, but a front camber close to zero has cost more than a second ◐. Toe is a slightly bigger lever: rear toe-in calms the rear and rear toe-out costs grip, but on a full lap the difference stays under a second ◐. Refine bars, springs and the diff first, and use camber and toe to finish.
+Camber and toe are small levers in this game. In the native model camber changes lateral grip by at most about 3.5 % and costs braking and traction grip 0.5 % per degree ●. In our experience camber −2 vs −5 was within noise on several cars ◐, but a front camber close to zero has cost more than a second ◐. Toe is a slightly bigger lever: on a rear-drive car rear toe-in raises grip in fast corners and rear toe-out costs grip ◐. Rear toe +0.2…+0.3 has worked in game ●, and its cost on the straight is small ◐. Refine bars, springs and the diff first, and use camber and toe to finish.
 
 The game has two differences from a real car. The camber you set is not the tyre's actual camber, because the game adds −3…+5° to it depending on spring extension ●. And the native code has a rigid-axle suspension type on which the camber setting does nothing ●. Which of the game's suspension types (Mcferson or Doublewishbone) maps to the rigid axle is not yet known.
 
@@ -44,7 +44,7 @@ Markers: ● confirmed in game or in the game code, ◐ native simulation or inf
 
 | Change | Expect | Too much | Experience |
 | --- | --- | --- | --- |
-| Rear toe-in (+) | The rear calms down when braking into a corner and in long corners, and cornering grip rises in big corners. | The car understeers and will not rotate in tight corners, and the lap gets slower. | ◐ +0.2 cut the sideways slide when braking into corners by 4–8 %, but +0.4 already understeered. ◐ +0.3 / +0.6: grip in fast corners +2…+4 %, but the lap was 0.5–1.1 s slower on most cars. |
+| Rear toe-in (+) | The rear calms down in long and fast corners, and grip in fast corners rises, most together with rear camber. No effect in slow corners. | Above +0.3 grip did not rise, but drag on the straight grows. The car starts to understeer in tight corners. | ● +0.2…+0.3 has worked in game on a rear-drive car. ◐ On a rear-drive car +0.2…+0.3 with rear camber −5: fast corners +5…+10 %, slow corners 0. ◐ On the straight +0.3 slowed 60–140 km/h acceleration by 0.015 s. |
 | Rear toe-out (−) | The car rotates more readily. | The rear lets go under braking and in corners, and grip drops. | ◐ −0.3: grip in tight corners −3.6 %, in fast corners −3 %. On a full lap anything from neutral to 1.5 s slower, depending on the bars. |
 | Front toe (±) | The effect is small. Toe-out sharpens turn-in ○. | The car wanders on the straight and feels nervous ○. | ◐ ±0.3 was 0.2–0.8 s slower in both directions on most cars and faster on one. |
 
@@ -58,7 +58,7 @@ Camber depends on the suspension, so set it after springs and bars. Toe is nearl
 | Bars and roll | The body rolls out and takes the outer wheel towards positive camber. Stiffer roll keeps camber closer to the setting ◐. Balance is still found with the bars, not with camber. |
 | Caster | When steering, the outer wheel gains negative camber of about caster · sin(wheel angle) and the inner wheel positive ●. Caster 8.4 and a 30° wheel angle give about 4°. Caster had no grip effect in the native model ◐. |
 | Ackermann | Front toe is added on top of the Ackermann angle ●, so change them one at a time. |
-| Differential and brakes | Camber costs 0.5 % longitudinal grip per degree ●. Rear camber weakens exit traction in the same direction as a too-high throttle lock, and front camber lengthens braking. Rear toe-in calms trail braking in the same direction as a more front-biased brake balance ◐. |
+| Differential and brakes | Camber costs 0.5 % longitudinal grip per degree ●. Rear camber weakens exit traction in the same direction as a too-high throttle lock, and front camber lengthens braking. Rear toe did not change rotation or braking distance under braking in the native model ◐, so the rear under braking is handled with brake balance. |
 | Tyres | The camber coefficient is the same on all tyres ●. In the game formula, width does not change the camber effect ◐. |
 | Suspension type | A rigid axle (native type 1) zeroes camber ●. Check your car's suspension type before refining camber (see Not yet confirmed). |
 
@@ -68,29 +68,30 @@ Change camber by 0.5° and toe by 0.1° at a time, and drive the same corner in 
 
 | Phase | Symptom | What happens in the game | Change |
 | --- | --- | --- | --- |
-| Braking into the corner | The rear wanders or tries to overtake when you brake into the corner | Weight moves forward and the rear wheels' lateral force is not enough | Rear toe +0.1…+0.2 ◐. Try brake balance and decel lock first. |
+| Braking into the corner | The rear wanders or tries to overtake when you brake into the corner | Weight moves forward and the rear wheels' lateral force is not enough | Brake balance forward and front bar up. Rear toe did not change rotation or braking distance under braking in the native model ◐, so toe does not help here. |
 | Braking into the corner | The front wheels lock or braking gets long | Large front camber costs longitudinal grip | Front camber 0.5–1° towards zero. |
 | Turn-in | The car is lazy to turn | The front tyre's cornering stiffness is low | Front camber −0.5°. Front toe −0.1 helps in theory ○, not in the native model. Try the bars first. |
-| Mid-corner | The rear slides in a long corner | The rear wheels run out of lateral force | Rear toe +0.1…+0.2 or rear camber −0.5°. |
+| Mid-corner | The rear slides in a long corner | The rear wheels run out of lateral force | Rear toe +0.2…+0.3 and rear camber towards −5. On a rear-drive car fast corners +5…+10 % ◐, and rear toe +0.3 has worked in game ●. No effect in slow corners. |
 | Mid-corner | The car understeers in a long corner even though the bars are set | Rear toe-in holds the rear too much | Rear toe towards zero. |
 | Exit | The rear wheels spin as you straighten and open the throttle | Rear camber costs traction | Rear camber 0.5° towards zero ●. |
-| Straight and top speed | The car wanders or feels nervous | Toe-out at either end ○ | Front toe 0, rear toe 0…+0.1. |
+| Straight and top speed | The car wanders or feels nervous | Toe-out at either end ○ | Front toe 0, rear toe 0…+0.3. Rear toe-in costs little on the straight: +0.3 slowed 60–140 km/h acceleration by 0.015 s ◐. |
 | Bumps, kerbs and gutters | The feel changes as the suspension compresses | Camber changes with travel by 8° / stroke ● | Do not correct with camber; use the suspension. |
 
 ## Final tip
 
-Camber −3.5 / −3.5 has been in every working setup of the touge weapon preset in game ●. On screen it looks like a lot, but at rest it is about 2–3° more positive than the number. Keep front toe at zero and rear toe at 0…+0.1, and change them only by symptom.
+Camber −3.5 / −3.5 has been in every working setup of the touge weapon preset in game ●. On screen it looks like a lot, but at rest it is about 2–3° more positive than the number. Keep front toe at zero. On a rear-drive car rear toe +0.2…+0.3 has worked in game as a starting value ● and raised grip in fast corners in the native model ◐. The gain starts at less toe when rear camber is larger: with rear camber −5 even +0.1 showed, with −3.9 only about +0.3. Above +0.3 added nothing ◐.
 
 If you do not know whether camber affects your car, do a quick test: front camber −3.5 → −8 and drive the same corner. If the feel does not change at all, the front axle is probably the native rigid axle.
 
-**Simulation experience ◐ (native model, not tested in game):** front camber −4.6 → 0 was 1.4 s slower, mostly in medium-speed corners, and with a stiff front bar even more (2.3 s together). −6.5 brought nothing over −4.6. So front camber is more than a finishing touch when it starts near zero. Rear camber and front toe did not show in lap time. Rear toe-in +0.3 was 0.7 s slower.
+**Simulation experience ◐ (native model, not tested in game):** front camber −4.6 → 0 was 1.4 s slower, mostly in medium-speed corners, and with a stiff front bar even more (2.3 s together). −6.5 brought nothing over −4.6. So front camber is more than a finishing touch when it starts near zero. Rear camber and front toe did not show in lap time.
 
 ## Not yet confirmed
 
 - The suspension type is the main open question: is Doublewishbone native type 1, the rigid axle? The game metadata is encrypted, so a game test decides it (front camber −3.5 vs −8).
 - The rest camber examples assume the stroke equals the spring length. That is inferred from the bottoming formula, not read from the native code.
 - The grip results are from the native model. There is no separate game test of camber or toe alone; the game tests changed another setting at the same time.
-- Toe drag on the straight is inferred, not measured.
+- Toe drag on the straight has been measured in the native model: rear toe +0.3 slowed 60–140 km/h by 0.015 s and +0.5 by 0.025 s ◐. The effect is small.
+- The rear toe grip figures are from one rear-drive 50/50 car ◐. The circle test steps grip in 2–5 % increments, so a single step is a direction, not an exact figure. The direction repeated with two rear cambers.
 - The front toe effect on turn-in is real-car theory ○, and the native model did not support it.
 
 ---

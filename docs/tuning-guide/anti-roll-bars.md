@@ -1,4 +1,4 @@
-[![Project Touge Tuning guide](banner.png)](README.md)
+[![Project Touge choriso's Tuning Bible](banner.png)](README.md)
 
 [Suomeksi](fi/anti-roll-bars.md)
 
@@ -41,8 +41,8 @@ Markers: ● confirmed in game or in the game code, ◐ native simulation or inf
 
 | Change | Expect | Too much | Experience |
 | --- | --- | --- | --- |
-| Front bar | The nose carries more transfer. The rear calms down in fast corners and the limit comes from the nose. On a long car, braking and trail-brake understeer also drop. | The nose pushes in steady corners and on throttle in fast corners. | ● Moving the split forward cured a nervous rear and braking understeer in game. ● A too-stiff front bar has cost almost two seconds. |
-| Rear bar | The rear rotates the car: sharper turn-in and less throttle understeer. Faster on a short car. | The rear lets go "like a switch" in side load, a long car understeers on the brakes, and mid-corner throttle spins it. | ● A soft front and a stiff rear has been fastest on short cars. ◐ Softening a stiff rear bar a lot cost several seconds. |
+| Front bar | The nose carries more transfer. The rear calms down in fast corners and the limit comes from the nose. On the brakes the car rotates less ◐. | The nose pushes in steady corners and on throttle in fast corners. | ● Moving a very rear-biased split forward cured a nervous rear in game. ● A too-stiff front bar has cost almost two seconds. |
+| Rear bar | The rear rotates the car: sharper turn-in and less throttle understeer. Faster on a short car. | The rear lets go "like a switch" in side load, the rear gets loose on the brakes ◐, and mid-corner throttle spins it. | ● A soft front and a stiff rear has been fastest on short cars. ◐ Softening a stiff rear bar a lot cost several seconds. |
 
 The direction is the same as in a real car, but the limit is car-specific. Start from the car's wheelbase, not from a general "stiffer front" rule.
 
@@ -67,7 +67,8 @@ First find the corner phase where the symptom appears. Change one bar at a time 
 
 | Phase | Symptom | What happens in the game | Change |
 | --- | --- | --- | --- |
-| Braking into the corner | The car will not turn on the brakes; trail braking needs force | On a long car a rear-biased split puts the limit at the wrong end ◐ ● | Raise the front bar and lower the rear. |
+| Braking into the corner | The car will not turn on the brakes; trail braking needs force | The rear does not help the car rotate; a front-biased split rotated least on the brakes at every wheelbase ◐ | First brake balance rearwards and decel lock down. Then lower the front bar or raise the rear ◐. On a long car the bars have little hold on brake rotation. Exception ●: if the split is very rear-biased and the rear is also nervous, move the split towards even first. |
+| Braking and turn-in | The rear lets go when you brake and steer at the same time | A soft front bar lets the nose bite on the brakes, and the rear rotates past ◐: halving the front bar raised rotation on the brakes from 32 to 53 °/s, and front bar +40 % cut it from 53 to 40 °/s (slip angle 7.5 → 3.2°) | First move brake balance forward by about 5 points. Then raise the front bar 20–40 %. Lowering the rear bar helps less. |
 | Turn-in | The rear steps out right at turn-in | The rear carries too much transfer | Lower the rear bar one step (10–15 %). |
 | Mid-corner | The nose pushes in a steady corner | The nose carries too much transfer | Lower the front bar ●. |
 | Mid-corner | In a fast corner the rear lets go "like a switch" | The limit comes from the rear ◐ | Raise the front bar or lower the rear. |
@@ -85,7 +86,7 @@ A working bar setup is only valid with that car's own springs and tyres, because
 
 ## Not yet confirmed
 
-- Why a rear-biased split causes braking understeer on a long car is seen in the simulation, but the mechanism is open ◐.
+- Braking understeer with a rear-biased split on a long car was felt in game once ●, but the native model does not repeat it, so it is not used as a rule ◐. A native test on one car at three wheelbases (2.30 / 2.505 / 2.75 m) ◐: a long car rotates on the brakes about half as much as a short one, and the bar split's grip on brake rotation shrinks as the wheelbase grows (±28 % short, ±8 % long). In the test a rear-biased split rotated most at every wheelbase, so the game observation of braking understeer ● did not repeat, and the cause is still open.
 - The bars' effect over bumps and gutters: the flat simulation circle does not show it, so the game decides.
 
 ---

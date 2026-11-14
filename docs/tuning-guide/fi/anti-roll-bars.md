@@ -1,4 +1,4 @@
-[![Project Touge Säätöopas](../banner.png)](README.md)
+[![Project Touge choriso's Tuning Bible](../banner.png)](README.md)
 
 [In English](../anti-roll-bars.md)
 
@@ -41,8 +41,8 @@ Merkit: ● vahvistettu pelissä tai pelin koodissa, ◐ natiivimalli tai päät
 
 | Muutos | Odota | Liikaa | Kokemus |
 | --- | --- | --- | --- |
-| Etuvakaaja | Keula kantaa enemmän siirtoa. Perä rauhoittuu nopeissa mutkissa ja raja tulee keulasta. Pitkällä autolla myös jarrutuksen ja trail brake -vaiheen aliohjaus vähenee. | Keula työntää tasaisissa mutkissa ja kaasulla nopeissa mutkissa. | ● Jaon siirto eteen korjasi herkän perän ja jarrutusaliohjauksen pelissä. ● Liian jäykkä etuvakaaja on maksanut lähes kaksi sekuntia. |
-| Takavakaaja | Perä kääntää autoa: terävämpi sisäänohjaus ja vähemmän kaasu-aliohjausta. Nopeampi lyhyellä autolla. | Perä irtoaa "kuin katkaisijasta" sivukuormassa, pitkä auto aliohjaa jarrulla ja keskikohdan kaasu pyöräyttää sen. | ● Pehmeä etu ja jäykkä taka on ollut nopein lyhyillä autoilla. ◐ Jäykän takavakaajan reilu pehmennys maksoi useita sekunteja. |
+| Etuvakaaja | Keula kantaa enemmän siirtoa. Perä rauhoittuu nopeissa mutkissa ja raja tulee keulasta. Jarrulla auto kiertää vähemmän ◐. | Keula työntää tasaisissa mutkissa ja kaasulla nopeissa mutkissa. | ● Hyvin takapainotteisen jaon siirto eteen korjasi herkän perän pelissä. ● Liian jäykkä etuvakaaja on maksanut lähes kaksi sekuntia. |
+| Takavakaaja | Perä kääntää autoa: terävämpi sisäänohjaus ja vähemmän kaasu-aliohjausta. Nopeampi lyhyellä autolla. | Perä irtoaa "kuin katkaisijasta" sivukuormassa, perä irtoaa jarrulla helpommin ◐ ja keskikohdan kaasu pyöräyttää sen. | ● Pehmeä etu ja jäykkä taka on ollut nopein lyhyillä autoilla. ◐ Jäykän takavakaajan reilu pehmennys maksoi useita sekunteja. |
 
 Suunta on sama kuin oikeassa autossa, mutta raja on autokohtainen. Aloita auton akselivälistä, älä yleisestä "jäykempi etu" -säännöstä.
 
@@ -67,7 +67,8 @@ Etsi ensin mutkan vaihe, jossa oire tulee. Muuta yhtä vakaajaa kerrallaan noin 
 
 | Vaihe | Oire | Mitä pelissä tapahtuu | Muutos |
 | --- | --- | --- | --- |
-| Jarrutus mutkaan | Auto ei käänny jarrulla; trail brake vaatii voimaa | Pitkällä autolla takapainotteinen jako vie rajan väärään päähän ◐ ● | Nosta etuvakaajaa ja laske takavakaajaa. |
+| Jarrutus mutkaan | Auto ei käänny jarrulla; trail brake vaatii voimaa | Perä ei auta autoa kiertämään; etupainotteinen jako kiersi jarrulla vähiten kaikilla akseliväleillä ◐ | Ensin jarrujako taakse ja moottorijarrulukko alas. Sitten etuvakaaja alas tai takavakaaja ylös ◐. Pitkällä autolla vakaajien ote jarrukiertoon on pieni. Poikkeus ●: jos jako on hyvin takapainotteinen ja perä on samalla levoton, tuo jako ensin lähemmäs tasaa. |
+| Jarrutus ja sisääntulo | Perä irtoaa, kun jarrutat ja käännät yhtä aikaa | Pehmeä etuvakaaja antaa keulan purra jarrulla, ja perä kiertää ohi ◐: etuvakaajan puolitus nosti jarrukierron 32 → 53 °/s, ja etuvakaaja +40 % laski sen 53 → 40 °/s (sortokulma 7,5 → 3,2°) | Siirrä ensin jarrujakoa eteen noin 5 %-yks. Nosta sitten etuvakaajaa 20–40 %. Takavakaajan lasku auttaa vähemmän. |
 | Sisääntulo | Perä lähtee heti käännössä | Perä kantaa liikaa siirtoa | Laske takavakaajaa yksi askel (10–15 %). |
 | Keskikohta | Keula työntää tasaisessa mutkassa | Keula kantaa liikaa siirtoa | Laske etuvakaajaa ●. |
 | Keskikohta | Nopeassa mutkassa perä irtoaa "kuin katkaisijasta" | Raja tulee perästä ◐ | Nosta etuvakaajaa tai laske takavakaajaa. |
@@ -85,7 +86,7 @@ Toimiva vakaajasetup pätee vain sen auton omilla jousilla ja renkailla, koska j
 
 ## Varmistamatta
 
-- Miksi takapainotteinen jako aiheuttaa pitkälle autolle jarrutusaliohjausta, näkyy simulaatiossa, mutta mekanismi on auki ◐.
+- Pitkän auton jarrutusaliohjaus takapainotteisella jaolla on tuntunut pelissä kerran ●, mutta natiivimalli ei toista sitä, joten sitä ei käytetä sääntönä ◐. Natiivikoe samalla autolla kolmella akselivälillä (2,30 / 2,505 / 2,75 m) ◐: pitkä auto kiertää jarrulla noin puolet lyhyestä, ja vakaajajaon ote jarrukiertoon pienenee akselivälin kasvaessa (lyhyellä ±28 %, pitkällä ±8 %). Takapainotteinen jako kiersi kokeessa kaikilla akseliväleillä eniten, joten pelin havainto jarrutusaliohjauksesta ● ei toistunut, ja syy on yhä auki.
 - Vakaajien vaikutus kuopissa ja guttereissa: simulaation tasainen ympyrä ei näytä sitä, joten peli ratkaisee.
 
 ---

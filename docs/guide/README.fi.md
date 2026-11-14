@@ -70,7 +70,7 @@ Reittilistassa ovat ensin pelissä todennetut reitit ja omat reittisi. Valitse s
 
 1. Avaa CarX Streetissä auton **Part Setup** ja ota kuvakaappaus jokaisesta sivusta: moottori, vaihteisto, kori ja aero, jousitus, renkaat ja Component features.
 2. Liitä kuvat **Ctrl+V**:llä, pudota ne laatikkoon tai käytä **Valitse tiedostot**. Kuvat luetaan omalla koneellasi eikä niitä tallenneta. Kuvista luetut rivit korvaavat pohja-arvot; pohjana on tämän auton edellinen setup, jos sellainen on.
-3. Tarkista **Weight**, **Weight Distribution in Front** ja **Center of Mass Height** pelistä. Nämä kolme lukemaa ratkaisevat, miten auto mallinnetaan, joten ne kannattaa kopioida tarkasti.
+3. Tarkista vaiheiden alla olevasta kohdasta **Perustiedot** **Weight**, **Weight Distribution in Front** ja **Center of Mass Height** pelistä. Ne ovat osien jälkeen, koska moottori ja vaihteisto muuttavat painoa. Nämä kolme lukemaa ratkaisevat, miten auto mallinnetaan, joten ne kannattaa kopioida tarkasti.
 4. **Tarkista**-rivi listaa pelin järjestyksessä kaiken, mitä Touge ei saanut luettua tai mistä se on epävarma. Voit asettaa asioita myös käsin: moottorin osat yhdellä napautuksella tasoriviltä (S Stock, St Street, Sp Sport, R Racing, E Elite, U Ultimate, P Prototype), ja vaihteistolla, korilla, jousituksella ja renkailla on omat osionsa alempana.
 5. Tallenna setup (**Ctrl+S**).
 
@@ -179,7 +179,7 @@ Setupit tallentuvat Project Touge -kansioon tiedostoina, ja niistä jää päiv�
 
 ## 5. Säädä: korjaa se mitä tunnet
 
-Säädä-välilehdellä on neljä näkymää siinä järjestyksessä, jossa niitä yleensä tarvitsee: **Oire**, **Säädä**, **Tarkista** ja **Peliin**. Niiden vieressä oleva näkymätaso (**Vain säädöt**, **Simple**, **Advanced**) päättää, kuinka paljon yksityiskohtia näet. Simple on hyvä alku.
+Säädä-välilehdellä on neljä näkymää siinä järjestyksessä, jossa niitä yleensä tarvitsee: **Oire**, **Säädä**, **Tarkista** ja **Peliin**. Säädä-näkymällä on oma näkymätason valitsin (**Vain säädöt**, **Perus**, **Laaja**), joka päättää, kuinka paljon yksityiskohtia siinä näet; Perus on hyvä alku. Muut näkymät näyttävät aina kaiken.
 
 Reitti ja **mallin vertailuaika** pysyvät oikealla ylhäällä, joten näet jokaisen muutoksen vaikutuksen heti.
 
@@ -192,6 +192,8 @@ Reitti ja **mallin vertailuaika** pysyvät oikealla ylhäällä, joten näet jok
 3. **Mitä muuttuu** listaa säädöt, joita Touge siirtäisi, jokaisella yhden rivin syy ja vanha → uusi arvo. Säätöopas sen yläpuolella kertoo, mitä kokeilla ensin.
 4. **Käytä** ottaa ne kaikki. Ruksaa **Yksi kerrallaan**, niin otat vain suurimman muutoksen ja voit kellottaa ajon ennen seuraavaa. **Peruuta** jättää setupin ennalleen.
 
+Tiedätkö jo, mitä haluat muuttaa? **Säädä setuppia itse** Ajotuntuma-otsikon vieressä vie suoraan Säädä-näkymään.
+
 **Koko auto** kattaa oireet, jotka eivät liity yhteen mutkan vaiheeseen: yleinen ali- tai yliohjaus, pomppiminen kuopissa, reunakivissä ja guttereissa sekä rajoitin tai kiihtyvyyden puute suorilla.
 
 **Neuvot tälle buildille** nostaa esiin säätöjä, jotka kannattaa katsoa juuri tässä buildissa, ja niissä on **Pienemmäksi**- ja **Suuremmaksi**-napit.
@@ -200,7 +202,7 @@ Vaikutukset ovat arvioita (◐). Yksi muutos ja yksi kellotettu ajo kerrallaan k
 
 ### 5.2 Säädä
 
-Säädä näyttää jokaisen säädön liukurina. Siinä on neljä kansiota: **Osat**, **Alusta**, **Välitykset** ja **Muut**.
+Säädä näyttää jokaisen säädön liukurina. Siinä on neljä välilehteä: **Osat**, **Alusta**, **Välitykset** ja **Muut**. Näkymätason valitsin on samalla rivillä oikeassa reunassa.
 
 **Alusta**
 
@@ -261,17 +263,17 @@ Peliin on lista, jota seuraat peli auki Tougen vieressä.
 
 ### 5.5 Näkymät ja raahaus
 
-**Näkymän taso.** Säädä- ja Analysoi-näkymien yläreunan valitsin määrää, kuinka paljon näet, ja se pätee koko Tougessa (myös Asetukset > Yleiset):
+**Näkymän taso.** Säädä-näkymän välilehtirivin oikeassa reunassa oleva valitsin määrää, kuinka paljon Säädä-näkymästä näet (sama valinta on myös kohdassa Asetukset > Yleiset). Oire, Tarkista, Peliin ja Analysoi näyttävät aina kaiken.
 
 | Taso | Näyttää |
 |---|---|
 | **Vain säädöt** | kaikki säädöt yhdellä ruudulla, ei kaavioita |
-| **Simple** | säädöt ja tärkeimmät mittarit |
-| **Advanced** | kaikki kaaviot ja lisätiedot; Alustassa säätöjen ja Tasapaino & KPI:n väliin tulee kaaviosarake **B** |
+| **Perus** | säädöt ja tärkeimmät mittarit |
+| **Laaja** | kaikki kaaviot ja lisätiedot; Alustassa säätöjen ja Tasapaino & KPI:n väliin tulee kaaviosarake **B** |
 
-![Advanced-näkymä: Alusta](img/fi/16-view-advanced.webp)
+![Laaja näkymä: Alusta](img/fi/16-view-advanced.webp)
 
-**Advanced**-tasolla sarakkeen B kaavio seuraa avaamaasi ryhmää: jouset, jousen pituus, vakaajat, vaimentimet tai camber ja toe.
+**Laaja**-tasolla sarakkeen B kaavio seuraa avaamaasi ryhmää: jouset, jousen pituus, vakaajat, vaimentimet tai camber ja toe.
 
 **Paneelien siirto.** Paneeleja, joiden otsikossa on **⠿-kahva**, voi siirtää. Vedä kahvasta toiseen sarakkeeseen tai alas alariville, niin paneeli levenee koko leveydelle. Kahvan napsautus (tai Enter) avaa valikon, jossa ovat samat siirrot ja **Palauta oletusjärjestys**. **–** pienentää paneelin ja **×** piilottaa sen. Järjestys muistetaan näkymäkohtaisesti.
 
@@ -285,7 +287,7 @@ Peliin on lista, jota seuraat peli auki Tougen vieressä.
 | Paino, etupaino, vetopyörästö, vaihtoaika | rivin liukuria | sama kuin − ja + |
 | Alusta · C Tasapaino & KPI · **LLTD** | palkkia | siirtää vakaajien etu–taka-jakoa kokonaisjäykkyys ennallaan |
 | Alusta · **Tasapainomittarit** | mittaria | siirtää jousten tai vaimentimien etu–taka-jakoa akselien summa ennallaan |
-| Camber ja toe -kaavio (Advanced) | pyörää | edestä-kuvassa kallistaa camberia, ylhäältä-kuvassa kääntää toeta |
+| Camber ja toe -kaavio (Laaja) | pyörää | edestä-kuvassa kallistaa camberia, ylhäältä-kuvassa kääntää toeta |
 | Välitykset · sahakaavio | vaihteen ympyrää, aluenappia, päätypalkkeja | ks. Välitykset yllä |
 | Välitykset · diffi | kaaria | ulompi kaari kaasulukko, sisempi jarrulukko |
 | Paneelit | ⠿-kahvaa | siirtää paneelin |
@@ -329,24 +331,29 @@ Avaa maaliin päättyneen ajon jälkeen **Analysoi**. Se vertaa ajoa omaan ennä
 ![Analysoi](img/fi/23-analyse.webp)
 
 - **Auto** rajaa ajot auton mukaan.
-- **Viimeisin ajo**: aika ja ero ennätykseen ja mediaaniin. Kartta värittää jokaisen mutkan vihreäksi (nopeampi) tai punaiseksi (hitaampi) kuin mediaanisi, ja alla oleva **mutkanauha** näyttää saman palkkeina.
+- Analysoin yläosa on yksi paneeli. **Aikanauha** näyttää viimeisimmän ajon ajan ja sen eron ennätykseen ja mediaaniin.
+- **Kartta** värittää jokaisen mutkan vihreäksi (nopeampi) tai punaiseksi (hitaampi) kuin mediaanisi, ja alla oleva **mutkanauha** näyttää saman palkkeina. Hiiren rulla zoomaa karttaa, vetämällä sitä voi siirtää, ja ennätysajo kulkee mukana haamuna.
 - **Ajon suurimmat erot mediaaniin** nimeää mutkat, joissa ajo hävisi eniten, ja syyn: jarrutus, sisääntulo, apex vai ulostulo.
-- **Seuraavaksi** nimeää yhden asian: yleensä mutkan, jota kannattaa harjoitella ensin (**Avaa mutka** zoomaa suoraan siihen), tai setupin muutoksen, kun sama kuvio toistuu ajoissasi (**Avaa Säädä**).
-- **Tavoite** näyttää, paljonko aikaa on vielä otettavissa: teoreettinen parhaasi parhaista mutkistasi yhdistettynä.
+- **Tavoite** erojen alla näyttää, paljonko aikaa on vielä otettavissa: teoreettinen parhaasi parhaista mutkistasi yhdistettynä.
+- **Nopeus reitillä** paneelin alaosassa näyttää koko ajon nopeuskäyränä ennätykseesi ja mediaaniisi verrattuna. Kytke viivoja päälle ja pois napeista (ennätys, mediaani, kehityskohta, korkeus, splitit, malli) ja valitse mikä tahansa ajo kohdasta **Vertaa ajoa**. Kun liikut käyrällä, kursori liikkuu myös kartalla.
+
+![Nopeus reitillä](img/fi/26-speed-on-route.webp)
 
 **Zoomaa mutkaan.** Napsauta mutkaa kartalla tai sen palkkia mutkanauhassa. Kartta zoomaa mutkaan ja värittää sen nopeutesi mukaan, ja merkit näyttävät, missä jarrutus alkaa, missä on pohja ja missä kaasu aukeaa. Oikealle aukeaa **Mutkan tarkastelu**: sisääntulo-, pohja- ja ulostulonopeus mediaaniin verrattuna, todennäköinen syy sekä kaasu, jarru ja ohjaus mutkan matkalla ennätykseesi verrattuna. Napsauta toista mutkaa siirtyäksesi; **Koko reitti** tai **Esc** zoomaa takaisin. Kun viet hiiren nauhan palkin päälle, sama mutka korostuu kartalla.
 
 ![Mutkan tarkastelu](img/fi/25-analyse-zoom.webp)
 
-**Osioiden avaus.** Viimeisimmän ajon alla olevat osiot ovat kiinni, jotta Analysoi aukeaa yhteen päätökseen. Napsauta osion otsikkoriviä, niin se aukeaa tai sulkeutuu; Touge muistaa, mitkä pidät auki. Jokaisessa on myös ⠿-kahva, jolla sen voi siirtää ylös tai alas.
+**Ajovertailu** asettaa kaksi ajoa päällekkäin: nopeus, aikaero, vaihde, kierrokset, kaasu ja jarru sekä ohjaus. Valitse **Ajo A** ja **Ajo B (haamu)** tai **Vaihda A ja B**. Graafeissa vedä sivuttain zoomataksesi ja tuplaklikkaa koko reittiin; nuolinäppäimet siirtävät kursoria. Kartalla A on kursorin kohdalla ja B haamuna samalla ajan hetkellä, ja viiva on vihreä, missä A voittaa aikaa, ja punainen, missä A häviää.
+
+![Ajovertailu](img/fi/29-run-comparison.webp)
+
+Sen alla **viimeisimmän ajon** kortti kertoo ajon sanoin, ja **Seuraavaksi** nimeää yhden asian: yleensä mutkan, jota kannattaa harjoitella ensin (**Avaa mutka** zoomaa suoraan siihen), tai setupin muutoksen, kun sama kuvio toistuu ajoissasi (**Avaa Säädä**).
+
+**Osioiden avaus.** Yläpaneelin alla olevat osiot voi pienentää. Napsauta osion otsikkoriviä, niin se aukeaa tai sulkeutuu; Touge muistaa, mitkä pidät auki. Jokaisessa on myös ⠿-kahva, jolla sen voi siirtää ylös tai alas.
 
 ![Harjoituslista](img/fi/24-practice.webp)
 
 **Harjoituslista** järjestää mutkat, joissa mediaaniajosi häviää eniten parhaalle. Jokainen kertoo, mihin aika menee (jarrutus ja sisääntulo, apex vai ulostulo), ja lähikuva näyttää kaasun, jarrun ja ohjauksen ennätykseesi verrattuna. Merkitse mutka **Harjoiteltu**, kun olet työstänyt sitä.
-
-**Nopeus reitillä** näyttää koko ajon nopeuskäyränä ennätykseesi ja mediaaniisi verrattuna. Kytke viivoja päälle ja pois napeista (ennätys, mediaani, kehityskohta, korkeus, splitit, malli) ja valitse mikä tahansa ajo kohdasta **Vertaa ajoa**. Harjoituslistan kehityskohdat on merkitty käyrälle.
-
-![Nopeus reitillä](img/fi/26-speed-on-route.webp)
 
 **Ajo mutkittain** avaa valitun ajon mutkakohtaisen taulukon.
 
@@ -378,7 +385,7 @@ Omat reittisi tallentuvat `Routes`-kansioon.
 
 ![Asetukset](img/fi/30-settings.webp)
 
-- **Yleistiedot**: kieli, tekstin koko, Säädä- ja Analysoi-näkymien näkymätaso sekä animaatiot. Paneeleja voi siirtää vetämällä niiden otsikon kahvasta.
+- **Yleiset**: kieli, tekstin koko, Säädä-näkymän näkymätaso sekä animaatiot. Paneeleja voi siirtää vetämällä niiden otsikon kahvasta.
 - **Data ja varmuuskopiot**: missä datasi on ja nappi kansion avaamiseen.
 - **Ajanotto**: pelikellon ja näytönlukijan valinnat.
 - **Käynnistys ja sammutus**: sammuttaa Tougen ja pelikellon yhdessä.

@@ -1,4 +1,4 @@
-[![Project Touge Säätöopas](../banner.png)](README.md)
+[![Project Touge choriso's Tuning Bible](../banner.png)](README.md)
 
 [In English](../body-dimensions.md)
 
@@ -112,7 +112,7 @@ Nämä oireet tulevat setupista, joka on tehty erikokoiselle autolle. Korjaa ne 
 
 | Vaihe | Oire | Mitä pelissä tapahtuu | Muutos |
 | --- | --- | --- | --- |
-| Jarrutus mutkaan | Pitkä auto aliohjaa jarrulla ja sitä joutuu kääntämään väkisin | Lyhyen auton takapainotteinen vakaajajako ei kierrä pitkää autoa | Siirrä vakaajajakoa eteen akselivälin mukaan ●. |
+| Jarrutus mutkaan | Pitkä auto aliohjaa jarrulla ja sitä joutuu kääntämään väkisin | Pitkä akseliväli kiertää jarrulla noin puolet lyhyestä, ja vakaajien ote siihen on pieni ◐ | Jarrujako taakse, sitten moottorijarrulukko alas ◐. Aseta vakaajajako akselivälin mukaan vakauden takia, älä jarrukierron. |
 | Keskikohta, kova vauhti | Pitkä auto: perä irtoaa yllättäen isossa mutkassa | Raja tulee perästä, kun jako on liian takapainotteinen | Sama korjaus: jakoa eteen ●. |
 | Ulostulo | Lyhyt, kevytperäinen auto pyörähtää kaasulla | Pieni etupaino ja lyhyt akseliväli tekevät perästä herkän | Laske diffin preloadia ja kaasulukkoa ◐, tai levennä takaraidetta. |
 | Jarrutus | Lyhyt auto sukeltaa ja perä kevenee | Pitkittäinen siirto m · a · h / L on lyhyellä autolla suurempi | Siirrä jarrujakoa taakse ja lisää etujousen pituutta. |
@@ -121,7 +121,7 @@ Nämä oireet tulevat setupista, joka on tehty erikokoiselle autolle. Korjaa ne 
 
 ## Loppuvinkki
 
-Katso uudesta autosta ensin akseliväli. Se kertoo, kuinka paljon toimivan setupin vakaajajakoa pitää siirtää, ja kokemuksemme mukaan pelkkä tämä korjasi herkän perän ja jarrutusaliohjauksen jokaisella touge weapon -sarjan autolla ●. Massa kertoo jousien ja vaimentimien tason, painopiste vakaajien kokonaisjäykkyyden.
+Katso uudesta autosta ensin akseliväli. Se kertoo, kuinka paljon toimivan setupin vakaajajakoa pitää siirtää, ja kokemuksemme mukaan pelkkä tämä korjasi herkän perän jokaisella touge weapon -sarjan autolla ●. Massa kertoo jousien ja vaimentimien tason, painopiste vakaajien kokonaisjäykkyyden.
 
 Kokemuksemme mukaan jokainen 10 cm lisää akseliväliä on siirtänyt toimivaa kallistusjäykkyyden jakoa noin 4 %-yksikköä eteen, kunnes jako on noin 5 %-yksikköä etupainon osuutta edellä ●.
 
@@ -129,7 +129,8 @@ Kokemuksemme mukaan jokainen 10 cm lisää akseliväliä on siirtänyt toimivaa 
 
 - Akselivälin suhde sovitettiin kolmeen autoon ja testattiin pelissä yhdeksällä. Yli 2,7 m:n autoja ei ole kokeiltu, joten yläpää on arvio.
 - Taajuus- ja vaimennussuhde-esimerkit on laskettu. Jousittamatonta massaa ei ole vähennetty pyörämassasta.
-- Offsetin hyöty oli yhdellä autolla positiivinen ja toisella negatiivinen, ja syy on auki.
+- Offsetin hyöty oli yhdellä autolla positiivinen ja toisella negatiivinen, ja syy on auki. Leveillä renkailla raide ±10 cm edessä tai takana muutti pitoa alle 1 % ◐, joten offset ei ole pitosäädin. Tasapainoon se vaikuttaa: kapeampi eturaide tai leveämpi takaraide rauhoitti perää jarrulla (vain suunta ◐).
+- Akseliväli on itse iso vipu jarrukiertoon ◐: samalla autolla 2,75 m:n akseliväli kiersi jarrulla noin puolet 2,30 m:n akselivälistä, ja vakaajajaon vaikutus jarrukiertoon pieneni (lyhyellä ±28 %, pitkällä ±8 %). Takapainotteinen jako kiersi kokeessa kaikilla akseliväleillä eniten, joten pelissä nähty pitkän auton jarrutusaliohjaus ● ei toistunut natiivimallissa.
 - Korjattu painopistelaskenta (touge weapon, oikea CoG) on testaamatta pelissä.
 - Lyhyen akselivälin ja pidemmän välityksen yhteys voi johtua rajoittimesta.
 

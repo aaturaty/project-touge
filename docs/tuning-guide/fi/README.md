@@ -1,10 +1,10 @@
-[![Project Touge Säätöopas](../banner.png)](README.md)
+[![Project Touge choriso's Tuning Bible](../banner.png)](README.md)
 
 [In English](../README.md)
 
 **PDF:** [Project-Touge-Saatoopas.pdf](Project-Touge-Saatoopas.pdf)
 
-# Säätöopas
+# choriso's Tuning Bible
 
 ## Tästä oppaasta
 
@@ -38,7 +38,7 @@ Muutama pelin fysiikan piirre muuttaa tavallisia säätöneuvoja. Ne toistuvat l
 ## Näin käytät sitä Tougen kanssa
 
 1. **Rakenna** auto Tougen Rakenna-välilehdellä tai syötä se kuvakaappauksistasi.
-2. **Aloita** presetistä, kuten touge weapon, ja aja pelissä muutama kierros.
+2. **Aloita** presetistä ja aja pelissä muutama kierros. Touge weapon -preset on toiminut pelissä ●, malli-laskenta on laskettu lähtökohta ◐.
 3. **Etsi vaihe**, jossa auto ei tee mitä haluat: jarrutus, sisääntulo, keskikohta, ulostulo, suora tai kuopat ja gutterit.
 4. **Valitse oire** Säädä-välilehden Oire-näkymässä. Se näyttää ensin ja sitten kokeiltavan muutoksen ja linkittää tämän oppaan lukuun, joka selittää sen.
 5. **Muuta yhtä asiaa kerrallaan** ja aja sama mutka samalla vaihteella. Siirrä säätö peliin Peliin-näkymällä.
@@ -57,7 +57,7 @@ Jokainen luku etenee samalla tavalla:
 
 ## Luvut
 
-1. [Alusta kokonaisuutena](whole-chassis.md): isoimmat vivut, säätöjärjestys, testaaminen ja oirehakemisto.
+1. [Alusta kokonaisuutena](whole-chassis.md): isoimmat vivut, säätöjärjestys, testaaminen, halutusta muutoksesta lähtevät taulukot ja oirehakemisto.
 2. [Renkaat](tyres.md): leveys, vanneosa, paine, halkaisija ja raide.
 3. [Jouset](springs.md): jousen pituus, jäykkyys ja etu–taka-tasapaino.
 4. [Vakaajat](anti-roll-bars.md): jäykkyys, kallistus ja etu–taka-jako.

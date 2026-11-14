@@ -1,4 +1,4 @@
-[![Project Touge Säätöopas](../banner.png)](README.md)
+[![Project Touge choriso's Tuning Bible](../banner.png)](README.md)
 
 [In English](../springs.md)
 
@@ -39,7 +39,7 @@ Merkit: ● vahvistettu pelissä tai pelin koodissa, ◐ natiivimalli tai päät
 3. Jouset eivät muuta kokonaiskuormansiirtoa (m · a · h / t sivuttain, m · a · h / L pitkittäin), koska kallistuskeskiö on maan tasolla ●. Ne päättävät, kuinka paljon kori liikkuu ja kuinka hyvin pyörä seuraa kuoppia.
 4. Kallistuksessa jousipari antaa k · t² / 2 ja vakaaja k · t² ●. Sama luku vakaajassa jäykistää kallistusta kaksi kertaa enemmän kuin jousessa.
 5. Ominaistaajuus f = √(k / m) / 2π, missä m on massa pyörää kohti ◐. Taajuus on helpoin tapa siirtää toimiva jäykkyys toiseen autoon.
-6. Helper on progressiivinen apujousi, ei ajoavustin ●. Liukurin rajat tulevat jousitusosasta, ja peli voi rajata enemmän kuin data kertoo ●.
+6. Helper on progressiivinen apujousi, ei ajoavustin ●. Liukurin rajat tulevat jousitusosasta, ja pelin raja voi poiketa datasta ●. Tarkista auton raja aina pelin liukurista: yhdellä autolla takajousen maksimi oli pelissä 151 eikä aiemmin luultu 80 ●.
 
 **Kun nostat:**
 

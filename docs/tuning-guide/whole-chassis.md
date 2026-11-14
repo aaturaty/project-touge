@@ -1,4 +1,4 @@
-[![Project Touge Tuning guide](banner.png)](README.md)
+[![Project Touge choriso's Tuning Bible](banner.png)](README.md)
 
 [Suomeksi](fi/whole-chassis.md)
 
@@ -20,17 +20,17 @@ Lever size is the largest difference measured on a long touge run, in the native
 
 | Setting | Lever size | Experience | Acts most on |
 | --- | --- | --- | --- |
-| Bar split | Large | ◐ Up to about five seconds. ● Moving the split forward cured braking understeer and a nervous rear on a long car in game. | Balance through the whole corner |
+| Bar split | Large | ◐ Up to about five seconds. ● Moving a very rear-biased split forward cured a nervous rear on a long car in game. | Balance through the whole corner |
 | Diff throttle lock | Large at the bottom, then flat | ◐ 0 clearly slowest and an open diff far slower. Above that the results conflict (see Not yet confirmed). ● 0.24–0.30 has worked in game. | Exit |
 | Spring length | Large | ● A few millimetres more front length has been more than two seconds quicker in game. | Travel, bumps, throttle understeer |
 | Tyre size | Large | ◐ 285–325 mm vs 265 mm about two seconds. | Grip and gearing length |
 | Final drive | Medium | ◐ Short cars gained up to almost two seconds with a 5–10 % change. | Acceleration out of corners |
 | Spring rate | Medium | ◐ The extremes were 2–4 s slower than the middle of the range. | Body motion and bumps |
-| Brake balance | Medium | ◐ 40 % front was 0.5–0.7 s quicker on most cars. ● A front-biased balance has made corner entry safe in game. | Braking and turn-in |
+| Brake balance | Medium | ◐ 40 % front was 0.5–0.7 s quicker on most cars. ● A front-biased balance has made corner entry safe in game. ◐ 50 → 55–58 is the most effective setting for a stable rear on the brakes. | Braking and turn-in |
 | Dampers | Small for time, large for feel | ◐ Nearly neutral in the native model. ● +20 % on the rear dampers has felt very good in game. | Speed of transitions |
-| Track and offset | Small | ◐ +0.10 m on both axles +1.4 % grip; on a full run often within noise. | Cornering grip |
-| Camber and toe | Small | ◐ Camber ≤ 3.5 % lateral grip, toe under a second. | Finishing |
-| Centre of gravity, caster, Ackermann | Not measurable | ◐ Lap within noise. | – |
+| Track and offset | Small | ◐ +0.10 m on both axles +1.4 % grip; on wide tyres ±10 cm under 1 %. | Balance on the brakes |
+| Camber and toe | Small | ◐ Camber ≤ 3.5 % lateral grip. Rear toe +0.2…+0.3 with rear camber −5 +5…+10 % in fast corners ◐, rear toe has worked in game ●. | Fast corners |
+| Centre of gravity, tyre pressure, caster, Ackermann | Not measurable | ◐ Lap within noise. Pressure changed grip by under 1–2 %. | – |
 
 ## Setup order
 
@@ -42,11 +42,11 @@ The order goes from big to small, so that a later setting does not undo an earli
 4. **Springs:** rate by mass, then length again, because a stiffer spring raises the body ●.
 5. **Bars:** split by wheelbase and total stiffness by roll. This is the main balance setting.
 6. **Differential:** throttle lock first, then preload and decel lock for exit and entry.
-7. **Brake balance:** rotation and stability on entry.
+7. **Brake balance:** rotation and stability on entry. The usual starting range is 48–50 % front, and if the rear is restless on the brakes, 55–58 ◐.
 8. **Dampers:** slow bump and slow rebound for the speed of transitions. Fast values only for bumps and gutters.
 9. **Camber and toe:** finishing.
 
-The touge weapon preset in Touge gives starting values for steps 2–8 from the car's dimensions, and they have worked in game ●. The real refining then starts from symptoms.
+Touge's presets give starting values for steps 2–8 from the car's dimensions. The model calculation is a calculated starting point ◐, not a setup tested in game. The touge weapon preset has worked in game ●. The real refining then starts from symptoms.
 
 ## How to test
 
@@ -55,9 +55,65 @@ The touge weapon preset in Touge gives starting values for steps 2–8 from the 
 3. **The same test spot.** Drive the same corner or section in the same gear. The full lap tells you the result, a single corner tells you what the change did.
 4. **Know the noise.** In our experience runs of the same setup spread by about 0.8 s on a six-minute run ●. A difference under a second cannot be shown with one run.
 5. **Note the feel as well as the time.** Write down what the car did under braking, at turn-in, mid-corner and on exit, not only the time. The Symptom view on Touge's Tune tab uses the same four phases.
-6. **The whole lap decides.** A change is better only if it shortens the lap or makes the car clearly easier to control. Improving one measure, such as steady-circle grip, can slow the lap: rear toe-in raised circle grip 2–4 % but the lap got slower ◐.
+6. **The whole lap decides.** A change is better only if it shortens the lap or makes the car clearly easier to control. Improving one measure, such as steady-circle grip, can slow the lap: more rear aero raised grip in fast corners, but added on its own it made the lap slower ◐, because it costs speed on the straights and adds understeer in medium-speed corners.
 
-**On a controller the steering assist is always on ●.** The steering assist's Off level does not give direct steering on a controller or keyboard. The game still uses the assist, with its tightest front slip limit (105 %). Direct steering is only available on a wheel. On a controller the Off/Gamepad profile is used, which has no extra keyboard stabilisation. In a native test the assist changed grip only a little (−1.2 % in a tight corner, 0 in a fast one) ◐, so it does not explain differences between the native model and the game. It may still affect the feel, because it keeps the front tyres near peak grip ◐.
+**On a controller the steering assist is always on ●.** The steering assist's Off level does not give direct steering on a controller or keyboard. The game still uses the assist, with its tightest front slip limit (105 %). Direct steering is only available on a wheel. On a controller, use the full assist level (Standard) and the Stabilization slider ●. Stabilization 100 adds understeer in slow corners and stability in fast ones ●, and a middle value has worked in game, for example Stabilization 50 and Angle Stabilization in Drift 0 ●. The earlier advice about the Off/Gamepad profile was wrong. In a native test the assist changed grip only a little (−1.2 % in a tight corner, 0 in a fast one) ◐, so it does not explain differences between the native model and the game. It may still affect the feel, because it keeps the front tyres near peak grip ◐.
+
+## Starting from what you want
+
+These tables start from what you want to change. The settings are in order of effect size. The effect is from native runs on one rear-drive car (about 900 kg, 50/50 weight split) ◐ unless marked otherwise, so it gives the direction and order of magnitude, not the exact gain on your car. The circle test steps grip in 2–5 % increments, and smaller differences are noise.
+
+### More acceleration
+
+| Setting | Direction | Effect | Note |
+| --- | --- | --- | --- |
+| Power | Up | Large | The biggest lever. |
+| Mass | Down | Large | Extra mass slows by the same amount. |
+| Drag (Cx) | Down | Large at high speed, small at low speed | Shows only at high speed. |
+| Shift time (gearbox part) | Shorter | Medium | |
+| Driveline loss | Down | Small | |
+| Tyre pressure | Up | Small | Rolling resistance drops. |
+| Tyre width | Narrower | Small | A wide tyre costs on the straight but brings grip in corners. |
+| Rear toe | Towards zero | Very small | |
+| Diff and chassis | – | No effect | No effect on the straight. |
+
+### More cornering grip
+
+| Setting | Direction | Effect | Note |
+| --- | --- | --- | --- |
+| Downforce on both axles | Up | Large, most in fast corners | Costs drag. |
+| Rear aero above the front | Up | Large in fast corners, slow corners drop | Costs speed on the straights. A bigger wing part adds drag area ●; the downforce slider on the same part costs little (120–200 km/h about 0.05 s slower for a clearly higher setting ◐). Check with lap time. |
+| Tyre grip (tyre class, rim part) | Up | Large in slow corners, small in fast | |
+| Tyre width | Wider | Medium in all corners | Slower on the straight. |
+| Rear toe together with rear camber −5 | +0.2…+0.3 | Medium in fast corners, none in slow | Rear toe has worked in game ●. |
+| Bar split | Forward | Medium in medium-speed corners | Slow corners suffer. |
+| Rear camber | Towards −5 | Small | Traction on exit drops slightly. |
+| Springs | Stiffer | Small, grip drops | |
+| Tyre pressure, track ±10 cm | – | No effect | Under 1–2 %. |
+
+### Shorter braking distance
+
+One metre of braking distance is about 0.03–0.04 s, so braking distance is a small time lever. ABS is always on in the game ●.
+
+| Setting | Direction | Effect | Note |
+| --- | --- | --- | --- |
+| Tyre grip | Up | Large | |
+| Front weight | Down | Large | A more rear-heavy car brakes shorter. Comes from the build. |
+| Downforce | Up | Medium | |
+| Mass | Down | Medium | |
+| Brake force (brake part) | Enough | Small | Too weak a brake lengthens the distance, more than enough does not help. |
+| Brake balance | Forward | Small | |
+| Dampers, spring length, toe, rear camber, diff | – | No effect | |
+
+### A stable rear on the brakes
+
+| Setting | Direction | Effect | Note |
+| --- | --- | --- | --- |
+| Brake balance | Forward about 5 points (50 → 55–58) | Large | The most effective setting. A front-biased balance has made corner entry safe in game ●. |
+| Front anti-roll bar | Up 20–40 % | Large | The second most effective. |
+| Decel lock | Up | Medium | |
+| Rear anti-roll bar | Down | Small | Helps less than the front bar. |
+| Rear toe, preload, rear slow rebound, front slow bump, rear spring | – | No effect | None of these helped on the brakes. |
 
 ## From symptom to setting
 
@@ -65,13 +121,13 @@ This index collects the symptom tables of the topic guides. Try the primary chan
 
 | Phase | Symptom | Primary change | Secondary |
 | --- | --- | --- | --- |
-| Braking into the corner | The car understeers on the brakes and has to be forced to turn | Move the bar split forward ● | Brake balance 2 points rearwards |
-| Braking into the corner | The rear wanders or tries to overtake | Brake balance 2 points forward ● | Diff decel lock up, rear toe +0.1 |
+| Braking into the corner | The car understeers on the brakes and has to be forced to turn | Brake balance 2–5 points rearwards, then diff decel lock down ◐ | Front bar down or rear bar up ◐. A front-biased split rotated least on the brakes at every wheelbase. Exception from the game ●: with a very rear-biased split and a nervous rear on a long car, move the split towards even first. |
+| Braking into the corner | The rear wanders or tries to overtake | Brake balance about 5 points forward, 50 → 55–58 (front-biased balance ●, 55–58 ◐) | Front bar up 20–40 %, then diff decel lock up. Rear toe, lower preload, rear slow rebound and front slow bump did not help ◐. |
 | Braking into the corner | The nose dives and bottoms out | Front spring length +4 mm | Front spring or front slow bump up |
 | Turn-in | The car is lazy to turn | Front bar down or rear bar up | Front slow bump down, front camber −0.5° |
-| Turn-in | The rear steps out right at turn-in | Rear bar down | Rear slow rebound down, brake balance forward |
+| Turn-in | The rear steps out right at turn-in | If you are still on the brakes: brake balance forward and front bar up ◐. Off the brakes: rear bar down | Rear slow rebound down (did not help on the brakes ◐) |
 | Mid-corner | Steady understeer in a long corner | Move the bar split rearwards | Tyre size or front track |
-| Mid-corner, high speed | The rear lets go suddenly | Move the bar split forward by wheelbase ● | Wider rear track |
+| Mid-corner, high speed | The rear lets go suddenly | Move the bar split forward by wheelbase ● | Rear toe +0.2…+0.3 and rear camber −5 ◐ (rear toe has worked in game ●) |
 | Exit | The nose pushes on throttle in a fast corner | More front spring length ● | Front spring down ◐ |
 | Exit | The rear spins on throttle | Diff preload and throttle lock down (careful below 0.2) | Rear bar down |
 | Exit | The inner wheel spins | Throttle lock up | Rear spring or rear length up, rear camber towards zero |
@@ -90,7 +146,7 @@ The fastest setup is not the same for everyone, because the driver drives it at 
 | You want | Change | Cost |
 | --- | --- | --- |
 | More rotation on the brakes | Brake balance rearwards, diff decel lock down | The rear may step out under braking. |
-| A more stable entry | Brake balance forward, decel lock up | The car understeers on the brakes. |
+| A more stable entry | Brake balance forward, front bar up, decel lock up | The car understeers on the brakes. |
 | A sharper response | Slow dampers up, bars stiffer with the same split | The car is more nervous over bumps. |
 | Softer and more predictable | Slow dampers and springs down, more travel | Transitions get lazier. |
 | An exit where the rear helps turn | Throttle lock and preload up | The rear steps out more easily on throttle. |
@@ -100,7 +156,7 @@ The fastest setup is not the same for everyone, because the driver drives it at 
 
 ## Final tip
 
-Start a new car from the touge weapon preset, which has worked in game on ten cars ●. Drive a few laps and note the phase where the car does not do what you want. Fix one symptom at a time with the index's primary change, and once the car is balanced, move on to the feel.
+Start a new car from a Touge preset. The touge weapon preset has worked in game on ten cars ●. The model calculation (rear toe +0.3 on rear-drive cars, diff 0.30 / 0.20 with a calculated preload, a softer damper base) is a calculated starting point from the car's dimensions ◐, and it has not been tested in game as a whole setup. Drive a few laps and note the phase where the car does not do what you want. Fix one symptom at a time with the index's primary change, and once the car is balanced, move on to the feel.
 
 Three things have repeated in every test:
 
@@ -112,6 +168,9 @@ Three things have repeated in every test:
 
 ## Not yet confirmed
 
+- Waiting for a game test: the direction of front slow rebound on throttle (see dampers), brake balance 55 with the front bar up for a nervous rear in the same setup, and rear toe +0.2…+0.3 together with rear camber −5.
+- More rear aero than front raised fast-corner grip in the native circle test, but added on its own it slowed the lap (understeer in medium-speed corners). The explanation: rear aero raises grip but costs speed on the straights, mostly through the drag area of the wing part, and a large rear bias adds understeer. Choose the wing part by the straights and use the slider for grip and balance ◐.
+- The Starting from what you want tables come from one car ◐. With other weight splits and drivetrains the order may change.
 - The lever sizes come from different cars, different starting setups and partly the native model. They give the order, not how much your car will gain.
 - The lower limit of the throttle lock conflicts: one model found below 0.25 slow, a hairpin test did not, another test found 0.10 slow, and a newer slide-capable driver saw 0.10–1.0 as noise over a lap with 0.15 quickest in the tightest hairpin. The 0.24–0.30 range that has worked in game is the safe area.
 - Damper effect on time is small in the native model but large on feel. The native model does not model driver confidence.

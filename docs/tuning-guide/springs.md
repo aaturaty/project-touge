@@ -1,4 +1,4 @@
-[![Project Touge Tuning guide](banner.png)](README.md)
+[![Project Touge choriso's Tuning Bible](banner.png)](README.md)
 
 [Suomeksi](fi/springs.md)
 
@@ -39,7 +39,7 @@ Markers: ● confirmed in game or in the game code, ◐ native simulation or inf
 3. Springs do not change total load transfer (m · a · h / t sideways, m · a · h / L lengthways), because the roll centre is at ground level ●. They decide how much the body moves and how well the wheel follows bumps.
 4. In roll the spring pair gives k · t² / 2 and a bar k · t² ●. The same number in a bar stiffens roll twice as much as in a spring.
 5. Natural frequency f = √(k / m) / 2π, where m is the mass per wheel ◐. Frequency is the easiest way to carry a working stiffness over to another car.
-6. Helper is a progressive helper spring, not a driving aid ●. The slider limits come from the suspension part, and the game can limit more than the data says ●.
+6. Helper is a progressive helper spring, not a driving aid ●. The slider limits come from the suspension part, and the game's limit can differ from the data ●. Always check the car's limit on the game slider: on one car the rear spring maximum was 151 in game, not the 80 assumed earlier ●.
 
 **When you raise:**
 

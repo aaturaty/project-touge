@@ -1,6 +1,6 @@
 # Project Touge user guide
 
-**Build, tune and improve your driving. One gutter away from being the fastest on the touge.**
+**One gutter away from being the fastest on the touge.**
 
 [Suomeksi](README.fi.md) · [Branded version (HTML)](index.html)
 
@@ -68,7 +68,7 @@ The route list shows the verified game routes first plus any routes of your own.
 
 1. In CarX Street, open the car's **Part Setup** and take a screenshot of each screen: engine, gearbox, body and aero, suspension, tyres and Component features.
 2. Paste them with **Ctrl+V**, drop them on the box, or use **Choose files**. Images are read on your computer and not stored. Rows read from the images replace the base values; the base is your previous setup for this car if you have one.
-3. Check **Weight**, **Weight Distribution in Front** and **Center of Mass Height** against the game. These three readings decide how the car is modelled, so it pays to copy them exactly.
+3. Under **Basics**, below the steps, check **Weight**, **Weight Distribution in Front** and **Center of Mass Height** against the game. They come after the parts because the engine and gearbox change the weight. These three readings decide how the car is modelled, so it pays to copy them exactly.
 4. The **Check** row lists anything Touge could not read or is unsure of, in game order. You can also set things by hand: engine parts are one tap each on the tier row (S Stock, St Street, Sp Sport, R Racing, E Elite, U Ultimate, P Prototype), and the gearbox, body kit, suspension and tyres have their own sections below.
 5. Save the setup (**Ctrl+S**).
 
@@ -177,7 +177,7 @@ Setups are saved in the Project Touge folder as files, with dated backup copies.
 
 ## 5. Tune: fix what you feel
 
-The Tune tab has four views in the order you usually need them: **Symptom**, **Adjust**, **Check** and **To game**. The view level switch next to them (**Settings only**, **Simple**, **Advanced**) decides how much detail you see. Simple is a good start.
+The Tune tab has four views in the order you usually need them: **Symptom**, **Adjust**, **Check** and **To game**. Adjust has its own view level switch (**Settings only**, **Simple**, **Advanced**) that decides how much detail you see there; Simple is a good start. The other views always show everything.
 
 The route and the **model reference time** stay in the top right, so you see the effect of every change at once.
 
@@ -190,6 +190,8 @@ The route and the **model reference time** stay in the top right, so you see the
 3. **What changes** lists the settings Touge would move, each with a one-line reason and old → new value. The tuning guide above it says what to try first.
 4. **Apply** takes all of them. Tick **One at a time** to take only the biggest change, then time a run before the next one. **Cancel** leaves the setup as it was.
 
+Already know what to change? **Adjust tune yourself** in the Handling header takes you straight to Adjust.
+
 **Whole car** covers symptoms that are not tied to one corner phase: overall understeer or oversteer, bouncing over bumps, kerbs and gutters, and a limiter or no acceleration on the straights.
 
 **Advice for this build** points out settings that are worth a look on this particular build, with **Lower** and **Higher** buttons.
@@ -198,7 +200,7 @@ The effects are estimates (◐). One change and one timed run at a time tells yo
 
 ### 5.2 Adjust
 
-Adjust shows every setting with a slider. It has four folders: **Parts**, **Chassis**, **Gearing** and **Other**.
+Adjust shows every setting with a slider. It has four tabs: **Parts**, **Chassis**, **Gearing** and **Other**. The view level switch sits at the right end of the same row.
 
 **Chassis**
 
@@ -214,7 +216,7 @@ Adjust shows every setting with a slider. It has four folders: **Parts**, **Chas
 ![Adjust: Gearing](img/en/12-adjust-gearing.webp)
 
 - The **sawtooth** shows each gear's rpm against speed, shifting at the limiter. The green band is the power band; a green dot is a shift that lands inside it, a grey dot one that falls below.
-- Pick the gears to work on: **1–3**, **3–4**, **4–5**, **5–6** or **All**, or tap two gears in the row under the charts to make your own range.
+- Pick the gears to work on: **1–3**, **3–4**, **4–5** and so on up to your top gear, or **All**, or tap two gears in the row under the charts to make your own range.
 - Drag the **circle at the top of a gear** left or right to make that gear shorter or longer. The arrow keys move it 0.01 at a time.
 - Drag the **◂ 1–3 ▸ pill** to move the whole range at once.
 - Drag one of the **end bars** at the bottom to change the spacing: that end moves and the other stays, and the gears in between keep the same proportions.
@@ -259,7 +261,7 @@ To game is the list you follow with the game open next to Touge.
 
 ### 5.5 Views and dragging
 
-**View level.** The switch at the top of Tune and Analyse sets how much you see, and it applies across Touge (also in Settings > General):
+**View level.** The switch at the right end of Adjust's tab row sets how much of Adjust you see (it is also in Settings > General). Symptom, Check, To game and Analyse always show everything.
 
 | Level | Shows |
 |---|---|
@@ -327,24 +329,29 @@ After a finished run, open **Analyse**. It compares the run against your own rec
 ![Analyse](img/en/23-analyse.webp)
 
 - **Car** filters runs by car.
-- **Latest run**: the time and its gap to your record and median. The map colours each corner green (faster) or red (slower) than your median, and the **corner strip** below does the same as bars.
+- The top of Analyse is one panel. The **time bar** shows the latest run's time and its gap to your record and median.
+- The **map** colours each corner green (faster) or red (slower) than your median, and the **corner strip** below does the same as bars. Roll the mouse wheel to zoom the map, drag to move it, and the record runs along as a ghost.
 - **Largest gaps to the median** names the corners where this run lost the most, and why: braking, entry, apex or exit.
-- **Next** suggests one setup change when the same pattern repeats across your runs. **Open Tune** takes you straight there.
-- **Target** shows what is left on the table: your theoretical best from your best corners combined.
+- **Target**, under the gaps, shows what is left on the table: your theoretical best from your best corners combined.
+- **Speed on route**, at the bottom of the panel, shows the whole run as a speed trace against your record and median. Switch the lines on and off with the chips (record, median, focus corner, elevation, splits, model), and pick any run in **Compare run**. Moving along the trace moves a cursor on the map.
+
+![Speed on route](img/en/26-speed-on-route.webp)
 
 **Zoom into a corner.** Click a corner on the map, or its bar in the corner strip. The map zooms to that corner and colours it by your speed, with markers where braking starts, the apex and where the throttle opens. **Corner close-up** opens on the right: entry, apex and exit speed against the median, the likely reason, and throttle, brake and steering over the corner against your record. Click another corner to move there; **Whole route** or **Esc** zooms back out. Hovering a bar in the strip highlights the same corner on the map.
 
 ![Corner close-up](img/en/25-analyse-zoom.webp)
 
-**Opening sections.** The sections below the latest run are folded so that Analyse opens on one decision. Click a section's title bar to open or close it; Touge remembers which ones you keep open. Each one also has a ⠿ handle to move it up or down.
+**Run comparison** lays two runs over each other: speed, the time gap, gear, rpm, throttle and brake, and steering. Pick **Run A** and **Run B (ghost)**, or **Swap A and B**. On the charts, drag sideways to zoom and double-click for the whole route; the arrow keys move the cursor. On the map, A sits at the cursor and B is a ghost at the same moment, and the line turns green where A gains and red where A loses.
+
+![Run comparison](img/en/29-run-comparison.webp)
+
+Below it, the **latest run** card sums up the run in words, and **Next** names one thing to do: usually the corner to practise first (**Open corner** zooms straight to it), or a setup change when the same pattern repeats across your runs (**Open Tune**).
+
+**Opening sections.** The sections below the top panel can be folded. Click a section's title bar to open or close it; Touge remembers which ones you keep open. Each one also has a ⠿ handle to move it up or down.
 
 ![Practice list](img/en/24-practice.webp)
 
 The **Practice list** ranks the corners where your median run loses most to your best. Each one shows where the time goes (braking and entry, apex, or exit) and a close-up of throttle, brake and steering against your record. Mark a corner **Practised** when you have worked on it.
-
-**Speed on route** shows the whole run as a speed trace against your record and median. Switch the lines on and off with the chips (record, median, focus corner, elevation, splits, model), and pick any run in **Compare run**. The focus corners from the practice list are marked on the trace.
-
-![Speed on route](img/en/26-speed-on-route.webp)
 
 **Run by corner** opens the per-corner table for the chosen run.
 
@@ -376,7 +383,7 @@ Your own routes are saved in the `Routes` folder.
 
 ![Settings](img/en/30-settings.webp)
 
-- **General**: language, text size, view level for Tune and Analyse, and animations. Panels can be moved by dragging the handle in their header.
+- **General**: language, text size, view level for Adjust, and animations. Panels can be moved by dragging the handle in their header.
 - **Data and backups**: where your data is and a button to open the folder.
 - **Timing**: game timer and screen reader options.
 - **Start and shut down**: shut down Touge and the game timer together.

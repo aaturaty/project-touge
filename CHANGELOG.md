@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.9.2 beta (2026-11-15)
+
+- Screen reader: works with HDR screen capture, where the speedometer has a white background and turquoise outlined digits.
+- Routes: an overview map of all routes, with start and finish pins and the start and finish names on each route.
+- Route editor: short help on which start and finish images to take.
 ## 0.9.1 beta (2026-11-15)
 
 - Import a tune: a new **Import a tune** start on the Build tab and in the setup menu. Reads the CarX Street Tuning Template (xlsx or a CSV export), other tune tables, pasted text and screenshots of tables or the game's Part Setup screens.

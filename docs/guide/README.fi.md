@@ -26,9 +26,18 @@ Kieli vaihtuu yläpalkin **FI / EN** -kytkimestä. Pelin omat termit (esim. Part
 
 ## 1. Ennen kuin aloitat
 
-1. Pura **Project Touge** -kansio haluamaasi paikkaan ja pidä se kokonaisena.
+Project Touge on yksi ohjelmatiedosto, **Project Touge.exe**. Ajanotto, automaattiset splitit, ajoanalyysi ja näytönlukija ovat sen sisällä, joten muuta asennettavaa ei ole.
+
+1. Pura lataus omaan kansioonsa mihin tahansa paitsi `Program Files` -kansioon (esimerkiksi työpöydälle tai pelien viereen).
 2. Kaksoisnapsauta **Project Touge.exe**. Touge avautuu omaan ikkunaansa; sulje ikkuna lopettaaksesi.
-3. Mitään ei tarvitse asentaa. Windows 10 tai 11 ja Microsoft Edge WebView2 riittävät. Jos SmartScreen varoittaa tuntemattomasta julkaisijasta, valitse **Lisätietoja → Suorita silti**.
+3. Ensimmäisellä käynnistyksellä Touge luo datakansiot exen viereen ja lisää kuusi mukana tulevaa reittiä `Routes`-kansioon.
+
+Windows 10 tai 11 ja Microsoft Edge WebView2 riittävät. Jos SmartScreen varoittaa tuntemattomasta julkaisijasta, valitse **Lisätietoja → Suorita silti**.
+
+**Päivitys versiosta 0.9.x**
+
+- **Sama kansio**: kopioi uusi **Project Touge.exe** vanhan päälle. Seuraavalla käynnistyksellä Touge tarjoutuu siirtämään vanhan `App`-kansion roskakoriin; setupit, ajot ja reitit pysyvät paikallaan.
+- **Uusi kansio**: pura uusi versio toiseen paikkaan ja käynnistä se. Touge etsii aiemman Project Tougesi tai antaa valita sen kansion ja kopioi datasi. Vanhaan kansioon ei kosketa, joten voit poistaa sen, kun kaikki on siirtynyt.
 
 Ajanottoa varten aja CarX Streetiä reunattomassa ikkunassa tai koko näytöllä niin, että koko HUD näkyy. Touge lukee nopeusmittarin, vaihteen ja minikartan näytöltä samalla tavalla kuin sinä ne näet. Se ei lue, muuta eikä syötä mitään peliin.
 
@@ -54,7 +63,7 @@ Merkitön luku tulee pelin omasta datasta. Nimet, järjestys ja yksiköt seuraav
 
 ## 3. Rakenna: auto sisään
 
-Useimmiten autosi on jo rakennettu pelissä. Valitse silloin **Syötä pelistä**. Jos haluat Tougen ehdottavan koko buildin luokkaan, valitse **Rakenna mallilla**.
+Useimmiten autosi on jo rakennettu pelissä. Valitse silloin **Syötä pelistä**. Jos tune on jo tiedostossa, esimerkiksi kaverin tunepohjana, valitse **Tuo tune**. Jos haluat Tougen ehdottavan koko buildin luokkaan, valitse **Rakenna mallilla**.
 
 ### 3.1 Auto, luokka ja reitti
 
@@ -79,7 +88,18 @@ Reittilistassa ovat ensin pelissä todennetut reitit ja omat reittisi. Valitse s
 
 Tästä eteenpäin Säädä-välilehti käsittelee *sinun* buildiasi, ei malliautoa.
 
-### 3.3 Rakenna mallilla
+**Kori**: korisarjan alla **Kori** valitsee pelin korin päivitystason, STG1 Racing – STG4 Prototype. Se muuttaa massaa ja ilmanvastusta. **Oletus (kevennyksen mukaan)** seuraa valitsemaasi keventämistä.
+
+### 3.3 Tuo tune tiedostosta
+
+![Tuo tune](img/fi/50-import.webp)
+
+1. Valitse **Tuo tune** (tai Setup-valikosta **Tuo tune…**) ja valitse tiedosto. Touge lukee **CarX Street Tuning Template** -pohjan xlsx-muodossa tai CSV-vientinä, muut tunetaulukot (CSV, TSV, teksti, Markdown, JSON) sekä kuvakaappaukset tunetaulukosta. Voit myös liittää taulukon tai kuvan **Ctrl+V**:llä.
+2. Jos pohjan **MODEL** nimeää yhden Tougen auton, Touge vaihtaa siihen autoon itse. Muuten valitse auto ensin.
+3. Rivit, joissa lukee **Stock**, **N/A** tai **Default**, sekä välit kuten **50 - 60** ohitetaan, joten niillä riveillä säilyy auton oma arvo.
+4. Tarkista rivit kuten kuvista luettaessa ja tallenna tune uutena setuppina. Nykyinen setupisi ei muutu.
+
+### 3.4 Rakenna mallilla
 
 Käytä tätä, kun haluat lähtöpisteen uudelle autolle tai luokalle.
 
@@ -106,7 +126,7 @@ Oikean reunan **Tulos**-paneeli näyttää:
 
 Tuloksen alla **Ehdokkaat** listaa moottori- ja vaihteistoyhdistelmät ajan mukaan, paras ensin. **Valitse** vaihtaa toiseen, jos pidät siitä enemmän. **Kokeile muutoksia** listaa yksittäiset muutokset ja niiden vaikutuksen.
 
-### 3.4 Moduulit yksi kerrallaan
+### 3.5 Moduulit yksi kerrallaan
 
 Napsauta vaiheen 2 moduulikorttia, niin se aukeaa korttien alle; **Sulje** tai toinen napsautus sulkee sen. Jokainen moduuli näyttää buildin sen osan kaikki tiedot, ja suurin osa toimii samoin tilassa **Laskuri valitsee** ja **Paranna**. Kun moduuli saa muuttua, laskuri täyttää sen; kun se on lukittu, tässä asettamasi arvot pysyvät.
 
@@ -125,7 +145,7 @@ Auto on tässä kiinteä; vaihda se vaiheessa 1. Näet vakiomassan, vakioetupain
 - **Hienosäädä reittiajalla** ajaa osa- ja liukuriyhdistelmät reitillä ja pitää nopeimman.
 - **Osat luokkaan** listaa jokaisen moottorin osapaikan ja sen tason. Kytke **Valitse itse**, niin voit valita osat käsin; paikka, jonka taso ei voi nousta luokasta putoamatta, kertoo sen. Napsauta osaa, niin näet sen **Osan säätö** -liukurit.
 - **Component features** näyttää samat luvut kuin pelin moottorinäkymä: huipputeho ja -vääntö, paino, vääntö kohdissa Low, Medium ja High, rajoitin, Peak RPM ja ahto.
-- **Vertaa moottoreita** avaa moottorin käyräsivun (3.5), ja **Tallenna moottoribuildi** säilyttää tämän moottorin myöhempää vertailua varten.
+- **Vertaa moottoreita** avaa moottorin käyräsivun (3.6), ja **Tallenna moottoribuildi** säilyttää tämän moottorin myöhempää vertailua varten.
 
 **03 Voimansiirto**
 
@@ -151,7 +171,7 @@ Jousitus on aina Prototype, koska sillä voi säätää kaiken. **Jousituksen ti
 
 Leveys, profiili ja vanne kummallekin akselille sekä spacer. Yläkuva piirtää renkaat mittakaavassa raideleveyden, akselivälin ja lokasuojan sisälle jäävän tilan kanssa. **Rengassarja** valitsee seoksen, ja sarjan pito näkyy vieressä. **Vertaa kokoja reitillä** ajaa reitin jokaisella pelin koolla nykyisellä buildilla ja listaa ajat.
 
-### 3.5 Vertaa moottoreita: vääntö ja teho
+### 3.6 Vertaa moottoreita: vääntö ja teho
 
 ![Moottorin käyrä -sivu](img/fi/46-engine-compare.webp)
 
@@ -177,6 +197,7 @@ Paina **Ctrl+S** (tai yläpalkin **Tallenna**). Ensimmäinen tallennus kysyy nim
 - Hae nimellä tai autolla, rajaa autolla vasemmalta ja lajittele minkä tahansa sarakkeen mukaan.
 - Oikea paneeli näyttää luokan, reitin, mallin ajan ja parhaan ajosi. Siitä voit avata setupin, **Nimetä uudelleen** (F2), **Monistaa** tai **Poistaa** (Del). Poistetut menevät ensin **Roskakoriin**.
 - **Tuo…**, **Liitä teksti**, **Vie valitut** ja **Vie kaikki** siirtävät setupeja koneelta toiselle tai kaverille.
+- Setup-valikon **Tuo tune…** lukee tunepohjan tai tunetaulukon uudeksi setupiksi (ks. [3.3](#33-tuo-tune-tiedostosta)).
 
 Setupit tallentuvat Project Touge -kansioon tiedostoina, ja niistä jää päivätyt varmuuskopiot.
 
@@ -365,11 +386,15 @@ Sen alla **viimeisimmän ajon** kortti kertoo ajon sanoin, ja **Seuraavaksi** ni
 
 ### 6.4 Reitit ja omat reitit
 
-Aja- ja Analysoi-näkymien vieressä oleva **Reitit** listaa omat reittisi ja North Touge AP004:n; **Näytä kaikki pelin reitit** listaa myös jokaisen pelin reitin.
+Aja- ja Analysoi-näkymien vieressä oleva **Reitit** listaa omat reittisi, myös kuusi Tougen mukana tulevaa; **Näytä kaikki pelin reitit** listaa myös jokaisen pelin reitin.
 
 ![Reitit](img/fi/27-routes.webp)
 
-Valitse reitti, niin näet sen muodon, pituuden, mutkat, hiusneulat, nousun ja laskun, parhaan aikasi ja ajomäärän sekä splitit. Kirjoita **Kuvaus** (mistä lähtö alkaa, vaaralliset mutkat, missä gutterit toimivat) ja lisää **Lähtö**- ja **Maali**-kuvakaappaus, niin löydät kohdan uudelleen. **Valitse ja aja** vie reitin Aja-näkymään.
+Valitse reitti, niin näet sen muodon, pituuden, mutkat, hiusneulat, nousun ja laskun, parhaan aikasi ja ajomäärän sekä splitit. **Kartta** näyttää, missä reitti on koko kartalla, ja merkitsee lähdön ja maalin nastoilla ja nimillä; **Näytä koko kartta** ja **Näytä reitin alue** vaihtavat näiden välillä.
+
+![Reittikartta, lähtö ja maali](img/fi/53-route-map.webp)
+
+Kirjoita **Kuvaus** (mistä lähtö alkaa, vaaralliset mutkat, missä gutterit toimivat) ja lisää **Lähtö**- ja **Maali**-kuva, niin löydät kohdan uudelleen. Hyvä kuva on koko näytön kuvakaappaus 16:9 ilman valikoita: lähdössä auto lähtöviivalla ajosuuntaan, maalissa noin 50 m ennen maalia ajosuuntaan. **Valitse ja aja** vie reitin Aja-näkymään.
 
 **Tee oma reitti**
 
@@ -414,7 +439,7 @@ Omat reittisi tallentuvat `Routes`-kansioon.
 
 ## 8. Datasi
 
-Kaikki tallentamasi jää Project Touge -kansioon:
+Kaikki tallentamasi jää kansioon **Project Touge.exe**:n viereen:
 
 | Kansio | Sisältö |
 |---|---|
@@ -423,11 +448,12 @@ Kaikki tallentamasi jää Project Touge -kansioon:
 | `Routes` | omat reitit |
 | `Logs` | ohjelman lokit; liitä nämä, kun ilmoitat ongelmasta |
 
-**Päivitys**: korvaa `App` ja `Project Touge.exe`, pidä datakansiot. **Siirto**: kopioi koko kansio. **Poisto**: poista kansio.
+**Päivitys**: korvaa `Project Touge.exe` ja pidä datakansiot (ks. [Päivitys versiosta 0.9.x](#1-ennen-kuin-aloitat)). **Siirto**: kopioi koko kansio. **Poisto**: poista kansio.
 
 ## 9. Kun jokin ei täsmää
 
-- **Pelikello ei vastaa**: käynnistä Project Touge uudelleen; kello käynnistyy sen mukana. Tarkista, ettei mikään muu telemetriaohjelma käytä samaa porttia.
+- **Pelikello ei vastaa**: käynnistä Project Touge uudelleen; kello on osa ohjelmaa ja käynnistyy sen mukana. Tarkista, ettei mikään muu telemetriaohjelma käytä samaa porttia.
+- **Windows estää ohjelman**: jos SmartScreen pysäyttää sen, valitse **Lisätietoja → Suorita silti**. Pidä exe `Program Files` -kansion ulkopuolella, koska sinne Touge ei voi kirjoittaa datakansioitaan.
 - **Nopeus tai minikartta ei tule**: aja peliä reunattomassa ikkunassa tai koko näytöllä niin, että HUD näkyy. Touge löytää HUDin ensimmäisellä ajolla; testatut resoluutiot ovat 3440×1440, 2560×1440, 2560×1080, 1920×1440 ja 1920×1080.
 - **Luku ei vastaa peliä**: katso ensin, onko siinä ◐. Kirjoita pelin oma lukema **Tarkista pelistä** -riveille ja ilmoita ero Tougen versiolla ja `Logs`-kansion tiedostoilla.
 - **Setup katosi**: katso **Kaikki setupit → Roskakori** tai palauta päivätyistä kopioista `Tunes`-kansiossa.

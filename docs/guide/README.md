@@ -24,9 +24,18 @@ The everyday loop is short: **Build** the car once, **Tune** one thing, **Time**
 
 ## 1. Before you start
 
-1. Unzip the **Project Touge** folder anywhere you like and keep it together.
+Project Touge is one program file, **Project Touge.exe**. The timer, auto splits, run analysis and screen reader are all built in, so there is nothing else to install.
+
+1. Unzip the download into a folder of its own, anywhere except `Program Files` (for example on the Desktop or next to your games).
 2. Double-click **Project Touge.exe**. Touge opens in its own window; close the window to quit.
-3. Nothing needs installing. Windows 10 or 11 with Microsoft Edge WebView2 is enough. If SmartScreen warns about an unknown publisher, choose **More info → Run anyway**.
+3. On the first start Touge creates its data folders next to the exe and adds the six included routes to `Routes`.
+
+Windows 10 or 11 with Microsoft Edge WebView2 is enough. If SmartScreen warns about an unknown publisher, choose **More info → Run anyway**.
+
+**Updating from 0.9.x**
+
+- **Same folder**: copy the new **Project Touge.exe** over the old one. On the next start Touge offers to move the old `App` folder to the Recycle Bin; your setups, runs and routes stay where they are.
+- **New folder**: unzip the new version somewhere else and start it. Touge looks for your earlier Project Touge, or lets you pick its folder, and copies your data over. The old folder is left untouched, so you can delete it once everything is in place.
 
 For timing, run CarX Street borderless or full screen so the whole HUD is visible. Touge reads the speedometer, gear and minimap from the screen, the same way you see them. It never reads, changes or injects anything into the game.
 
@@ -52,7 +61,7 @@ Values without a mark come from the game's own data. Names, order and units foll
 
 ## 3. Build: get your car in
 
-Most of the time your car already exists in the game. Then choose **Enter from the game**. If you want Touge to suggest a whole build for a class, choose **Build with the model**.
+Most of the time your car already exists in the game. Then choose **Enter from the game**. If you already have the tune in a file, such as a tuning template from a friend, choose **Import a tune**. If you want Touge to suggest a whole build for a class, choose **Build with the model**.
 
 ### 3.1 Car, class and route
 
@@ -77,7 +86,18 @@ The route list shows the verified game routes first plus any routes of your own.
 
 From now on Tune works on *your* build, not on a model car.
 
-### 3.3 Build with the model
+**Body**: under the body kit, **Body** picks the game's body upgrade stage, STG1 Racing to STG4 Prototype. It changes the weight and the air resistance. **Default** follows the weight reduction you chose.
+
+### 3.3 Import a tune from a file
+
+![Import a tune](img/en/50-import.webp)
+
+1. Choose **Import a tune** (or **Import a tune…** in the Setup menu) and pick the file. Touge reads the **CarX Street Tuning Template** as xlsx or as a CSV export, other tune tables (CSV, TSV, text, Markdown, JSON), and screenshots of a tune table. You can also paste a table or an image with **Ctrl+V**.
+2. If the template's **MODEL** names one Touge car, Touge switches to that car by itself. Otherwise pick the car first.
+3. Rows that say **Stock**, **N/A** or **Default**, and ranges like **50 - 60**, are skipped, so those rows keep the car's own value.
+4. Check the rows like after a screenshot read and save the tune as a new setup. Your current setup is not changed.
+
+### 3.4 Build with the model
 
 Use this when you want a starting point for a new car or class.
 
@@ -104,7 +124,7 @@ The **Result** panel on the right shows:
 
 Under the result, **Candidates** lists the engine and gearbox combinations by time, best first. **Select** swaps to another one if you prefer it. **Changes to try** lists single changes and their effect.
 
-### 3.4 The modules one by one
+### 3.5 The modules one by one
 
 Click a module card in step 2 to open it under the cards; **Close** or a second click folds it away. Each module shows the full detail of that part of the build, and most of it works the same in **Tuner picks** and **Improve**. When a module may change, the tuner fills it in; when it is locked, what you set here stays.
 
@@ -123,7 +143,7 @@ The car itself is fixed here; change it in step 1. You see stock mass, stock fro
 - **Fine-tune on route time** drives part and slider combinations on the route and keeps the fastest one.
 - **Parts for the class** lists every engine slot with its tier. Switch on **Choose yourself** to pick the parts by hand; a slot that cannot go up without leaving the class says so. Click a part to see its **Part setup** sliders.
 - **Component features** shows the same numbers as the game's engine view: peak power and torque, weight, torque at Low, Medium and High, rev limiter, peak rpm and boost.
-- **Compare engines** opens the engine curve page (3.5), and **Save engine build** keeps this engine to compare later.
+- **Compare engines** opens the engine curve page (3.6), and **Save engine build** keeps this engine to compare later.
 
 **03 Drivetrain**
 
@@ -149,7 +169,7 @@ Suspension is always Prototype, because that is what lets you set everything. **
 
 Width, profile and rim for each axle, and a spacer. The top view draws the tyres in scale with track, wheelbase and the room left inside the fender. **Tyre set** picks the compound; the grip of each set is shown next to it. **Compare sizes on the route** drives the route with every game size on the current build and lists the times.
 
-### 3.5 Compare engines: torque and power
+### 3.6 Compare engines: torque and power
 
 ![Engine curve page](img/en/46-engine-compare.webp)
 
@@ -175,6 +195,7 @@ Press **Ctrl+S** (or **Save** in the top bar). The first save asks for a name an
 - Search by name or car, filter by car on the left, sort by any column.
 - The panel on the right shows class, route, model time and your best run, and lets you **Open now**, **Rename** (F2), **Duplicate** or **Delete** (Del). Deleted setups go to **Trash** first.
 - **Import…**, **Paste text**, **Export selected** and **Export all** move setups between computers or to a friend.
+- **Import a tune…** in the Setup menu reads a tuning template or a tune table into a new setup (see [3.3](#33-import-a-tune-from-a-file)).
 
 Setups are saved in the Project Touge folder as files, with dated backup copies.
 
@@ -363,11 +384,15 @@ The **Practice list** ranks the corners where your median run loses most to your
 
 ### 6.4 Routes and your own routes
 
-**Routes** next to Drive and Analyse lists your own routes and North Touge AP004; **Show all game routes** lists every game route too.
+**Routes** next to Drive and Analyse lists your own routes, including the six that come with Touge; **Show all game routes** lists every game route too.
 
 ![Routes](img/en/27-routes.webp)
 
-Pick a route to see its shape, length, corners, hairpins, climb and descent, your best time and number of runs, and the splits. Write a **Description** (where the start is, tricky corners, where the gutters work) and add a **Start** and **Finish** screenshot so you find the spot again. **Select and drive** takes the route to Drive.
+Pick a route to see its shape, length, corners, hairpins, climb and descent, your best time and number of runs, and the splits. **Map** shows where the route lies on the whole map with pins and names for the start and the finish; **Show the whole map** and **Zoom to the route** switch between the two.
+
+![Route map, start and finish](img/en/53-route-map.webp)
+
+Write a **Description** (where the start is, tricky corners, where the gutters work) and add a **Start** and **Finish** image so you find the spot again. A good image is a full-screen 16:9 screenshot with no menus open: for the start, the car on the start line facing the driving direction; for the finish, about 50 m before the line, facing the driving direction. **Select and drive** takes the route to Drive.
 
 **Make your own route**
 
@@ -412,7 +437,7 @@ Your own routes are saved in the `Routes` folder.
 
 ## 8. Your data
 
-Everything you save stays inside the Project Touge folder:
+Everything you save stays in the folder next to **Project Touge.exe**:
 
 | Folder | Contents |
 |---|---|
@@ -421,11 +446,12 @@ Everything you save stays inside the Project Touge folder:
 | `Routes` | your own routes |
 | `Logs` | program logs; attach these when reporting a problem |
 
-**Update**: replace `App` and `Project Touge.exe`, keep the data folders. **Move**: copy the whole folder. **Uninstall**: delete the folder.
+**Update**: replace `Project Touge.exe` and keep the data folders (see [Updating from 0.9.x](#1-before-you-start)). **Move**: copy the whole folder. **Uninstall**: delete the folder.
 
 ## 9. When something is off
 
-- **Game timer not responding**: start Project Touge again; the timer starts with it. Check that no other telemetry program is using the same port.
+- **Game timer not responding**: start Project Touge again; the timer is part of the program and starts with it. Check that no other telemetry program is using the same port.
+- **Windows blocks the program**: if SmartScreen stops it, choose **More info → Run anyway**. Keep the exe outside `Program Files`, where Touge cannot write its data folders.
 - **No speed or minimap**: run the game borderless or full screen with the HUD visible. Touge finds the HUD on the first run; tested resolutions are 3440×1440, 2560×1440, 2560×1080, 1920×1440 and 1920×1080.
 - **A value does not match the game**: check for ◐ first. Type the game's own reading into the **Check in game** rows, and report the difference with your Touge version and the files from `Logs`.
 - **Lost a setup**: look in **All setups → Trash**, or restore from the dated copies in `Tunes`.

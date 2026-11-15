@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.9.1 beta (2026-11-15)
+
+- Import a tune: a new **Import a tune** start on the Build tab and in the setup menu. Reads the CarX Street Tuning Template (xlsx or a CSV export), other tune tables, pasted text and screenshots of tables or the game's Part Setup screens.
+- The template's MODEL picks the car, and its part rows set the part tiers: engine and engine parts, gearbox, body stage (STG1–4), weight reduction, fuel tank, aero, springs, anti-roll bars, arms, dampers, brakes, spacers and body kit. Text values such as Stock, N/A or ranges are skipped, so those rows keep the car's own value.
+- Body stage (STG1–4) is now part of the model: each stage has its own body mass and drag from the game data.
+- Start-up fix: if Windows has blocked the downloaded files, Touge clears the block on its own files. If its window still cannot open, Touge opens in your web browser with a short note instead of an error.
+- README: how to unblock the zip if Touge does not start.
+
 ## 0.9 beta (2026-11-15)
 
 First public release. Download the zip from Releases, unpack it anywhere and run Project Touge.exe.

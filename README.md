@@ -17,6 +17,12 @@ Get the latest zip from **[Releases](../../releases/latest)**.
 No installation and no Python needed. 
 Requires Windows 10 or 11 with Microsoft Edge WebView2 (built into Windows 11 and every up-to-date Windows 10). If SmartScreen warns about an unknown publisher, choose **More info → Run anyway**.
 
+**Touge does not start, or shows an error about `Python.Runtime.dll`?** Windows blocks files that were unzipped from a download. Delete the extracted folder, right-click the downloaded zip → **Properties** → tick **Unblock** → **OK**, and unzip it again. Or run this in PowerShell inside the extracted folder:
+
+```powershell
+Get-ChildItem -Recurse | Unblock-File
+```
+
 ## User guide
 
 Step by step, page by page with screenshots: **[Project Touge user guide](docs/guide/README.md)** · [suomeksi](docs/guide/README.fi.md). The same guide as a branded offline page: `docs/guide/index.html`.

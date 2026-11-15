@@ -8,6 +8,7 @@ Images for posts, profiles and link previews. Free to share when you talk about 
 | `banner-5-water-cup-1500x500.png` | 1500 × 500 | Header with the "Don't spill the water cup." line |
 | `banner-6…11-1500x500.png` | 1500 × 500 | More headers: 6, 7, 9 and 11 logo only, 8 with "Build / Tune / Time", 10 with the punchline |
 | `banner-12-1500x500.png`, `banner-13-1500x500.png` | 1500 × 500 | 0.10 headers: logo only, and logo with "Build / Tune / Time" |
+| `banner-14-1500x500.png`, `banner-15-1500x500.png` | 1500 × 500 | More logo-only headers: Miata hairpin, wet run |
 | `discord-server-3-960x540.png` | 960 × 540 | Discord server banner, rain night |
 | `discord-server-960x540.png`, `discord-server-2-960x540.png` | 960 × 540 | Discord server banner |
 | `discord-profile-680x240.png`, `discord-profile-2-680x240.png` | 680 × 240 | Discord profile banner (logo top left, clear of the avatar) |
@@ -26,8 +27,7 @@ Images for posts, profiles and link previews. Free to share when you talk about 
 | `feature-flyer-02-tune-1080x1350.png`, `feature-flyer-02b-tune-yourself-1080x1350.png` | 1080 × 1350 | Feature flyers: Tune by symptom, tune it yourself |
 | `feature-flyer-03-time-1080x1350.png`, `feature-flyer-03b-corner-1080x1350.png` | 1080 × 1350 | Feature flyers: Time, corner by corner |
 | `feature-flyer-04-import-0.10-1080x1350.png` | 1080 × 1350 | 0.10 flyer: Tuning Template import, Rust engine, update notice |
-| `feature-flyer-05-new-in-0.10-1080x1350.png` | 1080 × 1350 | 0.10 feature list: route maps, Tuning Template import, six routes, update notifications, smaller download |
-| `feature-flyer-05b-new-in-0.10-updates-1080x1350.png` | 1080 × 1350 | Same list with one-click updates marked "coming next" |
+| `feature-flyer-05-new-in-0.10-1080x1350.png` | 1080 × 1350 | 0.10.1 feature list: route maps, Tuning Template import, six routes, one-click updates, smaller download |
 | `icon-1024.png` … `icon-128.png`, `icon.ico` | square | Profile picture, server icon |
 
 Screenshots are from Project Touge v0.9 beta in English. Telemetry is from real runs on North Touge (Toyota AE86, record 6:08.89).

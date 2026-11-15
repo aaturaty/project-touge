@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.10.1 beta (2026-11-15)
+
+- One-click updates: when a new version is out, the notice has an **Update now** button. Touge downloads the release from GitHub, checks it against GitHub's checksum, replaces itself and restarts. Tunes, runs and routes are not touched.
+- If a timed run is going on, Touge asks before updating.
+- Coming from 0.10 or 0.9: update this one time by hand. From 0.10.1 on, the button does it.
+
+## 0.10 beta (2026-11-15)
+
+- One program file: no App folder and no Python, 24 MB download. Timer, automatic splits, run analysis and screen reader are built in.
+- The six included routes are written to Routes on the first start.
+- Updating from 0.9: copy the new exe over the old one, or unzip into a new folder and Touge finds your earlier Project Touge and copies your data.
+- Routes: start and finish pinned more precisely, with their own names.
+
 ## 0.9.2 beta (2026-11-15)
 
 - Screen reader: works with HDR screen capture, where the speedometer has a white background and turquoise outlined digits.

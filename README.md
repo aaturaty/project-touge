@@ -8,20 +8,20 @@ Project Touge is a companion app for CarX Street on Windows. It helps you build 
 
 ## Download
 
-Get the latest zip from **[Releases](../../releases/latest)**.
+Get the latest zip from **[Releases](../../releases/latest)** (about 24 MB).
 
-1. Unzip the **Project Touge** folder anywhere you like, for example Documents or a game drive. Keep the folder together.
+1. Unzip it anywhere you like, for example Documents or a game drive (not Program Files).
 2. Double-click **Project Touge.exe**. Touge opens in its own window.
 3. Close the window to quit.
 
-No installation and no Python needed. 
+Touge is one program file: no installation, no App folder and no Python. Your tunes, runs and routes are saved next to it.
 Requires Windows 10 or 11 with Microsoft Edge WebView2 (built into Windows 11 and every up-to-date Windows 10). If SmartScreen warns about an unknown publisher, choose **More info → Run anyway**.
 
-**Touge does not start, or shows an error about `Python.Runtime.dll`?** Windows blocks files that were unzipped from a download. Delete the extracted folder, right-click the downloaded zip → **Properties** → tick **Unblock** → **OK**, and unzip it again. Or run this in PowerShell inside the extracted folder:
+### Updates
 
-```powershell
-Get-ChildItem -Recurse | Unblock-File
-```
+When a new version is out, Touge shows a notice with an **Update now** button. It downloads the release from GitHub, checks it against GitHub's checksum, replaces itself and restarts in a few seconds. Your tunes, runs and routes are not touched.
+
+Coming from 0.10 or 0.9.x? Update by hand this one time: copy the new `Project Touge.exe` over the old one, or unzip it into a new folder and Touge will find your earlier Project Touge and copy your data. From 0.10.1 on, the button does it.
 
 ## User guide
 
@@ -29,19 +29,20 @@ Step by step, page by page with screenshots: **[Project Touge user guide](docs/g
 
 ## What it does
 
-- **Build**: enter your car from screenshots or start from the model: engine, gearbox and diff, aero and body, suspension, tyres and route model. Values use the game's own names, order and units so you can type them straight into the game.
+- **Build**: enter your car from screenshots, start from the model, or import a tune from the **CarX Street Tuning Template** (xlsx or CSV). Engine, gearbox and diff, aero and body, suspension, tyres and route model use the game's own names, order and units, so you can type the values straight into the game.
 - **Tune**: pick a symptom, adjust, check the effect, then copy the setup to the game. Each change explains why it helps.
-- **Time**: timing with splits, telemetry and run analysis. Speed, gear and minimap are read from the screen; controller buttons work while the game is focused.
+- **Time**: timer with automatic splits, telemetry and corner-by-corner run analysis. Speed, gear and minimap are read from the screen; controller buttons work while the game is focused.
+- **Routes**: six routes included, an overview map of the whole road network with start and finish pins, and an editor for your own routes.
 
 Values come from the game's own data and are checked in game. Anything not yet verified is marked as an estimate.
 
-## Tuning guide
+## Tuning Bible
 
-[![Project Touge Tuning guide](docs/tuning-guide/banner.png)](docs/tuning-guide/README.md)
+[![Project Touge choriso's Tuning Bible](docs/tuning-guide/banner.png)](docs/tuning-guide/README.md)
 
-The **[Tuning guide](docs/tuning-guide/README.md)** is the long read behind the Tune tab: how CarX Street calculates the car and what each setting really does, from tyres and springs to anti-roll bars, dampers, camber and toe, the differential and body dimensions. Every claim is marked: ● confirmed in game or in the game code, ◐ simulation, ○ real-car theory.
+**[choriso's Tuning Bible](docs/tuning-guide/README.md)** is the long read behind the Tune tab: how CarX Street calculates the car and what each setting really does, from tyres and springs to anti-roll bars, dampers, camber and toe, the differential and body dimensions. Every claim is marked: ● confirmed in game or in the game code, ◐ simulation, ○ real-car theory.
 
-Read it here, as a [PDF](docs/tuning-guide/Project-Touge-Tuning-Guide.pdf), or inside Touge (Tune tab → Tuning guide). Also [in Finnish](docs/tuning-guide/fi/README.md).
+Read it here, as a [PDF](docs/tuning-guide/Project-Touge-Tuning-Guide.pdf), or inside Touge on the Tune tab. Also [in Finnish](docs/tuning-guide/fi/README.md).
 
 ## Timing and telemetry
 
@@ -57,10 +58,10 @@ Everything you save stays inside the Project Touge folder:
 |---|---|
 | `Tunes` | setups, presets, notes, route calibrations and settings |
 | `Runs` | timed runs and their telemetry |
-| `Routes` | your own routes |
+| `Routes` | the included routes and your own |
 | `Logs` | program logs; attach these when reporting a problem |
 
-**Update:** replace `App` and `Project Touge.exe`, keep your data folders.
+**Update:** use **Update now** in Touge, or copy the new `Project Touge.exe` over the old one.
 **Move:** copy the whole folder. 
 **Uninstall:** delete the folder.
 

@@ -26,6 +26,7 @@ Images for posts, profiles and link previews. Free to share when you talk about 
 | `feature-flyer-02-tune-1080x1350.png`, `feature-flyer-02b-tune-yourself-1080x1350.png` | 1080 × 1350 | Feature flyers: Tune by symptom, tune it yourself |
 | `feature-flyer-03-time-1080x1350.png`, `feature-flyer-03b-corner-1080x1350.png` | 1080 × 1350 | Feature flyers: Time, corner by corner |
 | `feature-flyer-04-import-0.10-1080x1350.png` | 1080 × 1350 | 0.10 flyer: Tuning Template import, Rust engine, update notice |
+| `feature-flyer-05-new-in-0.10-1080x1350.png` | 1080 × 1350 | 0.10 feature list: route maps, Tuning Template import, six routes, update notifications, smaller download |
 | `icon-1024.png` … `icon-128.png`, `icon.ico` | square | Profile picture, server icon |
 
 Screenshots are from Project Touge v0.9 beta in English. Telemetry is from real runs on North Touge (Toyota AE86, record 6:08.89).

@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.10.3 beta (unreleased)
+
+- About has a **Check for updates** button that shows the result right in the window.
+- Shut down button in the top bar.
+- Route start and finish images for all six included routes, also for players whose routes were copied from an earlier version.
+- Gearing graph shows the new ratios as soon as you change them, and its comparison lines are fainter.
+- Quick guide in Tune it yourself, and the spacer shows the resulting Wheel Offset. The route model uses the exact offset; the number shown is rounded like the game's Part Setup.
+- Safer updates: only the program, README, licenses and tuning guide are replaced (never your data folders), and if the new version fails to start, the previous one is put back.
+- On 0.10.1 or 0.10.2: press **Update now** in the update notice.
+
+## 0.10.2 beta (2026-11-15)
+
+- The user guide is built in: open it from Help (F1), in English and Finnish, updated for 0.10.
+
 ## 0.10.1 beta (2026-11-15)
 
 - One-click updates: when a new version is out, the notice has an **Update now** button. Touge downloads the release from GitHub, checks it against GitHub's checksum, replaces itself and restarts. Tunes, runs and routes are not touched.

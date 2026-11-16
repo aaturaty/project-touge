@@ -15,8 +15,9 @@ Contents
 5. [Tune: fix what you feel](#5-tune-fix-what-you-feel)
 6. [Time: drive, time and analyse](#6-time-drive-time-and-analyse)
 7. [Settings and help](#7-settings-and-help)
-8. [Your data](#8-your-data)
-9. [When something is off](#9-when-something-is-off)
+8. [Share tunes, routes and runs](#8-share-tunes-routes-and-runs)
+9. [Your data](#9-your-data)
+10. [When something is off](#10-when-something-is-off)
 
 The everyday loop is short: **Build** the car once, **Tune** one thing, **Time** a few runs, look at **Analyse**, and go back to Tune with what the runs tell you.
 
@@ -435,20 +436,120 @@ Your own routes are saved in the `Routes` folder.
 | F8 · Ctrl+F8 | Timer window: show or hide, move |
 | F1 | Help |
 
-## 8. Your data
+## 8. Share tunes, routes and runs
+
+From 0.11 on, Touge can save what you made as small files that a friend opens in their own Touge: a **tune**, your own **presets**, an own **route**, and a **run** that the other driver can race as a **ghost**. You send the file any way you like, for example in a Discord message. Nothing is uploaded anywhere by Touge.
+
+| File | What it holds | Where you make it |
+|---|---|---|
+| `….tune.json` | the build and the final game values of a setup | Setup menu → **Share and import…** |
+| `….chassis.json`, `….gears.json`, `….preset.json` | an own chassis preset, an own gearing profile, or both in one file | Setup menu → **Share and import…** |
+| `….route.json` | an own route with its splits, start and finish images and description | **Share and import…**, or **Share route** in Time → Routes |
+| `….run.json` | one finished run on an own route, to race as a ghost | Time → Analyse → Run comparison → **Share run A** |
+
+Every file you save goes to the **`Shared`** folder next to Project Touge.exe. Files you receive go to **`Shared\Inbox`**.
+
+### 8.1 Share a tune or a preset
+
+1. Open the setup you want to share. Click **Setup** at the top right and choose **Share and import…**.
+
+![The Setup menu: Share and import…](img/en/601-share-menu.webp)
+
+2. If you like, type a name under **Name on shared files**. It is shown to the person who opens the file. Leave it empty to share without a name.
+3. Under **Tune**, click **Save tune file**. Touge says where it saved the file, for example `Shared\RX-7 FD North.tune.json`. **Open Shared folder** opens the folder so you can drag the file into a message.
+4. **Copy share code** is the other way to share a tune: it copies a line of text that starts with `TOUGE1:`. Paste it straight into a chat message; the other driver pastes it back with **Paste share code**.
+5. Under **Own presets**, pick a chassis preset, a gearing profile or both, and click **Save preset file**. With both picked they go in the same file.
+
+![Share and import: tune, own presets, own route, import and the name on shared files](img/en/602-share-dialog.webp)
+
+The tune file holds the build and the final values you type into the game, including changes you have not saved yet. The parameters of a ready-made preset are not included, so the other driver sees exactly your numbers. The diff has no file of its own: it travels inside the tune.
+
+### 8.2 Share a route
+
+Pick the route under **Own route** in **Share and import…** and click **Save route file**, or open **Time → Routes**, choose the route and click **Share route**. The file holds the route line, the splits, the start and finish images and the description. All six routes that come with Touge are own routes too, so you can share them as they are.
+
+### 8.3 Share a run as a ghost
+
+1. Open **Time → Analyse** on the route and open **Run comparison**.
+2. Choose the run you want to share as **Run A**, for example your record.
+3. Click **Share run A**. Touge saves it as `Shared\<route> <time>.run.json`.
+
+![Run comparison: pick your run as A and click Share run A](img/en/603-share-run.webp)
+
+![Touge tells where the run was saved](img/en/604-run-saved.webp)
+
+Only runs that reached the finish on an own route can be shared. The other driver needs the same route: if it is one of the six included routes they already have it, otherwise send the route file with the run.
+
+### 8.4 Open a file you received
+
+There are three ways in, and they all end in the same preview:
+
+- **Drop it in `Shared\Inbox`.** Touge looks in the folder every few seconds and shows **New shared file in Shared\Inbox** with a **Review** button. **Open Shared folder** in Share and import… takes you to the folder.
+- **Drag it onto the Touge window.**
+- **Share and import… → Import file…**, or **Paste share code** for a `TOUGE1:` code.
+
+![A file appeared in Shared\Inbox](img/en/605-inbox-toast.webp)
+
+**Review** opens Share and import… with the files in the Inbox listed. Click **Preview** on a file.
+
+![Files waiting in Shared\Inbox](img/en/606-inbox-list.webp)
+
+The preview shows what the file is, who shared it and with which Touge version. Touge has checked the file, but the values are the sharer's own.
+
+- **Add** adds it. **Add and open** (tune) or **Add and show** (route, run) also takes you to it.
+- **Ignore** moves the file out of the way without adding it. **Cancel** leaves it in the Inbox for later.
+- Added and ignored files move to `Shared\Inbox\Imported` and `Shared\Inbox\Ignored`, so the Inbox only lists new files.
+
+![Preview of a shared tune](img/en/612-tune-preview.webp)
+
+**A tune** is added to your setups. **Add and open** opens it; if your current build is not saved, Touge asks first whether to save it. Then Touge compares its own numbers with the values in the file: **The imported tune matches the sharer's game values**, or a list of the values this Touge calculates differently (for example after a model update). Check those on the Tune tab. A tune for a car that your Touge does not have yet cannot be added.
+
+![Save the open build first, or discard it](img/en/615-unsaved.webp)
+
+**A preset** is added to your own chassis presets and gearing profiles, with the sharer's name in its source.
+
+![Preview of a shared preset](img/en/614-preset-preview.webp)
+
+### 8.5 Routes and ghosts
+
+Import the **route before the run**. A route you already have is recognised from its line, even under another name, and is not added twice.
+
+![Preview of a shared route](img/en/607-route-preview.webp)
+
+**Add and show** opens the route in **Time → Routes**.
+
+![The new route in Time → Routes](img/en/608-route-added.webp)
+
+A run then shows which route it belongs to. If it says *not in your routes*, import the route file first.
+
+![Preview of a shared run](img/en/609-run-preview.webp)
+
+The run is saved as a ghost in `Runs\Ghosts` and listed under **Ghosts** on the route in Time → Routes:
+
+- **Race** makes it your opponent. From the next run on, the timer window shows how far ahead or behind the ghost you are. Click again to stop racing it. **Delete** removes the ghost.
+- In **Analyse → Run comparison** the ghost can be **Run B**: the charts and the map show where you gain and lose against it.
+
+![Racing a ghost](img/en/610-ghost-race.webp)
+
+![Your run against the ghost in Run comparison](img/en/611-compare-ghost.webp)
+
+A shared time cannot be verified, so ghosts are marked **unverified** and never count as your record.
+
+## 9. Your data
 
 Everything you save stays in the folder next to **Project Touge.exe**:
 
 | Folder | Contents |
 |---|---|
 | `Tunes` | setups, presets, notes, route calibrations and settings |
-| `Runs` | timed runs and their telemetry |
+| `Runs` | timed runs and their telemetry; imported ghosts in `Runs\Ghosts` |
 | `Routes` | your own routes |
+| `Shared` | files you saved for sharing; `Shared\Inbox` for files you receive |
 | `Logs` | program logs; attach these when reporting a problem |
 
 **Update**: replace `Project Touge.exe` and keep the data folders (see [Updating from 0.9.x](#1-before-you-start)). **Move**: copy the whole folder. **Uninstall**: delete the folder.
 
-## 9. When something is off
+## 10. When something is off
 
 - **Game timer not responding**: start Project Touge again; the timer is part of the program and starts with it. Check that no other telemetry program is using the same port.
 - **Windows blocks the program**: if SmartScreen stops it, choose **More info → Run anyway**. Keep the exe outside `Program Files`, where Touge cannot write its data folders.

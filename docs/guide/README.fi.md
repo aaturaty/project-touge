@@ -15,8 +15,9 @@ Sisältö
 5. [Säädä: korjaa se mitä tunnet](#5-säädä-korjaa-se-mitä-tunnet)
 6. [Ajanotto: aja, kellota ja analysoi](#6-ajanotto-aja-kellota-ja-analysoi)
 7. [Asetukset ja ohje](#7-asetukset-ja-ohje)
-8. [Datasi](#8-datasi)
-9. [Kun jokin ei täsmää](#9-kun-jokin-ei-täsmää)
+8. [Tunejen, reittien ja ajojen jakaminen](#8-tunejen-reittien-ja-ajojen-jakaminen)
+9. [Datasi](#9-datasi)
+10. [Kun jokin ei täsmää](#10-kun-jokin-ei-täsmää)
 
 Arjen kierros on lyhyt: **Rakenna** auto kerran, **Säädä** yhtä asiaa, aja muutama ajo **Ajanotossa**, katso **Analysoi** ja palaa Säädä-välilehdelle sen kanssa, mitä ajot kertovat.
 
@@ -437,20 +438,122 @@ Omat reittisi tallentuvat `Routes`-kansioon.
 | F8 · Ctrl+F8 | Ajastinikkuna: näytä tai piilota, siirrä |
 | F1 | Ohje |
 
-## 8. Datasi
+## 8. Tunejen, reittien ja ajojen jakaminen
+
+Versiosta 0.11 alkaen Touge tallentaa tekemäsi asiat pieniksi tiedostoiksi, jotka kaveri avaa omassa Tougessaan: **tunen**, omat **presetit**, oman **reitin** ja **ajon**, jota toinen kuljettaja voi ajaa **haamuna** vastaan. Tiedoston lähetät millä tavalla haluat, esimerkiksi Discord-viestissä. Touge ei lähetä mitään minnekään itse.
+
+Kuvat ovat englanninkielisestä näkymästä; suomeksi nappien nimet ovat suluissa.
+
+| Tiedosto | Sisältö | Mistä se tehdään |
+|---|---|---|
+| `….tune.json` | setupin buildi ja lopulliset pelin arvot | Setup-valikko → **Share and import…** (Jaa ja tuo…) |
+| `….chassis.json`, `….gears.json`, `….preset.json` | oma alustapreset, oma välitysprofiili tai molemmat samassa tiedostossa | Setup-valikko → **Share and import…** |
+| `….route.json` | oma reitti splitteineen, lähtö- ja maalikuvineen ja kuvauksineen | **Share and import…** tai Ajanotto → Reitit → **Share route** (Jaa reitti) |
+| `….run.json` | yksi maaliin ajettu ajo omalla reitillä haamuksi | Ajanotto → Analysoi → Ajovertailu → **Share run A** (Jaa ajo A) |
+
+Jokainen tallentamasi tiedosto menee **`Shared`**-kansioon Project Touge.exe:n viereen. Saamasi tiedostot menevät kansioon **`Shared\Inbox`**.
+
+### 8.1 Jaa tune tai preset
+
+1. Avaa jaettava setup. Napsauta oikeasta yläkulmasta **Setup** ja valitse **Share and import…** (Jaa ja tuo…).
+
+![Setup-valikko: Share and import…](img/en/601-share-menu.webp)
+
+2. Kirjoita halutessasi nimi kohtaan **Name on shared files** (Nimi jaetuissa tiedostoissa). Se näkyy tiedoston avaajalle. Tyhjänä tiedosto jaetaan ilman nimeä.
+3. Napsauta **Tune**-kohdassa **Save tune file** (Tallenna tune-tiedosto). Touge kertoo, minne tiedosto tallentui, esim. `Shared\RX-7 FD North.tune.json`. **Open Shared folder** (Avaa Shared-kansio) avaa kansion, josta tiedoston voi raahata viestiin.
+4. **Copy share code** (Kopioi jakokoodi) on toinen tapa jakaa tune: se kopioi `TOUGE1:`-alkuisen tekstirivin. Liitä se suoraan chat-viestiin; vastaanottaja liittää sen takaisin kohdasta **Paste share code** (Liitä jakokoodi).
+5. Valitse **Own presets** (Omat presetit) -kohdasta alustapreset, välitysprofiili tai molemmat ja napsauta **Save preset file** (Tallenna preset-tiedosto). Molemmat valittuina ne menevät samaan tiedostoon.
+
+![Share and import: tune, omat presetit, oma reitti, tuonti ja nimi jaetuissa tiedostoissa](img/en/602-share-dialog.webp)
+
+Tune-tiedostossa on buildi ja lopulliset arvot, jotka syötät peliin, myös tallentamattomat muutokset. Valmiin presetin parametreja ei viedä, joten vastaanottaja näkee täsmälleen sinun lukusi. Diffillä ei ole omaa tiedostoa: se kulkee tunen mukana.
+
+### 8.2 Jaa reitti
+
+Valitse reitti **Share and import…** -ikkunan kohdasta **Own route** (Oma reitti) ja napsauta **Save route file** (Tallenna reittitiedosto), tai avaa **Ajanotto → Reitit**, valitse reitti ja napsauta **Share route**. Tiedostossa on reitin viiva, splitit, lähtö- ja maalikuvat sekä kuvaus. Myös kaikki kuusi Tougen mukana tulevaa reittiä ovat omia reittejä, joten ne voi jakaa sellaisenaan.
+
+### 8.3 Jaa ajo haamuksi
+
+1. Avaa reitin **Ajanotto → Analysoi** ja avaa **Run comparison** (Ajovertailu).
+2. Valitse jaettava ajo kohtaan **Run A** (Ajo A), esimerkiksi ennätyksesi.
+3. Napsauta **Share run A** (Jaa ajo A). Touge tallentaa sen nimellä `Shared\<reitti> <aika>.run.json`.
+
+![Ajovertailu: valitse oma ajo A:ksi ja napsauta Share run A](img/en/603-share-run.webp)
+
+![Touge kertoo, minne ajo tallentui](img/en/604-run-saved.webp)
+
+Jakaa voi vain maaliin asti ajetun ajon omalla reitillä. Vastaanottajalla pitää olla sama reitti: jos se on yksi kuudesta mukana tulevasta reitistä, se on hänellä jo, muuten lähetä reittitiedosto ajon kanssa.
+
+### 8.4 Avaa saamasi tiedosto
+
+Sisään pääsee kolmella tavalla, ja kaikki päätyvät samaan esikatseluun:
+
+- **Pudota tiedosto kansioon `Shared\Inbox`.** Touge katsoo kansion muutaman sekunnin välein ja näyttää ilmoituksen **New shared file in Shared\Inbox** ja **Review**-napin (Näytä). Share and import… -ikkunan **Open Shared folder** vie kansioon.
+- **Raahaa tiedosto Tougen ikkunaan.**
+- **Share and import… → Import file…** (Tuo tiedosto…) tai `TOUGE1:`-koodille **Paste share code**.
+
+![Kansioon Shared\Inbox tuli tiedosto](img/en/605-inbox-toast.webp)
+
+**Review** avaa Share and import… -ikkunan, jossa Inboxin tiedostot on lueteltu. Napsauta tiedoston kohdalla **Preview** (Esikatsele).
+
+![Kansiossa Shared\Inbox odottavat tiedostot](img/en/606-inbox-list.webp)
+
+Esikatselu näyttää, mikä tiedosto on, kuka sen jakoi ja millä Touge-versiolla. Touge on tarkistanut tiedoston, mutta arvot ovat jakajan omia.
+
+- **Add** (Lisää) lisää sen. **Add and open** (Lisää ja avaa, tune) tai **Add and show** (Lisää ja näytä, reitti ja ajo) vie myös sen luo.
+- **Ignore** (Ohita) siirtää tiedoston pois lisäämättä sitä. **Cancel** (Peruuta) jättää sen Inboxiin myöhemmäksi.
+- Lisätyt ja ohitetut tiedostot siirtyvät kansioihin `Shared\Inbox\Imported` ja `Shared\Inbox\Ignored`, joten Inboxissa näkyvät vain uudet.
+
+![Jaetun tunen esikatselu](img/en/612-tune-preview.webp)
+
+**Tune** lisätään setuppeihisi. **Add and open** avaa sen; jos nykyinen buildi on tallentamatta, Touge kysyy ensin, tallennetaanko se. Sen jälkeen Touge vertaa omia lukujaan tiedoston arvoihin: **The imported tune matches the sharer's game values** (tuotu tune vastaa jakajan pelin arvoja) tai lista arvoista, jotka tämä Touge laskee eri tavoin (esimerkiksi mallin päivityksen jälkeen). Tarkista ne Säädä-sivulla. Tunea autolle, jota Tougessasi ei vielä ole, ei voi lisätä.
+
+![Tallenna avoin buildi ensin tai hylkää se](img/en/615-unsaved.webp)
+
+**Preset** lisätään omiin alustapresetteihin ja välitysprofiileihin, ja lähteeksi tulee jakajan nimi.
+
+![Jaetun presetin esikatselu](img/en/614-preset-preview.webp)
+
+### 8.5 Reitit ja haamut
+
+Tuo **reitti ennen ajoa**. Jo omistamasi reitti tunnistetaan viivasta, vaikka sillä olisi eri nimi, eikä sitä lisätä toista kertaa.
+
+![Jaetun reitin esikatselu](img/en/607-route-preview.webp)
+
+**Add and show** avaa reitin näkymässä **Ajanotto → Reitit**.
+
+![Uusi reitti Ajanotto → Reitit -näkymässä](img/en/608-route-added.webp)
+
+Ajon esikatselu kertoo, mille reitille ajo kuuluu. Jos siinä lukee *not in your routes*, tuo ensin reittitiedosto.
+
+![Jaetun ajon esikatselu](img/en/609-run-preview.webp)
+
+Ajo tallentuu haamuksi kansioon `Runs\Ghosts` ja näkyy reitin kohdassa **Ghosts** (Haamut) näkymässä Ajanotto → Reitit:
+
+- **Race** (Kilpaile) tekee siitä vastustajasi. Seuraavasta ajosta alkaen aikaikkuna näyttää, kuinka paljon olet haamun edellä tai perässä. Uusi napsautus lopettaa kilpailun. **Delete** (Poista) poistaa haamun.
+- **Analysoi → Ajovertailussa** haamun voi valita **ajoksi B**: kaaviot ja kartta näyttävät, missä voitat ja häviät sille.
+
+![Kilpailu haamua vastaan](img/en/610-ghost-race.webp)
+
+![Oma ajo haamua vastaan Ajovertailussa](img/en/611-compare-ghost.webp)
+
+Jaettua aikaa ei voi todentaa, joten haamut merkitään vahvistamattomiksi (**unverified**) eivätkä ne koskaan mene omiin ennätyksiisi.
+
+## 9. Datasi
 
 Kaikki tallentamasi jää kansioon **Project Touge.exe**:n viereen:
 
 | Kansio | Sisältö |
 |---|---|
 | `Tunes` | setupit, presetit, muistiinpanot, reittien kalibroinnit ja asetukset |
-| `Runs` | kellotetut ajot ja niiden telemetria |
+| `Runs` | kellotetut ajot ja niiden telemetria; tuodut haamut kansiossa `Runs\Ghosts` |
 | `Routes` | omat reitit |
+| `Shared` | jakamista varten tallennetut tiedostot; saamasi tiedostot kansioon `Shared\Inbox` |
 | `Logs` | ohjelman lokit; liitä nämä, kun ilmoitat ongelmasta |
 
 **Päivitys**: korvaa `Project Touge.exe` ja pidä datakansiot (ks. [Päivitys versiosta 0.9.x](#1-ennen-kuin-aloitat)). **Siirto**: kopioi koko kansio. **Poisto**: poista kansio.
 
-## 9. Kun jokin ei täsmää
+## 10. Kun jokin ei täsmää
 
 - **Pelikello ei vastaa**: käynnistä Project Touge uudelleen; kello on osa ohjelmaa ja käynnistyy sen mukana. Tarkista, ettei mikään muu telemetriaohjelma käytä samaa porttia.
 - **Windows estää ohjelman**: jos SmartScreen pysäyttää sen, valitse **Lisätietoja → Suorita silti**. Pidä exe `Program Files` -kansion ulkopuolella, koska sinne Touge ei voi kirjoittaa datakansioitaan.

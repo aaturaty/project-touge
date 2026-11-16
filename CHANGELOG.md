@@ -1,14 +1,32 @@
 # Changelog
 
-## 0.10.3 beta (unreleased)
+## 0.11 beta (2026-11-16)
 
-- About has a **Check for updates** button that shows the result right in the window.
-- Shut down button in the top bar.
-- Route start and finish images for all six included routes, also for players whose routes were copied from an earlier version.
-- Gearing graph shows the new ratios as soon as you change them, and its comparison lines are fainter.
-- Quick guide in Tune it yourself, and the spacer shows the resulting Wheel Offset. The route model uses the exact offset; the number shown is rounded like the game's Part Setup.
-- Safer updates: only the program, README, licenses and tuning guide are replaced (never your data folders), and if the new version fails to start, the previous one is put back.
-- On 0.10.1 or 0.10.2: press **Update now** in the update notice.
+0.10.3 was not released; its changes are included here.
+
+- **Share tunes, routes and runs:** export one as a file and send it to a friend. Files dropped onto Touge or into `Shared\Inbox` show up with a preview, and a shared run can be raced as a ghost.
+- **Faster calculations:** the builder and tuning calculations run inside the program instead of the page.
+- **Game physics (Experimental):** Touge can test a setup with CarX Street's own physics from your game installation. Off by default: turn it on in Settings > Game physics. Results are differences between setups, not lap times. The game's files stay in your game folder; Touge never copies or shares them. Slow (several minutes per check) and still being calibrated.
+- **Calibrate to your driving:** game physics can be calibrated against your own timed runs.
+- **Smarter tuning:** the model now knows front-wheel drive, all-wheel drive and mid- and rear-engine cars (camber, diff, aero, tyres and tyre pressures).
+- Gearbox list includes every gearbox in the game (130), grouped by gear count, with search by name or gear count. Game readings also recognise gearboxes from other cars.
+- Engine power can be typed in under Game readings if the shown value differs from your car.
+- Quick guide in Tune it yourself, and the spacer shows the resulting Wheel Offset.
+- About has a **Check for updates** button that shows the result right in the window. Shut down button in the top bar.
+- **Signed updates:** every update is signed, and Touge checks the signature before installing it. Only the program, README, licenses and tuning guide are replaced (never your data folders), and if the new version fails to start, the previous one is put back.
+
+Fixes
+
+- All six included routes have their start and finish images, also for players whose routes were copied from an earlier version.
+- Gearing graph updates while it calculates; its comparison lines are fainter.
+- Best splits and theoretical time only use runs split the same way.
+- The timer follows a route change, also right after finishing a run, and the timer window no longer goes dark.
+- Closing Touge's main window closes the whole program, timer window included.
+- Power is shown without race fuel; race fuel is shown as info.
+- Status texts no longer appear in Finnish in the English view.
+- About lists the program's current (Rust) licenses.
+
+Updating: on 0.10.1 or later, press **Update now** in the update notice (or About > Check for updates).
 
 ## 0.10.2 beta (2026-11-15)
 

@@ -27,6 +27,8 @@ Coming from 0.10 or 0.9.x? Update by hand this one time: copy the new `Project T
 
 Step by step, page by page with screenshots: **[Project Touge user guide](docs/guide/README.md)** · [suomeksi](docs/guide/README.fi.md). The same guide as a branded offline page: `docs/guide/index.html`.
 
+**Sharing tunes, routes and runs** (new in 0.11): chapter 8 of the guide, and a one-page visual walkthrough in [`docs/sharing/index.html`](docs/sharing/index.html).
+
 ## What it does
 
 - **Build**: enter your car from screenshots, start from the model, or import a tune from the **CarX Street Tuning Template** (xlsx or CSV). Engine, gearbox and diff, aero and body, suspension, tyres and route model use the game's own names, order and units, so you can type the values straight into the game.

@@ -72,6 +72,42 @@ Haku 17.11. Tougen reittimallilla North v2:lla C3:ssa (S15 ja AE86). Jokaisella 
 
 **Natiivi 17.11. (8 toistoa, ◐):** malli ja natiivi eivät ole samaa mieltä. S15:ssä nykyinen ND-säätö oli nopein, ja Mini oli 1,7 s hitaampi. AE86:ssa ND-moottori mallin säädöillä oli 0,9 ± 0,1 s nykyistä 4A-GE-säätöä nopeampi, ja Mini oli kohinan sisällä. Mallin kärkijärjestystä ei siis voi vielä käyttää; varmin löydös on ND-moottori (PV2) kevyessä takavetoisessa. Uusinta AE86:n nykyisellä setupilla (välitykset 2,91/2,04/1,51/1,15/0,97/0,86, jarrulukko 0,28) antoi FD 4,50:llä ±0, FD 4,35:llä −1,0 ± 0,1 s ja muilla FD:illä −0,3…−0,4 s, joten etu riippuu välityksistä eikä ole vielä varma. **Pelikoe 17.11. (●, AE86, North v2):** GE4 ajot 43–44 371,36 / 371,20 s. PV2 pelaajan omalla säädöllä (rajoitin 8687 ja Peak RPM 9742 täysillä, High 218, Medium 281, Low 332): FD 4,52 ajot 45–46 372,97 / 370,97 s, **FD 4,35 ajot 47–48 369,03 / 369,22 s (−2,1 s GE4:ään, toistui)**. Natiivi ennusti FD 4,35:lle −1,0 ± 0,1 s, eli suunta osui. Mallin Part Setup -arvoja ei ajettu pelissä. Pelaaja vaihtaa ylös noin 8800–9000 rpm:ssä ja ajaa 15–25 % kierroksesta yli 8500 rpm:n, joten rajoittimen laskeminen on todennäköisesti haitallista, vaikka mallit eivät sitä näe ◐. Toistaiseksi luotettavin linja: rajoitin ja Peak RPM ylös, Low ylös, Mid ja High alas, kunnes luokka täyttyy. Mallin mukaan korkean osakertoimen moottorit (Mini 0,84 + turbo 1,6, ND ja Datsun 0,89) hyötyvät liukureista eniten. Tougen nykyinen sovitus jättää niistä 3–10 s.
 
+## Miksi sama luokka, eri aika (Supra-testi 17.11., ◐)
+
+Luokka mittaa huipputehoa painoon nähden (hv/t), mutta Northilla aika ratkeaa mutkista ulos kiihdytettäessä. Testissä 15 suosittua moottoria Supra A90:ssä (paino riittää kaikille), jokainen säädetty mallissa luokan rajalle omilla välityksillään ja ajettu natiivissa (8 toistoa, North v2) sekä suoralla kiihdytyskokeella tasaisella tiellä.
+
+| Moottori | North ero (s) | 60–150 km/h (s) | 100–200 km/h (s) | Huippunopeus (km/h) | Turbo |
+| --- | --- | --- | --- | --- | --- |
+| DL20 | −3,0 | 5,07 | 8,93 | 259 | kit |
+| N14B | −2,8 | 5,15 | 9,09 | 255 | tehdas |
+| S02 | −2,7 | 5,22 | 8,85 | 260 | – |
+| Volvo | −2,6 | 5,12 | 9,20 | 257 | kit |
+| RS20T (S13) | −2,6 | 5,23 | 9,03 | 259 | tehdas |
+| RS20 | −2,5 | 5,23 | 8,98 | 260 | kit |
+| GE4 | −1,7 | 5,28 | 9,10 | 257 | – |
+| Lotus | −1,2 | 5,36 | 9,10 | 257 | – |
+| RDA | −1,2 | 5,18 | 8,80 | 262 | tehdas |
+| Eclipse G64 | −0,9 | 5,38 | 9,26 | 258 | – |
+| PV2 | −0,6 | 5,32 | 9,33 | 255 | – |
+| BM13 | +0,4 | 5,47 | 9,70 | 256 | – |
+| 190E (ME10) | +0,8 | 5,58 | 9,74 | 253 | – |
+| B13 | +0,9 | 5,55 | 10,14 | 253 | tehdas |
+| EK9 (B1B6) | +1,5 | 5,40 | 9,44 | 260 | – |
+
+North-ero on verrattu pelissä ajettuun S02-säätöön (975 kg); mallin säädöt ovat ~28 kg kevyempiä (säiliö 0, kevennys täysi), joten moottorien keskinäinen järjestys on luotettavampi kuin ero nollaan.
+
+**Mitä tästä seuraa:**
+
+1. **60–150 km/h ennustaa Northin ajan** (korrelaatio 0,89; 0,1 s nopeampi 60–150 ≈ 0,9 s nopeampi kierros). 100–200 km/h ennustaa heikommin (0,81) ja huippunopeus ei lainkaan: ilmanvastus rajaa kaikki 253–262 km/h:iin.
+2. **Turbo antaa keskikierroksilla vääntöä, jota luokka ei laske täysimääräisesti.** Viisi kuuden kärjestä on turbollisia (tehdasturbo tai haun valitsema turbokit). Poikkeus RDA: suoralla nopein, mutta 1009 kg maksaa mutkissa.
+3. **Vapaasti hengittävillä ratkaisee käyrän tasaisuus vaihtovälillä** (70–100 % rajoittimesta): S02 ja GE4 (keskiteho 96 % huipusta) parhaat, EK9 (81 %), 190E (89 %) ja Eclipse (90 %) hitaimmat.
+4. **Moottorijarru ja inertia eivät selitä eroja**: pelin datassa ne ovat samat kaikilla moottoreilla ●.
+5. **Auto ratkaisee.** S15:ssä sama natiivi antoi päinvastaisen tuloksen (DL20 +3,3, Mini +1,7 vs ND). Kevyempi auto ei mahdu luokkaan yhtä vahvalla turbokoneella. Testaa kärkiehdokkaat omalla autollasi, ja hae FD uudelleen vaihdon jälkeen.
+
+Tougessa (0.12.0): moottorivalinnan alla on tämä vertailu (testatuille moottoreille 60–150-aika myös valikossa), ja Voimansiirto-osio näyttää buildin oman 60–150 km/h -ajan reittimallista ◐.
+
+Data: analyysi/moottorihaku_1711/supra/ (natiivi/v.json, testi2/tulos.json, testi2/ulostulo.json). Pelissä varmistamatta.
+
 ## Osakertoimet moottoreittain ●
 
 Kaikki 137 moottoria pelidatasta (part_stat_factors), suurimmasta pienimpään. Osakerroin on sama ECU:lle, nokalle, kannelle, lohkolle ja polttoainejärjestelmälle. Mediaani on 0,74, pienin 0,20 ja suurin 1,09. Turbo-osa = Turbo Kitin tai tehdasturbon osan kerroin.

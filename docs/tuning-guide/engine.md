@@ -72,6 +72,42 @@ Search on 17 Nov with the Touge route model on North v2 in C3 (S15 and AE86). Fo
 
 **Native 17 Nov (8 repetitions, ◐):** the model and the native simulation disagree. In the S15 the current ND tune was fastest and the Mini was 1.7 s slower. In the AE86 the ND engine with the model's tune was 0.9 ± 0.1 s faster than the current 4A-GE tune, and the Mini was within the noise. So the model's ranking cannot be used yet; the most robust finding is the ND engine (PV2) in a light RWD car. A rerun with the AE86's current setup (ratios 2.91/2.04/1.51/1.15/0.97/0.86, decel lock 0.28) gave ±0 at FD 4.50, −1.0 ± 0.1 s at FD 4.35 and −0.3…−0.4 s at other FDs, so the gain depends on gearing and is not yet certain. **In-game test 17 Nov (●, AE86, North v2):** GE4 runs 43–44 371.36 / 371.20 s. PV2 with the player's own tune (limiter 8687 and Peak RPM 9742 at max, High 218, Medium 281, Low 332): FD 4.52 runs 45–46 372.97 / 370.97 s, **FD 4.35 runs 47–48 369.03 / 369.22 s (−2.1 s vs the GE4, repeated)**. The native simulation predicted −1.0 ± 0.1 s for FD 4.35, so the direction was right. The model's Part Setup values were not run in the game. The player shifts up at about 8800–9000 rpm and spends 15–25 % of the lap above 8500 rpm, so lowering the limiter is probably harmful even though the models do not see it ◐. For now the most reliable line: limiter and Peak RPM up, Low up, Mid and High down until the class is filled. According to the model, engines with a high part factor (Mini 0.84 + turbo 1.6, ND and Datsun 0.89) gain the most from the sliders. Touge's current fit leaves 3–10 s on them.
 
+## Why the same class gives different lap times (Supra test 17 Nov, ◐)
+
+The class measures peak power per weight (hp/t), but on North the lap is decided accelerating out of corners. The test put 15 popular engines in a Supra A90 (heavy enough for all of them), each tuned in the model to the class limit with its own gearing, and ran them in the native simulation (8 repetitions, North v2) and in a straight-line test on a flat road.
+
+| Engine | North diff (s) | 60–150 km/h (s) | 100–200 km/h (s) | Top speed (km/h) | Turbo |
+| --- | --- | --- | --- | --- | --- |
+| DL20 | −3.0 | 5.07 | 8.93 | 259 | kit |
+| N14B | −2.8 | 5.15 | 9.09 | 255 | factory |
+| S02 | −2.7 | 5.22 | 8.85 | 260 | – |
+| Volvo | −2.6 | 5.12 | 9.20 | 257 | kit |
+| RS20T (S13) | −2.6 | 5.23 | 9.03 | 259 | factory |
+| RS20 | −2.5 | 5.23 | 8.98 | 260 | kit |
+| GE4 | −1.7 | 5.28 | 9.10 | 257 | – |
+| Lotus | −1.2 | 5.36 | 9.10 | 257 | – |
+| RDA | −1.2 | 5.18 | 8.80 | 262 | factory |
+| Eclipse G64 | −0.9 | 5.38 | 9.26 | 258 | – |
+| PV2 | −0.6 | 5.32 | 9.33 | 255 | – |
+| BM13 | +0.4 | 5.47 | 9.70 | 256 | – |
+| 190E (ME10) | +0.8 | 5.58 | 9.74 | 253 | – |
+| B13 | +0.9 | 5.55 | 10.14 | 253 | factory |
+| EK9 (B1B6) | +1.5 | 5.40 | 9.44 | 260 | – |
+
+The North difference is against an S02 tune driven in the game (975 kg); the model tunes are ~28 kg lighter (empty tank, full weight reduction), so the order between engines is more reliable than the gap to zero.
+
+**What follows:**
+
+1. **60–150 km/h predicts the North time** (correlation 0.89; 0.1 s quicker 60–150 ≈ 0.9 s quicker lap). 100–200 km/h predicts it less well (0.81) and top speed not at all: air drag caps every engine at 253–262 km/h.
+2. **A turbo gives mid-range torque that the class does not fully count.** Five of the top six are turbocharged (factory turbo or a turbo kit chosen by the search). The exception is the RDA: fastest on the straight, but 1009 kg costs it in corners.
+3. **For naturally aspirated engines the flatness of the curve over the shift band decides** (70–100 % of the limiter): S02 and GE4 (mean power 96 % of peak) are best, EK9 (81 %), 190E (89 %) and Eclipse (90 %) slowest.
+4. **Engine braking and inertia do not explain the differences**: in the game data they are the same for every engine ●.
+5. **The car decides.** In the S15 the same native test gave the opposite result (DL20 +3.3, Mini +1.7 vs the ND). A lighter car cannot fit an equally strong turbo engine in the class. Test the top candidates in your own car, and search FD again after the swap.
+
+In Touge (0.12.0): this comparison sits under the engine picker (tested engines also show their 60–150 time in the list), and the Drivetrain section shows the build's own 60–150 km/h time from the route model ◐.
+
+Data: analyysi/moottorihaku_1711/supra/ (natiivi/v.json, testi2/tulos.json, testi2/ulostulo.json). Not yet confirmed in the game.
+
 ## Part factors by engine ●
 
 All 137 engines from the game data (part_stat_factors), largest first. The part factor is the same for the ECU, camshaft, head, block and fuel system. Median 0.74, smallest 0.20, largest 1.09. Turbo part = the multiplier of the Turbo Kit or factory turbo part.

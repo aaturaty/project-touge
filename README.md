@@ -25,6 +25,8 @@ Coming from 0.10 or 0.9.x? Update by hand this one time: copy the new `Project T
 
 ## User guide
 
+All three guides are online at **[aaturaty.github.io/project-touge](https://aaturaty.github.io/project-touge/)**: the user guide, the sharing walkthrough and the Tuning Bible.
+
 Step by step, page by page with screenshots: **[Project Touge user guide](docs/guide/README.md)** · [suomeksi](docs/guide/README.fi.md). The same guide as a branded offline page: `docs/guide/index.html`.
 
 **Sharing tunes, routes and runs** (new in 0.11): chapter 8 of the guide, and a one-page visual walkthrough in [`docs/sharing/index.html`](docs/sharing/index.html).

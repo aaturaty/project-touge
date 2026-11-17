@@ -33,12 +33,83 @@ Step by step, page by page with screenshots: **[Project Touge user guide](docs/g
 
 ## What it does
 
-- **Build**: enter your car from screenshots, start from the model, or import a tune from the **CarX Street Tuning Template** (xlsx or CSV). Engine, gearbox and diff, aero and body, suspension, tyres and route model use the game's own names, order and units, so you can type the values straight into the game.
-- **Tune**: pick a symptom, adjust, check the effect, then copy the setup to the game. Each change explains why it helps.
-- **Time**: timer with automatic splits, telemetry and corner-by-corner run analysis. Speed, gear and minimap are read from the screen; controller buttons work while the game is focused.
-- **Routes**: six routes included, an overview map of the whole road network with start and finish pins, and an editor for your own routes.
-
 Values come from the game's own data and are checked in game. Anything not yet verified is marked as an estimate.
+
+### Build
+
+[![Build](media/readme/build.webp)](docs/guide/README.md)
+
+Enter your car from screenshots, start from the model, or import a tune from the **CarX Street Tuning Template** (xlsx or CSV). Engine, gearbox and diff, aero and body, suspension, tyres and route model use the game's own names, order and units, so you can type the values straight into the game. The model compares engines and gearboxes for your class and shows the effect of every change in seconds.
+
+<p>
+<a href="docs/guide/img/en/05-build-model.webp"><img src="media/readme/thumbs/05-build-model.webp" width="32%" alt="build model"></a>
+<a href="docs/guide/img/en/06-candidates.webp"><img src="media/readme/thumbs/06-candidates.webp" width="32%" alt="candidates"></a>
+<a href="docs/guide/img/en/50-import.webp"><img src="media/readme/thumbs/50-import.webp" width="32%" alt="import"></a>
+</p>
+
+### Tune
+
+[![Tune](media/readme/tune.webp)](docs/guide/README.md)
+
+Pick a symptom by corner phase (braking, turn-in, mid corner, exit), adjust the chassis, gearing or diff, check the effect, then copy the setup to the game. Each change explains why it helps, with a link to the matching chapter of the Tuning Bible.
+
+<p>
+<a href="docs/guide/img/en/10-symptom.webp"><img src="media/readme/thumbs/10-symptom.webp" width="32%" alt="symptom"></a>
+<a href="docs/guide/img/en/11-adjust-chassis.webp"><img src="media/readme/thumbs/11-adjust-chassis.webp" width="32%" alt="adjust chassis"></a>
+<a href="docs/guide/img/en/14-check.webp"><img src="media/readme/thumbs/14-check.webp" width="32%" alt="check"></a>
+</p>
+
+### Time
+
+[![Time](media/readme/time.webp)](docs/guide/README.md)
+
+A timer with automatic splits and a leaderboard per route. Speed, gear and minimap are read from the screen; controller buttons work while the game is focused.
+
+- Run the game borderless or full screen. A window works if the whole HUD is visible.
+- Tested resolutions: 3440×1440 (recommended), 2560×1440, 2560×1080, 1920×1440 and 1920×1080.
+- Open the **Time** tab, pick a route and press **Start**. Touge finds the speedometer, gear display and minimap by itself on the first run.
+
+<p>
+<a href="docs/guide/img/en/20-drive.webp"><img src="media/readme/thumbs/20-drive.webp" width="32%" alt="drive"></a>
+<a href="docs/guide/img/en/22-leaderboard.webp"><img src="media/readme/thumbs/22-leaderboard.webp" width="32%" alt="leaderboard"></a>
+<a href="docs/guide/img/en/21-timing-settings.webp"><img src="media/readme/thumbs/21-timing-settings.webp" width="32%" alt="timing settings"></a>
+</p>
+
+### Telemetry
+
+[![Telemetry](media/readme/telemetry.webp)](docs/guide/README.md)
+
+Every run is saved with its telemetry. The Analyse view shows where you gain and lose time corner by corner: braking point, apex speed, throttle and gear on the map, speed along the route, a practice list of the corners where you lose most, and a side-by-side comparison of two runs.
+
+<p>
+<a href="docs/guide/img/en/24-practice.webp"><img src="media/readme/thumbs/24-practice.webp" width="32%" alt="practice"></a>
+<a href="docs/guide/img/en/25-analyse-zoom.webp"><img src="media/readme/thumbs/25-analyse-zoom.webp" width="32%" alt="analyse zoom"></a>
+<a href="docs/guide/img/en/29-run-comparison.webp"><img src="media/readme/thumbs/29-run-comparison.webp" width="32%" alt="run comparison"></a>
+</p>
+
+### Routes
+
+[![Routes](media/readme/routes.webp)](docs/guide/README.md)
+
+Six routes included, an overview map of the whole road network with start and finish pins, and an editor for your own routes.
+
+<p>
+<a href="docs/guide/img/en/53-route-map.webp"><img src="media/readme/thumbs/53-route-map.webp" width="32%" alt="route map"></a>
+<a href="docs/guide/img/en/27-routes.webp"><img src="media/readme/thumbs/27-routes.webp" width="32%" alt="routes"></a>
+<a href="docs/guide/img/en/28-route-editor.webp"><img src="media/readme/thumbs/28-route-editor.webp" width="32%" alt="route editor"></a>
+</p>
+
+### Sharing
+
+[![Sharing](media/readme/sharing.webp)](docs/sharing/index.html)
+
+New in 0.11: share tunes, presets, routes and runs as files (tunes also as a short share code). Drop a friend's file in `Shared\Inbox`, preview it and add it with one click. A shared run becomes a ghost you can race on the timer and compare against in Analyse. See the [sharing walkthrough](https://aaturaty.github.io/project-touge/sharing/).
+
+<p>
+<a href="docs/guide/img/en/602-share-dialog.webp"><img src="media/readme/thumbs/602-share-dialog.webp" width="32%" alt="share dialog"></a>
+<a href="docs/guide/img/en/606-inbox-list.webp"><img src="media/readme/thumbs/606-inbox-list.webp" width="32%" alt="inbox list"></a>
+<a href="docs/guide/img/en/611-compare-ghost.webp"><img src="media/readme/thumbs/611-compare-ghost.webp" width="32%" alt="compare ghost"></a>
+</p>
 
 ## Tuning Bible
 
@@ -47,12 +118,6 @@ Values come from the game's own data and are checked in game. Anything not yet v
 **[choriso's Tuning Bible](docs/tuning-guide/README.md)** is the long read behind the Tune tab: how CarX Street calculates the car and what each setting really does, from tyres and springs to anti-roll bars, dampers, camber and toe, the differential and body dimensions. Every claim is marked: ● confirmed in game or in the game code, ◐ simulation, ○ real-car theory.
 
 Read it here, as a [PDF](docs/tuning-guide/Project-Touge-Tuning-Guide.pdf), or inside Touge on the Tune tab. Also [in Finnish](docs/tuning-guide/fi/README.md).
-
-## Timing and telemetry
-
-- Run the game borderless or full screen. A window works if the whole HUD is visible.
-- Tested resolutions: 3440×1440 (recommended), 2560×1440, 2560×1080, 1920×1440 and 1920×1080.
-- Open the **Time** tab, pick a route and press **Start**. Touge finds the speedometer, gear display and minimap by itself on the first run.
 
 ## Your data
 
@@ -63,6 +128,7 @@ Everything you save stays inside the Project Touge folder:
 | `Tunes` | setups, presets, notes, route calibrations and settings |
 | `Runs` | timed runs and their telemetry |
 | `Routes` | the included routes and your own |
+| `Shared` | files you share, and `Inbox` for files you receive |
 | `Logs` | program logs; attach these when reporting a problem |
 
 **Update:** use **Update now** in Touge, or copy the new `Project Touge.exe` over the old one.

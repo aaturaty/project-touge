@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="{{lang}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{title}}</title>
+<meta name="description" content="{{desc}}">
+<link rel="icon" type="image/png" href="{{rel}}assets/touge-64.png">
+<!-- Built by docs/site/build_site.py. Edit the Markdown in docs/, not this file. -->
+<style>
+@font-face{font-family:"VCR OSD Mono";src:url({{rel}}assets/VCR-OSD-Mono.woff2) format("woff2");font-display:swap}
+@font-face{font-family:"IBM Plex Mono";font-weight:400;src:url({{rel}}assets/ibm-plex-mono-400-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+2000-206F,U+2190-21FF,U+2212;font-display:swap}
+@font-face{font-family:"IBM Plex Mono";font-weight:400;src:url({{rel}}assets/ibm-plex-mono-400-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA,U+1E00-1E9F;font-display:swap}
+@font-face{font-family:"IBM Plex Mono";font-weight:500;src:url({{rel}}assets/ibm-plex-mono-500-latin.woff2) format("woff2");font-display:swap}
+@font-face{font-family:"IBM Plex Mono";font-weight:600;src:url({{rel}}assets/ibm-plex-mono-600-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+2000-206F,U+2212;font-display:swap}
+@font-face{font-family:"IBM Plex Mono";font-weight:600;src:url({{rel}}assets/ibm-plex-mono-600-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA,U+1E00-1E9F;font-display:swap}
+@font-face{font-family:"Dela Gothic One";src:url({{rel}}assets/dela-gothic-one-400-osajoukko.woff2) format("woff2");font-display:swap}
+:root{
+  --yo:#03120e; --hiili:#1a1d1a; --hiili-2:#212521; --metsa:#26413c;
+  --viiva:#2a312c; --viiva-2:#3d4a43;
+  --kerma:#fffdf7; --sumu:#c3c8b6; --himmea:#9aa58b;
+  --korostus:#839073; --korostus-hi:#a9b597; --korostus-kirkas:#c9d2b8;
+  --keltainen:#ffd84a;
+  --display:"VCR OSD Mono","IBM Plex Mono",ui-monospace,monospace;
+  --body:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --sym:"Segoe UI Symbol","Noto Sans Symbols 2","DejaVu Sans",sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--yo);color:var(--kerma);font:400 15px/1.65 var(--body);-webkit-font-smoothing:antialiased}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;background:repeating-linear-gradient(to bottom,rgba(0,0,0,0) 0 2px,rgba(0,0,0,.12) 2px 3px)}
+a{color:var(--korostus-kirkas);text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{color:var(--kerma)}
+a:focus-visible{outline:2px solid var(--korostus-hi);outline-offset:2px}
+.bar{position:sticky;top:0;z-index:20;background:rgba(26,29,26,.95);border-bottom:1px solid var(--viiva-2)}
+.bar-in{max-width:1080px;margin:0 auto;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));min-height:56px;display:flex;align-items:center;gap:8px 22px;flex-wrap:wrap}
+.mini{font:400 15px var(--display);font-style:italic;letter-spacing:.04em;text-transform:uppercase;color:var(--kerma);text-decoration:none;white-space:nowrap}
+.mini span{font-family:"Dela Gothic One",serif;font-style:normal;color:var(--korostus-kirkas);margin-right:8px}
+.bar nav{display:flex;gap:4px 18px;flex-wrap:wrap}
+.bar nav a{font:400 13px var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--himmea);text-decoration:none;padding:4px 0}
+.bar nav a:hover{color:var(--kerma)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px))}
+
+/* Markdown pages (Tuning Bible) */
+main.doc{max-width:820px;padding:28px 0 72px}
+main.doc p,main.doc li{color:var(--sumu)}
+main.doc p{margin:0 0 14px}
+main.doc b,main.doc strong{color:var(--kerma);font-weight:600}
+main.doc em{color:var(--kerma)}
+main.doc h1{font:400 clamp(28px,5vw,40px)/1.1 var(--display);letter-spacing:.04em;text-transform:uppercase;margin:26px 0 18px;text-wrap:balance}
+main.doc h2{font:400 22px/1.25 var(--display);letter-spacing:.05em;text-transform:uppercase;margin:38px 0 14px;padding-top:18px;border-top:1px solid var(--viiva);text-wrap:balance}
+main.doc h3{font:400 17px var(--display);letter-spacing:.06em;text-transform:uppercase;color:var(--korostus-kirkas);margin:28px 0 10px}
+main.doc h4{font:600 15px var(--body);margin:22px 0 8px;color:var(--kerma)}
+main.doc ul,main.doc ol{padding-left:22px;margin:0 0 16px}
+main.doc li{margin:5px 0}
+main.doc ol li::marker{font-family:var(--display);color:var(--korostus-hi)}
+main.doc ul li::marker{color:var(--korostus)}
+main.doc img{max-width:100%;height:auto;display:block;border:1px solid var(--viiva-2)}
+main.doc code{font:500 13px var(--body);background:var(--hiili-2);border:1px solid var(--viiva);padding:1px 5px;color:var(--korostus-kirkas)}
+main.doc pre{background:var(--hiili);border:1px solid var(--viiva-2);padding:12px 14px;overflow-x:auto}
+main.doc pre code{border:0;padding:0;background:none}
+main.doc table{display:block;overflow-x:auto;border-collapse:collapse;margin:8px 0 22px;font-size:14px;max-width:100%}
+main.doc th{font:400 12px var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--himmea);text-align:left;padding:8px 12px;border-bottom:1px solid var(--viiva-2);vertical-align:bottom}
+main.doc td{padding:8px 12px;border-bottom:1px solid var(--viiva);color:var(--sumu);vertical-align:top}
+main.doc hr{border:0;border-top:1px solid var(--viiva);margin:34px 0 18px}
+main.doc blockquote{margin:0 0 16px;padding:8px 16px;border-left:2px solid var(--korostus);background:var(--hiili)}
+main.doc sub{color:var(--himmea);font-size:12px}
+footer.site{border-top:1px solid var(--viiva);color:var(--himmea);font-size:13px;padding:20px 0 40px}
+</style>
+</head>
+<body>
+<header class="bar"><div class="bar-in">
+  <a class="mini" href="{{rel}}index.html"><span aria-hidden="true">峠</span>Project Touge</a>
+  <nav aria-label="Guides">
+    <a href="{{rel}}guide/index.html">User guide</a>
+    <a href="{{rel}}sharing/index.html">Sharing</a>
+    <a href="{{rel}}tuning-bible/index.html">Tuning Bible</a>
+    <a href="https://github.com/aaturaty/project-touge/releases/latest">Download</a>
+  </nav>
+</div></header>
+<div class="wrap">
+{{body}}
+<footer class="site">Project Touge is an unofficial fan-made tool for CarX Street. It is not a CarX Technologies product.</footer>
+</div>
+</body>
+</html>

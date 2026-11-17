@@ -1,0 +1,26 @@
+<style>
+.land{padding:44px 0 30px}
+.land h1{font:400 clamp(30px,6vw,50px)/1.05 var(--display);letter-spacing:.03em;text-transform:uppercase;margin:0 0 12px;text-wrap:balance}
+.land h1 em{font-style:normal;color:var(--korostus-kirkas)}
+.land p.lead{max-width:60ch;color:var(--sumu);margin:0;font-size:16px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin:30px 0 26px}
+.card{display:flex;flex-direction:column;gap:8px;border:1px solid var(--viiva-2);background:var(--hiili);padding:18px 20px;text-decoration:none;color:inherit;position:relative}
+.card:hover{border-color:var(--korostus);background:var(--hiili-2)}
+.card .k{font:400 12px var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--himmea)}
+.card b{font:400 21px var(--display);letter-spacing:.05em;text-transform:uppercase;color:var(--kerma);font-weight:400}
+.card span{color:var(--sumu);font-size:14px}
+.card .go{margin-top:auto;padding-top:10px;font:400 13px var(--display);letter-spacing:.08em;color:var(--korostus-kirkas);text-transform:uppercase}
+.card .lng{font-size:13px;color:var(--himmea)}
+.card .lng a{position:relative;z-index:1}
+.land .note{color:var(--himmea);font-size:13.5px;max-width:70ch}
+</style>
+<section class="land">
+  <h1>Project Touge <em>guides</em></h1>
+  <p class="lead">Everything about Touge in one place: how to use it, how to share what you make, and how CarX Street really calculates your car.</p>
+  <div class="cards">
+    <a class="card" href="guide/index.html"><span class="k">01 · Using Touge</span><b>User guide</b><span>Page by page with screenshots: build, tune, time and analyse, settings and your data.</span><span class="go">Open →</span></a>
+    <a class="card" href="sharing/index.html"><span class="k">02 · New in 0.11</span><b>Sharing</b><span>Share tunes, presets, routes and runs, and race a friend's run as a ghost.</span><span class="go">Open →</span></a>
+    <a class="card" href="tuning-bible/index.html"><span class="k">03 · The long read</span><b>Tuning Bible</b><span>How the game calculates the car and what each setting really does, from tyres to the differential.</span><span class="go">Open →</span></a>
+  </div>
+  <p class="note">The user guide has a FI / EN switch at the top. The Tuning Bible is also <a href="tuning-bible/fi/index.html">in Finnish</a>. Get Project Touge from the <a href="https://github.com/aaturaty/project-touge/releases/latest">latest release</a>.</p>
+</section>

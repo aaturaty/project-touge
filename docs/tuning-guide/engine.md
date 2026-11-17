@@ -104,7 +104,7 @@ The North difference is against an S02 tune driven in the game (975 kg); the mod
 4. **Engine braking and inertia do not explain the differences**: in the game data they are the same for every engine ●.
 5. **The car decides.** In the S15 the same native test gave the opposite result (DL20 +3.3, Mini +1.7 vs the ND). A lighter car cannot fit an equally strong turbo engine in the class. Test the top candidates in your own car, and search FD again after the swap.
 
-In Touge (0.12.0): this comparison sits under the engine picker (tested engines also show their 60–150 time in the list), and the Drivetrain section shows the build's own 60–150 km/h time from the route model ◐.
+Touge's route model does not reproduce this yet: its own 60–150 on the same builds correlates only 0.06 with the native result, and its lap time 0.22 (17 Nov), so engine choice in the model waits for the straight-line acceleration to be calibrated against the native sim ◐.
 
 Data: analyysi/moottorihaku_1711/supra/ (natiivi/v.json, testi2/tulos.json, testi2/ulostulo.json). Not yet confirmed in the game.
 

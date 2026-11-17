@@ -104,7 +104,7 @@ North-ero on verrattu pelissä ajettuun S02-säätöön (975 kg); mallin sääd�
 4. **Moottorijarru ja inertia eivät selitä eroja**: pelin datassa ne ovat samat kaikilla moottoreilla ●.
 5. **Auto ratkaisee.** S15:ssä sama natiivi antoi päinvastaisen tuloksen (DL20 +3,3, Mini +1,7 vs ND). Kevyempi auto ei mahdu luokkaan yhtä vahvalla turbokoneella. Testaa kärkiehdokkaat omalla autollasi, ja hae FD uudelleen vaihdon jälkeen.
 
-Tougessa (0.12.0): moottorivalinnan alla on tämä vertailu (testatuille moottoreille 60–150-aika myös valikossa), ja Voimansiirto-osio näyttää buildin oman 60–150 km/h -ajan reittimallista ◐.
+Tougen reittimalli ei vielä toista tätä: sen oma 60–150 samoilla buildeilla korreloi natiivin kanssa vain 0,06 ja kierrosaika 0,22 (17.11.), joten moottorivalinta mallissa odottaa suorakiihdytyksen kalibrointia natiiviin ◐.
 
 Data: analyysi/moottorihaku_1711/supra/ (natiivi/v.json, testi2/tulos.json, testi2/ulostulo.json). Pelissä varmistamatta.
 

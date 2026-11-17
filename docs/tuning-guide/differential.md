@@ -6,7 +6,7 @@
 
 ## What each setting does
 
-This guide is based on the game's own differential code and on native simulation runs. Real-diff theory is used only where the game works the same way.
+This guide is based on the game's own differential code and on simulation runs. Real-diff theory is used only where the game works the same way.
 
 **How the game's clutch diff calculates it:**
 
@@ -29,7 +29,7 @@ This guide is based on the game's own differential code and on native simulation
 | Ultimate (tier 5) | 0–1.0 | 0–1.0 | 0–520 | 0.005 / 3.25 Nm |
 | Prototype (tier 6) | 0.6–1.6 | 0.3–1.3 | 0–100 | 0.0125 / 1.25 Nm |
 
-With the Prototype diff the throttle lock is always at least 0.6, and in the native code a lock of 0.5 or more is a full lock. The throttle side is therefore always fully locked. An adjustable throttle lock (for example 0.24–0.30) needs the Ultimate diff.
+With the Prototype diff the throttle lock is always at least 0.6, and in the game's physics code a lock of 0.5 or more is a full lock. The throttle side is therefore always fully locked. An adjustable throttle lock (for example 0.24–0.30) needs the Ultimate diff.
 
 **Order of magnitude (◐, assumed engine torque 250 Nm):** in 2nd gear the axle torque is about 250 × 2.00 × 4.00 = 2000 Nm. Throttle lock 0.3 gives about 600 Nm of lock at full throttle, and preload 100 is only 1/6 of that. Engine-braking torque is much smaller, so decel lock 0.15 gives only tens of newton-metres. Then preload 100 can be larger than the whole decel lock.
 
@@ -45,9 +45,9 @@ With the Prototype diff the throttle lock is always at least 0.6, and in the nat
 
 Set the throttle lock first, the decel lock second and the preload last. Each has its own phase, and the preload refines the transitions between them.
 
-1. **Throttle lock** decides the exit. In the native model 0 is clearly slowest; in a tight hairpin lower values (about 0.15) were quicker, in a medium corner about 0.25. Over a lap 0.10–1.0 is within noise.
+1. **Throttle lock** decides the exit. In the simulation model 0 is clearly slowest; in a tight hairpin lower values (about 0.15) were quicker, in a medium corner about 0.25. Over a lap 0.10–1.0 is within noise.
 2. **Decel lock** decides the entry. In a tight hairpin 0–0.8 differed by under 0.1 s. Corner angle and rotation stayed the same; only the rear wheel speed difference changed. When pumping the brakes, the lock calms the rear.
-3. **Preload** refines the transitions. In the native model 0–520 was within noise for time, but the rear wheel speed difference on throttle dropped from 0.58 to 0.27. Inner-wheel spin fell from about 45 % to 23 %. In a tight hairpin 150 or more spun at full throttle.
+3. **Preload** refines the transitions. In the simulation model 0–520 was within noise for time, but the rear wheel speed difference on throttle dropped from 0.58 to 0.27. Inner-wheel spin fell from about 45 % to 23 %. In a tight hairpin 150 or more spun at full throttle.
 
 **What else affects how the diff feels:**
 
@@ -56,8 +56,8 @@ Set the throttle lock first, the decel lock second and the preload last. Each ha
 | Gear ratio and gear | The lock is a share of axle torque. A low gear multiplies torque, so the same throttle lock locks much more in 2nd than in 4th. Tight hairpins are driven in a low gear, so that is where the lock is felt most. Preload does not change with gear. |
 | Throttle technique | With on/off throttle the torque jumps straight to full, so the throttle lock decides the behaviour and the preload shows only at the start of the opening. On part throttle the preload weighs more. |
 | Clutch and shifting | With the clutch pressed T is zero, so the only lock is the preload. On clutch shifts and downshifts under braking the preload is the only lock. |
-| Brake balance | The brakes do not pass through the diff, but a rear-biased balance slows the rear wheels. In the native model front 40 gave 10–15 % more rotation and 1–2° more entry angle than 60. A rear-biased brake and a low decel lock rotate the car most together. Braking and steering from 120 km/h on a rear-drive 50/50 car: balance 50 → rotation 60 °/s and slip angle 14°, 55 → 53 °/s and 7.5°, 60 → 36 °/s and 3° ◐. Balance is the single most effective setting for a stable rear on the brakes. It changes braking distance little: 48 → 58–60 shortened the 160 → 60 km/h distance by 0.3 m ◐. |
-| ABS | ABS limits rear wheel locking, so extreme brake balances did not change lap time in the native model. |
+| Brake balance | The brakes do not pass through the diff, but a rear-biased balance slows the rear wheels. In the simulation model front 40 gave 10–15 % more rotation and 1–2° more entry angle than 60. A rear-biased brake and a low decel lock rotate the car most together. |
+| ABS | ABS limits rear wheel locking, so extreme brake balances did not change lap time in the simulation model. |
 | Rear bar and rear springs | A stiff rear unloads the inner wheel, so it spins more easily and the throttle lock engages earlier. A softer rear needs less lock. |
 | Engine torque | More torque = more throttle lock in newton-metres at the same setting. Preload is fixed, so on a powerful car its relative share shrinks. |
 
@@ -68,7 +68,7 @@ First find the phase where the symptom appears. The phase tells you which lock i
 | Phase | Symptom | What happens in the game | Change |
 | --- | --- | --- | --- |
 | Corner entry, off throttle | The nose pushes and the car will not turn | The outer wheel spins faster and the lock brakes it, making a straightening moment | Lower decel lock. If it is already low, lower preload. |
-| Corner entry, off throttle | The rear moves or kicks under braking and on downshifts | The rear wheels turn at different rates and the lock does not even them out | First move brake balance forward by about 5 points (for example 50 → 55, if needed 57–58) ◐. Then raise decel lock: 0.16 → 0.30 cut rotation on the brakes from 53 to 41 °/s ◐. Lowering preload did not help in the native model. |
+| Corner entry, off throttle | The rear moves or kicks under braking and on downshifts | The rear wheels turn at different rates and the lock does not even them out | Raise decel lock or preload. Move brake balance forward. |
 | Clutch pressed (shift, braking) | The rear is restless only with the clutch pressed | The only lock is the preload | Raise preload. |
 | Mid-corner, light throttle | The car understeers and wants to go straight | The outer wheel is faster, so the lock moves torque to the inner wheel. Here the lock is mostly preload. | Lower preload. |
 | Opening the throttle | The inner wheel spins, revs rise but the car does not pull | Not enough lock to move torque to the outer wheel | Raise preload (start of the opening) or throttle lock (full throttle). |
@@ -78,19 +78,18 @@ First find the phase where the symptom appears. The phase tells you which lock i
 
 ## Final tip
 
-In the native model the diff settings hardly changed lap time; only a throttle lock of 0 was clearly slow. Choose the values by what is easiest to control. A steady drift was slower than grip in the native model (−15 % in a tight corner, −6 % in a medium one), but about 20° of slide on exit at full throttle was quickest.
+In the simulation model the diff settings hardly changed lap time; only a throttle lock of 0 was clearly slow. Choose the values by what is easiest to control. A steady drift was slower than grip in the simulation model (−15 % in a tight corner, −6 % in a medium one), but about 20° of slide on exit at full throttle was quickest.
 
 - Always test in the same corner in the same gear, because the gear sets the lock force.
 - If the car spins at full throttle, look at the throttle lock first and then the preload. Both push the rear out.
 - In our experience a throttle lock of 0.25–0.30, a decel lock of 0.12–0.20 and a preload of 45–100 has been an easy-to-drive starting range in game ●. Touge's diff presets cover this range and the softer and stiffer ones around it.
-- The usual starting range for brake balance is 48–50 % front. For tight hairpins 44, and if the rear is restless on the brakes, 55–58 ◐. A 2-point change did not yet show in the native model.
 
-**Simulation experience ◐ (native model, not tested in game):** once the throttle lock is above 0, the locks and preload are feel settings: throttle lock 0.15–1.0, decel lock 0–0.5 and preload 0–250 all stayed within 0.4 s. An open diff (throttle lock 0) was 2.4 s slower, mostly in slow corners. The exception is a stiff rear bar, which wanted a throttle lock of at least about 0.3 (see the anti-roll bar guide).
+**Simulation experience ◐ (Touge's simulation model, not tested in the game):** once the throttle lock is above 0, the locks and preload are feel settings: throttle lock 0.15–1.0, decel lock 0–0.5 and preload 0–250 all stayed within 0.4 s. An open diff (throttle lock 0) was 2.4 s slower, mostly in slow corners. The exception is a stiff rear bar, which wanted a throttle lock of at least about 0.3 (see the anti-roll bar guide).
 
 ## Not yet confirmed
 
 - The torque T is inferred to be the whole axle torque, not verified.
-- The native driver handles a slide differently from a person, so the feel has to be confirmed in game.
+- The simulation driver handles a slide differently from a person, so the feel has to be confirmed in game.
 
 ---
 

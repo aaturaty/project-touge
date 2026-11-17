@@ -10,7 +10,7 @@ Rengas on iso vipu, ja tärkeimmät valinnat ovat leveys ja vanneosa. Kokemuksem
 
 Sääntö: renkaat eivät saa törröttää lokasuojan ulkopuolelle, vaikka peli sallii sen.
 
-Merkit: ● vahvistettu pelissä tai pelin koodissa, ◐ natiivimalli tai päätelty, ei pelissä testattu.
+Merkit: ● vahvistettu pelissä tai pelin koodissa, ◐ Tougen simulaatiomallista tai päätelty, ei testattu pelissä.
 
 ## Koon valinta
 
@@ -19,8 +19,8 @@ Merkit: ● vahvistettu pelissä tai pelin koodissa, ◐ natiivimalli tai päät
 1. Renkaan kitka = 1 + vanneosan kitkalisä (fric_add), ja se kertoo renkaan huippuvoiman suoraan ●. Peli näyttää tämän grip-lukuna (esimerkiksi 1,08).
 2. Samassa koossa on usein kaksi vanneosaa. Matalamman perusprofiilin osa antaa +0,08, korkeamman +0,03–0,05 ●. Esimerkiksi 265 R16: perusprofiili 40 = +0,08, perusprofiili 45 = +0,03.
 3. Täysi +0,08 alkaa 265 mm:stä. 245–255 mm saa enintään +0,05 ja 225–235 mm +0,04 ●.
-4. Leveys lisää pitoa potenssilla 0,41: pitokerroin = (leveys / 185)^0,41 × kitka ● (reittimalli, täsmää natiivikoodiin).
-5. Rengaspaine ei ole pitosäädin. Kitkakaavassa huippu on 2,0 barissa, ja 1,0 tai 3,0 bar vie noin 1–2,5 % ●, mutta kokonaisella autolla ero jäi alle 1–2 %:n ◐. Suoralla korkeampi paine on nopeampi, koska vierintävastus pienenee ●: 3,0 bar oli 60–140 km/h −0,02 s ja 120–200 km/h −0,11 s, 2,0 bar +0,03 / +0,21 s ◐. Paine on viimeistelyä.
+4. Leveys lisää pitoa potenssilla 0,41: pitokerroin = (leveys / 185)^0,41 × kitka ● (reittimalli, täsmää pelin fysiikkakoodiin).
+5. Renkaan pito on suurimmillaan 2,0 barissa. 1,0 tai 3,0 bar vie noin 1–2,5 % pitoa ●.
 
 | Leveys | Suurin kitkalisä | Pitokerroin | Ero 265:een |
 | --- | --- | --- | --- |
@@ -38,7 +38,7 @@ Merkit: ● vahvistettu pelissä tai pelin koodissa, ◐ natiivimalli tai päät
 | Leveämpi rengas | Enemmän mutkanopeutta ja jarrutuspitoa, eniten hitaissa mutkissa. | Raskaampi pyörä hidastaa kiihtyvyyttä, ja rengas voi törröttää lokasuojan yli. | ◐ 265 → 285 oli lähes kaksi sekuntia, 285 → 325 vain noin puoli sekuntia lisää. ◐ Tiukassa mutkassa hyöty oli noin kymmenkertainen nopeaan nähden. |
 | Matalampi perusprofiili samassa koossa | Kitka +0,08 eikä +0,03–0,05. | — | ● Vanneosadata. ◐ Koko reitillä lähes sekunti. |
 
-Pitokertoimen mukaan hyöty kasvaisi tasaisesti, mutta natiivimallissa leveyden hyöty pienenee yli 285 mm:n. Syy on vielä auki ◐.
+Pitokertoimen mukaan hyöty kasvaisi tasaisesti, mutta simulaatiomallissa leveyden hyöty pienenee yli 285 mm:n. Syy on vielä auki ◐.
 
 ## Pieni vai suuri rengas
 
@@ -47,7 +47,7 @@ Pitokertoimen mukaan hyöty kasvaisi tasaisesti, mutta natiivimallissa leveyden 
 1. Halkaisija = vanne × 25,4 + 2 × leveys × profiili / 100 mm ●. Pelin Tire profile −10…+10 on profiilin prosenttiyksiköitä (285/35 → 285/25…285/45) ●.
 2. Pyörän massa tulee koosta: m = 1000 · r² · leveys kg, ja hitaus I = 0,7 · m · r² ●. Kiihdytyksessä jokainen pyörä painaa lisäksi 0,7 × oman massansa, koska se pyörii ●.
 3. Isompi rengas nostaa koria säteen muutoksen verran: 285 mm:n renkaalla 2,85 mm profiilin prosenttiyksikköä kohti ●.
-4. Natiivimallissa vain kokonaisvälitys (vaihde × loppuvälitys × säde) ratkaisee ●. Isompi säde pidentää välitystä, ja sen voi korjata loppuvälityksellä: FD_uusi = FD × r_uusi / r_vanha. Pyörä vierii säteellä r − kuorma / pystyjäykkyys ●.
+4. Simulaatiomallissa vain kokonaisvälitys (vaihde × loppuvälitys × säde) ratkaisee ●. Isompi säde pidentää välitystä, ja sen voi korjata loppuvälityksellä: FD_uusi = FD × r_uusi / r_vanha. Pyörä vierii säteellä r − kuorma / pystyjäykkyys ●.
 5. Profiili muuttaa myös renkaan pystyjäykkyyttä ja Pacejka-oletuksia ●, mutta ajokorkeus vakiona pitoero jäi −0,7…+1,2 %:iin ◐.
 
 | Rengas | Säde | Pyörän massa |
@@ -95,10 +95,10 @@ Säätöjärjestys: ensin rengaskoko ja vanneosa, sitten offset niin, että reng
 | Välitykset | Vain kokonaisvälitys ratkaisee ●, joten säteen muutos korjataan loppuvälityksellä. |
 | Jousen pituus | Isompi säde nostaa koria saman verran ●. Lyhennä jousta, jos haluat saman korkeuden. |
 | Vakaajat ja jouset | Renkaan pystyjäykkyys (p + 30 kPa) · (10 · leveys + 1) · r · 0,8 on sarjassa jousituksen kanssa ●. Leveä rengas on jäykempi, ja raide jäykistää kallistusta neliössä. Leveydellä ja vakaajajaolla oli kokemuksemme mukaan noin sekunnin verran päällekkäistä hyötyä ◐. |
-| Rengaspaine | Paineen vaikutus pitoon jäi kokonaisella autolla alle 1–2 %:n ◐. Paine pienentää vierintävastusta (∝ 1 / paine) ●, joten korkeampi paine on nopeampi suoralla (0–150 km/h 3,0 bar noin 7 % nopeampi kuin 2,0 bar). Renkaan tyyppi ei muuta paineen vaikutusta, eikä kuluminen vie pitoa ennen kuin kunto on 0 ●. |
+| Rengaspaine | Pito on suurimmillaan 2,0 barissa ●. Paine pienentää vierintävastusta (∝ 1 / paine) ●, joten 3,0 bar on nopein suoralla (0–150 km/h noin 7 % nopeampi kuin 2,0 barilla). Renkaan tyyppi ei muuta paineen vaikutusta, eikä kuluminen vie pitoa ennen kuin kunto on 0 ●. |
 | Massa | Leveä ja iso pyörä painaa enemmän. Massa maksaa noin 2 % pitoa / 100 kg ◐, mutta pyörien lisämassa on pieni leveyden pitohyötyyn verrattuna. |
 | Camber | Camber vie pitkittäispitoa 0,5 % / aste eikä nosta sivupidon huippua ●. |
-| Reunat ja gutterit | Mutkan ulkoreunan nousuun nojaaminen lisäsi natiivimallissa pitoa +14…+55 %, ja sisäkouru +26 % ◐. Vaikutus on suurempi kuin rengaskoon. |
+| Reunat ja gutterit | Mutkan ulkoreunan nousuun nojaaminen lisäsi simulaatiomallissa pitoa +14…+55 %, ja sisäkouru +26 % ◐. Vaikutus on suurempi kuin rengaskoon. |
 
 ## Oireet
 
@@ -115,18 +115,16 @@ Rengasvalinta muuttaa koko auton pitotasoa, joten oireet näkyvät yleensä siin
 
 ## Loppuvinkki
 
-Levein rengas, joka mahtuu lokasuojan sisään, matalamman perusprofiilin vanneosalla (kitka +0,08), antaa eniten pitoa. Korjaa sen valinnan jälkeen loppuvälitys säteen mukaan ja ajokorkeus jousen pituudella. Yli 285 mm:n natiivimalli näyttää enää pientä lisähyötyä.
+Levein rengas, joka mahtuu lokasuojan sisään, matalamman perusprofiilin vanneosalla (kitka +0,08), antaa eniten pitoa. Korjaa sen valinnan jälkeen loppuvälitys säteen mukaan ja ajokorkeus jousen pituudella. Yli 285 mm:n simulaatio näyttää enää pientä lisähyötyä.
 
-**Simulaatiokokemus ◐ (natiivimalli, ei pelissä testattu):** paineet 2,5 ja 3,0 bar olivat yhtä nopeat. 3,0 → 2,0 bar oli 1,2 s hitaampi ja 1,5 bar 2,6 s hitaampi, koska vierintävastus voitti pitohyödyn. Takapaineen lasku maksoi enemmän kuin etupaineen. 265/30 R16 oli 1,9 s ja 285/30 R16 1,1 s hitaampi kuin 325/25 R17.
+**Simulaatiokokemus ◐ (Tougen simulaatiomalli, ei testattu pelissä):** paineet 2,5 ja 3,0 bar olivat yhtä nopeat. 3,0 → 2,0 bar oli 1,2 s hitaampi ja 1,5 bar 2,6 s hitaampi, koska vierintävastus voitti pitohyödyn. Takapaineen lasku maksoi enemmän kuin etupaineen. 265/30 R16 oli 1,9 s ja 285/30 R16 1,1 s hitaampi kuin 325/25 R17.
 
 ## Varmistamatta
 
-- Miksi leveyden hyöty pienenee natiivimallissa yli 285 mm:n, on auki ◐.
+- Miksi leveyden hyöty pienenee simulaatiomallissa yli 285 mm:n, on auki ◐.
 - Raidekerroin 1 (offset 10 cm = raide +10 cm) on päätelty, ei luettu koodista ◐.
-- Renkaan kuluminen pienentää kitkaa (rengassarjasta riippuen jopa 40–60 %), mutta tarkka kaava on todentamatta, eikä sitä ole mallinnettu Tougessa eikä natiiviajoissa.
-- Se, että leveys auttaa eniten tiukoissa mutkissa, perustuu yhteen natiivivertailuun.
-- Leveä rengas maksaa suoralla ◐: 325/325 ja 285/345 nostivat hitaiden mutkien pitoa, mutta hidastivat 60–140 km/h -kiihdytystä 0,04 s ja 120–200 km/h 0,13–0,18 s. Leveä takarengas pidensi jarrutusmatkaa 1,5 m yhdessä vertailussa (epävarma).
-- Raide ±10 cm leveillä renkailla muutti pitoa alle 1 % ◐, joten offset ei ole pitosäädin. Kapeampi eturaide tai leveämpi takaraide rauhoitti perää jarrulla, mutta koe antoi vain suunnan.
+- Renkaan kuluminen pienentää kitkaa (rengassarjasta riippuen jopa 40–60 %), mutta tarkka kaava on todentamatta, eikä sitä ole mallinnettu Tougessa eikä simulaatioajoissa.
+- Se, että leveys auttaa eniten tiukoissa mutkissa, perustuu yhteen simulaatiovertailuun.
 
 ---
 

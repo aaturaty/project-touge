@@ -6,7 +6,7 @@
 
 ## Settings: the guide's words and the game's names
 
-The guide uses short everyday words. This table shows the name of each setting in the game's own menus, as Touge also shows them in the To game view.
+The guide uses short everyday words. This table shows the name of each setting in the game's own menus, as Touge also shows them in the Overview view.
 
 | In this guide | Name in the game | What it is |
 | --- | --- | --- |
@@ -24,7 +24,7 @@ The guide uses short everyday words. This table shows the name of each setting i
 | Preload | Preload | Constant diff lock in newton-metres, also with the clutch pressed. |
 | Brake balance | Front Brake Balance | Share of brake torque on the front axle. |
 | Offset, spacer | Front / Rear Wheel Offset | Wheel position outwards; track = base track + offset. |
-| Tyre pressure | Pressure | Small effect on grip (under 1–2 %); higher pressure lowers rolling resistance and is faster on the straight. |
+| Tyre pressure | Pressure | Grip peaks at 2.0 bar; higher pressure lowers rolling resistance. |
 | Tyre profile | Tire profile | Sidewall height in percentage points (±10). |
 | Final drive, FD | Final drive | The last ratio; total ratio = gear × final drive × tyre radius. |
 | Centre of gravity | Center of Mass Height (Part Setup) | A percentage of the body box height, not inches. |
@@ -49,29 +49,28 @@ The guide uses short everyday words. This table shows the name of each setting i
 | Oversteer | The rear gives up first; the car rotates more than you steer. "The rear steps out." |
 | Load transfer | Weight moving between wheels under braking, acceleration and cornering: m · a · h / track (or wheelbase). |
 | Roll stiffness | How strongly an axle resists body roll: bars + springs, both × track². |
-| Bar split, LLTD | LLTD = front share of roll stiffness: how much of the cornering load transfer goes through the front axle. Higher = more understeer, lower = more oversteer. |
-| Roll gradient (°/g) | How many degrees the body rolls per g of cornering. Lower = stiffer springs and bars. |
+| Bar split, LLTD | The front axle's share of roll stiffness. The axle with the larger share carries more of the cornering load transfer and lets go first. |
 | Travel | How far the suspension can still compress before the bump stop: spring length − sag. |
 | Bump stop | The rigid end of travel. Hitting it throws the car and costs grip. |
 | Sag | How much the spring is compressed by the car's weight at rest. |
-| Ride frequency (Hz), natural frequency | How fast the body bobs on its springs, spring and tyre together. Higher = stiffer suspension for the same weight. Keeping it equal moves a spring setup to a heavier or lighter car. |
-| Damping ratio, ζ | Damper force relative to critical damping. 1 = the body settles without overshoot, below 1 = it bobs, above 1 = stiff. Touge uses it to move dampers between cars. |
+| Natural frequency | √(spring / mass) / 2π. Keeping it equal moves a spring setup to a heavier or lighter car. |
+| Damping ratio, ζ | Damping relative to the spring and mass; Touge uses it to move dampers between cars. |
 | Knee | The wheel speed (0.1 m/s) where damping changes from the slow to the fast value. |
 | Total ratio | Gear × final drive × tyre radius; the only gearing number the physics uses. |
 | Rim part | The wheel part chosen for a tyre size; it sets the tyre's friction bonus (+0.03…+0.08). |
-| Native model | The game's physics engine run outside the game with a computer driver, used to compare settings evenly. |
+| Simulation | The game's physics engine run outside the game with a computer driver, used to compare settings evenly. |
 | Within noise | A difference smaller than the normal run-to-run spread, about 0.8 s on a six-minute run. |
 
 ## Markers
 
 | Marker | Meaning |
 | --- | --- |
-| ● | Confirmed in the game or from the game code. |
-| ◐ | An estimate from the model or a simulation, not tried in the game yet. |
+| ● | Confirmed in game or in the game code. |
+| ◐ | From Touge's simulation model or inferred, not tested in the game. |
 | ○ | Real-car theory, used only as background. |
 
 ---
 
-← [Body dimensions](body-dimensions.md) · [Contents](README.md)
+← [Gearing and gearbox](gearing.md) · [Contents](README.md)
 
 <sub>Project Touge is an unofficial fan-made tool for CarX Street. It is not a CarX Technologies product.</sub>

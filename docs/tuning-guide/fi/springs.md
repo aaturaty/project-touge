@@ -10,7 +10,7 @@ Jousien suurin vipu on pituus, koska tässä pelissä se on ajokorkeus. Kokemuks
 
 Pelin jousissa on kaksi erikoisuutta oikeaan autoon verrattuna. Jousiluku on suoraan pyöräjäykkyys ilman välityssuhdetta, ja jäykempi jousi nostaa koria, koska pituus on jousen vapaa pituus.
 
-Merkit: ● vahvistettu pelissä tai pelin koodissa, ◐ natiivimalli tai päätelty, ei pelissä testattu.
+Merkit: ● vahvistettu pelissä tai pelin koodissa, ◐ Tougen simulaatiomallista tai päätelty, ei testattu pelissä.
 
 ## Pituus
 
@@ -39,13 +39,13 @@ Merkit: ● vahvistettu pelissä tai pelin koodissa, ◐ natiivimalli tai päät
 3. Jouset eivät muuta kokonaiskuormansiirtoa (m · a · h / t sivuttain, m · a · h / L pitkittäin), koska kallistuskeskiö on maan tasolla ●. Ne päättävät, kuinka paljon kori liikkuu ja kuinka hyvin pyörä seuraa kuoppia.
 4. Kallistuksessa jousipari antaa k · t² / 2 ja vakaaja k · t² ●. Sama luku vakaajassa jäykistää kallistusta kaksi kertaa enemmän kuin jousessa.
 5. Ominaistaajuus f = √(k / m) / 2π, missä m on massa pyörää kohti ◐. Taajuus on helpoin tapa siirtää toimiva jäykkyys toiseen autoon.
-6. Helper on progressiivinen apujousi, ei ajoavustin ●. Liukurin rajat tulevat jousitusosasta, ja pelin raja voi poiketa datasta ●. Tarkista auton raja aina pelin liukurista: yhdellä autolla takajousen maksimi oli pelissä 151 eikä aiemmin luultu 80 ●.
+6. Helper on progressiivinen apujousi, ei ajoavustin ●. Liukurin rajat tulevat jousitusosasta, ja peli voi rajata enemmän kuin data kertoo ●.
 
 **Kun nostat:**
 
 | Muutos | Odota | Liikaa | Kokemus |
 | --- | --- | --- | --- |
-| Molemmat jouset ylös | Vähemmän korin liikettä, terävämpi vaste, ja kori nousee (ks. kohta 2). | Pyörät eivät seuraa kuoppia, ja auto pomppii reunoilla ja guttereissa. Hyvin jäykät yhdistelmät olivat simulaatiossa epävakaita. | ◐ Selvästi jäykempi kuin auto haluaa maksoi noin 2 s. ● Maltillisesti jäykempi jousi antoi pelissä "hyökkäävyyttä ja pitoa mutkaan". |
+| Molemmat jouset ylös | Vähemmän korin liikettä, terävämpi vaste, ja kori nousee (ks. kohta 2). | Pyörät eivät seuraa kuoppia, ja auto pomppii reunoilla ja guttereissa. Hyvin jäykät yhdistelmät olivat simulaatiomallissa epävakaita. | ◐ Selvästi jäykempi kuin auto haluaa maksoi noin 2 s. ● Maltillisesti jäykempi jousi antoi pelissä "hyökkäävyyttä ja pitoa mutkaan". |
 | Molemmat jouset alas | Pyörät seuraavat tietä ja auto rauhoittuu kuopissa. | Kori painuu ja lyö rajoittimeen; kallistus ja nyökkäys kasvavat. | ◐ Paljon pehmeämpi jousi maksoi jopa 4 s. |
 
 ## Etu–taka-suhde
@@ -99,7 +99,7 @@ Aloita pituudesta: anna jousitukselle tarpeeksi joustovaraa, ettei se lyö rajoi
 
 Jousiluku on pyöräjäykkyys, joten raskaampi auto tarvitsee jäykemmän jousen samaan tuntumaan.
 
-**Simulaatiokokemus ◐ (natiivimalli, ei pelissä testattu):** matalampi oli hitaampi: molemmat pituudet −15 maksoi noin 1 s, ja etu +15 toi noin 0,5 s, samaan suuntaan kuin pelissä. Jäykempi takajousi toi vähän ja pehmeämpi vei lähes sekunnin. Pehmeä etujousi jäykällä etuvakaajalla oli huono yhdistelmä (+1,7 s).
+**Simulaatiokokemus ◐ (Tougen simulaatiomalli, ei testattu pelissä):** matalampi oli hitaampi: molemmat pituudet −15 maksoi noin 1 s, ja etu +15 toi noin 0,5 s, samaan suuntaan kuin pelissä. Jäykempi takajousi toi vähän ja pehmeämpi vei lähes sekunnin. Pehmeä etujousi jäykällä etuvakaajalla oli huono yhdistelmä (+1,7 s).
 
 ## Varmistamatta
 

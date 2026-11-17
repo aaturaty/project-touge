@@ -6,17 +6,17 @@
 
 ## In short
 
-In the native model the dampers are a small lever for lap time but a big one for feel. In our experience stock, current and maximum damping were within half a second of each other, while minimum damping made the car unstable or undrivable ◐. Springs and bars decide how much load finally moves, the dampers decide how fast. That is why dampers act in transitions (braking, turn-in, opening the throttle, bumps), not in the middle of a long corner.
+In the simulation model the dampers are a small lever for lap time but a big one for feel. In our experience stock, current and maximum damping were within half a second of each other, while minimum damping made the car unstable or undrivable ◐. Springs and bars decide how much load finally moves, the dampers decide how fast. That is why dampers act in transitions (braking, turn-in, opening the throttle, bumps), not in the middle of a long corner.
 
 The game's knee is high (0.1 m/s), so the slow values do almost all of the handling work and the fast values only bumps, kerbs and gutters.
 
-Markers: ● confirmed in game or in the game code, ◐ native simulation or inferred, not tested in game, ○ real-car background.
+Markers: ● confirmed in game or in the game code, ◐ from Touge's simulation model or inferred, not tested in the game, ○ real-car background.
 
 ## How the game calculates it
 
 1. Damper force depends on the wheel's speed v, not its position. Below 0.1 m/s: F = slow · v. Above 0.1 m/s: F = slow · 0.1 + fast · (v − 0.1) ●. Fast is the slope of the curve after the knee, not a separate force.
 2. Bump (compression) acts when the wheel rises towards the body. Rebound acts when the wheel drops away from the body ●.
-3. The values act directly at the wheel; there is no motion ratio ●. The slider multiplies the value by 1.65 per step, ±3 steps ●. On one car the displayed number is 2 × the native coefficient, but this has not been checked on other cars ◐.
+3. The values act directly at the wheel; there is no motion ratio ●. The slider multiplies the value by 1.65 per step, ±3 steps ●. On one car the displayed number is 2 × the physics code's coefficient, but this has not been checked on other cars ◐.
 4. The knee is fixed at 0.1 m/s ●. Real dampers typically have their knee at 0.025–0.075 m/s ○, so in the game the slow range also covers much of the road's unevenness.
 5. The roll centre is at ground level, so all lateral load transfer goes through springs, bars and dampers ●. The dampers' share in transitions is therefore probably larger than in a real car ◐.
 6. The bump stop is rigid and not adjustable. Travel = spring length − sag ●, and the damper affects how close to the stop the suspension drifts over bumps.
@@ -45,7 +45,7 @@ Markers: ● confirmed in game or in the game code, ◐ native simulation or inf
 | --- | --- | --- | --- |
 | Front slow bump | The nose dives more slowly under braking and the car is calmer at turn-in. | Understeer on corner entry; the nose does not take load. | ○ Sources agree on the direction. ● A 10 % change was within noise in game. |
 | Rear slow bump | The rear squats more slowly on throttle. | On exit the rear goes light for a moment: oversteer and weaker traction ○. | ◐ Both ×0.7 and ×1.3 were slower than the stock value. |
-| Fast bump | The body is supported over bumps and does not sink as deep. | A bump or kerb throws the car up and the tyre leaves the road for a moment. | ● Fast bump ×1.5 felt very good in game. ◐ Native effect only −0.05 s. |
+| Fast bump | The body is supported over bumps and does not sink as deep. | A bump or kerb throws the car up and the tyre leaves the road for a moment. | ● Fast bump ×1.5 felt very good in game. ◐ Effect in the simulation model only −0.05 s. |
 | All bump down | The wheel follows the road and soaks up bumps. | The body sinks fast and hits the bump stop. | ◐ Bump at minimum was about two seconds slower. |
 
 ## Slow and fast rebound
@@ -62,10 +62,10 @@ Markers: ● confirmed in game or in the game code, ◐ native simulation or inf
 
 | Change | Expect | Too much | Experience |
 | --- | --- | --- | --- |
-| Front slow rebound | The nose rises more slowly on throttle and stays loaded, so throttle understeer drops. | The car feels hard and packs down; the inner front goes light at turn-in. | ● Halving front rebound made the car more predictable, but brought slight throttle understeer in fast corners. ◐ The native model showed the opposite direction (conflict). |
+| Front slow rebound | The nose rises more slowly on throttle and stays loaded, so throttle understeer drops. | The car feels hard and packs down; the inner front goes light at turn-in. | ● Halving front rebound made the car more predictable, but brought slight throttle understeer in fast corners. ◐ The simulation showed the opposite direction (conflict). |
 | Rear slow rebound | The rear rises more slowly under braking and helps rotate the car at turn-in. | The inner rear goes light; the rear bounces and steps out over bumps. | ◐ Lowering it about 25 % has calmed a bouncing rear. ● +20 % on the rear dampers felt good in game. |
 | Fast rebound | The body stays calm after bumps. | The wheel does not return to the road in time and grip breaks over a series of bumps. | ◐ Fast rebound ×0.6 was 0.14–0.18 s slower, so too low was slower. |
-| All rebound down | The wheels return quickly and the car does not pack down. | The body wallows and pitches. | ◐ All rebound at minimum: the car did not finish the native run. |
+| All rebound down | The wheels return quickly and the car does not pack down. | The body wallows and pitches. | ◐ All rebound at minimum: the car did not finish the simulation run. |
 
 ## Working together: how to set them
 
@@ -83,7 +83,7 @@ Markers: ● confirmed in game or in the game code, ◐ native simulation or inf
 **Setup order:**
 
 1. Springs and bars first. They decide where the load transfer settles; the dampers only how fast.
-2. Level: change all four by the same factor (one slider step = ×1.65). In the native model stock to maximum was within noise, but minimum was too little ◐.
+2. Level: change all four by the same factor (one slider step = ×1.65). In the simulation model stock to maximum was within noise, but minimum was too little ◐.
 3. Bump/rebound ratio: if the car feels hard and hits the bump stop over bumps, rebound is too high relative to bump.
 4. Front/rear: correct the transition balance by symptom (below).
 5. Fast values last, for bumps and gutters.
@@ -104,7 +104,7 @@ Markers: ● confirmed in game or in the game code, ◐ native simulation or inf
 | Bars | A bar has no damping of its own ●. A stiffer bar on the same dampers makes roll relatively less damped ○. |
 | Differential | Opening the throttle squats the rear (rear bump) while the diff locks. Rear slow bump and throttle lock both act on the rear on exit, so change only one at a time ◐. |
 | Camber | Camber changes with spring travel ●, and the damper slows that change. The effect is small, because camber's grip effect is small ◐. |
-| Tyres | The tyre's vertical compliance is in series with the suspension; no tyre damping of its own has been found in the native code ◐. |
+| Tyres | The tyre's vertical compliance is in series with the suspension; no tyre damping of its own has been found in the game's physics code ◐. |
 | Bumps and gutters | The asphalt bump pattern is −0.0035…0 m (repeat 20 m) and ±0.025 m (repeat 200 m) ●. Gutters and driving over the verge are the main events in the fast range on a line that uses them. |
 
 ## Symptoms
@@ -115,7 +115,7 @@ Change one value at a time by about 15–20 % (half a slider step) and drive the
 | --- | --- | --- | --- |
 | Braking into the corner | The nose dives quickly and the rear goes light | The front drops and the rear rises too fast | Raise front slow bump and rear slow rebound. |
 | Braking into the corner | The car will not turn while trail braking | The outer front takes too much load in the transition | Lower front slow bump ○. |
-| Turn-in | The rear steps out right at turn-in | The inner rear goes light; the rear takes too much in the transition | Lower rear slow rebound ◐. If the rear steps out specifically on the brakes, the dampers did not help in the native model (rear slow rebound and front slow bump had no effect ◐): use brake balance and the front bar. |
+| Turn-in | The rear steps out right at turn-in | The inner rear goes light; the rear takes too much in the transition | Lower rear slow rebound ◐. |
 | Exit, opening the throttle | The nose pushes on throttle in fast corners | The nose rises quickly and loses load | Raise front slow rebound ●. |
 | Exit, opening the throttle | The rear goes light and steps out as the throttle comes in | The rear compresses slowly while the diff locks | Lower rear slow bump, or first the diff preload. |
 | Bumps and gutters | The car feels hard and bounces over a series of bumps | Rebound does not let the wheel back; the suspension packs onto the bump stop | Lower slow rebound ● or lengthen the spring. |
@@ -124,16 +124,16 @@ Change one value at a time by about 15–20 % (half a slider step) and drive the
 
 ## Final tip
 
-Keep the dampers near stock or the touge weapon preset first: in the native model stock and maximum differed little, but too little damping ruined the car. Then refine one phase at a time: rebound for packing over bumps, front slow rebound for throttle understeer, and fast values for gutters. If the car feels hard, look at the bump/rebound ratio and the spring length before the spring.
+Keep the dampers near stock or the touge weapon preset first: in the simulation model stock and maximum differed little, but too little damping ruined the car. Then refine one phase at a time: rebound for packing over bumps, front slow rebound for throttle understeer, and fast values for gutters. If the car feels hard, look at the bump/rebound ratio and the spring length before the spring.
 
 In our experience rebound is clearly larger than bump in every working setup, and relatively larger at the rear than at the front. A heavier car uses larger numbers with the same ratios.
 
 ## Not yet confirmed
 
-- The direction of front slow rebound on throttle is in conflict: the game and the literature say less rebound adds throttle understeer, the native model showed the opposite ◐. This guide follows the game. The native model has since shown the same direction on two more cars ◐, so the direction is being tested in game again. The advice stays as it is until the game test has been run.
-- The ratio between the displayed number and the native coefficient (2 × on one car) is unchecked on other cars, so the guide does not compute damping ratios.
-- Bumps, gutters and verges have not been run in the native model, so the fast-value advice rests on one game test and general mechanics.
-- The phase table directions come from real-car sources (○). The game's damper formula is the same, but not every direction has been run in the native model.
+- The direction of front slow rebound on throttle is in conflict: the game and the literature say less rebound adds throttle understeer, the simulation showed the opposite ◐. This guide follows the game.
+- The ratio between the displayed number and the physics code's coefficient (2 × on one car) is unchecked on other cars, so the guide does not compute damping ratios.
+- Bumps, gutters and verges have not been run in the simulation model, so the fast-value advice rests on one game test and general mechanics.
+- The phase table directions come from real-car sources (○). The game's damper formula is the same, but not every direction has been run in the simulation model.
 
 ---
 

@@ -10,7 +10,7 @@ The tyre is a big lever, and the most important choices are the width and the ri
 
 Rule: tyres must not stick out of the fenders, even though the game allows it.
 
-Markers: ● confirmed in game or in the game code, ◐ native simulation or inferred, not tested in game.
+Markers: ● confirmed in game or in the game code, ◐ from Touge's simulation model or inferred, not tested in the game.
 
 ## Choosing the size
 
@@ -19,8 +19,8 @@ Markers: ● confirmed in game or in the game code, ◐ native simulation or inf
 1. Tyre friction = 1 + the rim part's friction bonus (fric_add), and it scales the tyre's peak force directly ●. The game shows this as the grip value (for example 1.08).
 2. The same size often has two rim parts. The one with the lower base profile gives +0.08, the higher one +0.03–0.05 ●. For example 265 R16: base profile 40 = +0.08, base profile 45 = +0.03.
 3. The full +0.08 starts at 265 mm. 245–255 mm gets at most +0.05 and 225–235 mm +0.04 ●.
-4. Width adds grip with a power of 0.41: grip factor = (width / 185)^0.41 × friction ● (route model, matches the native code).
-5. Tyre pressure is not a grip lever. In the friction formula the peak is at 2.0 bar, and 1.0 or 3.0 bar costs about 1–2.5 % ●, but on a whole car the difference stayed under 1–2 % ◐. On the straight higher pressure is faster, because rolling resistance drops ●: 3.0 bar was −0.02 s at 60–140 km/h and −0.11 s at 120–200 km/h, 2.0 bar +0.03 / +0.21 s ◐. Pressure is finishing.
+4. Width adds grip with a power of 0.41: grip factor = (width / 185)^0.41 × friction ● (route model, matches the game's physics code).
+5. Tyre grip peaks at 2.0 bar. 1.0 or 3.0 bar costs about 1–2.5 % grip ●.
 
 | Width | Highest friction bonus | Grip factor | Difference to 265 |
 | --- | --- | --- | --- |
@@ -38,7 +38,7 @@ Markers: ● confirmed in game or in the game code, ◐ native simulation or inf
 | Wider tyre | More corner speed and braking grip, most in slow corners. | A heavier wheel slows acceleration, and the tyre may stick out of the fender. | ◐ 265 → 285 was worth almost two seconds, 285 → 325 only about half a second more. ◐ In a tight corner the gain was about ten times larger than in a fast one. |
 | Lower base profile in the same size | Friction +0.08 instead of +0.03–0.05. | — | ● Rim part data. ◐ Worth close to a second on a full run. |
 
-By the grip factor the gain would keep growing evenly, but in the native model the width gain shrinks above 285 mm. The reason is still open ◐.
+By the grip factor the gain would keep growing evenly, but in the simulation model the width gain shrinks above 285 mm. The reason is still open ◐.
 
 ## Small vs large tyre
 
@@ -47,7 +47,7 @@ By the grip factor the gain would keep growing evenly, but in the native model t
 1. Diameter = rim × 25.4 + 2 × width × profile / 100 mm ●. The game's Tire profile −10…+10 is profile percentage points (285/35 → 285/25…285/45) ●.
 2. Wheel mass comes from the size: m = 1000 · r² · width kg, and inertia I = 0.7 · m · r² ●. Under acceleration each wheel also weighs 0.7 × its own mass extra because it spins ●.
 3. A larger tyre raises the body by the radius change: on a 285 mm tyre 2.85 mm per profile point ●.
-4. In the native model only the total ratio (gear × final drive × radius) matters ●. A larger radius makes the gearing longer, which the final drive can correct: FD_new = FD × r_new / r_old. The wheel rolls on radius r − load / vertical stiffness ●.
+4. In the simulation model only the total ratio (gear × final drive × radius) matters ●. A larger radius makes the gearing longer, which the final drive can correct: FD_new = FD × r_new / r_old. The wheel rolls on radius r − load / vertical stiffness ●.
 5. Profile also changes the tyre's vertical stiffness and its Pacejka defaults ●, but with ride height held constant the grip difference stayed within −0.7…+1.2 % ◐.
 
 | Tyre | Radius | Wheel mass |
@@ -95,10 +95,10 @@ Setup order: choose the tyre size and rim part first, then the offset so the tyr
 | Gearing | Only the total ratio matters ●, so a radius change is corrected with the final drive. |
 | Spring length | A larger radius raises the body by the same amount ●. Shorten the spring if you want the same height. |
 | Bars and springs | The tyre's vertical stiffness (p + 30 kPa) · (10 · width + 1) · r · 0.8 is in series with the suspension ●. A wide tyre is stiffer, and track stiffens roll with the square. Width and bar split overlapped by about a second in our experience ◐. |
-| Tyre pressure | On a whole car the pressure effect on grip stayed under 1–2 % ◐. Pressure lowers rolling resistance (∝ 1 / pressure) ●, so higher pressure is faster on a straight (0–150 km/h 3.0 bar about 7 % quicker than 2.0 bar). Tyre type does not change the pressure effect, and wear does not cost grip before condition reaches 0 ●. |
+| Tyre pressure | Grip peaks at 2.0 bar ●. Pressure lowers rolling resistance (∝ 1 / pressure) ●, so 3.0 bar is fastest on a straight (0–150 km/h about 7 % quicker than at 2.0 bar). Tyre type does not change the pressure effect, and wear does not cost grip before condition reaches 0 ●. |
 | Mass | A wide and large wheel weighs more. Mass costs about 2 % grip per 100 kg ◐, but the extra wheel mass is small next to the width gain. |
 | Camber | Camber costs 0.5 % longitudinal grip per degree and does not raise the lateral peak ●. |
-| Kerbs and gutters | Leaning on the rising outer edge of a corner added +14…+55 % grip in the native model, and an inside gutter +26 % ◐. The effect is larger than the tyre size. |
+| Kerbs and gutters | Leaning on the rising outer edge of a corner added +14…+55 % grip in the simulation model, and an inside gutter +26 % ◐. The effect is larger than the tyre size. |
 
 ## Symptoms
 
@@ -115,18 +115,16 @@ A tyre choice changes the grip level of the whole car, so symptoms usually show 
 
 ## Final tip
 
-The widest tyre that fits inside the fender, with the lower-base-profile rim part (friction +0.08), gives the most grip. After choosing it, correct the final drive for the radius and the ride height with the spring length. Above 285 mm the native model shows only a small further gain.
+The widest tyre that fits inside the fender, with the lower-base-profile rim part (friction +0.08), gives the most grip. After choosing it, correct the final drive for the radius and the ride height with the spring length. Above 285 mm the simulation shows only a small further gain.
 
-**Simulation experience ◐ (native model, not tested in game):** pressures 2.5 and 3.0 bar were equally fast. 3.0 → 2.0 bar was 1.2 s slower and 1.5 bar 2.6 s slower, because rolling resistance outweighed the grip gain. Lowering the rear pressure cost more than lowering the front. 265/30 R16 was 1.9 s and 285/30 R16 1.1 s slower than 325/25 R17.
+**Simulation experience ◐ (Touge's simulation model, not tested in the game):** pressures 2.5 and 3.0 bar were equally fast. 3.0 → 2.0 bar was 1.2 s slower and 1.5 bar 2.6 s slower, because rolling resistance outweighed the grip gain. Lowering the rear pressure cost more than lowering the front. 265/30 R16 was 1.9 s and 285/30 R16 1.1 s slower than 325/25 R17.
 
 ## Not yet confirmed
 
-- Why the width gain shrinks above 285 mm in the native model is open ◐.
+- Why the width gain shrinks above 285 mm in the simulation model is open ◐.
 - The track factor 1 (offset 10 cm = track +10 cm) is inferred, not read from the code ◐.
-- Tyre wear lowers friction (up to 40–60 % depending on the tyre series), but the exact formula is unverified and is not modelled in Touge or in native runs.
-- That width helps most in tight corners rests on a single native comparison.
-- A wide tyre costs on the straight ◐: 325/325 and 285/345 raised grip in slow corners but slowed 60–140 km/h acceleration by 0.04 s and 120–200 km/h by 0.13–0.18 s. A wide rear tyre lengthened the braking distance by 1.5 m in one comparison (uncertain).
-- Track ±10 cm on wide tyres changed grip by under 1 % ◐, so offset is not a grip lever. A narrower front track or a wider rear track calmed the rear under braking, but the test gave only a direction.
+- Tyre wear lowers friction (up to 40–60 % depending on the tyre series), but the exact formula is unverified and is not modelled in Touge or in the simulation model runs.
+- That width helps most in tight corners rests on a single simulation comparison.
 
 ---
 

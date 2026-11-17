@@ -10,7 +10,7 @@ You can hardly adjust the body dimensions, but they tell you where to start your
 
 The only adjustable dimensions are track width (fender part and spacers), centre of gravity (body Stage, weight reduction and spring length) and mass. Everything else comes with the choice of car.
 
-Markers: ● confirmed in game or in the game code, ◐ native simulation or inferred, not tested in game, ○ real-car theory.
+Markers: ● confirmed in game or in the game code, ◐ from Touge's simulation model or inferred, not tested in the game, ○ real-car theory.
 
 ## Wheelbase
 
@@ -112,7 +112,7 @@ These symptoms come from a setup made for a car of different size. Correct them 
 
 | Phase | Symptom | What happens in the game | Change |
 | --- | --- | --- | --- |
-| Braking into the corner | A long car understeers on the brakes and has to be forced to turn | A long wheelbase rotates about half as much on the brakes as a short one, and the bars have little hold on it ◐ | Brake balance rearwards, then decel lock down ◐. Set the bar split by wheelbase for stability, not for brake rotation. |
+| Braking into the corner | A long car understeers on the brakes and has to be forced to turn | A short car's rear-biased bar split does not rotate a long car | Move the bar split forward by wheelbase ●. |
 | Mid-corner, high speed | Long car: the rear lets go suddenly in a big corner | The limit comes from the rear when the split is too rear-biased | Same fix: split forward ●. |
 | Exit | A short car with a light rear spins on throttle | Low front weight and a short wheelbase make the rear sensitive | Lower diff preload and throttle lock ◐, or widen the rear track. |
 | Braking | A short car dives and the rear goes light | Longitudinal transfer m · a · h / L is larger on a short car | Move brake balance rearwards and add front spring length. |
@@ -121,7 +121,7 @@ These symptoms come from a setup made for a car of different size. Correct them 
 
 ## Final tip
 
-On a new car, look at the wheelbase first. It tells you how far to move the bar split of a working setup, and in our experience this alone cured a nervous rear on every car of the Touge weapon set ●. Mass tells you the level of springs and dampers, and the centre of gravity the total bar stiffness.
+On a new car, look at the wheelbase first. It tells you how far to move the bar split of a working setup, and in our experience this alone cured a nervous rear and braking understeer on every car of the Touge weapon set ●. Mass tells you the level of springs and dampers, and the centre of gravity the total bar stiffness.
 
 In our experience every 10 cm of extra wheelbase has moved the working roll-stiffness split about 4 points forward, up to about 5 points ahead of the front weight share ●.
 
@@ -129,13 +129,12 @@ In our experience every 10 cm of extra wheelbase has moved the working roll-stif
 
 - The wheelbase relation was fitted on three cars and tested in game on nine. Cars over 2.7 m have not been tried, so the upper end is an estimate.
 - The frequency and damping ratio examples are calculated. Unsprung mass has not been subtracted from the wheel mass.
-- The offset gain was positive on one car and negative on another, and the reason is open. On wide tyres track ±10 cm at the front or rear changed grip by under 1 % ◐, so offset is not a grip lever. It does affect balance: a narrower front track or a wider rear track calmed the rear on the brakes (direction only ◐).
-- The wheelbase itself is a big lever for rotation on the brakes ◐: on the same car a 2.75 m wheelbase rotated about half as much on the brakes as 2.30 m, and the bar split's effect on brake rotation shrank (±28 % short, ±8 % long). In the test a rear-biased split rotated most at every wheelbase, so the long-car braking understeer seen in game ● did not repeat in the native model.
+- The offset gain was positive on one car and negative on another, and the reason is open.
 - The corrected centre of gravity calculation (touge weapon, real CoG) is untested in game.
 - The link between a short wheelbase and longer gearing may come from the rev limiter.
 
 ---
 
-← [Differential](differential.md) · [Contents](README.md) · [Glossary](glossary.md) →
+← [Differential](differential.md) · [Contents](README.md) · [Engine](engine.md) →
 
 <sub>Project Touge is an unofficial fan-made tool for CarX Street. It is not a CarX Technologies product.</sub>

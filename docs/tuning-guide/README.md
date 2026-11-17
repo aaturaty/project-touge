@@ -15,12 +15,12 @@ Everything here is about how this game calculates the car, not how a real car wo
 ## Where the knowledge comes from
 
 - **The game's own physics code and data.** The formulas in the "How the game calculates it" sections come from the game's driving physics and its part data.
-- **The native model.** The game's physics engine, run outside the game with a computer driver on a real route. It drives the same car with the same settings many times, so it can compare settings far more evenly than a person can.
+- **Touge's simulation model.** The game's physics engine, run outside the game with a computer driver on a real route. It drives the same car with the same settings many times, so it can compare settings far more evenly than a person can.
 - **Experience in game.** Setups driven and timed in the game itself, on touge routes, by a real driver.
 
-Markers: ● confirmed in game or in the game code, ◐ native model or inferred, not tested in game, ○ real-car theory, used only as background.
+Markers: ● confirmed in game or in the game code, ◐ from Touge's simulation model or inferred, not tested in the game, ○ real-car theory, used only as background.
 
-When the guide says "in our experience", the result comes from game tests or native runs on a handful of cars. Treat the numbers as an order of magnitude for your car, not a promise.
+When the guide says "in our experience", the result comes from game tests or simulation runs on a handful of cars. Treat the numbers as an order of magnitude for your car, not a promise.
 
 ## How the game differs from a real car
 
@@ -38,10 +38,10 @@ A few things in the game physics change the usual tuning advice. They come up ag
 ## How to use it with Touge
 
 1. **Build** the car on Touge's Build tab, or enter it from your screenshots.
-2. **Start** from a preset, then drive a few laps in the game. The touge weapon preset has worked in game ●, the model calculation is a calculated starting point ◐.
+2. **Start** from a preset such as touge weapon, then drive a few laps in the game.
 3. **Find the phase** where the car does not do what you want: braking, turn-in, mid-corner, exit, straight, or bumps and gutters.
 4. **Pick the symptom** in the Symptom view on the Tune tab. It shows the change to try first and second, and links to the chapter of this guide that explains it.
-5. **Change one thing at a time** and drive the same corner in the same gear. Move the setting into the game with the To game view.
+5. **Change one thing at a time** and drive the same corner in the same gear. Move the setting into the game with the Overview view.
 
 ## How to read a chapter
 
@@ -57,7 +57,7 @@ Every chapter follows the same pattern:
 
 ## Chapters
 
-1. [The whole chassis](whole-chassis.md): the biggest levers, setup order, how to test, tables that start from what you want, and a symptom index.
+1. [The whole chassis](whole-chassis.md): the biggest levers, setup order, how to test, and a symptom index.
 2. [Tyres](tyres.md): width, rim part, pressure, diameter and track.
 3. [Springs](springs.md): spring length, stiffness and the front/rear balance.
 4. [Anti-roll bars](anti-roll-bars.md): stiffness, roll and the front/rear split.
@@ -65,7 +65,9 @@ Every chapter follows the same pattern:
 6. [Camber and toe](camber-and-toe.md): tyre angle and wheel direction.
 7. [Differential](differential.md): lock on acceleration, lock on deceleration and preload.
 8. [Body dimensions](body-dimensions.md): wheelbase, track, centre of gravity and mass as a starting point.
-9. [Glossary](glossary.md): the guide's words and the game's setting names.
+9. [Engine](engine.md): parts, Part Setup sliders, part factors and engines at the class limit.
+10. [Gearing and gearbox](gearing.md): ratios, final drive, tyre size and gearbox choice.
+11. [Glossary](glossary.md): the guide's words and the game's setting names.
 
 ## A word of caution
 

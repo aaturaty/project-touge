@@ -48,6 +48,8 @@ Merkit: ● vahvistettu pelissä tai pelin koodissa, ◐ Tougen simulaatiomallis
 | Molemmat jouset ylös | Vähemmän korin liikettä, terävämpi vaste, ja kori nousee (ks. kohta 2). | Pyörät eivät seuraa kuoppia, ja auto pomppii reunoilla ja guttereissa. Hyvin jäykät yhdistelmät olivat simulaatiomallissa epävakaita. | ◐ Selvästi jäykempi kuin auto haluaa maksoi noin 2 s. ● Maltillisesti jäykempi jousi antoi pelissä "hyökkäävyyttä ja pitoa mutkaan". |
 | Molemmat jouset alas | Pyörät seuraavat tietä ja auto rauhoittuu kuopissa. | Kori painuu ja lyö rajoittimeen; kallistus ja nyökkäys kasvavat. | ◐ Paljon pehmeämpi jousi maksoi jopa 4 s. |
 
+![Tougen jousikuva kohdassa Säädä › Säätimet › Jouset ◐, etujousi 40 % jäykempänä. Paikallaan etu painuu 14 mm entisen 19 mm:n sijaan, ja etutaajuus on 3,00 Hz.](kuvat/jousi.webp)
+
 ## Etu–taka-suhde
 
 **Näin peli laskee:**

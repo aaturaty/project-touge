@@ -29,6 +29,8 @@ Markers: ● confirmed in game or in the game code, ◐ from Touge's simulation 
 | Above 0.1 m/s | Bumps, kerbs, gutters, driving over the verge | fast bump and fast rebound (slow acts up to the knee) |
 | Middle of a long corner | The motion has stopped | none: the dampers do nothing |
 
+![Touge's damper picture under Tune › Adjust › Dampers ◐. The slope of each line is the setting: below the 0.1 m/s knee the slow value applies, above it the fast one. Steering, braking and throttle stay in the slow band, while a 3 cm bump reaches the fast range. Below it, the body's response to that bump, with the unsprung mass and the tyre included.](kuvat/isku.webp)
+
 ## Slow and fast bump
 
 **What it does.** Bump slows the wheel rising towards the body. As long as the motion continues, it adds load to that corner's tyre ● (force from speed). The axle with stiffer compression takes a larger share of the load transfer in transitions and briefly loses grip relative to the other ○.
@@ -47,6 +49,8 @@ Markers: ● confirmed in game or in the game code, ◐ from Touge's simulation 
 | Rear slow bump | The rear squats more slowly on throttle. | On exit the rear goes light for a moment: oversteer and weaker traction ○. | ◐ Both ×0.7 and ×1.3 were slower than the stock value. |
 | Fast bump | The body is supported over bumps and does not sink as deep. | A bump or kerb throws the car up and the tyre leaves the road for a moment. | ● Fast bump ×1.5 felt very good in game. ◐ Effect in the simulation model only −0.05 s. |
 | All bump down | The wheel follows the road and soaks up bumps. | The body sinks fast and hits the bump stop. | ◐ Bump at minimum was about two seconds slower. |
+
+![Turn-in in Touge's situation view ◐ with front slow bump doubled (solid) against the previous setting (dashed). The front axle takes its share of the load transfer sooner, which reads as more understeer at turn-in. Mid-corner the share settles in the same place, because dampers only act while the body moves.](kuvat/tilanne_bump.webp)
 
 ## Slow and fast rebound
 

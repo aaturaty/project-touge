@@ -29,6 +29,8 @@ Merkit: ● vahvistettu pelissä tai pelin koodissa, ◐ Tougen simulaatiomallis
 | Yli 0,1 m/s | Kuopat, reunat, gutterit, pientareen yli ajo | fast bump ja fast rebound (slow vaikuttaa polveen asti) |
 | Pitkän mutkan keskikohta | Liike on pysähtynyt | ei mikään: vaimentimet eivät tee mitään |
 
+![Tougen vaimenninkuva kohdassa Säädä › Säätimet › Iskunvaimentimet ◐. Viivan jyrkkyys on säätö: alle 0,1 m/s:n polven pätee hidas arvo, sen yli nopea. Ohjaus, jarrutus ja kaasu pysyvät hitaalla kaistalla, kun taas 3 cm:n töyssy ulottuu nopealle alueelle. Alla korin vaste töyssyyn jousittamaton massa ja rengas mukana.](kuvat/isku.webp)
+
 ## Slow ja fast bump
 
 **Mitä se tekee.** Bump hidastaa pyörän nousua koria kohti. Niin kauan kuin liike jatkuu, se lisää kuormaa sen kulman renkaalle ● (voima nopeudesta). Akseli, jonka puristus on jäykempi, ottaa siirtymissä suuremman osan kuormansiirrosta ja menettää hetkeksi pitoa suhteessa toiseen ○.
@@ -47,6 +49,8 @@ Merkit: ● vahvistettu pelissä tai pelin koodissa, ◐ Tougen simulaatiomallis
 | Taka slow bump | Perä kyykkää kaasulla hitaammin. | Ulostulossa perä kevenee hetkeksi: yliohjaus ja heikompi veto ○. | ◐ Sekä ×0,7 että ×1,3 olivat vakioarvoa hitaampia. |
 | Fast bump | Kori tukeutuu kuopissa eikä painu yhtä syvälle. | Kuoppa tai reuna heittää autoa ylös ja rengas irtoaa tiestä hetkeksi. | ● Fast bump ×1,5 tuntui pelissä erittäin hyvältä. ◐ Vaikutus simulaatiomallissa vain −0,05 s. |
 | Kaikki bump alas | Pyörä seuraa tietä ja imee kuopat. | Kori painuu nopeasti ja lyö rajoittimeen. | ◐ Bump minimissä oli noin kaksi sekuntia hitaampi. |
+
+![Sisäänkääntö Tougen tilannekuvassa ◐: etu hidas puristus kaksinkertaisena (yhtenäinen viiva) verrattuna edelliseen säätöön (katkoviiva). Etuakseli saa osuutensa kuormansiirrosta aiemmin, mikä näkyy aliohjauksena sisäänkäännössä. Mutkan keskellä osuus asettuu samaan kohtaan, koska vaimentimet vaikuttavat vain korin liikkuessa.](kuvat/tilanne_bump.webp)
 
 ## Slow ja fast rebound
 

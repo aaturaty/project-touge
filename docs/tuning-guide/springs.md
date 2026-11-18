@@ -48,6 +48,8 @@ Markers: ● confirmed in game or in the game code, ◐ from Touge's simulation 
 | Both springs up | Less body movement, a sharper response, and the body rises (see point 2). | The wheels do not follow bumps, and the car bounces on kerbs and gutters. Very stiff combinations were unstable in the simulation. | ◐ Clearly stiffer than the car likes cost about 2 s. ● A moderately stiffer spring gave "attack and grip into corners" in game. |
 | Both springs down | The wheels follow the road and the car calms down over bumps. | The body sinks and hits the bump stop; roll and pitch grow. | ◐ A much softer spring cost up to 4 s. |
 
+![Touge's spring picture under Tune › Adjust › Springs ◐ with the front spring 40 % stiffer. Standing, the front compresses 14 mm instead of 19 mm, and the front frequency is 3.00 Hz.](kuvat/jousi.webp)
+
 ## Front/rear ratio
 
 **How the game calculates it:**

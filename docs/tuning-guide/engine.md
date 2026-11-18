@@ -58,17 +58,17 @@ Class is calculated from peak power, so at the class limit the fastest engine is
 
 Search on 17 Nov with the Touge route model on North v2 in C3 (S15 and AE86). For each engine, parts, sliders, lightening and tank were searched from 12 starting points and the result was compared with Touge's own fit. These are simulation model results, not yet run in the native simulation or in the game.
 
-| Engine | S15 gap to best | AE86 gap to best | Gain over Touge's own fit | Native S15 / AE86 vs current |
-| --- | --- | --- | --- | --- |
-| N14B | 0.0 | 0.0 | −6…−8 s | +1.7 ± 0.3 / −0.2 ± 0.3 |
-| PV2 | +0.6 | +0.6 | −3…−5 s | +0.4 ± 0.3 / −0.9 ± 0.1 |
-| DL20 | +1.6 | +1.6 | −6…−8 s | +3.3 ± 0.2 / +1.0 ± 0.2 |
-| RDA | +0.7 | +1.2 | −0.1…−0.4 s | +1.4 ± 0.2 / +0.1 ± 0.2 |
-| GE4 | +2.0 | +1.6 | −1…−3 s | – / +1.1 ± 0.2 |
-| 2ZG | +2.2 | +2.6 | −5…−7 s | – |
-| B13 | +2.3 | +2.5 | −9…−10 s | – |
-| S02 | +2.9 | +2.8 | −4…−6 s | – |
-| BM13 | +2.4 | +4.1 | −0.2…−0.4 s | – |
+| Engine | Stock in | S15 gap to best | AE86 gap to best | Gain over Touge's own fit | Native S15 / AE86 vs current |
+| --- | --- | --- | --- | --- | --- |
+| N14B | MCS | 0.0 | 0.0 | −6…−8 s | +1.7 ± 0.3 / −0.2 ± 0.3 |
+| PV2 | MX-5 ND | +0.6 | +0.6 | −3…−5 s | +0.4 ± 0.3 / −0.9 ± 0.1 |
+| DL20 | DTS | +1.6 | +1.6 | −6…−8 s | +3.3 ± 0.2 / +1.0 ± 0.2 |
+| RDA | FST | +0.7 | +1.2 | −0.1…−0.4 s | +1.4 ± 0.2 / +0.1 ± 0.2 |
+| GE4 | E86 | +2.0 | +1.6 | −1…−3 s | – / +1.1 ± 0.2 |
+| 2ZG | LTS | +2.2 | +2.6 | −5…−7 s | – |
+| B13 | FX7 | +2.3 | +2.5 | −9…−10 s | – |
+| S02 | 20R | +2.9 | +2.8 | −4…−6 s | – |
+| BM13 | DX8 | +2.4 | +4.1 | −0.2…−0.4 s | – |
 
 **Native 17 Nov (8 repetitions, ◐):** the model and the native simulation disagree. In the S15 the current ND tune was fastest and the Mini was 1.7 s slower. In the AE86 the ND engine with the model's tune was 0.9 ± 0.1 s faster than the current 4A-GE tune, and the Mini was within the noise. So the model's ranking cannot be used yet; the most robust finding is the ND engine (PV2) in a light RWD car. A rerun with the AE86's current setup (ratios 2.91/2.04/1.51/1.15/0.97/0.86, decel lock 0.28) gave ±0 at FD 4.50, −1.0 ± 0.1 s at FD 4.35 and −0.3…−0.4 s at other FDs, so the gain depends on gearing and is not yet certain. **In-game test 17 Nov (●, AE86, North v2):** GE4 runs 43–44 371.36 / 371.20 s. PV2 with the player's own tune (limiter 8687 and Peak RPM 9742 at max, High 218, Medium 281, Low 332): FD 4.52 runs 45–46 372.97 / 370.97 s, **FD 4.35 runs 47–48 369.03 / 369.22 s (−2.1 s vs the GE4, repeated)**. The native simulation predicted −1.0 ± 0.1 s for FD 4.35, so the direction was right. The model's Part Setup values were not run in the game. The player shifts up at about 8800–9000 rpm and spends 15–25 % of the lap above 8500 rpm, so lowering the limiter is probably harmful even though the models do not see it ◐. For now the most reliable line: limiter and Peak RPM up, Low up, Mid and High down until the class is filled. According to the model, engines with a high part factor (Mini 0.84 + turbo 1.6, ND and Datsun 0.89) gain the most from the sliders. Touge's current fit leaves 3–10 s on them.
 
@@ -76,38 +76,38 @@ Search on 17 Nov with the Touge route model on North v2 in C3 (S15 and AE86). Fo
 
 The class measures peak power per weight (hp/t), but on North the lap is decided accelerating out of corners. The test put 30 popular engines (two batches) in a Supra A90 (heavy enough for all of them), each tuned in the model to the class limit with its own gearing, and ran them in the native simulation (8 repetitions, North v2) and in a straight-line test on a flat road.
 
-| Engine | North diff (s) | 60–150 km/h (s) | 100–200 km/h (s) | Top speed (km/h) | Mass (kg) | Turbo |
-| --- | --- | --- | --- | --- | --- | --- |
-| 2TS | −3.8 | 5.04 | 8.90 | 257 | 903 | factory |
-| G1E6 | −3.4 | 5.09 | 8.99 | 255 | 889 | factory |
-| GU4 | −3.0 | 5.15 | 8.95 | 259 | 952 | – |
-| DL20 | −3.0 | 5.07 | 8.93 | 259 | 925 | kit |
-| N14B | −2.8 | 5.15 | 9.09 | 255 | 894 | factory |
-| S02 | −2.7 | 5.22 | 8.85 | 260 | 947 | – |
-| B1A6 | −2.6 | 5.12 | 9.20 | 257 | 914 | kit |
-| RS20T (S13) | −2.6 | 5.23 | 9.03 | 259 | 945 | factory |
-| E25 | −2.6 | 5.06 | 8.99 | 256 | 891 | factory |
-| RS20 | −2.5 | 5.23 | 8.98 | 260 | 959 | kit |
-| RS20T (S15) | −2.4 | 5.40 | 9.37 | 256 | 953 | factory |
-| 4A-GE | −2.2 | 5.30 | 9.44 | 254 | 908 | kit |
-| 46G3 | −2.0 | 5.32 | 9.20 | 257 | 944 | factory |
-| DA15 | −1.9 | 5.36 | 9.28 | 256 | 903 | kit |
-| GE4 | −1.7 | 5.28 | 9.10 | 257 | 908 | – |
-| S1B4 | −1.3 | 5.28 | 9.30 | 256 | 905 | – |
-| 2ZG | −1.2 | 5.36 | 9.10 | 257 | 904 | – |
-| RDA | −1.2 | 5.18 | 8.80 | 262 | 1009 | factory |
-| G64 | −0.9 | 5.38 | 9.26 | 258 | 941 | – |
-| PV2 | −0.6 | 5.32 | 9.33 | 255 | 898 | – |
-| GE3 | −0.4 | 5.37 | 9.11 | 256 | 902 | – |
-| BR13 | −0.3 | 5.44 | 9.48 | 260 | 966 | factory |
-| KA20 | +0.3 | 5.07 | 8.57 | 266 | 1041 | – |
-| BM13 | +0.4 | 5.47 | 9.70 | 256 | 961 | – |
-| F2C0 | +0.5 | 5.37 | 9.21 | 260 | 955 | – |
-| 4G63 | +0.8 | 5.25 | 8.85 | 264 | 1067 | factory |
-| ME10 | +0.8 | 5.58 | 9.74 | 253 | 923 | – |
-| B13 | +0.9 | 5.55 | 10.14 | 253 | 911 | factory |
-| B1B6 | +1.5 | 5.40 | 9.44 | 260 | 943 | – |
-| B411T | +3.6 | 5.21 | 8.72 | 269 | 1113 | factory |
+| Engine | Stock in | North diff (s) | 60–150 km/h (s) | 100–200 km/h (s) | Top speed (km/h) | Mass (kg) | Turbo |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 2TS | V7G | −3.8 | 5.04 | 8.90 | 257 | 903 | factory |
+| G1E6 | YRS | −3.4 | 5.09 | 8.99 | 255 | 889 | factory |
+| GU4 | R86 | −3.0 | 5.15 | 8.95 | 259 | 952 | – |
+| DL20 | DTS | −3.0 | 5.07 | 8.93 | 259 | 925 | kit |
+| N14B | MCS | −2.8 | 5.15 | 9.09 | 255 | 894 | factory |
+| S02 | 20R | −2.7 | 5.22 | 8.85 | 260 | 947 | – |
+| B1A6 | V45 | −2.6 | 5.12 | 9.20 | 257 | 914 | kit |
+| RS20T | S13 | −2.6 | 5.23 | 9.03 | 259 | 945 | factory |
+| E25 | SFR | −2.6 | 5.06 | 8.99 | 256 | 891 | factory |
+| RS20 | Swap | −2.5 | 5.23 | 8.98 | 260 | 959 | kit |
+| RS20T | S15 | −2.4 | 5.40 | 9.37 | 256 | 953 | factory |
+| 4A-GE | Swap | −2.2 | 5.30 | 9.44 | 254 | 908 | kit |
+| 46G3 | EV6 | −2.0 | 5.32 | 9.20 | 257 | 944 | factory |
+| DA15 | HC6 | −1.9 | 5.36 | 9.28 | 256 | 903 | kit |
+| GE4 | E86 | −1.7 | 5.28 | 9.10 | 257 | 908 | – |
+| S1B4 | M30 | −1.3 | 5.28 | 9.30 | 256 | 905 | – |
+| 2ZG | LTS | −1.2 | 5.36 | 9.10 | 257 | 904 | – |
+| RDA | FST | −1.2 | 5.18 | 8.80 | 262 | 1009 | factory |
+| G64 | ECL | −0.9 | 5.38 | 9.26 | 258 | 941 | – |
+| PV2 | MX-5 ND | −0.6 | 5.32 | 9.33 | 255 | 898 | – |
+| GE3 | 2MR | −0.4 | 5.37 | 9.11 | 256 | 902 | – |
+| BR13 | DX7 | −0.3 | 5.44 | 9.48 | 260 | 966 | factory |
+| KA20 | HCR | +0.3 | 5.07 | 8.57 | 266 | 1041 | – |
+| BM13 | DX8 | +0.4 | 5.47 | 9.70 | 256 | 961 | – |
+| F2C0 | HS2 | +0.5 | 5.37 | 9.21 | 260 | 955 | – |
+| 4G63 | Swap | +0.8 | 5.25 | 8.85 | 264 | 1067 | factory |
+| ME10 | B19 | +0.8 | 5.58 | 9.74 | 253 | 923 | – |
+| B13 | FX7 | +0.9 | 5.55 | 10.14 | 253 | 911 | factory |
+| B1B6 | HC9 | +1.5 | 5.40 | 9.44 | 260 | 943 | – |
+| B411T | EVX | +3.6 | 5.21 | 8.72 | 269 | 1113 | factory |
 
 The North difference is against an S02 tune driven in the game (975 kg); the model tunes are ~28 kg lighter (empty tank, full weight reduction), so the order between engines is more reliable than the gap to zero. Mass is the whole car with the model tune; 60–150 is the better of the model gearing and the long-sixth gear set.
 

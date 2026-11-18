@@ -341,7 +341,7 @@ The splits on the right of the LCD show your comparison time for each section on
 
 - **Auto splits** on or off, and **Mute timer** when you just want to cruise.
 - **Controller**: press any button on the pad, then **Learn start / split / undo button**. They work while the game has focus.
-- In Touge's own **Settings > Timing** (new in 0.12): **Minimap reading rate** 15 Hz (default) or 30 Hz, where 30 Hz gives finer turning and slide data but uses more CPU, and **Save minimap images** for more precise lines in run analysis (about 30–60 MB per run, kept 7 days in `Logs\naytonlukija`, off by default). Both take effect the next time the game timer starts.
+- In Touge's own **Settings > Timing** (new in 0.12): **Minimap reading rate** 15 Hz (default) or 30 Hz, where 30 Hz gives finer turning and slide data but uses more CPU, and **Save minimap images** for more precise lines in run analysis (about 10 MB per run, kept in `Logs\naytonlukija` for one day and at most 200 MB, oldest removed first; off by default). Both take effect the next time the game timer starts.
 - **Driving view** shows the timer large; **Pop out timer** puts it in its own small window.
 - **Import** brings in an older timer file or LiveSplit splits, or restores runs from the backup. **Enter a time by hand** is there for runs timed elsewhere.
 
@@ -554,7 +554,7 @@ Project Touge\
 │  └─ Inbox\             drop files you receive here
 ├─ Natiivi\              only with Game physics (Experimental)
 └─ Logs\                 attach these when you report a problem
-   └─ naytonlukija\      minimap images, only if turned on (kept 7 days)
+   └─ naytonlukija\      minimap images, only if turned on (1 day, max 200 MB)
 ```
 
 - **Nothing outside the folder.** Touge writes only here. The one exception is Windows' WebView2, which keeps the window's browser cache in `%LOCALAPPDATA%\fi.projecttouge.app`. It holds no tunes or runs.

@@ -10,12 +10,13 @@ Project Touge is a companion app for CarX Street on Windows. It helps you build 
 
 Get the latest zip from **[Releases](../../releases/latest)** (about 24 MB).
 
-1. Unzip it anywhere you like, for example Documents or a game drive (not Program Files).
+1. Unzip it anywhere you like, for example Documents or a game drive.
 2. Double-click **Project Touge.exe**. Touge opens in its own window.
 3. Close the window to quit.
 
 Touge is one program file: no installation, no App folder and no Python. Your tunes, runs and routes are saved next to it.
-Requires Windows 10 or 11 with Microsoft Edge WebView2 (built into Windows 11 and every up-to-date Windows 10). If SmartScreen warns about an unknown publisher, choose **More info → Run anyway**.
+Requires Windows 10 or 11 with Microsoft Edge WebView2 (built into Windows 11 and every up-to-date Windows 10). 
+If SmartScreen warns about an unknown publisher, choose **More info → Run anyway**.
 
 ### Updates
 
@@ -51,7 +52,7 @@ Enter your car from screenshots, start from the model, or import a tune from the
 
 [![Tune](media/readme/tune.webp)](docs/guide/README.md)
 
-Pick a symptom by corner phase (braking, turn-in, mid corner, exit), adjust the chassis, gearing or diff, check the effect, then copy the setup to the game. Each change explains why it helps, with a link to the matching chapter of the Tuning Bible.
+Pick a symptom by corner phase, adjust the chassis, gearing or diff, check the effect, then copy the setup to the game. Each change explains why it helps, with a link to the matching chapter of the Tuning Bible.
 
 <p>
 <a href="docs/guide/img/en/10-symptom.webp"><img src="media/readme/thumbs/10-symptom.webp" width="32%" alt="symptom"></a>

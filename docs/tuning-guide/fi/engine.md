@@ -58,17 +58,17 @@ Luokka lasketaan huipputehosta, joten luokan rajalla nopein moottori on se, joka
 
 Haku 17.11. Tougen reittimallilla North v2:lla C3:ssa (S15 ja AE86). Jokaisella moottorilla haettiin osat, liukurit, kevennys ja säiliö 12 lähtöpisteestä, ja tulosta verrattiin Tougen omaan sovitukseen. Simulaatiomallin tulos, ei vielä natiivissa tai pelissä ajettu.
 
-| Moottori | S15 ero kärkeen | AE86 ero kärkeen | Ero Tougen omaan sovitukseen | Natiivi S15 / AE86 vs nykyinen |
-| --- | --- | --- | --- | --- |
-| N14B | 0,0 | 0,0 | −6…−8 s | +1,7 ± 0,3 / −0,2 ± 0,3 |
-| PV2 | +0,6 | +0,6 | −3…−5 s | +0,4 ± 0,3 / −0,9 ± 0,1 |
-| DL20 | +1,6 | +1,6 | −6…−8 s | +3,3 ± 0,2 / +1,0 ± 0,2 |
-| RDA | +0,7 | +1,2 | −0,1…−0,4 s | +1,4 ± 0,2 / +0,1 ± 0,2 |
-| GE4 | +2,0 | +1,6 | −1…−3 s | – / +1,1 ± 0,2 |
-| 2ZG | +2,2 | +2,6 | −5…−7 s | – |
-| B13 | +2,3 | +2,5 | −9…−10 s | – |
-| S02 | +2,9 | +2,8 | −4…−6 s | – |
-| BM13 | +2,4 | +4,1 | −0,2…−0,4 s | – |
+| Moottori | Vakiona autossa | S15 ero kärkeen | AE86 ero kärkeen | Ero Tougen omaan sovitukseen | Natiivi S15 / AE86 vs nykyinen |
+| --- | --- | --- | --- | --- | --- |
+| N14B | MCS | 0,0 | 0,0 | −6…−8 s | +1,7 ± 0,3 / −0,2 ± 0,3 |
+| PV2 | MX-5 ND | +0,6 | +0,6 | −3…−5 s | +0,4 ± 0,3 / −0,9 ± 0,1 |
+| DL20 | DTS | +1,6 | +1,6 | −6…−8 s | +3,3 ± 0,2 / +1,0 ± 0,2 |
+| RDA | FST | +0,7 | +1,2 | −0,1…−0,4 s | +1,4 ± 0,2 / +0,1 ± 0,2 |
+| GE4 | E86 | +2,0 | +1,6 | −1…−3 s | – / +1,1 ± 0,2 |
+| 2ZG | LTS | +2,2 | +2,6 | −5…−7 s | – |
+| B13 | FX7 | +2,3 | +2,5 | −9…−10 s | – |
+| S02 | 20R | +2,9 | +2,8 | −4…−6 s | – |
+| BM13 | DX8 | +2,4 | +4,1 | −0,2…−0,4 s | – |
 
 **Natiivi 17.11. (8 toistoa, ◐):** malli ja natiivi eivät ole samaa mieltä. S15:ssä nykyinen ND-säätö oli nopein, ja Mini oli 1,7 s hitaampi. AE86:ssa ND-moottori mallin säädöillä oli 0,9 ± 0,1 s nykyistä 4A-GE-säätöä nopeampi, ja Mini oli kohinan sisällä. Mallin kärkijärjestystä ei siis voi vielä käyttää; varmin löydös on ND-moottori (PV2) kevyessä takavetoisessa. Uusinta AE86:n nykyisellä setupilla (välitykset 2,91/2,04/1,51/1,15/0,97/0,86, jarrulukko 0,28) antoi FD 4,50:llä ±0, FD 4,35:llä −1,0 ± 0,1 s ja muilla FD:illä −0,3…−0,4 s, joten etu riippuu välityksistä eikä ole vielä varma. **Pelikoe 17.11. (●, AE86, North v2):** GE4 ajot 43–44 371,36 / 371,20 s. PV2 pelaajan omalla säädöllä (rajoitin 8687 ja Peak RPM 9742 täysillä, High 218, Medium 281, Low 332): FD 4,52 ajot 45–46 372,97 / 370,97 s, **FD 4,35 ajot 47–48 369,03 / 369,22 s (−2,1 s GE4:ään, toistui)**. Natiivi ennusti FD 4,35:lle −1,0 ± 0,1 s, eli suunta osui. Mallin Part Setup -arvoja ei ajettu pelissä. Pelaaja vaihtaa ylös noin 8800–9000 rpm:ssä ja ajaa 15–25 % kierroksesta yli 8500 rpm:n, joten rajoittimen laskeminen on todennäköisesti haitallista, vaikka mallit eivät sitä näe ◐. Toistaiseksi luotettavin linja: rajoitin ja Peak RPM ylös, Low ylös, Mid ja High alas, kunnes luokka täyttyy. Mallin mukaan korkean osakertoimen moottorit (Mini 0,84 + turbo 1,6, ND ja Datsun 0,89) hyötyvät liukureista eniten. Tougen nykyinen sovitus jättää niistä 3–10 s.
 
@@ -76,38 +76,38 @@ Haku 17.11. Tougen reittimallilla North v2:lla C3:ssa (S15 ja AE86). Jokaisella 
 
 Luokka mittaa huipputehoa painoon nähden (hv/t), mutta Northilla aika ratkeaa mutkista ulos kiihdytettäessä. Testissä 30 suosittua moottoria (kaksi erää) Supra A90:ssä (paino riittää kaikille), jokainen säädetty mallissa luokan rajalle omilla välityksillään ja ajettu natiivissa (8 toistoa, North v2) sekä suoralla kiihdytyskokeella tasaisella tiellä.
 
-| Moottori | North ero (s) | 60–150 km/h (s) | 100–200 km/h (s) | Huippunopeus (km/h) | Massa (kg) | Turbo |
-| --- | --- | --- | --- | --- | --- | --- |
-| 2TS | −3,8 | 5,04 | 8,90 | 257 | 903 | tehdas |
-| G1E6 | −3,4 | 5,09 | 8,99 | 255 | 889 | tehdas |
-| GU4 | −3,0 | 5,15 | 8,95 | 259 | 952 | – |
-| DL20 | −3,0 | 5,07 | 8,93 | 259 | 925 | kit |
-| N14B | −2,8 | 5,15 | 9,09 | 255 | 894 | tehdas |
-| S02 | −2,7 | 5,22 | 8,85 | 260 | 947 | – |
-| B1A6 | −2,6 | 5,12 | 9,20 | 257 | 914 | kit |
-| RS20T (S13) | −2,6 | 5,23 | 9,03 | 259 | 945 | tehdas |
-| E25 | −2,6 | 5,06 | 8,99 | 256 | 891 | tehdas |
-| RS20 | −2,5 | 5,23 | 8,98 | 260 | 959 | kit |
-| RS20T (S15) | −2,4 | 5,40 | 9,37 | 256 | 953 | tehdas |
-| 4A-GE | −2,2 | 5,30 | 9,44 | 254 | 908 | kit |
-| 46G3 | −2,0 | 5,32 | 9,20 | 257 | 944 | tehdas |
-| DA15 | −1,9 | 5,36 | 9,28 | 256 | 903 | kit |
-| GE4 | −1,7 | 5,28 | 9,10 | 257 | 908 | – |
-| S1B4 | −1,3 | 5,28 | 9,30 | 256 | 905 | – |
-| 2ZG | −1,2 | 5,36 | 9,10 | 257 | 904 | – |
-| RDA | −1,2 | 5,18 | 8,80 | 262 | 1009 | tehdas |
-| G64 | −0,9 | 5,38 | 9,26 | 258 | 941 | – |
-| PV2 | −0,6 | 5,32 | 9,33 | 255 | 898 | – |
-| GE3 | −0,4 | 5,37 | 9,11 | 256 | 902 | – |
-| BR13 | −0,3 | 5,44 | 9,48 | 260 | 966 | tehdas |
-| KA20 | +0,3 | 5,07 | 8,57 | 266 | 1041 | – |
-| BM13 | +0,4 | 5,47 | 9,70 | 256 | 961 | – |
-| F2C0 | +0,5 | 5,37 | 9,21 | 260 | 955 | – |
-| 4G63 | +0,8 | 5,25 | 8,85 | 264 | 1067 | tehdas |
-| ME10 | +0,8 | 5,58 | 9,74 | 253 | 923 | – |
-| B13 | +0,9 | 5,55 | 10,14 | 253 | 911 | tehdas |
-| B1B6 | +1,5 | 5,40 | 9,44 | 260 | 943 | – |
-| B411T | +3,6 | 5,21 | 8,72 | 269 | 1113 | tehdas |
+| Moottori | Vakiona autossa | North ero (s) | 60–150 km/h (s) | 100–200 km/h (s) | Huippunopeus (km/h) | Massa (kg) | Turbo |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 2TS | V7G | −3,8 | 5,04 | 8,90 | 257 | 903 | tehdas |
+| G1E6 | YRS | −3,4 | 5,09 | 8,99 | 255 | 889 | tehdas |
+| GU4 | R86 | −3,0 | 5,15 | 8,95 | 259 | 952 | – |
+| DL20 | DTS | −3,0 | 5,07 | 8,93 | 259 | 925 | kit |
+| N14B | MCS | −2,8 | 5,15 | 9,09 | 255 | 894 | tehdas |
+| S02 | 20R | −2,7 | 5,22 | 8,85 | 260 | 947 | – |
+| B1A6 | V45 | −2,6 | 5,12 | 9,20 | 257 | 914 | kit |
+| RS20T | S13 | −2,6 | 5,23 | 9,03 | 259 | 945 | tehdas |
+| E25 | SFR | −2,6 | 5,06 | 8,99 | 256 | 891 | tehdas |
+| RS20 | Swap | −2,5 | 5,23 | 8,98 | 260 | 959 | kit |
+| RS20T | S15 | −2,4 | 5,40 | 9,37 | 256 | 953 | tehdas |
+| 4A-GE | Swap | −2,2 | 5,30 | 9,44 | 254 | 908 | kit |
+| 46G3 | EV6 | −2,0 | 5,32 | 9,20 | 257 | 944 | tehdas |
+| DA15 | HC6 | −1,9 | 5,36 | 9,28 | 256 | 903 | kit |
+| GE4 | E86 | −1,7 | 5,28 | 9,10 | 257 | 908 | – |
+| S1B4 | M30 | −1,3 | 5,28 | 9,30 | 256 | 905 | – |
+| 2ZG | LTS | −1,2 | 5,36 | 9,10 | 257 | 904 | – |
+| RDA | FST | −1,2 | 5,18 | 8,80 | 262 | 1009 | tehdas |
+| G64 | ECL | −0,9 | 5,38 | 9,26 | 258 | 941 | – |
+| PV2 | MX-5 ND | −0,6 | 5,32 | 9,33 | 255 | 898 | – |
+| GE3 | 2MR | −0,4 | 5,37 | 9,11 | 256 | 902 | – |
+| BR13 | DX7 | −0,3 | 5,44 | 9,48 | 260 | 966 | tehdas |
+| KA20 | HCR | +0,3 | 5,07 | 8,57 | 266 | 1041 | – |
+| BM13 | DX8 | +0,4 | 5,47 | 9,70 | 256 | 961 | – |
+| F2C0 | HS2 | +0,5 | 5,37 | 9,21 | 260 | 955 | – |
+| 4G63 | Swap | +0,8 | 5,25 | 8,85 | 264 | 1067 | tehdas |
+| ME10 | B19 | +0,8 | 5,58 | 9,74 | 253 | 923 | – |
+| B13 | FX7 | +0,9 | 5,55 | 10,14 | 253 | 911 | tehdas |
+| B1B6 | HC9 | +1,5 | 5,40 | 9,44 | 260 | 943 | – |
+| B411T | EVX | +3,6 | 5,21 | 8,72 | 269 | 1113 | tehdas |
 
 North-ero on verrattu pelissä ajettuun S02-säätöön (975 kg); mallin säädöt ovat ~28 kg kevyempiä (säiliö 0, kevennys täysi), joten moottorien keskinäinen järjestys on luotettavampi kuin ero nollaan. Massa on auton kokonaismassa mallin säädöllä; 60–150 on paras mallin välityksistä ja pitkän kutosen sarjasta.
 

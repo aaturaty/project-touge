@@ -10,7 +10,7 @@ The biggest spring lever is length, because in this game it is the ride height. 
 
 The game's springs have two special features compared with a real car. The spring rate is the wheel rate directly, with no motion ratio, and a stiffer spring lifts the body, because the length is the spring's free length.
 
-Markers: ● confirmed in game or in the game code, ◐ native simulation or inferred, not tested in game.
+Markers: ● confirmed in game or in the game code, ◐ from Touge's simulation model or inferred, not tested in the game.
 
 ## Length
 
@@ -39,7 +39,7 @@ Markers: ● confirmed in game or in the game code, ◐ native simulation or inf
 3. Springs do not change total load transfer (m · a · h / t sideways, m · a · h / L lengthways), because the roll centre is at ground level ●. They decide how much the body moves and how well the wheel follows bumps.
 4. In roll the spring pair gives k · t² / 2 and a bar k · t² ●. The same number in a bar stiffens roll twice as much as in a spring.
 5. Natural frequency f = √(k / m) / 2π, where m is the mass per wheel ◐. Frequency is the easiest way to carry a working stiffness over to another car.
-6. Helper is a progressive helper spring, not a driving aid ●. The slider limits come from the suspension part, and the game's limit can differ from the data ●. Always check the car's limit on the game slider: on one car the rear spring maximum was 151 in game, not the 80 assumed earlier ●.
+6. Helper is a progressive helper spring, not a driving aid ●. The slider limits come from the suspension part, and the game can limit more than the data says ●.
 
 **When you raise:**
 
@@ -99,7 +99,7 @@ Start with length: give the suspension enough travel not to hit the bump stop, a
 
 The spring value is the wheel rate, so a heavier car needs a stiffer spring for the same feel.
 
-**Simulation experience ◐ (native model, not tested in game):** lower was slower: both lengths −15 cost about 1 s, and +15 on the front gained about 0.5 s, the same direction as in game. A stiffer rear spring gained a little and a softer one lost almost a second. A soft front spring with a stiff front bar was a poor combination (+1.7 s).
+**Simulation experience ◐ (Touge's simulation model, not tested in the game):** lower was slower: both lengths −15 cost about 1 s, and +15 on the front gained about 0.5 s, the same direction as in game. A stiffer rear spring gained a little and a softer one lost almost a second. A soft front spring with a stiff front bar was a poor combination (+1.7 s).
 
 ## Not yet confirmed
 

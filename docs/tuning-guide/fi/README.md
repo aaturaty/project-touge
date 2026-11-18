@@ -15,12 +15,12 @@ Kaikki tässä koskee sitä, miten tämä peli laskee auton, ei sitä, miten oik
 ## Mistä tieto tulee
 
 - **Pelin oma fysiikkakoodi ja data.** "Näin peli laskee" -osioiden kaavat tulevat pelin ajofysiikasta ja osadatasta.
-- **Natiivimalli.** Pelin fysiikkamoottori ajettuna pelin ulkopuolella tietokonekuljettajalla oikealla reitillä. Se ajaa saman auton samoilla säädöillä monta kertaa, joten se vertaa säätöjä paljon tasaisemmin kuin ihminen.
+- **Tougen simulaatiomalli.** Pelin fysiikkamoottori ajettuna pelin ulkopuolella tietokonekuljettajalla oikealla reitillä. Se ajaa saman auton samoilla säädöillä monta kertaa, joten se vertaa säätöjä paljon tasaisemmin kuin ihminen.
 - **Kokemus pelissä.** Pelissä ajetut ja kellotetut setupit touge-reiteillä, oikean kuljettajan ajamina.
 
-Merkit: ● vahvistettu pelissä tai pelin koodissa, ◐ natiivimalli tai päätelty, ei pelissä testattu, ○ oikean auton teoria, vain taustaksi.
+Merkit: ● vahvistettu pelissä tai pelin koodissa, ◐ Tougen simulaatiomallista tai päätelty, ei testattu pelissä, ○ oikean auton teoria, vain taustaksi.
 
-Kun opas sanoo "kokemuksemme mukaan", tulos tulee pelikokeista tai natiiviajoista muutamalla autolla. Pidä luvut suuruusluokkana omalle autollesi, älä lupauksena.
+Kun opas sanoo "kokemuksemme mukaan", tulos tulee pelikokeista tai simulaatioajoista muutamalla autolla. Pidä luvut suuruusluokkana omalle autollesi, älä lupauksena.
 
 ## Miten peli eroaa oikeasta autosta
 
@@ -38,10 +38,10 @@ Muutama pelin fysiikan piirre muuttaa tavallisia säätöneuvoja. Ne toistuvat l
 ## Näin käytät sitä Tougen kanssa
 
 1. **Rakenna** auto Tougen Rakenna-välilehdellä tai syötä se kuvakaappauksistasi.
-2. **Aloita** presetistä ja aja pelissä muutama kierros. Touge weapon -preset on toiminut pelissä ●, malli-laskenta on laskettu lähtökohta ◐.
+2. **Aloita** presetistä, kuten touge weapon, ja aja pelissä muutama kierros.
 3. **Etsi vaihe**, jossa auto ei tee mitä haluat: jarrutus, sisääntulo, keskikohta, ulostulo, suora tai kuopat ja gutterit.
 4. **Valitse oire** Säädä-välilehden Oire-näkymässä. Se näyttää ensin ja sitten kokeiltavan muutoksen ja linkittää tämän oppaan lukuun, joka selittää sen.
-5. **Muuta yhtä asiaa kerrallaan** ja aja sama mutka samalla vaihteella. Siirrä säätö peliin Peliin-näkymällä.
+5. **Muuta yhtä asiaa kerrallaan** ja aja sama mutka samalla vaihteella. Siirrä säätö peliin Yleiskuva-näkymällä.
 
 ## Näin luet luvun
 
@@ -57,7 +57,7 @@ Jokainen luku etenee samalla tavalla:
 
 ## Luvut
 
-1. [Alusta kokonaisuutena](whole-chassis.md): isoimmat vivut, säätöjärjestys, testaaminen, halutusta muutoksesta lähtevät taulukot ja oirehakemisto.
+1. [Alusta kokonaisuutena](whole-chassis.md): isoimmat vivut, säätöjärjestys, testaaminen ja oirehakemisto.
 2. [Renkaat](tyres.md): leveys, vanneosa, paine, halkaisija ja raide.
 3. [Jouset](springs.md): jousen pituus, jäykkyys ja etu–taka-tasapaino.
 4. [Vakaajat](anti-roll-bars.md): jäykkyys, kallistus ja etu–taka-jako.
@@ -65,7 +65,9 @@ Jokainen luku etenee samalla tavalla:
 6. [Camber ja toe](camber-and-toe.md): renkaan asento ja pyörän suunta.
 7. [Diffi](differential.md): kaasulukko, moottorijarrulukko ja preload.
 8. [Korin dimensiot](body-dimensions.md): akseliväli, raide, painopiste ja massa lähtökohtana.
-9. [Sanasto](glossary.md): oppaan sanat ja pelin säätöjen nimet.
+9. [Moottori](engine.md): osat, Part Setup -liukurit, osakertoimet ja moottorit luokan rajalla.
+10. [Välitykset](gearing.md): välityssuhteet, loppuvälitys, renkaan koko ja vaihdelaatikon valinta.
+11. [Sanasto](glossary.md): oppaan sanat ja pelin säätöjen nimet.
 
 ## Lopuksi
 

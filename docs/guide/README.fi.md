@@ -343,7 +343,7 @@ LCD-kellon splittilista näyttää jokaisen osuuden vertailuajan, kun sinulla on
 
 - **Autosplit** päälle tai pois ja **Mykistä ajastin**, kun haluat vain ajella.
 - **Ohjain**: paina mitä tahansa ohjaimen nappia ja sitten **Opettele käynnistysnappi / splitti-nappi / peru-nappi**. Ne toimivat, kun peli on aktiivisena.
-- Tougen omissa **Asetukset > Ajanotto** -valinnoissa (uusi 0.12:ssa): **Minikartan lukutaajuus** 15 Hz (oletus) tai 30 Hz, joista 30 Hz antaa tarkemman kääntymis- ja luistodatan mutta käyttää enemmän prosessoria, sekä **Tallenna minikarttakuvat** ajoanalyysin tarkempaa linjaa varten (noin 30–60 Mt ajolta, säilyvät 7 päivää kansiossa `Logs\naytonlukija`, oletuksena pois). Molemmat tulevat voimaan, kun pelikello käynnistyy seuraavan kerran.
+- Tougen omissa **Asetukset > Ajanotto** -valinnoissa (uusi 0.12:ssa): **Minikartan lukutaajuus** 15 Hz (oletus) tai 30 Hz, joista 30 Hz antaa tarkemman kääntymis- ja luistodatan mutta käyttää enemmän prosessoria, sekä **Tallenna minikarttakuvat** ajoanalyysin tarkempaa linjaa varten (noin 10 Mt ajolta, säilyvät kansiossa `Logs\naytonlukija` vuorokauden ja enintään 200 Mt, vanhimmat poistuvat ensin; oletuksena pois). Molemmat tulevat voimaan, kun pelikello käynnistyy seuraavan kerran.
 - **Ajonäkymä** näyttää kellon isona; **Irrota ajastin** avaa sen omaan pieneen ikkunaan.
 - **Tuo** hakee vanhan kellon tiedoston tai LiveSplit-splitit tai palauttaa ajat varmuuskopiosta. **Syötä aika käsin** on muualla kellotettuja ajoja varten.
 
@@ -558,7 +558,7 @@ Project Touge\
 │  └─ Inbox\             pudota saamasi tiedostot tänne
 ├─ Natiivi\              vain Pelin fysiikan (kokeellinen) kanssa
 └─ Logs\                 liitä nämä, kun ilmoitat ongelmasta
-   └─ naytonlukija\      minikarttakuvat, vain jos tallennus on päällä (7 päivää)
+   └─ naytonlukija\      minikarttakuvat, vain jos tallennus on päällä (1 vrk, enint. 200 Mt)
 ```
 
 - **Ei mitään kansion ulkopuolelle.** Touge kirjoittaa vain tänne. Ainoa poikkeus on Windowsin WebView2, joka pitää ikkunan selainvälimuistia kansiossa `%LOCALAPPDATA%\fi.projecttouge.app`. Siinä ei ole tunejasi eikä ajojasi.

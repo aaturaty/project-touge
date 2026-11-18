@@ -118,6 +118,21 @@ Every run is saved with its telemetry. The Analyse view shows where you gain and
 
 Six routes included, an overview map of the whole road network with start and finish pins, and an editor for your own routes.
 
+```text
+North Touge - Run
+└─  The popular touge route most players run.
+Full Touge - Run
+└─  Extended version from lighthouse to lake.
+Lighthouse - Run
+└─  Later half of North Touge, starting from the full speed section to lighthouse.
+Fujiwara - Run
+└─  First half of North Touge - run starting from iconic Fujiwara - shop to top of the mountain.
+Touge Loop
+└─  Circuit - like route on the mountains, challenging with fast paced end section and tight hairpins with big elevation changes.
+Sunset Speedway
+└─  Outside the touge realm, but a must in order to touch CarX racing. 
+```
+
 <p>
 <a href="docs/guide/img/en/53-route-map.webp"><img src="media/readme/thumbs/53-route-map.webp" width="32%" alt="route map"></a>
 <a href="docs/guide/img/en/27-routes.webp"><img src="media/readme/thumbs/27-routes.webp" width="32%" alt="routes"></a>

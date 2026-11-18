@@ -537,17 +537,28 @@ A shared time cannot be verified, so ghosts are marked **unverified** and never 
 
 ## 9. Your data
 
-Everything you save stays in the folder next to **Project Touge.exe**:
+Project Touge is one folder. Everything it saves stays inside it, next to **Project Touge.exe**:
 
-| Folder | Contents |
-|---|---|
-| `Tunes` | setups, presets, notes, route calibrations and settings |
-| `Runs` | timed runs and their telemetry; imported ghosts in `Runs\Ghosts` |
-| `Routes` | your own routes |
-| `Shared` | files you saved for sharing; `Shared\Inbox` for files you receive |
-| `Logs` | program logs; attach these when reporting a problem |
+```text
+Project Touge\
+├─ Project Touge.exe     the whole program
+├─ settings.json         language, window and choices
+├─ Tunes\                your setups, presets, notes and calibrations
+│  └─ Data\              automatic backup of your data
+├─ Runs\                 timed runs and their telemetry
+│  └─ Ghosts\            ghosts you have added
+├─ Routes\               the six included routes and your own
+├─ Shared\               files you saved for sharing
+│  └─ Inbox\             drop files you receive here
+├─ Natiivi\              only with Game physics (Experimental)
+└─ Logs\                 attach these when you report a problem
+```
 
-**Update**: replace `Project Touge.exe` and keep the data folders (see [Updating from 0.9.x](#1-before-you-start)). **Move**: copy the whole folder. **Uninstall**: delete the folder.
+- **Nothing outside the folder.** Touge writes only here. The one exception is Windows' WebView2, which keeps the window's browser cache in `%LOCALAPPDATA%\fi.projecttouge.app`. It holds no tunes or runs.
+- **Earlier versions are only read.** On first start Touge looks for an earlier Project Touge next to it and on your Desktop, Downloads and Documents and copies your data from it. The old folder stays as it was.
+- **The game is not touched.** Touge never writes to the game or its folder. Game physics only copies the game's physics file into `Natiivi\`.
+
+**Update**: press **Update now**, or replace `Project Touge.exe` and keep the data folders (see [Updating from 0.9.x](#1-before-you-start)). **Move or back up**: copy the whole folder. **Uninstall**: delete the folder, and the cache folder above if you want it gone too.
 
 ## 10. When something is off
 

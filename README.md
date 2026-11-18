@@ -24,6 +24,30 @@ When a new version is out, Touge shows a notice with an **Update now** button. I
 
 Coming from 0.10 or 0.9.x? Update by hand this one time: copy the new `Project Touge.exe` over the old one, or unzip it into a new folder and Touge will find your earlier Project Touge and copy your data. From 0.10.1 on, the button does it.
 
+## Where your files live
+
+Project Touge is one folder. Everything it saves stays inside it, next to the exe:
+
+```text
+Project Touge\
+├─ Project Touge.exe     the whole program
+├─ settings.json         language, window and choices
+├─ Tunes\                your setups, presets, notes and calibrations
+│  └─ Data\              automatic backup of your data
+├─ Runs\                 timed runs and their telemetry
+│  └─ Ghosts\            ghosts you have added
+├─ Routes\               the six included routes and your own
+├─ Shared\               files you saved for sharing
+│  └─ Inbox\             drop files you receive here
+├─ Natiivi\              only with Game physics (Experimental)
+└─ Logs\                 attach these when you report a problem
+```
+
+- **Nothing outside the folder.** Touge writes only here. The one exception is Windows' WebView2, which keeps the window's browser cache in `%LOCALAPPDATA%\fi.projecttouge.app`. It holds no tunes or runs.
+- **Earlier versions are only read.** On first start Touge looks for an earlier Project Touge next to it and on your Desktop, Downloads and Documents and copies your data from it. The old folder stays as it was.
+- **The game is not touched.** Touge never writes to the game or its folder. Game physics only copies the game's physics file into `Natiivi\`.
+- **Move, back up, remove.** Copy the folder to move or back it up. Delete it to uninstall, and the cache folder above if you want it gone too.
+
 ## User guide
 
 All three guides are online at **[aaturaty.github.io/project-touge](https://aaturaty.github.io/project-touge/)**: the user guide, the sharing walkthrough and the Tuning Bible.
@@ -119,22 +143,6 @@ New in 0.11: share tunes, presets, routes and runs as files (tunes also as a sho
 **[choriso's Tuning Bible](docs/tuning-guide/README.md)** is the long read behind the Tune tab: how CarX Street calculates the car and what each setting really does, from tyres and springs to anti-roll bars, dampers, camber and toe, the differential and body dimensions. Every claim is marked: ● confirmed in game or in the game code, ◐ simulation, ○ real-car theory.
 
 Read it here, as a [PDF](docs/tuning-guide/Project-Touge-Tuning-Guide.pdf), or inside Touge on the Tune tab. Also [in Finnish](docs/tuning-guide/fi/README.md).
-
-## Your data
-
-Everything you save stays inside the Project Touge folder:
-
-| Folder | Contents |
-|---|---|
-| `Tunes` | setups, presets, notes, route calibrations and settings |
-| `Runs` | timed runs and their telemetry |
-| `Routes` | the included routes and your own |
-| `Shared` | files you share, and `Inbox` for files you receive |
-| `Logs` | program logs; attach these when reporting a problem |
-
-**Update:** use **Update now** in Touge, or copy the new `Project Touge.exe` over the old one.
-**Move:** copy the whole folder. 
-**Uninstall:** delete the folder.
 
 ## Feedback
 

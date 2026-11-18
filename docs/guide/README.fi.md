@@ -541,17 +541,28 @@ Jaettua aikaa ei voi todentaa, joten haamut merkitään vahvistamattomiksi (**un
 
 ## 9. Datasi
 
-Kaikki tallentamasi jää kansioon **Project Touge.exe**:n viereen:
+Project Touge on yksi kansio. Kaikki, mitä se tallentaa, jää sen sisälle **Project Touge.exe**:n viereen:
 
-| Kansio | Sisältö |
-|---|---|
-| `Tunes` | setupit, presetit, muistiinpanot, reittien kalibroinnit ja asetukset |
-| `Runs` | kellotetut ajot ja niiden telemetria; tuodut haamut kansiossa `Runs\Ghosts` |
-| `Routes` | omat reitit |
-| `Shared` | jakamista varten tallennetut tiedostot; saamasi tiedostot kansioon `Shared\Inbox` |
-| `Logs` | ohjelman lokit; liitä nämä, kun ilmoitat ongelmasta |
+```text
+Project Touge\
+├─ Project Touge.exe     koko ohjelma
+├─ settings.json         kieli, ikkuna ja valinnat
+├─ Tunes\                setupit, presetit, muistiinpanot ja kalibroinnit
+│  └─ Data\              datasi automaattinen varmuuskopio
+├─ Runs\                 kellotetut ajot ja niiden telemetria
+│  └─ Ghosts\            lisäämäsi haamut
+├─ Routes\               kuusi mukana tulevaa reittiä ja omasi
+├─ Shared\               jakamista varten tallennetut tiedostot
+│  └─ Inbox\             pudota saamasi tiedostot tänne
+├─ Natiivi\              vain Pelin fysiikan (kokeellinen) kanssa
+└─ Logs\                 liitä nämä, kun ilmoitat ongelmasta
+```
 
-**Päivitys**: korvaa `Project Touge.exe` ja pidä datakansiot (ks. [Päivitys versiosta 0.9.x](#1-ennen-kuin-aloitat)). **Siirto**: kopioi koko kansio. **Poisto**: poista kansio.
+- **Ei mitään kansion ulkopuolelle.** Touge kirjoittaa vain tänne. Ainoa poikkeus on Windowsin WebView2, joka pitää ikkunan selainvälimuistia kansiossa `%LOCALAPPDATA%\fi.projecttouge.app`. Siinä ei ole tunejasi eikä ajojasi.
+- **Aiemmat versiot vain luetaan.** Ensimmäisellä käynnistyksellä Touge etsii aiempaa Project Tougea viereisistä kansioista sekä Työpöydältä, Latauksista ja Tiedostoista ja kopioi datasi sieltä. Vanha kansio jää ennalleen.
+- **Peliin ei kosketa.** Touge ei kirjoita peliin eikä sen kansioon. Pelin fysiikka vain kopioi pelin fysiikkatiedoston kansioon `Natiivi\`.
+
+**Päivitys**: paina **Update now** tai korvaa `Project Touge.exe` ja pidä datakansiot (ks. [Päivitys versiosta 0.9.x](#1-ennen-kuin-aloitat)). **Siirto tai varmuuskopio**: kopioi koko kansio. **Poisto**: poista kansio, ja halutessasi myös yllä mainittu välimuistikansio.
 
 ## 10. Kun jokin ei täsmää
 

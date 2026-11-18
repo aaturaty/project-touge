@@ -74,183 +74,198 @@ Search on 17 Nov with the Touge route model on North v2 in C3 (S15 and AE86). Fo
 
 ## Why the same class gives different lap times (Supra test 17 Nov, ◐)
 
-The class measures peak power per weight (hp/t), but on North the lap is decided accelerating out of corners. The test put 15 popular engines in a Supra A90 (heavy enough for all of them), each tuned in the model to the class limit with its own gearing, and ran them in the native simulation (8 repetitions, North v2) and in a straight-line test on a flat road.
+The class measures peak power per weight (hp/t), but on North the lap is decided accelerating out of corners. The test put 30 popular engines (two batches) in a Supra A90 (heavy enough for all of them), each tuned in the model to the class limit with its own gearing, and ran them in the native simulation (8 repetitions, North v2) and in a straight-line test on a flat road.
 
-| Engine | North diff (s) | 60–150 km/h (s) | 100–200 km/h (s) | Top speed (km/h) | Turbo |
-| --- | --- | --- | --- | --- | --- |
-| DL20 | −3.0 | 5.07 | 8.93 | 259 | kit |
-| N14B | −2.8 | 5.15 | 9.09 | 255 | factory |
-| S02 | −2.7 | 5.22 | 8.85 | 260 | – |
-| B1A6 | −2.6 | 5.12 | 9.20 | 257 | kit |
-| RS20T (S13) | −2.6 | 5.23 | 9.03 | 259 | factory |
-| RS20 | −2.5 | 5.23 | 8.98 | 260 | kit |
-| GE4 | −1.7 | 5.28 | 9.10 | 257 | – |
-| 2ZG | −1.2 | 5.36 | 9.10 | 257 | – |
-| RDA | −1.2 | 5.18 | 8.80 | 262 | factory |
-| G64 | −0.9 | 5.38 | 9.26 | 258 | – |
-| PV2 | −0.6 | 5.32 | 9.33 | 255 | – |
-| BM13 | +0.4 | 5.47 | 9.70 | 256 | – |
-| ME10 | +0.8 | 5.58 | 9.74 | 253 | – |
-| B13 | +0.9 | 5.55 | 10.14 | 253 | factory |
-| B1B6 | +1.5 | 5.40 | 9.44 | 260 | – |
+| Engine | North diff (s) | 60–150 km/h (s) | 100–200 km/h (s) | Top speed (km/h) | Mass (kg) | Turbo |
+| --- | --- | --- | --- | --- | --- | --- |
+| 2TS | −3.8 | 5.04 | 8.90 | 257 | 903 | factory |
+| G1E6 | −3.4 | 5.09 | 8.99 | 255 | 889 | factory |
+| GU4 | −3.0 | 5.15 | 8.95 | 259 | 952 | – |
+| DL20 | −3.0 | 5.07 | 8.93 | 259 | 925 | kit |
+| N14B | −2.8 | 5.15 | 9.09 | 255 | 894 | factory |
+| S02 | −2.7 | 5.22 | 8.85 | 260 | 947 | – |
+| B1A6 | −2.6 | 5.12 | 9.20 | 257 | 914 | kit |
+| RS20T (S13) | −2.6 | 5.23 | 9.03 | 259 | 945 | factory |
+| E25 | −2.6 | 5.06 | 8.99 | 256 | 891 | factory |
+| RS20 | −2.5 | 5.23 | 8.98 | 260 | 959 | kit |
+| RS20T (S15) | −2.4 | 5.40 | 9.37 | 256 | 953 | factory |
+| 4A-GE | −2.2 | 5.30 | 9.44 | 254 | 908 | kit |
+| 46G3 | −2.0 | 5.32 | 9.20 | 257 | 944 | factory |
+| DA15 | −1.9 | 5.36 | 9.28 | 256 | 903 | kit |
+| GE4 | −1.7 | 5.28 | 9.10 | 257 | 908 | – |
+| S1B4 | −1.3 | 5.28 | 9.30 | 256 | 905 | – |
+| 2ZG | −1.2 | 5.36 | 9.10 | 257 | 904 | – |
+| RDA | −1.2 | 5.18 | 8.80 | 262 | 1009 | factory |
+| G64 | −0.9 | 5.38 | 9.26 | 258 | 941 | – |
+| PV2 | −0.6 | 5.32 | 9.33 | 255 | 898 | – |
+| GE3 | −0.4 | 5.37 | 9.11 | 256 | 902 | – |
+| BR13 | −0.3 | 5.44 | 9.48 | 260 | 966 | factory |
+| KA20 | +0.3 | 5.07 | 8.57 | 266 | 1041 | – |
+| BM13 | +0.4 | 5.47 | 9.70 | 256 | 961 | – |
+| F2C0 | +0.5 | 5.37 | 9.21 | 260 | 955 | – |
+| 4G63 | +0.8 | 5.25 | 8.85 | 264 | 1067 | factory |
+| ME10 | +0.8 | 5.58 | 9.74 | 253 | 923 | – |
+| B13 | +0.9 | 5.55 | 10.14 | 253 | 911 | factory |
+| B1B6 | +1.5 | 5.40 | 9.44 | 260 | 943 | – |
+| B411T | +3.6 | 5.21 | 8.72 | 269 | 1113 | factory |
 
-The North difference is against an S02 tune driven in the game (975 kg); the model tunes are ~28 kg lighter (empty tank, full weight reduction), so the order between engines is more reliable than the gap to zero.
+The North difference is against an S02 tune driven in the game (975 kg); the model tunes are ~28 kg lighter (empty tank, full weight reduction), so the order between engines is more reliable than the gap to zero. Mass is the whole car with the model tune; 60–150 is the better of the model gearing and the long-sixth gear set.
 
 **What follows:**
 
-1. **60–150 km/h predicts the North time** (correlation 0.89; 0.1 s quicker 60–150 ≈ 0.9 s quicker lap). 100–200 km/h predicts it less well (0.81) and top speed not at all: air drag caps every engine at 253–262 km/h.
-2. **A turbo gives mid-range torque that the class does not fully count.** Five of the top six are turbocharged (factory turbo or a turbo kit chosen by the search). The exception is the RDA: fastest on the straight, but 1009 kg costs it in corners.
+1. **60–150 km/h predicts the North time when the engine does not make the car heavy** (under 1000 kg: correlation 0.85; 0.1 s quicker 60–150 ≈ 0.9 s quicker lap). Heavy engines (RDA, Civic Type R, 4G63, Evo X, 1009–1113 kg) lead on the straight but are slow on North: across all 30 the correlation is only 0.53, and 60–150 plus mass together give 0.83 (10 kg ≈ 0.2 s per lap). 100–200 km/h predicts poorly (0.25) and top speed not at all: air drag caps every engine at 253–269 km/h.
+2. **A turbo gives mid-range torque that the class does not fully count.** Eight of the top ten are turbocharged (factory turbo or a turbo kit chosen by the search). A turbo does not save a heavy engine: the RDA, 4G63 and Evo X pay for their mass in corners.
 3. **For naturally aspirated engines the flatness of the curve over the shift band decides** (70–100 % of the limiter): S02 and GE4 (mean power 96 % of peak) are best, EK9 (81 %), 190E (89 %) and Eclipse (90 %) slowest.
 4. **Engine braking and inertia do not explain the differences**: in the game data they are the same for every engine ●.
 5. **The car decides.** In the S15 the same native test gave the opposite result (DL20 +3.3, Mini +1.7 vs the ND). A lighter car cannot fit an equally strong turbo engine in the class. Test the top candidates in your own car, and search FD again after the swap.
 
-Touge's route model does not reproduce this yet: its own 60–150 on the same builds correlates only 0.06 with the native result, and its lap time 0.22 (17 Nov), so engine choice in the model waits for the straight-line acceleration to be calibrated against the native sim ◐.
+Touge uses this in engine selection from 0.12.0 ◐. The model now shifts up at about 0.90 × the limiter, like the player and the native sim, and parts and sliders are fitted to the class for the shortest acceleration time and lowest mass instead of the highest average power. In the native sim the best predictor is the native 60–150 itself, but in the model 50–120 km/h + mass follows the native North time best (Supra 90 builds r 0.85, S15 r 0.92; the model's 60–150 r 0.73), because the model and the native sim differ in 1st-gear acceleration. Native check on North v2: in the Supra the new builds were 0.4 s faster on average than the earlier search, and 6 of the native sim's 8 best engines are in the selection's top 12 (2 before). In the S15 the selection's top four were 0.35 s faster on average than before, but the best single build (Forester, old fit) beat the new one by 0.5 s. No candidate was faster than the current S15 setup (ND engine).
 
-Data: analyysi/moottorihaku_1711/supra/ (natiivi/v.json, testi2/tulos.json, testi2/ulostulo.json). Not yet confirmed in the game.
+Data: analyysi/moottorihaku_1711/supra/ and supra2/ (natiivi/v.json, testi2/tulos.json, testi2/ulostulo.json). Not yet confirmed in the game.
 
 ## Part factors by engine ●
 
-All 137 engines from the game data (part_stat_factors), largest first. The part factor is the same for the ECU, camshaft, head, block and fuel system. Median 0.74, smallest 0.20, largest 1.09. Turbo part = the multiplier of the Turbo Kit or factory turbo part.
+All 137 engines from the game data (part_stat_factors), largest first. The part factor is the same for the ECU, camshaft, head, block and fuel system. Median 0.74, smallest 0.20, largest 1.09. Turbo part = the multiplier of the Turbo Kit or factory turbo part. Engine is the engine code shown in the game (the start of its name, e.g. RDA in "RDA 2.0L L4 T (FST)"), Stock in is the game code of the car it comes in, and Swap marks a swap engine. – under Engine: the game data has no engine name for that car yet.
 
 | Engine | Stock in | Factory turbo | Mass kg | Limiter | Part factor (ECU, cam, head, block, fuel) | Intake | Exhaust manifold and exhaust | Turbo part |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| B13 | mazdarx7_fc | ● | 157 | 8500 | 1.09 | 1.38 | 1 | 1.5 |
-| DT18 | nissan180sx | ● | 268 | 7200 | 1.09 | 1.38 | 1 | 1.5 |
-| DT18 | – | ● | 268 | 7200 | 1.09 | 1.38 | 1 | 1.5 |
-| B1B6 | civic |  | 140 | 7800 | 1 | 1.3 | 0.9 | 1 |
-| vaz2108 | vaz2108 |  | 127 | 6000 | 1 | 1.3 | 0.9 | 0.5 |
-| nissan300zx | nissan300zx | ● | 220 | 6800 | 0.98 | 1.28 | 0.88 | 1.5 |
-| nissan300zx_cabrio | nissan300zx_cabrio | ● | 220 | 6800 | 0.98 | 1.28 | 0.88 | 1.5 |
-| RS20T | nissansilvias14 | ● | 180 | 7500 | 0.95 | 1.25 | 0.85 | 1.5 |
-| mclarenf1 | mclarenf1 |  | 275 | 7600 | 0.95 | 1.16 | 0.78 | 0.5 |
-| RS20T | nissansilvias13 | ● | 180 | 7500 | 0.91 | 1.25 | 0.81 | 1.5 |
-| mitsubishievo6 | mitsubishievo6 | ● | 170 | 7600 | 0.9 | 1.24 | 0.8 | 1.5 |
-| porsche911 | porsche911 | ● | 230 | 7300 | 0.9 | 0.86 | 0.8 | 1.5 |
-| supra2020_cabrio | supra2020_cabrio | ● | 140 | 7000 | 0.9 | 1.2 | 0.8 | 1.5 |
-| ferrarif40 | ferrarif40 | ● | 210 | 7500 | 0.9 | 1.2 | 0.8 | 0.5 |
-| B1A6 | volvo |  | 140 | 6500 | 0.9 | 1.2 | 0.8 | 0.5 |
-| buickgnx | buickgnx |  | 200 | 6200 | 0.89 | 1.19 | 0.79 | 1.5 |
-| PV2 | mazdamx5 |  | 130 | 7200 | 0.89 | 1.19 | 0.79 | 1.5 |
-| skyliner31 | skyliner31 | ● | 230 | 7600 | 0.89 | 1.19 | 0.79 | 1.5 |
-| subaruforester | subaruforester | ● | 120 | 6500 | 0.89 | 1.18 | 0.79 | 1.5 |
-| 4a-ge | – |  | 145 | 7400 | 0.89 | 0.89 | 0.89 | 0.89 |
-| 4g63 | – | ● | 175 | 7500 | 0.89 | 0.89 | 0.89 | 0.89 |
-| d15b | – |  | 150 | 7700 | 0.89 | 0.89 | 0.89 | 0.89 |
-| ae86 | ae86 |  | 154 | 7400 | 0.89 | 1.19 | 0.79 | 0.5 |
-| DL20 | datsun620 |  | 160 | 6200 | 0.89 | 1.19 | 0.79 | 0.5 |
-| PF1 | mazdamx5_90 |  | 155 | 7200 | 0.89 | 1.19 | 0.79 | 0.5 |
-| PF1 | mazdamx5cabrio_90 |  | 155 | 7200 | 0.89 | 1.19 | 0.79 | 0.5 |
-| ME10 | mercedesbenz190evo2 |  | 170 | 6600 | 0.89 | 1.19 | 0.79 | 0.5 |
-| GE3 | toyotamr2 |  | 143 | 7000 | 0.89 | 1.19 | 0.79 | 0.5 |
-| skyliner32 | skyliner32 | ● | 230 | 7400 | 0.86 | 1.2 | 0.8 | 1.5 |
-| subaruwrc2008 | subaruwrc2008 | ● | 125 | 7400 | 0.86 | 1.14 | 0.77 | 1.5 |
-| corvettec3 | corvettec3 |  | 280 | 6200 | 0.85 | 1.04 | 0.81 | 1.5 |
-| infinity_q60 | infinity_q60 | ● | 195 | 6800 | 0.85 | 1.19 | 0.75 | 1.5 |
-| G1E3 | toyotayarisgr2020 | ● | 120 | 7200 | 0.85 | 1.04 | 0.81 | 1.5 |
-| vantage | vantage | ● | 209 | 8000 | 0.85 | 1.2 | 0.75 | 1.5 |
-| G64 | mitsubishieclipse99 |  | 185 | 6500 | 0.85 | 1.14 | 0.75 | 0.5 |
-| N14B | mini | ● | 130 | 6500 | 0.84 | 1.14 | 0.74 | 1.6 |
-| RS20T | silvias15 | ● | 180 | 7500 | 0.83 | 1.11 | 0.74 | 1.5 |
-| RS20T | – | ● | 180 | 7500 | 0.83 | 1.11 | 0.74 | 1.5 |
-| nissans30z | nissans30z |  | 249 | 7000 | 0.83 | 1.12 | 0.73 | 0.5 |
-| toyotasuprarz | toyotasuprarz | ● | 230 | 7000 | 0.82 | 1.1 | 0.73 | 1.5 |
-| auditt | auditt | ● | 160 | 6800 | 0.81 | 1.07 | 0.72 | 1.5 |
-| skyliner34 | skyliner34 | ● | 250 | 7000 | 0.81 | 1.08 | 0.72 | 1.5 |
-| toyotagt86 | toyotagt86 |  | 200 | 7400 | 0.81 | 1.08 | 0.72 | 0.5 |
-| alfaromeogiuliagtam | alfaromeogiuliagtam | ● | 240 | 7200 | 0.8 | 0.91 | 0.57 | 1.5 |
-| bmw_i8 | bmw_i8 | ● | 210 | 6500 | 0.8 | 1.05 | 0.72 | 1.5 |
-| golfgti | golfgti | ● | 140 | 6000 | 0.8 | 1.1 | 0.7 | 1.5 |
-| mustang650 | mustang650 | ● | 186 | 7500 | 0.8 | 1.06 | 0.7 | 1.5 |
-| nissanskyline2000gtx | nissanskyline2000gtx |  | 199 | 7300 | 0.8 | 1.06 | 0.7 | 1.5 |
-| porschesinger | porschesinger | ● | 150 | 7100 | 0.8 | 1.07 | 0.71 | 1.5 |
-| lexuslfa | lexuslfa |  | 160 | 9000 | 0.8 | 1.15 | 0.7 | 0.5 |
-| sr20 | – |  | 190 | 7200 | 0.79 | 1.09 | 0.69 | 0.5 |
-| RDA | fordfocusst2019 | ● | 109 | 6500 | 0.78 | 1.06 | 0.68 | 1.5 |
-| subaruwrxsti | subaruwrxsti | ● | 204 | 8000 | 0.78 | 1.06 | 0.68 | 1.5 |
-| pontiactransam77 | pontiactransam77 |  | 270 | 5000 | 0.78 | 1.08 | 0.68 | 0.5 |
-| BM13 R | mazdarx7 | ● | 120 | 8300 | 0.77 | 1.03 | 0.68 | 1.5 |
-| BM13 R (P) | – | ● | 120 | 8300 | 0.77 | 1.03 | 0.68 | 1.5 |
-| toyotasupra2020 | toyotasupra2020 | ● | 140 | 7000 | 0.765 | 1.02 | 0.68 | 1.5 |
-| audirs6avantc7 | audirs6avantc7 | ● | 190 | 6700 | 0.75 | 1 | 0.66 | 1.5 |
-| audirs7 | audirs7 | ● | 190 | 6700 | 0.75 | 1 | 0.66 | 1.5 |
-| bmwm2g87 | bmwm2g87 | ● | 160 | 6800 | 0.75 | 1.15 | 0.66 | 1.5 |
-| bmwm3g81_touring | bmwm3g81_touring | ● | 160 | 6800 | 0.75 | 1.15 | 0.66 | 1.5 |
-| fordgt_mk2 | fordgt_mk2 | ● | 205 | 7000 | 0.75 | 0.99 | 0.67 | 1.5 |
-| 2ZG | lotuselise |  | 140 | 8200 | 0.75 | 1.15 | 0.66 | 1.5 |
-| mercedesbenzc63 | mercedesbenzc63 | ● | 367 | 6800 | 0.75 | 1 | 0.67 | 1.5 |
-| mitsubishievo9 | mitsubishievo9 | ● | 195 | 7500 | 0.75 | 1.02 | 0.66 | 1.5 |
-| suzukicarry | suzukicarry |  | 100 | 7800 | 0.75 | 1.15 | 0.66 | 1.5 |
-| BM13 | mazdarx8 |  | 120 | 8300 | 0.75 | 1.05 | 0.65 | 0.5 |
-| bmw_m3_e92_cabrio | bmw_m3_e92_cabrio | ● | 135 | 6800 | 0.74 | 1 | 0.66 | 1.5 |
-| bmw_m3_e92_gts | bmw_m3_e92_gts | ● | 135 | 6800 | 0.74 | 1 | 0.66 | 1.5 |
-| mitsubishievox | mitsubishievox | ● | 134 | 7800 | 0.74 | 1.02 | 0.64 | 1.5 |
-| skyliner35 | skyliner35 | ● | 276 | 7500 | 0.73 | 0.97 | 0.65 | 1.5 |
-| lexusrcf | lexusrcf |  | 222 | 7600 | 0.73 | 0.97 | 0.65 | 0.5 |
-| bmw_m3_e36 | bmw_m3_e36 |  | 180 | 6600 | 0.72 | 1 | 0.63 | 0.5 |
-| audir8 | audir8 | ● | 250 | 7800 | 0.7 | 1.05 | 0.6 | 1.5 |
-| bmwm2 | bmwm2 | ● | 194 | 7500 | 0.7 | 0.95 | 0.62 | 1.5 |
-| lamborghinievo | lamborghinievo | ● | 250 | 8000 | 0.7 | 1.05 | 0.6 | 1.5 |
-| chevroletcamaro2016 | chevroletcamaro2016 |  | 193 | 6400 | 0.7 | 0.96 | 0.6 | 0.5 |
-| hondas2000 | hondas2000 |  | 147 | 8300 | 0.7 | 1 | 0.6 | 0.5 |
-| toyotamajesta | toyotamajesta |  | 195 | 7200 | 0.7 | 1.05 | 0.6 | 0.5 |
-| bmwm4 | bmwm4 | ● | 140 | 7000 | 0.69 | 0.94 | 0.61 | 1.5 |
-| toyotasupraa70 | toyotasupraa70 | ● | 270 | 6800 | 0.68 | 1.08 | 0.59 | 1.5 |
-| civicek9 | civicek9 |  | 184 | 8500 | 0.66 | 0.92 | 0.57 | 0.5 |
-| hondacivictr2020 | hondacivictr2020 |  | 145 | 8100 | 0.66 | 0.92 | 0.57 | 0.5 |
-| 2jz-gte | – | ● | 310 | 7000 | 0.65 | 0.87 | 0.55 | 1.5 |
-| altezza | altezza |  | 240 | 7100 | 0.65 | 0.95 | 0.55 | 1.5 |
-| hotrod | hotrod | ● | 195 | 7200 | 0.65 | 0.94 | 0.61 | 1.5 |
-| nissan400z | nissan400z | ● | 240 | 6800 | 0.65 | 1 | 0.55 | 1.5 |
-| toyotacresta100 | toyotacresta100 | ● | 210 | 7000 | 0.65 | 0.95 | 0.55 | 1.5 |
-| toyotamark2_100 | toyotamark2_100 | ● | 210 | 7000 | 0.65 | 0.95 | 0.55 | 1.5 |
-| toyotasoarer | toyotasoarer | ● | 240 | 7100 | 0.65 | 0.95 | 0.55 | 1.5 |
-| bmwe30m3 | bmwe30m3 |  | 136 | 6750 | 0.65 | 0.9 | 0.57 | 0.65 |
-| bmw_z4_e86 | bmw_z4_e86 |  | 220 | 8000 | 0.65 | 0.94 | 0.61 | 0.5 |
-| bmwm5e34 | bmwm5e34 |  | 151 | 6900 | 0.65 | 0.91 | 0.55 | 0.5 |
-| toyotagr86 | toyotagr86 |  | 171 | 7200 | 0.65 | 0.9 | 0.56 | 0.5 |
-| chevycamaro70 | chevycamaro70 |  | 242 | 7500 | 0.64 | 0.94 | 0.54 | 0.5 |
-| mb_gtr_cabrio | mb_gtr_cabrio | ● | 209 | 7000 | 0.6 | 0.85 | 0.52 | 1.5 |
-| mbgelandewagenw463 | mbgelandewagenw463 | ● | 220 | 6500 | 0.6 | 0.65 | 0.5 | 1.5 |
-| mercedesbenzamggt2019 | mercedesbenzamggt2019 | ● | 209 | 7000 | 0.6 | 0.84 | 0.52 | 1.5 |
-| nissanz31 | nissanz31 | ● | 178 | 6000 | 0.6 | 0.85 | 0.51 | 1.5 |
-| hondaintegra | hondaintegra |  | 180 | 8000 | 0.6 | 0.9 | 0.5 | 0.5 |
-| acuransx | acuransx |  | 200 | 8000 | 0.59 | 0.84 | 0.5 | 0.5 |
-| charger | charger |  | 281 | 6400 | 0.59 | 0.86 | 0.5 | 0.5 |
-| lamborghinidiablo | lamborghinidiablo |  | 232 | 7300 | 0.58 | 0.96 | 0.48 | 0.5 |
-| bmwe46m3 | bmwe46m3 |  | 149 | 7000 | 0.57 | 0.855 | 0.475 | 0.5 |
-| bmwm4g82 | bmwm4g82 | ● | 160 | 6800 | 0.55 | 0.8 | 0.46 | 1.5 |
-| mclaren720s | mclaren720s | ● | 170 | 8500 | 0.55 | 0.79 | 0.47 | 1.5 |
-| bmwm5e39_vagon | bmwm5e39_vagon |  | 208 | 7000 | 0.55 | 0.8 | 0.45 | 0.5 |
-| jaguar_ftype | jaguar_ftype |  | 240 | 7500 | 0.55 | 0.81 | 0.47 | 0.5 |
-| maloor82015 | maloor82015 |  | 240 | 6500 | 0.55 | 0.79 | 0.47 | 0.5 |
-| mustangs197 | mustangs197 |  | 245 | 7000 | 0.55 | 0.76 | 0.38 | 0.5 |
-| nissan370z | nissan370z |  | 174 | 6800 | 0.55 | 0.81 | 0.46 | 0.5 |
-| vipersrt10 | vipersrt10 |  | 230 | 6300 | 0.55 | 0.79 | 0.47 | 0.5 |
-| dodgechallengerrt | dodgechallengerrt |  | 245 | 7250 | 0.53 | 0.78 | 0.45 | 0.5 |
-| mustangrtx | mustangrtx |  | 290 | 6200 | 0.52 | 0.77 | 0.43 | 0.5 |
-| bmwm5f90 | bmwm5f90 | ● | 229 | 8250 | 0.5 | 0.75 | 0.4 | 1.5 |
-| bmwm5x5 | bmwm5x5 | ● | 229 | 7200 | 0.5 | 0.75 | 0.42 | 1.5 |
-| nissanskyliner33vspec | nissanskyliner33vspec | ● | 280 | 7800 | 0.5 | 0.76 | 0.4 | 1.5 |
-| porsche911gt3 | porsche911gt3 | ● | 230 | 9000 | 0.5 | 0.65 | 0.52 | 1.5 |
-| rd26tt | – | ● | 300 | 7800 | 0.5 | 0.76 | 0.4 | 1.5 |
-| bmwe31 | bmwe31 |  | 155 | 6400 | 0.5 | 0.8 | 0.4 | 0.5 |
-| bmwm5e60 | bmwm5e60 |  | 240 | 8250 | 0.5 | 0.65 | 0.52 | 0.5 |
-| corvettec7 | corvettec7 |  | 267 | 6400 | 0.5 | 0.7 | 0.42 | 0.5 |
-| dodgecharger2020 | dodgecharger2020 |  | 254 | 5800 | 0.5 | 0.78 | 0.41 | 0.5 |
-| nissan350z | nissan350z |  | 205 | 6800 | 0.5 | 0.76 | 0.41 | 0.5 |
-| tesla_s_plaid | tesla_s_plaid |  | 300 | 10000 | 0.5 | 0.65 | 0.52 | 0.5 |
-| mustang350 | mustang350 |  | 195 | 7200 | 0.49 | 0.75 | 0.41 | 0.5 |
-| corvettec8 | corvettec8 |  | 230 | 7100 | 0.48 | 0.62 | 0.4 | 0.7 |
-| chevroletchevelless1970 | chevroletchevelless1970 |  | 270 | 6200 | 0.47 | 0.61 | 0.39 | 0.5 |
-| corvettec6 | corvettec6 |  | 201 | 7000 | 0.46 | 0.7 | 0.38 | 0.5 |
-| vq37vhr | – |  | 320 | 6800 | 0.43 | 0.69 | 0.35 | 0.5 |
-| lamborghiniaventadors | lamborghiniaventadors |  | 235 | 8500 | 0.4 | 0.64 | 0.32 | 0.5 |
-| ls | – |  | 315 | 7000 | 0.4 | 0.68 | 0.36 | 0.5 |
-| van | van |  | 199 | 4800 | 0.4 | 0.7 | 0.3 | 0.5 |
-| bmwm6e24 | bmwm6e24 |  | 161 | 7000 | 0.35 | 0.61 | 0.25 | 0.5 |
-| lamborghinimurcielago | lamborghinimurcielago |  | 270 | 8200 | 0.35 | 0.59 | 0.27 | 0.5 |
-| viper | viper |  | 323 | 6200 | 0.35 | 0.59 | 0.27 | 0.5 |
-| mustang_hoonigan | mustang_hoonigan |  | 220 | 8000 | 0.2 | 0.34 | 0.12 | 0.4 |
+| B13 | FX7 | ● | 157 | 8500 | 1.09 | 1.38 | 1 | 1.5 |
+| DT 18 | S18 | ● | 268 | 7200 | 1.09 | 1.38 | 1 | 1.5 |
+| DT 18 (Spirit) | – | ● | 268 | 7200 | 1.09 | 1.38 | 1 | 1.5 |
+| DA15 | HC6 |  | 140 | 7800 | 1 | 1.3 | 0.9 | 1 |
+| L08 | L08 |  | 127 | 6000 | 1 | 1.3 | 0.9 | 0.5 |
+| VGD3 | 30Z | ● | 220 | 6800 | 0.98 | 1.28 | 0.88 | 1.5 |
+| VGD3 | 30ZC | ● | 220 | 6800 | 0.98 | 1.28 | 0.88 | 1.5 |
+| RS20T | S14 | ● | 180 | 7500 | 0.95 | 1.25 | 0.85 | 1.5 |
+| B70 | MF1 |  | 275 | 7600 | 0.95 | 1.16 | 0.78 | 0.5 |
+| RS20T | S13 | ● | 180 | 7500 | 0.91 | 1.25 | 0.81 | 1.5 |
+| 46G3 | EV6 | ● | 170 | 7600 | 0.9 | 1.24 | 0.8 | 1.5 |
+| 97M1 | P91 | ● | 230 | 7300 | 0.9 | 0.86 | 0.8 | 1.5 |
+| BL58 | S90C | ● | 140 | 7000 | 0.9 | 1.2 | 0.8 | 1.5 |
+| – | Ferrari F40 | ● | 210 | 7500 | 0.9 | 1.2 | 0.8 | 0.5 |
+| B1A6 | V45 |  | 140 | 6500 | 0.9 | 1.2 | 0.8 | 0.5 |
+| C2L | BGX |  | 200 | 6200 | 0.89 | 1.19 | 0.79 | 1.5 |
+| PV2 | MX-5 ND |  | 130 | 7200 | 0.89 | 1.19 | 0.79 | 1.5 |
+| DT20 | 31R | ● | 230 | 7600 | 0.89 | 1.19 | 0.79 | 1.5 |
+| E25 | SFR | ● | 120 | 6500 | 0.89 | 1.18 | 0.79 | 1.5 |
+| 4A-GE | Swap |  | 145 | 7400 | 0.89 | 0.89 | 0.89 | 0.89 |
+| 4G63 | Swap | ● | 175 | 7500 | 0.89 | 0.89 | 0.89 | 0.89 |
+| D15B | Swap |  | 150 | 7700 | 0.89 | 0.89 | 0.89 | 0.89 |
+| GE4 | E86 |  | 154 | 7400 | 0.89 | 1.19 | 0.79 | 0.5 |
+| DL20 | DTS |  | 160 | 6200 | 0.89 | 1.19 | 0.79 | 0.5 |
+| PF1 | NX5 |  | 155 | 7200 | 0.89 | 1.19 | 0.79 | 0.5 |
+| PF1 | NX5C |  | 155 | 7200 | 0.89 | 1.19 | 0.79 | 0.5 |
+| ME10 | B19 |  | 170 | 6600 | 0.89 | 1.19 | 0.79 | 0.5 |
+| GE3 | 2MR |  | 143 | 7000 | 0.89 | 1.19 | 0.79 | 0.5 |
+| DT20 | 32R | ● | 230 | 7400 | 0.86 | 1.2 | 0.8 | 1.5 |
+| E25 | WRS | ● | 125 | 7400 | 0.86 | 1.14 | 0.77 | 1.5 |
+| LL1 | CC3 |  | 280 | 6200 | 0.85 | 1.04 | 0.81 | 1.5 |
+| RV30 | IF6 | ● | 195 | 6800 | 0.85 | 1.19 | 0.75 | 1.5 |
+| G1E6 | YRS | ● | 120 | 7200 | 0.85 | 1.04 | 0.81 | 1.5 |
+| M17 | AMV | ● | 209 | 8000 | 0.85 | 1.2 | 0.75 | 1.5 |
+| G64 | ECL |  | 185 | 6500 | 0.85 | 1.14 | 0.75 | 0.5 |
+| N14B | MCS | ● | 130 | 6500 | 0.84 | 1.14 | 0.74 | 1.6 |
+| RS20T | S15 | ● | 180 | 7500 | 0.83 | 1.11 | 0.74 | 1.5 |
+| RS20T (Spirit) | – | ● | 180 | 7500 | 0.83 | 1.11 | 0.74 | 1.5 |
+| 30S | FLD |  | 249 | 7000 | 0.83 | 1.12 | 0.73 | 0.5 |
+| JAZ22 | S80 | ● | 230 | 7000 | 0.82 | 1.1 | 0.73 | 1.5 |
+| TF25 | TTR | ● | 160 | 6800 | 0.81 | 1.07 | 0.72 | 1.5 |
+| DT25 | 34R | ● | 250 | 7000 | 0.81 | 1.08 | 0.72 | 1.5 |
+| GU4 | G86 |  | 200 | 7400 | 0.81 | 1.08 | 0.72 | 0.5 |
+| 6T9 | ARG | ● | 240 | 7200 | 0.8 | 0.91 | 0.57 | 1.5 |
+| – | B8I | ● | 210 | 6500 | 0.8 | 1.05 | 0.72 | 1.5 |
+| 2TS | V7G | ● | 140 | 6000 | 0.8 | 1.1 | 0.7 | 1.5 |
+| – | S65 | ● | 186 | 7500 | 0.8 | 1.06 | 0.7 | 1.5 |
+| S02 | 20R |  | 199 | 7300 | 0.8 | 1.06 | 0.7 | 1.5 |
+| MT64 | P64 | ● | 150 | 7100 | 0.8 | 1.07 | 0.71 | 1.5 |
+| L1R | LFL |  | 160 | 9000 | 0.8 | 1.15 | 0.7 | 0.5 |
+| RS20 | Swap |  | 190 | 7200 | 0.79 | 1.09 | 0.69 | 0.5 |
+| RDA | FST | ● | 109 | 6500 | 0.78 | 1.06 | 0.68 | 1.5 |
+| E20J7 | WST | ● | 204 | 8000 | 0.78 | 1.06 | 0.68 | 1.5 |
+| PV8 | PF7 |  | 270 | 5000 | 0.78 | 1.08 | 0.68 | 0.5 |
+| BR13 | DX7 | ● | 120 | 8300 | 0.77 | 1.03 | 0.68 | 1.5 |
+| BR13 (Spirit) | – | ● | 120 | 8300 | 0.77 | 1.03 | 0.68 | 1.5 |
+| BL58 | S90 | ● | 140 | 7000 | 0.765 | 1.02 | 0.68 | 1.5 |
+| CV6 | 6RS | ● | 190 | 6700 | 0.75 | 1 | 0.66 | 1.5 |
+| E82A | 7RS | ● | 190 | 6700 | 0.75 | 1 | 0.66 | 1.5 |
+| S58 | BM2R | ● | 160 | 6800 | 0.75 | 1.15 | 0.66 | 1.5 |
+| S58 | M3G | ● | 160 | 6800 | 0.75 | 1.15 | 0.66 | 1.5 |
+| EBT | FGT | ● | 205 | 7000 | 0.75 | 0.99 | 0.67 | 1.5 |
+| 2ZG | LTS |  | 140 | 8200 | 0.75 | 1.15 | 0.66 | 1.5 |
+| DE27 | 63C | ● | 367 | 6800 | 0.75 | 1 | 0.67 | 1.5 |
+| GT63 | EV9 | ● | 195 | 7500 | 0.75 | 1.02 | 0.66 | 1.5 |
+| FA6 | SZK |  | 100 | 7800 | 0.75 | 1.15 | 0.66 | 1.5 |
+| BM13 | DX8 |  | 120 | 8300 | 0.75 | 1.05 | 0.65 | 0.5 |
+| B30 | M92C | ● | 135 | 6800 | 0.74 | 1 | 0.66 | 1.5 |
+| B30 | M92 | ● | 135 | 6800 | 0.74 | 1 | 0.66 | 1.5 |
+| B411T | EVX | ● | 134 | 7800 | 0.74 | 1.02 | 0.64 | 1.5 |
+| RV38 | 35R | ● | 276 | 7500 | 0.73 | 0.97 | 0.65 | 1.5 |
+| U2R | LRC |  | 222 | 7600 | 0.73 | 0.97 | 0.65 | 0.5 |
+| B28 | M36 |  | 180 | 6600 | 0.72 | 1 | 0.63 | 0.5 |
+| CPTAV10 | AR8 | ● | 250 | 7800 | 0.7 | 1.05 | 0.6 | 1.5 |
+| B55N | BM2 | ● | 194 | 7500 | 0.7 | 0.95 | 0.62 | 1.5 |
+| FSP | LMH | ● | 250 | 8000 | 0.7 | 1.05 | 0.6 | 1.5 |
+| LL1 | CMR |  | 193 | 6400 | 0.7 | 0.96 | 0.6 | 0.5 |
+| F2C0 | HS2 |  | 147 | 8300 | 0.7 | 1 | 0.6 | 0.5 |
+| FUZ 1 | CRN |  | 195 | 7200 | 0.7 | 1.05 | 0.6 | 0.5 |
+| B58 | M4R | ● | 140 | 7000 | 0.69 | 0.94 | 0.61 | 1.5 |
+| M7GT | S70 | ● | 270 | 6800 | 0.68 | 1.08 | 0.59 | 1.5 |
+| B1B6 | HC9 |  | 184 | 8500 | 0.66 | 0.92 | 0.57 | 0.5 |
+| KA20 | HCR |  | 145 | 8100 | 0.66 | 0.92 | 0.57 | 0.5 |
+| 2JZ-GTE | – | ● | 310 | 7000 | 0.65 | 0.87 | 0.55 | 1.5 |
+| – | TAL |  | 240 | 7100 | 0.65 | 0.95 | 0.55 | 1.5 |
+| FC3 | HRD | ● | 195 | 7200 | 0.65 | 0.94 | 0.61 | 1.5 |
+| – | Z40 | ● | 240 | 6800 | 0.65 | 1 | 0.55 | 1.5 |
+| JAZ11 | CRT | ● | 210 | 7000 | 0.65 | 0.95 | 0.55 | 1.5 |
+| JAZ11 | TM2 | ● | 210 | 7000 | 0.65 | 0.95 | 0.55 | 1.5 |
+| JAZ11 | TSR | ● | 240 | 7100 | 0.65 | 0.95 | 0.55 | 1.5 |
+| S1B4 | M30 |  | 136 | 6750 | 0.65 | 0.9 | 0.57 | 0.65 |
+| BS38 | BZ4 |  | 220 | 8000 | 0.65 | 0.94 | 0.61 | 0.5 |
+| BS38 | M34 |  | 151 | 6900 | 0.65 | 0.91 | 0.55 | 0.5 |
+| GU4 | R86 |  | 171 | 7200 | 0.65 | 0.9 | 0.56 | 0.5 |
+| GCTM1 | C70 |  | 242 | 7500 | 0.64 | 0.94 | 0.54 | 0.5 |
+| MDA | MGTC | ● | 209 | 7000 | 0.6 | 0.85 | 0.52 | 1.5 |
+| 15M7 | GLW | ● | 220 | 6500 | 0.6 | 0.65 | 0.5 | 1.5 |
+| MDA | MGT | ● | 209 | 7000 | 0.6 | 0.84 | 0.52 | 1.5 |
+| V30G | Z31 | ● | 178 | 6000 | 0.6 | 0.85 | 0.51 | 1.5 |
+| KA20 | HI5 |  | 180 | 8000 | 0.6 | 0.9 | 0.5 | 0.5 |
+| BC32 | HSX |  | 200 | 8000 | 0.59 | 0.84 | 0.5 | 0.5 |
+| BV8 | CHR |  | 281 | 6400 | 0.59 | 0.86 | 0.5 | 0.5 |
+| LMV12 | LMD |  | 232 | 7300 | 0.58 | 0.96 | 0.48 | 0.5 |
+| SB53 | M46 |  | 149 | 7000 | 0.57 | 0.855 | 0.475 | 0.5 |
+| S58 | M4G | ● | 160 | 6800 | 0.55 | 0.8 | 0.46 | 1.5 |
+| – | MLN | ● | 170 | 8500 | 0.55 | 0.79 | 0.47 | 1.5 |
+| – | M39 |  | 208 | 7000 | 0.55 | 0.8 | 0.45 | 0.5 |
+| A12J6 | JGR |  | 240 | 7500 | 0.55 | 0.81 | 0.47 | 0.5 |
+| SCHM | HSS |  | 240 | 6500 | 0.55 | 0.79 | 0.47 | 0.5 |
+| – | Ford Mustang S197 |  | 245 | 7000 | 0.55 | 0.76 | 0.38 | 0.5 |
+| QH37 | Z37 |  | 174 | 6800 | 0.55 | 0.81 | 0.46 | 0.5 |
+| VV53 | VP1 |  | 230 | 6300 | 0.55 | 0.79 | 0.47 | 0.5 |
+| ES8 | STR |  | 245 | 7250 | 0.53 | 0.78 | 0.45 | 0.5 |
+| FV8 | F69 |  | 290 | 6200 | 0.52 | 0.77 | 0.43 | 0.5 |
+| S6B34T | M90 | ● | 229 | 8250 | 0.5 | 0.75 | 0.4 | 1.5 |
+| S6B34 | BX5 | ● | 229 | 7200 | 0.5 | 0.75 | 0.42 | 1.5 |
+| BR26 | 33R | ● | 280 | 7800 | 0.5 | 0.76 | 0.4 | 1.5 |
+| – | PGT | ● | 230 | 9000 | 0.5 | 0.65 | 0.52 | 1.5 |
+| RD26TT | – | ● | 300 | 7800 | 0.5 | 0.76 | 0.4 | 1.5 |
+| SB70 | B31 |  | 155 | 6400 | 0.5 | 0.8 | 0.4 | 0.5 |
+| 85S | B60 |  | 240 | 8250 | 0.5 | 0.65 | 0.52 | 0.5 |
+| LL4 | CC7 |  | 267 | 6400 | 0.5 | 0.7 | 0.42 | 0.5 |
+| HEM5 | DC2 |  | 254 | 5800 | 0.5 | 0.78 | 0.41 | 0.5 |
+| QD35 | Z35 |  | 205 | 6800 | 0.5 | 0.76 | 0.41 | 0.5 |
+| – | TSL |  | 300 | 10000 | 0.5 | 0.65 | 0.52 | 0.5 |
+| VF52 | F35 |  | 195 | 7200 | 0.49 | 0.75 | 0.41 | 0.5 |
+| LL2 | CC8 |  | 230 | 7100 | 0.48 | 0.62 | 0.4 | 0.7 |
+| LL6S | CVL |  | 270 | 6200 | 0.47 | 0.61 | 0.39 | 0.5 |
+| SS2 | CC6 |  | 201 | 7000 | 0.46 | 0.7 | 0.38 | 0.5 |
+| VQ37VHR | – |  | 320 | 6800 | 0.43 | 0.69 | 0.35 | 0.5 |
+| – | LMA |  | 235 | 8500 | 0.4 | 0.64 | 0.32 | 0.5 |
+| LSS | Swap |  | 315 | 7000 | 0.4 | 0.68 | 0.36 | 0.5 |
+| M3G6 | VAN |  | 199 | 4800 | 0.4 | 0.7 | 0.3 | 0.5 |
+| B38S | M24 |  | 161 | 7000 | 0.35 | 0.61 | 0.25 | 0.5 |
+| L5L39 | LMM |  | 270 | 8200 | 0.35 | 0.59 | 0.27 | 0.5 |
+| VV54 | VPR |  | 323 | 6200 | 0.35 | 0.59 | 0.27 | 0.5 |
+| R41Y | HNG |  | 220 | 8000 | 0.2 | 0.34 | 0.12 | 0.4 |
 
 ## Not yet confirmed and sources
 

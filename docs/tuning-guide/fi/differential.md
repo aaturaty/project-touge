@@ -76,6 +76,17 @@ Etsi ensin vaihe, jossa oire tulee. Vaihe kertoo, mikä lukko on päällä. Muut
 | Ulostulo, täysi kaasu | Perä lähtee ja auto pyörähtää tiukassa neulassa | Lukko vie lähes kaiken väännön ulkopyörälle | Laske kaasulukkoa tai preloadia. |
 | Ulostulo, täysi kaasu | Auto ei vedä ulos ja sisäpyörä sutii loivemmassa mutkassa | Lukko ei ehdi tasata pyöriä | Nosta kaasulukkoa 0,05. |
 
+## Neliveto: etudiffi
+
+Nelivetoautossa on oma etudiffi (FRONT DIFFERENTIAL), jossa on samat kolme säätöä. Se toimii kuten takadiffi, mutta ohjaavilla pyörillä: lukittu etuakseli vetää molempia etupyöriä samalla nopeudella, mikä vastustaa kääntymistä. Pelin nelivetoautot lähtevät arvoista 0,30 / 0 / 0 ●. Alla olevat suunnat on päätelty diffin fysiikasta, eikä niitä ole vielä kokeiltu pelissä ◐.
+
+| Vaihe | Oire | Mitä pelissä tapahtuu | Muutos |
+| --- | --- | --- | --- |
+| Mutkaan tulo, kaasu pois | Keula työntää eikä auto käänny sisään | Etudiffin moottorijarrulukko pitää etupyörät yhdessä | Laske etudiffin moottorijarrulukkoa. |
+| Ulostulo, täysi kaasu | Keula karkaa ulos heti kun kaasu tulee | Etudiffin kaasulukko vetää molempia etupyöriä tasan ja tekee oikaisevan momentin | Laske etudiffin kaasulukkoa, sitten etudiffin preloadia. |
+| Ulostulo, täysi kaasu | Sisäetupyörä sutii eikä auto vedä ulos | Etulukkoa ei ole tarpeeksi siirtämään vääntöä ulommalle etupyörälle | Nosta etudiffin kaasulukkoa 0,05. |
+| Ulostulo, täysi kaasu | Perä lähtee nelivetoautolla | Takadiffi vie suurimman osan taka-akselin väännöstä ulommalle takapyörälle | Laske ensin takadiffin kaasulukkoa, nosta sitten etudiffin kaasulukkoa. |
+
 ## Loppuvinkki
 
 Simulaatiomallissa diffisäädöt tuskin muuttivat kierrosaikaa; vain kaasulukko 0 oli selvästi hidas. Valitse arvot sen mukaan, mikä on helpointa hallita. Tasainen drifti oli simulaatiomallissa hitaampi kuin pito (tiukassa mutkassa −15 %, keskinopeassa −6 %), mutta noin 20°:n luisto ulostulossa täydellä kaasulla oli nopein.

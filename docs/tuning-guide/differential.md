@@ -76,6 +76,17 @@ First find the phase where the symptom appears. The phase tells you which lock i
 | Exit, full throttle | The rear steps out and the car spins in a tight hairpin | The lock sends almost all torque to the outer wheel | Lower throttle lock or preload. |
 | Exit, full throttle | The car does not pull out and the inner wheel spins in a wider corner | The lock does not even out the wheels in time | Raise throttle lock by 0.05. |
 
+## All-wheel drive: the front diff
+
+An all-wheel drive car has its own front diff (FRONT DIFFERENTIAL) with the same three settings. It works like the rear diff, but on the steering wheels: a locked front axle pulls both front wheels at the same speed, which resists turning. The game's AWD cars start from 0.30 / 0 / 0 ●. The directions below are inferred from the diff physics and not yet tried in the game ◐.
+
+| Phase | Symptom | What happens in the game | Change |
+| --- | --- | --- | --- |
+| Corner entry, off throttle | The nose pushes and the car will not turn in | The front decel lock holds the front wheels together | Lower front decel lock. |
+| Exit, full throttle | The nose runs wide as soon as the throttle comes in | The front throttle lock pulls both front wheels equally and makes a straightening moment | Lower front throttle lock, then front preload. |
+| Exit, full throttle | The inner front wheel spins and the car does not pull out | Not enough front lock to move torque to the outer front wheel | Raise front throttle lock by 0.05. |
+| Exit, full throttle | The rear steps out on an AWD car | The rear diff sends most of the rear torque to the outer rear wheel | Lower the rear throttle lock first, then raise the front throttle lock. |
+
 ## Final tip
 
 In the simulation model the diff settings hardly changed lap time; only a throttle lock of 0 was clearly slow. Choose the values by what is easiest to control. A steady drift was slower than grip in the simulation model (−15 % in a tight corner, −6 % in a medium one), but about 20° of slide on exit at full throttle was quickest.

@@ -13,6 +13,17 @@
 .card .lng{font-size:13px;color:var(--himmea)}
 .card .lng a{position:relative;z-index:1}
 .land .note{color:var(--himmea);font-size:13.5px;max-width:70ch}
+.files{border-top:1px solid var(--viiva);padding:30px 0 10px}
+.files h2{font:400 22px/1.25 var(--display);letter-spacing:.05em;text-transform:uppercase;margin:0 0 6px}
+.files p.sub{color:var(--sumu);margin:0 0 16px;max-width:70ch}
+.tree{font:400 14px/1.75 var(--body);background:var(--hiili);border:1px solid var(--viiva-2);padding:16px 18px;overflow-x:auto;color:var(--sumu);white-space:pre;margin:0}
+.tree b{color:var(--kerma);font-weight:500}
+.tree i{font-style:normal;color:var(--himmea)}
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:16px 0 0}
+.rule{border-left:2px solid var(--keltainen);padding:6px 0 6px 14px}
+.rule b{display:block;font-weight:600;color:var(--kerma)}
+.rule span{color:var(--sumu);font-size:14px}
+.rule code{font:500 13px var(--body);color:var(--kerma);overflow-wrap:anywhere}
 </style>
 <section class="land">
   <h1>Project Touge <em>guides</em></h1>
@@ -23,4 +34,26 @@
     <a class="card" href="tuning-bible/index.html"><span class="k">03 · The long read</span><b>Tuning Bible</b><span>How the game calculates the car and what each setting really does, from tyres to the differential.</span><span class="go">Open →</span></a>
   </div>
   <p class="note">The user guide has a FI / EN switch at the top. The Tuning Bible is also <a href="tuning-bible/fi/index.html">in Finnish</a>. Get Project Touge from the <a href="https://github.com/aaturaty/project-touge/releases/latest">latest release</a>.</p>
+</section>
+<section class="files" id="files">
+  <h2>Where your files live</h2>
+  <p class="sub">Project Touge is one folder. Everything it saves stays inside it, next to the exe.</p>
+<pre class="tree"><b>Project Touge\</b>
+├─ Project Touge.exe     <i>the whole program</i>
+├─ settings.json         <i>language, window and choices</i>
+├─ <b>Tunes\</b>                <i>your setups, presets, notes and calibrations</i>
+│  └─ Data\              <i>automatic backup of your data</i>
+├─ <b>Runs\</b>                 <i>timed runs and their telemetry</i>
+│  └─ Ghosts\            <i>ghosts you have added</i>
+├─ <b>Routes\</b>               <i>the six included routes and your own</i>
+├─ <b>Shared\</b>               <i>files you saved for sharing</i>
+│  └─ Inbox\             <i>drop files you receive here</i>
+├─ Natiivi\              <i>only with Game physics (Experimental)</i>
+└─ <b>Logs\</b>                 <i>attach these when you report a problem</i></pre>
+  <div class="rules">
+    <div class="rule"><b>Nothing outside the folder</b><span>Touge writes only here. The one exception is Windows' WebView2, which keeps the window's browser cache in <code>%LOCALAPPDATA%\fi.projecttouge.app</code>. It holds no tunes or runs.</span></div>
+    <div class="rule"><b>Earlier versions are only read</b><span>On first start Touge looks for an earlier Project Touge next to it and on your Desktop, Downloads and Documents and copies your data from it. The old folder stays as it was.</span></div>
+    <div class="rule"><b>The game is not touched</b><span>Touge never writes to the game or its folder. Times and telemetry are read from the screen. Game physics only copies the game's physics file into <code>Natiivi\</code>.</span></div>
+    <div class="rule"><b>Move, back up, remove</b><span>Copy the folder to move or back it up. Delete it to uninstall, and the cache folder above if you want it gone too.</span></div>
+  </div>
 </section>

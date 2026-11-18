@@ -60,15 +60,15 @@ Search on 17 Nov with the Touge route model on North v2 in C3 (S15 and AE86). Fo
 
 | Engine | S15 gap to best | AE86 gap to best | Gain over Touge's own fit | Native S15 / AE86 vs current |
 | --- | --- | --- | --- | --- |
-| mini (N14B) | 0.0 | 0.0 | −6…−8 s | +1.7 ± 0.3 / −0.2 ± 0.3 |
-| mazdamx5 (PV2) | +0.6 | +0.6 | −3…−5 s | +0.4 ± 0.3 / −0.9 ± 0.1 |
-| datsun620 (DL20) | +1.6 | +1.6 | −6…−8 s | +3.3 ± 0.2 / +1.0 ± 0.2 |
-| fordfocusst2019 (RDA) | +0.7 | +1.2 | −0.1…−0.4 s | +1.4 ± 0.2 / +0.1 ± 0.2 |
-| 4a-ge / ae86 | +2.0 | +1.6 | −1…−3 s | – / +1.1 ± 0.2 |
-| lotuselise | +2.2 | +2.6 | −5…−7 s | – |
-| mazdarx7_fc | +2.3 | +2.5 | −9…−10 s | – |
-| nissanskyline2000gtx (S02) | +2.9 | +2.8 | −4…−6 s | – |
-| mazdarx8 | +2.4 | +4.1 | −0.2…−0.4 s | – |
+| N14B | 0.0 | 0.0 | −6…−8 s | +1.7 ± 0.3 / −0.2 ± 0.3 |
+| PV2 | +0.6 | +0.6 | −3…−5 s | +0.4 ± 0.3 / −0.9 ± 0.1 |
+| DL20 | +1.6 | +1.6 | −6…−8 s | +3.3 ± 0.2 / +1.0 ± 0.2 |
+| RDA | +0.7 | +1.2 | −0.1…−0.4 s | +1.4 ± 0.2 / +0.1 ± 0.2 |
+| GE4 | +2.0 | +1.6 | −1…−3 s | – / +1.1 ± 0.2 |
+| 2ZG | +2.2 | +2.6 | −5…−7 s | – |
+| B13 | +2.3 | +2.5 | −9…−10 s | – |
+| S02 | +2.9 | +2.8 | −4…−6 s | – |
+| BM13 | +2.4 | +4.1 | −0.2…−0.4 s | – |
 
 **Native 17 Nov (8 repetitions, ◐):** the model and the native simulation disagree. In the S15 the current ND tune was fastest and the Mini was 1.7 s slower. In the AE86 the ND engine with the model's tune was 0.9 ± 0.1 s faster than the current 4A-GE tune, and the Mini was within the noise. So the model's ranking cannot be used yet; the most robust finding is the ND engine (PV2) in a light RWD car. A rerun with the AE86's current setup (ratios 2.91/2.04/1.51/1.15/0.97/0.86, decel lock 0.28) gave ±0 at FD 4.50, −1.0 ± 0.1 s at FD 4.35 and −0.3…−0.4 s at other FDs, so the gain depends on gearing and is not yet certain. **In-game test 17 Nov (●, AE86, North v2):** GE4 runs 43–44 371.36 / 371.20 s. PV2 with the player's own tune (limiter 8687 and Peak RPM 9742 at max, High 218, Medium 281, Low 332): FD 4.52 runs 45–46 372.97 / 370.97 s, **FD 4.35 runs 47–48 369.03 / 369.22 s (−2.1 s vs the GE4, repeated)**. The native simulation predicted −1.0 ± 0.1 s for FD 4.35, so the direction was right. The model's Part Setup values were not run in the game. The player shifts up at about 8800–9000 rpm and spends 15–25 % of the lap above 8500 rpm, so lowering the limiter is probably harmful even though the models do not see it ◐. For now the most reliable line: limiter and Peak RPM up, Low up, Mid and High down until the class is filled. According to the model, engines with a high part factor (Mini 0.84 + turbo 1.6, ND and Datsun 0.89) gain the most from the sliders. Touge's current fit leaves 3–10 s on them.
 
@@ -81,18 +81,18 @@ The class measures peak power per weight (hp/t), but on North the lap is decided
 | DL20 | −3.0 | 5.07 | 8.93 | 259 | kit |
 | N14B | −2.8 | 5.15 | 9.09 | 255 | factory |
 | S02 | −2.7 | 5.22 | 8.85 | 260 | – |
-| Volvo | −2.6 | 5.12 | 9.20 | 257 | kit |
+| B1A6 | −2.6 | 5.12 | 9.20 | 257 | kit |
 | RS20T (S13) | −2.6 | 5.23 | 9.03 | 259 | factory |
 | RS20 | −2.5 | 5.23 | 8.98 | 260 | kit |
 | GE4 | −1.7 | 5.28 | 9.10 | 257 | – |
-| Lotus | −1.2 | 5.36 | 9.10 | 257 | – |
+| 2ZG | −1.2 | 5.36 | 9.10 | 257 | – |
 | RDA | −1.2 | 5.18 | 8.80 | 262 | factory |
-| Eclipse G64 | −0.9 | 5.38 | 9.26 | 258 | – |
+| G64 | −0.9 | 5.38 | 9.26 | 258 | – |
 | PV2 | −0.6 | 5.32 | 9.33 | 255 | – |
 | BM13 | +0.4 | 5.47 | 9.70 | 256 | – |
-| 190E (ME10) | +0.8 | 5.58 | 9.74 | 253 | – |
+| ME10 | +0.8 | 5.58 | 9.74 | 253 | – |
 | B13 | +0.9 | 5.55 | 10.14 | 253 | factory |
-| EK9 (B1B6) | +1.5 | 5.40 | 9.44 | 260 | – |
+| B1B6 | +1.5 | 5.40 | 9.44 | 260 | – |
 
 The North difference is against an S02 tune driven in the game (975 kg); the model tunes are ~28 kg lighter (empty tank, full weight reduction), so the order between engines is more reliable than the gap to zero.
 
@@ -114,44 +114,44 @@ All 137 engines from the game data (part_stat_factors), largest first. The part 
 
 | Engine | Stock in | Factory turbo | Mass kg | Limiter | Part factor (ECU, cam, head, block, fuel) | Intake | Exhaust manifold and exhaust | Turbo part |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| mazdarx7_fc | mazdarx7_fc | ● | 157 | 8500 | 1.09 | 1.38 | 1 | 1.5 |
-| nissan180sx | nissan180sx | ● | 268 | 7200 | 1.09 | 1.38 | 1 | 1.5 |
-| nissan180sx_sp1 | – | ● | 268 | 7200 | 1.09 | 1.38 | 1 | 1.5 |
-| civic | civic |  | 140 | 7800 | 1 | 1.3 | 0.9 | 1 |
+| B13 | mazdarx7_fc | ● | 157 | 8500 | 1.09 | 1.38 | 1 | 1.5 |
+| DT18 | nissan180sx | ● | 268 | 7200 | 1.09 | 1.38 | 1 | 1.5 |
+| DT18 | – | ● | 268 | 7200 | 1.09 | 1.38 | 1 | 1.5 |
+| B1B6 | civic |  | 140 | 7800 | 1 | 1.3 | 0.9 | 1 |
 | vaz2108 | vaz2108 |  | 127 | 6000 | 1 | 1.3 | 0.9 | 0.5 |
 | nissan300zx | nissan300zx | ● | 220 | 6800 | 0.98 | 1.28 | 0.88 | 1.5 |
 | nissan300zx_cabrio | nissan300zx_cabrio | ● | 220 | 6800 | 0.98 | 1.28 | 0.88 | 1.5 |
-| nissansilvias14 | nissansilvias14 | ● | 180 | 7500 | 0.95 | 1.25 | 0.85 | 1.5 |
+| RS20T | nissansilvias14 | ● | 180 | 7500 | 0.95 | 1.25 | 0.85 | 1.5 |
 | mclarenf1 | mclarenf1 |  | 275 | 7600 | 0.95 | 1.16 | 0.78 | 0.5 |
-| nissansilvias13 | nissansilvias13 | ● | 180 | 7500 | 0.91 | 1.25 | 0.81 | 1.5 |
+| RS20T | nissansilvias13 | ● | 180 | 7500 | 0.91 | 1.25 | 0.81 | 1.5 |
 | mitsubishievo6 | mitsubishievo6 | ● | 170 | 7600 | 0.9 | 1.24 | 0.8 | 1.5 |
 | porsche911 | porsche911 | ● | 230 | 7300 | 0.9 | 0.86 | 0.8 | 1.5 |
 | supra2020_cabrio | supra2020_cabrio | ● | 140 | 7000 | 0.9 | 1.2 | 0.8 | 1.5 |
 | ferrarif40 | ferrarif40 | ● | 210 | 7500 | 0.9 | 1.2 | 0.8 | 0.5 |
-| volvo | volvo |  | 140 | 6500 | 0.9 | 1.2 | 0.8 | 0.5 |
+| B1A6 | volvo |  | 140 | 6500 | 0.9 | 1.2 | 0.8 | 0.5 |
 | buickgnx | buickgnx |  | 200 | 6200 | 0.89 | 1.19 | 0.79 | 1.5 |
-| mazdamx5 | mazdamx5 |  | 130 | 7200 | 0.89 | 1.19 | 0.79 | 1.5 |
+| PV2 | mazdamx5 |  | 130 | 7200 | 0.89 | 1.19 | 0.79 | 1.5 |
 | skyliner31 | skyliner31 | ● | 230 | 7600 | 0.89 | 1.19 | 0.79 | 1.5 |
 | subaruforester | subaruforester | ● | 120 | 6500 | 0.89 | 1.18 | 0.79 | 1.5 |
 | 4a-ge | – |  | 145 | 7400 | 0.89 | 0.89 | 0.89 | 0.89 |
 | 4g63 | – | ● | 175 | 7500 | 0.89 | 0.89 | 0.89 | 0.89 |
 | d15b | – |  | 150 | 7700 | 0.89 | 0.89 | 0.89 | 0.89 |
 | ae86 | ae86 |  | 154 | 7400 | 0.89 | 1.19 | 0.79 | 0.5 |
-| datsun620 | datsun620 |  | 160 | 6200 | 0.89 | 1.19 | 0.79 | 0.5 |
-| mazdamx5_90 | mazdamx5_90 |  | 155 | 7200 | 0.89 | 1.19 | 0.79 | 0.5 |
-| mazdamx5cabrio_90 | mazdamx5cabrio_90 |  | 155 | 7200 | 0.89 | 1.19 | 0.79 | 0.5 |
-| mercedesbenz190evo2 | mercedesbenz190evo2 |  | 170 | 6600 | 0.89 | 1.19 | 0.79 | 0.5 |
-| toyotamr2 | toyotamr2 |  | 143 | 7000 | 0.89 | 1.19 | 0.79 | 0.5 |
+| DL20 | datsun620 |  | 160 | 6200 | 0.89 | 1.19 | 0.79 | 0.5 |
+| PF1 | mazdamx5_90 |  | 155 | 7200 | 0.89 | 1.19 | 0.79 | 0.5 |
+| PF1 | mazdamx5cabrio_90 |  | 155 | 7200 | 0.89 | 1.19 | 0.79 | 0.5 |
+| ME10 | mercedesbenz190evo2 |  | 170 | 6600 | 0.89 | 1.19 | 0.79 | 0.5 |
+| GE3 | toyotamr2 |  | 143 | 7000 | 0.89 | 1.19 | 0.79 | 0.5 |
 | skyliner32 | skyliner32 | ● | 230 | 7400 | 0.86 | 1.2 | 0.8 | 1.5 |
 | subaruwrc2008 | subaruwrc2008 | ● | 125 | 7400 | 0.86 | 1.14 | 0.77 | 1.5 |
 | corvettec3 | corvettec3 |  | 280 | 6200 | 0.85 | 1.04 | 0.81 | 1.5 |
 | infinity_q60 | infinity_q60 | ● | 195 | 6800 | 0.85 | 1.19 | 0.75 | 1.5 |
-| toyotayarisgr2020 | toyotayarisgr2020 | ● | 120 | 7200 | 0.85 | 1.04 | 0.81 | 1.5 |
+| G1E3 | toyotayarisgr2020 | ● | 120 | 7200 | 0.85 | 1.04 | 0.81 | 1.5 |
 | vantage | vantage | ● | 209 | 8000 | 0.85 | 1.2 | 0.75 | 1.5 |
-| mitsubishieclipse99 | mitsubishieclipse99 |  | 185 | 6500 | 0.85 | 1.14 | 0.75 | 0.5 |
-| mini | mini | ● | 130 | 6500 | 0.84 | 1.14 | 0.74 | 1.6 |
-| silvias15 | silvias15 | ● | 180 | 7500 | 0.83 | 1.11 | 0.74 | 1.5 |
-| silvias15_sp1 | – | ● | 180 | 7500 | 0.83 | 1.11 | 0.74 | 1.5 |
+| G64 | mitsubishieclipse99 |  | 185 | 6500 | 0.85 | 1.14 | 0.75 | 0.5 |
+| N14B | mini | ● | 130 | 6500 | 0.84 | 1.14 | 0.74 | 1.6 |
+| RS20T | silvias15 | ● | 180 | 7500 | 0.83 | 1.11 | 0.74 | 1.5 |
+| RS20T | – | ● | 180 | 7500 | 0.83 | 1.11 | 0.74 | 1.5 |
 | nissans30z | nissans30z |  | 249 | 7000 | 0.83 | 1.12 | 0.73 | 0.5 |
 | toyotasuprarz | toyotasuprarz | ● | 230 | 7000 | 0.82 | 1.1 | 0.73 | 1.5 |
 | auditt | auditt | ● | 160 | 6800 | 0.81 | 1.07 | 0.72 | 1.5 |
@@ -165,22 +165,22 @@ All 137 engines from the game data (part_stat_factors), largest first. The part 
 | porschesinger | porschesinger | ● | 150 | 7100 | 0.8 | 1.07 | 0.71 | 1.5 |
 | lexuslfa | lexuslfa |  | 160 | 9000 | 0.8 | 1.15 | 0.7 | 0.5 |
 | sr20 | – |  | 190 | 7200 | 0.79 | 1.09 | 0.69 | 0.5 |
-| fordfocusst2019 | fordfocusst2019 | ● | 109 | 6500 | 0.78 | 1.06 | 0.68 | 1.5 |
+| RDA | fordfocusst2019 | ● | 109 | 6500 | 0.78 | 1.06 | 0.68 | 1.5 |
 | subaruwrxsti | subaruwrxsti | ● | 204 | 8000 | 0.78 | 1.06 | 0.68 | 1.5 |
 | pontiactransam77 | pontiactransam77 |  | 270 | 5000 | 0.78 | 1.08 | 0.68 | 0.5 |
-| mazdarx7 | mazdarx7 | ● | 120 | 8300 | 0.77 | 1.03 | 0.68 | 1.5 |
-| mazdarx7_sp1 | – | ● | 120 | 8300 | 0.77 | 1.03 | 0.68 | 1.5 |
+| BM13 R | mazdarx7 | ● | 120 | 8300 | 0.77 | 1.03 | 0.68 | 1.5 |
+| BM13 R (P) | – | ● | 120 | 8300 | 0.77 | 1.03 | 0.68 | 1.5 |
 | toyotasupra2020 | toyotasupra2020 | ● | 140 | 7000 | 0.765 | 1.02 | 0.68 | 1.5 |
 | audirs6avantc7 | audirs6avantc7 | ● | 190 | 6700 | 0.75 | 1 | 0.66 | 1.5 |
 | audirs7 | audirs7 | ● | 190 | 6700 | 0.75 | 1 | 0.66 | 1.5 |
 | bmwm2g87 | bmwm2g87 | ● | 160 | 6800 | 0.75 | 1.15 | 0.66 | 1.5 |
 | bmwm3g81_touring | bmwm3g81_touring | ● | 160 | 6800 | 0.75 | 1.15 | 0.66 | 1.5 |
 | fordgt_mk2 | fordgt_mk2 | ● | 205 | 7000 | 0.75 | 0.99 | 0.67 | 1.5 |
-| lotuselise | lotuselise |  | 140 | 8200 | 0.75 | 1.15 | 0.66 | 1.5 |
+| 2ZG | lotuselise |  | 140 | 8200 | 0.75 | 1.15 | 0.66 | 1.5 |
 | mercedesbenzc63 | mercedesbenzc63 | ● | 367 | 6800 | 0.75 | 1 | 0.67 | 1.5 |
 | mitsubishievo9 | mitsubishievo9 | ● | 195 | 7500 | 0.75 | 1.02 | 0.66 | 1.5 |
 | suzukicarry | suzukicarry |  | 100 | 7800 | 0.75 | 1.15 | 0.66 | 1.5 |
-| mazdarx8 | mazdarx8 |  | 120 | 8300 | 0.75 | 1.05 | 0.65 | 0.5 |
+| BM13 | mazdarx8 |  | 120 | 8300 | 0.75 | 1.05 | 0.65 | 0.5 |
 | bmw_m3_e92_cabrio | bmw_m3_e92_cabrio | ● | 135 | 6800 | 0.74 | 1 | 0.66 | 1.5 |
 | bmw_m3_e92_gts | bmw_m3_e92_gts | ● | 135 | 6800 | 0.74 | 1 | 0.66 | 1.5 |
 | mitsubishievox | mitsubishievox | ● | 134 | 7800 | 0.74 | 1.02 | 0.64 | 1.5 |

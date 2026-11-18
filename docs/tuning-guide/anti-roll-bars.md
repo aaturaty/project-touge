@@ -27,6 +27,8 @@ Markers: ● confirmed in game or in the game code, ◐ from Touge's simulation 
 | Both bars up | Less body roll and a quicker steering response. The limit hardly changes, because total transfer stays the same. | One-sided bumps and gutters throw the car; the inside wheel unloads and spins. | ● A very stiff rear bar makes the car sensitive to bumps. ◐ Both very soft was slower and unstable. |
 | Both bars down | More roll, and the car calms down over bumps. | Transitions (S-bends) get lazy and the car wallows. | ◐ The simulation's flat-circle test does not show bump sensitivity; the game decides. |
 
+![Touge's roll picture under Tune › Adjust › Anti-roll bars ◐ with the front bar 60 % stiffer. Roll drops from 0.47° to 0.40° per g, and the front bar's share of the roll stiffness rises from 26 % to 36 %.](kuvat/vakaaja.webp)
+
 ## Front/rear split
 
 **How the game calculates it:**
@@ -45,6 +47,8 @@ Markers: ● confirmed in game or in the game code, ◐ from Touge's simulation 
 | Rear bar | The rear rotates the car: sharper turn-in and less throttle understeer. Faster on a short car. | The rear lets go "like a switch" in side load, a long car understeers on the brakes, and mid-corner throttle spins it. | ● A soft front and a stiff rear has been fastest on short cars. ◐ Softening a stiff rear bar a lot cost several seconds. ● RX-7 FD 16/58 → 16/66 set the route record 6:07.36 on 17 Nov (native −1.1 s ◐, 74 already slower). |
 
 The direction is the same as in a real car, but the limit is car-specific. Start from the car's wheelbase, not from a general "stiffer front" rule.
+
+![The same change mid-corner in the situation view ◐: the front axle's share of the load transfer rises from 52 % to 54 %, towards understeer. Unlike a damper change, a bar change moves where the share settles.](kuvat/tilanne_vakaaja.webp)
 
 ## Effect on other settings
 

@@ -27,6 +27,8 @@ Merkit: ● vahvistettu pelissä tai pelin koodissa, ◐ Tougen simulaatiomallis
 | Molemmat vakaajat ylös | Vähemmän kallistusta ja nopeampi ohjausvaste. Raja tuskin muuttuu, koska kokonaissiirto pysyy samana. | Toispuoleiset kuopat ja gutterit heittävät autoa; sisäpyörä kevenee ja sutii. | ● Hyvin jäykkä takavakaaja tekee autosta kuoppaherkän. ◐ Molemmat hyvin pehmeinä oli hitaampi ja epävakaa. |
 | Molemmat vakaajat alas | Enemmän kallistusta, ja auto rauhoittuu kuopissa. | Siirtymät (S-mutkat) laiskistuvat ja auto huojuu. | ◐ Fysiikkakoodin tasainen ympyrä ei näytä kuoppaherkkyyttä; peli ratkaisee. |
 
+![Tougen kallistuskuva kohdassa Säädä › Säätimet › Vakaajat ◐, etuvakaaja 60 % jäykempänä. Kallistus pienenee 0,47°:sta 0,40°:een g:tä kohden, ja etuvakaajan osuus kallistusjäykkyydestä nousee 26 %:sta 36 %:iin.](kuvat/vakaaja.webp)
+
 ## Etu–taka-jako
 
 **Näin peli laskee:**
@@ -45,6 +47,8 @@ Merkit: ● vahvistettu pelissä tai pelin koodissa, ◐ Tougen simulaatiomallis
 | Takavakaaja | Perä kääntää autoa: terävämpi sisäänohjaus ja vähemmän kaasu-aliohjausta. Nopeampi lyhyellä autolla. | Perä irtoaa "kuin katkaisijasta" sivukuormassa, pitkä auto aliohjaa jarrulla ja keskikohdan kaasu pyöräyttää sen. | ● Pehmeä etu ja jäykkä taka on ollut nopein lyhyillä autoilla. ◐ Jäykän takavakaajan reilu pehmennys maksoi useita sekunteja. ● RX-7 FD 16/58 → 16/66 ajoi reitin ennätyksen 6:07,36 17.11. (natiivi −1,1 s ◐, 74 jo hitaampi). |
 
 Suunta on sama kuin oikeassa autossa, mutta raja on autokohtainen. Aloita auton akselivälistä, älä yleisestä "jäykempi etu" -säännöstä.
+
+![Sama muutos mutkan keskellä tilannekuvassa ◐: etuakselin osuus kuormansiirrosta nousee 52 %:sta 54 %:iin eli aliohjauksen suuntaan. Toisin kuin vaimenninmuutos, vakaajamuutos siirtää kohtaa, johon osuus asettuu.](kuvat/tilanne_vakaaja.webp)
 
 ## Vaikutus muihin
 

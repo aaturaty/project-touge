@@ -45,7 +45,7 @@ Project Touge\
 
 - **Nothing outside the folder.** Touge writes only here. The one exception is Windows' WebView2, which keeps the window's browser cache in `%LOCALAPPDATA%\fi.projecttouge.app`. It holds no tunes or runs.
 - **Earlier versions are only read.** On first start Touge looks for an earlier Project Touge next to it and on your Desktop, Downloads and Documents and copies your data from it. The old folder stays as it was.
-- **The game is not touched.** Touge never writes to the game or its folder. Game physics only copies the game's physics file into `Natiivi\`.
+- **The game is not touched.** Touge never writes to the game or its folder.
 - **Move, back up, remove.** Copy the folder to move or back it up. Delete it to uninstall, and the cache folder above if you want it gone too.
 
 ## User guide

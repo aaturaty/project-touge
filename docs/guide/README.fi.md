@@ -455,7 +455,7 @@ Kuvat ovat englanninkielisestä näkymästä; suomeksi nappien nimet ovat suluis
 | Tiedosto | Sisältö | Mistä se tehdään |
 |---|---|---|
 | `….tune.json` | setupin buildi ja lopulliset pelin arvot | Setup-valikko → **Share and import…** (Jaa ja tuo…) |
-| `….chassis.json`, `….gears.json` | oma alustapreset tai oma välitysprofiili | Setup-valikko → **Share and import…** |
+| `….chassis.json`, `….gears.json` | oma alustapreset tai oma välitysprofiili (vanhat molemmat sisältävät `….preset.json`-tiedostot tuodaan edelleen) | Setup-valikko → **Share and import…** |
 | `….route.json` | oma reitti splitteineen, lähtö- ja maalikuvineen ja kuvauksineen | **Share and import…** tai Ajanotto → Reitit → **Share route** (Jaa reitti) |
 | `….run.json` | yksi maaliin ajettu ajo omalla reitillä haamuksi | Ajanotto → Analysoi → Ajovertailu → **Share run A** (Jaa ajo A) |
 
@@ -467,7 +467,7 @@ Jokainen tallentamasi tiedosto menee **`Shared`**-kansioon Project Touge.exe:n v
 
 ![Setup-valikko: Share and import…](img/en/601-share-menu.webp)
 
-2. Ikkuna aukeaa **Share**-välilehdelle (Jaa). Valitse kohdasta **What to share** (Mitä jaetaan) **This tune** (Tämä tune), **Chassis preset** (Alustapreset), **Gearing profile** (Välitysprofiili) tai **Own route** (Oma reitti). Jos presettejä tai reittejä on useita, valitse haluamasi samalla rivillä olevasta listasta.
+2. Ikkuna aukeaa **Share**-välilehdelle (Jaa). Valitse kohdasta **What to share** (Mitä jaetaan) **This tune** (Tämä tune), **Chassis preset** (Alustapreset), **Gearing profile** (Välitysprofiili) tai **Own route** (Oma reitti). Rivit, joille sinulla ei vielä ole mitään, ovat himmeinä ja kertovat, mistä sellaisen tekee. Jos presettejä tai reittejä on useita, valitse haluamasi samalla rivillä olevasta listasta.
 3. Alla oleva nimikenttä on nimi, jonka vastaanottaja näkee. Sen muuttaminen muuttaa vain jaettavaa kopiota, ei omaa setuppiasi tai presettiäsi.
 4. Kirjoita halutessasi **Your name (optional)** (Sinun nimesi, valinnainen). Se näkyy tiedoston avaajalle. Tyhjänä tiedosto jaetaan ilman nimeä.
 5. **Save as file** (Tallenna tiedostoksi) tallentaa tiedoston. Touge kertoo, minne se tallentui, esim. `Shared\Touge AE86.tune.json`.

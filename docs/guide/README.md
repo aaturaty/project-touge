@@ -451,7 +451,7 @@ From 0.11 on, Touge can save what you made as small files that a friend opens in
 | File | What it holds | Where you make it |
 |---|---|---|
 | `….tune.json` | the build and the final game values of a setup | Setup menu → **Share and import…** |
-| `….chassis.json`, `….gears.json` | an own chassis preset or an own gearing profile | Setup menu → **Share and import…** |
+| `….chassis.json`, `….gears.json` | an own chassis preset or an own gearing profile (older `….preset.json` files with both still import) | Setup menu → **Share and import…** |
 | `….route.json` | an own route with its splits, start and finish images and description | **Share and import…**, or **Share route** in Time → Routes |
 | `….run.json` | one finished run on an own route, to race as a ghost | Time → Analyse → Run comparison → **Share run A** |
 
@@ -463,7 +463,7 @@ Every file you save goes to the **`Shared`** folder next to Project Touge.exe. F
 
 ![The Setup menu: Share and import…](img/en/601-share-menu.webp)
 
-2. The window opens on the **Share** tab. Under **What to share**, pick **This tune**, a **Chassis preset**, a **Gearing profile** or an **Own route**. When you have several presets or routes, pick the one you want from the list in the same row.
+2. The window opens on the **Share** tab. Under **What to share**, pick **This tune**, a **Chassis preset**, a **Gearing profile** or an **Own route**. Rows you have nothing for yet are greyed out and say where to make one. When you have several presets or routes, pick the one you want from the list in the same row.
 3. The name field below holds the name the other driver sees. Changing it changes only the shared copy, not your own setup or preset.
 4. If you like, type **Your name (optional)**. It is shown to the person who opens the file. Leave it empty to share without a name.
 5. **Save as file** saves the file. Touge says where it saved it, for example `Shared\Touge AE86.tune.json`.

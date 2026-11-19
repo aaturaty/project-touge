@@ -27,7 +27,7 @@ Markers: ● confirmed in game or in the game code, ◐ from Touge's simulation 
 | Both bars up | Less body roll and a quicker steering response. The limit hardly changes, because total transfer stays the same. | One-sided bumps and gutters throw the car; the inside wheel unloads and spins. | ● A very stiff rear bar makes the car sensitive to bumps. ◐ Both very soft was slower and unstable. |
 | Both bars down | More roll, and the car calms down over bumps. | Transitions (S-bends) get lazy and the car wallows. | ◐ The simulation's flat-circle test does not show bump sensitivity; the game decides. |
 
-![Touge's roll picture under Tune › Adjust › Anti-roll bars ◐ with the front bar 60 % stiffer. Roll drops from 0.47° to 0.40° per g, and the front bar's share of the roll stiffness rises from 26 % to 36 %.](kuvat/vakaaja.webp)
+![Touge's roll picture under Tune › Adjust › Chassis › Anti-roll bars ◐ with the front bar 60 % stiffer. Roll drops from 0.47° to 0.40° per g, and the front bar's share of the roll stiffness rises from 26 % to 36 %.](kuvat/vakaaja.webp)
 
 ## Front/rear split
 

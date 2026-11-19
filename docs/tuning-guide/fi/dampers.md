@@ -29,7 +29,7 @@ Merkit: ● vahvistettu pelissä tai pelin koodissa, ◐ Tougen simulaatiomallis
 | Yli 0,1 m/s | Kuopat, reunat, gutterit, pientareen yli ajo | fast bump ja fast rebound (slow vaikuttaa polveen asti) |
 | Pitkän mutkan keskikohta | Liike on pysähtynyt | ei mikään: vaimentimet eivät tee mitään |
 
-![Tougen vaimenninkuva kohdassa Säädä › Säätimet › Iskunvaimentimet ◐. Viivan jyrkkyys on säätö: alle 0,1 m/s:n polven pätee hidas arvo, sen yli nopea. Ohjaus, jarrutus ja kaasu pysyvät hitaalla kaistalla, kun taas 3 cm:n töyssy ulottuu nopealle alueelle. Alla korin vaste töyssyyn jousittamaton massa ja rengas mukana.](kuvat/isku.webp)
+![Tougen vaimenninkuva kohdassa Säädä › Säädä › Alusta › Iskunvaimentimet ◐. Viivan jyrkkyys on säätö: alle 0,1 m/s:n polven pätee hidas arvo, sen yli nopea. Ohjaus, jarrutus ja kaasu pysyvät hitaalla kaistalla, kun taas 3 cm:n töyssy ulottuu nopealle alueelle. Alla korin vaste töyssyyn jousittamaton massa ja rengas mukana.](kuvat/isku.webp)
 
 ## Slow ja fast bump
 

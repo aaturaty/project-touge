@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.13.0 beta (2026-11-19)
+
+- **A tidy folder:** the Project Touge folder now holds only the program, the README, `Shared` (what you export or get from friends) and `Data` (everything Touge keeps for itself). Files have English names, the loose settings files are one `settings.json`, and each route keeps its runs and analysis in one folder. The first start moves your old files into `Data`, lists every move in `Data\Logs\migration.txt` and deletes nothing. An older version cannot read the new folder.
+- **Lighter while you drive:** the main window no longer redraws its timer on every display frame when the game is the active window, and the screen reader runs just above normal priority instead of the highest one.
+- **Less clutter over time:** a dated copy of your tunes only when they changed (one per day, 14 days), very short unfinished runs are not stored and other unfinished runs are removed after 14 days. Finished runs are always kept.
+- **Preview versions:** About > **Offer preview versions too**. New versions are released as a preview first.
+- The Tuning Guide files left the folder: the guide is inside the program and on the guide pages.
+- Tune · Chassis: Preset mix is a row of blocks in 10 % steps; preset pickers look the same everywhere.
+- Fixed: brake balance fallback in Game physics, "has to close" dialogs from a caught analysis error, a deleted calibration coming back, exe file version.
+
 ## 0.12.2 beta (2026-11-19)
 
 - **Easier to read:** text is in IBM Plex Sans and numbers, units and value columns in Plex Mono. Grey filled buttons, selects and panels are gone, and secondary actions are plain links.

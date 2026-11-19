@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.12.2 beta (2026-11-19)
+
+- **Easier to read:** text is in IBM Plex Sans and numbers, units and value columns in Plex Mono. Grey filled buttons, selects and panels are gone, and secondary actions are plain links.
+- **Things where you look for them:** chassis stiffness sits under Preset mix, Play and Compact on the situation timeline, Import and Share and import under Save as, the stopwatch and manual entry under Import, timing Settings inside the timer section, and Refresh and Open report under Target. Splits come before Ghosts, and the Overview's share, read and copy actions sit above the page navigation.
+- **Setup card:** shows class, engine, gearbox, weight, route, best run and whether the setup is modified, with Open as the main action.
+- **Clearer wording:** Enter pre-existing build, Changed / Show all, Average of last 5, and the controller actions listed as key chips. Changes to try now shows in every mode, so the Try changes link is gone.
+- **Steadier turning data from the timer:** the minimap rotation is now measured on the inner part of the map. A tilted minimap was read about 15 % low before (measured on circle runs in the game). Run analysis corrects older runs too, so lateral g and the symptoms in run analysis change slightly.
+- Polish: update notice, Getting started strip, Overview tabs and buttons, timing settings layout, leaderboard header and Enter build fields.
+- The user guide uses the new names.
+
 ## 0.12.1 beta (2026-11-19)
 
 - **Your own car in the pictures:** Build shows each car's real side outline, drawn from the game's own car model, in the side view with axle loads, the suspension picture, the Aero by speed picture and the Tune situation view. Tall cars such as vans are scaled to fit.

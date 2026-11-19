@@ -1,6 +1,6 @@
 <title>Sharing in Project Touge</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="How to share tunes, presets, routes and runs in Project Touge 0.11, and how to race a friend's run as a ghost.">
+<meta name="description" content="How to share tunes, presets, routes and runs in Project Touge 0.12, and how to race a friend's run as a ghost.">
 <link rel="icon" type="image/png" href="assets/touge-64.png">
 <style>
 @font-face{font-family:"VCR OSD Mono";src:url(assets/VCR-OSD-Mono.woff2) format("woff2");font-display:swap}
@@ -124,12 +124,12 @@ footer{border-top:1px solid var(--viiva);margin-top:56px;padding-block:22px 40px
     <div class="brand"><span class="kanji" aria-hidden="true">峠</span><div><small>choriso's</small><b>Project Touge</b></div></div>
     <h1>Share your <em>tune</em>, your <em>route</em> and your <em>run</em></h1>
     <p class="lead">Touge saves what you made as a small file. You send the file however you like, your friend opens it in their own Touge, and a shared run becomes a ghost they can race.</p>
-    <span class="stamp">v0.11 BETA</span>
+    <span class="stamp">v0.12 BETA</span>
 
     <div class="flow" aria-label="How a shared file travels">
       <div class="stop"><h3>You</h3><p><b>Save</b> a tune, preset, route or run. It lands in the <code>Shared</code> folder.</p></div>
       <div class="arrow" aria-hidden="true">→</div>
-      <div class="stop mid"><h3>The file</h3><p>Send it any way you like: Discord, a chat, a USB stick. Touge uploads nothing itself.</p><code>RX-7 FD North.tune.json</code></div>
+      <div class="stop mid"><h3>The file</h3><p>Send it any way you like: Discord, a chat, a USB stick. Touge uploads nothing itself.</p><code>Touge AE86.tune.json</code></div>
       <div class="arrow" aria-hidden="true">→</div>
       <div class="stop"><h3>Your friend</h3><p>Drops it in <code>Shared\Inbox</code>, <b>previews</b> it and clicks <b>Add</b>.</p></div>
     </div>
@@ -139,7 +139,7 @@ footer{border-top:1px solid var(--viiva);margin-top:56px;padding-block:22px 40px
 <main class="in">
   <div class="types">
     <div class="type"><span class="ext">.tune.json · TOUGE1: code</span><b>Tune</b><span>The build and every final game value of a setup, so your friend types the same numbers into the game.</span><small>Setup menu → Share and import…</small></div>
-    <div class="type"><span class="ext">.chassis · .gears · .preset.json</span><b>Preset</b><span>Your own chassis preset, gearing profile, or both in one file.</span><small>Setup menu → Share and import…</small></div>
+    <div class="type"><span class="ext">.chassis · .gears.json</span><b>Preset</b><span>Your own chassis preset or gearing profile.</span><small>Setup menu → Share and import…</small></div>
     <div class="type"><span class="ext">.route.json</span><b>Route</b><span>An own route with its splits, start and finish images and description.</span><small>Share and import…, or Time → Routes → Share route</small></div>
     <div class="type"><span class="ext">.run.json</span><b>Run · ghost</b><span>One run that reached the finish, for your friend to race and compare against.</span><small>Time → Analyse → Run comparison → Share run A</small></div>
   </div>
@@ -153,24 +153,24 @@ footer{border-top:1px solid var(--viiva);margin-top:56px;padding-block:22px 40px
       <ol>
         <li>Open the setup you want to share.</li>
         <li>Click <b>Setup</b> at the top right and choose <b>Share and import…</b></li>
-        <li>Optional: type your name under <b>Name on shared files</b>. Your friend sees it on the file.</li>
-        <li>Click <kbd>Save tune file</kbd>. Touge tells you where it went, for example <code>Shared\RX-7 FD North.tune.json</code>.</li>
-        <li>Or click <kbd>Copy share code</kbd> and paste the <code>TOUGE1:</code> line straight into a chat message.</li>
-        <li>For presets, pick a chassis preset, a gearing profile or both and click <kbd>Save preset file</kbd>.</li>
-        <li><kbd>Open Shared folder</kbd> opens the folder, so you can drag the file into a message.</li>
+        <li>On the <b>Share</b> tab, pick what to share under <b>What to share</b>: <b>This tune</b>, a <b>Chassis preset</b>, a <b>Gearing profile</b> or an <b>Own route</b>. The name field changes only the shared copy.</li>
+        <li>Optional: type <b>Your name (optional)</b>. Your friend sees it on the file.</li>
+        <li>Click <kbd>Save as file</kbd>. Touge tells you where it went, for example <code>Shared\Touge AE86.tune.json</code>.</li>
+        <li>Or use <b>Or share as text</b>: click the copy button next to the <code>TOUGE1:</code> line and paste it straight into a chat message.</li>
+                <li><kbd>Open Shared folder</kbd> opens the folder, so you can drag the file into a message.</li>
       </ol>
-      <figure><span class="shot s"><img src="img/601-share-menu.webp" alt="The Setup menu with Share and import…" width="620" height="450"></span><figcaption>Setup menu</figcaption></figure>
+      <figure><span class="shot s"><img src="img/601-share-menu.webp" alt="The Setup menu with Share and import…" width="354" height="292"></span><figcaption>Setup menu</figcaption></figure>
     </div>
     <div class="step">
       <div>
         <p>The tune holds the build and the final values you type into the game, including changes you have not saved yet. A ready-made preset's parameters are not included, so your friend sees exactly your numbers. The diff travels inside the tune.</p>
       </div>
-      <figure><span class="shot m"><img src="img/602-share-dialog.webp" alt="The Share and import window: tune, own presets, own route, import and name" width="1280" height="1704" loading="lazy"></span><figcaption>Share and import</figcaption></figure>
+      <figure><span class="shot m"><img src="img/602-share-dialog.webp" alt="The Share tab of Share and import: what to share, the name, your name and the share text" width="640" height="686" loading="lazy"></span><figcaption>Share and import</figcaption></figure>
     </div>
 
     <h3 class="step-h">A route</h3>
     <div class="step wide">
-      <p>Pick the route under <b>Own route</b> and click <kbd>Save route file</kbd>, or open <b>Time → Routes</b>, choose the route and click <kbd>Share route</kbd>. The six routes that come with Touge count as own routes too.</p>
+      <p>Pick <b>Own route</b> on the Share tab and click <kbd>Save as file</kbd>, or open <b>Time → Routes</b>, choose the route and click <kbd>Share route</kbd>. The six routes that come with Touge count as own routes too.</p>
     </div>
 
     <h3 class="step-h">A run, to race as a ghost</h3>
@@ -180,8 +180,8 @@ footer{border-top:1px solid var(--viiva);margin-top:56px;padding-block:22px 40px
         <li>Choose the run you want to share as <b>Run A</b>, for example your record.</li>
         <li>Click <kbd>Share run A</kbd>. Touge saves <code>Shared\&lt;route&gt; &lt;time&gt;.run.json</code>.</li>
       </ol>
-      <figure><span class="shot"><img src="img/603-share-run.webp" alt="Run comparison with run 3 as A and the Share run A button" width="1600" height="127" loading="lazy"></span></figure>
-      <figure><span class="shot s"><img src="img/604-run-saved.webp" alt="Saved: Shared\North Touge 6_08.89.run.json" width="850" height="146" loading="lazy"></span></figure>
+      <figure><span class="shot"><img src="img/603-share-run.webp" alt="Run comparison with run 3 as A and the Share run A button" width="1288" height="126" loading="lazy"></span></figure>
+      <figure><span class="shot s"><img src="img/604-run-saved.webp" alt="Saved: Shared\North Touge v2 6_08.89.run.json" width="444" height="87" loading="lazy"></span></figure>
       <p>Only runs that reached the finish on an own route can be shared. Your friend needs the same route. If it is one of the six included routes they already have it; otherwise send the route file along with the run.</p>
     </div>
   </section>
@@ -193,15 +193,15 @@ footer{border-top:1px solid var(--viiva);margin-top:56px;padding-block:22px 40px
     <div class="ways">
       <div class="way best"><em>Easiest</em><b>Drop in Shared\Inbox</b><span>Save the file in the <code>Shared\Inbox</code> folder. Touge notices it within a few seconds and shows <b>Review</b>.</span></div>
       <div class="way"><b>Drag onto Touge</b><span>Drag the file from Discord or your Downloads folder onto the Touge window.</span></div>
-      <div class="way"><b>Import or paste</b><span><kbd>Import file…</kbd> in Share and import…, or <kbd>Paste share code</kbd> for a <code>TOUGE1:</code> line.</span></div>
+      <div class="way"><b>Import or paste</b><span>On the <b>Import</b> tab, drop the file on the box or use <kbd>Choose file…</kbd>, or paste a <code>TOUGE1:</code> line with <kbd>Ctrl+V</kbd>.</span></div>
     </div>
 
     <div class="step">
       <div>
-        <p>When a file lands in the Inbox, Touge says so. <kbd>Review</kbd> opens <b>Share and import…</b> with the waiting files listed. Click <kbd>Preview</kbd> on one.</p>
-        <figure><span class="shot s"><img src="img/605-inbox-toast.webp" alt="4 new shared files in Shared\Inbox, with a Review button" width="888" height="174" loading="lazy"></span></figure>
+        <p>When a file lands in the Inbox, Touge says so. <kbd>Review</kbd> opens the <b>Import</b> tab, where <b>Waiting in your Shared folder</b> lists the files. Click <kbd>View</kbd> on one, or <kbd>Skip</kbd> to set it aside.</p>
+        <figure><span class="shot s"><img src="img/605-inbox-toast.webp" alt="New shared files in Shared\Inbox, with a Review button" width="444" height="82" loading="lazy"></span></figure>
       </div>
-      <figure><span class="shot m"><img src="img/606-inbox-list.webp" alt="Four files waiting in Shared\Inbox, each with a Preview button" width="1212" height="776" loading="lazy"></span><figcaption>Shared\Inbox</figcaption></figure>
+      <figure><span class="shot m"><img src="img/606-inbox-list.webp" alt="Files waiting in Shared\Inbox, each with View and Skip buttons" width="640" height="700" loading="lazy"></span><figcaption>Shared\Inbox</figcaption></figure>
     </div>
 
     <div class="step">
@@ -215,7 +215,7 @@ footer{border-top:1px solid var(--viiva);margin-top:56px;padding-block:22px 40px
         <p style="margin-top:14px">A <b>tune</b> goes to your setups. When it opens, Touge checks its own numbers against the file and says <b>The imported tune matches the sharer's game values</b>, or lists what it calculates differently. If your open build is unsaved, Touge asks first.</p>
         <p>A <b>preset</b> goes to your own chassis presets and gearing profiles.</p>
       </div>
-      <figure><span class="shot m"><img src="img/612-tune-preview.webp" alt="Preview of a shared tune: type, name, car, class, model time, game values, shared by, made with" width="1280" height="992" loading="lazy"></span><figcaption>Preview of a tune</figcaption></figure>
+      <figure><span class="shot m"><img src="img/612-tune-preview.webp" alt="Preview of a shared tune: type, name, car, class, model time, game values, shared by, made with" width="640" height="510" loading="lazy"></span><figcaption>Preview of a tune</figcaption></figure>
     </div>
   </section>
 
@@ -231,18 +231,18 @@ footer{border-top:1px solid var(--viiva);margin-top:56px;padding-block:22px 40px
           <li>Click <kbd>Add and show</kbd>. The ghost is saved in <code>Runs\Ghosts</code> and listed under <b>Ghosts</b> on the route.</li>
         </ol>
       </div>
-      <figure><span class="shot m"><img src="img/609-run-preview.webp" alt="Preview of a shared run: route North Touge in your routes, time 6:08.9 unverified" width="1280" height="1232" loading="lazy"></span><figcaption>Preview of a run</figcaption></figure>
+      <figure><span class="shot m"><img src="img/609-run-preview.webp" alt="Preview of a shared run: route North Touge in your routes, time 6:08.9 unverified" width="640" height="614" loading="lazy"></span><figcaption>Preview of a run</figcaption></figure>
     </div>
 
     <div class="step wide">
-      <figure><span class="shot"><img src="img/608-route-added.webp" alt="The added route North Touge in Time → Routes" width="1600" height="1000" loading="lazy"></span><figcaption>Time → Routes after adding the route</figcaption></figure>
+      <figure><span class="shot"><img src="img/608-route-added.webp" alt="The added route North Touge in Time → Routes" width="1440" height="1000" loading="lazy"></span><figcaption>Time → Routes after adding the route</figcaption></figure>
     </div>
 
     <div class="step wide">
       <p>Click <kbd>Race</kbd> on the ghost. From your next run on, the timer window shows how far ahead or behind the ghost you are. Click again to stop racing it; <kbd>Delete</kbd> removes it.</p>
-      <figure><span class="shot"><img src="img/610-ghost-race.webp" alt="Ghosts: 6:08.9 choriso, unverified, Racing this ghost" width="1600" height="275" loading="lazy"></span></figure>
+      <figure><span class="shot"><img src="img/610-ghost-race.webp" alt="Ghosts: 6:08.9, unverified, Racing this ghost" width="936" height="132" loading="lazy"></span></figure>
       <p style="margin-top:18px">After a run, open <b>Analyse → Run comparison</b> and pick the ghost as <b>Run B</b>. The gap chart and the map show where you gain and where you lose against it.</p>
-      <figure><span class="shot"><img src="img/611-compare-ghost.webp" alt="Run comparison: own run 40 as A, ghost choriso 6:08.89 as B" width="1600" height="717" loading="lazy"></span><figcaption>Your run against the ghost</figcaption></figure>
+      <figure><span class="shot"><img src="img/611-compare-ghost.webp" alt="Run comparison: own run 40 as A, the ghost 6:08.89 as B" width="1288" height="973" loading="lazy"></span><figcaption>Your run against the ghost</figcaption></figure>
     </div>
   </section>
 
@@ -252,9 +252,9 @@ footer{border-top:1px solid var(--viiva);margin-top:56px;padding-block:22px 40px
 <pre class="tree"><b>Project Touge\</b>
 ├─ Project Touge.exe
 ├─ <b>Shared\</b>              <i>files you saved for sharing</i>
-│  ├─ <span class="y">RX-7 FD North.tune.json</span>
+│  ├─ <span class="y">Touge AE86.tune.json</span>
 │  ├─ <span class="y">North Touge.route.json</span>
-│  ├─ <span class="y">North Touge 6_08.89.run.json</span>
+│  ├─ <span class="y">North Touge v2 6_08.89.run.json</span>
 │  └─ <b>Inbox\</b>             <i>drop files you receive here</i>
 │     ├─ Imported\       <i>added files move here</i>
 │     └─ Ignored\        <i>ignored files move here</i>
@@ -270,5 +270,5 @@ footer{border-top:1px solid var(--viiva);margin-top:56px;padding-block:22px 40px
     </div>
   </section>
 
-  <footer>Project Touge 0.11 beta. Screenshots are from Touge 0.11 with an RX-7 FD on North Touge; your numbers will differ. Touge reads the game's screen only and never changes the game.</footer>
+  <footer>Project Touge 0.12 beta. Screenshots are from Touge 0.12 with an AE86 on North Touge v2; your numbers will differ. Touge reads the game's screen only and never changes the game.</footer>
 </main>

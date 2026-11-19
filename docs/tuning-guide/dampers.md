@@ -29,7 +29,7 @@ Markers: ● confirmed in game or in the game code, ◐ from Touge's simulation 
 | Above 0.1 m/s | Bumps, kerbs, gutters, driving over the verge | fast bump and fast rebound (slow acts up to the knee) |
 | Middle of a long corner | The motion has stopped | none: the dampers do nothing |
 
-![Touge's damper picture under Tune › Adjust › Dampers ◐. The slope of each line is the setting: below the 0.1 m/s knee the slow value applies, above it the fast one. Steering, braking and throttle stay in the slow band, while a 3 cm bump reaches the fast range. Below it, the body's response to that bump, with the unsprung mass and the tyre included.](kuvat/isku.webp)
+![Touge's damper picture under Tune › Adjust › Chassis › Dampers ◐. The slope of each line is the setting: below the 0.1 m/s knee the slow value applies, above it the fast one. Steering, braking and throttle stay in the slow band, while a 3 cm bump reaches the fast range. Below it, the body's response to that bump, with the unsprung mass and the tyre included.](kuvat/isku.webp)
 
 ## Slow and fast bump
 

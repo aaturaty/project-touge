@@ -41,7 +41,7 @@ Muutama pelin fysiikan piirre muuttaa tavallisia säätöneuvoja. Ne toistuvat l
 2. **Aloita** presetistä, kuten touge weapon, ja aja pelissä muutama kierros.
 3. **Etsi vaihe**, jossa auto ei tee mitä haluat: jarrutus, sisääntulo, keskikohta, ulostulo, suora tai kuopat ja gutterit.
 4. **Valitse oire** Säädä-välilehden Oire-näkymässä. Se näyttää ensin ja sitten kokeiltavan muutoksen ja linkittää tämän oppaan lukuun, joka selittää sen.
-5. **Muuta yhtä asiaa kerrallaan** ja aja sama mutka samalla vaihteella. Siirrä säätö peliin Yleiskuva-näkymällä.
+5. **Muuta yhtä asiaa kerrallaan** ja aja sama mutka samalla vaihteella. Aseta säätö pelissä Yleiskuva-näkymän listan mukaan.
 
 ## Näin luet luvun
 

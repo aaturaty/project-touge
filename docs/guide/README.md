@@ -29,9 +29,11 @@ Project Touge is one program file, **Project Touge.exe**. The timer, auto splits
 
 1. Unzip the download into a folder of its own, anywhere except `Program Files` (for example on the Desktop or next to your games).
 2. Double-click **Project Touge.exe**. Touge opens in its own window; close the window to quit.
-3. On the first start Touge creates its data folders next to the exe and adds the six included routes to `Routes`.
+3. On the first start Touge creates the `Data` folder next to the exe and adds the six included routes to `Data\Routes`.
 
 Windows 10 or 11 with Microsoft Edge WebView2 is enough. If SmartScreen warns about an unknown publisher, choose **More info → Run anyway**.
+
+**Updating from 0.10 to 0.12**: press **Update now**, or copy the new **Project Touge.exe** over the old one. On its first start 0.13 moves your files into the new `Data` folder (see [Your data](#9-your-data)).
 
 **Updating from 0.9.x**
 
@@ -345,7 +347,7 @@ The chip next to **Settings** says what the game timer is doing, for example **W
 
 - **Auto splits** on or off, and **Mute timer** when you just want to cruise. Under them, the status lines show the server, the game timer, the screen reader and the free disk space.
 - **Controller**: press any button on the pad, then **Learn start / split / undo button**. They work while the game has focus.
-- In Touge's own **Settings > Timing** (new in 0.12): **Minimap reading rate** 15 Hz (default) or 30 Hz, where 30 Hz gives finer turning and slide data but uses more CPU, and **Save minimap images** for more precise lines in run analysis (about 10 MB per run, kept in `Logs\naytonlukija` for one day and at most 200 MB, oldest removed first; off by default). Both take effect the next time the game timer starts.
+- In Touge's own **Settings > Timing** (new in 0.12): **Minimap reading rate** 15 Hz (default) or 30 Hz, where 30 Hz gives finer turning and slide data but uses more CPU, and **Save minimap images** for more precise lines in run analysis (about 10 MB per run, kept in `Data\Logs\Reader` for one day and at most 200 MB, oldest removed first; off by default). Both take effect the next time the game timer starts.
 - **Driving view** shows the timer large; **Pop out timer** puts it in its own small window.
 - **Import** brings in an older timer file or LiveSplit splits, or restores runs from the backup. **Enter a time by hand** is there for runs timed elsewhere.
 
@@ -533,7 +535,7 @@ A run then shows which route it belongs to. If it says *not in your routes*, imp
 
 ![Preview of a shared run](img/en/609-run-preview.webp)
 
-The run is saved as a ghost in `Runs\Ghosts` and listed under **Ghosts** on the route in Time → Routes:
+The run is saved as a ghost in `Data\Runs\Ghosts` and listed under **Ghosts** on the route in Time → Routes:
 
 - **Race** makes it your opponent. From the next run on, the timer window shows how far ahead or behind the ghost you are. Click again to stop racing it. **Delete** removes the ghost.
 - In **Analyse → Run comparison** the ghost can be **Run B**: the charts and the map show where you gain and lose against it.
@@ -546,30 +548,33 @@ A shared time cannot be verified, so ghosts are marked **unverified** and never 
 
 ## 9. Your data
 
-Project Touge is one folder. Everything it saves stays inside it, next to **Project Touge.exe**:
+Project Touge is one folder. Everything it saves stays inside it: what you share in `Shared`, everything else in `Data` (new in 0.13):
 
 ```text
 Project Touge\
 ├─ Project Touge.exe     the whole program
-├─ settings.json         language, window and choices
-├─ lukija.json           timer reading settings, once you change them
-├─ Tunes\                your setups, presets, notes and calibrations
-│  └─ Data\              automatic backup of your data
-├─ Runs\                 timed runs and their telemetry
-│  └─ Ghosts\            ghosts you have added
-├─ Routes\               the six included routes and your own
+├─ README.txt
 ├─ Shared\               files you saved for sharing
 │  └─ Inbox\             drop files you receive here
-├─ Natiivi\              only with Game physics (Experimental)
-└─ Logs\                 attach these when you report a problem
-   └─ naytonlukija\      minimap images, only if turned on (1 day, max 200 MB)
+└─ Data\                 everything Touge keeps for itself
+   ├─ settings.json      window, timer and reader settings
+   ├─ Tunes\             your setups, presets, notes and calibrations
+   │  └─ History\        automatic backup, one copy per day for 14 days
+   ├─ Routes\            the six included routes and your own
+   ├─ Runs\              timed runs and their analysis, one folder per route
+   │  └─ Ghosts\         ghosts you have added
+   ├─ Logs\              attach these when you report a problem
+   │  └─ Reader\         screen reader logs; minimap images only if turned on
+   ├─ Cache\             only with Game physics (Experimental)
+   └─ Legacy\            files from older versions that Touge no longer reads
 ```
 
 - **Nothing outside the folder.** Touge writes only here. The one exception is Windows' WebView2, which keeps the window's browser cache in `%LOCALAPPDATA%\fi.projecttouge.app`. It holds no tunes or runs.
+- **Updating keeps everything.** The first start of 0.13 moves your tunes, runs, routes and settings into `Data` and lists every move in `Data\Logs\migration.txt`. Nothing is deleted, files Touge no longer reads go to `Data\Legacy`, and an older version cannot read the new folder.
 - **Earlier versions are only read.** On first start Touge looks for an earlier Project Touge next to it and on your Desktop, Downloads and Documents and copies your data from it. The old folder stays as it was.
-- **The game is not touched.** Touge never writes to the game or its folder. Game physics only copies the game's physics file into `Natiivi\`.
+- **The game is not touched.** Touge never writes to the game or its folder. Game physics only copies the game's physics file into `Data\Cache\`.
 
-**Update**: press **Update now**, or replace `Project Touge.exe` and keep the data folders (see [Updating from 0.9.x](#1-before-you-start)). **Move or back up**: copy the whole folder. **Uninstall**: delete the folder, and the cache folder above if you want it gone too.
+**Update**: press **Update now**, or replace `Project Touge.exe` and keep `Data` and `Shared` (see [Updating from 0.9.x](#1-before-you-start)). **Move or back up**: copy the whole folder. **Uninstall**: delete the folder, and the cache folder above if you want it gone too.
 
 ## 10. When something is off
 

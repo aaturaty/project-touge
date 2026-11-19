@@ -31,9 +31,11 @@ Project Touge on yksi ohjelmatiedosto, **Project Touge.exe**. Ajanotto, automaat
 
 1. Pura lataus omaan kansioonsa mihin tahansa paitsi `Program Files` -kansioon (esimerkiksi työpöydälle tai pelien viereen).
 2. Kaksoisnapsauta **Project Touge.exe**. Touge avautuu omaan ikkunaansa; sulje ikkuna lopettaaksesi.
-3. Ensimmäisellä käynnistyksellä Touge luo datakansiot exen viereen ja lisää kuusi mukana tulevaa reittiä `Routes`-kansioon.
+3. Ensimmäisellä käynnistyksellä Touge luo `Data`-kansion exen viereen ja lisää kuusi mukana tulevaa reittiä kansioon `Data\Routes`.
 
 Windows 10 tai 11 ja Microsoft Edge WebView2 riittävät. Jos SmartScreen varoittaa tuntemattomasta julkaisijasta, valitse **Lisätietoja → Suorita silti**.
+
+**Päivitys versioista 0.10–0.12**: paina **Update now** tai kopioi uusi **Project Touge.exe** vanhan päälle. Ensimmäisellä käynnistyksellä 0.13 siirtää tiedostosi uuteen `Data`-kansioon (ks. [Datasi](#9-datasi)).
 
 **Päivitys versiosta 0.9.x**
 
@@ -347,7 +349,7 @@ LCD-kellon splittilista näyttää jokaisen osuuden vertailuajan, kun sinulla on
 
 - **Autosplit** päälle tai pois ja **Mykistä ajastin**, kun haluat vain ajella. Niiden alla tilarivit näyttävät palvelimen, pelikellon, näytönlukijan ja vapaan levytilan.
 - **Ohjain**: paina mitä tahansa ohjaimen nappia ja sitten **Opettele käynnistysnappi / splitti-nappi / peru-nappi**. Ne toimivat, kun peli on aktiivisena.
-- Tougen omissa **Asetukset > Ajanotto** -valinnoissa (uusi 0.12:ssa): **Minikartan lukutaajuus** 15 Hz (oletus) tai 30 Hz, joista 30 Hz antaa tarkemman kääntymis- ja luistodatan mutta käyttää enemmän prosessoria, sekä **Tallenna minikarttakuvat** ajoanalyysin tarkempaa linjaa varten (noin 10 Mt ajolta, säilyvät kansiossa `Logs\naytonlukija` vuorokauden ja enintään 200 Mt, vanhimmat poistuvat ensin; oletuksena pois). Molemmat tulevat voimaan, kun pelikello käynnistyy seuraavan kerran.
+- Tougen omissa **Asetukset > Ajanotto** -valinnoissa (uusi 0.12:ssa): **Minikartan lukutaajuus** 15 Hz (oletus) tai 30 Hz, joista 30 Hz antaa tarkemman kääntymis- ja luistodatan mutta käyttää enemmän prosessoria, sekä **Tallenna minikarttakuvat** ajoanalyysin tarkempaa linjaa varten (noin 10 Mt ajolta, säilyvät kansiossa `Data\Logs\Reader` vuorokauden ja enintään 200 Mt, vanhimmat poistuvat ensin; oletuksena pois). Molemmat tulevat voimaan, kun pelikello käynnistyy seuraavan kerran.
 - **Ajonäkymä** näyttää kellon isona; **Irrota ajastin** avaa sen omaan pieneen ikkunaan.
 - **Tuo** hakee vanhan kellon tiedoston tai LiveSplit-splitit tai palauttaa ajat varmuuskopiosta. **Syötä aika käsin** on muualla kellotettuja ajoja varten.
 
@@ -537,7 +539,7 @@ Ajon esikatselu kertoo, mille reitille ajo kuuluu. Jos siinä lukee *not in your
 
 ![Jaetun ajon esikatselu](img/en/609-run-preview.webp)
 
-Ajo tallentuu haamuksi kansioon `Runs\Ghosts` ja näkyy reitin kohdassa **Ghosts** (Haamut) näkymässä Ajanotto → Reitit:
+Ajo tallentuu haamuksi kansioon `Data\Runs\Ghosts` ja näkyy reitin kohdassa **Ghosts** (Haamut) näkymässä Ajanotto → Reitit:
 
 - **Race** (Kilpaile) tekee siitä vastustajasi. Seuraavasta ajosta alkaen aikaikkuna näyttää, kuinka paljon olet haamun edellä tai perässä. Uusi napsautus lopettaa kilpailun. **Delete** (Poista) poistaa haamun.
 - **Analysoi → Ajovertailussa** haamun voi valita **ajoksi B**: kaaviot ja kartta näyttävät, missä voitat ja häviät sille.
@@ -550,30 +552,33 @@ Jaettua aikaa ei voi todentaa, joten haamut merkitään vahvistamattomiksi (**un
 
 ## 9. Datasi
 
-Project Touge on yksi kansio. Kaikki, mitä se tallentaa, jää sen sisälle **Project Touge.exe**:n viereen:
+Project Touge on yksi kansio. Kaikki, mitä se tallentaa, jää sen sisälle: jaettavat kansioon `Shared`, kaikki muu kansioon `Data` (uutta 0.13:ssa):
 
 ```text
 Project Touge\
 ├─ Project Touge.exe     koko ohjelma
-├─ settings.json         kieli, ikkuna ja valinnat
-├─ lukija.json           ajanoton lukuasetukset, kun muutat niitä
-├─ Tunes\                setupit, presetit, muistiinpanot ja kalibroinnit
-│  └─ Data\              datasi automaattinen varmuuskopio
-├─ Runs\                 kellotetut ajot ja niiden telemetria
-│  └─ Ghosts\            lisäämäsi haamut
-├─ Routes\               kuusi mukana tulevaa reittiä ja omasi
+├─ README.txt
 ├─ Shared\               jakamista varten tallennetut tiedostot
 │  └─ Inbox\             pudota saamasi tiedostot tänne
-├─ Natiivi\              vain Pelin fysiikan (kokeellinen) kanssa
-└─ Logs\                 liitä nämä, kun ilmoitat ongelmasta
-   └─ naytonlukija\      minikarttakuvat, vain jos tallennus on päällä (1 vrk, enint. 200 Mt)
+└─ Data\                 kaikki, mitä Touge pitää itsellään
+   ├─ settings.json      ikkunan, ajanoton ja lukijan asetukset
+   ├─ Tunes\             setupit, presetit, muistiinpanot ja kalibroinnit
+   │  └─ History\        automaattinen varmuuskopio, yksi päivässä 14 päivän ajan
+   ├─ Routes\            kuusi mukana tulevaa reittiä ja omasi
+   ├─ Runs\              kellotetut ajot ja niiden analyysi, kansio per reitti
+   │  └─ Ghosts\         lisäämäsi haamut
+   ├─ Logs\              liitä nämä, kun ilmoitat ongelmasta
+   │  └─ Reader\         näytönlukijan lokit; minikarttakuvat vain, jos tallennus on päällä
+   ├─ Cache\             vain Pelin fysiikan (kokeellinen) kanssa
+   └─ Legacy\            vanhojen versioiden tiedostot, joita Touge ei enää lue
 ```
 
 - **Ei mitään kansion ulkopuolelle.** Touge kirjoittaa vain tänne. Ainoa poikkeus on Windowsin WebView2, joka pitää ikkunan selainvälimuistia kansiossa `%LOCALAPPDATA%\fi.projecttouge.app`. Siinä ei ole tunejasi eikä ajojasi.
+- **Päivitys säilyttää kaiken.** 0.13:n ensimmäinen käynnistys siirtää tunesi, ajosi, reittisi ja asetuksesi kansioon `Data` ja kirjaa jokaisen siirron tiedostoon `Data\Logs\migration.txt`. Mitään ei poisteta, tiedostot joita Touge ei enää lue menevät kansioon `Data\Legacy`, eikä vanhempi versio osaa lukea uutta kansiota.
 - **Aiemmat versiot vain luetaan.** Ensimmäisellä käynnistyksellä Touge etsii aiempaa Project Tougea viereisistä kansioista sekä Työpöydältä, Latauksista ja Tiedostoista ja kopioi datasi sieltä. Vanha kansio jää ennalleen.
-- **Peliin ei kosketa.** Touge ei kirjoita peliin eikä sen kansioon. Pelin fysiikka vain kopioi pelin fysiikkatiedoston kansioon `Natiivi\`.
+- **Peliin ei kosketa.** Touge ei kirjoita peliin eikä sen kansioon. Pelin fysiikka vain kopioi pelin fysiikkatiedoston kansioon `Data\Cache\`.
 
-**Päivitys**: paina **Update now** tai korvaa `Project Touge.exe` ja pidä datakansiot (ks. [Päivitys versiosta 0.9.x](#1-ennen-kuin-aloitat)). **Siirto tai varmuuskopio**: kopioi koko kansio. **Poisto**: poista kansio, ja halutessasi myös yllä mainittu välimuistikansio.
+**Päivitys**: paina **Update now** tai korvaa `Project Touge.exe` ja pidä kansiot `Data` ja `Shared` (ks. [Päivitys versiosta 0.9.x](#1-ennen-kuin-aloitat)). **Siirto tai varmuuskopio**: kopioi koko kansio. **Poisto**: poista kansio, ja halutessasi myös yllä mainittu välimuistikansio.
 
 ## 10. Kun jokin ei täsmää
 

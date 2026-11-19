@@ -83,6 +83,7 @@ main p{margin:0 0 14px;color:var(--sumu);max-width:72ch}
 main b{color:var(--kerma);font-weight:600}
 main i{color:var(--kerma);font-style:italic}
 main code{font:500 13px var(--body);background:var(--hiili-2);border:1px solid var(--viiva);padding:1px 5px;color:var(--korostus-kirkas)}
+main pre.code{font:500 13px/1.6 var(--body);background:var(--hiili-2);border:1px solid var(--viiva);padding:12px 14px;margin:0 0 16px;color:var(--korostus-kirkas);overflow-x:auto;white-space:pre}
 .mk{font-family:var(--sym);color:var(--sumu)}
 
 section.ch{padding-top:20px;margin-top:22px;border-top:1px solid var(--viiva)}
@@ -390,7 +391,20 @@ html[lang="en"] main[data-l="en"],html[lang="fi"] main[data-l="fi"]{display:bloc
 <section class="ch" id="en-9-your-data">
 <h2><span class="no">09</span>Your data</h2>
 <p>Project Touge is one folder. Everything it saves stays inside it, next to <b>Project Touge.exe</b>:</p>
-<p>``<code>text Project Touge\ ├─ Project Touge.exe     the whole program ├─ settings.json         language, window and choices ├─ lukija.json           timer reading settings, once you change them ├─ Tunes\                your setups, presets, notes and calibrations │  └─ Data\              automatic backup of your data ├─ Runs\                 timed runs and their telemetry │  └─ Ghosts\            ghosts you have added ├─ Routes\               the six included routes and your own ├─ Shared\               files you saved for sharing │  └─ Inbox\             drop files you receive here ├─ Natiivi\              only with Game physics (Experimental) └─ Logs\                 attach these when you report a problem    └─ naytonlukija\      minimap images, only if turned on (1 day, max 200 MB) </code>``</p>
+<pre class="code">Project Touge\
+├─ Project Touge.exe     the whole program
+├─ settings.json         language, window and choices
+├─ lukija.json           timer reading settings, once you change them
+├─ Tunes\                your setups, presets, notes and calibrations
+│  └─ Data\              automatic backup of your data
+├─ Runs\                 timed runs and their telemetry
+│  └─ Ghosts\            ghosts you have added
+├─ Routes\               the six included routes and your own
+├─ Shared\               files you saved for sharing
+│  └─ Inbox\             drop files you receive here
+├─ Natiivi\              only with Game physics (Experimental)
+└─ Logs\                 attach these when you report a problem
+   └─ naytonlukija\      minimap images, only if turned on (1 day, max 200 MB)</pre>
 <ul><li><b>Nothing outside the folder.</b> Touge writes only here. The one exception is Windows' WebView2, which keeps the window's browser cache in <code>%LOCALAPPDATA%\fi.projecttouge.app</code>. It holds no tunes or runs.</li><li><b>Earlier versions are only read.</b> On first start Touge looks for an earlier Project Touge next to it and on your Desktop, Downloads and Documents and copies your data from it. The old folder stays as it was.</li><li><b>The game is not touched.</b> Touge never writes to the game or its folder. Game physics only copies the game's physics file into <code>Natiivi\</code>.</li></ul>
 <p><b>Update</b>: press <b>Update now</b>, or replace <code>Project Touge.exe</code> and keep the data folders (see <a href="#1-before-you-start">Updating from 0.9.x</a>). <b>Move or back up</b>: copy the whole folder. <b>Uninstall</b>: delete the folder, and the cache folder above if you want it gone too.</p>
 </section>
@@ -627,7 +641,20 @@ html[lang="en"] main[data-l="en"],html[lang="fi"] main[data-l="fi"]{display:bloc
 <section class="ch" id="fi-9-datasi">
 <h2><span class="no">09</span>Datasi</h2>
 <p>Project Touge on yksi kansio. Kaikki, mitä se tallentaa, jää sen sisälle <b>Project Touge.exe</b>:n viereen:</p>
-<p>``<code>text Project Touge\ ├─ Project Touge.exe     koko ohjelma ├─ settings.json         kieli, ikkuna ja valinnat ├─ lukija.json           ajanoton lukuasetukset, kun muutat niitä ├─ Tunes\                setupit, presetit, muistiinpanot ja kalibroinnit │  └─ Data\              datasi automaattinen varmuuskopio ├─ Runs\                 kellotetut ajot ja niiden telemetria │  └─ Ghosts\            lisäämäsi haamut ├─ Routes\               kuusi mukana tulevaa reittiä ja omasi ├─ Shared\               jakamista varten tallennetut tiedostot │  └─ Inbox\             pudota saamasi tiedostot tänne ├─ Natiivi\              vain Pelin fysiikan (kokeellinen) kanssa └─ Logs\                 liitä nämä, kun ilmoitat ongelmasta    └─ naytonlukija\      minikarttakuvat, vain jos tallennus on päällä (1 vrk, enint. 200 Mt) </code>``</p>
+<pre class="code">Project Touge\
+├─ Project Touge.exe     koko ohjelma
+├─ settings.json         kieli, ikkuna ja valinnat
+├─ lukija.json           ajanoton lukuasetukset, kun muutat niitä
+├─ Tunes\                setupit, presetit, muistiinpanot ja kalibroinnit
+│  └─ Data\              datasi automaattinen varmuuskopio
+├─ Runs\                 kellotetut ajot ja niiden telemetria
+│  └─ Ghosts\            lisäämäsi haamut
+├─ Routes\               kuusi mukana tulevaa reittiä ja omasi
+├─ Shared\               jakamista varten tallennetut tiedostot
+│  └─ Inbox\             pudota saamasi tiedostot tänne
+├─ Natiivi\              vain Pelin fysiikan (kokeellinen) kanssa
+└─ Logs\                 liitä nämä, kun ilmoitat ongelmasta
+   └─ naytonlukija\      minikarttakuvat, vain jos tallennus on päällä (1 vrk, enint. 200 Mt)</pre>
 <ul><li><b>Ei mitään kansion ulkopuolelle.</b> Touge kirjoittaa vain tänne. Ainoa poikkeus on Windowsin WebView2, joka pitää ikkunan selainvälimuistia kansiossa <code>%LOCALAPPDATA%\fi.projecttouge.app</code>. Siinä ei ole tunejasi eikä ajojasi.</li><li><b>Aiemmat versiot vain luetaan.</b> Ensimmäisellä käynnistyksellä Touge etsii aiempaa Project Tougea viereisistä kansioista sekä Työpöydältä, Latauksista ja Tiedostoista ja kopioi datasi sieltä. Vanha kansio jää ennalleen.</li><li><b>Peliin ei kosketa.</b> Touge ei kirjoita peliin eikä sen kansioon. Pelin fysiikka vain kopioi pelin fysiikkatiedoston kansioon <code>Natiivi\</code>.</li></ul>
 <p><b>Päivitys</b>: paina <b>Update now</b> tai korvaa <code>Project Touge.exe</code> ja pidä datakansiot (ks. <a href="#1-ennen-kuin-aloitat">Päivitys versiosta 0.9.x</a>). <b>Siirto tai varmuuskopio</b>: kopioi koko kansio. <b>Poisto</b>: poista kansio, ja halutessasi myös yllä mainittu välimuistikansio.</p>
 </section>

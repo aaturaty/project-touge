@@ -14,6 +14,7 @@
 - **Share and import:** one window with Share and Import tabs. Pick what to share, rename the shared copy without touching your saved setup, and copy the share text straight from the field. Import takes a dropped file or pasted text.
 - **Share image:** your own banner picture can be moved and zoomed in the share image, and the photo band is taller. The Routes list now shows the background through it.
 - **Calmer pages:** the Tune page header takes less room (view level is a small menu, preset notes in the preset tooltip), longer explanations use IBM Plex Sans while values and tables stay mono, part tier rows show colour only on the chosen tier, the Overview timeline sits below the content, and a game timer that stops answering is shown once in the top bar instead of in several places.
+- **Guides:** the user guide and the Tuning Bible have new screenshots and text for the current interface.
 - Fixed: the situation view no longer says "neutral than mid-corner" when the front share equals the mid-corner value.
 - Fixed: a symptom card could move the anti-roll bars the wrong way when your own setup was already outside the bar ratio range (for example the AE86). The rule now steps your own game value instead, within the game's slider limits.
 - Fixed: small layout issues found in a visual review (setup menu cut off, route editor fuel stations in the "changed" colour, mixed button and badge styles).

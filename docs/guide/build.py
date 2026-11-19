@@ -58,6 +58,14 @@ def convert(md, lang):
             else:
                 out.append(f'<h{n} id="{lang}-{slug(t)}">{inline(t)}</h{n}>')
             i += 1; continue
+        if r.startswith('```'):
+            code = []
+            i += 1
+            while i < len(L) and not L[i].startswith('```'):
+                code.append(L[i]); i += 1
+            i += 1
+            out.append('<pre class="code">' + html.escape('\n'.join(code), quote=False) + '</pre>')
+            continue
         if r.startswith('|'):
             rows = []
             while i < len(L) and L[i].startswith('|'):
@@ -83,7 +91,7 @@ def convert(md, lang):
             i += 1; continue
         para = [r]
         i += 1
-        while i < len(L) and L[i].strip() and not re.match(r'(#|\||!\[|\d+\. |- |---)', L[i]):
+        while i < len(L) and L[i].strip() and not re.match(r'(#|\||!\[|\d+\. |- |---|```)', L[i]):
             para.append(L[i]); i += 1
         txt = inline(' '.join(para))
         if re.sub(r'[\s·]', '', txt) and '<b>One gutter away' not in txt:      # the tagline is in the header

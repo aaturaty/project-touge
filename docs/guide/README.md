@@ -444,7 +444,7 @@ From 0.11 on, Touge can save what you made as small files that a friend opens in
 | File | What it holds | Where you make it |
 |---|---|---|
 | `….tune.json` | the build and the final game values of a setup | Setup menu → **Share and import…** |
-| `….chassis.json`, `….gears.json`, `….preset.json` | an own chassis preset, an own gearing profile, or both in one file | Setup menu → **Share and import…** |
+| `….chassis.json`, `….gears.json` | an own chassis preset or an own gearing profile (older `….preset.json` files with both still import) | Setup menu → **Share and import…** |
 | `….route.json` | an own route with its splits, start and finish images and description | **Share and import…**, or **Share route** in Time → Routes |
 | `….run.json` | one finished run on an own route, to race as a ghost | Time → Analyse → Run comparison → **Share run A** |
 
@@ -456,18 +456,18 @@ Every file you save goes to the **`Shared`** folder next to Project Touge.exe. F
 
 ![The Setup menu: Share and import…](img/en/601-share-menu.webp)
 
-2. If you like, type a name under **Name on shared files**. It is shown to the person who opens the file. Leave it empty to share without a name.
-3. Under **Tune**, click **Save tune file**. Touge says where it saved the file, for example `Shared\RX-7 FD North.tune.json`. **Open Shared folder** opens the folder so you can drag the file into a message.
-4. **Copy share code** is the other way to share a tune: it copies a line of text that starts with `TOUGE1:`. Paste it straight into a chat message; the other driver pastes it back with **Paste share code**.
-5. Under **Own presets**, pick a chassis preset, a gearing profile or both, and click **Save preset file**. With both picked they go in the same file.
+2. The window opens on **Share**. Under **What to share**, pick **This tune**, a **Chassis preset**, a **Gearing profile** or an **Own route**. Rows you have nothing for yet are greyed out and say where to make one. With several presets or profiles, pick the one you want from the list on its row.
+3. The name field (for example **Tune name**) starts with your saved name. Change it if you like: the new name goes only into the shared copy, not into your own saves. Under **Your name (optional)** type the name the receiver sees as the sharer, or leave it empty.
+4. Click **Save as file**. Touge says where it saved the file, for example `Shared\RX-7 FD North.tune.json`. **Open Shared folder** on the Import tab opens the folder so you can drag the file into a message.
+5. Tunes, chassis presets and gearing profiles can also be shared as text: under **Or share as text** the share text (it starts with `TOUGE1:`) is ready in a box. Click the copy button next to it and paste it straight into a chat message. The other driver pastes it into the Import tab.
 
-![Share and import: tune, own presets, own route, import and the name on shared files](img/en/602-share-dialog.webp)
+![Share and import: the Share tab with What to share, the shared name and the share text](img/en/602-share-dialog.webp)
 
 The tune file holds the build and the final values you type into the game, including changes you have not saved yet. The parameters of a ready-made preset are not included, so the other driver sees exactly your numbers. The diff has no file of its own: it travels inside the tune.
 
 ### 8.2 Share a route
 
-Pick the route under **Own route** in **Share and import…** and click **Save route file**, or open **Time → Routes**, choose the route and click **Share route**. The file holds the route line, the splits, the start and finish images and the description. All six routes that come with Touge are own routes too, so you can share them as they are.
+Pick **Own route** under **What to share** in **Share and import…**, choose the route and click **Save as file**, or open **Time → Routes**, choose the route and click **Share route**. The file holds the route line, the splits, the start and finish images and the description. All six routes that come with Touge are own routes too, so you can share them as they are.
 
 ### 8.3 Share a run as a ghost
 
@@ -485,13 +485,13 @@ Only runs that reached the finish on an own route can be shared. The other drive
 
 There are three ways in, and they all end in the same preview:
 
-- **Drop it in `Shared\Inbox`.** Touge looks in the folder every few seconds and shows **New shared file in Shared\Inbox** with a **Review** button. **Open Shared folder** in Share and import… takes you to the folder.
+- **Drop it in `Shared\Inbox`.** Touge looks in the folder every few seconds and shows **New shared file in Shared\Inbox** with a **Review** button. **Open Shared folder** on the Import tab of Share and import… takes you to the folder.
 - **Drag it onto the Touge window.**
-- **Share and import… → Import file…**, or **Paste share code** for a `TOUGE1:` code.
+- **Share and import… → Import.** Drop the file on the box, use **Choose file…**, or press **Ctrl+V** to paste a `TOUGE1:` share text (**Type the text** opens a field for it).
 
 ![A file appeared in Shared\Inbox](img/en/605-inbox-toast.webp)
 
-**Review** opens Share and import… with the files in the Inbox listed. Click **Preview** on a file.
+**Review** opens the Import tab, where the files in the Inbox are listed under **Waiting in your Shared folder**. Click **View** on a file, or **Skip** to leave it.
 
 ![Files waiting in Shared\Inbox](img/en/606-inbox-list.webp)
 

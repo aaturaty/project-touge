@@ -448,7 +448,7 @@ Kuvat ovat englanninkielisestä näkymästä; suomeksi nappien nimet ovat suluis
 | Tiedosto | Sisältö | Mistä se tehdään |
 |---|---|---|
 | `….tune.json` | setupin buildi ja lopulliset pelin arvot | Setup-valikko → **Share and import…** (Jaa ja tuo…) |
-| `….chassis.json`, `….gears.json`, `….preset.json` | oma alustapreset, oma välitysprofiili tai molemmat samassa tiedostossa | Setup-valikko → **Share and import…** |
+| `….chassis.json`, `….gears.json` | oma alustapreset tai oma välitysprofiili (vanhat molemmat sisältävät `….preset.json`-tiedostot tuodaan edelleen) | Setup-valikko → **Share and import…** |
 | `….route.json` | oma reitti splitteineen, lähtö- ja maalikuvineen ja kuvauksineen | **Share and import…** tai Ajanotto → Reitit → **Share route** (Jaa reitti) |
 | `….run.json` | yksi maaliin ajettu ajo omalla reitillä haamuksi | Ajanotto → Analysoi → Ajovertailu → **Share run A** (Jaa ajo A) |
 
@@ -460,18 +460,18 @@ Jokainen tallentamasi tiedosto menee **`Shared`**-kansioon Project Touge.exe:n v
 
 ![Setup-valikko: Share and import…](img/en/601-share-menu.webp)
 
-2. Kirjoita halutessasi nimi kohtaan **Name on shared files** (Nimi jaetuissa tiedostoissa). Se näkyy tiedoston avaajalle. Tyhjänä tiedosto jaetaan ilman nimeä.
-3. Napsauta **Tune**-kohdassa **Save tune file** (Tallenna tune-tiedosto). Touge kertoo, minne tiedosto tallentui, esim. `Shared\RX-7 FD North.tune.json`. **Open Shared folder** (Avaa Shared-kansio) avaa kansion, josta tiedoston voi raahata viestiin.
-4. **Copy share code** (Kopioi jakokoodi) on toinen tapa jakaa tune: se kopioi `TOUGE1:`-alkuisen tekstirivin. Liitä se suoraan chat-viestiin; vastaanottaja liittää sen takaisin kohdasta **Paste share code** (Liitä jakokoodi).
-5. Valitse **Own presets** (Omat presetit) -kohdasta alustapreset, välitysprofiili tai molemmat ja napsauta **Save preset file** (Tallenna preset-tiedosto). Molemmat valittuina ne menevät samaan tiedostoon.
+2. Ikkuna aukeaa **Share**-välilehdelle (Jaa). Valitse kohdasta **What to share** (Mitä jaetaan) **This tune** (Tämä tune), **Chassis preset** (Alustapreset), **Gearing profile** (Välitysprofiili) tai **Own route** (Oma reitti). Rivit, joille sinulla ei vielä ole mitään, ovat himmeinä ja kertovat, mistä sellaisen tekee. Jos presettejä tai profiileja on useita, valitse haluamasi rivin listasta.
+3. Nimikentässä (esim. **Tune name**, Tunen nimi) on valmiina tallentamasi nimi. Voit muuttaa sitä: uusi nimi menee vain jaettavaan kopioon, ei omiin tallenteisiisi. Kohtaan **Your name (optional)** (Sinun nimesi) voit kirjoittaa nimen, jonka vastaanottaja näkee jakajana, tai jättää sen tyhjäksi.
+4. Napsauta **Save as file** (Tallenna tiedostoksi). Touge kertoo, minne tiedosto tallentui, esim. `Shared\RX-7 FD North.tune.json`. Import-välilehden **Open Shared folder** (Avaa Shared-kansio) avaa kansion, josta tiedoston voi raahata viestiin.
+5. Tunet, alustapresetit ja välitysprofiilit voi jakaa myös tekstinä: kohdassa **Or share as text** (Tai jaa tekstinä) on valmiina `TOUGE1:`-alkuinen jakoteksti. Napsauta sen vieressä olevaa kopiointinappia ja liitä teksti suoraan chat-viestiin. Vastaanottaja liittää sen Import-välilehdelle.
 
-![Share and import: tune, omat presetit, oma reitti, tuonti ja nimi jaetuissa tiedostoissa](img/en/602-share-dialog.webp)
+![Share and import: Share-välilehti, Mitä jaetaan, jaettava nimi ja jakoteksti](img/en/602-share-dialog.webp)
 
 Tune-tiedostossa on buildi ja lopulliset arvot, jotka syötät peliin, myös tallentamattomat muutokset. Valmiin presetin parametreja ei viedä, joten vastaanottaja näkee täsmälleen sinun lukusi. Diffillä ei ole omaa tiedostoa: se kulkee tunen mukana.
 
 ### 8.2 Jaa reitti
 
-Valitse reitti **Share and import…** -ikkunan kohdasta **Own route** (Oma reitti) ja napsauta **Save route file** (Tallenna reittitiedosto), tai avaa **Ajanotto → Reitit**, valitse reitti ja napsauta **Share route**. Tiedostossa on reitin viiva, splitit, lähtö- ja maalikuvat sekä kuvaus. Myös kaikki kuusi Tougen mukana tulevaa reittiä ovat omia reittejä, joten ne voi jakaa sellaisenaan.
+Valitse **Share and import…** -ikkunan kohdasta **What to share** **Own route** (Oma reitti), valitse reitti ja napsauta **Save as file**, tai avaa **Ajanotto → Reitit**, valitse reitti ja napsauta **Share route**. Tiedostossa on reitin viiva, splitit, lähtö- ja maalikuvat sekä kuvaus. Myös kaikki kuusi Tougen mukana tulevaa reittiä ovat omia reittejä, joten ne voi jakaa sellaisenaan.
 
 ### 8.3 Jaa ajo haamuksi
 
@@ -489,13 +489,13 @@ Jakaa voi vain maaliin asti ajetun ajon omalla reitillä. Vastaanottajalla pitä
 
 Sisään pääsee kolmella tavalla, ja kaikki päätyvät samaan esikatseluun:
 
-- **Pudota tiedosto kansioon `Shared\Inbox`.** Touge katsoo kansion muutaman sekunnin välein ja näyttää ilmoituksen **New shared file in Shared\Inbox** ja **Review**-napin (Näytä). Share and import… -ikkunan **Open Shared folder** vie kansioon.
+- **Pudota tiedosto kansioon `Shared\Inbox`.** Touge katsoo kansion muutaman sekunnin välein ja näyttää ilmoituksen **New shared file in Shared\Inbox** ja **Review**-napin (Näytä). Share and import… -ikkunan Import-välilehden **Open Shared folder** vie kansioon.
 - **Raahaa tiedosto Tougen ikkunaan.**
-- **Share and import… → Import file…** (Tuo tiedosto…) tai `TOUGE1:`-koodille **Paste share code**.
+- **Share and import… → Import** (Tuo). Pudota tiedosto laatikkoon, käytä **Choose file…** (Valitse tiedosto…) tai liitä `TOUGE1:`-jakoteksti **Ctrl+V**:llä (**Type the text**, Kirjoita teksti, avaa sille kentän).
 
 ![Kansioon Shared\Inbox tuli tiedosto](img/en/605-inbox-toast.webp)
 
-**Review** avaa Share and import… -ikkunan, jossa Inboxin tiedostot on lueteltu. Napsauta tiedoston kohdalla **Preview** (Esikatsele).
+**Review** avaa Import-välilehden, jossa Inboxin tiedostot ovat kohdassa **Waiting in your Shared folder** (Odottaa Shared-kansiossa). Napsauta tiedoston kohdalla **View** (Näytä) tai **Skip** (Ohita), jos haluat jättää sen.
 
 ![Kansiossa Shared\Inbox odottavat tiedostot](img/en/606-inbox-list.webp)
 

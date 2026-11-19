@@ -65,7 +65,7 @@ Merkitön luku tulee pelin omasta datasta. Nimet, järjestys ja yksiköt seuraav
 
 ## 3. Rakenna: auto sisään
 
-Useimmiten autosi on jo rakennettu pelissä. Valitse silloin **Syötä pelistä**. Jos tune on jo tiedostossa, esimerkiksi kaverin tunepohjana, valitse **Tuo tune**. Jos haluat Tougen ehdottavan koko buildin luokkaan, valitse **Rakenna mallilla**.
+Useimmiten autosi on jo rakennettu pelissä. Valitse silloin **Syötä olemassa oleva buildi**. Jos tune on jo tiedostossa, esimerkiksi kaverin tunepohjana, valitse **Tuo tune**. Jos haluat Tougen ehdottavan koko buildin luokkaan, valitse **Rakenna mallilla**.
 
 ### 3.1 Auto, luokka ja reitti
 
@@ -77,9 +77,9 @@ Napsauta autoa ja hae koko autolistasta; luokka ja reitti valitaan samalla taval
 
 Reittilistassa ovat ensin pelissä todennetut reitit ja omat reittisi. Valitse se reitti, jota oikeasti ajat: mallin ajat, välitysten tarkistus ja Ajanotto-välilehti seuraavat sitä.
 
-### 3.2 Syötä pelistä
+### 3.2 Syötä olemassa oleva buildi
 
-![Syötä pelistä](img/fi/04-enter-from-game.webp)
+![Syötä olemassa oleva buildi](img/fi/04-enter-from-game.webp)
 
 1. Avaa CarX Streetissä auton **Part Setup** ja ota kuvakaappaus jokaisesta sivusta: moottori, vaihteisto, kori ja aero, jousitus, renkaat ja Component features.
 2. Liitä kuvat **Ctrl+V**:llä, pudota ne laatikkoon tai käytä **Valitse tiedostot**. Kuvat luetaan omalla koneellasi eikä niitä tallenneta. Kuvista luetut rivit korvaavat pohja-arvot; pohjana on tämän auton edellinen setup, jos sellainen on.

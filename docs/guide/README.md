@@ -63,7 +63,7 @@ Values without a mark come from the game's own data. Names, order and units foll
 
 ## 3. Build: get your car in
 
-Most of the time your car already exists in the game. Then choose **Enter from the game**. If you already have the tune in a file, such as a tuning template from a friend, choose **Import a tune**. If you want Touge to suggest a whole build for a class, choose **Build with the model**.
+Most of the time your car already exists in the game. Then choose **Enter pre-existing build**. If you already have the tune in a file, such as a tuning template from a friend, choose **Import a tune**. If you want Touge to suggest a whole build for a class, choose **Build with the model**.
 
 ### 3.1 Car, class and route
 
@@ -75,9 +75,9 @@ Click the car to search the full car list, and pick the class and route the same
 
 The route list shows the verified game routes first plus any routes of your own. Pick the route you actually drive: the model times, gearing checks and the Time tab all follow it.
 
-### 3.2 Enter from the game
+### 3.2 Enter pre-existing build
 
-![Enter from the game](img/en/04-enter-from-game.webp)
+![Enter pre-existing build](img/en/04-enter-from-game.webp)
 
 1. In CarX Street, open the car's **Part Setup** and take a screenshot of each screen: engine, gearbox, body and aero, suspension, tyres and Component features.
 2. Paste them with **Ctrl+V**, drop them on the box, or use **Choose files**. Images are read on your computer and not stored. Rows read from the images replace the base values; the base is your previous setup for this car if you have one.

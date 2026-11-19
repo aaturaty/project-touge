@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.13.0 beta (not yet released)
+## 0.13.0 beta (2026-11-19)
 
 - **A tidy folder:** the Project Touge folder now holds only the program, the README, `Shared` (what you export or get from friends) and `Data` (everything Touge keeps for itself). Files have English names, the loose settings files are one `settings.json`, and each route keeps its runs and analysis in one folder. The first start moves your old files into `Data`, lists every move in `Data\Logs\migration.txt` and deletes nothing. An older version cannot read the new folder.
 - **Lighter while you drive:** the main window no longer redraws its timer on every display frame when the game is the active window, and the screen reader runs just above normal priority instead of the highest one.

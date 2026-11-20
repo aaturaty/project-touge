@@ -33,7 +33,7 @@ Project Touge is one program file, **Project Touge.exe**. The timer, auto splits
 
 Windows 10 or 11 with Microsoft Edge WebView2 is enough. If SmartScreen warns about an unknown publisher, choose **More info → Run anyway**.
 
-**Updating from 0.10 to 0.12**: press **Update now**, or copy the new **Project Touge.exe** over the old one. On its first start 0.13 moves your files into the new `Data` folder (see [Your data](#9-your-data)).
+**Updating from 0.10.1 or later**: press **Update now** in the update notice, or copy the new **Project Touge.exe** over the old one. **What's new** opens once after the update with the release notes; it is also in Settings › About. Coming from 0.12 or older, the first start moves your files into the `Data` folder (see [Your data](#9-your-data)).
 
 **Updating from 0.9.x**
 
@@ -51,7 +51,10 @@ For timing, run CarX Street borderless or full screen so the whole HUD is visibl
 - **?** opens help with the shortcuts and the tuning guides. The **gear** opens Settings, and the red **power** button shuts Touge down. **FI / EN** switches the language.
 - **Model ref. time** in the top bar is the model's estimate for the open build on the chosen route.
 - On a first start Touge is empty: **Choose a car** comes first, and the numbers appear once a car is chosen. A **Getting started** strip shows the three steps until you hide it.
-- Each page has a **Next** line near the top that says what to do next, with a link that takes you there.
+- Once you have saved a setup, the large title at the top gives its height to the page and the tabs move to the top edge. Setting **Settings › General › Header** to **Full** brings the title back.
+- A slim **Next** bar under the tabs says what to do next in the loop Build, Tune, Drive and Analyse: choose a car, save your setup, look at your latest run, move changes into the game or drive. **Hide** puts it away for a while. Each page also has its own **Next** line near the top.
+- The **Setup** button shows the number of unsaved changes next to the name. Click the count for the list of what changed, saved value → now, with the game's names; each line has its own revert, and **Save**, **Save as new** and **Revert all** are at the bottom of the same list.
+- While Touge recalculates, the model reference time dims and a thin line runs under it, so an old time is never read as the new one. With a saved setup open, the time shows the difference to that setup.
 - Terms with an **i** button explain themselves: click it for a short description.
 
 Two marks appear everywhere and are worth learning first:
@@ -188,7 +191,7 @@ After you change the build, the previous curve stays as a grey dashed line, and 
 
 ## 4. Save and manage setups
 
-Press **Ctrl+S** (or **Save** in the top bar). The first save asks for a name and suggests car, class and route.
+Press **Ctrl+S** (or **Save** in the top bar). The first save asks for a name and suggests car, class and route. The Save button confirms with **✓ Saved** for a moment, and the time in the header switches to "saved".
 
 ![Save as](img/en/07-save-dialog.webp)
 
@@ -198,15 +201,15 @@ Press **Ctrl+S** (or **Save** in the top bar). The first save asks for a name an
 
 - Search by name or car, filter by car on the left, sort by any column.
 - Click a setup to see its class, route, model time and your best run on the right, with **Open now**, **Rename** (F2), **Duplicate** and **Delete** (Del). Double-click or **Enter** opens it, and Ctrl- or Shift-click selects several. Deleted setups go to **Trash** first.
-- **Save**, **Save as…** and **New build** at the top work on the open build.
+- **Save**, **Save as…** and **New build** at the top work on the open build. Under the count of unsaved changes, **Show changes** lists each changed field with its saved and current value.
 - **Import…**, **Paste text**, **Export selected** and **Export all** move setups between computers or to a friend.
 - **Import a tune…** in the Setup menu reads a tuning template or a tune table into a new setup (see [3.3](#33-import-a-tune-from-a-file)).
 
-Setups are saved in the Project Touge folder as files, with dated backup copies.
+Setups are saved in the Project Touge folder as files, with dated backup copies. If Touge starts with an empty page (a new computer or a moved folder) but finds your saved setups, it opens the newest one.
 
 ## 5. Tune: fix what you feel
 
-The Tune tab has three views in the order you usually need them: **Symptom**, **Adjust** and **Overview**. Adjust has its own **View** menu (**Settings only**, **Simple**, **Advanced**) that decides how much detail you see there; Simple is a good start. Symptom and Overview always show everything. Once the car has your own build or a saved setup, Tune opens in Overview.
+The Tune tab has four views: **Symptom**, **Adjust** and **Overview** in the order you usually need them, and **My view** with the sliders and numbers you pick yourself. Adjust has its own **View** menu (**Settings only**, **Simple**, **Advanced**) that decides how much detail you see there; Simple is a good start. Symptom and Overview always show everything. Once the car has your own build or a saved setup, Tune opens in Overview. Without a car, Tune shows a **Choose car** button.
 
 The **Preset** picker sits at the top: *model* is Touge's own result, and changing the preset replaces the chassis and diff values. Your own presets are at the end of the list. While Tune works on a model car, a line at the top says so, and **Enter build** takes you to the Build tab to enter your own. Sliders show the game's slider limits as marks, so you can see how much room is left.
 
@@ -216,7 +219,7 @@ The **Preset** picker sits at the top: *model* is Touge's own result, and changi
 
 1. Pick where in the corner the car misbehaves: **Braking**, **Turn-in**, **Mid corner** or **Exit**.
 2. Pick the symptom that matches what you feel, for example *Trail braking – understeer*. The corner diagram shows where it happens.
-3. **What changes** opens below. It starts with the Tuning Bible's advice for that symptom (what to try first, then next), followed by the settings Touge would move, each with a one-line reason and old → new value. A chart shows what the change does, and **Why these changes** explains the reasoning.
+3. **What changes** opens next to the list, with **Apply** at the top and the symptom diagram beside it, so you see the result without scrolling. It starts with the Tuning Bible's advice for that symptom (what to try first, then next), followed by the settings Touge would move, each with a one-line reason and old → new value. A chart shows what the change does, and **Why these changes** explains the reasoning.
 4. **One at a time** is on by default: **Apply first** takes only the biggest change, so you can time a run before the next one. Untick it to apply them all. **Cancel** leaves the setup as it was.
 5. When the symptom has a damper fix, a **Dampers: if you feel this** card follows with **Apply** and **Show setting**, the same cards as in Adjust's advice.
 
@@ -232,7 +235,9 @@ The effects are estimates (◐). One change and one timed run at a time tells yo
 
 ### 5.2 Adjust
 
-Adjust shows every setting with a slider. It has four tabs: **Parts**, **Chassis**, **Gearing** and **Other**. The **View** menu sits at the right end of the same row.
+Adjust shows every setting with a slider. It has four tabs: **Parts**, **Chassis**, **Gearing** and **Other**. Mode, folder, advice, view and preset share one bar at the top, so the first sliders show without scrolling.
+
+**Sliders work the same everywhere.** While you drag, the value and the panel around it (ride frequency, LLTD, the balance chart, damper charts, the sawtooth) follow the drag; nothing is saved or added to undo until you let go. A changed slider shows a yellow dot and its difference to the saved value; click the difference, or double-click the slider, to go back. From the keyboard: Tab to a slider, the arrow keys move one step, **Shift** + arrow ten, **Home** and **End** go to the limits and **Enter** lets you type a value. The mouse wheel changes a slider only after you have clicked it, so scrolling the page never moves a value. The pin on a slider's row adds it to **My view** (5.5).
 
 **Advice for this build** opens at the top of Parts, Chassis and Gearing. It reads through that part of the build and explains it, and the number of notes also shows on the tab (for example **Chassis · 1**).
 
@@ -248,7 +253,8 @@ Adjust shows every setting with a slider. It has four tabs: **Parts**, **Chassis
 
 - **Axle** picks **Front**, **Rear** or **Both**.
 - **A · Settings**: weight, front weight, spring length, springs, anti-roll bars, dampers and camber & toe, in game order. Open **How this works** under a group for the mechanism behind it.
-- **C · Balance & KPI**: the dampers' ratio, roll gradient, roll stiffness and ride frequency. Drag the **LLTD** bar or the **balance meters** to move the front/rear split while keeping the total stiffness.
+- **C · Balance & KPI**: the dampers' ratio, roll gradient, roll stiffness and ride frequency. Drag the **LLTD** bar or a line in the **balance chart** to move the front/rear split while keeping the total stiffness. The balance chart puts springs (mid corner), slow bump (entry and exit) and fast bump (bumps and kerbs) on one Front–Rear axis, with the level before your change dashed.
+- On a wide screen (from about 1700 px) the sliders flow in two columns and Balance & KPI stays in view while you scroll.
 - **Save as preset** keeps this chassis as a preset you can pick again later. **Read from image** fills the values from a screenshot.
 
 **Gearing**
@@ -311,10 +317,10 @@ In **Advanced**, the chart in column B follows the group you open: springs, spri
 
 | Where | Drag | Does |
 |---|---|---|
-| Any setting slider | the knob, or the mouse wheel over it | sets the value; **Shift** + wheel moves 10 steps |
+| Any setting slider | the knob, or the mouse wheel after a click | sets the value; **Shift** + wheel moves 10 steps |
 | Weight, front weight, final drive, shift time | the row's slider | the same as − and + |
 | Chassis · C Balance & KPI · **LLTD** | the bar | moves the anti-roll bar split front to rear with the total kept |
-| Chassis · **Balance meters** | a meter | moves the front/rear split of springs or dampers with the axle sum kept |
+| Chassis · **Balance chart** | a line | moves the front/rear split of springs or dampers with the axle sum kept |
 | Camber & toe chart (Advanced) | a wheel | front view tilts it for camber, top view turns it for toe |
 | Gearing · sawtooth | gear circle, range pill, end bars | see Gearing above |
 | Gearing · diff | the arcs | outer arc lock on acceleration, inner arc lock on deceleration |
@@ -322,11 +328,30 @@ In **Advanced**, the chart in column B follows the group you open: springs, spri
 
 ![Dragging camber and toe](img/en/19-camber-drag.webp)
 
-Values go to the game list when you let go, and the model time updates. To type an exact value instead, click the number next to a slider.
+Values go to the game list when you let go, and the model time updates without redrawing the page, so nothing jumps and keyboard focus stays where it was. To type an exact value instead, click the number next to a slider.
+
+**Density.** Settings › General › Density › **Compact** fits more sliders on the screen (a Chassis slider row is 44–48 px instead of 68 px).
+
+### 5.5 My view
+
+![My view](img/en/70-my-view.webp)
+
+**My view** puts the sliders and numbers you use most on one page. It is the same for every car, so the sliders you set every time are always in the same place.
+
+- **My sliders** on the left work like the sliders in Adjust. By default they are the springs, the anti-roll bars and the slow bump dampers.
+- **My monitors** on the right show the numbers you want to watch, for example the model reference time, the roll stiffness split, the roll gradient and the ride frequencies. The same monitors also show at the top of the Chassis result column in Adjust.
+- To add a slider, press the pin on its row in Adjust.
+- **Edit** opens the list of everything you can add, grouped like Adjust. Tick what you want, remove with **×**, and drag the ⠿ handle (or use the arrow keys on it) to change the order. **Reset to default** brings back the starting set, and **Done** closes the editor.
+
+![Editing My view](img/en/71-my-view-edit.webp)
 
 ## 6. Time: drive, time and analyse
 
 ### 6.1 Drive
+
+**Ready to time?** Before you start, the Drive view checks what timing needs: the game timer, the screen reader, the window mode, the controller, free disk space and, when Game physics is on, the game file. Each row that needs work has a button that fixes it or takes you there. When everything is ready the check folds to one line. The same rows are in Settings › Timing.
+
+![Ready to time?](img/en/76-readiness.webp)
 
 ![Drive](img/en/20-drive.webp)
 
@@ -337,7 +362,9 @@ Values go to the game list when you let go, and the model time updates. To type 
 
 The game timer starts by itself while Touge is open, and its small timer window stays on top of the game. **F8** hides and shows it, and **Ctrl+F8** lets you move it. If the window says **NO GAME DETECTED**, Touge cannot see the game's HUD; F8 or the window's **X** hides it. Pressing Start without the game shows a warning first, and **Start anyway** times without it.
 
-The splits on the right of the LCD show your comparison time for each section once you have a run to compare with.
+The splits on the right of the LCD show your comparison time for each section once you have a run to compare with. A new split flashes in the list as it comes in.
+
+**choriso's reference run.** The fastest North Touge v2 run (6:07.36, RX-7 FD) comes with Touge as a ghost, so you can race and compare against it from your first run. Like every shared run it is marked unverified (see [8.5](#85-routes-and-ghosts)).
 
 The chip next to **Settings** says what the game timer is doing, for example **Waiting for the game**. If the timer has stopped, a **Start game timer** button appears next to it.
 
@@ -359,7 +386,7 @@ Below the timer: record, median, the average of your last five and your progress
 
 ### 6.3 Analyse
 
-After a finished run, open **Analyse**. It compares the run against your own record and median, corner by corner.
+After a finished run, open **Analyse**. It compares the run against your own record and median, corner by corner. When runs are waiting for analysis, Analyse says how many and has an **Analyse now** button; while the analysis runs, a progress bar shows how many runs are done.
 
 ![Analyse](img/en/23-analyse.webp)
 
@@ -368,6 +395,7 @@ After a finished run, open **Analyse**. It compares the run against your own rec
 - The **map** colours each corner green (faster) or red (slower) than your median, and the **corner strip** below does the same as bars. Roll the mouse wheel to zoom the map, drag to move it, and the record runs along as a ghost.
 - **Largest gaps to the median** names the corners where this run lost the most, and why: braking, entry, apex or exit.
 - **Target**, under the gaps, shows what is left on the table: your theoretical best from your best corners combined.
+- **Where this run lost time** names the two corners where your latest run lost most to your record and why. One click opens the matching symptoms on the Tune page (exit, braking, turn-in or mid-corner). A corner lost to a touch or a mistake is called a driving error instead. It shows only when the latest run is slower than your record.
 - **Speed on route**, at the bottom of the panel, shows the whole run as a speed trace against your record and median. Switch the lines on and off with the chips (record, median, focus corner, elevation, splits, model), and pick any run in **Compare run**. Moving along the trace moves a cursor on the map.
 
 ![Speed on route](img/en/26-speed-on-route.webp)
@@ -376,9 +404,13 @@ After a finished run, open **Analyse**. It compares the run against your own rec
 
 ![Corner close-up](img/en/25-analyse-zoom.webp)
 
-**Run comparison** lays two runs over each other. Pick **Run A** and **Run B (ghost)**, or **Swap A and B**. The map runs across the full width, and its tabs choose how the line is coloured: **Gap to B** (green where A gains, red where A loses), **Speed**, **Gear** or **Own vs model**. A sits at the cursor and B is a ghost at the same moment. Under the map, the charts show speed, the time gap, gear and rpm, and one **Inputs** row shows throttle and brake for both runs, with steering marked only where it is at the limit or countersteering. On the charts, drag sideways to zoom and double-click for the whole route; the arrow keys move the cursor.
+**Run comparison** lays two runs over each other. Pick **Run A** and **Run B (ghost)**, or **Swap A and B**. B can also be a shared ghost, such as choriso's reference run. The map runs across the full width, and its tabs choose how the line is coloured: **Gap to B** (green where A gains, red where A loses), **Speed**, **Gear** or **Own vs model**. A sits at the cursor and B is a ghost at the same moment. Under the map, the charts show speed, the time gap, gear and rpm, and one **Inputs** row shows throttle and brake for both runs, with steering marked only where it is at the limit or countersteering. On the charts, drag sideways to zoom and double-click for the whole route; the arrow keys move the cursor.
 
 ![Run comparison](img/en/29-run-comparison.webp)
+
+When A and B were driven on different setups, **What changed between A and B** lists the game values that differ, next to the time difference.
+
+![Latest run](img/en/77-latest-run.webp)
 
 Below it, the **latest run** card sums up the run in words, and **Next** names one thing to do: usually the corner to practise first (**Open corner** zooms straight to it), or a setup change when the same pattern repeats across your runs (**Open Tune**).
 
@@ -424,12 +456,16 @@ Your own routes are saved in the `Routes` folder.
 
 ![Settings](img/en/30-settings.webp)
 
-- **General**: language, text size, view level for Adjust, and animations. Panels can be moved by dragging the handle in their header.
+- **General**: language, text size, view level for Adjust, **Density** (Comfortable or Compact), animations, **Units** (km/h and kg, or mph and lb: Touge still calculates in metric and changes only the numbers shown; charts and help texts stay metric), **Background map** (Normal, Dim or Off), **Start page** (the last page you used, Build, Tune, My view or Time), **Header** and **Reset layout** (puts panel order, hidden and collapsed panels, Tune mode and folder back to default; My view and settings are kept).
 - **Data and backups**: where your data is and a button to open the folder.
-- **Timing**: game timer and screen reader options.
+- **Timing**: the same readiness rows as the Drive view, then the screen reader options.
 - **Game physics** (Experimental): appears when Touge finds the game's own physics file; it lets Touge test settings with the game's physics. Its results are uncalibrated (◐).
 - **Start and shut down**: shut down Touge and the game timer together.
-- **About**: version and licences.
+- **About**: version, update options (**Notify me about new versions**, and **Offer preview versions too** for versions released for testing a little before everyone else), **Report a problem**, **What's new in this version**, feedback links and licences.
+
+![About](img/en/74-about.webp)
+
+**Report a problem** saves a diagnostics file to the `Shared` folder (version, settings, readiness check and the newest logs; no tunes, runs or your user name) and opens a GitHub issue with the details filled in. Attach the file there.
 
 ![Help](img/en/31-help.webp)
 
@@ -469,7 +505,9 @@ Every file you save goes to the **`Shared`** folder next to Project Touge.exe. F
 3. The name field below holds the name the other driver sees. Changing it changes only the shared copy, not your own setup or preset.
 4. If you like, type **Your name (optional)**. It is shown to the person who opens the file. Leave it empty to share without a name.
 5. **Save as file** saves the file. Touge says where it saved it, for example `Shared\Touge AE86.tune.json`.
-6. **Or share as text** is the other way: the field holds a line of text that starts with `TOUGE1:`. Click the copy button next to it and paste the text straight into a chat message. Routes are shared as a file only, because they hold images.
+6. **Or share as text** is the other way: the field holds a line of text that starts with `TOUGE2:`, and its length is shown next to the heading. **Copy code** copies it and confirms with "Copied" in place; paste it straight into a chat message. A tune is about 1 100 characters, so it fits in one Discord message. Routes are shared as a file only, because they hold images.
+
+Codes from older versions (`TOUGE1:`) still import, but 0.13.0 and older cannot read a `TOUGE2:` code: ask the receiver to update, or share the file instead.
 
 ![Share and import, Share tab: what to share, the name on the file, your name, and the share text](img/en/602-share-dialog.webp)
 
@@ -497,7 +535,7 @@ There are three ways in, and they all end in the same preview:
 
 - **Drop it in `Shared\Inbox`.** Touge looks in the folder every few seconds and shows **New shared file in Shared\Inbox** with a **Review** button. **Open Shared folder** on the Import tab takes you to the folder.
 - **Drag it onto the Touge window.**
-- **Share and import… → Import**: drop the file on the box, use **Choose file…**, or paste a `TOUGE1:` text with **Ctrl+V** (**Type the text** opens a field for it).
+- **Share and import… → Import**: drop the file on the box, use **Choose file…**, or paste a shared text with **Ctrl+V** (**Paste text** opens a field for it).
 
 ![A file appeared in Shared\Inbox](img/en/605-inbox-toast.webp)
 
@@ -554,7 +592,7 @@ Project Touge is one folder. Everything it saves stays inside it: what you share
 Project Touge\
 ├─ Project Touge.exe     the whole program
 ├─ README.txt
-├─ Shared\               files you saved for sharing
+├─ Shared\               files you saved for sharing, and diagnostics files
 │  └─ Inbox\             drop files you receive here
 └─ Data\                 everything Touge keeps for itself
    ├─ settings.json      window, timer and reader settings
@@ -581,10 +619,11 @@ Project Touge\
 - **Game timer not responding**: start Project Touge again; the timer is part of the program and starts with it. Check that no other telemetry program is using the same port.
 - **Windows blocks the program**: if SmartScreen stops it, choose **More info → Run anyway**. Keep the exe outside `Program Files`, where Touge cannot write its data folders.
 - **No speed or minimap**: run the game borderless or full screen with the HUD visible. Touge finds the HUD on the first run; tested resolutions are 3440×1440, 2560×1440, 2560×1080, 1920×1440 and 1920×1080.
-- **A value does not match the game**: check for ◐ first. Type the game's own reading into the **Check in game** rows, and report the difference with your Touge version and the files from `Logs`.
+- **Timing does not start**: open Time → Drive and look at **Ready to time?**. Each row that is not green says what is missing and has a button for it.
+- **A value does not match the game**: check for ◐ first. Type the game's own reading into the **Check in game** rows, and report the difference with **Report a problem**.
 - **Lost a setup**: look in **All setups → Trash**, or restore from the dated copies in `Tunes`.
 
-Found a bug or a value that is off in game? Open an [issue](https://github.com/aaturaty/project-touge/issues) with your Touge version (shown in the header), what you did, and the files from `Logs`.
+Found a bug or a value that is off in game? Use **Settings › About › Report a problem**: it saves a diagnostics file to `Shared` and opens a GitHub [issue](https://github.com/aaturaty/project-touge/issues) with your version filled in. Say what you did and attach the file.
 
 ---
 

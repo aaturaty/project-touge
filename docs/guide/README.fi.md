@@ -35,7 +35,7 @@ Project Touge on yksi ohjelmatiedosto, **Project Touge.exe**. Ajanotto, automaat
 
 Windows 10 tai 11 ja Microsoft Edge WebView2 riittävät. Jos SmartScreen varoittaa tuntemattomasta julkaisijasta, valitse **Lisätietoja → Suorita silti**.
 
-**Päivitys versioista 0.10–0.12**: paina **Update now** tai kopioi uusi **Project Touge.exe** vanhan päälle. Ensimmäisellä käynnistyksellä 0.13 siirtää tiedostosi uuteen `Data`-kansioon (ks. [Datasi](#9-datasi)).
+**Päivitys versiosta 0.10.1 tai uudemmasta**: paina päivitysilmoituksen **Update now** -nappia tai kopioi uusi **Project Touge.exe** vanhan päälle. **Uutta versiossa** -ikkuna aukeaa kerran päivityksen jälkeen ja näyttää julkaisutiedot; sama löytyy kohdasta Asetukset › Tietoja. Jos päivität versiosta 0.12 tai vanhemmasta, ensimmäinen käynnistys siirtää tiedostosi `Data`-kansioon (ks. [Datasi](#9-datasi)).
 
 **Päivitys versiosta 0.9.x**
 
@@ -53,7 +53,10 @@ Ajanottoa varten aja CarX Streetiä reunattomassa ikkunassa tai koko näytöllä
 - **?** avaa ohjeen pikanäppäimineen ja säätöoppaineen. **Ratas** avaa asetukset, ja punainen **virtanappi** sammuttaa Tougen. **FI / EN** vaihtaa kielen.
 - Yläpalkin **Mallin vertailuaika** on mallin arvio avoimelle buildille valitulla reitillä.
 - Ensimmäisellä käynnistyksellä Touge on tyhjä: ensin **Valitse auto**, ja luvut tulevat näkyviin, kun auto on valittu. **Näin aloitat** -kaista näyttää kolme vaihetta, kunnes piilotat sen.
-- Jokaisen sivun yläosassa on **Seuraavaksi**-rivi, joka kertoo, mitä tehdä seuraavaksi, ja linkki vie sinne.
+- Kun olet tallentanut setupin, iso otsikko antaa tilansa sivulle ja välilehdet nousevat yläreunaan. Kun valitset **Asetukset › Yleiset › Yläosa** -kohdasta **Täysi**, otsikko palaa.
+- Välilehtien alla oleva kapea **Seuraavaksi**-palkki kertoo, mitä kierroksessa Rakenna, Säädä, Aja ja Analysoi tehdään seuraavaksi: valitse auto, tallenna setup, katso viimeisin ajosi, siirrä muutokset peliin tai aja. **Piilota** laittaa sen hetkeksi pois. Jokaisen sivun yläosassa on lisäksi oma **Seuraavaksi**-rivi.
+- **Setup**-napissa nimen vieressä näkyy tallentamattomien muutosten määrä. Napsauta lukua, niin saat listan muutoksista (tallennettu arvo → nyt) pelin nimillä. Jokaisella rivillä on oma palautus, ja **Tallenna**, **Tallenna uutena** ja **Palauta kaikki** ovat saman listan lopussa.
+- Kun Touge laskee uudelleen, mallin vertailuaika himmenee ja sen alla kulkee ohut viiva, joten vanhaa aikaa ei lue uutena. Kun tallennettu setup on auki, aika näyttää eron siihen.
 - Termit, joiden vieressä on **i**-nappi, selittävät itsensä: napsauta sitä, niin saat lyhyen kuvauksen.
 
 Kaksi merkkiä toistuu kaikkialla, ja ne kannattaa oppia ensin:
@@ -190,7 +193,7 @@ Kun muutat buildia, edellinen käyrä jää harmaaksi katkoviivaksi, ja tehon, v
 
 ## 4. Setupien tallennus ja hallinta
 
-Paina **Ctrl+S** (tai yläpalkin **Tallenna**). Ensimmäinen tallennus kysyy nimen ja ehdottaa autoa, luokkaa ja reittiä.
+Paina **Ctrl+S** (tai yläpalkin **Tallenna**). Ensimmäinen tallennus kysyy nimen ja ehdottaa autoa, luokkaa ja reittiä. Tallenna-nappi kuittaa hetken tekstillä **✓ Tallennettu**, ja yläpalkin aika vaihtuu tallennetuksi.
 
 ![Tallenna nimellä](img/fi/07-save-dialog.webp)
 
@@ -200,15 +203,15 @@ Paina **Ctrl+S** (tai yläpalkin **Tallenna**). Ensimmäinen tallennus kysyy nim
 
 - Hae nimellä tai autolla, rajaa autolla vasemmalta ja lajittele minkä tahansa sarakkeen mukaan.
 - Napsauta setuppia, niin oikealla näkyvät luokka, reitti, mallin aika ja paras ajosi sekä napit avaamiseen, **Nimeä uudelleen** (F2), **Monista** ja **Poista** (Del). Tuplaklikkaus tai **Enter** avaa setupin, ja Ctrl- tai Shift-napsautus valitsee useita. Poistetut menevät ensin **Roskakoriin**.
-- Yläreunan **Tallenna**, **Tallenna nimellä…** ja uuden buildin nappi koskevat avointa buildia.
+- Yläreunan **Tallenna**, **Tallenna nimellä…** ja uuden buildin nappi koskevat avointa buildia. Tallentamattomien muutosten määrän alla **Näytä muutokset** listaa jokaisen muuttuneen kentän tallennetun ja nykyisen arvon.
 - **Tuo…**, **Liitä teksti**, **Vie valitut** ja **Vie kaikki** siirtävät setupeja koneelta toiselle tai kaverille.
 - Setup-valikon **Tuo tune…** lukee tunepohjan tai tunetaulukon uudeksi setupiksi (ks. [3.3](#33-tuo-tune-tiedostosta)).
 
-Setupit tallentuvat Project Touge -kansioon tiedostoina, ja niistä jää päivätyt varmuuskopiot.
+Setupit tallentuvat Project Touge -kansioon tiedostoina, ja niistä jää päivätyt varmuuskopiot. Jos Touge käynnistyy tyhjällä sivulla (uusi kone tai siirretty kansio) mutta löytää tallennetut setupisi, se avaa uusimman.
 
 ## 5. Säädä: korjaa se mitä tunnet
 
-Säädä-välilehdellä on kolme näkymää siinä järjestyksessä, jossa niitä yleensä tarvitsee: **Oire**, **Säädä** ja **Yleiskuva**. Säädä-näkymällä on oma **Näkymä**-valikko (**Vain säädöt**, **Perus**, **Laaja**), joka päättää, kuinka paljon yksityiskohtia siinä näet; Perus on hyvä alku. Oire ja Yleiskuva näyttävät aina kaiken. Kun autolla on oma buildi tai tallennettu setup, Säädä-välilehti aukeaa Yleiskuvaan.
+Säädä-välilehdellä on neljä näkymää: **Oire**, **Säädä** ja **Yleiskuva** siinä järjestyksessä, jossa niitä yleensä tarvitsee, sekä **Oma näkymä**, jossa ovat itse valitsemasi liukurit ja luvut. Säädä-näkymällä on oma **Näkymä**-valikko (**Vain säädöt**, **Perus**, **Laaja**), joka päättää, kuinka paljon yksityiskohtia siinä näet; Perus on hyvä alku. Oire ja Yleiskuva näyttävät aina kaiken. Kun autolla on oma buildi tai tallennettu setup, Säädä-välilehti aukeaa Yleiskuvaan. Ilman autoa Säädä näyttää **Valitse auto** -napin.
 
 **Preset**-valitsin on ylhäällä: *malli* on Tougen oma tulos, ja presetin vaihto korvaa alustan ja diffin arvot. Omat presetit ovat listan lopussa. Kun Säädä toimii mallin autolla, yläreunan rivi kertoo sen, ja **Syötä buildi** vie Rakenna-välilehdelle syöttämään oman. Liukureissa on merkit pelin liukurien rajoista, joten näet, paljonko tilaa on jäljellä.
 
@@ -218,7 +221,7 @@ Säädä-välilehdellä on kolme näkymää siinä järjestyksessä, jossa niit�
 
 1. Valitse, missä kohtaa mutkaa auto käyttäytyy väärin: **Jarrutus**, **Sisääntulo**, **Keskikohta** vai **Ulostulo**.
 2. Valitse oire, joka vastaa tuntumaa, esimerkiksi *Jarrutus mutkaan – aliohjaa*. Mutkakuva näyttää, missä se tapahtuu.
-3. **Mitä muuttuu** aukeaa alle. Se alkaa Tuning Biblen neuvolla tähän oireeseen (mitä kokeilla ensin, mitä sitten), ja sen alla ovat säädöt, joita Touge siirtäisi, jokaisella yhden rivin syy ja vanha → uusi arvo. Kaavio näyttää, mitä muutos tekee, ja **Miksi nämä muutokset** kertoo perustelut.
+3. **Mitä muuttuu** aukeaa listan viereen: **Käytä** on ylimpänä ja oirekuva sen vieressä, joten näet tuloksen vierittämättä. Se alkaa Tuning Biblen neuvolla tähän oireeseen (mitä kokeilla ensin, mitä sitten), ja sen alla ovat säädöt, joita Touge siirtäisi, jokaisella yhden rivin syy ja vanha → uusi arvo. Kaavio näyttää, mitä muutos tekee, ja **Miksi nämä muutokset** kertoo perustelut.
 4. **Yksi kerrallaan** on oletuksena päällä: **Käytä ensimmäinen** ottaa vain suurimman muutoksen, joten voit kellottaa ajon ennen seuraavaa. Poista ruksi, niin otat kaikki. **Peru** jättää setupin ennalleen.
 5. Jos oireeseen on vaimenninkorjaus, perässä tulee **Vaimentimet: jos koet tämän** -kortti, jossa ovat **Käytä** ja **Näytä säädin**, samat kortit kuin Säädä-näkymän neuvoissa.
 
@@ -234,7 +237,9 @@ Vaikutukset ovat arvioita (◐). Yksi muutos ja yksi kellotettu ajo kerrallaan k
 
 ### 5.2 Säädä
 
-Säädä näyttää jokaisen säädön liukurina. Siinä on neljä välilehteä: **Osat**, **Alusta**, **Välitykset** ja **Muut**. **Näkymä**-valikko on samalla rivillä oikeassa reunassa.
+Säädä näyttää jokaisen säädön liukurina. Siinä on neljä välilehteä: **Osat**, **Alusta**, **Välitykset** ja **Muut**. Tila, kansio, neuvot, näkymä ja preset ovat yhdessä palkissa ylhäällä, joten ensimmäiset liukurit näkyvät vierittämättä.
+
+**Liukurit toimivat kaikkialla samoin.** Kun vedät, arvo ja sen ympärillä oleva paneeli (jousituksen taajuus, LLTD, tasapainokaavio, vaimenninkaaviot, sahalaita) seuraavat vetoa. Mitään ei tallenneta eikä lisätä kumottaviin ennen kuin päästät irti. Muutetussa liukurissa on keltainen piste ja ero tallennettuun arvoon; napsauta eroa tai tuplaklikkaa liukuria, niin arvo palaa. Näppäimistöllä: siirry liukuriin Tabilla, nuolet siirtävät yhden askeleen, **Shift** + nuoli kymmenen, **Home** ja **End** vievät rajoille ja **Enter** antaa kirjoittaa arvon. Hiiren rulla muuttaa liukuria vasta, kun olet napsauttanut sitä, joten sivun vierittäminen ei koskaan siirrä arvoa. Rivin nasta lisää liukurin **Omaan näkymään** (5.5).
 
 **Neuvot tälle buildille** aukeaa Osat-, Alusta- ja Välitykset-välilehtien yläosassa. Se käy läpi tämän osan buildista ja selittää sen, ja huomioiden määrä näkyy myös välilehdessä (esimerkiksi **Alusta · 1**).
 
@@ -250,7 +255,8 @@ Säädä näyttää jokaisen säädön liukurina. Siinä on neljä välilehteä:
 
 - **Akseli** valitsee **Etu**, **Taka** tai **Molemmat**.
 - **A · Säädöt**: paino, etupaino, jousen pituus, jouset, vakaajat, vaimentimet sekä camber ja toe pelin järjestyksessä. Avaa ryhmän alta **Miten tämä toimii**, niin näet mekanismin.
-- **C · Tasapaino & KPI**: vaimennussuhde, kallistusgradientti, kallistusjäykkyys ja jousituksen taajuus. Vedä **LLTD**-palkkia tai **tasapainomittareita** siirtääksesi etu-/takajakoa niin, että kokonaisjäykkyys säilyy.
+- **C · Tasapaino & KPI**: vaimennussuhde, kallistusgradientti, kallistusjäykkyys ja jousituksen taajuus. Vedä **LLTD**-palkkia tai **tasapainokaavion** viivaa siirtääksesi etu-/takajakoa niin, että kokonaisjäykkyys säilyy. Tasapainokaavio näyttää jouset (mutkan keskellä), hitaan bumpin (sisään ja ulos) ja nopean bumpin (töyssyt ja reunakivet) samalla Etu–Taka-akselilla, ja taso ennen muutostasi on katkoviivalla.
+- Leveällä näytöllä (noin 1700 px:stä alkaen) liukurit asettuvat kahteen palstaan, ja Tasapaino & KPI pysyy näkyvissä, kun vierität.
 - **Tallenna presetiksi** säilyttää tämän alustan presettinä, jonka voi valita myöhemmin uudelleen. **Lue kuvasta** täyttää arvot kuvakaappauksesta.
 
 **Välitykset**
@@ -313,10 +319,10 @@ Yleiskuva on lista, jota seuraat peli auki Tougen vieressä.
 
 | Missä | Raahaa | Tekee |
 |---|---|---|
-| Mikä tahansa säätöliukuri | nuppia tai rullaa hiirellä sen päällä | asettaa arvon; **Shift** + rulla siirtää 10 askelta |
+| Mikä tahansa säätöliukuri | nuppia tai rullaa hiirellä napsautuksen jälkeen | asettaa arvon; **Shift** + rulla siirtää 10 askelta |
 | Paino, etupaino, vetopyörästö, vaihtoaika | rivin liukuria | sama kuin − ja + |
 | Alusta · C Tasapaino & KPI · **LLTD** | palkkia | siirtää vakaajien etu–taka-jakoa kokonaisjäykkyys ennallaan |
-| Alusta · **Tasapainomittarit** | mittaria | siirtää jousten tai vaimentimien etu–taka-jakoa akselien summa ennallaan |
+| Alusta · **Tasapainokaavio** | viivaa | siirtää jousten tai vaimentimien etu–taka-jakoa akselien summa ennallaan |
 | Camber ja toe -kaavio (Laaja) | pyörää | edestä-kuvassa kallistaa camberia, ylhäältä-kuvassa kääntää toeta |
 | Välitykset · sahakaavio | vaihteen ympyrää, aluenappia, päätypalkkeja | ks. Välitykset yllä |
 | Välitykset · diffi | kaaria | ulompi kaari kaasulukko, sisempi jarrulukko |
@@ -324,11 +330,30 @@ Yleiskuva on lista, jota seuraat peli auki Tougen vieressä.
 
 ![Camberin ja toen raahaus](img/fi/19-camber-drag.webp)
 
-Arvot siirtyvät pelilistaan, kun päästät irti, ja mallin aika päivittyy. Jos haluat kirjoittaa tarkan arvon, napsauta liukurin vieressä olevaa lukua.
+Arvot siirtyvät pelilistaan, kun päästät irti, ja mallin aika päivittyy piirtämättä sivua uudelleen, joten mikään ei hypi ja näppäimistön kohdistus pysyy paikallaan. Jos haluat kirjoittaa tarkan arvon, napsauta liukurin vieressä olevaa lukua.
+
+**Tiheys.** Asetukset › Yleiset › Tiheys › **Tiivis** mahduttaa ruudulle enemmän liukureita (Alustan liukuririvi 44–48 px 68 px:n sijaan).
+
+### 5.5 Oma näkymä
+
+![Oma näkymä](img/fi/70-my-view.webp)
+
+**Oma näkymä** kokoaa eniten käyttämäsi liukurit ja luvut yhdelle sivulle. Se on sama kaikille autoille, joten joka kerta säätämäsi liukurit ovat aina samassa paikassa.
+
+- Vasemmalla olevat **Omat liukurit** toimivat kuten Säädä-näkymän liukurit. Oletuksena niissä ovat jouset, kallistuksenvakaajat ja hitaan bumpin vaimentimet.
+- Oikealla olevat **Omat monitorit** näyttävät luvut, joita haluat seurata, esimerkiksi mallin vertailuajan, kallistusjäykkyyden jaon, kallistusgradientin ja jousituksen taajuudet. Samat monitorit näkyvät myös Säädä-näkymän Alusta-tulospalstan yläosassa.
+- Lisää liukuri painamalla sen rivin nastaa Säädä-näkymässä.
+- **Muokkaa** avaa listan kaikesta, mitä voit lisätä, ryhmiteltynä kuten Säädä-näkymässä. Ruksaa haluamasi, poista **×**:llä ja vedä ⠿-kahvasta (tai käytä sen päällä nuolinäppäimiä) muuttaaksesi järjestystä. **Palauta oletus** tuo aloitusvalikoiman takaisin, ja **Valmis** sulkee muokkauksen.
+
+![Oman näkymän muokkaus](img/fi/71-my-view-edit.webp)
 
 ## 6. Ajanotto: aja, kellota ja analysoi
 
 ### 6.1 Aja
+
+**Valmis ajanottoon?** Aja-näkymä tarkistaa ennen lähtöä, mitä ajanotto tarvitsee: pelikellon, näytönlukijan, ikkunatilan, ohjaimen, vapaan levytilan ja, kun Pelin fysiikka on päällä, pelin tiedoston. Jokaisella korjattavalla rivillä on nappi, joka korjaa asian tai vie oikeaan paikkaan. Kun kaikki on kunnossa, tarkistus taittuu yhdeksi riviksi. Samat rivit ovat kohdassa Asetukset › Ajanotto.
+
+![Valmis ajanottoon?](img/fi/76-readiness.webp)
 
 ![Aja](img/fi/20-drive.webp)
 
@@ -339,7 +364,9 @@ Arvot siirtyvät pelilistaan, kun päästät irti, ja mallin aika päivittyy. Jo
 
 Pelikello käynnistyy itsestään, kun Touge on auki, ja sen pieni ajastinikkuna pysyy pelin päällä. **F8** piilottaa ja tuo sen takaisin, **Ctrl+F8** siirtää sitä. Jos ikkunassa lukee **PELIÄ EI HAVAITTU**, Touge ei näe pelin HUD:ia; F8 tai ikkunan **X** piilottaa sen. Jos painat Käynnistä ilman peliä, saat ensin varoituksen, ja **Käynnistä silti** ottaa ajan ilman peliä.
 
-LCD-kellon splittilista näyttää jokaisen osuuden vertailuajan, kun sinulla on ajo, johon verrata.
+LCD-kellon splittilista näyttää jokaisen osuuden vertailuajan, kun sinulla on ajo, johon verrata. Uusi splitti välähtää listassa, kun se tulee.
+
+**chorison vertailuajo.** Nopein North Touge v2 -ajo (6:07,36, RX-7 FD) tulee Tougen mukana haamuna, joten voit kisata ja verrata sitä vastaan ensimmäisestä ajosta alkaen. Kuten kaikki jaetut ajot, se on merkitty vahvistamattomaksi (ks. [8.5](#85-reitit-ja-haamut)).
 
 **Asetukset**-napin vieressä oleva tila kertoo, mitä pelikello tekee, esimerkiksi **Odottaa peliä**. Jos kello on pysähtynyt, viereen tulee **Käynnistä pelikello** -nappi.
 
@@ -361,7 +388,7 @@ Kellon alla: ennätys, mediaani, viimeisten viiden keskiarvo ja kehitys. **Top 1
 
 ### 6.3 Analysoi
 
-Avaa maaliin päättyneen ajon jälkeen **Analysoi**. Se vertaa ajoa omaan ennätykseesi ja mediaaniisi mutka mutkalta.
+Avaa maaliin päättyneen ajon jälkeen **Analysoi**. Se vertaa ajoa omaan ennätykseesi ja mediaaniisi mutka mutkalta. Kun ajoja odottaa analyysia, Analysoi kertoo niiden määrän ja näyttää **Analysoi nyt** -napin; analyysin aikana edistymispalkki kertoo, montako ajoa on valmiina.
 
 ![Analysoi](img/fi/23-analyse.webp)
 
@@ -370,6 +397,7 @@ Avaa maaliin päättyneen ajon jälkeen **Analysoi**. Se vertaa ajoa omaan ennä
 - **Kartta** värittää jokaisen mutkan vihreäksi (nopeampi) tai punaiseksi (hitaampi) kuin mediaanisi, ja alla oleva **mutkanauha** näyttää saman palkkeina. Hiiren rulla zoomaa karttaa, vetämällä sitä voi siirtää, ja ennätysajo kulkee mukana haamuna.
 - **Ajon suurimmat erot mediaaniin** nimeää mutkat, joissa ajo hävisi eniten, ja syyn: jarrutus, sisääntulo, apex vai ulostulo.
 - **Tavoite** erojen alla näyttää, paljonko aikaa on vielä otettavissa: teoreettinen parhaasi parhaista mutkistasi yhdistettynä.
+- **Missä tämä ajo hävisi aikaa** nimeää kaksi mutkaa, joissa viimeisin ajosi hävisi eniten ennätykselle, ja syyn. Yksi napsautus avaa Säädä-sivulta vastaavat oireet (ulostulo, jarrutus, sisäänohjaus tai mutkan keskikohta). Kosketukseen tai virheeseen hävitty mutka nimetään ajovirheeksi. Kohta näkyy vain, kun viimeisin ajo on ennätystä hitaampi.
 - **Nopeus reitillä** paneelin alaosassa näyttää koko ajon nopeuskäyränä ennätykseesi ja mediaaniisi verrattuna. Kytke viivoja päälle ja pois napeista (ennätys, mediaani, kehityskohta, korkeus, splitit, malli) ja valitse mikä tahansa ajo kohdasta **Vertaa ajoa**. Kun liikut käyrällä, kursori liikkuu myös kartalla.
 
 ![Nopeus reitillä](img/fi/26-speed-on-route.webp)
@@ -378,9 +406,13 @@ Avaa maaliin päättyneen ajon jälkeen **Analysoi**. Se vertaa ajoa omaan ennä
 
 ![Mutkan tarkastelu](img/fi/25-analyse-zoom.webp)
 
-**Ajovertailu** asettaa kaksi ajoa päällekkäin. Valitse **Ajo A** ja **Ajo B (haamu)** tai **Vaihda A ja B**. Kartta on koko leveydellä, ja sen välilehdet valitsevat viivan värin: **Ero B:hen** (vihreä, missä A voittaa aikaa, punainen, missä A häviää), **Nopeus**, **Vaihde** tai **Oma vs malli**. A on kursorin kohdalla ja B haamuna samalla ajan hetkellä. Kartan alla graafit näyttävät nopeuden, aikaeron, vaihteen ja kierrokset, ja yksi **Syötteet**-rivi näyttää molempien ajojen kaasun ja jarrun sekä ohjauksen vain siellä, missä se on rajalla tai vastaohjausta. Graafeissa vedä sivuttain zoomataksesi ja tuplaklikkaa koko reittiin; nuolinäppäimet siirtävät kursoria.
+**Ajovertailu** asettaa kaksi ajoa päällekkäin. Valitse **Ajo A** ja **Ajo B (haamu)** tai **Vaihda A ja B**. B voi olla myös jaettu haamu, kuten chorison vertailuajo. Kartta on koko leveydellä, ja sen välilehdet valitsevat viivan värin: **Ero B:hen** (vihreä, missä A voittaa aikaa, punainen, missä A häviää), **Nopeus**, **Vaihde** tai **Oma vs malli**. A on kursorin kohdalla ja B haamuna samalla ajan hetkellä. Kartan alla graafit näyttävät nopeuden, aikaeron, vaihteen ja kierrokset, ja yksi **Syötteet**-rivi näyttää molempien ajojen kaasun ja jarrun sekä ohjauksen vain siellä, missä se on rajalla tai vastaohjausta. Graafeissa vedä sivuttain zoomataksesi ja tuplaklikkaa koko reittiin; nuolinäppäimet siirtävät kursoria.
 
 ![Ajovertailu](img/fi/29-run-comparison.webp)
+
+Kun A ja B on ajettu eri setupeilla, **Mikä muuttui A:n ja B:n välillä** listaa eroavat pelin arvot aikaeron vieressä.
+
+![Viimeisin ajo](img/fi/77-latest-run.webp)
 
 Sen alla **viimeisimmän ajon** kortti kertoo ajon sanoin, ja **Seuraavaksi** nimeää yhden asian: yleensä mutkan, jota kannattaa harjoitella ensin (**Avaa mutka** zoomaa suoraan siihen), tai setupin muutoksen, kun sama kuvio toistuu ajoissasi (**Avaa Säädä**).
 
@@ -426,12 +458,16 @@ Omat reittisi tallentuvat `Routes`-kansioon.
 
 ![Asetukset](img/fi/30-settings.webp)
 
-- **Yleiset**: kieli, tekstin koko, Säädä-näkymän näkymätaso sekä animaatiot. Paneeleja voi siirtää vetämällä niiden otsikon kahvasta.
+- **Yleiset**: kieli, tekstin koko, Säädä-näkymän näkymätaso, **Tiheys** (Väljä tai Tiivis), animaatiot, **Yksiköt** (km/h ja kg tai mph ja lb: Touge laskee yhä metrisesti ja vaihtaa vain näytettävät luvut; kaaviot ja ohjetekstit pysyvät metrisinä), **Taustakartta** (Normaali, Himmeä tai Pois), **Aloitussivu** (viimeisin, Rakenna, Säädä, Oma näkymä tai Ajanotto), **Yläosa** ja **Palauta asettelu** (palauttaa paneelien järjestyksen, piilotetut ja taitetut paneelit sekä Säädä-tilan ja -kansion oletuksiin; Oma näkymä ja asetukset säilyvät).
 - **Data ja varmuuskopiot**: missä datasi on ja nappi kansion avaamiseen.
-- **Ajanotto**: pelikellon ja näytönlukijan valinnat.
+- **Ajanotto**: samat valmiusrivit kuin Aja-näkymässä ja niiden alla näytönlukijan valinnat.
 - **Pelin fysiikka** (kokeellinen): näkyy, kun Touge löytää pelin oman fysiikkatiedoston; sillä Touge voi kokeilla säätöjä pelin fysiikalla. Tulokset ovat kalibroimattomia (◐).
 - **Käynnistys ja sammutus**: sammuttaa Tougen ja pelikellon yhdessä.
-- **Tietoja**: versio ja lisenssit.
+- **Tietoja**: versio, päivitysvalinnat (**Ilmoita uusista versioista** ja **Tarjoa myös esikatseluversiot**, jotka julkaistaan testattavaksi hieman ennen muita), **Ilmoita ongelmasta**, **Tämän version uutuudet**, palautelinkit ja lisenssit.
+
+![Tietoja](img/fi/74-about.webp)
+
+**Ilmoita ongelmasta** tallentaa diagnostiikkatiedoston `Shared`-kansioon (versio, asetukset, valmiustarkistus ja uusimmat lokit; ei tunejä, ajoja eikä käyttäjänimeäsi) ja avaa GitHub-ilmoituksen valmiiksi täytettynä. Liitä tiedosto siihen.
 
 ![Ohje](img/fi/31-help.webp)
 
@@ -473,7 +509,9 @@ Jokainen tallentamasi tiedosto menee **`Shared`**-kansioon Project Touge.exe:n v
 3. Alla oleva nimikenttä on nimi, jonka vastaanottaja näkee. Sen muuttaminen muuttaa vain jaettavaa kopiota, ei omaa setuppiasi tai presettiäsi.
 4. Kirjoita halutessasi **Your name (optional)** (Sinun nimesi, valinnainen). Se näkyy tiedoston avaajalle. Tyhjänä tiedosto jaetaan ilman nimeä.
 5. **Save as file** (Tallenna tiedostoksi) tallentaa tiedoston. Touge kertoo, minne se tallentui, esim. `Shared\Touge AE86.tune.json`.
-6. **Or share as text** (Tai jaa tekstinä) on toinen tapa: kentässä on `TOUGE1:`-alkuinen tekstirivi. Napsauta sen vieressä olevaa kopiointinappia ja liitä teksti suoraan chat-viestiin. Reitit jaetaan vain tiedostona, koska niissä on kuvia.
+6. **Tai jaa tekstinä** on toinen tapa: kentässä on `TOUGE2:`-alkuinen tekstirivi, ja sen pituus näkyy otsikon vieressä. **Kopioi koodi** kopioi sen ja kuittaa paikallaan tekstillä "Kopioitu"; liitä teksti suoraan chat-viestiin. Tune on noin 1 100 merkkiä, joten se mahtuu yhteen Discord-viestiin. Reitit jaetaan vain tiedostona, koska niissä on kuvia.
+
+Vanhempien versioiden koodit (`TOUGE1:`) tuodaan yhä, mutta 0.13.0 ja vanhemmat eivät osaa lukea `TOUGE2:`-koodia: pyydä vastaanottajaa päivittämään tai jaa tiedosto.
 
 ![Share and import, Share-välilehti: mitä jaetaan, tiedoston nimi, oma nimesi ja jakoteksti](img/en/602-share-dialog.webp)
 
@@ -501,7 +539,7 @@ Sisään pääsee kolmella tavalla, ja kaikki päätyvät samaan esikatseluun:
 
 - **Pudota tiedosto kansioon `Shared\Inbox`.** Touge katsoo kansion muutaman sekunnin välein ja näyttää ilmoituksen **New shared file in Shared\Inbox** ja **Review**-napin (Näytä). Import-välilehden (Tuo) **Open Shared folder** (Avaa Shared-kansio) vie kansioon.
 - **Raahaa tiedosto Tougen ikkunaan.**
-- **Share and import… → Import** (Tuo): pudota tiedosto laatikkoon, käytä **Choose file…** (Valitse tiedosto…) tai liitä `TOUGE1:`-teksti **Ctrl+V**:llä (**Type the text**, Kirjoita teksti, avaa sille kentän).
+- **Share and import… → Import** (Tuo): pudota tiedosto laatikkoon, käytä **Choose file…** (Valitse tiedosto…) tai liitä jaettu teksti **Ctrl+V**:llä (**Liitä teksti** avaa sille kentän).
 
 ![Kansioon Shared\Inbox tuli tiedosto](img/en/605-inbox-toast.webp)
 
@@ -558,7 +596,7 @@ Project Touge on yksi kansio. Kaikki, mitä se tallentaa, jää sen sisälle: ja
 Project Touge\
 ├─ Project Touge.exe     koko ohjelma
 ├─ README.txt
-├─ Shared\               jakamista varten tallennetut tiedostot
+├─ Shared\               jakamista varten tallennetut tiedostot ja diagnostiikkatiedostot
 │  └─ Inbox\             pudota saamasi tiedostot tänne
 └─ Data\                 kaikki, mitä Touge pitää itsellään
    ├─ settings.json      ikkunan, ajanoton ja lukijan asetukset
@@ -585,10 +623,11 @@ Project Touge\
 - **Pelikello ei vastaa**: käynnistä Project Touge uudelleen; kello on osa ohjelmaa ja käynnistyy sen mukana. Tarkista, ettei mikään muu telemetriaohjelma käytä samaa porttia.
 - **Windows estää ohjelman**: jos SmartScreen pysäyttää sen, valitse **Lisätietoja → Suorita silti**. Pidä exe `Program Files` -kansion ulkopuolella, koska sinne Touge ei voi kirjoittaa datakansioitaan.
 - **Nopeus tai minikartta ei tule**: aja peliä reunattomassa ikkunassa tai koko näytöllä niin, että HUD näkyy. Touge löytää HUDin ensimmäisellä ajolla; testatut resoluutiot ovat 3440×1440, 2560×1440, 2560×1080, 1920×1440 ja 1920×1080.
-- **Luku ei vastaa peliä**: katso ensin, onko siinä ◐. Kirjoita pelin oma lukema **Tarkista pelistä** -riveille ja ilmoita ero Tougen versiolla ja `Logs`-kansion tiedostoilla.
+- **Ajanotto ei lähde**: avaa Ajanotto → Aja ja katso **Valmis ajanottoon?** -tarkistus. Jokainen rivi, joka ei ole vihreä, kertoo mitä puuttuu, ja sen napista pääsee korjaamaan.
+- **Luku ei vastaa peliä**: katso ensin, onko siinä ◐. Kirjoita pelin oma lukema **Tarkista pelistä** -riveille ja ilmoita ero **Ilmoita ongelmasta** -toiminnolla.
 - **Setup katosi**: katso **Kaikki setupit → Roskakori** tai palauta päivätyistä kopioista `Tunes`-kansiossa.
 
-Löysitkö vian tai luvun, joka ei täsmää pelissä? Avaa [issue](https://github.com/aaturaty/project-touge/issues) ja kerro Tougen versio (näkyy yläpalkissa), mitä teit, ja liitä `Logs`-kansion tiedostot.
+Löysitkö vian tai luvun, joka ei täsmää pelissä? Käytä kohtaa **Asetukset › Tietoja › Ilmoita ongelmasta**: se tallentaa diagnostiikkatiedoston `Shared`-kansioon ja avaa GitHubiin [ilmoituksen](https://github.com/aaturaty/project-touge/issues), jossa versiosi on valmiina. Kerro mitä teit ja liitä tiedosto.
 
 ---
 

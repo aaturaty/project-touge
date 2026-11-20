@@ -8,7 +8,7 @@ Edit the Markdown files, then run this script again. The same folder can be ship
 import html, os, re
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-BANDS = {'3': 'band-build', '5': 'band-tune', '6': 'band-time'}
+BANDS = {'2': 'band-start', '3': 'band-build', '5': 'band-tune', '6': 'band-time', '8': 'band-share'}
 
 
 def slug(t):

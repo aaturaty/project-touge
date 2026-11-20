@@ -32,7 +32,7 @@ Project Touge is one folder. Everything it saves stays inside it: what you share
 Project Touge\
 ├─ Project Touge.exe     the whole program
 ├─ README.txt
-├─ Shared\               files you saved for sharing
+├─ Shared\               files you saved for sharing, and diagnostics files
 │  └─ Inbox\             drop files you receive here
 └─ Data\                 everything Touge keeps for itself
    ├─ settings.json      window, timer and reader settings
@@ -81,7 +81,7 @@ Enter your car from screenshots, start from the model, or import a tune from the
 
 [![Tune](media/readme/tune.webp)](docs/guide/README.md)
 
-Pick a symptom by corner phase, adjust the chassis, gearing or diff, check the effect, then copy the setup to the game. Each change explains why it helps, with a link to the matching chapter of the Tuning Bible.
+Pick a symptom by corner phase, adjust the chassis, gearing or diff, check the effect, then copy the setup to the game. Each change explains why it helps, with a link to the matching chapter of the Tuning Bible. Sliders follow your drag in real time and work from the keyboard, and **My view** keeps the sliders and numbers you use most on one page, the same for every car.
 
 <p>
 <a href="docs/guide/img/en/10-symptom.webp"><img src="media/readme/thumbs/10-symptom.webp" width="32%" alt="symptom"></a>
@@ -98,6 +98,7 @@ A timer with automatic splits and a leaderboard per route. Speed, gear and minim
 - Run the game borderless or full screen. A window works if the whole HUD is visible.
 - Tested resolutions: 3440×1440 (recommended), 2560×1440, 2560×1080, 1920×1440 and 1920×1080.
 - Open the **Time** tab, pick a route and press **Start**. Touge finds the speedometer, gear display and minimap by itself on the first run.
+- **Ready to time?** in the Drive view checks the game timer, screen reader, window mode, controller and disk space before you start, with a button for anything that needs work.
 
 <p>
 <a href="docs/guide/img/en/20-drive.webp"><img src="media/readme/thumbs/20-drive.webp" width="32%" alt="drive"></a>

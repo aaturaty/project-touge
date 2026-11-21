@@ -351,54 +351,62 @@ Arvot siirtyvät pelilistaan, kun päästät irti, ja mallin aika päivittyy pii
 
 ### 6.1 Aja
 
-**Valmis ajanottoon?** Aja-näkymä tarkistaa ennen lähtöä, mitä ajanotto tarvitsee: pelikellon, näytönlukijan, ikkunatilan, ohjaimen, vapaan levytilan ja, kun Pelin fysiikka on päällä, pelin tiedoston. Jokaisella korjattavalla rivillä on nappi, joka korjaa asian tai vie oikeaan paikkaan. Kun kaikki on kunnossa, tarkistus taittuu yhdeksi riviksi. Samat rivit ovat kohdassa Asetukset › Ajanotto.
+![Aja](img/fi/20-drive.webp)
+
+Aja mahtuu yhdelle ruudulle kolmeen sarakkeeseen: vasemmalla kello ja sen väliajat, keskellä reittikartta ja viimeisimmät ajosi, oikealla valmiustarkistus. Niiden yllä oleva **istuntorivi** sisältää reitin, **Aja vastaan** -valinnan (auton ennätys, reitin ennätys kaikilla autoilla, mediaaniajo tai malli), auton ja setupin sekä ennätyksen, mediaanin ja ajojen määrän. **Ajanoton asetukset** on rivin oikeassa päässä.
+
+**Valmis ajanottoon?** Aja tarkistaa ennen lähtöä, mitä ajanotto tarvitsee: pelikellon, näytönlukijan, ikkunatilan, ohjaimen, vapaan levytilan ja, kun Pelin fysiikka on päällä, pelin tiedoston. Listalla ovat vain rivit, jotka vaativat jotain, ja jokaisessa on nappi, joka korjaa asian tai vie oikeaan paikkaan; muut kootaan yhdelle riville, esimerkiksi **4 tarkistusta kunnossa**. Jos peliä ei löydy, kello kertoo sen, ja **Ajanotto käsin** käynnistää sovelluksen oman sekuntikellon. Samat rivit ovat kohdassa Asetukset › Ajanotto.
 
 ![Valmis ajanottoon?](img/fi/76-readiness.webp)
 
-![Aja](img/fi/20-drive.webp)
-
-1. Valitse reitti oikealta. Kartta ja splitit seuraavat sitä.
+1. Valitse reitti istuntoriviltä. Kartta ja väliajat seuraavat sitä.
 2. Avaa CarX Street reunattomassa ikkunassa oletus-HUD:lla ja aja lähtöön. Touge lukee nopeusmittarin ja minikartan näytöltä, joten niiden pitää näkyä.
 3. Pysähdy lähtöön ja paina **F9** (tai opettamaasi ohjaimen nappia). Kello lähtee, kun auto liikkuu, ja autosplit merkitsee osuudet.
 4. **F10** splittaa käsin, **F11** on maali. **Väli** käyttää sovelluksen omaa sekuntikelloa, kun pelikello ei ole käynnissä.
 
-Pelikello käynnistyy itsestään, kun Touge on auki, ja sen pieni ajastinikkuna pysyy pelin päällä. **F8** piilottaa ja tuo sen takaisin, **Ctrl+F8** siirtää sitä. Jos ikkunassa lukee **PELIÄ EI HAVAITTU**, Touge ei näe pelin HUD:ia; F8 tai ikkunan **X** piilottaa sen. Jos painat Käynnistä ilman peliä, saat ensin varoituksen, ja **Käynnistä silti** ottaa ajan ilman peliä.
+**Ajon aikana** iso luku on erosi siihen ajoon, jota vastaan ajat, ja väliaikojen välissä se seuraa autoa (autosplitin kohdasta, tai pelin matkamittarista, kun vertailuajoa ei vielä ole). **Splitti**-nappi kertoo seuraavan väliaikapisteen nimen, ja viimeisellä se on **Maali**. Jokaisella väliajalla on listassa reitin antama nimi, etäisyys, aika ja ero. Kartalla täytetty piste olet sinä ja katkoviivarengas on vertailuajo samalla hetkellä. Jaetun haamun ero näkyy kellon alla.
 
-LCD-kellon splittilista näyttää jokaisen osuuden vertailuajan, kun sinulla on ajo, johon verrata. Uusi splitti välähtää listassa, kun se tulee.
+**Keskeytä** pysäyttää kellon heti. 10 sekunnin ajan **Kumoa** jatkaa ajoa kuin mitään ei olisi tapahtunut, ja **Hylkää heti** pudottaa sen. Sen jälkeen keskeytetty ajo, jossa on vähintään yksi väliaika, tallentuu keskeytettynä: se näkyy historiassa, mutta siitä ei koskaan tule ennätystä. Ohjaimen keskeytysnappi toimii samoin.
+
+**Maalissa** tuloskortti tulee valmiussarakkeen tilalle: aika, ero ennätykseen ja mediaaniin sekä jokaisen väliajan voitto tai häviö palkkina. **Analysoi tämä ajo** avaa sen Analysoissa, **Mitä auto teki?** avaa Säädä-sivun oireet, **Aja uudelleen** virittää kellon, ja **Hylkää ajo** poistaa testi- tai huonon ajon historiasta, datasta ja analyysista (seuraava ajo saa saman numeron).
+
+![Tuloskortti](img/fi/78-result-card.webp)
+
+Kartan alla **Viimeisimmät ajot tällä reitillä** listaa viimeiset ajosi: aika, ero ennätykseen, setup ja miten ajo päättyi (Maali tai Keskeytyi jossain väliajassa). **Analysoi** avaa yhden, **Kaikki Analysoissa** listan. Kun sinulla on maaliin ajettu ajo, sivun alarivi tarjoaa seuraavaksi askeleeksi **Analysoi ajo N**.
+
+Pelikello käynnistyy itsestään, kun Touge on auki, ja sen pieni ajastinikkuna pysyy pelin päällä. **F8** piilottaa ja tuo sen takaisin, **Ctrl+F8** siirtää sitä. Jos ikkunassa lukee **PELIÄ EI LÖYDY**, Touge ei näe pelin HUD:ia; F8 tai ikkunan **X** piilottaa sen.
 
 **chorison vertailuajo.** Nopein North Touge v2 -ajo (6:07,36, RX-7 FD) tulee Tougen mukana haamuna, joten voit kisata ja verrata sitä vastaan ensimmäisestä ajosta alkaen. Kuten kaikki jaetut ajot, se on merkitty vahvistamattomaksi (ks. [8.5](#85-reitit-ja-haamut)).
 
-**Asetukset**-napin vieressä oleva tila kertoo, mitä pelikello tekee, esimerkiksi **Odottaa peliä**. Jos kello on pysähtynyt, viereen tulee **Käynnistä pelikello** -nappi.
+Aja-, Analysoi- ja Reitit-välilehtien vieressä oleva tila kertoo, mitä pelikello tekee, esimerkiksi **Odottaa peliä**. Jos kello on pysähtynyt, viereen tulee **Käynnistä pelikello** -nappi.
 
-**Asetukset** (Ajanotto-välilehden oikeassa yläkulmassa) sisältää ajanoton valinnat:
+**Ajanoton asetukset** sisältää ajanoton valinnat:
 
 ![Ajanoton asetukset](img/fi/21-timing-settings.webp)
 
 - **Autosplit** päälle tai pois ja **Mykistä ajastin**, kun haluat vain ajella. Niiden alla tilarivit näyttävät palvelimen, pelikellon, näytönlukijan ja vapaan levytilan.
 - **Ohjain**: paina mitä tahansa ohjaimen nappia ja sitten **Opettele käynnistysnappi / splitti-nappi / peru-nappi**. Ne toimivat, kun peli on aktiivisena.
-- Tougen omissa **Asetukset > Ajanotto** -valinnoissa (uusi 0.12:ssa): **Minikartan lukutaajuus** 15 Hz (oletus) tai 30 Hz, joista 30 Hz antaa tarkemman kääntymis- ja luistodatan mutta käyttää enemmän prosessoria, sekä **Tallenna minikarttakuvat** ajoanalyysin tarkempaa linjaa varten (noin 10 Mt ajolta, säilyvät kansiossa `Data\Logs\Reader` vuorokauden ja enintään 200 Mt, vanhimmat poistuvat ensin; oletuksena pois). Molemmat tulevat voimaan, kun pelikello käynnistyy seuraavan kerran.
-- **Ajonäkymä** näyttää kellon isona; **Irrota ajastin** avaa sen omaan pieneen ikkunaan.
+- Tougen omissa **Asetukset > Ajanotto** -valinnoissa: **Minikartan lukutaajuus** 15 Hz (oletus) tai 30 Hz, joista 30 Hz antaa tarkemman kääntymis- ja luistodatan mutta käyttää enemmän suoritinta, ja **Tallenna minikartan kuvat** tarkempia linjoja varten ajoanalyysissa (noin 10 Mt ajoa kohden, säilyy kansiossa `Data\Logs\Reader` vuorokauden ja enintään 200 Mt, vanhimmat poistetaan ensin; oletuksena pois). Molemmat tulevat voimaan, kun pelikello seuraavan kerran käynnistyy.
+- **Irrota ajastin** avaa kellon omaan pieneen ikkunaan.
 - **Tuo** hakee vanhan kellon tiedoston tai LiveSplit-splitit tai palauttaa ajat varmuuskopiosta. **Syötä aika käsin** on muualla kellotettuja ajoja varten.
 
 ### 6.2 Tulostaulu
 
 ![Tulostaulu](img/fi/22-leaderboard.webp)
 
-Kellon alla: ennätys, mediaani, viimeisten viiden keskiarvo ja kehitys. **Top 10** listaa ajot autoineen ja setupeineen, ja **Kehitys ajojärjestyksessä** näyttää, miten paras aikasi on parantunut. **Autot ja setupit** vertaa niitä rinnakkain.
+Tulostaulu on nyt Analysoin mutkataulukon välilehti (ks. 6.3): ennätys, mediaani, viimeisten viiden keskiarvo ja kehitys, **Top 10** autoineen ja setupeineen, **Kehitys ajojärjestyksessä** ja **Autot ja setupit** rinnakkain.
 
 ### 6.3 Analysoi
 
-Avaa maaliin päättyneen ajon jälkeen **Analysoi**. Se vertaa ajoa omaan ennätykseesi ja mediaaniisi mutka mutkalta. Kun ajoja odottaa analyysia, Analysoi kertoo niiden määrän ja näyttää **Analysoi nyt** -napin; analyysin aikana edistymispalkki kertoo, montako ajoa on valmiina.
+Avaa maaliin päättyneen ajon jälkeen **Analysoi**. Se vertaa ajoa omaan ennätykseesi ja mediaaniisi mutka mutkalta. Tieto analyysia odottavista ajoista ja **Päivitä**-nappi ovat välilehtirivin oikeassa päässä.
 
 ![Analysoi](img/fi/23-analyse.webp)
 
-- **Auto** rajaa ajot auton mukaan.
-- Analysoin yläosa on yksi paneeli. **Aikanauha** näyttää viimeisimmän ajon ajan ja sen eron ennätykseen ja mediaaniin.
-- **Kartta** värittää jokaisen mutkan vihreäksi (nopeampi) tai punaiseksi (hitaampi) kuin mediaanisi, ja alla oleva **mutkanauha** näyttää saman palkkeina. Hiiren rulla zoomaa karttaa, vetämällä sitä voi siirtää, ja ennätysajo kulkee mukana haamuna.
-- **Ajon suurimmat erot mediaaniin** nimeää mutkat, joissa ajo hävisi eniten, ja syyn: jarrutus, sisääntulo, apex vai ulostulo.
-- **Tavoite** erojen alla näyttää, paljonko aikaa on vielä otettavissa: teoreettinen parhaasi parhaista mutkistasi yhdistettynä.
-- **Missä tämä ajo hävisi aikaa** nimeää kaksi mutkaa, joissa viimeisin ajosi hävisi eniten ennätykselle, ja syyn. Yksi napsautus avaa Säädä-sivulta vastaavat oireet (ulostulo, jarrutus, sisäänohjaus tai mutkan keskikohta). Kosketukseen tai virheeseen hävitty mutka nimetään ajovirheeksi. Kohta näkyy vain, kun viimeisin ajo on ennätystä hitaampi.
-- **Nopeus reitillä** paneelin alaosassa näyttää koko ajon nopeuskäyränä ennätykseesi ja mediaaniisi verrattuna. Kytke viivoja päälle ja pois napeista (ennätys, mediaani, kehityskohta, korkeus, splitit, malli) ja valitse mikä tahansa ajo kohdasta **Vertaa ajoa**. Kun liikut käyrällä, kursori liikkuu myös kartalla.
+- Ylhäällä on sama **istuntorivi** kuin Ajassa: reitti, katsottava **Ajo**, **Vertailu**, autosuodatin, ero ja saatavilla oleva aika. Reitin voi vaihtaa tästä palaamatta Ajaan.
+- **Kartta** värittää jokaisen mutkan vihreäksi (nopeampi) tai punaiseksi (hitaampi) kuin vertailu, ja reitti käännetään täyttämään kartta-alue. Sen alla **mutkanauha** näyttää saman palkkeina, ja **aikaero**- ja **nopeus**-käyrät jatkuvat samalla matka-akselilla.
+- Vie hiiri mutkan päälle missä tahansa (nauha, kartta, lista tai käyrä), niin sama mutka korostuu kaikissa.
+- Oikeassa sarakkeessa ovat tuomio, **Seuraavaksi** (yksi asia: harjoittele mutkaa **Avaa mutka** -napilla, tai **Avaa Säädä**, kun sama kuvio toistuu ajoissasi, ja vieressä **Mitä auto teki?**), **Missä tämä ajo hävisi aikaa** ja **Tavoite**. Kun iso kartta vierii pois näkyvistä, sarakkeen yläosaan jää pieni kartta.
+- Kun ajo on sama kuin vertailu (esimerkiksi ainoa ajosi), Analysoi näyttää ajon omat luvut ja ehdottaa vertailua mediaaniin tai toiseen ajoon ±0,00-sarakkeen sijaan.
 
 ![Nopeus reitillä](img/fi/26-speed-on-route.webp)
 
@@ -416,33 +424,29 @@ Kun A ja B on ajettu eri setupeilla, **Mikä muuttui A:n ja B:n välillä** list
 
 Sen alla **viimeisimmän ajon** kortti kertoo ajon sanoin, ja **Seuraavaksi** nimeää yhden asian: yleensä mutkan, jota kannattaa harjoitella ensin (**Avaa mutka** zoomaa suoraan siihen), tai setupin muutoksen, kun sama kuvio toistuu ajoissasi (**Avaa Säädä**).
 
-**Osioiden avaus.** Yläpaneelin alla olevat osiot voi pienentää. Napsauta osion otsikkoriviä, niin se aukeaa tai sulkeutuu; Touge muistaa, mitkä pidät auki. Jokaisessa on myös ⠿-kahva, jolla sen voi siirtää ylös tai alas.
+**Mutkat, ajot ja malli** on yksi taulukko käyrien alla, aluksi suljettuna. Sen välilehdet vaihtavat sisällön: **Harjoittelu** (mutkat, joissa mediaaniajosi häviää eniten parhaalle; merkitse mutka **Harjoiteltu**, kun olet työstänyt sitä), **Tämä ajo** (valitun ajon mutkataulukko), **Kaikki mutkat** (aika ja mediaaninopeudet jokaisen mutkan läpi), **Splitit**, **Malli ja peli** (mistä reittimalli saa mutkasäteensä ja miten mallin aika vertautuu ajoihisi) ja **Tulostaulu**. Häviöiden alla oleva **Avaa taulukko** vie suoraan siihen.
 
 ![Harjoituslista](img/fi/24-practice.webp)
 
-**Harjoituslista** järjestää mutkat, joissa mediaaniajosi häviää eniten parhaalle. Jokainen kertoo, mihin aika menee (jarrutus ja sisääntulo, apex vai ulostulo), ja lähikuva näyttää kaasun, jarrun ja ohjauksen ennätykseesi verrattuna. Merkitse mutka **Harjoiteltu**, kun olet työstänyt sitä.
-
-**Ajo mutkittain** avaa valitun ajon mutkakohtaisen taulukon.
-
-**Reitin tilastot** alimpana sisältää **Splitit**, **Kaikki mutkat** (aika ja mediaaninopeudet jokaisen mutkan läpi) ja **Malli ja peli** (mistä reittimalli saa mutkasäteensä ja miten mallin aika vertautuu omiin ajoihisi). Malli ja peli on aluksi kiinni.
-
 ### 6.4 Reitit ja omat reitit
-
-Aja- ja Analysoi-näkymien vieressä oleva **Reitit** listaa omat reittisi, myös kuusi Tougen mukana tulevaa; **Näytä kaikki pelin reitit** listaa myös jokaisen pelin reitin.
 
 ![Reitit](img/fi/27-routes.webp)
 
-Valitse reitti, niin näet sen muodon, pituuden, mutkat, hiusneulat, nousun ja laskun, parhaan aikasi ja ajomäärän sekä splitit. **Kartta** näyttää, missä reitti on koko kartalla, ja merkitsee lähdön ja maalin nastoilla ja nimillä; **Näytä koko kartta** ja **Näytä reitin alue** vaihtavat näiden välillä.
+Reitit on yksi ruutu kolmessa sarakkeessa, ja keskellä oleva kartta pysyy paikallaan:
+
+- **Vasemmalla reittilista.** Hae nimellä, alueella tai koodilla, tai valitse suodatin: **Ajetut**, **Omat**, **Sprint**, **Circuit** tai **Drift**. **Omat reitit** (omat reittisi ja jokainen ajamasi reitti) ovat ensin ajomäärineen ja ennätyksineen. **Pelin reitit** on ryhmitelty tyypin mukaan; ryhmä aukeaa paikallaan ja näyttää 40 reittiä kerrallaan. **Näytä vastasuunnat** lisää omien reittiesi vastasuunnat.
+- **Keskellä reitti.** Nimi, pituus, väliajat, mutkat, ennätys ja ajot sekä **Aja tätä reittiä** ja **Analysoi**. **Muokkaa**, **Jaa** ja **Poista** ovat omia nappejaan (pelin reitillä on niiden sijaan **Tee oma reitti**). **Kartta** näyttää, missä reitti on koko kartalla, numeroidut väliaikapisteet ja nastat lähdölle ja maalille; **Näytä koko kartta** ja **Näytä reitin alue** vaihtavat näiden välillä.
+- **Oikealla tiedot.** **Väliajat** listaa jokaisen väliajan nimen, etäisyyden, ennätysaikasi siinä kohdassa ja osuusajan. Etäisyydet ovat samat kuin Ajassa ja Analysoissa. Yli 5 km:n osuudesta tulee huomautus, ja **Ehdota** näyttää tasaisesti sijoitetut lisäpisteet kartalla ja listassa. Sen alla ovat **Haamut tällä reitillä** ja **Mistä lähdetään**: lähtö- ja maalikuva pikkukuvina (klikkaus näyttää isompana) ja oma kuvauksesi.
 
 ![Reittikartta, lähtö ja maali](img/fi/53-route-map.webp)
 
-Kirjoita **Kuvaus** (mistä lähtö alkaa, vaaralliset mutkat, missä gutterit toimivat) ja lisää **Lähtö**- ja **Maali**-kuva, niin löydät kohdan uudelleen. Hyvä kuva on koko näytön kuvakaappaus 16:9 ilman valikoita: lähdössä auto lähtöviivalla ajosuuntaan, maalissa noin 50 m ennen maalia ajosuuntaan. **Valitse ja aja** vie reitin Aja-näkymään.
+Kirjoita **Kuvaus** (mistä lähtö alkaa, vaaralliset mutkat, missä gutterit toimivat) ja lisää **Lähtö**- ja **Maali**-kuva, niin löydät kohdan uudelleen. Hyvä kuva on koko näytön kuvakaappaus 16:9 ilman valikoita: lähtöön auto lähtöviivalla ajosuuntaan, maaliin noin 50 m ennen viivaa ajosuuntaan.
 
 **Tee oma reitti**
 
 ![Reittieditori](img/fi/28-route-editor.webp)
 
-1. Paina **＋ Uusi reitti** (tai omalla reitillä **Muokkaa tai poista**). Kartta näyttää jokaisen tien, jota pelin kisat käyttävät, ja maamerkkeinä bensa-asemat, kodit, kerhot ja autoliikkeet. Raahaa siirtääksesi, rullalla tai **+ / −** -napeilla zoomaat.
+1. Paina **Uusi reitti** (tai omalla reitillä **Muokkaa**). Kartta näyttää jokaisen tien, jota pelin kisat käyttävät, ja maamerkkeinä bensa-asemat, kodit, kerhot ja autoliikkeet. Raahaa siirtääksesi, rullalla tai **+ / −** -napeilla zoomaat.
 2. **Klikkaa lähtö** tielle. Klikkaa sitten splitit järjestyksessä ja viimeisenä maali. Reitti kulkee pisteiden välillä tietä pitkin lyhintä reittiä.
 3. Klikkaus reitin päällä lisää splitin väliin, muualla klikkaus jatkaa reittiä. Raahaa pistettä siirtääksesi sitä.
 4. Jos reitti oikaisee kohdasta, jota et aja, lisää **Ohjauspiste**: se ohjaa reittiä, mutta siinä ei oteta aikaa. Jokaisen pisteen voi vaihtaa **Splitiksi** tai **Ohjauspisteeksi**.
@@ -450,7 +454,7 @@ Kirjoita **Kuvaus** (mistä lähtö alkaa, vaaralliset mutkat, missä gutterit t
 6. Rastita **Ajettavissa myös vastasuuntaan**, jos haluat reittilistaan myös vastakkaisen suunnan.
 7. **Tallenna reitti**, tai **Tallenna ja aja**, niin voit kellottaa sen heti.
 
-**Ensimmäinen ajo uudella reitillä.** Aja ensimmäinen ajo lähdöstä maaliin ja paina jokaisessa splitissä itse **F10**. Autosplit oppii splittien paikat tästä ajosta ja toimii itsestään seuraavasta ajosta alkaen. Sama pätee pelin reitteihin.
+**Ensimmäinen ajo uudella reitillä.** Aja ensimmäinen ajo lähdöstä maaliin ja paina jokaisessa splitissä itse **F10**. Autosplit oppii splittien paikat tästä ajosta ja toimii itsestään seuraavasta ajosta alkaen. Sama pätee pelin reitteihin. Oman reitin väliaikapisteet tulevat aina editorista, joten kun siirrät väliaikaa, Aja, Analysoi ja Reitit näyttävät kaikki uudet etäisyydet.
 
 Omat reittisi tallentuvat `Routes`-kansioon.
 

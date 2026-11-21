@@ -349,54 +349,62 @@ Values go to the game list when you let go, and the model time updates without r
 
 ### 6.1 Drive
 
-**Ready to time?** Before you start, the Drive view checks what timing needs: the game timer, the screen reader, the window mode, the controller, free disk space and, when Game physics is on, the game file. Each row that needs work has a button that fixes it or takes you there. When everything is ready the check folds to one line. The same rows are in Settings › Timing.
+![Drive](img/en/20-drive.webp)
+
+Drive fits on one screen in three columns: the clock and its splits on the left, the route map and your latest runs in the middle, and the readiness check on the right. The **session row** above them holds the route, **Race against** (your record with this car, the route record, your median or the model), the car and setup, and your record, median and number of runs. **Timer settings** sits at the right end of the row.
+
+**Ready to time?** Before you start, Drive checks what timing needs: the game timer, the screen reader, the window mode, the controller, free disk space and, when Game physics is on, the game file. Only the rows that need work are listed, each with a button that fixes it or takes you there; the rest fold into one line such as **4 checks passed**. If the game is not found the clock says so, and **Time by hand** starts the in-app stopwatch instead. The same rows are in Settings › Timing.
 
 ![Ready to time?](img/en/76-readiness.webp)
 
-![Drive](img/en/20-drive.webp)
-
-1. Pick the route on the right. The map and splits follow it.
+1. Pick the route in the session row. The map and splits follow it.
 2. Open CarX Street in a borderless window with the default HUD and drive to the start. Touge reads the speedometer and minimap from the screen, so they must be visible.
 3. Stop at the start and press **F9** (or your controller button). The timer starts when the car moves; auto splits mark the sections.
 4. **F10** splits by hand, **F11** finishes. **Space** runs the in-app stopwatch when the game timer is not running.
 
-The game timer starts by itself while Touge is open, and its small timer window stays on top of the game. **F8** hides and shows it, and **Ctrl+F8** lets you move it. If the window says **NO GAME DETECTED**, Touge cannot see the game's HUD; F8 or the window's **X** hides it. Pressing Start without the game shows a warning first, and **Start anyway** times without it.
+**During a run** the big number is your gap to the run you race against, and between splits it follows the car (from the autosplit position, or from the game's odometer when there is no reference run yet). The **Split** button names the next split point, and on the last one it becomes **Finish**. Every split in the list has the route's name for it, with its distance, time and gap. On the map a filled dot is you and a dashed ring is the run you race against at the same moment. A shared ghost's gap shows under the clock.
 
-The splits on the right of the LCD show your comparison time for each section once you have a run to compare with. A new split flashes in the list as it comes in.
+**Abort** stops the clock at once. For 10 seconds you can press **Undo** and the run carries on as if nothing happened; **Discard now** drops it. After that an aborted run with at least one split is kept as an aborted run: it shows in the history but never becomes a record. The controller's abort button works the same way.
+
+**At the finish** a result card replaces the readiness column: the time, the gap to your record and median, and each split's gain or loss as a bar. **Analyse this run** opens it in Analyse, **What did the car do?** opens the symptoms on Tune, **Drive again** arms the timer, and **Discard run** removes a test or a bad run from the history, its data and its analysis (the next run reuses its number).
+
+![Result card](img/en/78-result-card.webp)
+
+Under the map, **Latest runs on this route** lists your last runs with their time, gap to record, setup and how they ended (Finish, or Aborted at a split). **Analyse** opens one; **All in Analyse** opens the list. Once you have a finished run, the line at the bottom of the page offers **Analyse run N** as the next step.
+
+The game timer starts by itself while Touge is open, and its small timer window stays on top of the game. **F8** hides and shows it, and **Ctrl+F8** lets you move it. If the window says **NO GAME DETECTED**, Touge cannot see the game's HUD; F8 or the window's **X** hides it.
 
 **choriso's reference run.** The fastest North Touge v2 run (6:07.36, RX-7 FD) comes with Touge as a ghost, so you can race and compare against it from your first run. Like every shared run it is marked unverified (see [8.5](#85-routes-and-ghosts)).
 
-The chip next to **Settings** says what the game timer is doing, for example **Waiting for the game**. If the timer has stopped, a **Start game timer** button appears next to it.
+The chip next to the Drive, Analyse and Routes tabs says what the game timer is doing, for example **Waiting for the game**. If the timer has stopped, a **Start game timer** button appears next to it.
 
-**Settings** (top right of the Time tab) holds the timing options:
+**Timer settings** holds the timing options:
 
 ![Timing settings](img/en/21-timing-settings.webp)
 
 - **Auto splits** on or off, and **Mute timer** when you just want to cruise. Under them, the status lines show the server, the game timer, the screen reader and the free disk space.
 - **Controller**: press any button on the pad, then **Learn start / split / undo button**. They work while the game has focus.
-- In Touge's own **Settings > Timing** (new in 0.12): **Minimap reading rate** 15 Hz (default) or 30 Hz, where 30 Hz gives finer turning and slide data but uses more CPU, and **Save minimap images** for more precise lines in run analysis (about 10 MB per run, kept in `Data\Logs\Reader` for one day and at most 200 MB, oldest removed first; off by default). Both take effect the next time the game timer starts.
-- **Driving view** shows the timer large; **Pop out timer** puts it in its own small window.
+- In Touge's own **Settings > Timing**: **Minimap reading rate** 15 Hz (default) or 30 Hz, where 30 Hz gives finer turning and slide data but uses more CPU, and **Save minimap images** for more precise lines in run analysis (about 10 MB per run, kept in `Data\Logs\Reader` for one day and at most 200 MB, oldest removed first; off by default). Both take effect the next time the game timer starts.
+- **Pop out timer** puts the clock in its own small window.
 - **Import** brings in an older timer file or LiveSplit splits, or restores runs from the backup. **Enter a time by hand** is there for runs timed elsewhere.
 
 ### 6.2 Leaderboard
 
 ![Leaderboard](img/en/22-leaderboard.webp)
 
-Below the timer: record, median, the average of your last five and your progress. **Top 10** lists runs with car and setup, and **Progress in run order** shows how your best has moved over time. **Cars and setups** compares them side by side.
+The leaderboard is now a tab of the corner table on Analyse (see 6.3): record, median, the average of your last five and your progress, **Top 10** with car and setup, **Progress in run order**, and **Cars and setups** side by side.
 
 ### 6.3 Analyse
 
-After a finished run, open **Analyse**. It compares the run against your own record and median, corner by corner. When runs are waiting for analysis, Analyse says how many and has an **Analyse now** button; while the analysis runs, a progress bar shows how many runs are done.
+After a finished run, open **Analyse**. It compares the run against your own record and median, corner by corner. Whether runs are waiting for analysis, and the **Refresh** button, sit at the right end of the tabs.
 
 ![Analyse](img/en/23-analyse.webp)
 
-- **Car** filters runs by car.
-- The top of Analyse is one panel. The **time bar** shows the latest run's time and its gap to your record and median.
-- The **map** colours each corner green (faster) or red (slower) than your median, and the **corner strip** below does the same as bars. Roll the mouse wheel to zoom the map, drag to move it, and the record runs along as a ghost.
-- **Largest gaps to the median** names the corners where this run lost the most, and why: braking, entry, apex or exit.
-- **Target**, under the gaps, shows what is left on the table: your theoretical best from your best corners combined.
-- **Where this run lost time** names the two corners where your latest run lost most to your record and why. One click opens the matching symptoms on the Tune page (exit, braking, turn-in or mid-corner). A corner lost to a touch or a mistake is called a driving error instead. It shows only when the latest run is slower than your record.
-- **Speed on route**, at the bottom of the panel, shows the whole run as a speed trace against your record and median. Switch the lines on and off with the chips (record, median, focus corner, elevation, splits, model), and pick any run in **Compare run**. Moving along the trace moves a cursor on the map.
+- The **session row** at the top is the same as on Drive: route, the **Run** you look at, **Compare with**, the car filter, the gap and the time available. Change the route here without going back to Drive.
+- The **map** colours each corner green (faster) or red (slower) than the comparison, turned to fill its box. Under it, the **corner strip** shows the same as bars, and the **time gap** and **speed** charts follow on the same distance axis.
+- Hover a corner anywhere (strip, map, list or chart) and the same corner lights up in all of them.
+- The right column holds the verdict, **Next** (one thing to do: practise a corner with **Open corner**, or **Open Tune** when the same pattern repeats across your runs, with **What did the car do?** next to it), **Where this run lost time** and **Target**. When the big map scrolls out of view, a mini map stays at the top of the column.
+- When the run is the same as the one you compare with (your only run, for example), Analyse shows the run's own numbers and suggests comparing with the median or another run instead of a column of ±0.00.
 
 ![Speed on route](img/en/26-speed-on-route.webp)
 
@@ -414,33 +422,29 @@ When A and B were driven on different setups, **What changed between A and B** l
 
 Below it, the **latest run** card sums up the run in words, and **Next** names one thing to do: usually the corner to practise first (**Open corner** zooms straight to it), or a setup change when the same pattern repeats across your runs (**Open Tune**).
 
-**Opening sections.** The sections below the top panel can be folded. Click a section's title bar to open or close it; Touge remembers which ones you keep open. Each one also has a ⠿ handle to move it up or down.
+**Corners, runs and model** is one table under the charts, folded at first. Its tabs switch what it lists: **Practice** (the corners where your median run loses most to your best; mark one **Practised** when you have worked on it), **This run** (the per-corner table for the chosen run), **All corners** (time and median speeds through every corner), **Splits**, **Model and game** (where the route model gets its corner radii, and how the model time compares with your runs) and **Leaderboard**. **Open the table** under the losses goes straight to it.
 
 ![Practice list](img/en/24-practice.webp)
 
-The **Practice list** ranks the corners where your median run loses most to your best. Each one shows where the time goes (braking and entry, apex, or exit) and a close-up of throttle, brake and steering against your record. Mark a corner **Practised** when you have worked on it.
-
-**Run by corner** opens the per-corner table for the chosen run.
-
-**Route statistics**, at the bottom, holds **Splits**, **All corners** (the time and median speeds through every corner) and **Model and game** (where the route model gets its corner radii, and how the model time compares with your own runs). Model and game starts folded.
-
 ### 6.4 Routes and your own routes
-
-**Routes** next to Drive and Analyse lists your own routes, including the six that come with Touge; **Show all game routes** lists every game route too.
 
 ![Routes](img/en/27-routes.webp)
 
-Pick a route to see its shape, length, corners, hairpins, climb and descent, your best time and number of runs, and the splits. **Map** shows where the route lies on the whole map with pins and names for the start and the finish; **Show the whole map** and **Zoom to the route** switch between the two.
+Routes is one screen in three columns, and the map in the middle stays in place:
+
+- **Left: the route list.** Search by name, area or code, or pick a filter: **Driven**, **Own**, **Sprint**, **Circuit** or **Drift**. **Your routes** (your own and every route you have driven) come first with their runs and record. **Game routes** are grouped by type; a group opens in place and shows 40 routes at a time. **Show reverse routes** adds the reverse directions of your own routes.
+- **Middle: the route.** Name, length, splits, corners, record and runs, with **Drive this route** and **Analyse**. **Edit**, **Share** and **Delete** are separate buttons (a game route has **Make own route** instead). The **Map** shows where the route lies on the whole map with numbered split points and pins for the start and the finish; **Show the whole map** and **Zoom to the route** switch between the two.
+- **Right: the details.** **Splits** lists each split with its name, distance, your record time there and the section time. The distances are the same as on Drive and Analyse. A section longer than 5 km gets a note, and **Suggest** shows evenly spaced extra split points on the map and in the list. Under it are **Ghosts on this route** and **Where to start**: start and finish images as thumbnails (**Show larger** on click) and your description.
 
 ![Route map, start and finish](img/en/53-route-map.webp)
 
-Write a **Description** (where the start is, tricky corners, where the gutters work) and add a **Start** and **Finish** image so you find the spot again. A good image is a full-screen 16:9 screenshot with no menus open: for the start, the car on the start line facing the driving direction; for the finish, about 50 m before the line, facing the driving direction. **Select and drive** takes the route to Drive.
+Write a **Description** (where the start is, tricky corners, where the gutters work) and add a **Start** and **Finish** image so you find the spot again. A good image is a full-screen 16:9 screenshot with no menus open: for the start, the car on the start line facing the driving direction; for the finish, about 50 m before the line, facing the driving direction.
 
 **Make your own route**
 
 ![Route editor](img/en/28-route-editor.webp)
 
-1. Press **＋ New route** (or **Edit or delete** on one of your own routes). The map shows every road the game's races use, with fuel stations, homes, clubs and dealers as landmarks. Drag to pan, use the wheel or **+ / −** to zoom.
+1. Press **New route** (or **Edit** on one of your own routes). The map shows every road the game's races use, with fuel stations, homes, clubs and dealers as landmarks. Drag to pan, use the wheel or **+ / −** to zoom.
 2. **Click the start** on a road. Then click the splits in order, and the finish last. The route follows the roads along the shortest path between the points.
 3. Clicking on the route inserts a split in between; clicking elsewhere extends the route. Drag a point to move it.
 4. If the route takes a shortcut you do not drive, add a **Via point**: it steers the route but is not timed. Each point can be switched between **Split** and **Via point**.
@@ -448,7 +452,7 @@ Write a **Description** (where the start is, tricky corners, where the gutters w
 6. Tick **Also driveable in reverse** if you want the opposite direction in the route list too.
 7. **Save route**, or **Save and drive** to start timing it right away.
 
-**Your first run on a new route.** Drive the first run from start to finish and press **F10** yourself at each split. Auto splits learn the split points from that run and work by themselves from the next run on. The same goes for a game route.
+**Your first run on a new route.** Drive the first run from start to finish and press **F10** yourself at each split. Auto splits learn the split points from that run and work by themselves from the next run on. The same goes for a game route. Your own route's split points always come from the editor, so after you move a split, Drive, Analyse and Routes all show the new distances.
 
 Your own routes are saved in the `Routes` folder.
 

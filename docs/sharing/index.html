@@ -1,6 +1,6 @@
 <title>Sharing in Project Touge</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="How to share tunes, presets, routes and runs in Project Touge 0.12, and how to race a friend's run as a ghost.">
+<meta name="description" content="How to share tunes, presets, routes and runs in Project Touge 0.16, and how to race a friend's run as a ghost.">
 <link rel="icon" type="image/png" href="assets/touge-64.png">
 <style>
 @font-face{font-family:"VCR OSD Mono";src:url(assets/VCR-OSD-Mono.woff2) format("woff2");font-display:swap}
@@ -124,7 +124,7 @@ footer{border-top:1px solid var(--viiva);margin-top:56px;padding-block:22px 40px
     <div class="brand"><span class="kanji" aria-hidden="true">峠</span><div><small>choriso's</small><b>Project Touge</b></div></div>
     <h1>Share your <em>tune</em>, your <em>route</em> and your <em>run</em></h1>
     <p class="lead">Touge saves what you made as a small file. You send the file however you like, your friend opens it in their own Touge, and a shared run becomes a ghost they can race.</p>
-    <span class="stamp">v0.12 BETA</span>
+    <span class="stamp">v0.16 BETA</span>
 
     <div class="flow" aria-label="How a shared file travels">
       <div class="stop"><h3>You</h3><p><b>Save</b> a tune, preset, route or run. It lands in the <code>Shared</code> folder.</p></div>
@@ -139,7 +139,7 @@ footer{border-top:1px solid var(--viiva);margin-top:56px;padding-block:22px 40px
 <main class="in">
   <div class="types">
     <div class="type"><span class="ext">.tune.json · TOUGE2: code</span><b>Tune</b><span>The build and every final game value of a setup, so your friend types the same numbers into the game.</span><small>Setup menu → Share and import…</small></div>
-    <div class="type"><span class="ext">.chassis · .gears.json</span><b>Preset</b><span>Your own chassis preset or gearing profile.</span><small>Setup menu → Share and import…</small></div>
+    <div class="type"><span class="ext">.chassis · .gears.json</span><b>Preset</b><span>Your own chassis preset or gearing profile.</span><small>Setup menu → Share and import…, or Setups → Presets → Share…</small></div>
     <div class="type"><span class="ext">.route.json</span><b>Route</b><span>An own route with its splits, start and finish images and description.</span><small>Share and import…, or Time → Routes → Share route</small></div>
     <div class="type"><span class="ext">.run.json</span><b>Run · ghost</b><span>One run that reached the finish, for your friend to race and compare against.</span><small>Time → Analyse → Run comparison → Share run A</small></div>
   </div>
@@ -166,6 +166,10 @@ footer{border-top:1px solid var(--viiva);margin-top:56px;padding-block:22px 40px
         <p>The tune holds the build and the final values you type into the game, including changes you have not saved yet. A ready-made preset's parameters are not included, so your friend sees exactly your numbers. The diff travels inside the tune.</p>
       </div>
       <figure><span class="shot m"><img src="img/602-share-dialog.webp" alt="The Share tab of Share and import: what to share, the name, your name and the share text" width="640" height="686" loading="lazy"></span><figcaption>Share and import</figcaption></figure>
+    </div>
+    <div class="step wide">
+      <p><b>New in 0.16:</b> every own preset and gearing profile is also in the Setups window (<kbd>Ctrl+O</kbd>) on the <b>Presets</b> tab, with what it covers (chassis, diff, gears). <kbd>Share…</kbd> on a row opens the same Share window. A built-in preset can be shared after <kbd>Duplicate as own</kbd>.</p>
+      <figure><span class="shot"><img src="img/80-presets.webp" alt="The Presets tab: own presets with what they cover, own gearing profiles and the built-in presets" width="1320" height="823" loading="lazy"></span><figcaption>Setups → Presets</figcaption></figure>
     </div>
 
     <h3 class="step-h">A route</h3>
@@ -213,7 +217,7 @@ footer{border-top:1px solid var(--viiva);margin-top:56px;padding-block:22px 40px
           <li>Added and ignored files move to <code>Inbox\Imported</code> and <code>Inbox\Ignored</code>.</li>
         </ul>
         <p style="margin-top:14px">A <b>tune</b> goes to your setups. When it opens, Touge checks its own numbers against the file and says <b>The imported tune matches the sharer's game values</b>, or lists what it calculates differently. If your open build is unsaved, Touge asks first.</p>
-        <p>A <b>preset</b> goes to your own chassis presets and gearing profiles.</p>
+        <p>A <b>preset</b> goes to your own chassis presets and gearing profiles, and shows up in Setups → <b>Presets</b>.</p>
       </div>
       <figure><span class="shot m"><img src="img/612-tune-preview.webp" alt="Preview of a shared tune: type, name, car, class, model time, game values, shared by, made with" width="640" height="510" loading="lazy"></span><figcaption>Preview of a tune</figcaption></figure>
     </div>
@@ -235,12 +239,12 @@ footer{border-top:1px solid var(--viiva);margin-top:56px;padding-block:22px 40px
     </div>
 
     <div class="step wide">
-      <figure><span class="shot"><img src="img/608-route-added.webp" alt="The added route North Touge in Time → Routes" width="1440" height="1000" loading="lazy"></span><figcaption>Time → Routes after adding the route</figcaption></figure>
+      <figure><span class="shot"><img src="img/608-route-added.webp" alt="North Touge v2 in Time → Routes: route list, map with numbered splits, splits, ghosts and start and finish images" width="1440" height="600" loading="lazy"></span><figcaption>Time → Routes after adding the route</figcaption></figure>
     </div>
 
     <div class="step wide">
       <p>Click <kbd>Race</kbd> on the ghost. From your next run on, the timer window shows how far ahead or behind the ghost you are. Click again to stop racing it; <kbd>Delete</kbd> removes it.</p>
-      <figure><span class="shot"><img src="img/610-ghost-race.webp" alt="Ghosts: 6:08.9, unverified, Racing this ghost" width="936" height="132" loading="lazy"></span></figure>
+      <figure><span class="shot"><img src="img/610-ghost-race.webp" alt="Ghosts on this route: 6:07.4 choriso, RX-7 FD, unverified, Race and Delete" width="520" height="140" loading="lazy"></span></figure>
       <p style="margin-top:18px">After a run, open <b>Analyse → Run comparison</b> and pick the ghost as <b>Run B</b>. The gap chart and the map show where you gain and where you lose against it.</p>
       <figure><span class="shot"><img src="img/611-compare-ghost.webp" alt="Run comparison: own run 40 as A, the ghost 6:08.89 as B" width="1288" height="973" loading="lazy"></span><figcaption>Your run against the ghost</figcaption></figure>
     </div>
@@ -271,5 +275,5 @@ footer{border-top:1px solid var(--viiva);margin-top:56px;padding-block:22px 40px
     </div>
   </section>
 
-  <footer>Project Touge 0.12 beta. Screenshots are from Touge 0.12 with an AE86 on North Touge v2; your numbers will differ. Touge reads the game's screen only and never changes the game.</footer>
+  <footer>Project Touge 0.16 beta. Screenshots are from Touge 0.12 to 0.16 with an AE86 and an RX-7 FD on North Touge v2; your numbers will differ. Touge reads the game's screen only and never changes the game.</footer>
 </main>

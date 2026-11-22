@@ -44,17 +44,18 @@ For timing, run CarX Street borderless or full screen so the whole HUD is visibl
 
 ## 2. The screen at a glance
 
-![Project Touge on first start](img/en/01-overview.webp)
+![Project Touge with a setup open on the Build tab](img/en/01-overview.webp)
 
 - **Tabs 01 Build, 02 Tune, 03 Time** follow the order you work in. Keys **1**, **2** and **3** switch between them.
-- **Setup** (top right) shows the open setup. A green dot means saved, a yellow dot means unsaved changes. Click it for Save, Save as, your recent setups, Import a tune, Share and import, and All setups. **Save** next to it saves straight away.
-- **?** opens help with the shortcuts and the tuning guides. The **gear** opens Settings, and the red **power** button shuts Touge down. **FI / EN** switches the language.
-- **Model ref. time** in the top bar is the model's estimate for the open build on the chosen route.
+- **Setup** (top right) shows the open setup. A green dot means saved, a yellow dot means unsaved changes. Click it for Save, Save as, your recent setups, Import a tune, Share and import, and All setups. The disk icon next to it saves straight away.
+- **New build**, right of the setup name, starts a fresh build for this car from the model's defaults; your saved setups stay. The **disk** icon saves and turns yellow when something is not saved.
+- **?** opens help with the shortcuts and the tuning guides. The **gear** opens Settings, and the red **power** button shuts Touge down. The version tag sits at the top right; the language is in **Settings › General**.
+- The model's estimate for the open build on the chosen route (**model reference time**) is in **My monitors** and on the Tune timeline.
 - On a first start Touge is empty: **Choose a car** comes first, and the numbers appear once a car is chosen. A **Getting started** strip shows the three steps until you hide it.
 - Once you have saved a setup, the large title at the top gives its height to the page and the tabs move to the top edge. Setting **Settings › General › Header** to **Full** brings the title back.
 - A slim **Next** bar under the tabs says what to do next in the loop Build, Tune, Drive and Analyse: choose a car, save your setup, look at your latest run, move changes into the game or drive. **Hide** puts it away for a while. Each page also has its own **Next** line near the top.
 - The **Setup** button shows the number of unsaved changes next to the name. Click the count for the list of what changed, saved value → now, with the game's names; each line has its own revert, and **Save**, **Save as new** and **Revert all** are at the bottom of the same list.
-- While Touge recalculates, the model reference time dims and a thin line runs under it, so an old time is never read as the new one. With a saved setup open, the time shows the difference to that setup.
+- While Touge recalculates, the model reference time dims and a thin line runs under it, so an old time is never read as the new one. With a saved setup open, the time shows the difference to that setup. From 0.16 the calculation uses all processor cores, so a full optimisation takes about a quarter of the time it did.
 - Terms with an **i** button explain themselves: click it for a short description.
 
 Two marks appear everywhere and are worth learning first:
@@ -195,17 +196,33 @@ Press **Ctrl+S** (or **Save** in the top bar). The first save asks for a name an
 
 ![Save as](img/en/07-save-dialog.webp)
 
-**Ctrl+O** opens **All setups**:
+**Ctrl+O** opens the **Setups** window. It has two tabs: **Setups** and **Presets**.
 
-![All setups](img/en/08-all-setups.webp)
+![The Setups window, Setups tab](img/en/08-all-setups.webp)
 
-- Search by name or car, filter by car on the left, sort by any column.
-- Click a setup to see its class, route, model time and your best run on the right, with **Open now**, **Rename** (F2), **Duplicate** and **Delete** (Del). Double-click or **Enter** opens it, and Ctrl- or Shift-click selects several. Deleted setups go to **Trash** first.
-- **Save**, **Save as…** and **New build** at the top work on the open build. Under the count of unsaved changes, **Show changes** lists each changed field with its saved and current value.
-- **Import…**, **Paste text**, **Export selected** and **Export all** move setups between computers or to a friend.
+- **Save** and **Save as…** are the main actions and work on the open build; the title shows its name.
+- Pick a car from the **All cars** list to see only its setups, search by name or car, and sort by any column. **Best run** counts only finished runs on the setup's route.
+- Click a setup to see it on the right: **Open**, **Duplicate** and **Rename** (F2) first, then power and weight, engine, gearbox, tyres and the number of runs, and how it differs from the open setup. Double-click or **Enter** opens it, and Ctrl- or Shift-click selects several. **Delete** (Del) moves it to **Trash** first.
+- **Import…**, **Export…** and **Trash** are menus: import a file or pasted text, export the selected setups or all of them, and bring back deleted setups.
 - **Import a tune…** in the Setup menu reads a tuning template or a tune table into a new setup (see [3.3](#33-import-a-tune-from-a-file)).
 
 Setups are saved in the Project Touge folder as files, with dated backup copies. If Touge starts with an empty page (a new computer or a moved folder) but finds your saved setups, it opens the newest one.
+
+### 4.1 Presets
+
+The **Presets** tab (new in 0.16) keeps every preset in one place:
+
+![The Presets tab: own presets, own gearing profiles and the built-in ones](img/en/80-presets.webp)
+
+- **Own presets** are your own. **Covers** shows which parts each one holds: **Chassis** (springs, bars, dampers, spring length, steering, pressures, camber, brake balance), **Diff** (locks and preload) and **Gears**. Each row has **Apply**, **Rename**, **Duplicate**, **Share…** and **Delete**; **Undo** brings a deleted preset back until you close the window.
+- **Own gearing profiles** are gear sets you saved on Tune › Gearing › **Save as own profile**, with the car and final drive.
+- **Built-in** lists the presets, diff characters and gearing profiles that come with Touge (Model, CalcX by StepUnique, choriso's, Forgiving, Touge, Precise, Track, Old Meta and so on). They are the same for everyone and cannot be changed, but **Duplicate as own** makes a copy you can rename and share.
+
+**Save current as preset** stores parts of the open setup. Name it and tick what it covers:
+
+![Save current as preset: pick chassis, diff or gears](img/en/81-save-preset.webp)
+
+Applying a preset changes **only the parts it covers**: a chassis-and-diff preset leaves your gears alone. When you include the gears they are also saved as an own gearing profile.
 
 ## 5. Tune: fix what you feel
 
@@ -255,7 +272,11 @@ Adjust shows every setting with a slider. It has four tabs: **Parts**, **Chassis
 - **A · Settings**: weight, front weight, spring length, springs, anti-roll bars, dampers and camber & toe, in game order. Open **How this works** under a group for the mechanism behind it.
 - **C · Balance & KPI**: the dampers' ratio, roll gradient, roll stiffness and ride frequency. Drag the **LLTD** bar or a line in the **balance chart** to move the front/rear split while keeping the total stiffness. The balance chart puts springs (mid corner), slow bump (entry and exit) and fast bump (bumps and kerbs) on one Front–Rear axis, with the level before your change dashed.
 - On a wide screen (from about 1700 px) the sliders flow in two columns and Balance & KPI stays in view while you scroll.
-- **Save as preset** keeps this chassis as a preset you can pick again later. **Read from image** fills the values from a screenshot.
+- **Save as preset** keeps this chassis as a preset you can pick again later (all your presets are in the Setups window's **Presets** tab, [4.1](#41-presets)). **Read from image** fills the values from a screenshot.
+
+**What the model used.** Chassis and Gearing both show a line such as *Calculated with 305/30 R17 · BM13 1.3L R (DX8) · 920 kg · 50.0 %*: the tyres, engine, mass and front weight the calculation used. When you change tyres, the engine or its parts after that, the line turns yellow (**Parts changed since the calculation**) and the gears or chassis values are stale. **Recalculate** runs the calculation again with the current parts. In Gearing it replaces your own gear changes; in Chassis it replaces your own chassis changes, and **Undo** brings them back.
+
+![Parts changed since the calculation, with Recalculate](img/en/82-recalculate.webp)
 
 **Gearing**
 
@@ -461,11 +482,13 @@ Your own routes are saved in the `Routes` folder.
 ![Settings](img/en/30-settings.webp)
 
 - **General**: language, text size, view level for Adjust, **Density** (Comfortable or Compact), animations, **Units** (km/h and kg, or mph and lb: Touge still calculates in metric and changes only the numbers shown; charts and help texts stay metric), **Background map** (Normal, Dim or Off), **Start page** (the last page you used, Build, Tune, My view or Time), **Header** and **Reset layout** (puts panel order, hidden and collapsed panels, Tune mode and folder back to default; My view and settings are kept).
-- **Data and backups**: where your data is and a button to open the folder.
+- **Data and backups**: where your data is, a button to open the folder, **Export all setups** and, if you came from Touge 0.12 or older, **Old run files**: the size of `Data\Legacy\Runs`, which nothing reads any more, and **Remove…** to delete it after you confirm. Your times, runs and analysis are kept elsewhere.
 - **Timing**: the same readiness rows as the Drive view, then the screen reader options.
 - **Game physics** (Experimental): appears when Touge finds the game's own physics file; it lets Touge test settings with the game's physics. Its results are uncalibrated (◐).
 - **Start and shut down**: shut down Touge and the game timer together.
 - **About**: version, update options (**Notify me about new versions**, and **Offer preview versions too** for versions released for testing a little before everyone else), **Report a problem**, **What's new in this version**, feedback links and licences.
+
+![Data and backups with Old run files](img/en/83-settings-data.webp)
 
 ![About](img/en/74-about.webp)
 
@@ -481,7 +504,7 @@ Your own routes are saved in the `Routes` folder.
 | L | Calculate (Build) |
 | Ctrl+S | Save setup |
 | Ctrl+Shift+S | Save as |
-| Ctrl+O | All setups |
+| Ctrl+O | Setups window (Setups and Presets) |
 | F9 · F10 · F11 | Game timer: start, split, finish |
 | F8 · Ctrl+F8 | Timer window: show or hide, move |
 | F1 | Help |
@@ -493,7 +516,7 @@ From 0.11 on, Touge can save what you made as small files that a friend opens in
 | File | What it holds | Where you make it |
 |---|---|---|
 | `….tune.json` | the build and the final game values of a setup | Setup menu → **Share and import…** |
-| `….chassis.json`, `….gears.json` | an own chassis preset or an own gearing profile (older `….preset.json` files with both still import) | Setup menu → **Share and import…** |
+| `….chassis.json`, `….gears.json` | an own chassis preset or an own gearing profile (older `….preset.json` files with both still import) | Setup menu → **Share and import…**, or **Share…** on the row in Setups → **Presets** |
 | `….route.json` | an own route with its splits, start and finish images and description | **Share and import…**, or **Share route** in Time → Routes |
 | `….run.json` | one finished run on an own route, to race as a ghost | Time → Analyse → Run comparison → **Share run A** |
 
@@ -571,7 +594,7 @@ Import the **route before the run**. A route you already have is recognised from
 
 **Add and show** opens the route in **Time → Routes**.
 
-![The new route in Time → Routes](img/en/608-route-added.webp)
+![The route in Time → Routes: the route list, the map with numbered splits, and its splits, ghosts and start and finish images](img/en/608-route-added.webp)
 
 A run then shows which route it belongs to. If it says *not in your routes*, import the route file first.
 
@@ -609,6 +632,7 @@ Project Touge\
    │  └─ Reader\         screen reader logs; minimap images only if turned on
    ├─ Cache\             only with Game physics (Experimental)
    └─ Legacy\            files from older versions that Touge no longer reads
+                         (Settings › Data and backups › Old run files removes Legacy\Runs)
 ```
 
 - **Nothing outside the folder.** Touge writes only here. The one exception is Windows' WebView2, which keeps the window's browser cache in `%LOCALAPPDATA%\fi.projecttouge.app`. It holds no tunes or runs.
@@ -620,12 +644,13 @@ Project Touge\
 
 ## 10. When something is off
 
-- **Game timer not responding**: start Project Touge again; the timer is part of the program and starts with it. Check that no other telemetry program is using the same port.
+- **Game timer not responding**: start Project Touge again; the timer is part of the program and starts with it. From 0.16 it uses no network ports of its own, so other telemetry programs cannot block it.
 - **Windows blocks the program**: if SmartScreen stops it, choose **More info → Run anyway**. Keep the exe outside `Program Files`, where Touge cannot write its data folders.
 - **No speed or minimap**: run the game borderless or full screen with the HUD visible. Touge finds the HUD on the first run; tested resolutions are 3440×1440, 2560×1440, 2560×1080, 1920×1440 and 1920×1080.
 - **Timing does not start**: open Time → Drive and look at **Ready to time?**. Each row that is not green says what is missing and has a button for it.
 - **A value does not match the game**: check for ◐ first. Type the game's own reading into the **Check in game** rows, and report the difference with **Report a problem**.
-- **Lost a setup**: look in **All setups → Trash**, or restore from the dated copies in `Tunes`.
+- **Gears or chassis look wrong after a part change**: look for a yellow **Parts changed since the calculation** line on Tune › Gearing or Chassis and press **Recalculate**.
+- **Lost a setup**: look in **Setups → Trash**, or restore from the dated copies in `Data\Tunes\History`.
 
 Found a bug or a value that is off in game? Use **Settings › About › Report a problem**: it saves a diagnostics file to `Shared` and opens a GitHub [issue](https://github.com/aaturaty/project-touge/issues) with your version filled in. Say what you did and attach the file.
 

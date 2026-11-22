@@ -24,6 +24,18 @@ When a new version is out, Touge shows a notice with an **Update now** button. I
 
 Coming from 0.10 or 0.9.x? Update by hand this one time: copy the new `Project Touge.exe` over the old one, or unzip it into a new folder and Touge will find your earlier Project Touge and copy your data. From 0.10.1 on, the button does it.
 
+## New since 0.15
+
+Four releases, 0.15.1 to 0.16.0, changed most of what you see. The short version:
+
+- **Presets in one place:** the Setups window (Ctrl+O) has a **Presets** tab. Save chassis, diff or gears from the open setup as a preset, apply only those parts, and rename, duplicate, share or delete with undo.
+- **Recalculate:** Tune › Gearing and Chassis show which tyres, engine, mass and front weight the model used, turn yellow when the parts have changed, and recalculate with one click.
+- **Real-time Tune:** sliders follow your drag, work from the keyboard and update the page in place. **My view** keeps your own sliders and monitors, the same for every car.
+- **Time, rebuilt:** Drive on one screen, a live gap and ghost on the map, undoable abort, a result card with Discard run, one corner table in Analyse, and Routes in three columns.
+- **Faster:** calculations on all processor cores (a full optimisation about four times faster), run analysis about three times faster, and a quicker start. The game timer no longer uses network ports.
+
+Everything else is in the [changelog](CHANGELOG.md).
+
 ## Where your files live
 
 Project Touge is one folder. Everything it saves stays inside it: what you share in `Shared`, everything else in `Data` (new in 0.13; an update moves your old files there on its first start):
@@ -81,12 +93,12 @@ Enter your car from screenshots, start from the model, or import a tune from the
 
 [![Tune](media/readme/tune.webp)](docs/guide/README.md)
 
-Pick a symptom by corner phase, adjust the chassis, gearing or diff, check the effect, then copy the setup to the game. Each change explains why it helps, with a link to the matching chapter of the Tuning Bible. Sliders follow your drag in real time and work from the keyboard, and **My view** keeps the sliders and numbers you use most on one page, the same for every car.
+Pick a symptom by corner phase, adjust the chassis, gearing or diff, check the effect, then copy the setup to the game. Each change explains why it helps, with a link to the matching chapter of the Tuning Bible. Sliders follow your drag in real time and work from the keyboard, and **My view** keeps the sliders and numbers you use most on one page, the same for every car. Keep chassis, diff and gear sets as **presets** and apply only the parts you want; after a tyre or engine change, **Recalculate** brings the gears and chassis up to date.
 
 <p>
 <a href="docs/guide/img/en/10-symptom.webp"><img src="media/readme/thumbs/10-symptom.webp" width="32%" alt="symptom"></a>
 <a href="docs/guide/img/en/11-adjust-chassis.webp"><img src="media/readme/thumbs/11-adjust-chassis.webp" width="32%" alt="adjust chassis"></a>
-<a href="docs/guide/img/en/14-check.webp"><img src="media/readme/thumbs/14-check.webp" width="32%" alt="check"></a>
+<a href="docs/guide/img/en/80-presets.webp"><img src="media/readme/thumbs/80-presets.webp" width="32%" alt="presets"></a>
 </p>
 
 ### Time
@@ -149,7 +161,7 @@ Sunset Speedway
 
 [![Sharing](media/readme/sharing.webp)](docs/sharing/index.html)
 
-New in 0.11: share tunes, presets, routes and runs as files (tunes also as a short share code). Drop a friend's file in `Shared\Inbox`, preview it and add it with one click. A shared run becomes a ghost you can race on the timer and compare against in Analyse. See the [sharing walkthrough](https://aaturaty.github.io/project-touge/sharing/).
+Share tunes, presets, routes and runs as files (tunes also as a short share code; presets also from Setups › Presets). Drop a friend's file in `Shared\Inbox`, preview it and add it with one click. A shared run becomes a ghost you can race on the timer and compare against in Analyse. See the [sharing walkthrough](https://aaturaty.github.io/project-touge/sharing/).
 
 <p>
 <a href="docs/guide/img/en/602-share-dialog.webp"><img src="media/readme/thumbs/602-share-dialog.webp" width="32%" alt="share dialog"></a>
@@ -167,7 +179,7 @@ Read it here, as a [PDF](docs/tuning-guide/Project-Touge-Tuning-Guide.pdf), or i
 
 ## Feedback
 
-Found a bug or a value that is off in game? Open an [issue](../../issues) with your Touge version (shown in the header), what you did, and the files from `Logs`.
+Found a bug or a value that is off in game? Use **Settings › About › Report a problem**: it saves a diagnostics file to `Shared` and opens an [issue](../../issues) with your version filled in. Say what you did and attach the file.
 
 ## Licence
 

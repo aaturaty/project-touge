@@ -46,17 +46,18 @@ Ajanottoa varten aja CarX Streetiä reunattomassa ikkunassa tai koko näytöllä
 
 ## 2. Näkymä yhdellä silmäyksellä
 
-![Project Touge ensimmäisellä käynnistyksellä](img/fi/01-overview.webp)
+![Project Touge setup auki Rakenna-välilehdellä](img/fi/01-overview.webp)
 
 - **Välilehdet 01 Rakenna, 02 Säädä, 03 Ajanotto** ovat työjärjestyksessä. Näppäimet **1**, **2** ja **3** vaihtavat niiden välillä.
-- **Setup** (oikealla ylhäällä) näyttää avoimen setupin. Vihreä piste = tallennettu, keltainen = tallentamattomia muutoksia. Napsauttamalla saat Tallenna, Tallenna nimellä, viimeisimmät setupit, Tuo tune, Jaa ja tuo sekä Kaikki setupit. Viereinen **Tallenna** tallentaa heti.
-- **?** avaa ohjeen pikanäppäimineen ja säätöoppaineen. **Ratas** avaa asetukset, ja punainen **virtanappi** sammuttaa Tougen. **FI / EN** vaihtaa kielen.
-- Yläpalkin **Mallin vertailuaika** on mallin arvio avoimelle buildille valitulla reitillä.
+- **Setup** (oikealla ylhäällä) näyttää avoimen setupin. Vihreä piste = tallennettu, keltainen = tallentamattomia muutoksia. Napsauttamalla saat Tallenna, Tallenna nimellä, viimeisimmät setupit, Tuo tune, Jaa ja tuo sekä Kaikki setupit. Viereinen levykekuvake tallentaa heti.
+- **Uusi buildi** setupin nimen oikealla puolella aloittaa tälle autolle uuden buildin mallin oletuksista; tallennetut setupit säilyvät. **Levykekuvake** tallentaa ja muuttuu keltaiseksi, kun jotain on tallentamatta.
+- **?** avaa ohjeen pikanäppäimineen ja säätöoppaineen. **Ratas** avaa asetukset, ja punainen **virtanappi** sammuttaa Tougen. Versiomerkki on oikeassa yläkulmassa; kieli vaihdetaan kohdasta **Asetukset › Yleiset**.
+- Mallin arvio avoimelle buildille valitulla reitillä (**mallin vertailuaika**) näkyy **Omissa monitoreissa** ja Säädä-sivun aikajanalla.
 - Ensimmäisellä käynnistyksellä Touge on tyhjä: ensin **Valitse auto**, ja luvut tulevat näkyviin, kun auto on valittu. **Näin aloitat** -kaista näyttää kolme vaihetta, kunnes piilotat sen.
 - Kun olet tallentanut setupin, iso otsikko antaa tilansa sivulle ja välilehdet nousevat yläreunaan. Kun valitset **Asetukset › Yleiset › Yläosa** -kohdasta **Täysi**, otsikko palaa.
 - Välilehtien alla oleva kapea **Seuraavaksi**-palkki kertoo, mitä kierroksessa Rakenna, Säädä, Aja ja Analysoi tehdään seuraavaksi: valitse auto, tallenna setup, katso viimeisin ajosi, siirrä muutokset peliin tai aja. **Piilota** laittaa sen hetkeksi pois. Jokaisen sivun yläosassa on lisäksi oma **Seuraavaksi**-rivi.
 - **Setup**-napissa nimen vieressä näkyy tallentamattomien muutosten määrä. Napsauta lukua, niin saat listan muutoksista (tallennettu arvo → nyt) pelin nimillä. Jokaisella rivillä on oma palautus, ja **Tallenna**, **Tallenna uutena** ja **Palauta kaikki** ovat saman listan lopussa.
-- Kun Touge laskee uudelleen, mallin vertailuaika himmenee ja sen alla kulkee ohut viiva, joten vanhaa aikaa ei lue uutena. Kun tallennettu setup on auki, aika näyttää eron siihen.
+- Kun Touge laskee uudelleen, mallin vertailuaika himmenee ja sen alla kulkee ohut viiva, joten vanhaa aikaa ei lue uutena. Kun tallennettu setup on auki, aika näyttää eron siihen. Versiosta 0.16 alkaen laskenta käyttää kaikkia prosessoriytimiä, joten täysi optimointi vie noin neljänneksen aiemmasta ajasta.
 - Termit, joiden vieressä on **i**-nappi, selittävät itsensä: napsauta sitä, niin saat lyhyen kuvauksen.
 
 Kaksi merkkiä toistuu kaikkialla, ja ne kannattaa oppia ensin:
@@ -197,17 +198,33 @@ Paina **Ctrl+S** (tai yläpalkin **Tallenna**). Ensimmäinen tallennus kysyy nim
 
 ![Tallenna nimellä](img/fi/07-save-dialog.webp)
 
-**Ctrl+O** avaa **Kaikki setupit**:
+**Ctrl+O** avaa **Setupit**-ikkunan. Siinä on kaksi välilehteä: **Setupit** ja **Presetit**.
 
-![Kaikki setupit](img/fi/08-all-setups.webp)
+![Setupit-ikkuna, Setupit-välilehti](img/fi/08-all-setups.webp)
 
-- Hae nimellä tai autolla, rajaa autolla vasemmalta ja lajittele minkä tahansa sarakkeen mukaan.
-- Napsauta setuppia, niin oikealla näkyvät luokka, reitti, mallin aika ja paras ajosi sekä napit avaamiseen, **Nimeä uudelleen** (F2), **Monista** ja **Poista** (Del). Tuplaklikkaus tai **Enter** avaa setupin, ja Ctrl- tai Shift-napsautus valitsee useita. Poistetut menevät ensin **Roskakoriin**.
-- Yläreunan **Tallenna**, **Tallenna nimellä…** ja uuden buildin nappi koskevat avointa buildia. Tallentamattomien muutosten määrän alla **Näytä muutokset** listaa jokaisen muuttuneen kentän tallennetun ja nykyisen arvon.
-- **Tuo…**, **Liitä teksti**, **Vie valitut** ja **Vie kaikki** siirtävät setupeja koneelta toiselle tai kaverille.
+- **Tallenna** ja **Tallenna nimellä…** ovat päätoiminnot ja koskevat avointa buildia; otsikossa näkyy sen nimi.
+- Valitse auto **Kaikki autot** -listasta, niin näet vain sen setupit, hae nimellä tai autolla ja lajittele minkä tahansa sarakkeen mukaan. **Paras ajo** laskee vain maaliin ajetut ajot setupin reitillä.
+- Napsauta setuppia, niin se näkyy oikealla: ensin **Avaa**, **Monista** ja **Nimeä uudelleen** (F2), sitten teho ja paino, moottori, vaihteisto, renkaat ja ajojen määrä sekä ero avoimeen setupiin. Tuplaklikkaus tai **Enter** avaa setupin, ja Ctrl- tai Shift-napsautus valitsee useita. **Poista** (Del) siirtää ensin **Roskakoriin**.
+- **Tuo…**, **Vie…** ja **Roskakori** ovat valikkoja: tuo tiedosto tai liitetty teksti, vie valitut tai kaikki setupit ja palauta poistetut.
 - Setup-valikon **Tuo tune…** lukee tunepohjan tai tunetaulukon uudeksi setupiksi (ks. [3.3](#33-tuo-tune-tiedostosta)).
 
 Setupit tallentuvat Project Touge -kansioon tiedostoina, ja niistä jää päivätyt varmuuskopiot. Jos Touge käynnistyy tyhjällä sivulla (uusi kone tai siirretty kansio) mutta löytää tallennetut setupisi, se avaa uusimman.
+
+### 4.1 Presetit
+
+**Presetit**-välilehti (uusi 0.16:ssa) kokoaa kaikki presetit yhteen paikkaan:
+
+![Presetit-välilehti: omat presetit, omat välitysprofiilit ja valmiit](img/fi/80-presets.webp)
+
+- **Omat presetit** ovat omiasi. **Kattaa** kertoo, mitä osia kukin sisältää: **Alusta** (jouset, vakaajat, iskarit, jousen pituus, ohjaus, paineet, camber, jarrujako), **Diffi** (lukot ja preload) ja **Välitykset**. Jokaisella rivillä on **Käytä**, **Nimeä**, **Kopioi**, **Jaa…** ja **Poista**; **Kumoa** palauttaa poistetun presetin, kunnes suljet ikkunan.
+- **Omat välitysprofiilit** ovat välityssarjoja, jotka olet tallentanut kohdassa Säädä › Välitykset › **Tallenna omaksi profiiliksi**, auton ja vetopään kanssa.
+- **Valmiit** listaa Tougen mukana tulevat presetit, diffiluonteet ja välitysprofiilit (Malli, CalcX by StepUnique, choriso's, Forgiving, Touge, Precise, Track, Old Meta ja niin edelleen). Ne ovat kaikille samat eikä niitä voi muuttaa, mutta **Kopioi omaksi** tekee kopion, jonka voit nimetä ja jakaa.
+
+**Tallenna nykyinen presetiksi** tallentaa osia avoimesta setupista. Anna nimi ja rastita, mitä se kattaa:
+
+![Tallenna nykyinen presetiksi: valitse alusta, diffi tai välitykset](img/fi/81-save-preset.webp)
+
+Preset muuttaa käytettäessä **vain ne osat, jotka se kattaa**: alustan ja diffin preset ei koske välityksiisi. Kun välitykset ovat mukana, ne tallentuvat myös omaksi välitysprofiiliksi.
 
 ## 5. Säädä: korjaa se mitä tunnet
 
@@ -257,7 +274,11 @@ Säädä näyttää jokaisen säädön liukurina. Siinä on neljä välilehteä:
 - **A · Säädöt**: paino, etupaino, jousen pituus, jouset, vakaajat, vaimentimet sekä camber ja toe pelin järjestyksessä. Avaa ryhmän alta **Miten tämä toimii**, niin näet mekanismin.
 - **C · Tasapaino & KPI**: vaimennussuhde, kallistusgradientti, kallistusjäykkyys ja jousituksen taajuus. Vedä **LLTD**-palkkia tai **tasapainokaavion** viivaa siirtääksesi etu-/takajakoa niin, että kokonaisjäykkyys säilyy. Tasapainokaavio näyttää jouset (mutkan keskellä), hitaan bumpin (sisään ja ulos) ja nopean bumpin (töyssyt ja reunakivet) samalla Etu–Taka-akselilla, ja taso ennen muutostasi on katkoviivalla.
 - Leveällä näytöllä (noin 1700 px:stä alkaen) liukurit asettuvat kahteen palstaan, ja Tasapaino & KPI pysyy näkyvissä, kun vierität.
-- **Tallenna presetiksi** säilyttää tämän alustan presettinä, jonka voi valita myöhemmin uudelleen. **Lue kuvasta** täyttää arvot kuvakaappauksesta.
+- **Tallenna presetiksi** säilyttää tämän alustan presettinä, jonka voi valita myöhemmin uudelleen (kaikki presettisi ovat Setupit-ikkunan **Presetit**-välilehdellä, [4.1](#41-presetit)). **Lue kuvasta** täyttää arvot kuvakaappauksesta.
+
+**Mitä malli käytti.** Alustassa ja Välityksissä on rivi, kuten *Laskettu osilla 305/30 R17 · BM13 1.3L R (DX8) · 920 kg · 50,0 %*: renkaat, moottori, massa ja etupaino, joilla laskenta tehtiin. Kun vaihdat sen jälkeen renkaita, moottoria tai sen osia, rivi muuttuu keltaiseksi (**Osat muuttuneet laskennan jälkeen**), ja välitykset tai alustan arvot ovat vanhentuneet. **Laske uudelleen** laskee ne uudelleen nykyisillä osilla. Välityksissä se korvaa omat välitysmuutoksesi; Alustassa se korvaa omat alustamuutoksesi, ja **Kumoa** palauttaa ne.
+
+![Osat muuttuneet laskennan jälkeen, ja Laske uudelleen](img/fi/82-recalculate.webp)
 
 **Välitykset**
 
@@ -463,11 +484,13 @@ Omat reittisi tallentuvat `Routes`-kansioon.
 ![Asetukset](img/fi/30-settings.webp)
 
 - **Yleiset**: kieli, tekstin koko, Säädä-näkymän näkymätaso, **Tiheys** (Väljä tai Tiivis), animaatiot, **Yksiköt** (km/h ja kg tai mph ja lb: Touge laskee yhä metrisesti ja vaihtaa vain näytettävät luvut; kaaviot ja ohjetekstit pysyvät metrisinä), **Taustakartta** (Normaali, Himmeä tai Pois), **Aloitussivu** (viimeisin, Rakenna, Säädä, Oma näkymä tai Ajanotto), **Yläosa** ja **Palauta asettelu** (palauttaa paneelien järjestyksen, piilotetut ja taitetut paneelit sekä Säädä-tilan ja -kansion oletuksiin; Oma näkymä ja asetukset säilyvät).
-- **Data ja varmuuskopiot**: missä datasi on ja nappi kansion avaamiseen.
+- **Data ja varmuuskopiot**: missä datasi on, nappi kansion avaamiseen, **Vie kaikki setupit** ja, jos tulit Touge 0.12:sta tai vanhemmasta, **Vanhat ajotiedostot**: kansion `Data\Legacy\Runs` koko, jota mikään ei enää lue, ja **Poista…**, joka poistaa sen vahvistuksen jälkeen. Aikasi, ajosi ja analyysit ovat tallessa muualla.
 - **Ajanotto**: samat valmiusrivit kuin Aja-näkymässä ja niiden alla näytönlukijan valinnat.
 - **Pelin fysiikka** (kokeellinen): näkyy, kun Touge löytää pelin oman fysiikkatiedoston; sillä Touge voi kokeilla säätöjä pelin fysiikalla. Tulokset ovat kalibroimattomia (◐).
 - **Käynnistys ja sammutus**: sammuttaa Tougen ja pelikellon yhdessä.
 - **Tietoja**: versio, päivitysvalinnat (**Ilmoita uusista versioista** ja **Tarjoa myös esikatseluversiot**, jotka julkaistaan testattavaksi hieman ennen muita), **Ilmoita ongelmasta**, **Tämän version uutuudet**, palautelinkit ja lisenssit.
+
+![Data ja varmuuskopiot, Vanhat ajotiedostot](img/fi/83-settings-data.webp)
 
 ![Tietoja](img/fi/74-about.webp)
 
@@ -483,7 +506,7 @@ Omat reittisi tallentuvat `Routes`-kansioon.
 | L | Laske (Rakenna) |
 | Ctrl+S | Tallenna setup |
 | Ctrl+Shift+S | Tallenna nimellä |
-| Ctrl+O | Kaikki setupit |
+| Ctrl+O | Setupit-ikkuna (Setupit ja Presetit) |
 | F9 · F10 · F11 | Pelikello: aloita, splitti, maali |
 | F8 · Ctrl+F8 | Ajastinikkuna: näytä tai piilota, siirrä |
 | F1 | Ohje |
@@ -497,7 +520,7 @@ Kuvat ovat englanninkielisestä näkymästä; suomeksi nappien nimet ovat suluis
 | Tiedosto | Sisältö | Mistä se tehdään |
 |---|---|---|
 | `….tune.json` | setupin buildi ja lopulliset pelin arvot | Setup-valikko → **Share and import…** (Jaa ja tuo…) |
-| `….chassis.json`, `….gears.json` | oma alustapreset tai oma välitysprofiili (vanhat molemmat sisältävät `….preset.json`-tiedostot tuodaan edelleen) | Setup-valikko → **Share and import…** |
+| `….chassis.json`, `….gears.json` | oma alustapreset tai oma välitysprofiili (vanhat molemmat sisältävät `….preset.json`-tiedostot tuodaan edelleen) | Setup-valikko → **Share and import…** tai rivin **Jaa…** kohdassa Setupit → **Presetit** |
 | `….route.json` | oma reitti splitteineen, lähtö- ja maalikuvineen ja kuvauksineen | **Share and import…** tai Ajanotto → Reitit → **Share route** (Jaa reitti) |
 | `….run.json` | yksi maaliin ajettu ajo omalla reitillä haamuksi | Ajanotto → Analysoi → Ajovertailu → **Share run A** (Jaa ajo A) |
 
@@ -575,7 +598,7 @@ Tuo **reitti ennen ajoa**. Jo omistamasi reitti tunnistetaan viivasta, vaikka si
 
 **Add and show** avaa reitin näkymässä **Ajanotto → Reitit**.
 
-![Uusi reitti Ajanotto → Reitit -näkymässä](img/en/608-route-added.webp)
+![Reitti Ajanotto → Reitit -näkymässä: reittilista, kartta numeroiduin splitein sekä splitit, haamut ja lähtö- ja maalikuvat](img/fi/608-route-added.webp)
 
 Ajon esikatselu kertoo, mille reitille ajo kuuluu. Jos siinä lukee *not in your routes*, tuo ensin reittitiedosto.
 
@@ -586,7 +609,7 @@ Ajo tallentuu haamuksi kansioon `Data\Runs\Ghosts` ja näkyy reitin kohdassa **G
 - **Race** (Kilpaile) tekee siitä vastustajasi. Seuraavasta ajosta alkaen aikaikkuna näyttää, kuinka paljon olet haamun edellä tai perässä. Uusi napsautus lopettaa kilpailun. **Delete** (Poista) poistaa haamun.
 - **Analysoi → Ajovertailussa** haamun voi valita **ajoksi B**: kaaviot ja kartta näyttävät, missä voitat ja häviät sille.
 
-![Kilpailu haamua vastaan](img/en/610-ghost-race.webp)
+![Kilpailu haamua vastaan](img/fi/610-ghost-race.webp)
 
 ![Oma ajo haamua vastaan Ajovertailussa](img/en/611-compare-ghost.webp)
 
@@ -613,6 +636,7 @@ Project Touge\
    │  └─ Reader\         näytönlukijan lokit; minikarttakuvat vain, jos tallennus on päällä
    ├─ Cache\             vain Pelin fysiikan (kokeellinen) kanssa
    └─ Legacy\            vanhojen versioiden tiedostot, joita Touge ei enää lue
+                         (Asetukset › Data ja varmuuskopiot › Vanhat ajotiedostot poistaa Legacy\Runs)
 ```
 
 - **Ei mitään kansion ulkopuolelle.** Touge kirjoittaa vain tänne. Ainoa poikkeus on Windowsin WebView2, joka pitää ikkunan selainvälimuistia kansiossa `%LOCALAPPDATA%\fi.projecttouge.app`. Siinä ei ole tunejasi eikä ajojasi.
@@ -624,12 +648,13 @@ Project Touge\
 
 ## 10. Kun jokin ei täsmää
 
-- **Pelikello ei vastaa**: käynnistä Project Touge uudelleen; kello on osa ohjelmaa ja käynnistyy sen mukana. Tarkista, ettei mikään muu telemetriaohjelma käytä samaa porttia.
+- **Pelikello ei vastaa**: käynnistä Project Touge uudelleen; kello on osa ohjelmaa ja käynnistyy sen mukana. Versiosta 0.16 alkaen se ei käytä omia verkkoportteja, joten muut telemetriaohjelmat eivät voi estää sitä.
 - **Windows estää ohjelman**: jos SmartScreen pysäyttää sen, valitse **Lisätietoja → Suorita silti**. Pidä exe `Program Files` -kansion ulkopuolella, koska sinne Touge ei voi kirjoittaa datakansioitaan.
 - **Nopeus tai minikartta ei tule**: aja peliä reunattomassa ikkunassa tai koko näytöllä niin, että HUD näkyy. Touge löytää HUDin ensimmäisellä ajolla; testatut resoluutiot ovat 3440×1440, 2560×1440, 2560×1080, 1920×1440 ja 1920×1080.
 - **Ajanotto ei lähde**: avaa Ajanotto → Aja ja katso **Valmis ajanottoon?** -tarkistus. Jokainen rivi, joka ei ole vihreä, kertoo mitä puuttuu, ja sen napista pääsee korjaamaan.
 - **Luku ei vastaa peliä**: katso ensin, onko siinä ◐. Kirjoita pelin oma lukema **Tarkista pelistä** -riveille ja ilmoita ero **Ilmoita ongelmasta** -toiminnolla.
-- **Setup katosi**: katso **Kaikki setupit → Roskakori** tai palauta päivätyistä kopioista `Tunes`-kansiossa.
+- **Välitykset tai alusta näyttävät oudoilta osien vaihdon jälkeen**: etsi Säädä › Välitykset- tai Alusta-kohdasta keltainen **Osat muuttuneet laskennan jälkeen** -rivi ja paina **Laske uudelleen**.
+- **Setup katosi**: katso **Setupit → Roskakori** tai palauta päivätyistä kopioista kansiossa `Data\Tunes\History`.
 
 Löysitkö vian tai luvun, joka ei täsmää pelissä? Käytä kohtaa **Asetukset › Tietoja › Ilmoita ongelmasta**: se tallentaa diagnostiikkatiedoston `Shared`-kansioon ja avaa GitHubiin [ilmoituksen](https://github.com/aaturaty/project-touge/issues), jossa versiosi on valmiina. Kerro mitä teit ja liitä tiedosto.
 

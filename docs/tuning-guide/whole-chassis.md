@@ -48,6 +48,8 @@ The order goes from big to small, so that a later setting does not undo an earli
 
 The touge weapon preset in Touge gives starting values for steps 2–8 from the car's dimensions, and they have worked in game ●. The real refining then starts from symptoms.
 
+**In Touge 0.16 the order is built in.** Gearing and Chassis show which tyres, engine, mass and front weight their values were calculated with, and the line turns yellow when you have changed one of them since. After step 1, or after an engine change, press **Recalculate** before you refine steps 2–8. When a combination works, save it on the **Presets** tab of the Setups window and tick only the parts it should carry: a chassis-and-diff preset moves to another setup without touching its gears.
+
 ## How to test
 
 1. **One change at a time.** When you change two things you do not know which one made the difference. The exception is a pair that belongs together, such as a spring and its length for the same height.

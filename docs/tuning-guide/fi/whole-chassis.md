@@ -48,6 +48,8 @@ Järjestys etenee isosta pieneen niin, ettei myöhempi säätö kumoa aiempaa. J
 
 Tougen touge weapon -preset antaa lähtöarvot vaiheille 2–8 auton dimensioista, ja ne ovat toimineet pelissä ●. Varsinainen hionta alkaa sitten oireista.
 
+**Touge 0.16:ssa järjestys on sisäänrakennettu.** Välitykset ja Alusta kertovat, millä renkailla, moottorilla, massalla ja etupainolla niiden arvot laskettiin, ja rivi muuttuu keltaiseksi, kun olet sen jälkeen vaihtanut jotain niistä. Paina vaiheen 1 tai moottorin vaihdon jälkeen **Laske uudelleen** ennen kuin hiot vaiheita 2–8. Kun yhdistelmä toimii, tallenna se Setupit-ikkunan **Presetit**-välilehdellä ja rastita vain osat, jotka sen kuuluu sisältää: alustan ja diffin preset siirtyy toiseen setupiin koskematta sen välityksiin.
+
 ## Näin testaat
 
 1. **Yksi muutos kerrallaan.** Kun muutat kahta asiaa, et tiedä, kumpi teki eron. Poikkeus on pari, joka kuuluu yhteen, kuten jousi ja sen pituus samaan korkeuteen.

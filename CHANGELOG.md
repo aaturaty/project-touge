@@ -1,5 +1,83 @@
 # Changelog
 
+## 0.16.0 beta (2026-11-22)
+
+**0.15 → 0.16 in short.** Four releases (0.15.1, 0.15.2, 0.15.3 and 0.16.0) changed most of what you see and a good part of what happens underneath:
+
+| Area | What changed |
+|---|---|
+| **Interface** | Tune sliders follow your drag in real time and work from the keyboard; the page is updated in place instead of redrawn. **My view** keeps your own sliders and monitors in one place. Wide screens are used up to about 2400 px, and **Compact** density fits more sliders. The top bar keeps your setup's name with a count of unsaved changes and a list of what changed, each line with its own revert. One icon set, one set of button and panel rules. |
+| **Setups and presets** | The Setups window has a **Presets** tab: your own presets and gearing profiles with what each covers, apply, rename, duplicate, share and delete with undo. **Save current as preset** lets you choose chassis, diff and gears, and a partial preset changes only those parts. |
+| **Calculation** | The optimiser runs on all processor cores (a full optimisation about four times faster, 22.5 s → 5.8 s on 4 cores, same result). A new result shows about five times faster, because only the page you look at is redrawn. Gearing and Chassis show which tyres, engine, mass and front weight the model used, turn yellow when the parts have changed since, and **Recalculate** brings them up to date. |
+| **Timing** | Drive fits on one screen with the clock, the map with named split points, your latest runs and the readiness check. A session row shows route, opponent, car, record, median and runs. During a run the gap follows the car and the map shows you and your opponent. Abort can be undone for 10 seconds, a result card stays after the finish, and **Discard run** removes a test run with its data. |
+| **Analyse and Routes** | Analyse has one corner table with tabs (Practice, This run, All corners, Splits, Model and game, Leaderboard), a right column with the verdict and the losses, and charts and map that follow each other. Routes is one screen in three columns with search, filters and game routes grouped by type. |
+| **Speed and housekeeping** | Run analysis is about three times faster, the page starts faster, settings are saved per key instead of rewriting one large file, and the game timer no longer uses network ports. **Settings · Data** can remove the 0.12 run folder that nothing reads any more. |
+
+**Your folder is the same as in 0.13**, and Touge writes nothing outside it except the WebView2 browser cache ([details](README.md#where-your-files-live)):
+
+```text
+Project Touge\
+├─ Project Touge.exe
+├─ README.txt
+├─ Shared\        what you share; Inbox\ for files from friends
+└─ Data\          settings, tunes, routes, runs, logs
+```
+
+**New**
+- Setups window: a **Presets** tab lists your own presets and gearing profiles with what each one covers, and lets you apply, rename, duplicate, share and delete them (with undo). Built-in presets, diff characters and gearing profiles are listed too and can be duplicated as your own.
+- **Save current as preset** lets you choose which parts it covers (chassis, diff, gears). Applying a partial preset changes only those parts.
+- Settings · Data: **Old run files** shows the size of the Touge 0.12 run folder (`Data\Legacy\Runs`) and removes it after you confirm.
+
+**Changed**
+- Tune: Gearing and Chassis show which tyres, engine, mass and front weight the model used. They turn yellow when the parts have changed since, and **Recalculate** runs the calculation again with the current parts.
+- Calculations run on all processor cores: a full optimisation takes about a quarter of the time (22.5 s → 5.8 s on 4 cores), with the same result.
+- Run analysis is about three times faster (94 runs: 40 s instead of 117 s), and the analysis folder is a third smaller.
+- The page starts faster, settings are saved per key, and the game timer runs inside Touge without its own network ports (8766 and 30777 are no longer used).
+- Map matching fits itself to each run, so split points land closer to where you passed them. The screen reader asks Windows for the colour format it expects.
+
+**Fixed**
+- Gears and chassis no longer keep stale values without telling after a tyre, engine or parts change.
+- Done in input mode no longer says "Saving failed" after switching to a car with no own build (since 0.12.1).
+- Picking a car right after start, two quick Game physics runs, the leaderboard progress chart, routes saved only in the browser, route editor Delete, Esc zoom reset, runs that failed to load and Analyse on a run with no corners.
+
+## 0.15.3 beta (2026-11-21)
+
+- **Drive on one screen:** the clock and its splits, the route map with named split points and your latest runs, and the readiness check sit side by side, so Start is in view without scrolling.
+- **Session row** on Drive and Analyse: route, what you race against (your record with this car, the route record, your median or the model), car and setup, record, median and number of runs.
+- **During a run** the big gap follows the car between splits and the map shows you and your opponent. **Abort** can be undone for 10 seconds; an aborted run never becomes a record.
+- **Result card** after the finish: time, gap to record and median, each split's gain or loss, and Analyse this run, Drive again and **Discard run**.
+- **Routes** in three columns: a searchable, filtered route list with game routes grouped by type; the route with Drive, Analyse, Edit, Share and Delete; and its splits, ghosts and start and finish images. Long sections get a note, and **Suggest** shows extra split points.
+- **Analyse:** one corner table with tabs (Practice, This run, All corners, Splits, Model and game, Leaderboard; the leaderboard moved here from Drive), a right column with the verdict, Next, the losses and Target, comparison charts on one distance axis under the corner strip, and hover and zoom that link the charts and the map. Median is a new comparison option.
+- Header: the slogan is gone and the version tag sits where the FI/EN switch was (language is in Settings · General).
+- Fixed: own routes' split distances after editing, finish times faster than 250 km/h on average no longer become records, and aborted runs get the car of the runs around them.
+
+## 0.15.2 beta (2026-11-20)
+
+- Top bar: **New build** takes the place of the model reference time, and Save is a disk icon that turns yellow when something is not saved.
+- Tune · Adjust: the tabs and Advice for this build are back on their own rows. On a wide window Time's map and speed chart grow with it.
+- Fixed: "No changes yet" after the first save, a leftover "1 unsaved change" after saving during a calculation, cut-off values in the change list, and sliders that froze when a calculation stopped answering (it is now restarted after 90 seconds).
+
+## 0.15.1 beta (2026-11-20)
+
+- **Real-time sliders:** while you drag a chassis, diff, Other or engine slider, its value and the panel around it follow the drag; nothing is saved or added to undo until you let go. The final drive slider redraws the sawtooth and tractive force as you drag.
+- **No redraws:** letting go updates the panels in place, and a new result appears about five times faster because only the page you look at is redrawn.
+- **Every slider the same:** Tab, arrows, Shift + arrow, Home, End and Enter; a yellow dot and the difference to the saved value, click it to go back; the mouse wheel only after a click.
+- **Change list:** the top bar keeps your setup's name with the number of unsaved changes; click it for saved → now with the game's names, each line with its own revert.
+- **My view:** your own sliders and monitors in one place, the same for every car.
+- **Wide screens and Compact density:** the page grows to about 2400 px, Chassis sliders flow in two columns from 1700 px, and Compact fits more sliders.
+- Tune · Chassis: the three balance meters are one chart on a shared Front–Rear axis. One chart style, one icon set, and short motion that tells what changed (left out with Animations: Reduced).
+
+## 0.15.0 beta (2026-11-20)
+
+- **Ready to time?** Drive checks the game timer, screen reader, window mode, controller, disk space and the game file before you start, with a button for each row that needs work.
+- **Next step:** a slim bar under the tabs says what to do next in the loop Build, Tune, Drive and Analyse.
+- **Where this run lost time:** Analyse names the two corners where your latest run lost most and why, with one click to the matching symptoms on Tune.
+- **What changed between A and B:** the run comparison lists the game values that differ between the two runs' setups.
+- **choriso's reference run** (6:07.36, RX-7 FD) comes with Touge as a ghost on North Touge v2.
+- **What's new** opens once after an update. **Report a problem** saves a diagnostics file and opens a GitHub issue.
+- **Shorter share codes** (`TOUGE2:`, about 1 100 characters for a tune). 0.13.0 and older cannot read them.
+- Narrow window support (about 480 px beside the game), shared start and finish markers on every map, and a skip link and larger targets for the keyboard.
+
 ## 0.13.0 beta (2026-11-19)
 
 - **A tidy folder:** the Project Touge folder now holds only the program, the README, `Shared` (what you export or get from friends) and `Data` (everything Touge keeps for itself). Files have English names, the loose settings files are one `settings.json`, and each route keeps its runs and analysis in one folder. The first start moves your old files into `Data`, lists every move in `Data\Logs\migration.txt` and deletes nothing. An older version cannot read the new folder.

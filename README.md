@@ -30,9 +30,9 @@ When a new version is out, Touge shows a notice with an **Update now** button. I
 
 Coming from 0.10 or 0.9.x? Update by hand this one time: copy the new `Project Touge.exe` over the old one, or unzip it into a new folder and Touge will find your earlier Project Touge and copy your data. From 0.10.1 on, the button does it.
 
-## New in 0.20
+## New in 0.20.1
 
-Highlights in 0.20 (everything since 0.16):
+Highlights in 0.20.1 (everything since 0.16; 0.18 and 0.20.0 were never released):
 
 - **Build Wizard:** 01 Build starts with two paths. Enter the build you already have, or let the model build the car step by step (target, body and aero, engine, drivetrain, tyres) and see the estimated time gain against stock or your saved build.
 - **Car character model (125 cars, ◐):** Tune › Chassis shows how your setup changes mid-corner balance, entry rotation, exit wheelspin, body roll, inner-wheel load and bump-stop travel, live while you drag a slider. **Base setup** solves chassis and diff from each car's own physics and keeps what you set yourself.

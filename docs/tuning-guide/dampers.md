@@ -128,7 +128,7 @@ Change one value at a time by about 15–20 % (half a slider step) and drive the
 
 ## Final tip
 
-Keep the dampers near stock or the touge weapon preset first: in the simulation model stock and maximum differed little, but too little damping ruined the car. Then refine one phase at a time: rebound for packing over bumps, front slow rebound for throttle understeer, and fast values for gutters. If the car feels hard, look at the bump/rebound ratio and the spring length before the spring.
+Keep the dampers near stock or Touge's Base setup first: in the simulation model stock and maximum differed little, but too little damping ruined the car. Then refine one phase at a time: rebound for packing over bumps, front slow rebound for throttle understeer, and fast values for gutters. If the car feels hard, look at the bump/rebound ratio and the spring length before the spring.
 
 In our experience rebound is clearly larger than bump in every working setup, and relatively larger at the rear than at the front. A heavier car uses larger numbers with the same ratios.
 

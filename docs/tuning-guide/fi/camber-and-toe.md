@@ -79,7 +79,7 @@ Muuta camberia 0,5° ja toeta 0,1° kerrallaan, ja aja sama mutka samalla vaihte
 
 ## Loppuvinkki
 
-Camber −3,5 / −3,5 on ollut pelissä jokaisessa toimivassa touge weapon -presetin setupissa ●. Ruudulla se näyttää paljolta, mutta levossa se on noin 2–3° positiivisempi kuin luku. Pidä etutoe nollassa ja takatoe 0…+0,1:ssä, ja muuta niitä vain oireen mukaan.
+Camber −3,5 / −3,5 on ollut jokaisessa pelikokeissamme hyvin toimineessa setupissa ●. Ruudulla se näyttää paljolta, mutta levossa se on noin 2–3° positiivisempi kuin luku. Pidä etutoe nollassa ja takatoe 0…+0,1:ssä, ja muuta niitä vain oireen mukaan.
 
 Jos et tiedä, vaikuttaako camber autossasi, tee pikakoe: etucamber −3,5 → −8 ja aja sama mutka. Jos tuntuma ei muutu lainkaan, etuakseli on todennäköisesti fysiikkakoodin jäykkä akseli.
 

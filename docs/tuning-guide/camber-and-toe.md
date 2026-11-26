@@ -79,7 +79,7 @@ Change camber by 0.5° and toe by 0.1° at a time, and drive the same corner in 
 
 ## Final tip
 
-Camber −3.5 / −3.5 has been in every working setup of the touge weapon preset in game ●. On screen it looks like a lot, but at rest it is about 2–3° more positive than the number. Keep front toe at zero and rear toe at 0…+0.1, and change them only by symptom.
+Camber −3.5 / −3.5 has been in every setup that worked well in our in-game tests ●. On screen it looks like a lot, but at rest it is about 2–3° more positive than the number. Keep front toe at zero and rear toe at 0…+0.1, and change them only by symptom.
 
 If you do not know whether camber affects your car, do a quick test: front camber −3.5 → −8 and drive the same corner. If the feel does not change at all, the front axle is probably the physics code's rigid axle.
 

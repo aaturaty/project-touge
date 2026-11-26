@@ -38,7 +38,7 @@ A few things in the game physics change the usual tuning advice. They come up ag
 ## How to use it with Touge
 
 1. **Build** the car on Touge's Build tab, or enter it from your screenshots.
-2. **Start** from a preset such as touge weapon, then drive a few laps in the game.
+2. **Start** from Touge's Base setup (Tune → Chassis), then drive a few laps in the game.
 3. **Find the phase** where the car does not do what you want: braking, turn-in, mid-corner, exit, straight, or bumps and gutters.
 4. **Pick the symptom** in the Symptom view on the Tune tab. It shows the change to try first and second, and links to the chapter of this guide that explains it.
 5. **Change one thing at a time** and drive the same corner in the same gear. Set it in the game from the list in the Overview view.

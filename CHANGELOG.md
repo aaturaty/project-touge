@@ -1,5 +1,63 @@
 # Changelog
 
+## 0.20.0 beta (unreleased)
+
+**0.16 → 0.20 in short.** 0.18 was never published on its own, so 0.20 carries both:
+
+| Area | What changed |
+|---|---|
+| **Build** | 01 Build starts with two paths: enter the build you already have (screenshots, a table or by hand), or let the **Build Wizard** build the car step by step. The result shows an estimated time gain between builds, not a lap-time prediction. |
+| **Setup model** | A car character model for 125 cars (◐) shows how your setup changes balance, rotation, wheelspin, roll, inner-wheel load and bump-stop travel. **Base setup** solves chassis and diff from each car's own physics, and keeps the settings you made yourself. |
+| **Tune** | The symptom advisor gives up to three concrete changes for your exact car (◐), and the race engineer tells after your next run whether the change helped. Chassis and Gearing have a new layout, and **My view** is a cockpit with widgets and an Auto-Focus Lens. |
+| **Presets** | The built-in chassis presets are **Model** and **CalcX by StepUnique**; the old touge weapon and choriso presets are gone, and setups saved with them open on Model with their own values kept. A setup keeps its preset version until you update it. |
+| **Engine and physics** | Stat power is shown without race fuel, and race fuel no longer raises engine inertia. Game physics (Experimental) runs on Touge's own Rust implementation of the game's car physics and no longer needs the game's files. |
+
+**Your folder is the same as in 0.16**, and Touge writes nothing outside it except the WebView2 browser cache ([details](README.md#where-your-files-live)):
+
+```text
+Project Touge\
+├─ Project Touge.exe
+├─ README.txt
+├─ Shared\        what you share; Inbox\ for files from friends
+└─ Data\          settings, tunes, routes, runs, logs
+```
+
+**New**
+- **Build Wizard:** 01 Build starts with two paths. **Enter pre-existing build** takes your car from Part Setup screenshots, a table or by hand. **Build with the model** walks through target (car, class, route), body and aero, engine, drivetrain and tyres; at each step you let the model decide, keep the defaults or choose yourself, or press **Build now** for the whole car at once. The result shows the estimated time gain against stock, your saved build or the previous result. It is a difference between builds, not a lap-time prediction, and the screen says so.
+- **Car character model (125 cars, ◐):** Tune → Chassis shows how your setup changes the car across measured character traits: mid-corner balance, entry rotation, exit wheelspin, body roll, inner-wheel load and bump-stop travel, with live bars that follow your drag and an entry/mid/exit corner-phase chart.
+- **Base setup from the car's own physics:** the default chassis and diff are solved for each car from its physics model with a bump-stop floor and a preload cap of 3 % of drive torque, instead of general rules. It keeps the settings you made yourself, leaves the values of a saved setup locked unless you allow changes, and gives the same result for a heavy and a light build of the same car.
+- **Symptom advisor for your car (◐):** pick a handling symptom and corner phase, and Tune shows up to three concrete changes for your exact car and setup, one per group (springs and bars, geometry, diff, tyres/brakes/aero, dampers), each one game step, with its side effects. **Apply** follows a one-change-at-a-time rule and can be undone.
+- **Race engineer: "Did it help?" (◐):** after you apply a suggested change, your next timed run is compared with the run before it, and the run card says **Helped**, **Trade-off** or **Didn't help**, with Keep, Undo, or Undo and try the next option. A symptom that repeats shows in how many corners it happened; a one-corner symptom points you to your line in Analyse instead.
+- **My view cockpit:** add widgets (character, balance and numbers, a low sawtooth chart, a diff card with draggable arcs) and a monitor strip (time, LLTD, roll, ride frequency, top speed, acceleration). The **Auto-Focus Lens** follows the last slider you touched. Final drive and diff sliders can be added to My view.
+- **Presets keep their version:** a setup stays on the preset version it was made with. **Update preset to newest version** shows what would change before you apply it. **Preset mix** now changes only the chassis.
+
+**Changed**
+- **Tune layout:** Chassis opens with springs and anti-roll bars, General folds into a one-line summary, and the right column has tabs **Character ◐** and **Balance & numbers** with your monitors on top. Gearing has a **Gear / Range** slider that drags the sawtooth chart, a wide Final drive and a compact shift time. The bottom navigation runs Symptom → Parts → Chassis → Gearing → Other → Overview, and **Done · save** is on Overview.
+- **Built-in presets:** the chassis presets are **Model** and **CalcX by StepUnique** (plus your own presets). The old touge weapon and choriso presets and their gearing profiles are removed; a setup saved with them opens on Model and keeps its own values. The diff characters (Forgiving, Touge, Precise, Track) and Old Meta gearing stay.
+- **Sliders follow the game:** slider steps and limits come from the game's own tick tables, the stock diff comes from the game data for all 126 cars, spring-length sliders show the bump-stop zone, and diff preload shows the 3 % torque ceiling.
+- **Engine figures:** stat power and torque are shown without race fuel, with the race fuel effect shown separately. Race fuel no longer raises engine inertia, and peak power is in metric PS throughout.
+- **Tyres:** the tyre pressure effect is capped at 3.0 bar, and the wizard applies the tyre rule (width at least 285, 3.0 bar) to the saved build.
+- **No LLTD route setting:** the LLTD target and its route-time scenario are gone. The table behind it disagreed with later physics tests, so the route time no longer depends on it.
+- **Game physics without the game's files:** Game physics (Experimental, off by default) now runs on Touge's own Rust implementation of the game's car physics. It gives the same results as the game's physics library on all 126 cars, and runs as fast. You no longer need the game installed in a findable folder, and the readiness check and Settings no longer ask for it.
+- **Analyse → Tune:** the Next card in Analyse shows one setup change for a recurring car symptom, the same one the symptom advisor gives, and **Open in Tune** opens that symptom.
+- **choriso's Tuning Bible** tells you to start a new car from **Base setup** instead of a removed preset.
+- **Maps face north** like the game's map, in Routes and in the route editor.
+- **Faster and smoother:** fixed the gear downshift lock-out and shift-cut interpolation in the route model, sped up hot loops, and moved all charts to one accessible chart module (keyboard navigation, focus styles, reduced motion).
+- **Live timing:** current-run distance is scaled like saved runs, so live split gaps compare at the same place on the route.
+- **Local server hardening:** requests that change data need a per-session token and must come from Touge's own page.
+
+**Fixed**
+- Game physics simulated double-wishbone axles as a solid axle, so camber had no effect on those cars. They now run as double wishbone.
+- The symptom advisor no longer refuses every spring change on a car whose stock setup already sits below the bump-stop margin (for example the RX-7), and never suggests a diff lock under 0.22 or a step cut off at a slider limit.
+- Copy list no longer prints "undefined", and the change list names presets by name and version.
+- Tune spring lengths, and changes made in Tune, survive a tyre, engine or parts change on the Build tab.
+- Part Setup sliders no longer miss their data when the page loads before the calculation is ready.
+- Slider knobs no longer jump sideways on hover, and quick double-taps on + / − no longer drop steps.
+- The Recalculate basis and the selected route no longer count as unsaved changes.
+- Number keys no longer switch tabs on the Build page, and the Build tab returns to an unfinished build.
+- Start new build no longer carries the previous car's tuning into the new build.
+- Corner radius sign in segment analysis, and the standard error of Game physics runs that stop early.
+
 ## 0.16.0 beta (2026-11-22)
 
 **0.15 → 0.16 in short.** Four releases (0.15.1, 0.15.2, 0.15.3 and 0.16.0) changed most of what you see and a good part of what happens underneath:

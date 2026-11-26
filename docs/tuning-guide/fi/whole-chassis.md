@@ -38,7 +38,7 @@ Järjestys etenee isosta pieneen niin, ettei myöhempi säätö kumoa aiempaa. J
 
 1. **Renkaat ja kori:** rengaskoko, vanneosa ja offset lokasuojan sisällä. Rengas määrää pidon ja säteen, joten se on kaiken muun pohja.
 2. **Välitykset:** vasta renkaan jälkeen, koska vain kokonaisvälitys (FD × renkaan säde) ratkaisee ●.
-3. **Jousen pituus:** tarpeeksi joustovaraa, ettei jousitus lyö rajoittimeen (touge weapon: etu ×1,07, taka ×0,90 oletuksesta).
+3. **Jousen pituus:** tarpeeksi joustovaraa, ettei jousitus lyö rajoittimeen (toimiva lähtökohta: etu ×1,07, taka ×0,90 oletuksesta ●).
 4. **Jouset:** jäykkyys massan mukaan, sitten pituus uudelleen, koska jäykempi jousi nostaa koria ●.
 5. **Vakaajat:** jako akselivälin mukaan ja kokonaisjäykkyys kallistuksen mukaan. Tämä on tärkein tasapainosäätö.
 6. **Diffi:** ensin kaasulukko, sitten preload ja moottorijarrulukko ulostuloon ja sisääntuloon.
@@ -46,7 +46,7 @@ Järjestys etenee isosta pieneen niin, ettei myöhempi säätö kumoa aiempaa. J
 8. **Vaimentimet:** slow bump ja slow rebound siirtymien nopeuteen. Fast-arvot vain kuoppiin ja guttereihin.
 9. **Camber ja toe:** viimeistely.
 
-Tougen touge weapon -preset antaa lähtöarvot vaiheille 2–8 auton dimensioista, ja ne ovat toimineet pelissä ●. Varsinainen hionta alkaa sitten oireista.
+Tougen **Base setup** (Tune → Chassis) antaa lähtöarvot vaiheille 2–8 auton omasta fysiikasta ja dimensioista ◐. Varsinainen hionta alkaa sitten oireista.
 
 **Touge 0.16:ssa järjestys on sisäänrakennettu.** Välitykset ja Alusta kertovat, millä renkailla, moottorilla, massalla ja etupainolla niiden arvot laskettiin, ja rivi muuttuu keltaiseksi, kun olet sen jälkeen vaihtanut jotain niistä. Paina vaiheen 1 tai moottorin vaihdon jälkeen **Laske uudelleen** ennen kuin hiot vaiheita 2–8. Kun yhdistelmä toimii, tallenna se Setupit-ikkunan **Presetit**-välilehdellä ja rastita vain osat, jotka sen kuuluu sisältää: alustan ja diffin preset siirtyy toiseen setupiin koskematta sen välityksiin.
 
@@ -102,7 +102,7 @@ Nopein setup ei ole kaikille sama, koska kuljettaja ajaa sitä rajalla. Hae ensi
 
 ## Loppuvinkki
 
-Aloita uusi auto touge weapon -presetistä, joka on toiminut pelissä kymmenellä autolla ●. Aja muutama kierros ja kirjaa vaihe, jossa auto ei tee mitä haluat. Korjaa yksi oire kerrallaan hakemiston ensisijaisella muutoksella, ja kun auto on tasapainossa, siirry tuntumaan.
+Aloita uusi auto Tougen **Base setupista** (Tune → Chassis) ◐. Aja muutama kierros ja kirjaa vaihe, jossa auto ei tee mitä haluat. Korjaa yksi oire kerrallaan hakemiston ensisijaisella muutoksella, ja kun auto on tasapainossa, siirry tuntumaan.
 
 Kolme asiaa on toistunut jokaisessa kokeessa:
 

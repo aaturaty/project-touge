@@ -128,7 +128,7 @@ Muuta yhtä arvoa kerrallaan noin 15–20 % (puoli liukuriaskelta) ja aja sama m
 
 ## Loppuvinkki
 
-Pidä vaimentimet aluksi lähellä vakiota tai touge weapon -presetiä: simulaatiomallissa vakio ja maksimi erosivat vähän, mutta liian vähäinen vaimennus pilasi auton. Hio sitten yksi vaihe kerrallaan: rebound kuopissa pakkautumiseen, etu slow rebound kaasu-aliohjaukseen ja fast-arvot guttereihin. Jos auto tuntuu kovalta, katso bump/rebound-suhdetta ja jousen pituutta ennen jousta.
+Pidä vaimentimet aluksi lähellä vakiota tai Tougen Base setupia: simulaatiomallissa vakio ja maksimi erosivat vähän, mutta liian vähäinen vaimennus pilasi auton. Hio sitten yksi vaihe kerrallaan: rebound kuopissa pakkautumiseen, etu slow rebound kaasu-aliohjaukseen ja fast-arvot guttereihin. Jos auto tuntuu kovalta, katso bump/rebound-suhdetta ja jousen pituutta ennen jousta.
 
 Kokemuksemme mukaan rebound on jokaisessa toimivassa setupissa selvästi bumpia suurempi, ja takana suhteessa suurempi kuin edessä. Raskaampi auto käyttää suurempia lukuja samoilla suhteilla.
 

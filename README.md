@@ -6,9 +6,15 @@ Project Touge is a companion app for CarX Street on Windows. It helps you build 
 
 > Project Touge is an unofficial fan-made tool. It is not a CarX Technologies product and is not affiliated with or endorsed by them. It never reads, changes or injects anything into the game: time and telemetry are read from the screen, the same way you see them.
 
+<p>
+<a href="docs/guide/img/en/05a-start-paths.webp"><img src="media/readme/thumbs/05a-start-paths.webp" width="32%" alt="Build: two start paths"></a>
+<a href="docs/guide/img/en/11-adjust-chassis.webp"><img src="media/readme/thumbs/11-adjust-chassis.webp" width="32%" alt="Tune: Character bars"></a>
+<a href="docs/guide/img/en/20-drive.webp"><img src="media/readme/thumbs/20-drive.webp" width="32%" alt="Time: Drive"></a>
+</p>
+
 ## Download
 
-Get the latest zip from **[Releases](../../releases/latest)** (about 24 MB).
+Get the latest zip from **[Releases](https://github.com/aaturaty/project-touge/releases/latest)**.
 
 1. Unzip it anywhere you like, for example Documents or a game drive.
 2. Double-click **Project Touge.exe**. Touge opens in its own window.
@@ -26,7 +32,7 @@ Coming from 0.10 or 0.9.x? Update by hand this one time: copy the new `Project T
 
 ## New in 0.20
 
-0.18 was never published on its own, so 0.20 carries everything since 0.16. The short version:
+Highlights in 0.20 (everything since 0.16):
 
 - **Build Wizard:** 01 Build starts with two paths. Enter the build you already have, or let the model build the car step by step (target, body and aero, engine, drivetrain, tyres) and see the estimated time gain against stock or your saved build.
 - **Car character model (125 cars, ◐):** Tune › Chassis shows how your setup changes mid-corner balance, entry rotation, exit wheelspin, body roll, inner-wheel load and bump-stop travel, live while you drag a slider. **Base setup** solves chassis and diff from each car's own physics and keeps what you set yourself.
@@ -40,7 +46,7 @@ Everything else is in the [changelog](CHANGELOG.md).
 
 ## Where your files live
 
-Project Touge is one folder. Everything it saves stays inside it: what you share in `Shared`, everything else in `Data` (new in 0.13; an update moves your old files there on its first start):
+Project Touge is one folder. Everything it saves stays inside it: what you share in `Shared`, everything else in `Data` (an update from 0.12 or older moves your old files there on its first start):
 
 ```text
 Project Touge\
@@ -73,7 +79,7 @@ All three guides are online at **[aaturaty.github.io/project-touge](https://aatu
 
 Step by step, page by page with screenshots: **[Project Touge user guide](docs/guide/README.md)** · [suomeksi](docs/guide/README.fi.md). The same guide as a branded offline page: `docs/guide/index.html`.
 
-**Sharing tunes, routes and runs** (new in 0.11): chapter 8 of the guide, and a one-page visual walkthrough in [`docs/sharing/index.html`](docs/sharing/index.html).
+**Sharing tunes, routes and runs**: chapter 8 of the guide, and a one-page [visual walkthrough](https://aaturaty.github.io/project-touge/sharing/).
 
 ## What it does
 
@@ -95,7 +101,10 @@ Start with one of two paths: **enter the build you already have** (Part Setup sc
 
 [![Tune](media/readme/tune.webp)](docs/guide/README.md)
 
-Pick a symptom by corner phase and get up to three concrete changes for your exact car (◐), or adjust the chassis, gearing and diff yourself while the **Character ◐** bars show how the car's balance, rotation, wheelspin, roll and bump-stop travel move, all from the game's own physics. **Base setup** solves a starting chassis and diff for each car. After your next runs, the race engineer tells whether the change helped. Each change explains why it helps, with a link to the matching chapter of the Tuning Bible. Sliders follow your drag in real time and work from the keyboard, and **My view** is your own cockpit: the sliders, widgets and monitors you use most on one page, with an Auto-Focus Lens on the last slider you touched. Keep chassis, diff and gear sets as **presets** and apply only the parts you want; after a tyre or engine change, **Recalculate** brings the gears and chassis up to date.
+- **Symptom:** pick what the car does by corner phase and get up to three concrete changes for your exact car (◐). After your next runs, the race engineer tells whether the change helped.
+- **Adjust:** move the chassis, gearing and diff yourself while the **Character ◐** bars show how balance, rotation, wheelspin, roll and bump-stop travel move, calculated from the game's own physics. **Base setup** solves a starting chassis and diff for each car. Each change explains why it helps, with a link to the matching chapter of the Tuning Bible.
+- **My view:** your own cockpit with the sliders, widgets and monitors you use most, and an Auto-Focus Lens on the last slider you touched. Sliders follow your drag in real time and work from the keyboard.
+- **Presets:** keep chassis, diff and gear sets and apply only the parts you want; after a tyre or engine change, **Recalculate** brings the gears and chassis up to date.
 
 <p>
 <a href="docs/guide/img/en/10-symptom.webp"><img src="media/readme/thumbs/10-symptom.webp" width="32%" alt="symptom"></a>
@@ -145,13 +154,13 @@ North Touge - Run
 Full Touge - Run
 └─  Extended version from lighthouse to lake.
 Lighthouse - Run
-└─  Later half of North Touge, starting from the full speed section to lighthouse.
+└─  Latter half of North Touge, from the full speed section to the lighthouse.
 Fujiwara - Run
-└─  First half of North Touge - run starting from iconic Fujiwara - shop to top of the mountain.
+└─  First half of North Touge, from the iconic Fujiwara shop to the top of the mountain.
 Touge Loop
-└─  Circuit - like route on the mountains, challenging with fast paced end section and tight hairpins with big elevation changes.
+└─  Circuit-like mountain route with a fast-paced final section and tight hairpins with big elevation changes.
 Sunset Speedway
-└─  Outside the touge realm, but a must in order to touch CarX racing. 
+└─  Outside the touge realm, but a must for CarX racing.
 ```
 
 <p>
@@ -162,7 +171,7 @@ Sunset Speedway
 
 ### Sharing
 
-[![Sharing](media/readme/sharing.webp)](docs/sharing/index.html)
+[![Sharing](media/readme/sharing.webp)](https://aaturaty.github.io/project-touge/sharing/)
 
 Share tunes, presets, routes and runs as files (tunes also as a short share code; presets also from Setups › Presets). Drop a friend's file in `Shared\Inbox`, preview it and add it with one click. A shared run becomes a ghost you can race on the timer and compare against in Analyse. See the [sharing walkthrough](https://aaturaty.github.io/project-touge/sharing/).
 
@@ -176,13 +185,13 @@ Share tunes, presets, routes and runs as files (tunes also as a short share code
 
 [![Project Touge choriso's Tuning Bible](docs/tuning-guide/banner.png)](docs/tuning-guide/README.md)
 
-**[choriso's Tuning Bible](docs/tuning-guide/README.md)** is the long read behind the Tune tab: how CarX Street calculates the car and what each setting really does, from tyres and springs to anti-roll bars, dampers, camber and toe, the differential and body dimensions. Every claim is marked: ● confirmed in game or in the game code, ◐ simulation, ○ real-car theory.
+**[choriso's Tuning Bible](docs/tuning-guide/README.md)** is the long read behind the Tune tab: how CarX Street calculates the car and what each setting really does, from tyres and springs to anti-roll bars, dampers, camber and toe, the differential and body dimensions, plus engine, gearing and a glossary. Every claim is marked: ● confirmed in game or in the game code, ◐ simulation, ○ real-car theory.
 
 Read it here, as a [PDF](docs/tuning-guide/Project-Touge-Tuning-Guide.pdf), or inside Touge on the Tune tab. Also [in Finnish](docs/tuning-guide/fi/README.md).
 
 ## Feedback
 
-Found a bug or a value that is off in game? Use **Settings › About › Report a problem**: it saves a diagnostics file to `Shared` and opens an [issue](../../issues) with your version filled in. Say what you did and attach the file.
+Found a bug or a value that is off in game? Use **Settings › About › Report a problem**: it saves a diagnostics file to `Shared` and opens an [issue](https://github.com/aaturaty/project-touge/issues) with your version filled in. Say what you did and attach the file.
 
 ## Licence
 

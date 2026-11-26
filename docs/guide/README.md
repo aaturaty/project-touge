@@ -47,9 +47,8 @@ For timing, run CarX Street borderless or full screen so the whole HUD is visibl
 ![Project Touge with a setup open on the Build tab](img/en/01-overview.webp)
 
 - **Tabs 01 Build, 02 Tune, 03 Time** follow the order you work in. Keys **1**, **2** and **3** switch between them.
-- **Setup** (top right) shows the open setup. A green dot means saved, a yellow dot means unsaved changes. Click it for Save, Save as, your recent setups, Import a tune, Share and import, and All setups. The disk icon next to it saves straight away.
-- **New build**, right of the setup name, starts a fresh build for this car from the model's defaults; your saved setups stay. The **disk** icon saves and turns yellow when something is not saved.
-- **?** opens help with the shortcuts and the tuning guides. The **gear** opens Settings, and the red **power** button shuts Touge down. The version tag sits at the top right; the language is in **Settings › General**.
+- **Setup** (top right) shows the open setup. A green dot means saved, a yellow dot means unsaved changes. Click it for Save, Save as, your recent setups, Import a tune, Share and import, and All setups. The **disk** icon next to it saves straight away and turns yellow when something is not saved. A new build starts from **+ New build** on 01 Build.
+- **?** opens help with the shortcuts and the tuning guides. The **gear** opens Settings, and the red **power** button shuts Touge down. The version tag shows at the top right in the full-size header; the language is in **Settings › General**.
 - The model's estimate for the open build on the chosen route (**model reference time**) is in **My monitors** and on the Tune timeline.
 - On a first start Touge is empty: **Choose a car** comes first, and the numbers appear once a car is chosen. A **Getting started** strip shows the three steps until you hide it.
 - Once you have saved a setup, the large title at the top gives its height to the page and the tabs move to the top edge. Setting **Settings › General › Header** to **Full** brings the title back.
@@ -181,7 +180,7 @@ Body kit, front and rear wing tiers and the downforce sliders, in the same order
 
 ![Suspension module](img/en/44-mod-suspension.webp)
 
-Suspension is always Prototype, because that is what lets you set everything. **Suspension state** draws the car at rest, under braking, under acceleration and at 200 km/h; **Bounce** shows how quickly the body settles. Below are the weight split, roll stiffness split (LLTD), natural frequencies, damping ratios and how far aero presses the car down at speed. Enter the game's **front weight** and, if you like, your own **front roll stiffness share** for the route time.
+Suspension is always Prototype, because that is what lets you set everything. **Suspension state** draws the car at rest, under braking, under acceleration and at 200 km/h; **Bounce** shows how quickly the body settles. Below are the weight split, roll stiffness split (LLTD), natural frequencies, damping ratios and how far aero presses the car down at speed. Enter the game's **front weight**. The roll stiffness split is shown for information; from 0.20 the route time no longer uses a separate LLTD setting.
 
 **06 Tyres**
 
@@ -318,7 +317,7 @@ Adjust shows every setting with a slider. It has four tabs: **Parts**, **Chassis
 
 - The **sawtooth** shows each gear's rpm against speed, shifting at the limiter. The green band is the power band; a green dot is a shift that lands inside it, a grey dot one that falls below.
 - Pick the gears to work on: **1–3**, **3–4**, **4–5** and so on up to your top gear, or **All**, or tap two gears in the row under the charts to make your own range.
-- The **Gear / Range** slider under the chart (new in 0.20) does the same as dragging the sawtooth: with one gear picked it moves that gear, with a range it changes the spacing while the top gear stays.
+- The slider under the chart (new in 0.20) does the same as dragging the sawtooth: with one gear picked it is **Gear N ratio** and moves that gear; with a range it is **Gear spacing**, from **Spread** on the left to **Close up** on the right, and the top gear of the range stays.
 - Drag the **circle at the top of a gear** left or right to make that gear shorter or longer. The arrow keys move it 0.01 at a time.
 - Drag the **◂ 1–3 ▸ pill** to move the whole range at once.
 - Drag one of the **end bars** at the bottom to change the spacing: that end moves and the other stays, and the gears in between keep the same proportions.
@@ -327,7 +326,7 @@ Adjust shows every setting with a slider. It has four tabs: **Parts**, **Chassis
 - The big numbers under the chart are the game's gear ratios, with the overall ratio and the rpm drop under each.
 - **Final drive** has its own wide slider under the chart. On the right, the **gearing profile** and a compact **shift time**. **Effect** gives top speed, 0–100 km/h, how many shifts land in the power band and the rpm drop for each shift.
 - The **diff** sits below: lock on acceleration, lock on deceleration and preload. Drag the arcs on the wheel diagram, or use the sliders.
-- **Use in route time** runs the new ratios on the route; **Reset** restores the original ratios.
+- Changes update the route time automatically (press **Save** in the top bar to keep them); **Reset** restores the original ratios.
 
 **Other**
 
@@ -359,7 +358,7 @@ Overview is the list you follow with the game open next to Touge.
 |---|---|
 | **Settings only** | every setting on one screen, no charts |
 | **Simple** | the settings and the key meters |
-| **Advanced** | every chart and detail; in Chassis a chart column **B** joins between the settings and Balance & KPI |
+| **Advanced** | every chart and detail; in Chassis a chart column **B** joins between the settings and Character & balance |
 
 ![Advanced view: Chassis](img/en/16-view-advanced.webp)
 
@@ -375,7 +374,7 @@ In **Advanced**, the chart in column B follows the group you open: springs, spri
 |---|---|---|
 | Any setting slider | the knob, or the mouse wheel after a click | sets the value; **Shift** + wheel moves 10 steps |
 | Weight, front weight, final drive, shift time | the row's slider | the same as − and + |
-| Chassis · C Balance & KPI · **LLTD** | the bar | moves the anti-roll bar split front to rear with the total kept |
+| Chassis · Character & balance › Balance & numbers · **LLTD** | the bar | moves the anti-roll bar split front to rear with the total kept |
 | Chassis · **Balance chart** | a line | moves the front/rear split of springs or dampers with the axle sum kept |
 | Camber & toe chart (Advanced) | a wheel | front view tilts it for camber, top view turns it for toe |
 | Gearing · sawtooth | gear circle, range pill, end bars | see Gearing above |
@@ -386,7 +385,7 @@ In **Advanced**, the chart in column B follows the group you open: springs, spri
 
 Values go to the game list when you let go, and the model time updates without redrawing the page, so nothing jumps and keyboard focus stays where it was. To type an exact value instead, click the number next to a slider.
 
-**Density.** Settings › General › Density › **Compact** fits more sliders on the screen (a Chassis slider row is 44–48 px instead of 68 px).
+**Density.** Settings › General › Density › **Compact** fits more sliders on the screen (a slider row is 32 px instead of 40 px).
 
 ### 5.5 My view
 
@@ -394,7 +393,7 @@ Values go to the game list when you let go, and the model time updates without r
 
 **My view** puts the sliders, numbers and charts you use most on one page, your own cockpit for tuning. It is the same for every car, so the sliders you set every time are always in the same place.
 
-- **My sliders** on the left work like the sliders in Adjust. By default they are the springs, the anti-roll bars, the slow bump dampers, the diff locks, the final drive and the wheel offsets. Final drive and diff sliders can be added too.
+- **My sliders** on the left work like the sliders in Adjust. By default they are the springs, the anti-roll bars, the slow bump dampers, the diff locks, the final drive and the wheel offsets. Add or remove any slider with its pin.
 - **My monitors** on top of the right column are a strip of numbers to watch, for example the model reference time, roll stiffness front share, roll gradient, ride frequency and top speed. The same strip shows at the top of Character & balance in Adjust.
 - **Widgets** below are the bigger pictures: **Car character ◐**, **Balance & numbers**, a low **Gearing · sawtooth** chart and a **Differential lock** card whose arcs you can drag.
 - **Auto-Focus Lens** follows the last slider you touched and shows the numbers that slider moves, so one view is enough while you tune: springs and bars show roll gradient, ride frequency and front roll-stiffness share; dampers a bump force line and damping ratios; spring length the bump-stop margin; diff sliders the lock split and preload against the 3 % limit; final drive the limiter in top gear and top speed; wheel offsets the room left inside the fender.
@@ -571,7 +570,7 @@ Every file you save goes to the **`Shared`** folder next to Project Touge.exe. F
 3. The name field below holds the name the other driver sees. Changing it changes only the shared copy, not your own setup or preset.
 4. If you like, type **Your name (optional)**. It is shown to the person who opens the file. Leave it empty to share without a name.
 5. **Save as file** saves the file. Touge says where it saved it, for example `Shared\Touge AE86.tune.json`.
-6. **Or share as text** is the other way: the field holds a line of text that starts with `TOUGE2:`, and its length is shown next to the heading. **Copy code** copies it and confirms with "Copied" in place; paste it straight into a chat message. A tune is about 1 100 characters, so it fits in one Discord message. Routes are shared as a file only, because they hold images.
+6. **Or share as text** is the other way: the field holds a line of text that starts with `TOUGE2:`, and its length is shown next to the heading. **Copy code** copies it and confirms with "Copied" in place; paste it straight into a chat message. A tune is about 1 100–1 500 characters, so it fits in one Discord message. Routes are shared as a file only, because they hold images.
 
 Codes from older versions (`TOUGE1:`) still import, but 0.13.0 and older cannot read a `TOUGE2:` code: ask the receiver to update, or share the file instead.
 

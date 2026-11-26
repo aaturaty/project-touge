@@ -16,6 +16,9 @@ def slug(t):
     return re.sub(r'\s+', '-', t.strip())
 
 
+LANG = ['en']
+
+
 def inline(s):
     s = html.escape(s, quote=False)
     s = re.sub(r'`([^`]+)`', r'<code>\1</code>', s)
@@ -24,6 +27,8 @@ def inline(s):
         t, u = m.group(1), m.group(2)
         if u.endswith('.md') or u == 'index.html':
             return ''          # language links are replaced by the switch in the header
+        if u.startswith('#') and not re.match(r'#(en|fi)-', u):
+            u = f'#{LANG[0]}-{u[1:]}'   # headings carry a language prefix, see convert()
         ext = u.startswith('http')
         return f'<a href="{u}"' + (' target="_blank" rel="noopener"' if ext else '') + f'>{t}</a>'
     s = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', link, s)
@@ -34,6 +39,7 @@ def inline(s):
 
 
 def convert(md, lang):
+    LANG[0] = lang
     out, toc, i, L = [], [], 0, md.splitlines()
     open_sec = False
     while i < len(L):
@@ -76,13 +82,20 @@ def convert(md, lang):
             continue
         if re.match(r'(\d+\.|-) ', r):
             ordered = r[0].isdigit()
-            items = []
+            items = []   # [text, [sub items]]
             while i < len(L) and re.match(r'(\d+\.|-) ', L[i]):
-                items.append(re.sub(r'^(\d+\.|-) ', '', L[i])); i += 1
-                while i < len(L) and L[i].startswith('   ') and L[i].strip():
-                    items[-1] += ' ' + L[i].strip(); i += 1
+                items.append([re.sub(r'^(\d+\.|-) ', '', L[i]), []]); i += 1
+                while i < len(L) and L[i].strip() and (L[i].startswith('  ')):
+                    if re.match(r'\s{2,}(-|\d+\.) ', L[i]):
+                        items[-1][1].append(re.sub(r'^\s+(-|\d+\.) ', '', L[i]))
+                    elif items[-1][1]:
+                        items[-1][1][-1] += ' ' + L[i].strip()
+                    else:
+                        items[-1][0] += ' ' + L[i].strip()
+                    i += 1
             tag = 'ol' if ordered else 'ul'
-            out.append(f'<{tag}>' + ''.join(f'<li>{inline(x)}</li>' for x in items) + f'</{tag}>')
+            li = lambda x: inline(x[0]) + ('<ul>' + ''.join(f'<li>{inline(y)}</li>' for y in x[1]) + '</ul>' if x[1] else '')
+            out.append(f'<{tag}>' + ''.join(f'<li>{li(x)}</li>' for x in items) + f'</{tag}>')
             continue
         if r.startswith('!['):
             m = re.match(r'!\[([^\]]*)\]\(([^)]+)\)', r)

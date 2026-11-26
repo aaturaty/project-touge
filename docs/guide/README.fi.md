@@ -21,7 +21,7 @@ Sisältö
 
 Arjen kierros on lyhyt: **Rakenna** auto kerran, **Säädä** yhtä asiaa, aja muutama ajo **Ajanotossa**, katso **Analysoi** ja palaa Säädä-välilehdelle sen kanssa, mitä ajot kertovat.
 
-Kieli vaihtuu yläpalkin **FI / EN** -kytkimestä. Pelin omat termit (esim. Part Setup, Weight Distribution in Front, osatasot Stock … Prototype) pysyvät englanniksi, jotta ne löytyvät pelistä samoilla nimillä.
+Kieli vaihdetaan kohdasta **Asetukset › Yleiset**. Pelin omat termit (esim. Part Setup, Weight Distribution in Front, osatasot Stock … Prototype) pysyvät englanniksi, jotta ne löytyvät pelistä samoilla nimillä.
 
 ---
 
@@ -49,9 +49,8 @@ Ajanottoa varten aja CarX Streetiä reunattomassa ikkunassa tai koko näytöllä
 ![Project Touge setup auki Rakenna-välilehdellä](img/fi/01-overview.webp)
 
 - **Välilehdet 01 Rakenna, 02 Säädä, 03 Ajanotto** ovat työjärjestyksessä. Näppäimet **1**, **2** ja **3** vaihtavat niiden välillä.
-- **Setup** (oikealla ylhäällä) näyttää avoimen setupin. Vihreä piste = tallennettu, keltainen = tallentamattomia muutoksia. Napsauttamalla saat Tallenna, Tallenna nimellä, viimeisimmät setupit, Tuo tune, Jaa ja tuo sekä Kaikki setupit. Viereinen levykekuvake tallentaa heti.
-- **Uusi buildi** setupin nimen oikealla puolella aloittaa tälle autolle uuden buildin mallin oletuksista; tallennetut setupit säilyvät. **Levykekuvake** tallentaa ja muuttuu keltaiseksi, kun jotain on tallentamatta.
-- **?** avaa ohjeen pikanäppäimineen ja säätöoppaineen. **Ratas** avaa asetukset, ja punainen **virtanappi** sammuttaa Tougen. Versiomerkki on oikeassa yläkulmassa; kieli vaihdetaan kohdasta **Asetukset › Yleiset**.
+- **Setup** (oikealla ylhäällä) näyttää avoimen setupin. Vihreä piste = tallennettu, keltainen = tallentamattomia muutoksia. Napsauttamalla saat Tallenna, Tallenna nimellä, viimeisimmät setupit, Tuo tune, Jaa ja tuo sekä Kaikki setupit. Viereinen **levykekuvake** tallentaa heti ja muuttuu keltaiseksi, kun jotain on tallentamatta. Uusi buildi aloitetaan 01 Rakenna -sivun **+ Uusi buildi** -napista.
+- **?** avaa ohjeen pikanäppäimineen ja säätöoppaineen. **Ratas** avaa asetukset, ja punainen **virtanappi** sammuttaa Tougen. Versiomerkki näkyy oikeassa yläkulmassa täysikokoisessa yläpalkissa; kieli vaihdetaan kohdasta **Asetukset › Yleiset**.
 - Mallin arvio avoimelle buildille valitulla reitillä (**mallin vertailuaika**) näkyy **Omissa monitoreissa** ja Säädä-sivun aikajanalla.
 - Ensimmäisellä käynnistyksellä Touge on tyhjä: ensin **Valitse auto**, ja luvut tulevat näkyviin, kun auto on valittu. **Näin aloitat** -kaista näyttää kolme vaihetta, kunnes piilotat sen.
 - Kun olet tallentanut setupin, iso otsikko antaa tilansa sivulle ja välilehdet nousevat yläreunaan. Kun valitset **Asetukset › Yleiset › Yläosa** -kohdasta **Täysi**, otsikko palaa.
@@ -183,7 +182,7 @@ Korisarja, etu- ja takasiiven taso sekä alavoimaliukurit samassa järjestyksess
 
 ![Jousitus-moduuli](img/fi/44-mod-suspension.webp)
 
-Jousitus on aina Prototype, koska sillä voi säätää kaiken. **Jousituksen tila** piirtää auton paikallaan, jarrutuksessa, kiihdytyksessä ja 200 km/h:ssa; **Pomppu** näyttää, kuinka nopeasti kori asettuu. Alla ovat painojakauma, kallistusjäykkyyden jako (LLTD), ominaistaajuudet, vaimennussuhteet ja kuinka paljon aero painaa autoa alas vauhdissa. Syötä pelin **etupaino** ja halutessasi oma **vakaajajako edessä** reittiaikaa varten.
+Jousitus on aina Prototype, koska sillä voi säätää kaiken. **Jousituksen tila** piirtää auton paikallaan, jarrutuksessa, kiihdytyksessä ja 200 km/h:ssa; **Pomppu** näyttää, kuinka nopeasti kori asettuu. Alla ovat painojakauma, kallistusjäykkyyden jako (LLTD), ominaistaajuudet, vaimennussuhteet ja kuinka paljon aero painaa autoa alas vauhdissa. Syötä pelin **etupaino**. Kallistusjäykkyyden jako näytetään tiedoksi; 0.20:sta alkaen reittiaika ei enää käytä erillistä LLTD-asetusta.
 
 **06 Renkaat**
 
@@ -263,7 +262,7 @@ Säädä-välilehdellä on neljä näkymää: **Oire**, **Säädä** ja **Yleisk
 
 - Oireet on **järjestetty niiden maksamien sekuntien mukaan**, ja kallein on merkitty **Aloita tästä**. Rivillä näkyy menetetty aika ja monessako mutkassa oire toistui (esimerkiksi *0,45 s · 8/26 mutkaa*).
 - Aliohjausta verrataan **omiin ajoihisi tällä autolla**, ei kiinteään rajaan.
-- **Ajovirheeseen** menetetyt mutkat (kosketus, myöhäinen jarrutus, tiukempi linja, vähintään 0,10 s menetetty) listataan erikseen eivätkä ne lasketa auton oireeksi. Vain yhdessä mutkassa näkynyt oire ohjaa katsomaan linjaasi Analysoi-näkymästä.
+- **Ajovirheeseen** menetetyt mutkat (kosketus, myöhäinen jarrutus, tiukempi linja, vähintään 0,10 s menetetty) listataan erikseen eikä niitä lasketa auton oireeksi. Vain yhdessä mutkassa näkynyt oire ohjaa katsomaan linjaasi Analysoi-näkymästä.
 - Ehdotukset painottavat **mutkan vaihetta ja nopeutta**: hitaissa mutkissa mekaaninen pito ja diffi, nopeissa vakaajat ja jouset, ei vaimentimia apeksissa eikä jarrujakoa ulostulossa.
 - **Auttoiko muutos?** Kun olet ottanut ehdotetun muutoksen käyttöön ja ajanut, Touge yhdistää enintään viisi kellotettua ajoa ennen ja jälkeen samoilla arvoilla. Kortti kertoo **Auttoi**, **Kompromissi** tai **Ei auttanut** ja tarjoaa **Pidä muutos**, **Pidä ja ota toinen askel** (kun oire yhä toistuu), **Kumoa** tai **Kumoa ja kokeile vaihtoehto #2**. **Seuraavaksi**-palkki näyttää avoimen kokeen, kunnes olet ajanut sen.
 - **Kokeillut muutokset** listaa tämän auton päätökset (pidetty, toinen askel, kumottu) myös uudelleenkäynnistyksen jälkeen, ja muutokset, jotka eivät auttaneet, listataan kyseisen oireen viimeisiksi. **Nollaa kokeillut tältä autolta** tyhjentää listan.
@@ -288,7 +287,7 @@ Säädä näyttää jokaisen säädön liukurina. Siinä on neljä välilehteä:
 ![Neuvot tälle buildille: Alusta](img/fi/14-check.webp)
 
 - **Osat**: moottori; hae moottorin liukurit tai anna myös moottorin osien muuttua luokan sisällä.
-- **Alusta**: kallistusjako, kokonaisjäykkyys ja diffin säädöt sekä suunta, johon kukin vie autoa, ja vaimennussuhteet edessä ja takana ja mitä ne merkitsevät sisäänmenolle ja rauhoittumiselle. **Jos koet tämän** antaa valmiin korjauksen **Käytä**- ja **Näytä säädin** -napeilla.
+- **Alusta**: kallistusjako, kokonaisjäykkyys ja diffin säädöt sekä suunta, johon kukin vie autoa, ja vaimennussuhteet edessä ja takana ja mitä ne merkitsevät sisääntuloon ja rauhoittumiseen. **Jos koet tämän** antaa valmiin korjauksen **Käytä**- ja **Näytä säädin** -napeilla.
 - **Välitykset**: jokaisen vaihteen loppunopeus rajoittimella ja riittääkö ylin vaihde reitille. Syötä oma huippunopeutesi reitillä, jos tiedät sen. **Laske ehdotukset** kokeilee kokonaisia välityssarjoja, joissa kaikki vaihteet ovat käytössä.
 
 **Alusta**
@@ -320,7 +319,7 @@ Säädä näyttää jokaisen säädön liukurina. Siinä on neljä välilehteä:
 
 - **Sahakaavio** näyttää jokaisen vaihteen kierrokset nopeuden mukaan, kun vaihdetaan rajoittimella. Vihreä kaista on tehoalue; vihreä piste on vaihto, joka osuu sen sisään, harmaa sellainen, joka putoaa alle.
 - Valitse vaihteet, joita säädät: **1–3**, **3–4**, **4–5** ja niin edelleen ylimpään vaihteeseen asti, tai **Kaikki**, tai napauta kahta vaihdetta kaavioiden alla olevalla rivillä, niin saat oman alueen.
-- Kaavion alla oleva **Vaihde / Alue** -liukuri (uutta 0.20:ssa) tekee saman kuin sahakaavion raahaus: yhdellä vaihteella se siirtää sitä vaihdetta, alueella se muuttaa väliä niin, että ylin vaihde pysyy.
+- Kaavion alla oleva liukuri (uutta 0.20:ssa) tekee saman kuin sahakaavion raahaus: yhdellä vaihteella se on **Vaihde N · välitys** ja siirtää sitä vaihdetta; alueella se on **Porrastus**, vasemmalla **Harvenna** ja oikealla **Tiivistä**, ja alueen ylin vaihde pysyy.
 - Raahaa **vaihteen yläpään ympyrää** vasemmalle tai oikealle, niin vaihde lyhenee tai pitenee. Nuolinäppäimet siirtävät sitä 0,01 kerrallaan.
 - Raahaa **◂ 1–3 ▸ -nappia**, niin koko alue siirtyy kerralla.
 - Raahaa alareunan **päätypalkkia**, niin porrastus muuttuu: se pää liikkuu ja toinen pysyy, ja välissä olevat vaihteet säilyttävät suhteensa.
@@ -329,7 +328,7 @@ Säädä näyttää jokaisen säädön liukurina. Siinä on neljä välilehteä:
 - Kaavion alla isot luvut ovat pelin välityssuhteet, ja niiden alla kokonaisvälitys ja kierrospudotus.
 - **Vetopyörästöllä** on oma leveä liukurinsa kaavion alla. Oikealla ovat **välitysprofiili** ja tiivis **vaihtoaika**. **Vaikutus** kertoo huippunopeuden, 0–100 km/h, kuinka moni vaihto osuu tehoalueelle ja kunkin vaihdon kierrospudotuksen.
 - **Diffi** on alempana: kaasulukko, jarrulukko ja esijännitys. Raahaa pyöräkuvan kaaria tai käytä liukureita.
-- **Käytä reittiajassa** ajaa uudet välitykset reitillä; **Nollaa** palauttaa alkuperäiset välitykset.
+- Muutokset päivittävät reittiajan itsestään (paina yläpalkin **Tallenna**, niin ne säilyvät); **Nollaa** palauttaa alkuperäiset välitykset.
 
 **Muut**
 
@@ -361,7 +360,7 @@ Yleiskuva on lista, jota seuraat peli auki Tougen vieressä.
 |---|---|
 | **Vain säädöt** | kaikki säädöt yhdellä ruudulla, ei kaavioita |
 | **Perus** | säädöt ja tärkeimmät mittarit |
-| **Laaja** | kaikki kaaviot ja lisätiedot; Alustassa säätöjen ja Tasapaino & KPI:n väliin tulee kaaviosarake **B** |
+| **Laaja** | kaikki kaaviot ja lisätiedot; Alustassa säätöjen ja Luonne ja tasapaino -sarakkeen väliin tulee kaaviosarake **B** |
 
 ![Laaja näkymä: Alusta](img/fi/16-view-advanced.webp)
 
@@ -377,7 +376,7 @@ Yleiskuva on lista, jota seuraat peli auki Tougen vieressä.
 |---|---|---|
 | Mikä tahansa säätöliukuri | nuppia tai rullaa hiirellä napsautuksen jälkeen | asettaa arvon; **Shift** + rulla siirtää 10 askelta |
 | Paino, etupaino, vetopyörästö, vaihtoaika | rivin liukuria | sama kuin − ja + |
-| Alusta · C Tasapaino & KPI · **LLTD** | palkkia | siirtää vakaajien etu–taka-jakoa kokonaisjäykkyys ennallaan |
+| Alusta · Luonne ja tasapaino › Tasapaino ja arvot · **LLTD** | palkkia | siirtää vakaajien etu–taka-jakoa kokonaisjäykkyys ennallaan |
 | Alusta · **Tasapainokaavio** | viivaa | siirtää jousten tai vaimentimien etu–taka-jakoa akselien summa ennallaan |
 | Camber ja toe -kaavio (Laaja) | pyörää | edestä-kuvassa kallistaa camberia, ylhäältä-kuvassa kääntää toeta |
 | Välitykset · sahakaavio | vaihteen ympyrää, aluenappia, päätypalkkeja | ks. Välitykset yllä |
@@ -388,7 +387,7 @@ Yleiskuva on lista, jota seuraat peli auki Tougen vieressä.
 
 Arvot siirtyvät pelilistaan, kun päästät irti, ja mallin aika päivittyy piirtämättä sivua uudelleen, joten mikään ei hypi ja näppäimistön kohdistus pysyy paikallaan. Jos haluat kirjoittaa tarkan arvon, napsauta liukurin vieressä olevaa lukua.
 
-**Tiheys.** Asetukset › Yleiset › Tiheys › **Tiivis** mahduttaa ruudulle enemmän liukureita (Alustan liukuririvi 44–48 px 68 px:n sijaan).
+**Tiheys.** Asetukset › Yleiset › Tiheys › **Tiivis** mahduttaa ruudulle enemmän liukureita (liukuririvi 32 px 40 px:n sijaan).
 
 ### 5.5 Oma näkymä
 
@@ -396,7 +395,7 @@ Arvot siirtyvät pelilistaan, kun päästät irti, ja mallin aika päivittyy pii
 
 **Oma näkymä** kokoaa eniten käyttämäsi liukurit, luvut ja kaaviot yhdelle sivulle, omaksi säätöohjaamoksesi. Se on sama kaikille autoille, joten joka kerta säätämäsi liukurit ovat aina samassa paikassa.
 
-- Vasemmalla olevat **Omat liukurit** toimivat kuten Säädä-näkymän liukurit. Oletuksena niissä ovat jouset, kallistuksenvakaajat, hitaan bumpin vaimentimet, diffin lukot, vetopyörästö ja vanteiden offsetit. Myös vetopyörästön ja diffin liukurit voi lisätä.
+- Vasemmalla olevat **Omat liukurit** toimivat kuten Säädä-näkymän liukurit. Oletuksena niissä ovat jouset, kallistuksenvakaajat, hitaan bumpin vaimentimet, diffin lukot, vetopyörästö ja vanteiden offsetit. Liukurin voi lisätä tai poistaa sen nastasta.
 - Oikean palstan yläosan **Omat monitorit** ovat lukurivi, jota seuraat, esimerkiksi mallin vertailuaika, kallistusjäykkyyden etuosuus, kallistusgradientti, jousituksen taajuus ja huippunopeus. Sama rivi näkyy Säädä-näkymän Luonne ja tasapaino -palstan yläosassa.
 - Alla olevat **widgetit** ovat isommat kuvat: **Auton luonne ◐**, **Tasapaino ja arvot**, matala **Välitykset · saha** -kaavio ja **Diffin lukko** -kortti, jonka kaaria voi raahata.
 - **Automaattinen linssi** seuraa viimeksi koskemaasi liukuria ja näyttää luvut, joita se liikuttaa, joten yksi näkymä riittää säätäessä: jouset ja vakaajat näyttävät kallistusgradientin, jousituksen taajuuden ja kallistusjäykkyyden etuosuuden; vaimentimet puristuksen voimakäyrän ja vaimennussuhteet; jousen pituus puskurivaran; diffin liukurit lukkojaon ja esijännityksen 3 %:n rajaa vasten; vetopyörästö rajoittimen ylimmällä vaihteella ja huippunopeuden; offsetit renkaan tilan lokasuojan sisällä.
@@ -533,7 +532,7 @@ Omat reittisi tallentuvat `Routes`-kansioon.
 
 ![Tietoja](img/fi/74-about.webp)
 
-**Ilmoita ongelmasta** tallentaa diagnostiikkatiedoston `Shared`-kansioon (versio, asetukset, valmiustarkistus ja uusimmat lokit; ei tunejä, ajoja eikä käyttäjänimeäsi) ja avaa GitHub-ilmoituksen valmiiksi täytettynä. Liitä tiedosto siihen.
+**Ilmoita ongelmasta** tallentaa diagnostiikkatiedoston `Shared`-kansioon (versio, asetukset, valmiustarkistus ja uusimmat lokit; ei tuneja, ajoja eikä käyttäjänimeäsi) ja avaa GitHub-ilmoituksen valmiiksi täytettynä. Liitä tiedosto siihen.
 
 ![Ohje](img/fi/31-help.webp)
 
@@ -554,7 +553,7 @@ Omat reittisi tallentuvat `Routes`-kansioon.
 
 Versiosta 0.11 alkaen Touge tallentaa tekemäsi asiat pieniksi tiedostoiksi, jotka kaveri avaa omassa Tougessaan: **tunen**, omat **presetit**, oman **reitin** ja **ajon**, jota toinen kuljettaja voi ajaa **haamuna** vastaan. Tiedoston lähetät millä tavalla haluat, esimerkiksi Discord-viestissä. Touge ei lähetä mitään minnekään itse.
 
-Kuvat ovat englanninkielisestä näkymästä; suomeksi nappien nimet ovat suluissa.
+Kuvat ovat enimmäkseen englanninkielisestä näkymästä (kuvat 608 ja 610 suomeksi); suomeksi nappien nimet ovat suluissa.
 
 | Tiedosto | Sisältö | Mistä se tehdään |
 |---|---|---|
@@ -575,7 +574,7 @@ Jokainen tallentamasi tiedosto menee **`Shared`**-kansioon Project Touge.exe:n v
 3. Alla oleva nimikenttä on nimi, jonka vastaanottaja näkee. Sen muuttaminen muuttaa vain jaettavaa kopiota, ei omaa setuppiasi tai presettiäsi.
 4. Kirjoita halutessasi **Your name (optional)** (Sinun nimesi, valinnainen). Se näkyy tiedoston avaajalle. Tyhjänä tiedosto jaetaan ilman nimeä.
 5. **Save as file** (Tallenna tiedostoksi) tallentaa tiedoston. Touge kertoo, minne se tallentui, esim. `Shared\Touge AE86.tune.json`.
-6. **Tai jaa tekstinä** on toinen tapa: kentässä on `TOUGE2:`-alkuinen tekstirivi, ja sen pituus näkyy otsikon vieressä. **Kopioi koodi** kopioi sen ja kuittaa paikallaan tekstillä "Kopioitu"; liitä teksti suoraan chat-viestiin. Tune on noin 1 100 merkkiä, joten se mahtuu yhteen Discord-viestiin. Reitit jaetaan vain tiedostona, koska niissä on kuvia.
+6. **Tai jaa tekstinä** on toinen tapa: kentässä on `TOUGE2:`-alkuinen tekstirivi, ja sen pituus näkyy otsikon vieressä. **Kopioi koodi** kopioi sen ja kuittaa paikallaan tekstillä "Kopioitu"; liitä teksti suoraan chat-viestiin. Tune on noin 1 100–1 500 merkkiä, joten se mahtuu yhteen Discord-viestiin. Reitit jaetaan vain tiedostona, koska niissä on kuvia.
 
 Vanhempien versioiden koodit (`TOUGE1:`) tuodaan yhä, mutta 0.13.0 ja vanhemmat eivät osaa lukea `TOUGE2:`-koodia: pyydä vastaanottajaa päivittämään tai jaa tiedosto.
 

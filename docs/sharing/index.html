@@ -1,5 +1,9 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sharing in Project Touge</title>
-<meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="How to share tunes, presets, routes and runs in Project Touge 0.20, and how to race a friend's run as a ghost.">
 <link rel="icon" type="image/png" href="assets/touge-64.png">
 <style>
@@ -61,7 +65,7 @@ h1 em{font-style:normal;color:var(--korostus-kirkas)}
 /* file types */
 .types{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:26px 0 0}
 .type{border:1px solid var(--viiva);padding:14px 16px;background:var(--hiili-2);display:flex;flex-direction:column;gap:6px;min-width:0}
-.type .ext{font:500 13px var(--body);color:var(--keltainen);word-break:break-all}
+.type .ext{font:500 13px var(--body);color:var(--korostus-hi);word-break:break-all}
 .type b{font:400 16px var(--display);letter-spacing:.06em;text-transform:uppercase;font-weight:400}
 .type span{color:var(--sumu);font-size:13.5px}
 .type small{color:var(--himmea);font-size:12.5px;margin-top:auto;padding-top:6px;border-top:1px dashed var(--viiva-2)}
@@ -109,15 +113,17 @@ figcaption{font:400 12px var(--display);letter-spacing:.12em;text-transform:uppe
 .tree{font:400 14px/1.75 var(--body);background:var(--hiili);border:1px solid var(--viiva-2);padding:16px 18px;overflow-x:auto;color:var(--sumu);white-space:pre;margin:0}
 .tree b{color:var(--kerma);font-weight:500}
 .tree i{font-style:normal;color:var(--himmea)}
-.tree .y{color:var(--keltainen)}
+.tree .y{color:var(--korostus-hi)}
 
 /* rules */
 .rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:10px 0 0}
-.rule{border-left:2px solid var(--natrium);padding:6px 0 6px 14px}
+.rule{border-left:2px solid var(--korostus);padding:6px 0 6px 14px}
 .rule b{display:block;font-weight:600}
 .rule span{color:var(--sumu);font-size:14px}
 footer{border-top:1px solid var(--viiva);margin-top:56px;padding-block:22px 40px;color:var(--himmea);font-size:13px}
 </style>
+</head>
+<body>
 
 <header class="hero">
   <div class="in">
@@ -139,7 +145,7 @@ footer{border-top:1px solid var(--viiva);margin-top:56px;padding-block:22px 40px
 <main class="in">
   <div class="types">
     <div class="type"><span class="ext">.tune.json · TOUGE2: code</span><b>Tune</b><span>The build and every final game value of a setup, so your friend types the same numbers into the game.</span><small>Setup menu → Share and import…</small></div>
-    <div class="type"><span class="ext">.chassis · .gears.json</span><b>Preset</b><span>Your own chassis preset or gearing profile.</span><small>Setup menu → Share and import…, or Setups → Presets → Share…</small></div>
+    <div class="type"><span class="ext">.chassis.json · .gears.json</span><b>Preset</b><span>Your own chassis preset or gearing profile.</span><small>Setup menu → Share and import…, or Setups → Presets → Share…</small></div>
     <div class="type"><span class="ext">.route.json</span><b>Route</b><span>An own route with its splits, start and finish images and description.</span><small>Share and import…, or Time → Routes → Share route</small></div>
     <div class="type"><span class="ext">.run.json</span><b>Run · ghost</b><span>One run that reached the finish, for your friend to race and compare against.</span><small>Time → Analyse → Run comparison → Share run A</small></div>
   </div>
@@ -168,8 +174,8 @@ footer{border-top:1px solid var(--viiva);margin-top:56px;padding-block:22px 40px
       <figure><span class="shot m"><img src="img/602-share-dialog.webp" alt="The Share tab of Share and import: what to share, the name, your name and the share text" width="640" height="686" loading="lazy"></span><figcaption>Share and import</figcaption></figure>
     </div>
     <div class="step wide">
-      <p><b>New in 0.16:</b> every own preset and gearing profile is also in the Setups window (<kbd>Ctrl+O</kbd>) on the <b>Presets</b> tab, with what it covers (chassis, diff, gears). <kbd>Share…</kbd> on a row opens the same Share window. A built-in preset can be shared after <kbd>Duplicate as own</kbd>.</p>
-      <figure><span class="shot"><img src="img/80-presets.webp" alt="The Presets tab: own presets with what they cover, own gearing profiles and the built-in presets" width="1320" height="823" loading="lazy"></span><figcaption>Setups → Presets</figcaption></figure>
+      <p>Every own preset and gearing profile is also in the Setups window (<kbd>Ctrl+O</kbd>) on the <b>Presets</b> tab, with what it covers (chassis, diff, gears). <kbd>Share…</kbd> on a row opens the same Share window. A built-in preset can be shared after <kbd>Duplicate as own</kbd>.</p>
+      <figure><span class="shot"><img src="img/80-presets.webp" alt="The Presets tab: own presets with what they cover, own gearing profiles and the built-in presets" width="1320" height="872" loading="lazy"></span><figcaption>Setups → Presets</figcaption></figure>
     </div>
 
     <h3 class="step-h">A route</h3>
@@ -277,3 +283,5 @@ footer{border-top:1px solid var(--viiva);margin-top:56px;padding-block:22px 40px
 
   <footer>Project Touge 0.20 beta. Sharing works the same as in 0.16. Screenshots are from Touge 0.12 to 0.16 with an AE86 and an RX-7 FD on North Touge v2; your numbers will differ. Touge reads the game's screen only and never changes the game.</footer>
 </main>
+</body>
+</html>

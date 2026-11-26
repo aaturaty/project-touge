@@ -147,7 +147,7 @@ Vaiherivi näyttää valintasi jokaisen vaiheen alla (**Oma**, **Oletukset** tai
 
 ### 3.5 Moduulit yksi kerrallaan
 
-Moduulikortit, joissa on buildin kunkin osan kaikki tiedot, ovat sivulla **02 Säädä › Säädä › Osat**. Napsauta korttia, niin se aukeaa korttien alle; **Sulje** tai toinen napsautus sulkee sen. Kun moduuli saa muuttua, malli täyttää sen; kun se on lukittu, siellä asettamasi arvot pysyvät. *(Alla olevat moduulikuvat ovat versiosta 0.16; sisältö on sama.)*
+Moduulikortit, joissa on buildin kunkin osan kaikki tiedot, ovat sivulla **02 Säädä › Säädä › Osat**. Napsauta korttia, niin se aukeaa korttien alle; **Sulje** tai toinen napsautus sulkee sen. Kun moduuli saa muuttua, malli täyttää sen; kun se on lukittu, siellä asettamasi arvot pysyvät. *(Jousituksen kuva on versiosta 0.20.1; muut moduulikuvat ovat versiosta 0.16, ja niiden sisältö on sama.)*
 
 **01 Automalli**
 

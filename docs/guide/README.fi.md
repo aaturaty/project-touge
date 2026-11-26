@@ -140,7 +140,7 @@ Vaiherivi näyttää valintasi jokaisen vaiheen alla (**Oma**, **Oletukset** tai
 
 ![Tulos: arvioitu aikavoitto, valittu buildi ja ehdokkaat](img/fi/05c-wizard-result.webp)
 
-- **Arvioitu aikavoitto** reitillä vakioautoon (tai tallennettuun buildiisi tai edelliseen tulokseen) verrattuna. Se on buildien välinen ero, ei kierrosaikaennuste, ja sivu sanoo sen: oikeat ajat ovat Ajanotto-välilehdellä. **Aseta vertailukohdaksi** tekee tästä buildista sen, johon myöhempiä tuloksia verrataan.
+- **Arvioitu aikavoitto** reitillä vakiorenkaisiin vakioautoon (tai tallennettuun buildiisi tai edelliseen tulokseen) verrattuna. Se on buildien välinen ero, ei kierrosaikaennuste, ja sivu sanoo sen: oikeat ajat ovat Ajanotto-välilehdellä. **Aseta vertailukohdaksi** tekee tästä buildista sen, johon myöhempiä tuloksia verrataan.
 - **Valittu buildi** listaa auton ja luokan, moottorin, voimansiirron, korin ja aeron sekä renkaat, ja massan, tehon, 0–100 km/h ja painojakauman.
 - **Ehdokkaat** listaa parhaat moottorin ja vaihteiston yhdistelmät paremmuusjärjestyksessä. **Valitse** vaihtaa toiseen, ja **Näytä kaikki moottorit** listaa loput.
 - **← Muokkaa valintoja** palaa vaiheisiin. Nimeä buildi ja paina **Tallenna ja siirry 02 Säädä -sivulle**.

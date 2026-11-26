@@ -138,7 +138,7 @@ The step row shows your choice under each step (**Custom**, **Defaults** or **Mo
 
 ![Result: estimated time gain, the selected build and the candidates](img/en/05c-wizard-result.webp)
 
-- **Estimated time gain** on the route against stock (or against your saved build or the previous result, picked under it). It is a difference between builds, not a lap-time prediction, and the screen says so: real times live on the Time tab. **Set as reference** makes this build the one later results compare against.
+- **Estimated time gain** on the route against the stock car on stock tyres (or against your saved build or the previous result, picked under it). It is a difference between builds, not a lap-time prediction, and the screen says so: real times live on the Time tab. **Set as reference** makes this build the one later results compare against.
 - **Selected build** lists car and class, engine, drivetrain, body and aero and tyres, with mass, power, 0–100 km/h and weight distribution.
 - **Candidates** lists the best engine and gearbox combinations, best first. **Select** swaps to another one, and **Show all engines** lists the rest.
 - **← Edit choices** goes back to the steps. Name the build and press **Save & open 02 Tune**.

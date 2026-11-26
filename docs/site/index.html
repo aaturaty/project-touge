@@ -36,15 +36,15 @@
   <p class="note">The user guide has a FI / EN switch at the top. The Tuning Bible is also <a href="tuning-bible/fi/index.html">in Finnish</a>. Get Project Touge from the <a href="https://github.com/aaturaty/project-touge/releases/latest">latest release</a>.</p>
 </section>
 <section class="files" id="new">
-  <h2>New since 0.15</h2>
-  <p class="sub">Four releases, from 0.15.1 to 0.16.0. The whole list is in the <a href="https://github.com/aaturaty/project-touge/blob/main/CHANGELOG.md">changelog</a>.</p>
+  <h2>New in 0.20</h2>
+  <p class="sub">0.18 was never published on its own, so 0.20 carries everything since 0.16. The whole list is in the <a href="https://github.com/aaturaty/project-touge/blob/main/CHANGELOG.md">changelog</a>.</p>
   <div class="rules">
-    <div class="rule"><b>Presets in one place</b><span>The Setups window has a Presets tab. Save chassis, diff or gears as a preset, and apply only those parts. <a href="guide/index.html#en-41-presets">Guide 4.1</a></span></div>
-    <div class="rule"><b>Recalculate</b><span>Gearing and Chassis show which tyres, engine, mass and front weight the model used, and turn yellow when the parts changed. <a href="guide/index.html#en-52-adjust">Guide 5.2</a></span></div>
-    <div class="rule"><b>Real-time Tune</b><span>Sliders follow your drag, work from the keyboard and never redraw the page. My view keeps your own sliders and monitors.</span></div>
-    <div class="rule"><b>Drive, Analyse, Routes</b><span>Drive on one screen, undoable abort, a result card, one corner table in Analyse and Routes in three columns. <a href="guide/index.html#en-6-time-drive-time-and-analyse">Guide 6</a></span></div>
-    <div class="rule"><b>Faster</b><span>Calculations on all processor cores (a full optimisation about four times faster), run analysis about three times faster, a quicker start.</span></div>
-    <div class="rule"><b>Tidier folder</b><span>Settings saved per key, no timer network ports, and Settings › Data removes the old 0.12 run folder.</span></div>
+    <div class="rule"><b>Build Wizard</b><span>Enter the build you already have, or let the model build the car step by step and see the estimated time gain between builds. <a href="guide/index.html#en-34-build-with-the-model">Guide 3.4</a></span></div>
+    <div class="rule"><b>Car character ◐</b><span>Tune › Chassis shows balance, rotation, wheelspin, roll, inner-wheel load and bump-stop travel live while you drag. Base setup solves chassis and diff per car. <a href="guide/index.html#en-52-adjust">Guide 5.2</a></span></div>
+    <div class="rule"><b>Race engineer ◐</b><span>Up to three concrete changes for your exact car, and after your next runs: Helped, Trade-off or Did not help, sorted by the seconds a symptom costs. <a href="guide/index.html#en-51-symptom">Guide 5.1</a></span></div>
+    <div class="rule"><b>My view cockpit</b><span>Your own sliders, widgets and monitors on one page, with an Auto-Focus Lens on the last slider you touched. <a href="guide/index.html#en-55-my-view">Guide 5.5</a></span></div>
+    <div class="rule"><b>Second monitor</b><span>Drive follows the car live: gap, next split, you and the ghost on the map. The F8 timer window covers one-monitor setups. <a href="guide/index.html#en-61-drive">Guide 6.1</a></span></div>
+    <div class="rule"><b>Presets and physics</b><span>Built-in presets are Model and CalcX by StepUnique. Game physics runs on Touge's own Rust implementation and no longer needs the game's files. <a href="guide/index.html#en-41-presets">Guide 4.1</a></span></div>
   </div>
 </section>
 <section class="files" id="files">
@@ -63,12 +63,12 @@
    ├─ <b>Runs\</b>              <i>timed runs and their analysis, one folder per route</i>
    │  └─ Ghosts\         <i>ghosts you have added</i>
    ├─ <b>Logs\</b>              <i>attach these when you report a problem</i>
-   ├─ Cache\             <i>only with Game physics (Experimental)</i>
+   ├─ Cache\             <i>temporary files (normally empty)</i>
    └─ Legacy\            <i>files from older versions that Touge no longer reads</i></pre>
   <div class="rules">
     <div class="rule"><b>Nothing outside the folder</b><span>Touge writes only here. The one exception is Windows' WebView2, which keeps the window's browser cache in <code>%LOCALAPPDATA%\fi.projecttouge.app</code>. It holds no tunes or runs.</span></div>
     <div class="rule"><b>Earlier versions are only read</b><span>On first start Touge looks for an earlier Project Touge next to it and on your Desktop, Downloads and Documents and copies your data from it. The old folder stays as it was.</span></div>
-    <div class="rule"><b>The game is not touched</b><span>Touge never writes to the game or its folder. Times and telemetry are read from the screen. Game physics only copies the game's physics file into <code>Data\Cache\</code>.</span></div>
-    <div class="rule"><b>Move, back up, remove</b><span>Copy the folder to move or back it up. Delete it to uninstall, and the cache folder above if you want it gone too.</span></div>
+    <div class="rule"><b>The game is not touched</b><span>Touge never writes to the game or its folder. Times and telemetry are read from the screen.</span></div>
+    <div class="rule"><b>Move, back up, remove</b><span>Copy the folder to move or back it up. Delete it to uninstall, and the WebView2 cache folder above if you want it gone too.</span></div>
   </div>
 </section>

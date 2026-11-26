@@ -24,15 +24,17 @@ When a new version is out, Touge shows a notice with an **Update now** button. I
 
 Coming from 0.10 or 0.9.x? Update by hand this one time: copy the new `Project Touge.exe` over the old one, or unzip it into a new folder and Touge will find your earlier Project Touge and copy your data. From 0.10.1 on, the button does it.
 
-## New since 0.15
+## New in 0.20
 
-Four releases, 0.15.1 to 0.16.0, changed most of what you see. The short version:
+0.18 was never published on its own, so 0.20 carries everything since 0.16. The short version:
 
-- **Presets in one place:** the Setups window (Ctrl+O) has a **Presets** tab. Save chassis, diff or gears from the open setup as a preset, apply only those parts, and rename, duplicate, share or delete with undo.
-- **Recalculate:** Tune › Gearing and Chassis show which tyres, engine, mass and front weight the model used, turn yellow when the parts have changed, and recalculate with one click.
-- **Real-time Tune:** sliders follow your drag, work from the keyboard and update the page in place. **My view** keeps your own sliders and monitors, the same for every car.
-- **Time, rebuilt:** Drive on one screen, a live gap and ghost on the map, undoable abort, a result card with Discard run, one corner table in Analyse, and Routes in three columns.
-- **Faster:** calculations on all processor cores (a full optimisation about four times faster), run analysis about three times faster, and a quicker start. The game timer no longer uses network ports.
+- **Build Wizard:** 01 Build starts with two paths. Enter the build you already have, or let the model build the car step by step (target, body and aero, engine, drivetrain, tyres) and see the estimated time gain against stock or your saved build.
+- **Car character model (125 cars, ◐):** Tune › Chassis shows how your setup changes mid-corner balance, entry rotation, exit wheelspin, body roll, inner-wheel load and bump-stop travel, live while you drag a slider. **Base setup** solves chassis and diff from each car's own physics and keeps what you set yourself.
+- **Symptom advisor and race engineer (◐):** pick a symptom and get up to three concrete changes for your exact car. After your next runs Touge tells whether the change **Helped**, was a **Trade-off** or **Did not help**, sorts symptoms by the seconds they cost and marks where to **Start here**.
+- **My view cockpit:** your own sliders, widgets and monitors on one page, with an **Auto-Focus Lens** that follows the last slider you touched.
+- **Timing on a second monitor:** Drive follows the car live with the gap, next split and the ghost on the map; with one monitor the small timer window (F8) sits on top of the game.
+- **Presets:** the built-in chassis presets are **Model** and **CalcX by StepUnique**. The old touge weapon and choriso presets are removed; setups saved with them keep their own values.
+- **Game physics without the game's files:** Game physics (Experimental) runs on Touge's own Rust implementation of the game's car physics.
 
 Everything else is in the [changelog](CHANGELOG.md).
 
@@ -55,7 +57,7 @@ Project Touge\
    │  └─ Ghosts\         ghosts you have added
    ├─ Logs\              attach these when you report a problem
    │  └─ Reader\         screen reader logs; minimap images only if turned on
-   ├─ Cache\             only with Game physics (Experimental)
+   ├─ Cache\             temporary files (normally empty)
    └─ Legacy\            files from older versions that Touge no longer reads
 ```
 
@@ -63,7 +65,7 @@ Project Touge\
 - **Updating keeps everything.** The first start of 0.13 moves your tunes, runs, routes and settings into `Data` and lists every move in `Data\Logs\migration.txt`. Nothing is deleted, and files Touge no longer reads go to `Data\Legacy`.
 - **Earlier versions are only read.** On first start Touge looks for an earlier Project Touge next to it and on your Desktop, Downloads and Documents and copies your data from it. The old folder stays as it was.
 - **The game is not touched.** Touge never writes to the game or its folder.
-- **Move, back up, remove.** Copy the folder to move or back it up. Delete it to uninstall, and the cache folder above if you want it gone too.
+- **Move, back up, remove.** Copy the folder to move or back it up. Delete it to uninstall, and the WebView2 cache folder above if you want it gone too.
 
 ## User guide
 
@@ -81,11 +83,11 @@ Values come from the game's own data and are checked in game. Anything not yet v
 
 [![Build](media/readme/build.webp)](docs/guide/README.md)
 
-Enter your car from screenshots, start from the model, or import a tune from the **CarX Street Tuning Template** (xlsx or CSV). Engine, gearbox and diff, aero and body, suspension, tyres and route model use the game's own names, order and units, so you can type the values straight into the game. The model compares engines and gearboxes for your class and shows the effect of every change in seconds.
+Start with one of two paths: **enter the build you already have** (Part Setup screenshots, the **CarX Street Tuning Template** as xlsx or CSV, or by hand), or **build with the model** in the Build Wizard, step by step or all at once with **Build now**. Engine, gearbox and diff, aero and body, suspension, tyres and route model use the game's own names, order and units, so you can type the values straight into the game. The model compares engines and gearboxes for your class, and the wizard's result shows the estimated time gain between builds (a difference, not a lap-time prediction).
 
 <p>
-<a href="docs/guide/img/en/05-build-model.webp"><img src="media/readme/thumbs/05-build-model.webp" width="32%" alt="build model"></a>
-<a href="docs/guide/img/en/06-candidates.webp"><img src="media/readme/thumbs/06-candidates.webp" width="32%" alt="candidates"></a>
+<a href="docs/guide/img/en/05a-start-paths.webp"><img src="media/readme/thumbs/05a-start-paths.webp" width="32%" alt="two start paths"></a>
+<a href="docs/guide/img/en/05c-wizard-result.webp"><img src="media/readme/thumbs/05c-wizard-result.webp" width="32%" alt="Build Wizard result"></a>
 <a href="docs/guide/img/en/50-import.webp"><img src="media/readme/thumbs/50-import.webp" width="32%" alt="import"></a>
 </p>
 
@@ -93,12 +95,12 @@ Enter your car from screenshots, start from the model, or import a tune from the
 
 [![Tune](media/readme/tune.webp)](docs/guide/README.md)
 
-Pick a symptom by corner phase, adjust the chassis, gearing or diff, check the effect, then copy the setup to the game. Each change explains why it helps, with a link to the matching chapter of the Tuning Bible. Sliders follow your drag in real time and work from the keyboard, and **My view** keeps the sliders and numbers you use most on one page, the same for every car. Keep chassis, diff and gear sets as **presets** and apply only the parts you want; after a tyre or engine change, **Recalculate** brings the gears and chassis up to date.
+Pick a symptom by corner phase and get up to three concrete changes for your exact car (◐), or adjust the chassis, gearing and diff yourself while the **Character ◐** bars show how the car's balance, rotation, wheelspin, roll and bump-stop travel move, all from the game's own physics. **Base setup** solves a starting chassis and diff for each car. After your next runs, the race engineer tells whether the change helped. Each change explains why it helps, with a link to the matching chapter of the Tuning Bible. Sliders follow your drag in real time and work from the keyboard, and **My view** is your own cockpit: the sliders, widgets and monitors you use most on one page, with an Auto-Focus Lens on the last slider you touched. Keep chassis, diff and gear sets as **presets** and apply only the parts you want; after a tyre or engine change, **Recalculate** brings the gears and chassis up to date.
 
 <p>
 <a href="docs/guide/img/en/10-symptom.webp"><img src="media/readme/thumbs/10-symptom.webp" width="32%" alt="symptom"></a>
 <a href="docs/guide/img/en/11-adjust-chassis.webp"><img src="media/readme/thumbs/11-adjust-chassis.webp" width="32%" alt="adjust chassis"></a>
-<a href="docs/guide/img/en/80-presets.webp"><img src="media/readme/thumbs/80-presets.webp" width="32%" alt="presets"></a>
+<a href="docs/guide/img/en/70-my-view.webp"><img src="media/readme/thumbs/70-my-view.webp" width="32%" alt="My view"></a>
 </p>
 
 ### Time
@@ -110,6 +112,7 @@ A timer with automatic splits and a leaderboard per route. Speed, gear and minim
 - Run the game borderless or full screen. A window works if the whole HUD is visible.
 - Tested resolutions: 3440×1440 (recommended), 2560×1440, 2560×1080, 1920×1440 and 1920×1080.
 - Open the **Time** tab, pick a route and press **Start**. Touge finds the speedometer, gear display and minimap by itself on the first run.
+- **On a second monitor**, Drive follows the car live: clock, gap to the run you race against, next split, and your dot and the ghost on the map. With one monitor, the small timer window (**F8**) shows time and gap on top of the game.
 - **Ready to time?** in the Drive view checks the game timer, screen reader, window mode, controller and disk space before you start, with a button for anything that needs work.
 
 <p>
@@ -122,10 +125,10 @@ A timer with automatic splits and a leaderboard per route. Speed, gear and minim
 
 [![Telemetry](media/readme/telemetry.webp)](docs/guide/README.md)
 
-Every run is saved with its telemetry. The Analyse view shows where you gain and lose time corner by corner: braking point, apex speed, throttle and gear on the map, speed along the route, a practice list of the corners where you lose most, and a side-by-side comparison of two runs.
+Every run is saved with its telemetry. The Analyse view shows where you gain and lose time corner by corner: braking point, apex speed, throttle and gear on the map, speed along the route, a practice list of the corners where you lose most, and a side-by-side comparison of two runs. The **race engineer** (◐) turns recurring car symptoms into one setup change, sorted by the seconds they cost.
 
 <p>
-<a href="docs/guide/img/en/24-practice.webp"><img src="media/readme/thumbs/24-practice.webp" width="32%" alt="practice"></a>
+<a href="docs/guide/img/en/23-analyse.webp"><img src="media/readme/thumbs/23-analyse.webp" width="32%" alt="analyse"></a>
 <a href="docs/guide/img/en/25-analyse-zoom.webp"><img src="media/readme/thumbs/25-analyse-zoom.webp" width="32%" alt="analyse zoom"></a>
 <a href="docs/guide/img/en/29-run-comparison.webp"><img src="media/readme/thumbs/29-run-comparison.webp" width="32%" alt="run comparison"></a>
 </p>

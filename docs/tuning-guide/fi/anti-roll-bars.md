@@ -27,7 +27,7 @@ Merkit: ● vahvistettu pelissä tai pelin koodissa, ◐ Tougen simulaatiomallis
 | Molemmat vakaajat ylös | Vähemmän kallistusta ja nopeampi ohjausvaste. Raja tuskin muuttuu, koska kokonaissiirto pysyy samana. | Toispuoleiset kuopat ja gutterit heittävät autoa; sisäpyörä kevenee ja sutii. | ● Hyvin jäykkä takavakaaja tekee autosta kuoppaherkän. ◐ Molemmat hyvin pehmeinä oli hitaampi ja epävakaa. |
 | Molemmat vakaajat alas | Enemmän kallistusta, ja auto rauhoittuu kuopissa. | Siirtymät (S-mutkat) laiskistuvat ja auto huojuu. | ◐ Fysiikkakoodin tasainen ympyrä ei näytä kuoppaherkkyyttä; peli ratkaisee. |
 
-![Tougen kallistuskuva kohdassa Säädä › Säädä › Alusta › Vakaajat ◐, etuvakaaja 60 % jäykempänä. Kallistus pienenee 0,47°:sta 0,40°:een g:tä kohden, ja etuvakaajan osuus kallistusjäykkyydestä nousee 26 %:sta 36 %:iin.](kuvat/vakaaja.webp)
+![Tougen kallistuskuva kohdassa Säädä › Säädä › Alusta › Vakaajat ◐ (Laaja-näkymä), AE86, etuvakaaja 60 % jäykempänä, 36 → 60 kNm. Kallistus pienenee 0,50°:sta 0,44°:een g:tä kohden, ja etuvakaajan osuus kallistusjäykkyydestä nousee 21 %:sta 31 %:iin.](kuvat/vakaaja.webp)
 
 ## Etu–taka-jako
 

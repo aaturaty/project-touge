@@ -57,7 +57,8 @@ Ajanottoa varten aja CarX Streetiä reunattomassa ikkunassa tai koko näytöllä
 - Kun olet tallentanut setupin, iso otsikko antaa tilansa sivulle ja välilehdet nousevat yläreunaan. Kun valitset **Asetukset › Yleiset › Yläosa** -kohdasta **Täysi**, otsikko palaa.
 - Välilehtien alla oleva kapea **Seuraavaksi**-palkki kertoo, mitä kierroksessa Rakenna, Säädä, Aja ja Analysoi tehdään seuraavaksi: valitse auto, tallenna setup, katso viimeisin ajosi, siirrä muutokset peliin tai aja. **Piilota** laittaa sen hetkeksi pois. Jokaisen sivun yläosassa on lisäksi oma **Seuraavaksi**-rivi.
 - **Setup**-napissa nimen vieressä näkyy tallentamattomien muutosten määrä. Napsauta lukua, niin saat listan muutoksista (tallennettu arvo → nyt) pelin nimillä. Jokaisella rivillä on oma palautus, ja **Tallenna**, **Tallenna uutena** ja **Palauta kaikki** ovat saman listan lopussa.
-- Kun Touge laskee uudelleen, mallin vertailuaika himmenee ja sen alla kulkee ohut viiva, joten vanhaa aikaa ei lue uutena. Kun tallennettu setup on auki, aika näyttää eron siihen. Versiosta 0.16 alkaen laskenta käyttää kaikkia prosessoriytimiä, joten täysi optimointi vie noin neljänneksen aiemmasta ajasta.
+- Kun Touge laskee uudelleen, mallin vertailuaika himmenee ja sen alla kulkee ohut viiva, joten vanhaa aikaa ei lue uutena. Kun tallennettu setup on auki, aika näyttää eron siihen. Laskenta käyttää kaikkia prosessoriytimiä.
+- Rakenna- ja Säädä-sivujen alareunan **aikajana** pitää tallessa tämän istunnon jokaisen laskennan. Napsauta pistettä, niin palaat siihen.
 - Termit, joiden vieressä on **i**-nappi, selittävät itsensä: napsauta sitä, niin saat lyhyen kuvauksen.
 
 Kaksi merkkiä toistuu kaikkialla, ja ne kannattaa oppia ensin:
@@ -71,7 +72,15 @@ Merkitön luku tulee pelin omasta datasta. Nimet, järjestys ja yksiköt seuraav
 
 ## 3. Rakenna: auto sisään
 
-Useimmiten autosi on jo rakennettu pelissä. Valitse silloin **Syötä olemassa oleva buildi**. Jos tune on jo tiedostossa, esimerkiksi kaverin tunepohjana, valitse **Tuo tune**. Jos haluat Tougen ehdottavan koko buildin luokkaan, valitse **Rakenna mallilla**.
+Uusi buildi alkaa kahdesta polusta (uutta 0.20:ssa):
+
+![Uusi buildi: syötä jo rakennettu auto tai rakenna se mallin kanssa](img/fi/05a-start-paths.webp)
+
+- **A · Syötä olemassa oleva buildi**: auto on jo tallissasi. Liitä Part Setup -kuvakaappaukset, tuo taulukko (xlsx, CSV, JSON) tai kirjoita osat ja arvot käsin.
+- **B · Rakenna mallin kanssa**: valitse auto, luokka ja reitti, ja anna mallin rakentaa koko auto kerralla tai käy se läpi moduuli kerrallaan.
+- **Tai jatka tallennetusta setupista** listaa viimeisimmät setupisi polkujen alla; **Kaikki setupit…** avaa Setupit-ikkunan.
+
+Rakenna-sivun yläreunan **← Vaihda aloitustapaa** vie takaisin tähän valintaan milloin tahansa. Jos tune on jo tiedostossa, esimerkiksi kaverin tunepohjana, käytä **Tuo tune** -toimintoa (3.3).
 
 ### 3.1 Auto, luokka ja reitti
 
@@ -107,36 +116,39 @@ Tästä eteenpäin Säädä-välilehti käsittelee *sinun* buildiasi, ei malliau
 3. Rivit, joissa lukee **Stock**, **N/A** tai **Default**, sekä välit kuten **50 - 60** ohitetaan, joten niillä riveillä säilyy auton oma arvo.
 4. Tarkista rivit kuten kuvista luettaessa ja tallenna tune uutena setuppina. Nykyinen setupisi ei muutu.
 
-### 3.4 Rakenna mallilla
+### 3.4 Rakenna mallin kanssa
 
-Käytä tätä, kun haluat lähtöpisteen uudelle autolle tai luokalle.
+Käytä tätä, kun haluat lähtöpisteen uudelle autolle tai luokalle. Rakennus on viisivaiheinen ohjattu polku: **1 Kohde**, **2 Kori & Aero**, **3 Moottori**, **4 Vaihteisto**, **5 Renkaat** ja lopuksi **Tulos**.
 
-**Vaihe 1: auto, luokka ja reitti.** Valitse auto, preset, luokka ja reitti. **Alueittain** valitsee alustan, diffin ja välitysten profiilin erikseen. *model* tarkoittaa Tougen omaa laskentaa; presetit ovat makuprofiileja sen päällä.
+![Rakenna mallin kanssa: vaihe 1, auto, luokka ja reitti](img/fi/05-build-model.webp)
 
-**Vaihe 2: mitä laskuri saa muuttaa.** Se on samalla sivulla heti vaiheen 1 alla.
+**Vaihe 1 · Kohde.** Valitse auto, luokka ja reitti samoin kuin kohdassa 3.1. Valitse sitten, miten jatkat:
 
-![Rakenna mallilla: moduulit ja tulos](img/fi/05-build-model.webp)
+- **Rakenna mallilla heti** rakentaa koko auton kerralla: malli valitsee luokan rajoissa korin ja aeron, moottorin osineen, vaihteiston ja diffin sekä renkaat, ja siirtyy suoraan tulokseen. Laskenta kestää noin puolesta minuutista pariin minuuttiin.
+- **Valitse vaiheittain →** käy vaiheet 2–5 läpi, joten päätät auton jokaisen osan itse.
 
-- **Laskuri valitsee** hakee osat ja säädöt luokan rajaan asti. **Paranna** pitää nykyisen buildisi ja näyttää jokaisen muutoksen vaikutuksen sekunneissa.
-- Jokainen moduulikortti (Auto, Moottori, Voimansiirto, Aero ja kori, Jousitus, Renkaat) näyttää, mitä buildissa on nyt. Kytke **Saa muuttaa** niihin moduuleihin, joihin laskuri saa koskea, tai ruksaa **Kaikki**.
+**Vaiheet 2–5.** Jokainen vaihe näyttää auton sen osan nykyisellään ja tärkeimmät luvut ylhäällä (massa, ilmanvastus ja alavoima; teho, vääntö ja teho-painosuhde; vaihteisto, vetotapa ja diffi; rengassarja). Joka vaiheessa valitset yhden kolmesta:
 
-**Vaihe 3: Laske** (näppäin **L**). Laskenta kestää muutamasta sekunnista noin puoleen minuuttiin.
+- **Malli päättää**: malli valitsee tämän moduulin puolestasi.
+- **Käytä oletuksia**: auton omat oletukset.
+- **Pidä & Seuraava**: pidä tässä vaiheessa itse asettamasi.
 
-Oikean reunan **Tulos**-paneeli näyttää:
+![Vaihe 3 · Moottori: valitse moottori ja sen osat, tai anna mallin päättää](img/fi/05b-wizard-engine.webp)
 
-- **Mallin vertailuaika**: laskettu arvio tämän buildin ajasta valitulla reitillä, ja sen alla **ennen** ja ero. Ajan alla oleva merkki kertoo, kuinka hyvin malli tuntee reitin mutkat. **Valmiiksi kalibroitu** tarkoittaa, että mutkat tulevat Tougen mukana pelin ajoista mitattuina; **Kalibroitu omalla ajolla** tarkoittaa, että ne on laskettu omasta kellotetusta ajostasi. Muilla reiteillä malli tuntee mutkat vain ajolinjasta, joten kokonaisaika voi heittää sekunteja, mutta buildien väliset erot pitävät. Aja yksi ajo ja avaa Ajanotto → Analysoi, niin reitti kalibroituu. Oikeat ajat ovat Ajanotto-välilehdellä.
-- **ennen / jälkeen** ja mikä muuttui, esimerkiksi vaihteiston vaihto.
-- **Aikajana**: jokainen laskenta säilyy, napsauta palataksesi siihen.
-- **Aseta vertailuksi** tekee tästä buildista vertailukohdan; **Peru laskurin valinnat** palaa lähtötilaan.
-- Massa, teho, 0–100 km/h ja painojakauma.
+Vaiherivi näyttää valintasi jokaisen vaiheen alla (**Oma**, **Oletukset** tai **Malli**), ja mihin tahansa vaiheeseen voi palata napsauttamalla. **← Takaisin** palaa yhden vaiheen. Jousitus on aina Prototype puhtaalla mallin pohjalla: hienosäädät sen ja valitset sen tuntuman 02 Säädä -sivulla.
 
-![Ehdokkaat](img/fi/06-candidates.webp)
+**Tulos.**
 
-Tuloksen alla on kaksi välilehteä. **Ehdokkaat** listaa moottori- ja vaihteistoyhdistelmät ajan mukaan, paras ensin; **Valitse** vaihtaa toiseen, jos pidät siitä enemmän, ja alin nappi listaa loput moottorit. **Kokeile muutoksia** listaa yksittäiset muutokset ja niiden vaikutuksen.
+![Tulos: arvioitu aikavoitto, valittu buildi ja ehdokkaat](img/fi/05c-wizard-result.webp)
+
+- **Arvioitu aikavoitto** reitillä vakioautoon (tai tallennettuun buildiisi tai edelliseen tulokseen) verrattuna. Se on buildien välinen ero, ei kierrosaikaennuste, ja sivu sanoo sen: oikeat ajat ovat Ajanotto-välilehdellä. **Aseta vertailukohdaksi** tekee tästä buildista sen, johon myöhempiä tuloksia verrataan.
+- **Valittu buildi** listaa auton ja luokan, moottorin, voimansiirron, korin ja aeron sekä renkaat, ja massan, tehon, 0–100 km/h ja painojakauman.
+- **Ehdokkaat** listaa parhaat moottorin ja vaihteiston yhdistelmät paremmuusjärjestyksessä. **Valitse** vaihtaa toiseen, ja **Näytä kaikki moottorit** listaa loput.
+- **← Muokkaa valintoja** palaa vaiheisiin. Nimeä buildi ja paina **Tallenna ja siirry 02 Säädä -sivulle**.
 
 ### 3.5 Moduulit yksi kerrallaan
 
-Napsauta vaiheen 2 moduulikorttia, niin se aukeaa korttien alle; **Sulje** tai toinen napsautus sulkee sen. Jokainen moduuli näyttää buildin sen osan kaikki tiedot, ja suurin osa toimii samoin tilassa **Laskuri valitsee** ja **Paranna**. Kun moduuli saa muuttua, laskuri täyttää sen; kun se on lukittu, tässä asettamasi arvot pysyvät.
+Moduulikortit, joissa on buildin kunkin osan kaikki tiedot, ovat sivulla **02 Säädä › Säädä › Osat**. Napsauta korttia, niin se aukeaa korttien alle; **Sulje** tai toinen napsautus sulkee sen. Kun moduuli saa muuttua, malli täyttää sen; kun se on lukittu, siellä asettamasi arvot pysyvät. *(Alla olevat moduulikuvat ovat versiosta 0.16; sisältö on sama.)*
 
 **01 Automalli**
 
@@ -218,7 +230,8 @@ Setupit tallentuvat Project Touge -kansioon tiedostoina, ja niistä jää päiv�
 
 - **Omat presetit** ovat omiasi. **Kattaa** kertoo, mitä osia kukin sisältää: **Alusta** (jouset, vakaajat, iskarit, jousen pituus, ohjaus, paineet, camber, jarrujako), **Diffi** (lukot ja preload) ja **Välitykset**. Jokaisella rivillä on **Käytä**, **Nimeä**, **Kopioi**, **Jaa…** ja **Poista**; **Kumoa** palauttaa poistetun presetin, kunnes suljet ikkunan.
 - **Omat välitysprofiilit** ovat välityssarjoja, jotka olet tallentanut kohdassa Säädä › Välitykset › **Tallenna omaksi profiiliksi**, auton ja vetopään kanssa.
-- **Valmiit** listaa Tougen mukana tulevat presetit, diffiluonteet ja välitysprofiilit (Malli, CalcX by StepUnique, choriso's, Forgiving, Touge, Precise, Track, Old Meta ja niin edelleen). Ne ovat kaikille samat eikä niitä voi muuttaa, mutta **Kopioi omaksi** tekee kopion, jonka voit nimetä ja jakaa.
+- **Valmiit** listaa Tougen mukana tulevat presetit, diffiluonteet ja välitysprofiilit: alustapresetit **Malli** ja **CalcX by StepUnique**, diffiluonteet **Forgiving**, **Touge**, **Precise** ja **Track** sekä **Old Meta** -välitykset. Ne ovat kaikille samat eikä niitä voi muuttaa, mutta **Kopioi omaksi** tekee kopion, jonka voit nimetä ja jakaa. (touge weapon- ja choriso-presetit poistettiin 0.20:ssa; niillä tallennettu setup aukeaa Mallilla ja pitää omat arvonsa.)
+- **Presetit pitävät versionsa.** Setup pysyy sillä presetin versiolla, jolla se tehtiin. Kun presetistä tulee uudempi versio, **Päivitä preset uusimpaan versioon** näyttää ennen käyttöönottoa, mitä muuttuisi. **Presettien sekoitus** muuttaa vain alustaa.
 
 **Tallenna nykyinen presetiksi** tallentaa osia avoimesta setupista. Anna nimi ja rastita, mitä se kattaa:
 
@@ -230,21 +243,33 @@ Preset muuttaa käytettäessä **vain ne osat, jotka se kattaa**: alustan ja dif
 
 Säädä-välilehdellä on neljä näkymää: **Oire**, **Säädä** ja **Yleiskuva** siinä järjestyksessä, jossa niitä yleensä tarvitsee, sekä **Oma näkymä**, jossa ovat itse valitsemasi liukurit ja luvut. Säädä-näkymällä on oma **Näkymä**-valikko (**Vain säädöt**, **Perus**, **Laaja**), joka päättää, kuinka paljon yksityiskohtia siinä näet; Perus on hyvä alku. Oire ja Yleiskuva näyttävät aina kaiken. Kun autolla on oma buildi tai tallennettu setup, Säädä-välilehti aukeaa Yleiskuvaan. Ilman autoa Säädä näyttää **Valitse auto** -napin.
 
-**Preset**-valitsin on ylhäällä: *malli* on Tougen oma tulos, ja presetin vaihto korvaa alustan ja diffin arvot. Omat presetit ovat listan lopussa. Kun Säädä toimii mallin autolla, yläreunan rivi kertoo sen, ja **Syötä buildi** vie Rakenna-välilehdelle syöttämään oman. Liukureissa on merkit pelin liukurien rajoista, joten näet, paljonko tilaa on jäljellä.
+**Preset**-valitsin on ylhäällä: **Malli** on Tougen oma tulos ja **CalcX by StepUnique** yhteisölaskurin kaavat; presetin vaihto korvaa alustan ja diffin arvot. Omat presetit ovat listan lopussa. Jokaisen Säädä-sivun alareunan **Edellinen**- ja **Seuraava**-napit kulkevat järjestyksessä **Oire → Osat → Alusta → Välitykset → Muut → Yleiskuva**, ja **Valmis · tallenna** on Yleiskuvassa. Kun Säädä toimii mallin autolla, yläreunan rivi kertoo sen, ja **Syötä buildi** vie Rakenna-välilehdelle syöttämään oman. Liukureissa on merkit pelin liukurien rajoista, joten näet, paljonko tilaa on jäljellä.
 
 ### 5.1 Oire
 
 ![Oire](img/fi/10-symptom.webp)
 
 1. Valitse, missä kohtaa mutkaa auto käyttäytyy väärin: **Jarrutus**, **Sisääntulo**, **Keskikohta** vai **Ulostulo**.
-2. Valitse oire, joka vastaa tuntumaa, esimerkiksi *Jarrutus mutkaan – aliohjaa*. Mutkakuva näyttää, missä se tapahtuu.
-3. **Mitä muuttuu** aukeaa listan viereen: **Käytä** on ylimpänä ja oirekuva sen vieressä, joten näet tuloksen vierittämättä. Se alkaa Tuning Biblen neuvolla tähän oireeseen (mitä kokeilla ensin, mitä sitten), ja sen alla ovat säädöt, joita Touge siirtäisi, jokaisella yhden rivin syy ja vanha → uusi arvo. Kaavio näyttää, mitä muutos tekee, ja **Miksi nämä muutokset** kertoo perustelut.
-4. **Yksi kerrallaan** on oletuksena päällä: **Käytä ensimmäinen** ottaa vain suurimman muutoksen, joten voit kellottaa ajon ennen seuraavaa. Poista ruksi, niin otat kaikki. **Peru** jättää setupin ennalleen.
-5. Jos oireeseen on vaimenninkorjaus, perässä tulee **Vaimentimet: jos koet tämän** -kortti, jossa ovat **Käytä** ja **Näytä säädin**, samat kortit kuin Säädä-näkymän neuvoissa.
+2. Valitse oire, joka vastaa tuntumaa, esimerkiksi *Sisääntulo – aliohjaa*. Mutkakuva näyttää, missä se tapahtuu.
+3. **Mitä muuttuu** aukeaa listan viereen. Uutta 0.20:ssa: sen ylin kortti **Tälle autolle ja setupille ◐** antaa enintään kolme konkreettista muutosta *sinun* autollesi ja setupillesi, yhden kustakin ryhmästä (jouset ja vakaajat, geometria, diffi, renkaat/jarrut/aero, vaimentimet). Jokainen on yksi pelin askel, ja siinä näkyvät vanha → uusi arvo, vaikutus oireeseen ja **sivuvaikutukset** muihin luonnemittareihin (sisääntulon kierto, ulostulon sutiminen, korin kallistus, sisäpyörän kuorma). Muutosta, joka katkeaisi liukurin rajaan, tai alle 0,22:n diffilukkoa ei koskaan ehdoteta.
+4. Paina **Käytä** sen muutoksen kohdalla, jota haluat kokeilla. Touge noudattaa yksi muutos kerrallaan -sääntöä, joten voit kellottaa ajon ennen seuraavaa, ja jokaisen muutoksen voi kumota.
+5. Korttien alla **choriso's Tuning Bible** antaa taustan: mitä kokeilla ensin ja sitten, ja linkit lukuihin. **Varalla: yleiset säännöt** avaa vanhemman sääntöpohjaisen listan sille tapaukselle, ettei autokohtainen siirto sovi. **Mitä muutos tekee** piirtää vaikutuksen mutkan vaiheen yli, ja **Vaimentimet: jos koet tämän** antaa vaimenninkorjauksen, jossa ovat **Käytä** ja **Näytä säädin**.
 
-![Mitä muuttuu](img/fi/17-what-changes.webp)
+![Mitä muuttuu: kolme muutosta tälle autolle, kullakin sivuvaikutuksensa](img/fi/17-what-changes.webp)
 
-**Ajostasi.** Kun olet kellottanut ajon nykyisellä setupilla (pelikello omalla koneella), Oire-näkymään vaiheiden ja oireiden alle tulee lista ajossa toistuneista oireista (vähintään kaksi mutkaa ja neljännes mutkista), yksi rivi kustakin. Avaa rivi, niin näet mitä ajossa tapahtui (esimerkiksi täydellä tikulla auto kääntyi selvästi vähemmän kuin se samassa ajossa pystyy), mikä jousituksen osa vaikuttaa siinä vaiheessa (vakaajat, vaimentimet, diffi) ja oiresäännön ensimmäiset muutokset. **Näytä muutokset** avaa saman Mitä muuttuu -paneelin. Vaihenappi ja oire, jotka toistuivat, saavat merkin. Jos edellinen ajo oli eri arvoilla, alla näkyy, kuinka paljon enemmän tai vähemmän auto kääntyi samoissa mutkissa. Jousituksen liikettä ja pyöräkuormia ei mitata, joten tasapainopäätelmät ovat ◐.
+**Auto pohjaa tai pomppii töyssyissä?** Yläreunan rivi näyttää puskurivaran edessä ja takana. Kun se on alle 10 mm, **pohjaa**-merkki varoittaa ennen muuta.
+
+**Ajostasi: kilpainsinööri (◐, uutta 0.20:ssa).** Kun olet kellottanut ajoja nykyisellä autolla, Oire-näkymä listaa ajoissasi toistuneet oireet:
+
+- Oireet on **järjestetty niiden maksamien sekuntien mukaan**, ja kallein on merkitty **Aloita tästä**. Rivillä näkyy menetetty aika ja monessako mutkassa oire toistui (esimerkiksi *0,45 s · 8/26 mutkaa*).
+- Aliohjausta verrataan **omiin ajoihisi tällä autolla**, ei kiinteään rajaan.
+- **Ajovirheeseen** menetetyt mutkat (kosketus, myöhäinen jarrutus, tiukempi linja, vähintään 0,10 s menetetty) listataan erikseen eivätkä ne lasketa auton oireeksi. Vain yhdessä mutkassa näkynyt oire ohjaa katsomaan linjaasi Analysoi-näkymästä.
+- Ehdotukset painottavat **mutkan vaihetta ja nopeutta**: hitaissa mutkissa mekaaninen pito ja diffi, nopeissa vakaajat ja jouset, ei vaimentimia apeksissa eikä jarrujakoa ulostulossa.
+- **Auttoiko muutos?** Kun olet ottanut ehdotetun muutoksen käyttöön ja ajanut, Touge yhdistää enintään viisi kellotettua ajoa ennen ja jälkeen samoilla arvoilla. Kortti kertoo **Auttoi**, **Kompromissi** tai **Ei auttanut** ja tarjoaa **Pidä muutos**, **Pidä ja ota toinen askel** (kun oire yhä toistuu), **Kumoa** tai **Kumoa ja kokeile vaihtoehto #2**. **Seuraavaksi**-palkki näyttää avoimen kokeen, kunnes olet ajanut sen.
+- **Kokeillut muutokset** listaa tämän auton päätökset (pidetty, toinen askel, kumottu) myös uudelleenkäynnistyksen jälkeen, ja muutokset, jotka eivät auttaneet, listataan kyseisen oireen viimeisiksi. **Nollaa kokeillut tältä autolta** tyhjentää listan.
+- Ajo, jossa auto on rajoittimella ylimmällä vaihteella tai matalilla kierroksilla mutkien pohjilla, ehdottaa **välitysten** muutosta ja vie Säädä › Välitykset -näkymään.
+
+Jos olet muuttanut arvoja ajon jälkeen, huomautus kertoo sen: havainnot kuvaavat ajon arvoja, kunnes kellotat uudet.
 
 **Koko auto** oikealla kattaa oireet, jotka eivät liity yhteen mutkan vaiheeseen: yleinen ali- tai yliohjaus, pomppiminen kuopissa, reunakivissä ja guttereissa sekä rajoitin tai kiihtyvyyden puute suorilla.
 
@@ -271,10 +296,19 @@ Säädä näyttää jokaisen säädön liukurina. Siinä on neljä välilehteä:
 ![Säädä: Alusta](img/fi/11-adjust-chassis.webp)
 
 - **Akseli** valitsee **Etu**, **Taka** tai **Molemmat**.
-- **A · Säädöt**: paino, etupaino, jousen pituus, jouset, vakaajat, vaimentimet sekä camber ja toe pelin järjestyksessä. Avaa ryhmän alta **Miten tämä toimii**, niin näet mekanismin.
-- **C · Tasapaino & KPI**: vaimennussuhde, kallistusgradientti, kallistusjäykkyys ja jousituksen taajuus. Vedä **LLTD**-palkkia tai **tasapainokaavion** viivaa siirtääksesi etu-/takajakoa niin, että kokonaisjäykkyys säilyy. Tasapainokaavio näyttää jouset (mutkan keskellä), hitaan bumpin (sisään ja ulos) ja nopean bumpin (töyssyt ja reunakivet) samalla Etu–Taka-akselilla, ja taso ennen muutostasi on katkoviivalla.
-- Leveällä näytöllä (noin 1700 px:stä alkaen) liukurit asettuvat kahteen palstaan, ja Tasapaino & KPI pysyy näkyvissä, kun vierität.
+- **Säädöt** (vasen): **Yleiset** taittuu yhden rivin yhteenvedoksi (paino, etupaino, jarrujako, rengaspaineet). **Jouset** ja **Kallistuksenvakaajat** ovat ensin auki, sitten **Vaimentimet**, **Jousen pituus** sekä **Camber ja toe** pelin järjestyksessä. Avaa ryhmän alta **Miten tämä toimii**, niin näet mekanismin. Jousen pituuden liukurit näyttävät puskurialueen, ja jokainen liukuri liikkuu ja pysähtyy kuten pelin oma liukuri.
+- **Luonne ja tasapaino** (oikea): ylhäällä ovat **monitorisi** ja kaksi välilehteä:
+  - **Luonne ◐** (uutta 0.20:ssa) näyttää, miten setupisi muuttaa autoa kuudella pelin fysiikkapenkillä tälle autolle mitatulla piirteellä: mutkan keskikohdan tasapaino, sisääntulon kierto, ulostulon sutiminen, korin kallistus, sisäpyörän kuorma ja matka puskuriin. Palkit seuraavat vetoa reaaliajassa, merkki näyttää tämän Säädä-istunnon lähtökohdan, ja **sisääntulo / keskikohta / ulostulo** -kaavio piirtää saman mutkan vaiheittain.
+  - **Tasapaino ja arvot** pitää jousituksen arvot (vaimennussuhteet, kallistusgradientti, kallistusjäykkyys, jousituksen taajuus), **LLTD**-palkin sekä jousten, hitaan bumpin ja nopean bumpin etu-/taka-**tasapainomittarit**. Vedä LLTD-palkkia tai mittarin viivaa siirtääksesi etu-/takajakoa niin, että kokonaisjäykkyys säilyy.
+
+![Tasapaino ja arvot](img/fi/84-balance-numbers.webp)
+
+**Perusalusta luonteesta ◐** (luonnekaavion alla) ratkaisee autolle perusalustan ja diffin sen omasta fysiikkamallista: puskurilattia, diffin esijännitys enintään 3 % vetomomentista sekä jouset ja vaimentimet skaalattuna buildin painoon, joten saman auton raskas ja kevyt buildi pitävät saman luonteen. Se pitää itse tekemäsi säädöt, ja tallennetussa setupissa se jättää arvot lukituiksi, ellet paina **Ehdota myös tallennettuihin arvoihin**. Ehdotus listaa, mitä autossa muuttuu, ja jokaisen pelin arvon vanha → uusi; **Ota käyttöön** ottaa sen ja **Kumoa** tuo arvosi takaisin.
+
+![Perusalusta luonteesta: ehdotetut muutokset nykyiseen setupiin](img/fi/85-base-setup.webp)
+
 - **Tallenna presetiksi** säilyttää tämän alustan presettinä, jonka voi valita myöhemmin uudelleen (kaikki presettisi ovat Setupit-ikkunan **Presetit**-välilehdellä, [4.1](#41-presetit)). **Lue kuvasta** täyttää arvot kuvakaappauksesta.
+- Reittiasetus LLTD-tavoite on poistettu 0.20:ssa: sen taustataulukko oli ristiriidassa myöhempien fysiikkakokeiden kanssa, joten reittiaika ei enää riipu siitä.
 
 **Mitä malli käytti.** Alustassa ja Välityksissä on rivi, kuten *Laskettu osilla 305/30 R17 · BM13 1.3L R (DX8) · 920 kg · 50,0 %*: renkaat, moottori, massa ja etupaino, joilla laskenta tehtiin. Kun vaihdat sen jälkeen renkaita, moottoria tai sen osia, rivi muuttuu keltaiseksi (**Osat muuttuneet laskennan jälkeen**), ja välitykset tai alustan arvot ovat vanhentuneet. **Laske uudelleen** laskee ne uudelleen nykyisillä osilla. Välityksissä se korvaa omat välitysmuutoksesi; Alustassa se korvaa omat alustamuutoksesi, ja **Kumoa** palauttaa ne.
 
@@ -286,13 +320,14 @@ Säädä näyttää jokaisen säädön liukurina. Siinä on neljä välilehteä:
 
 - **Sahakaavio** näyttää jokaisen vaihteen kierrokset nopeuden mukaan, kun vaihdetaan rajoittimella. Vihreä kaista on tehoalue; vihreä piste on vaihto, joka osuu sen sisään, harmaa sellainen, joka putoaa alle.
 - Valitse vaihteet, joita säädät: **1–3**, **3–4**, **4–5** ja niin edelleen ylimpään vaihteeseen asti, tai **Kaikki**, tai napauta kahta vaihdetta kaavioiden alla olevalla rivillä, niin saat oman alueen.
+- Kaavion alla oleva **Vaihde / Alue** -liukuri (uutta 0.20:ssa) tekee saman kuin sahakaavion raahaus: yhdellä vaihteella se siirtää sitä vaihdetta, alueella se muuttaa väliä niin, että ylin vaihde pysyy.
 - Raahaa **vaihteen yläpään ympyrää** vasemmalle tai oikealle, niin vaihde lyhenee tai pitenee. Nuolinäppäimet siirtävät sitä 0,01 kerrallaan.
 - Raahaa **◂ 1–3 ▸ -nappia**, niin koko alue siirtyy kerralla.
 - Raahaa alareunan **päätypalkkia**, niin porrastus muuttuu: se pää liikkuu ja toinen pysyy, ja välissä olevat vaihteet säilyttävät suhteensa.
 - **Tiivistä** ja **Harvenna** kiristävät tai harventavat aluetta: sen ylin vaihde pysyy ja alemmat siirtyvät sitä kohti tai siitä pois. Näet muutoksen ennen kuin otat sen käyttöön.
 - **Molemmat**, **Kierrokset** ja **Vetovoima** valitsevat kaaviot. Vetovoima näyttää jokaisen vaihteen vedon nopeuden mukaan pitorajan kanssa; **Kiihdytä** toistaa täyskaasukiihdytyksen vaihteiden läpi.
 - Kaavion alla isot luvut ovat pelin välityssuhteet, ja niiden alla kokonaisvälitys ja kierrospudotus.
-- Oikealla ovat **välitysprofiili**, **vetopyörästö** ja **vaihtoaika**. **Vaikutus** kertoo huippunopeuden, 0–100 km/h, kuinka moni vaihto osuu tehoalueelle ja kunkin vaihdon kierrospudotuksen.
+- **Vetopyörästöllä** on oma leveä liukurinsa kaavion alla. Oikealla ovat **välitysprofiili** ja tiivis **vaihtoaika**. **Vaikutus** kertoo huippunopeuden, 0–100 km/h, kuinka moni vaihto osuu tehoalueelle ja kunkin vaihdon kierrospudotuksen.
 - **Diffi** on alempana: kaasulukko, jarrulukko ja esijännitys. Raahaa pyöräkuvan kaaria tai käytä liukureita.
 - **Käytä reittiajassa** ajaa uudet välitykset reitillä; **Nollaa** palauttaa alkuperäiset välitykset.
 
@@ -302,7 +337,7 @@ Säädä näyttää jokaisen säädön liukurina. Siinä on neljä välilehteä:
 
 Ohjaus (caster, Ackermann, ohjauskulma), jarrut, spacerit, rengaskoot ja pelistä luetut painolukemat. Autokuva näyttää raideleveyden, akselivälin ja kuinka paljon tilaa renkaalla on lokasuojan sisällä, jotta pysyt pelaajien tavallisessa säännössä: renkaat eivät törrötä lokasuojan ulkopuolelle.
 
-Paina **Valmis**, kun olet tyytyväinen; se vie Yleiskuvaan.
+Paina alareunan **Yleiskuva →**, kun olet tyytyväinen; **Valmis · tallenna** on Yleiskuvassa.
 
 ### 5.3 Yleiskuva
 
@@ -359,12 +394,14 @@ Arvot siirtyvät pelilistaan, kun päästät irti, ja mallin aika päivittyy pii
 
 ![Oma näkymä](img/fi/70-my-view.webp)
 
-**Oma näkymä** kokoaa eniten käyttämäsi liukurit ja luvut yhdelle sivulle. Se on sama kaikille autoille, joten joka kerta säätämäsi liukurit ovat aina samassa paikassa.
+**Oma näkymä** kokoaa eniten käyttämäsi liukurit, luvut ja kaaviot yhdelle sivulle, omaksi säätöohjaamoksesi. Se on sama kaikille autoille, joten joka kerta säätämäsi liukurit ovat aina samassa paikassa.
 
-- Vasemmalla olevat **Omat liukurit** toimivat kuten Säädä-näkymän liukurit. Oletuksena niissä ovat jouset, kallistuksenvakaajat ja hitaan bumpin vaimentimet.
-- Oikealla olevat **Omat monitorit** näyttävät luvut, joita haluat seurata, esimerkiksi mallin vertailuajan, kallistusjäykkyyden jaon, kallistusgradientin ja jousituksen taajuudet. Samat monitorit näkyvät myös Säädä-näkymän Alusta-tulospalstan yläosassa.
+- Vasemmalla olevat **Omat liukurit** toimivat kuten Säädä-näkymän liukurit. Oletuksena niissä ovat jouset, kallistuksenvakaajat, hitaan bumpin vaimentimet, diffin lukot, vetopyörästö ja vanteiden offsetit. Myös vetopyörästön ja diffin liukurit voi lisätä.
+- Oikean palstan yläosan **Omat monitorit** ovat lukurivi, jota seuraat, esimerkiksi mallin vertailuaika, kallistusjäykkyyden etuosuus, kallistusgradientti, jousituksen taajuus ja huippunopeus. Sama rivi näkyy Säädä-näkymän Luonne ja tasapaino -palstan yläosassa.
+- Alla olevat **widgetit** ovat isommat kuvat: **Auton luonne ◐**, **Tasapaino ja arvot**, matala **Välitykset · saha** -kaavio ja **Diffin lukko** -kortti, jonka kaaria voi raahata.
+- **Automaattinen linssi** seuraa viimeksi koskemaasi liukuria ja näyttää luvut, joita se liikuttaa, joten yksi näkymä riittää säätäessä: jouset ja vakaajat näyttävät kallistusgradientin, jousituksen taajuuden ja kallistusjäykkyyden etuosuuden; vaimentimet puristuksen voimakäyrän ja vaimennussuhteet; jousen pituus puskurivaran; diffin liukurit lukkojaon ja esijännityksen 3 %:n rajaa vasten; vetopyörästö rajoittimen ylimmällä vaihteella ja huippunopeuden; offsetit renkaan tilan lokasuojan sisällä.
 - Lisää liukuri painamalla sen rivin nastaa Säädä-näkymässä.
-- **Muokkaa** avaa listan kaikesta, mitä voit lisätä, ryhmiteltynä kuten Säädä-näkymässä. Ruksaa haluamasi, poista **×**:llä ja vedä ⠿-kahvasta (tai käytä sen päällä nuolinäppäimiä) muuttaaksesi järjestystä. **Palauta oletus** tuo aloitusvalikoiman takaisin, ja **Valmis** sulkee muokkauksen.
+- **Muokkaa** avaa listan kaikesta, mitä voit lisätä, ryhmiteltynä **Toiminnot**, **Widgetit** ja **Monitorit**. Ruksaa haluamasi, poista **×**:llä ja vedä ⠿-kahvasta (tai käytä sen päällä nuolinäppäimiä) muuttaaksesi järjestystä. **Palauta oletus** tuo aloitusvalikoiman takaisin, ja **Valmis** sulkee muokkauksen.
 
 ![Oman näkymän muokkaus](img/fi/71-my-view-edit.webp)
 
@@ -372,11 +409,9 @@ Arvot siirtyvät pelilistaan, kun päästät irti, ja mallin aika päivittyy pii
 
 ### 6.1 Aja
 
-![Aja](img/fi/20-drive.webp)
-
 Aja mahtuu yhdelle ruudulle kolmeen sarakkeeseen: vasemmalla kello ja sen väliajat, keskellä reittikartta ja viimeisimmät ajosi, oikealla valmiustarkistus. Niiden yllä oleva **istuntorivi** sisältää reitin, **Aja vastaan** -valinnan (auton ennätys, reitin ennätys kaikilla autoilla, mediaaniajo tai malli), auton ja setupin sekä ennätyksen, mediaanin ja ajojen määrän. **Ajanoton asetukset** on rivin oikeassa päässä.
 
-**Valmis ajanottoon?** Aja tarkistaa ennen lähtöä, mitä ajanotto tarvitsee: pelikellon, näytönlukijan, ikkunatilan, ohjaimen, vapaan levytilan ja, kun Pelin fysiikka on päällä, pelin tiedoston. Listalla ovat vain rivit, jotka vaativat jotain, ja jokaisessa on nappi, joka korjaa asian tai vie oikeaan paikkaan; muut kootaan yhdelle riville, esimerkiksi **4 tarkistusta kunnossa**. Jos peliä ei löydy, kello kertoo sen, ja **Ajanotto käsin** käynnistää sovelluksen oman sekuntikellon. Samat rivit ovat kohdassa Asetukset › Ajanotto.
+**Valmis ajanottoon?** Aja tarkistaa ennen lähtöä, mitä ajanotto tarvitsee: pelikellon, näytönlukijan, ikkunatilan, ohjaimen ja vapaan levytilan. Versiosta 0.20 alkaen se ei enää kysy pelin kansiota eikä tiedostoja. Listalla ovat vain rivit, jotka vaativat jotain, ja jokaisessa on nappi, joka korjaa asian tai vie oikeaan paikkaan; muut kootaan yhdelle riville, esimerkiksi **4 tarkistusta kunnossa**. Jos peliä ei löydy, kello kertoo sen, ja **Ajanotto käsin** käynnistää sovelluksen oman sekuntikellon. Samat rivit ovat kohdassa Asetukset › Ajanotto.
 
 ![Valmis ajanottoon?](img/fi/76-readiness.webp)
 
@@ -386,6 +421,10 @@ Aja mahtuu yhdelle ruudulle kolmeen sarakkeeseen: vasemmalla kello ja sen välia
 4. **F10** splittaa käsin, **F11** on maali. **Väli** käyttää sovelluksen omaa sekuntikelloa, kun pelikello ei ole käynnissä.
 
 **Ajon aikana** iso luku on erosi siihen ajoon, jota vastaan ajat, ja väliaikojen välissä se seuraa autoa (autosplitin kohdasta, tai pelin matkamittarista, kun vertailuajoa ei vielä ole). **Splitti**-nappi kertoo seuraavan väliaikapisteen nimen, ja viimeisellä se on **Maali**. Jokaisella väliajalla on listassa reitin antama nimi, etäisyys, aika ja ero. Kartalla täytetty piste olet sinä ja katkoviivarengas on vertailuajo samalla hetkellä. Jaetun haamun ero näkyy kellon alla.
+
+**Toisella näytöllä.** Aja-näkymä on tehty toiselle näytölle pelin viereen: kello, ero siihen ajoon, jota vastaan ajat, seuraava splitti ja oma pisteesi kartalla haamun katkoviivarenkaan vieressä seuraavat autoa reaaliajassa. Yhdellä näytöllä pieni ajastinikkuna (F8) näyttää ajan ja eron pelin päällä.
+
+![Aja ajon aikana: ero reaaliajassa, automaattiset splitit ja kartta](img/fi/20-drive.webp)
 
 **Keskeytä** pysäyttää kellon heti. 10 sekunnin ajan **Kumoa** jatkaa ajoa kuin mitään ei olisi tapahtunut, ja **Hylkää heti** pudottaa sen. Sen jälkeen keskeytetty ajo, jossa on vähintään yksi väliaika, tallentuu keskeytettynä: se näkyy historiassa, mutta siitä ei koskaan tule ennätystä. Ohjaimen keskeytysnappi toimii samoin.
 
@@ -426,7 +465,7 @@ Avaa maaliin päättyneen ajon jälkeen **Analysoi**. Se vertaa ajoa omaan ennä
 - Ylhäällä on sama **istuntorivi** kuin Ajassa: reitti, katsottava **Ajo**, **Vertailu**, autosuodatin, ero ja saatavilla oleva aika. Reitin voi vaihtaa tästä palaamatta Ajaan.
 - **Kartta** värittää jokaisen mutkan vihreäksi (nopeampi) tai punaiseksi (hitaampi) kuin vertailu, ja reitti käännetään täyttämään kartta-alue. Sen alla **mutkanauha** näyttää saman palkkeina, ja **aikaero**- ja **nopeus**-käyrät jatkuvat samalla matka-akselilla.
 - Vie hiiri mutkan päälle missä tahansa (nauha, kartta, lista tai käyrä), niin sama mutka korostuu kaikissa.
-- Oikeassa sarakkeessa ovat tuomio, **Seuraavaksi** (yksi asia: harjoittele mutkaa **Avaa mutka** -napilla, tai **Avaa Säädä**, kun sama kuvio toistuu ajoissasi, ja vieressä **Mitä auto teki?**), **Missä tämä ajo hävisi aikaa** ja **Tavoite**. Kun iso kartta vierii pois näkyvistä, sarakkeen yläosaan jää pieni kartta.
+- Oikeassa sarakkeessa ovat tuomio, **Seuraavaksi** (yksi asia: harjoittele mutkaa **Avaa mutka** -napilla, tai, kun auton oire toistuu ajoissasi, **Kokeile säätöä** samalla yhdellä muutoksella, jonka oireneuvoja antaa, ja **Avaa Säädä**, joka avaa sen oireen), **Missä tämä ajo hävisi aikaa** ja **Tavoite**. Kun iso kartta vierii pois näkyvistä, sarakkeen yläosaan jää pieni kartta.
 - Kun ajo on sama kuin vertailu (esimerkiksi ainoa ajosi), Analysoi näyttää ajon omat luvut ja ehdottaa vertailua mediaaniin tai toiseen ajoon ±0,00-sarakkeen sijaan.
 
 ![Nopeus reitillä](img/fi/26-speed-on-route.webp)
@@ -453,7 +492,7 @@ Sen alla **viimeisimmän ajon** kortti kertoo ajon sanoin, ja **Seuraavaksi** ni
 
 ![Reitit](img/fi/27-routes.webp)
 
-Reitit on yksi ruutu kolmessa sarakkeessa, ja keskellä oleva kartta pysyy paikallaan:
+Reitit on yksi ruutu kolmessa sarakkeessa, ja keskellä oleva kartta pysyy paikallaan. Versiosta 0.20 alkaen kartat ovat pohjoinen ylöspäin kuten pelin kartta, täällä ja reittieditorissa:
 
 - **Vasemmalla reittilista.** Hae nimellä, alueella tai koodilla, tai valitse suodatin: **Ajetut**, **Omat**, **Sprint**, **Circuit** tai **Drift**. **Omat reitit** (omat reittisi ja jokainen ajamasi reitti) ovat ensin ajomäärineen ja ennätyksineen. **Pelin reitit** on ryhmitelty tyypin mukaan; ryhmä aukeaa paikallaan ja näyttää 40 reittiä kerrallaan. **Näytä vastasuunnat** lisää omien reittiesi vastasuunnat.
 - **Keskellä reitti.** Nimi, pituus, väliajat, mutkat, ennätys ja ajot sekä **Aja tätä reittiä** ja **Analysoi**. **Muokkaa**, **Jaa** ja **Poista** ovat omia nappejaan (pelin reitillä on niiden sijaan **Tee oma reitti**). **Kartta** näyttää, missä reitti on koko kartalla, numeroidut väliaikapisteet ja nastat lähdölle ja maalille; **Näytä koko kartta** ja **Näytä reitin alue** vaihtavat näiden välillä.
@@ -486,7 +525,7 @@ Omat reittisi tallentuvat `Routes`-kansioon.
 - **Yleiset**: kieli, tekstin koko, Säädä-näkymän näkymätaso, **Tiheys** (Väljä tai Tiivis), animaatiot, **Yksiköt** (km/h ja kg tai mph ja lb: Touge laskee yhä metrisesti ja vaihtaa vain näytettävät luvut; kaaviot ja ohjetekstit pysyvät metrisinä), **Taustakartta** (Normaali, Himmeä tai Pois), **Aloitussivu** (viimeisin, Rakenna, Säädä, Oma näkymä tai Ajanotto), **Yläosa** ja **Palauta asettelu** (palauttaa paneelien järjestyksen, piilotetut ja taitetut paneelit sekä Säädä-tilan ja -kansion oletuksiin; Oma näkymä ja asetukset säilyvät).
 - **Data ja varmuuskopiot**: missä datasi on, nappi kansion avaamiseen, **Vie kaikki setupit** ja, jos tulit Touge 0.12:sta tai vanhemmasta, **Vanhat ajotiedostot**: kansion `Data\Legacy\Runs` koko, jota mikään ei enää lue, ja **Poista…**, joka poistaa sen vahvistuksen jälkeen. Aikasi, ajosi ja analyysit ovat tallessa muualla.
 - **Ajanotto**: samat valmiusrivit kuin Aja-näkymässä ja niiden alla näytönlukijan valinnat.
-- **Pelin fysiikka** (kokeellinen): näkyy, kun Touge löytää pelin oman fysiikkatiedoston; sillä Touge voi kokeilla säätöjä pelin fysiikalla. Tulokset ovat kalibroimattomia (◐).
+- **Pelin fysiikka** (kokeellinen, oletuksena pois): Touge voi kokeilla säätöjä pelin autofysiikalla. Versiosta 0.20 alkaen se toimii Tougen omalla Rust-toteutuksella tuosta fysiikasta, joka antaa kaikilla 126 autolla samat tulokset kuin pelin fysiikkakirjasto, joten peliä ei tarvitse olla asennettuna löydettävään kansioon. Tulokset ovat kalibroimattomia (◐).
 - **Käynnistys ja sammutus**: sammuttaa Tougen ja pelikellon yhdessä.
 - **Tietoja**: versio, päivitysvalinnat (**Ilmoita uusista versioista** ja **Tarjoa myös esikatseluversiot**, jotka julkaistaan testattavaksi hieman ennen muita), **Ilmoita ongelmasta**, **Tämän version uutuudet**, palautelinkit ja lisenssit.
 
@@ -634,7 +673,7 @@ Project Touge\
    │  └─ Ghosts\         lisäämäsi haamut
    ├─ Logs\              liitä nämä, kun ilmoitat ongelmasta
    │  └─ Reader\         näytönlukijan lokit; minikarttakuvat vain, jos tallennus on päällä
-   ├─ Cache\             vain Pelin fysiikan (kokeellinen) kanssa
+   ├─ Cache\             väliaikaiset tiedostot (yleensä tyhjä)
    └─ Legacy\            vanhojen versioiden tiedostot, joita Touge ei enää lue
                          (Asetukset › Data ja varmuuskopiot › Vanhat ajotiedostot poistaa Legacy\Runs)
 ```
@@ -642,7 +681,7 @@ Project Touge\
 - **Ei mitään kansion ulkopuolelle.** Touge kirjoittaa vain tänne. Ainoa poikkeus on Windowsin WebView2, joka pitää ikkunan selainvälimuistia kansiossa `%LOCALAPPDATA%\fi.projecttouge.app`. Siinä ei ole tunejasi eikä ajojasi.
 - **Päivitys säilyttää kaiken.** 0.13:n ensimmäinen käynnistys siirtää tunesi, ajosi, reittisi ja asetuksesi kansioon `Data` ja kirjaa jokaisen siirron tiedostoon `Data\Logs\migration.txt`. Mitään ei poisteta, tiedostot joita Touge ei enää lue menevät kansioon `Data\Legacy`, eikä vanhempi versio osaa lukea uutta kansiota.
 - **Aiemmat versiot vain luetaan.** Ensimmäisellä käynnistyksellä Touge etsii aiempaa Project Tougea viereisistä kansioista sekä Työpöydältä, Latauksista ja Tiedostoista ja kopioi datasi sieltä. Vanha kansio jää ennalleen.
-- **Peliin ei kosketa.** Touge ei kirjoita peliin eikä sen kansioon. Pelin fysiikka vain kopioi pelin fysiikkatiedoston kansioon `Data\Cache\`.
+- **Peliin ei kosketa.** Touge ei kirjoita peliin eikä sen kansioon, eikä Pelin fysiikka tarvitse 0.20:sta alkaen pelistä yhtään tiedostoa.
 
 **Päivitys**: paina **Update now** tai korvaa `Project Touge.exe` ja pidä kansiot `Data` ja `Shared` (ks. [Päivitys versiosta 0.9.x](#1-ennen-kuin-aloitat)). **Siirto tai varmuuskopio**: kopioi koko kansio. **Poisto**: poista kansio, ja halutessasi myös yllä mainittu välimuistikansio.
 

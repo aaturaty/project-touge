@@ -37,8 +37,8 @@ Vivun koko on suurin mitattu ero pitkällä touge-reitillä simulaatiomallissa t
 Järjestys etenee isosta pieneen niin, ettei myöhempi säätö kumoa aiempaa. Jos palaat aiempaan vaiheeseen, tarkista sen jälkeiset vaiheet uudelleen.
 
 1. **Renkaat ja kori:** rengaskoko, vanneosa ja offset lokasuojan sisällä. Rengas määrää pidon ja säteen, joten se on kaiken muun pohja.
-2. **Välitykset:** vasta renkaan jälkeen, koska vain kokonaisvälitys (FD × renkaan säde) ratkaisee ●.
-3. **Jousen pituus:** tarpeeksi joustovaraa, ettei jousitus lyö rajoittimeen (toimiva lähtökohta: etu ×1,07, taka ×0,90 oletuksesta ●).
+2. **Välitykset:** vasta renkaan jälkeen, koska vain kokonaisvälitys (vaihde × FD jaettuna renkaan säteellä) ratkaisee ●.
+3. **Jousen pituus:** tarpeeksi joustovaraa, ettei jousitus lyö rajoittimeen (perusalusta jättää vähintään 19 mm joustovaraa ◐; ennen 0.20:aa pelissä toimi etu ×1,07 ja taka ×0,90 oletuksesta ●).
 4. **Jouset:** jäykkyys massan mukaan, sitten pituus uudelleen, koska jäykempi jousi nostaa koria ●.
 5. **Vakaajat:** jako akselivälin mukaan ja kokonaisjäykkyys kallistuksen mukaan. Tämä on tärkein tasapainosäätö.
 6. **Diffi:** ensin kaasulukko, sitten preload ja moottorijarrulukko ulostuloon ja sisääntuloon.
@@ -46,9 +46,9 @@ Järjestys etenee isosta pieneen niin, ettei myöhempi säätö kumoa aiempaa. J
 8. **Vaimentimet:** slow bump ja slow rebound siirtymien nopeuteen. Fast-arvot vain kuoppiin ja guttereihin.
 9. **Camber ja toe:** viimeistely.
 
-Tougen **Base setup** (Tune → Chassis) antaa lähtöarvot vaiheille 2–8 auton omasta fysiikasta ja dimensioista ◐. Varsinainen hionta alkaa sitten oireista.
+Tougen **perusalusta** (Säädä → Alusta) antaa lähtöarvot vaiheille 2–8 auton omasta fysiikasta ja dimensioista ◐. Varsinainen hionta alkaa sitten oireista.
 
-**Touge 0.16:ssa järjestys on sisäänrakennettu.** Välitykset ja Alusta kertovat, millä renkailla, moottorilla, massalla ja etupainolla niiden arvot laskettiin, ja rivi muuttuu keltaiseksi, kun olet sen jälkeen vaihtanut jotain niistä. Paina vaiheen 1 tai moottorin vaihdon jälkeen **Laske uudelleen** ennen kuin hiot vaiheita 2–8. Kun yhdistelmä toimii, tallenna se Setupit-ikkunan **Presetit**-välilehdellä ja rastita vain osat, jotka sen kuuluu sisältää: alustan ja diffin preset siirtyy toiseen setupiin koskematta sen välityksiin.
+**Touge 0.20:ssa järjestys on sisäänrakennettu.** **Perusalusta** (Säädä › Alusta › Luonne) ratkaisee aloitusalustan ja diffin auton omasta fysiikasta niin, että rajoittimeen jää vähintään 19 mm joustovaraa ja preload pysyy alle 3 %:n vetomomentista ◐; **Luonne ◐** -palkit näyttävät, mitä kukin muutos tekee; ja **oireneuvoja** antaa enintään kolme yhden askeleen muutosta ja kertoo myöhemmin, auttoivatko ne. Välitykset ja Alusta kertovat, millä renkailla, moottorilla, massalla ja etupainolla niiden arvot laskettiin, ja rivi muuttuu keltaiseksi, kun olet sen jälkeen vaihtanut jotain niistä. Paina vaiheen 1 tai moottorin vaihdon jälkeen **Laske uudelleen** ennen kuin hiot vaiheita 2–8. Kun yhdistelmä toimii, tallenna se Setupit-ikkunan **Presetit**-välilehdellä ja rastita vain osat, jotka sen kuuluu sisältää: alustan ja diffin preset siirtyy toiseen setupiin koskematta sen välityksiin.
 
 ## Näin testaat
 
@@ -102,7 +102,7 @@ Nopein setup ei ole kaikille sama, koska kuljettaja ajaa sitä rajalla. Hae ensi
 
 ## Loppuvinkki
 
-Aloita uusi auto Tougen **Base setupista** (Tune → Chassis) ◐. Aja muutama kierros ja kirjaa vaihe, jossa auto ei tee mitä haluat. Korjaa yksi oire kerrallaan hakemiston ensisijaisella muutoksella, ja kun auto on tasapainossa, siirry tuntumaan.
+Aloita uusi auto Tougen **perusalustasta** (Säädä → Alusta) ◐. Aja muutama kierros ja kirjaa vaihe, jossa auto ei tee mitä haluat. Korjaa yksi oire kerrallaan hakemiston ensisijaisella muutoksella, ja kun auto on tasapainossa, siirry tuntumaan.
 
 Kolme asiaa on toistunut jokaisessa kokeessa:
 

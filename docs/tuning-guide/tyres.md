@@ -19,7 +19,7 @@ Markers: ● confirmed in game or in the game code, ◐ from Touge's simulation 
 1. Tyre friction = 1 + the rim part's friction bonus (fric_add), and it scales the tyre's peak force directly ●. The game shows this as the grip value (for example 1.08).
 2. The same size often has two rim parts. The one with the lower base profile gives +0.08, the higher one +0.03–0.05 ●. For example 265 R16: base profile 40 = +0.08, base profile 45 = +0.03.
 3. The full +0.08 starts at 265 mm. 245–255 mm gets at most +0.05 and 225–235 mm +0.04 ●.
-4. Width adds grip with a power of 0.41: grip factor = (width / 185)^0.41 × friction ● (route model, matches the game's physics code).
+4. In the game's physics code, width adds grip with a power of 0.41: grip factor = (width / 185)^0.41 × friction ●. Touge's build model uses a simpler width table that levels off above 245 mm ◐.
 5. Tyre grip peaks at 2.0 bar. 1.0 or 3.0 bar costs about 1–2.5 % grip ●.
 
 | Width | Highest friction bonus | Grip factor | Difference to 265 |
@@ -95,7 +95,7 @@ Setup order: choose the tyre size and rim part first, then the offset so the tyr
 | Gearing | Only the total ratio matters ●, so a radius change is corrected with the final drive. |
 | Spring length | A larger radius raises the body by the same amount ●. Shorten the spring if you want the same height. |
 | Bars and springs | The tyre's vertical stiffness (p + 30 kPa) · (10 · width + 1) · r · 0.8 is in series with the suspension ●. A wide tyre is stiffer, and track stiffens roll with the square. Width and bar split overlapped by about a second in our experience ◐. |
-| Tyre pressure | Grip peaks at 2.0 bar ●. Pressure lowers rolling resistance (∝ 1 / pressure) ●, so 3.0 bar is fastest on a straight (0–150 km/h about 7 % quicker than at 2.0 bar). Tyre type does not change the pressure effect, and wear does not cost grip before condition reaches 0 ●. |
+| Tyre pressure | Grip peaks at 2.0 bar ●. Pressure lowers rolling resistance (∝ 1 / pressure) ●, so 3.0 bar is fastest on a straight (0–150 km/h about 7 % quicker than at 2.0 bar). Tyre type does not change the pressure effect ●. Touge caps the pressure effect at 3.0 bar ◐. |
 | Mass | A wide and large wheel weighs more. Mass costs about 2 % grip per 100 kg ◐, but the extra wheel mass is small next to the width gain. |
 | Camber | Camber costs 0.5 % longitudinal grip per degree and does not raise the lateral peak ●. |
 | Kerbs and gutters | Leaning on the rising outer edge of a corner added +14…+55 % grip in the simulation model, and an inside gutter +26 % ◐. The effect is larger than the tyre size. |

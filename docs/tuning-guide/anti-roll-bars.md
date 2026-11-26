@@ -63,7 +63,7 @@ Set the split first, then the total stiffness. Springs and track also change rol
 | Track and offset | Roll stiffness grows with the square of track width ●. A wider rear track takes more roll moment but changes wheel load less, and adds rear grip ◐. |
 | Tyres | The tyre's vertical stiffness is in series with the bar ●. A soft or low-pressure tyre softens the axle slightly. |
 | Differential | A stiff rear unloads the inside wheel, which spins, and the throttle lock engages earlier ◐. A stiff rear bar needs a throttle lock of at least about 0.3 ◐. |
-| Dampers | The bar decides how much load moves, the slow dampers how fast. A soft front rebound reduces throttle understeer in the same direction as a soft front bar ◐. |
+| Dampers | The bar decides how much load moves, the slow dampers how fast. For throttle understeer the game points to a stiffer front slow rebound, which keeps the nose loaded as it rises ● (see Dampers). |
 
 ## Symptoms
 
@@ -75,7 +75,7 @@ First find the corner phase where the symptom appears. Change one bar at a time 
 | Turn-in | The rear steps out right at turn-in | The rear carries too much transfer | Lower the rear bar one step (10–15 %). |
 | Mid-corner | The nose pushes in a steady corner | The nose carries too much transfer | Lower the front bar ●. |
 | Mid-corner | In a fast corner the rear lets go "like a switch" | The limit comes from the rear ◐ | Raise the front bar or lower the rear. |
-| Exit, full throttle | The nose pushes on throttle in a fast corner | The front is too stiff relative to the rear ◐ | Lower the front bar. If it is already low, soften the front rebound. |
+| Exit, full throttle | The nose pushes on throttle in a fast corner | The front is too stiff relative to the rear ◐ | Lower the front bar. If it is already low, raise the front slow rebound (see Dampers) ●. |
 | Exit, opening the throttle | The rear spins mid-corner on throttle | A stiff rear unloads the inside wheel and the diff locks | First lower diff preload and throttle lock ◐, then the rear bar. |
 | Bumps, kerbs and gutters | A one-sided bump or gutter throws the rear | The bar passes one wheel's hit to the other | Lower the rear slow rebound, then the rear bar ◐. |
 

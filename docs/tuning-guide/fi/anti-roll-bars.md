@@ -63,7 +63,7 @@ Säädä jako ensin, sitten kokonaisjäykkyys. Myös jouset ja raide muuttavat k
 | Raide ja offset | Kallistusjäykkyys kasvaa raideleveyden neliössä ●. Leveämpi takaraide ottaa enemmän kallistusmomenttia mutta muuttaa pyöräkuormaa vähemmän ja lisää perän pitoa ◐. |
 | Renkaat | Renkaan pystyjäykkyys on sarjassa vakaajan kanssa ●. Pehmeä tai matalapaineinen rengas pehmentää akselia hieman. |
 | Diffi | Jäykkä perä keventää sisäpyörää, joka sutii, ja kaasulukko kytkeytyy aiemmin ◐. Jäykkä takavakaaja tarvitsee vähintään noin 0,3:n kaasulukon ◐. |
-| Vaimentimet | Vakaaja päättää, kuinka paljon kuormaa siirtyy, slow-vaimentimet kuinka nopeasti. Pehmeä etu-rebound vähentää kaasu-aliohjausta samaan suuntaan kuin pehmeä etuvakaaja ◐. |
+| Vaimentimet | Vakaaja päättää, kuinka paljon kuormaa siirtyy, slow-vaimentimet kuinka nopeasti. Kaasu-aliohjaukseen peli neuvoo jäykempää etu slow reboundia, joka pitää keulan kuormitettuna sen noustessa ● (ks. Vaimentimet). |
 
 ## Oireet
 
@@ -75,7 +75,7 @@ Etsi ensin mutkan vaihe, jossa oire tulee. Muuta yhtä vakaajaa kerrallaan noin 
 | Sisääntulo | Perä lähtee heti käännössä | Perä kantaa liikaa siirtoa | Laske takavakaajaa yksi askel (10–15 %). |
 | Keskikohta | Keula työntää tasaisessa mutkassa | Keula kantaa liikaa siirtoa | Laske etuvakaajaa ●. |
 | Keskikohta | Nopeassa mutkassa perä irtoaa "kuin katkaisijasta" | Raja tulee perästä ◐ | Nosta etuvakaajaa tai laske takavakaajaa. |
-| Ulostulo, täysi kaasu | Keula työntää kaasulla nopeassa mutkassa | Etu on liian jäykkä suhteessa takaan ◐ | Laske etuvakaajaa. Jos se on jo matala, pehmennä etu-reboundia. |
+| Ulostulo, täysi kaasu | Keula työntää kaasulla nopeassa mutkassa | Etu on liian jäykkä suhteessa takaan ◐ | Laske etuvakaajaa. Jos se on jo matala, nosta etu slow reboundia (ks. Vaimentimet) ●. |
 | Ulostulo, kaasun avaus | Perä pyörähtää keskellä mutkaa kaasulla | Jäykkä perä keventää sisäpyörää ja diffi lukitsee | Laske ensin diffin preloadia ja kaasulukkoa ◐, sitten takavakaajaa. |
 | Kuopat, reunat ja gutterit | Toispuoleinen kuoppa tai gutteri heittää perää | Vakaaja välittää yhden pyörän iskun toiselle | Laske taka slow reboundia, sitten takavakaajaa ◐. |
 

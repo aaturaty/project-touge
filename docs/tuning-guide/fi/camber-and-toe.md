@@ -8,7 +8,7 @@
 
 Camber ja toe ovat tässä pelissä pieniä vipuja. Simulaatiomallissa camber muuttaa sivupitoa enintään noin 3,5 % ja vie jarrutus- ja vetopitoa 0,5 % astetta kohti ●. Kokemuksemme mukaan camber −2 vs −5 oli usealla autolla kohinaa ◐, mutta lähellä nollaa oleva etucamber on maksanut yli sekunnin ◐. Toe on hieman isompi vipu: takatoe-in rauhoittaa perää ja takatoe-out vie pitoa, mutta koko kierroksella ero jää alle sekunnin ◐. Hio ensin vakaajat, jouset ja diffi, ja viimeistele camberilla ja toella.
 
-Pelissä on kaksi eroa oikeaan autoon. Säätämäsi camber ei ole renkaan todellinen camber, koska peli lisää siihen −3…+5° jousen avautuman mukaan ●. Lisäksi pelin fysiikkakoodissa on jäykän akselin jousitustyyppi, jolla camber-säätö ei tee mitään ●. Sitä, kumpi pelin jousitustyypeistä (Mcferson vai Doublewishbone) vastaa jäykkää akselia, ei vielä tiedetä.
+Pelissä on kaksi eroa oikeaan autoon. Säätämäsi camber ei ole renkaan todellinen camber, koska peli lisää siihen −3…+5° jousen avautuman mukaan ●. Lisäksi pelin fysiikkakoodissa on jäykän akselin jousitustyyppi (Dependent), jolla camber-säätö ei tee mitään ●, mutta mikään pelin auto ei käytä sitä: jokainen akseli on Mcferson tai Doublewishbone, ja camber toimii molemmissa ●.
 
 Merkit: ● vahvistettu pelissä tai pelin koodissa, ◐ Tougen simulaatiomallista tai päätelty, ei testattu pelissä, ○ oikean auton teoria.
 
@@ -20,7 +20,7 @@ Merkit: ● vahvistettu pelissä tai pelin koodissa, ◐ Tougen simulaatiomallis
 2. Camber muuttuu jouston mukana 8° / isku, eli 100 mm:n iskulla 0,8° negatiivisemmaksi jokaista painumasenttiä kohti ●. Mutkassa ulkopyörä painuu ja muuttuu negatiivisemmaksi, mutta kori kallistuu ulos ja vie sitä positiivisemmaksi. Yhdellä testiautolla nämä lähes kumosivat toisensa: rajalla ulkopyörä oli maahan nähden noin säätö + 3,4° ◐.
 3. Renkaassa camber ei nosta sivupidon huippua. Se jäykistää pidon kasvua: −5° antaa 14 % enemmän sivujäykkyyttä, mikä tuntuu terävämpänä alkuvasteena ●. Sivuvoimaan tulee myös pieni siirtymä (−3° → +0,15°), jolla ei ole käytännön merkitystä ●.
 4. Pitkittäispito (jarrutus ja veto) kerrotaan luvulla 1 − 0,005 · |camber|, eli se laskee 0,5 % astetta kohti ●. Edessä iso camber pidentää jarrutusta, takana se heikentää vetoa.
-5. Fysiikkakoodin jousitustyyppi 1 on jäykkä akseli: pyörät seuraavat akselin kallistusta, ja camber-säätö sekä camber-käyrä nollataan ●. Peli välittää autodatan tyypin pelin fysiikkakoodille sellaisenaan, mutta sitä, onko Doublewishbone tyyppi 1, ei tiedetä ◐. Jos on, camber ei tee mitään autoissa, joissa siinä päässä on Doublewishbone.
+5. Pelin jousitustyypit ovat Mcferson = 0, Dependent = 1 ja Doublewishbone = 2, ja peli antaa auton datan tyypin fysiikkakoodille sellaisenaan ●. Tyyppi 1 on jäykkä akseli, jolla camber nollataan, mutta mikään auto ei käytä sitä ●. Tougen aiemmat simulaatiot ajoivat Doublewishbone-akselit vahingossa tyyppinä 1; 0.20:sta alkaen ne ajetaan tyyppinä 2, ja camber vaikuttaa mallissa ◐.
 6. Säätöalue tulee tukivarsiosista. Perusosa antaa camberiksi −4,5°, säädettävä osa ±3,5°. Prototype-varsilla raja on noin −21,5° edessä ja −22,5° takana ●.
 
 **Kun lisäät negatiivista camberia:**
@@ -60,7 +60,7 @@ Camber riippuu jousituksesta, joten säädä se jousien ja vakaajien jälkeen. T
 | Ackermann | Etutoe lisätään Ackermann-kulman päälle ●, joten muuta niitä yksi kerrallaan. |
 | Diffi ja jarrut | Camber vie pitkittäispitoa 0,5 % / aste ●. Takacamber heikentää ulostulon vetoa samaan suuntaan kuin liian suuri kaasulukko, ja etucamber pidentää jarrutusta. Takatoe-in rauhoittaa trail brake -vaihetta samaan suuntaan kuin etupainotteisempi jarrujako ◐. |
 | Renkaat | Camberkerroin on sama kaikilla renkailla ●. Pelin kaavassa leveys ei muuta camberin vaikutusta ◐. |
-| Jousitustyyppi | Jäykkä akseli (fysiikkakoodin tyyppi 1) nollaa camberin ●. Tarkista autosi jousitustyyppi ennen camberin hiomista (ks. Varmistamatta). |
+| Jousitustyyppi | Camber toimii sekä Mcferson- että Doublewishbone-akseleilla ●. Ennen 0.20:aa saadut tulokset, joissa camber ei vaikuttanut Doublewishbone-autoihin, johtuivat simulaatiovirheestä eivätkä pelistä. |
 
 ## Oireet
 
@@ -81,13 +81,10 @@ Muuta camberia 0,5° ja toeta 0,1° kerrallaan, ja aja sama mutka samalla vaihte
 
 Camber −3,5 / −3,5 on ollut jokaisessa pelikokeissamme hyvin toimineessa setupissa ●. Ruudulla se näyttää paljolta, mutta levossa se on noin 2–3° positiivisempi kuin luku. Pidä etutoe nollassa ja takatoe 0…+0,1:ssä, ja muuta niitä vain oireen mukaan.
 
-Jos et tiedä, vaikuttaako camber autossasi, tee pikakoe: etucamber −3,5 → −8 ja aja sama mutka. Jos tuntuma ei muutu lainkaan, etuakseli on todennäköisesti fysiikkakoodin jäykkä akseli.
-
-**Simulaatiokokemus ◐ (Tougen simulaatiomalli, ei testattu pelissä):** etucamber −4,6 → 0 oli 1,4 s hitaampi, eniten keskinopeissa mutkissa, ja jäykällä etuvakaajalla vielä enemmän (yhdessä 2,3 s). −6,5 ei tuonut mitään −4,6:een nähden. Lähellä nollaa alkava etucamber on siis enemmän kuin viimeistely. Takacamber ja etutoe eivät näkyneet kierrosajassa. Takatoe-in +0,3 oli 0,7 s hitaampi.
+**Simulaatiokokemus ◐ (Tougen simulaatiomalli, ei testattu pelissä; ajot ennen 0.20:aa, jolloin Doublewishbone-akselit simuloitiin jäykkinä, joten ne pätevät Mcferson-akseleihin):** etucamber −4,6 → 0 oli 1,4 s hitaampi, eniten keskinopeissa mutkissa, ja jäykällä etuvakaajalla vielä enemmän (yhdessä 2,3 s). −6,5 ei tuonut mitään −4,6:een nähden. Lähellä nollaa alkava etucamber on siis enemmän kuin viimeistely. Takacamber ja etutoe eivät näkyneet kierrosajassa. Takatoe-in +0,3 oli 0,7 s hitaampi.
 
 ## Varmistamatta
 
-- Jousitustyyppi on tärkein avoin kysymys: onko Doublewishbone fysiikkakoodin tyyppi 1, jäykkä akseli? Pelin metadata on salattu, joten pelikoe ratkaisee (etucamber −3,5 vs −8).
 - Lepocamberin esimerkit olettavat, että isku on jousen pituus. Se on päätelty pohjaanlyöntikaavasta, ei luettu pelin fysiikkakoodista.
 - Pitotulokset ovat simulaatiosta. Pelkästä camberista tai toesta ei ole erillistä pelikoetta; pelikokeissa muutettiin samalla jotain muuta.
 - Toen vastus suoralla on päätelty, ei mitattu.

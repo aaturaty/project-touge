@@ -93,7 +93,8 @@ In the simulation model the diff settings hardly changed lap time; only a thrott
 
 - Always test in the same corner in the same gear, because the gear sets the lock force.
 - If the car spins at full throttle, look at the throttle lock first and then the preload. Both push the rear out.
-- In our experience a throttle lock of 0.25–0.30, a decel lock of 0.12–0.20 and a preload of 45–100 has been an easy-to-drive starting range in game ●. Touge's diff presets cover this range and the softer and stiffer ones around it.
+- In our experience a throttle lock of 0.25–0.30, a decel lock of 0.12–0.20 and a preload of 45–100 has been an easy-to-drive starting range in game ●. Touge's diff characters (Forgiving, Touge, Precise, Track) cover this range and the softer and stiffer ones around it.
+- From 0.20, Touge's Base setup and the symptom advisor keep preload at or under 3 % of the drive torque and never suggest a lock under 0.22 ◐. On a low-torque car that ceiling can sit below 100; the preload slider shows it.
 
 **Simulation experience ◐ (Touge's simulation model, not tested in the game):** once the throttle lock is above 0, the locks and preload are feel settings: throttle lock 0.15–1.0, decel lock 0–0.5 and preload 0–250 all stayed within 0.4 s. An open diff (throttle lock 0) was 2.4 s slower, mostly in slow corners. The exception is a stiff rear bar, which wanted a throttle lock of at least about 0.3 (see the anti-roll bar guide).
 

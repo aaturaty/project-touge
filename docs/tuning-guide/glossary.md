@@ -26,7 +26,7 @@ The guide uses short everyday words. This table shows the name of each setting i
 | Offset, spacer | Front / Rear Wheel Offset | Wheel position outwards; track = base track + offset. |
 | Tyre pressure | Pressure | Grip peaks at 2.0 bar; higher pressure lowers rolling resistance. |
 | Tyre profile | Tire profile | Sidewall height in percentage points (±10). |
-| Final drive, FD | Final drive | The last ratio; total ratio = gear × final drive × tyre radius. |
+| Final drive, FD | Final drive | The last ratio; overall ratio = gear × final drive; at the wheel it acts as (gear × final drive) / tyre radius. |
 | Centre of gravity | Center of Mass Height (Part Setup) | A percentage of the body box height, not inches. |
 | Front weight | Weight Distribution in Front | Share of the car's weight on the front axle. |
 
@@ -56,7 +56,7 @@ The guide uses short everyday words. This table shows the name of each setting i
 | Natural frequency | √(spring / mass) / 2π. Keeping it equal moves a spring setup to a heavier or lighter car. |
 | Damping ratio, ζ | Damping relative to the spring and mass; Touge uses it to move dampers between cars. |
 | Knee | The wheel speed (0.1 m/s) where damping changes from the slow to the fast value. |
-| Total ratio | Gear × final drive × tyre radius; the only gearing number the physics uses. |
+| Total ratio | (Gear × final drive) / tyre radius: the pull per unit of engine torque; the only gearing number the physics uses. |
 | Rim part | The wheel part chosen for a tyre size; it sets the tyre's friction bonus (+0.03…+0.08). |
 | Simulation | The game's physics engine run outside the game with a computer driver, used to compare settings evenly. |
 | Within noise | A difference smaller than the normal run-to-run spread, about 0.8 s on a six-minute run. |

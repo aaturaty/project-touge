@@ -77,7 +77,7 @@ Järjestys: ensin pituus (joustovara ja korkeus), sitten jäykkyys, ja tasapaino
 | Vakaajat | Jouset ja vakaajat muodostavat yhdessä kallistusjäykkyyden ●. Jos vaihdat jouset, siirrä vakaajia niin, että jako pysyy. |
 | Vaimentimet | Sopiva vaimennustaso riippuu jousesta. Liian suuri rebound pakkaa jousituksen rajoittimelle ◐. Kun jäykistät jousta, nosta vaimennusta suunnilleen samassa suhteessa. |
 | Painopiste | Pituus nostaa painopistettä 1 mm / mm ●. Korkeus lisää kuormansiirtoa, mutta tasaisella ympyrällä pito ei muuttunut ◐. |
-| Camber | Camber riippuu jousen pituudesta ●. Jäykän akselin autossa camberilla ei ole vaikutusta ●. |
+| Camber | Camber riippuu jousen pituudesta ●. Se vaikuttaa kaikissa autoissa: mikään pelin auto ei käytä jäykän akselin tyyppiä ●. |
 | Rengasprofiili | Profiili nostaa koria ●. Isompi rengas tarvitsee lyhyemmän jousen samaan korkeuteen. |
 | Diffi | Pehmeä tai korkea perä kallistuu ja keventää sisäpyörää, joten kaasulukko kytkeytyy aiemmin ◐. |
 | Kuopat ja gutterit | Tien kuopat ovat pieniä ja tiheitä sekä isompia ja pitkiä ●. Liian jäykkä tai lyhyt jousi ei seuraa niitä, mikä näkyy pomppimisena reunoilla. |

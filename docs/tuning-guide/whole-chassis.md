@@ -37,8 +37,8 @@ Lever size is the largest difference measured on a long touge run, in the simula
 The order goes from big to small, so that a later setting does not undo an earlier one. If you go back to an earlier step, check the steps after it again.
 
 1. **Tyres and body:** tyre size, rim part and offset inside the fender. The tyre sets grip and radius, so it is the base for everything else.
-2. **Gearing:** only after the tyre, because only the total ratio (FD × tyre radius) matters ●.
-3. **Spring length:** enough travel that the suspension does not hit the bump stop (a working starting point: front ×1.07, rear ×0.90 of the default ●).
+2. **Gearing:** only after the tyre, because only the total ratio (gear × FD divided by tyre radius) matters ●.
+3. **Spring length:** enough travel that the suspension does not hit the bump stop (Base setup keeps at least 19 mm of travel ◐; before 0.20, front ×1.07 and rear ×0.90 of the default worked in game ●).
 4. **Springs:** rate by mass, then length again, because a stiffer spring raises the body ●.
 5. **Bars:** split by wheelbase and total stiffness by roll. This is the main balance setting.
 6. **Differential:** throttle lock first, then preload and decel lock for exit and entry.
@@ -48,7 +48,7 @@ The order goes from big to small, so that a later setting does not undo an earli
 
 **Base setup** in Touge (Tune → Chassis) gives starting values for steps 2–8 from the car's own physics and dimensions ◐. The real refining then starts from symptoms.
 
-**In Touge 0.16 the order is built in.** Gearing and Chassis show which tyres, engine, mass and front weight their values were calculated with, and the line turns yellow when you have changed one of them since. After step 1, or after an engine change, press **Recalculate** before you refine steps 2–8. When a combination works, save it on the **Presets** tab of the Setups window and tick only the parts it should carry: a chassis-and-diff preset moves to another setup without touching its gears.
+**In Touge 0.20 the order is built in.** **Base setup** (Tune › Chassis › Character) solves a starting chassis and diff from the car's own physics, keeping at least 19 mm of travel to the bump stop and preload under 3 % of drive torque ◐; the **Character ◐** bars show what each change does; and the **symptom advisor** gives up to three one-step changes and later tells whether they helped. Gearing and Chassis show which tyres, engine, mass and front weight their values were calculated with, and the line turns yellow when you have changed one of them since. After step 1, or after an engine change, press **Recalculate** before you refine steps 2–8. When a combination works, save it on the **Presets** tab of the Setups window and tick only the parts it should carry: a chassis-and-diff preset moves to another setup without touching its gears.
 
 ## How to test
 

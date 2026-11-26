@@ -77,7 +77,7 @@ Order: length first (travel and height), then stiffness, and balance with the ba
 | Anti-roll bars | Springs and bars form the roll stiffness together ●. If you change springs, move the bars so the split stays. |
 | Dampers | The right damping level depends on the spring. Too much rebound packs the suspension down onto the bump stop ◐. When you stiffen the spring, raise damping in roughly the same ratio. |
 | Centre of gravity | Length raises the centre of gravity 1 mm per mm ●. More height adds load transfer, but on a flat circle grip did not change ◐. |
-| Camber | Camber depends on spring length ●. On a rigid-axle car camber has no effect ●. |
+| Camber | Camber depends on spring length ●. It acts on every car: no car in the game uses the rigid-axle type ●. |
 | Tyre profile | Profile raises the body ●. A bigger tyre needs a shorter spring for the same height. |
 | Differential | A soft or high rear rolls and unloads the inside wheel, so the throttle lock engages earlier ◐. |
 | Bumps and gutters | Road bumps are small and frequent plus larger and long ●. A too stiff or too short spring cannot follow them, which shows as bouncing on kerbs. |

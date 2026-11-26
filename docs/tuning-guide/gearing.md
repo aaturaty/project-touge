@@ -66,7 +66,7 @@ Pick a light gearbox (T50S), size the top gear to the route's top speed and corr
 
 - The 8-speeds' shift time in the native simulation is scaled from the game's delay (0.16 s × delay / 0.25), so the result is not confirmed in the game ◐.
 - The wide spread the model favoured (short first, long sixth) did not show up in the game, so it is not recommended ◐.
-- Sources: analyysi/valityslaskin, analyysi/north_c3 (130 gearboxes), analyysi/optimointi_1111/tulokset/haku_1611.
+- Sources: Touge's gearing calculator and a search over 130 gearboxes on North Touge in C3.
 
 ---
 

@@ -26,7 +26,7 @@ Opas käyttää lyhyitä arkisanoja. Taulukko näyttää kunkin säädön nimen 
 | Offset, spacer | Front / Rear Wheel Offset | Pyörän paikka ulospäin; raide = perusraide + offset. |
 | Rengaspaine | Pressure | Pito on suurimmillaan 2,0 barissa; korkeampi paine pienentää vierintävastusta. |
 | Rengasprofiili | Tire profile | Kyljen korkeus prosenttiyksikköinä (±10). |
-| Loppuvälitys, FD | Final drive | Viimeinen välitys; kokonaisvälitys = vaihde × loppuvälitys × renkaan säde. |
+| Loppuvälitys, FD | Final drive | Viimeinen välitys; kokonaisvälitys = vaihde × loppuvälitys; pyörällä se vaikuttaa muodossa (vaihde × loppuvälitys) / renkaan säde. |
 | Painopiste | Center of Mass Height (Part Setup) | Prosentti korilaatikon korkeudesta, ei tuumia. |
 | Etupaino | Weight Distribution in Front | Etuakselin osuus auton painosta. |
 
@@ -56,7 +56,7 @@ Opas käyttää lyhyitä arkisanoja. Taulukko näyttää kunkin säädön nimen 
 | Ominaistaajuus | √(jousi / massa) / 2π. Kun se pidetään samana, jousisetup siirtyy raskaampaan tai kevyempään autoon. |
 | Vaimennussuhde, ζ | Vaimennus suhteessa jouseen ja massaan; Touge siirtää sillä vaimentimet autosta toiseen. |
 | Polvi | Pyörän nopeus (0,1 m/s), jossa vaimennus vaihtuu slow-arvosta fast-arvoon. |
-| Kokonaisvälitys | Vaihde × loppuvälitys × renkaan säde; ainoa välitysluku, jota fysiikka käyttää. |
+| Kokonaisvälitys | (Vaihde × loppuvälitys) / renkaan säde: veto moottorin vääntöyksikköä kohden; ainoa välitysluku, jota fysiikka käyttää. |
 | Vanneosa | Rengaskokoon valittu vanneosa; se määrää renkaan kitkalisän (+0,03…+0,08). |
 | Simulaatio | Pelin fysiikkamoottori ajettuna pelin ulkopuolella tietokonekuljettajalla säätöjen tasaiseen vertailuun. |
 | Kohinaa | Ero, joka on pienempi kuin tavallinen ajojen välinen hajonta, noin 0,8 s kuuden minuutin ajossa. |

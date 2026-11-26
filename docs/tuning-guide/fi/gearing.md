@@ -66,7 +66,7 @@ Valitse kevyt laatikko (T50S), mitoita ylin vaihde reitin huippuun ja korjaa FD 
 
 - 8-vaihteisten vaihtoaika natiivissa on skaalattu pelin viiveestä (0,16 s × viive / 0,25), joten tulos ei ole pelissä varmistettu ◐.
 - Mallin suosima laaja porrastus (lyhyt ykkönen, pitkä kuutonen) ei näkynyt pelissä, joten sitä ei suositella ◐.
-- Lähteet: analyysi/valityslaskin, analyysi/north_c3 (130 laatikkoa), analyysi/optimointi_1111/tulokset/haku_1611.
+- Lähteet: Tougen välityslaskin ja haku 130 vaihdelaatikolla North Tougella C3:ssa.
 
 ---
 

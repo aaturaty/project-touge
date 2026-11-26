@@ -23,7 +23,7 @@ Project Touge\
 ```
 
 **New**
-- **Build Wizard progress bar:** while the model builds your car, the wizard shows a progress bar with the current stage (stock run, then your build) and the time left, learned from your previous build (about 7 seconds by default).
+- **Build Wizard progress bar:** while the model builds your car, the wizard shows a progress bar with the current stage (stock run, then your build) and the time left, learned from your previous build (about 7 seconds by default); when a build takes longer it counts the seconds instead of saying almost done.
 - **Build Wizard:** 01 Build starts with two paths. **Enter pre-existing build** takes your car from Part Setup screenshots, a table or by hand. **Build with the model** walks through target (car, class, route), body and aero, engine, drivetrain and tyres; at each step you let the model decide, keep the defaults or choose yourself, or press **Build now** for the whole car at once. The result shows the estimated time gain against stock, your saved build or the previous result. It is a difference between builds, not a lap-time prediction, and the screen says so.
 - **Car character model (all 125 playable cars, ◐):** Tune → Chassis shows how your setup changes the car across measured character traits: mid-corner balance, entry rotation, exit wheelspin, body roll, inner-wheel load and bump-stop travel, with live bars that follow your drag and an entry/mid/exit corner-phase chart.
 - **Base setup from the car's own physics (◐):** the default chassis and diff are solved for each car from its physics model with a bump-stop floor and a preload cap of 3 % of drive torque, instead of general rules. It keeps the settings you made yourself, leaves the values of a saved setup locked unless you allow changes, and scales springs and dampers to the build's weight, so a heavy and a light build of the same car keep the same handling character.
@@ -55,6 +55,7 @@ Project Touge\
 - The run report says the apex gear as a whole number ("at apex 3rd"), also in English.
 - The race clock's minute digit no longer flickers, and panels no longer flash when they redraw.
 - The Situation chart no longer repeats the same value on its axis, and the anti-roll bar legend keeps each percentage on one line.
+- Drive labels its two gaps: the big number is the gap now (against the record or your chosen run), and the clock line names the split it compares at.
 - The Drive map hides the "appear here when the game is found" note once your position shows.
 - My view offers **Restore default monitors** when the monitor strip is empty.
 - Game physics simulated double-wishbone axles as a solid axle, so camber had no effect on those cars in Game physics runs. They now run as double wishbone, and the car character model behind Base setup and the symptom advisor is refitted on the fixed physics, so camber now counts in its results (◐). On the S15 the new Base setup is about 0.2 s slower on the test routes than before (◐).

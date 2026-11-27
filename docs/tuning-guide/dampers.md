@@ -97,6 +97,7 @@ Markers: ● confirmed in game or in the game code, ◐ from Touge's simulation 
 - In roll the outer wheel compresses and the inner wheel extends at the same speed. The axle's transient load transfer is then about (bump + rebound) / 2 × speed, and if rebound is larger, the difference (rebound − bump) × speed pulls the body down ◐ derived.
 - When you stiffen a spring but not the dampers, the suspension becomes relatively less damped, because critical damping grows with the square root of the spring ○ (same formula in the game). Raise damping by roughly √(new spring / old spring).
 - The ratios above (rebound 3.6–4.5 × bump, fast about 0.6 × slow) come from a preset that has worked in game on several cars. They are a starting point, not a searched-out value ◐.
+- Touge's Base setup and Model preset take the slow values from the car's character model, scaled to the build's weight, and set fast bump to 0.45 × slow bump and fast rebound to 0.55 × slow rebound ●. That fixed rule sits a little below the working preset's fast bump, and has not been searched separately ◐.
 - Real-car rules of thumb, such as a damping ratio of 0.5–0.7, are background only ○. Front rebound that works in game is still clearly above them.
 
 ## Effect on other settings

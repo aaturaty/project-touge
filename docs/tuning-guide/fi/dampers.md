@@ -97,6 +97,7 @@ Merkit: ● vahvistettu pelissä tai pelin koodissa, ◐ Tougen simulaatiomallis
 - Kallistuksessa ulkopyörä puristuu ja sisäpyörä palaa samalla nopeudella. Akselin hetkellinen kuormansiirto on silloin noin (bump + rebound) / 2 × nopeus, ja jos rebound on suurempi, erotus (rebound − bump) × nopeus vetää koria alas ◐ johdettu.
 - Kun jäykistät jousta mutta et vaimentimia, jousitus on suhteessa vähemmän vaimennettu, koska kriittinen vaimennus kasvaa jousen neliöjuuren mukana ○ (sama kaava pelissä). Nosta vaimennusta suunnilleen √(uusi jousi / vanha jousi).
 - Yllä olevat suhteet (rebound 3,6–4,5 × bump, fast noin 0,6 × slow) tulevat presetistä, joka on toiminut pelissä usealla autolla. Ne ovat lähtökohta, eivät haettu arvo ◐.
+- Tougen Base setup ja Model-presetti ottavat slow-arvot auton luonnemallista buildin painoon skaalattuna ja asettavat fast bumpiksi 0,45 × slow bump ja fast reboundiksi 0,55 × slow rebound ●. Kiinteä sääntö on hieman toimineen presetin fast bumpia alempana, eikä sitä ole haettu erikseen ◐.
 - Oikean auton nyrkkisäännöt, kuten vaimennussuhde 0,5–0,7, ovat vain taustaa ○. Pelissä toimiva etu-rebound on niitä yhä selvästi suurempi.
 
 ## Vaikutus muihin

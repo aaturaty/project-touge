@@ -145,7 +145,7 @@ The step row shows your choice under each step (**Custom**, **Defaults** or **Mo
 
 ### 3.5 The modules one by one
 
-The module cards with the full detail of each part of the build are on **02 Tune › Adjust › Parts**. Click a card to open it under the cards; **Close** or a second click folds it away. When a module may change, the model fills it in; when it is locked, what you set there stays. *(The Suspension screenshot is from 0.20.1; the other module screenshots are from 0.16, and their content is the same.)*
+The module cards with the full detail of each part of the build are on **02 Tune › Adjust › Parts**. Click a card to open it under the cards; **Close** or a second click folds it away. When a module may change, the model fills it in; when it is locked, what you set there stays. *(The Suspension and Drivetrain screenshots are from 0.20.1; the other module screenshots are from 0.16, and their content is the same.)*
 
 **01 Car**
 

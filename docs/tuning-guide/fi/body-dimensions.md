@@ -61,7 +61,7 @@ Tulokset eroavat autojen välillä, joten offsetin hyöty ei ole varma kaikilla 
 1. Massakeskiö = korilaatikon pohja + mass_up_percent × laatikon korkeus ●. Part Setupin "Center of Mass Height" on tämä prosentti, ei tuumia ●. Peli näyttää sen massapainotettuna, koska moottori ja vaihteisto pysyvät korin vakioarvossa ◐.
 2. Painopiste muuttuu korin Stagen, kevennyksen (×0,99 / 0,97 / 0,95), korin vahvistuksen (×1,007–1,015) ja kevennyksen oman liukurin (askel ×1,05) mukana ●. Jousen pituus nostaa koria ja painopistettä 1 mm / mm ●.
 3. Kuormansiirto on suoraan verrannollinen korkeuteen h, sekä sivuttain (m · a · h / t) että pitkittäin (m · a · h / L) ●. Matalampi on aina parempi, mutta säätövara on pieni: kevennysliukurin koko alue siirtää sitä noin 2,8 cm, eikä kierrosaika erottunut kohinasta ◐.
-4. Korkea auto tarvitsee enemmän kallistusjäykkyyttä samaan kallistukseen, matala vähemmän. "touge weapon (oikea CoG)" -preset skaalaa kallistusjäykkyyttä auton painopisteen mukaan: korkea auto saa noin 30 % jäykemmät vakaajat, matalat 17–21 % pehmeämmät ◐ (ei pelissä testattu). Vanhempi touge weapon käyttää kaikille samaa vertailukorkeutta, ja pelissä toimineet setupit tehtiin sillä.
+4. Korkea auto tarvitsee enemmän kallistusjäykkyyttä samaan kallistukseen, matala vähemmän. Kun kallistusjäykkyys skaalataan auton painopisteen mukaan, korkea auto saa noin 30 % jäykemmät vakaajat ja matalat 17–21 % pehmeämmät ◐ (ei pelissä testattu). Pelissä toimineet setupit tehtiin kaikille samalla vertailukorkeudella.
 5. Aerolla ei ole ajokorkeusriippuvuutta ●, joten matala kori ei lisää alavoimaa.
 
 **Kun lasket painopistettä:**
@@ -94,11 +94,11 @@ Painojakauman tulos näyttää, että vakaajajako ja painojakauma tekevät samaa
 
 ## Dimensioista lähtöarvoihin
 
-Näin siirrät toimivan setupin uuteen autoon sen dimensioiden avulla. Touge weapon -preset tekee vaiheet 2–6 automaattisesti, ja näin tehdyt setupit ovat toimineet pelissä ●.
+Näin siirrät toimivan setupin uuteen autoon sen dimensioiden avulla. Näin siirretyt setupit ovat toimineet pelissä ●, ja Tougen perusalusta tekee saman auton omasta fysiikasta ◐.
 
 1. **Kirjaa auton tiedot:** akseliväli, etu- ja takaraide, massa, etupaino ja Center of Mass Height (Part Setup).
 2. **Jouset massasta:** pidä sama ominaistaajuus kuin toimivassa autossa. Noin 30 % raskaampi pyörä tarvitsee noin 30 % jäykemmän jousen ◐ laskettu.
-3. **Jousen pituus auton oletuksesta:** etu ×1,07 ja taka ×0,90, kuten touge weaponissa ●.
+3. **Jousen pituus:** aloita Tougen perusalustasta, joka jättää rajoittimeen vähintään 19 mm joustovaraa ◐. Etu ×1,07 ja taka ×0,90 auton oletuksesta toimi pelissä ennen 0.20:aa ●.
 4. **Vakaajajako akselivälistä:** käytä Akseliväli-osion taulukkoa. Kokonaisjäykkyys tulee halutusta kallistuksesta, ja korkea painopiste tarvitsee enemmän ◐.
 5. **Raide lokasuojan sisällä:** offset niin leveäksi kuin lokasuoja sallii. Takavetoisessa takaraiteen levennys auttaa enemmän kuin etu ◐.
 6. **Vaimentimet vaimennussuhteella:** sama ζ kuin toimivassa autossa, jolloin luvut kasvavat √(k · m):n mukana ◐.
@@ -121,7 +121,7 @@ Nämä oireet tulevat setupista, joka on tehty erikokoiselle autolle. Korjaa ne 
 
 ## Loppuvinkki
 
-Katso uudesta autosta ensin akseliväli. Se kertoo, kuinka paljon toimivan setupin vakaajajakoa pitää siirtää, ja kokemuksemme mukaan pelkkä tämä korjasi herkän perän ja jarrutusaliohjauksen jokaisella touge weapon -sarjan autolla ●. Massa kertoo jousien ja vaimentimien tason, painopiste vakaajien kokonaisjäykkyyden.
+Katso uudesta autosta ensin akseliväli. Se kertoo, kuinka paljon toimivan setupin vakaajajakoa pitää siirtää, ja kokemuksemme mukaan pelkkä tämä korjasi herkän perän ja jarrutusaliohjauksen jokaisella autolla, johon setup siirrettiin ●. Massa kertoo jousien ja vaimentimien tason, painopiste vakaajien kokonaisjäykkyyden.
 
 Kokemuksemme mukaan jokainen 10 cm lisää akseliväliä on siirtänyt toimivaa kallistusjäykkyyden jakoa noin 4 %-yksikköä eteen, kunnes jako on noin 5 %-yksikköä etupainon osuutta edellä ●.
 
@@ -130,7 +130,7 @@ Kokemuksemme mukaan jokainen 10 cm lisää akseliväliä on siirtänyt toimivaa 
 - Akselivälin suhde sovitettiin kolmeen autoon ja testattiin pelissä yhdeksällä. Yli 2,7 m:n autoja ei ole kokeiltu, joten yläpää on arvio.
 - Taajuus- ja vaimennussuhde-esimerkit on laskettu. Jousittamatonta massaa ei ole vähennetty pyörämassasta.
 - Offsetin hyöty oli yhdellä autolla positiivinen ja toisella negatiivinen, ja syy on auki.
-- Korjattu painopistelaskenta (touge weapon, oikea CoG) on testaamatta pelissä.
+- Vakaajien skaalaus oikean painopisteen mukaan on testaamatta pelissä.
 - Lyhyen akselivälin ja pidemmän välityksen yhteys voi johtua rajoittimesta.
 
 ---

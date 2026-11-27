@@ -19,7 +19,7 @@ Merkit: ● vahvistettu pelissä tai pelin koodissa, ◐ Tougen simulaatiomallis
 1. Renkaan kitka = 1 + vanneosan kitkalisä (fric_add), ja se kertoo renkaan huippuvoiman suoraan ●. Peli näyttää tämän grip-lukuna (esimerkiksi 1,08).
 2. Samassa koossa on usein kaksi vanneosaa. Matalamman perusprofiilin osa antaa +0,08, korkeamman +0,03–0,05 ●. Esimerkiksi 265 R16: perusprofiili 40 = +0,08, perusprofiili 45 = +0,03.
 3. Täysi +0,08 alkaa 265 mm:stä. 245–255 mm saa enintään +0,05 ja 225–235 mm +0,04 ●.
-4. Leveys lisää pitoa potenssilla 0,41: pitokerroin = (leveys / 185)^0,41 × kitka ● (reittimalli, täsmää pelin fysiikkakoodiin).
+4. Pelin fysiikkakoodissa leveys lisää pitoa potenssilla 0,41: pitokerroin = (leveys / 185)^0,41 × kitka ●. Tougen rakennusmalli käyttää yksinkertaisempaa leveystaulukkoa, joka tasaantuu 245 mm:n jälkeen ◐.
 5. Renkaan pito on suurimmillaan 2,0 barissa. 1,0 tai 3,0 bar vie noin 1–2,5 % pitoa ●.
 
 | Leveys | Suurin kitkalisä | Pitokerroin | Ero 265:een |
@@ -95,7 +95,7 @@ Säätöjärjestys: ensin rengaskoko ja vanneosa, sitten offset niin, että reng
 | Välitykset | Vain kokonaisvälitys ratkaisee ●, joten säteen muutos korjataan loppuvälityksellä. |
 | Jousen pituus | Isompi säde nostaa koria saman verran ●. Lyhennä jousta, jos haluat saman korkeuden. |
 | Vakaajat ja jouset | Renkaan pystyjäykkyys (p + 30 kPa) · (10 · leveys + 1) · r · 0,8 on sarjassa jousituksen kanssa ●. Leveä rengas on jäykempi, ja raide jäykistää kallistusta neliössä. Leveydellä ja vakaajajaolla oli kokemuksemme mukaan noin sekunnin verran päällekkäistä hyötyä ◐. |
-| Rengaspaine | Pito on suurimmillaan 2,0 barissa ●. Paine pienentää vierintävastusta (∝ 1 / paine) ●, joten 3,0 bar on nopein suoralla (0–150 km/h noin 7 % nopeampi kuin 2,0 barilla). Renkaan tyyppi ei muuta paineen vaikutusta, eikä kuluminen vie pitoa ennen kuin kunto on 0 ●. |
+| Rengaspaine | Pito on suurimmillaan 2,0 barissa ●. Paine pienentää vierintävastusta (∝ 1 / paine) ●, joten 3,0 bar on nopein suoralla (0–150 km/h noin 7 % nopeampi kuin 2,0 barilla). Renkaan tyyppi ei muuta paineen vaikutusta ●. Touge rajaa paineen vaikutuksen 3,0 bariin ◐. |
 | Massa | Leveä ja iso pyörä painaa enemmän. Massa maksaa noin 2 % pitoa / 100 kg ◐, mutta pyörien lisämassa on pieni leveyden pitohyötyyn verrattuna. |
 | Camber | Camber vie pitkittäispitoa 0,5 % / aste eikä nosta sivupidon huippua ●. |
 | Reunat ja gutterit | Mutkan ulkoreunan nousuun nojaaminen lisäsi simulaatiomallissa pitoa +14…+55 %, ja sisäkouru +26 % ◐. Vaikutus on suurempi kuin rengaskoon. |

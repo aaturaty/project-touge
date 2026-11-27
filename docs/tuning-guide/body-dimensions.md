@@ -61,7 +61,7 @@ The results differ between cars, so the offset gain is not certain on every car 
 1. Centre of mass = body box floor + mass_up_percent × box height ●. "Center of Mass Height" in Part Setup is this percentage, not inches ●. The game shows it mass-weighted, because the engine and gearbox stay at the body's stock value ◐.
 2. The centre of gravity changes with the body Stage, weight reduction (×0.99 / 0.97 / 0.95), body reinforcement (×1.007–1.015) and the weight reduction's own slider (step ×1.05) ●. Spring length raises the body and the centre of gravity 1 mm per mm ●.
 3. Load transfer is directly proportional to the height h, both laterally (m · a · h / t) and longitudinally (m · a · h / L) ●. Lower is always better, but the range is small: the whole weight-reduction slider moves it about 2.8 cm, and the lap time did not stand out from noise ◐.
-4. A tall car needs more roll stiffness for the same roll, a low car less. The "touge weapon (real CoG)" preset scales roll stiffness by the car's centre of gravity: a tall car gets about 30 % stiffer bars, low cars 17–21 % softer ◐ (not tested in game). The older touge weapon uses the same reference height for all cars, and the setups that worked in game were made with it.
+4. A tall car needs more roll stiffness for the same roll, a low car less. Scaling roll stiffness by the car's centre of gravity gives a tall car about 30 % stiffer bars and low cars 17–21 % softer ◐ (not tested in game). The setups that worked in game used the same reference height for all cars.
 5. Aero has no ride-height dependence ●, so a low body does not add downforce.
 
 **When you lower the centre of gravity:**
@@ -94,11 +94,11 @@ The weight distribution result shows that the bar split and the weight distribut
 
 ## From dimensions to starting values
 
-This is how to move a working setup to a new car using its dimensions. The touge weapon preset does steps 2–6 automatically, and setups made this way have worked in game ●.
+This is how to move a working setup to a new car using its dimensions. Setups moved this way have worked in game ●, and Touge's Base setup does the same from the car's own physics ◐.
 
 1. **Note the car's data:** wheelbase, front and rear track, mass, front weight and Center of Mass Height (Part Setup).
 2. **Springs from mass:** keep the same natural frequency as on the working car. A wheel about 30 % heavier needs a spring about 30 % stiffer ◐ calculated.
-3. **Spring length from the car's default:** front ×1.07 and rear ×0.90, as in touge weapon ●.
+3. **Spring length:** start from Touge's Base setup, which keeps at least 19 mm of travel to the bump stop ◐. Front ×1.07 and rear ×0.90 of the car's default worked in game before 0.20 ●.
 4. **Bar split from wheelbase:** use the table in the Wheelbase section. The total stiffness comes from the roll you want, and a high centre of gravity needs more ◐.
 5. **Track inside the fender:** offset as wide as the fender allows. On a rear-drive car widening the rear track helps more than the front ◐.
 6. **Dampers by damping ratio:** the same ζ as on the working car, so the numbers grow with √(k · m) ◐.
@@ -121,7 +121,7 @@ These symptoms come from a setup made for a car of different size. Correct them 
 
 ## Final tip
 
-On a new car, look at the wheelbase first. It tells you how far to move the bar split of a working setup, and in our experience this alone cured a nervous rear and braking understeer on every car of the Touge weapon set ●. Mass tells you the level of springs and dampers, and the centre of gravity the total bar stiffness.
+On a new car, look at the wheelbase first. It tells you how far to move the bar split of a working setup, and in our experience this alone cured a nervous rear and braking understeer on every car we moved a setup to ●. Mass tells you the level of springs and dampers, and the centre of gravity the total bar stiffness.
 
 In our experience every 10 cm of extra wheelbase has moved the working roll-stiffness split about 4 points forward, up to about 5 points ahead of the front weight share ●.
 
@@ -130,7 +130,7 @@ In our experience every 10 cm of extra wheelbase has moved the working roll-stif
 - The wheelbase relation was fitted on three cars and tested in game on nine. Cars over 2.7 m have not been tried, so the upper end is an estimate.
 - The frequency and damping ratio examples are calculated. Unsprung mass has not been subtracted from the wheel mass.
 - The offset gain was positive on one car and negative on another, and the reason is open.
-- The corrected centre of gravity calculation (touge weapon, real CoG) is untested in game.
+- Scaling bar stiffness by the real centre of gravity is untested in game.
 - The link between a short wheelbase and longer gearing may come from the rev limiter.
 
 ---

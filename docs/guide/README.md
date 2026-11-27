@@ -47,15 +47,15 @@ For timing, run CarX Street borderless or full screen so the whole HUD is visibl
 ![Project Touge with a setup open on the Build tab](img/en/01-overview.webp)
 
 - **Tabs 01 Build, 02 Tune, 03 Time** follow the order you work in. Keys **1**, **2** and **3** switch between them.
-- **Setup** (top right) shows the open setup. A green dot means saved, a yellow dot means unsaved changes. Click it for Save, Save as, your recent setups, Import a tune, Share and import, and All setups. The disk icon next to it saves straight away.
-- **New build**, right of the setup name, starts a fresh build for this car from the model's defaults; your saved setups stay. The **disk** icon saves and turns yellow when something is not saved.
-- **?** opens help with the shortcuts and the tuning guides. The **gear** opens Settings, and the red **power** button shuts Touge down. The version tag sits at the top right; the language is in **Settings › General**.
+- **Setup** (top right) shows the open setup. A green dot means saved, a yellow dot means unsaved changes. Click it for Save, Save as, your recent setups, Import a tune, Share and import, and All setups. The **disk** icon next to it saves straight away and turns yellow when something is not saved. A new build starts from **+ New build** on 01 Build.
+- **?** opens help with the shortcuts and the tuning guides. The **gear** opens Settings, and the red **power** button shuts Touge down. The version tag shows at the top right in the full-size header; the language is in **Settings › General**.
 - The model's estimate for the open build on the chosen route (**model reference time**) is in **My monitors** and on the Tune timeline.
 - On a first start Touge is empty: **Choose a car** comes first, and the numbers appear once a car is chosen. A **Getting started** strip shows the three steps until you hide it.
 - Once you have saved a setup, the large title at the top gives its height to the page and the tabs move to the top edge. Setting **Settings › General › Header** to **Full** brings the title back.
 - A slim **Next** bar under the tabs says what to do next in the loop Build, Tune, Drive and Analyse: choose a car, save your setup, look at your latest run, move changes into the game or drive. **Hide** puts it away for a while. Each page also has its own **Next** line near the top.
 - The **Setup** button shows the number of unsaved changes next to the name. Click the count for the list of what changed, saved value → now, with the game's names; each line has its own revert, and **Save**, **Save as new** and **Revert all** are at the bottom of the same list.
-- While Touge recalculates, the model reference time dims and a thin line runs under it, so an old time is never read as the new one. With a saved setup open, the time shows the difference to that setup. From 0.16 the calculation uses all processor cores, so a full optimisation takes about a quarter of the time it did.
+- While Touge recalculates, the model reference time dims and a thin line runs under it, so an old time is never read as the new one. With a saved setup open, the time shows the difference to that setup. The calculation uses all processor cores.
+- The **timeline** at the bottom of Build and Tune keeps every calculation of this session. Click a point to go back to it.
 - Terms with an **i** button explain themselves: click it for a short description.
 
 Two marks appear everywhere and are worth learning first:
@@ -69,7 +69,15 @@ Values without a mark come from the game's own data. Names, order and units foll
 
 ## 3. Build: get your car in
 
-Most of the time your car already exists in the game. Then choose **Enter pre-existing build**. If you already have the tune in a file, such as a tuning template from a friend, choose **Import a tune**. If you want Touge to suggest a whole build for a class, choose **Build with the model**.
+A new build starts from two paths (new in 0.20):
+
+![New build: enter a car you already have, or build one with the model](img/en/05a-start-paths.webp)
+
+- **A · Enter pre-existing build**: the car is already in your garage. Paste Part Setup screenshots, import a table (xlsx, CSV, JSON), or type the parts and values in by hand.
+- **B · Build with the model**: pick the car, class and route, and let the model build the whole car at once or step through it module by module.
+- **Or continue from a saved setup** lists your latest setups under the two paths; **All setups…** opens the Setups window.
+
+**← Change start path** at the top of Build takes you back to this choice at any time. If you already have the tune in a file, such as a tuning template from a friend, use **Import a tune** (3.3).
 
 ### 3.1 Car, class and route
 
@@ -107,34 +115,37 @@ From now on Tune works on *your* build, not on a model car.
 
 ### 3.4 Build with the model
 
-Use this when you want a starting point for a new car or class.
+Use this when you want a starting point for a new car or class. The build is a five-step wizard: **1 Target**, **2 Body & Aero**, **3 Engine**, **4 Drivetrain**, **5 Tires**, and then **Result**.
 
-**Step 1: car, class and route.** Pick the car, a preset, the class and the route. **By area** lets you choose a chassis, diff and gearing profile separately. *model* means Touge's own calculation; the presets are taste profiles on top of it.
+![Build with the model: step 1, car, class and route](img/en/05-build-model.webp)
 
-**Step 2: what the tuner may change.** It is on the same page, right below step 1.
+**Step 1 · Target.** Pick the car, class and route, the same way as in 3.1. Then choose how to go on:
 
-![Build with the model: modules and result](img/en/05-build-model.webp)
+- **Build with model now** builds the whole car at once: the model picks the body and aero, engine and parts, gearbox and diff, and tyres within the class, and goes straight to the result. It takes from about half a minute to a couple of minutes.
+- **Step through modules →** goes through steps 2–5, so you decide each part of the car yourself.
 
-- **Tuner picks** searches parts and settings up to the class limit. **Improve** keeps your current build and shows the effect of each change within seconds.
-- Each module card (Car, Engine, Drivetrain, Aero and body, Suspension, Tyres) shows what is in the build now. Switch **May change** on for the modules the tuner is allowed to touch, or tick **All**.
+**Steps 2–5.** Each step shows what that part of the car is now, with the key numbers on top (mass, drag and downforce; power, torque and power-to-weight; gearbox, layout and diff; tyre set). At every step you choose one of three ways:
 
-**Step 3: Calculate** (key **L**). The calculation takes from a few seconds to about half a minute.
+- **Let model decide**: the model picks this module for you.
+- **Use defaults**: the car's own defaults.
+- **Keep & Next**: keep what you set yourself on this step.
 
-The **Result** panel on the right shows:
+![Step 3 · Engine: pick the engine and its parts, or let the model decide](img/en/05b-wizard-engine.webp)
 
-- **Model reference time**: the calculated estimate for this build on the chosen route, with **before** and the difference under it. The mark under the time says how well the model knows the route's corners. **Pre-calibrated** means the corners come with Touge, measured from game runs; **Calibrated from own run** means they come from your own timed run. On a route with neither, the model knows the corners only from the racing line, so the total can be seconds off, but differences between builds still hold. Drive one run and open Time → Analyse to calibrate it. Real times live on the Time tab.
-- **before / after** and what changed, for example a gearbox swap.
-- **Timeline**: every calculation is kept, click one to go back to it.
-- **Set as reference** makes this build the one you compare against; **Undo tuner picks** returns to where you were.
-- Mass, power, 0–100 km/h and weight distribution.
+The step row shows your choice under each step (**Custom**, **Defaults** or **Model**), and you can click any step to go back to it. **← Back** returns one step. Suspension is always Prototype on a clean model baseline: you fine-tune it and pick its feel on 02 Tune.
 
-![Candidates](img/en/06-candidates.webp)
+**Result.**
 
-Under the result, two tabs share the space. **Candidates** lists the engine and gearbox combinations by time, best first; **Select** swaps to another one if you prefer it, and **Show all engines** lists the rest. **Changes to try** lists single changes and their effect.
+![Result: estimated time gain, the selected build and the candidates](img/en/05c-wizard-result.webp)
+
+- **Estimated time gain** on the route against the stock car on stock tyres (or against your saved build or the previous result, picked under it). It is a difference between builds, not a lap-time prediction, and the screen says so: real times live on the Time tab. **Set as reference** makes this build the one later results compare against.
+- **Selected build** lists car and class, engine, drivetrain, body and aero and tyres, with mass, power, 0–100 km/h and weight distribution.
+- **Candidates** lists the best engine and gearbox combinations, best first. **Select** swaps to another one, and **Show all engines** lists the rest.
+- **← Edit choices** goes back to the steps. Name the build and press **Save & open 02 Tune**.
 
 ### 3.5 The modules one by one
 
-Click a module card in step 2 to open it under the cards; **Close** or a second click folds it away. Each module shows the full detail of that part of the build, and most of it works the same in **Tuner picks** and **Improve**. When a module may change, the tuner fills it in; when it is locked, what you set here stays.
+The module cards with the full detail of each part of the build are on **02 Tune › Adjust › Parts**. Click a card to open it under the cards; **Close** or a second click folds it away. When a module may change, the model fills it in; when it is locked, what you set there stays. *(The Suspension and Drivetrain screenshots are from 0.20.1; the other module screenshots are from 0.16, and their content is the same.)*
 
 **01 Car**
 
@@ -169,7 +180,7 @@ Body kit, front and rear wing tiers and the downforce sliders, in the same order
 
 ![Suspension module](img/en/44-mod-suspension.webp)
 
-Suspension is always Prototype, because that is what lets you set everything. **Suspension state** draws the car at rest, under braking, under acceleration and at 200 km/h; **Bounce** shows how quickly the body settles. Below are the weight split, roll stiffness split (LLTD), natural frequencies, damping ratios and how far aero presses the car down at speed. Enter the game's **front weight** and, if you like, your own **front roll stiffness share** for the route time.
+Suspension is always Prototype, because that is what lets you set everything. **Suspension state** draws the car at rest, under braking, under acceleration and at 200 km/h; **Bounce** shows how quickly the body settles. Below are the weight split, roll stiffness split (LLTD), natural frequencies, damping ratios and how far aero presses the car down at speed. Enter the game's **front weight**. The roll stiffness split is shown for information; from 0.20 the route time no longer uses a separate LLTD setting.
 
 **06 Tyres**
 
@@ -216,7 +227,8 @@ The **Presets** tab (new in 0.16) keeps every preset in one place:
 
 - **Own presets** are your own. **Covers** shows which parts each one holds: **Chassis** (springs, bars, dampers, spring length, steering, pressures, camber, brake balance), **Diff** (locks and preload) and **Gears**. Each row has **Apply**, **Rename**, **Duplicate**, **Share…** and **Delete**; **Undo** brings a deleted preset back until you close the window.
 - **Own gearing profiles** are gear sets you saved on Tune › Gearing › **Save as own profile**, with the car and final drive.
-- **Built-in** lists the presets, diff characters and gearing profiles that come with Touge (Model, CalcX by StepUnique, choriso's, Forgiving, Touge, Precise, Track, Old Meta and so on). They are the same for everyone and cannot be changed, but **Duplicate as own** makes a copy you can rename and share.
+- **Built-in** lists the presets, diff characters and gearing profiles that come with Touge: the chassis presets **Model** and **CalcX by StepUnique**, the diff characters **Forgiving**, **Touge**, **Precise** and **Track**, and the **Old Meta** gearing. They are the same for everyone and cannot be changed, but **Duplicate as own** makes a copy you can rename and share. (The touge weapon and choriso presets were removed in 0.20; a setup saved with them opens on Model and keeps its own values.)
+- **Presets keep their version.** A setup stays on the preset version it was made with. When a preset gets a newer version, **Update preset to newest version** shows what would change before you apply it. **Preset mix** changes only the chassis.
 
 **Save current as preset** stores parts of the open setup. Name it and tick what it covers:
 
@@ -228,21 +240,33 @@ Applying a preset changes **only the parts it covers**: a chassis-and-diff prese
 
 The Tune tab has four views: **Symptom**, **Adjust** and **Overview** in the order you usually need them, and **My view** with the sliders and numbers you pick yourself. Adjust has its own **View** menu (**Settings only**, **Simple**, **Advanced**) that decides how much detail you see there; Simple is a good start. Symptom and Overview always show everything. Once the car has your own build or a saved setup, Tune opens in Overview. Without a car, Tune shows a **Choose car** button.
 
-The **Preset** picker sits at the top: *model* is Touge's own result, and changing the preset replaces the chassis and diff values. Your own presets are at the end of the list. While Tune works on a model car, a line at the top says so, and **Enter build** takes you to the Build tab to enter your own. Sliders show the game's slider limits as marks, so you can see how much room is left.
+The **Preset** picker sits at the top: **Model** is Touge's own result and **CalcX by StepUnique** the community calculator's formulas; changing the preset replaces the chassis and diff values. Your own presets are at the end of the list. The bottom of each Tune page has **Back** and **Next** buttons that run **Symptom → Parts → Chassis → Gearing → Other → Overview**, and **Done · save** is on Overview. While Tune works on a model car, a line at the top says so, and **Enter build** takes you to the Build tab to enter your own. Sliders show the game's slider limits as marks, so you can see how much room is left.
 
 ### 5.1 Symptom
 
 ![Symptom](img/en/10-symptom.webp)
 
 1. Pick where in the corner the car misbehaves: **Braking**, **Turn-in**, **Mid corner** or **Exit**.
-2. Pick the symptom that matches what you feel, for example *Trail braking – understeer*. The corner diagram shows where it happens.
-3. **What changes** opens next to the list, with **Apply** at the top and the symptom diagram beside it, so you see the result without scrolling. It starts with the Tuning Bible's advice for that symptom (what to try first, then next), followed by the settings Touge would move, each with a one-line reason and old → new value. A chart shows what the change does, and **Why these changes** explains the reasoning.
-4. **One at a time** is on by default: **Apply first** takes only the biggest change, so you can time a run before the next one. Untick it to apply them all. **Cancel** leaves the setup as it was.
-5. When the symptom has a damper fix, a **Dampers: if you feel this** card follows with **Apply** and **Show setting**, the same cards as in Adjust's advice.
+2. Pick the symptom that matches what you feel, for example *Turn-in – understeer*. The corner diagram shows where it happens.
+3. **What changes** opens next to the list. New in 0.20, its top card **For this car & setup ◐** gives up to three concrete changes for *your* car and setup, one per group (springs and bars, geometry, diff, tyres/brakes/aero, dampers). Each is one game step, shows old → new value, what it does to the symptom, and its **side effects** on the other character measures (entry rotation, exit wheelspin, body roll, inner-wheel load). A change that would cut off at a slider limit, or a diff lock under 0.22, is never suggested.
+4. Press **Apply** on the change you want to try. Touge follows a one-change-at-a-time rule, so you can time a run before the next one, and every change can be undone.
+5. Under the cards, **choriso's Tuning Bible** gives the background: what to try first and next, with links to the chapters. **Fallback: general rules** opens the older rule-based list for when the car-specific move does not fit. **What the change does** draws the effect over the corner phase, and **Dampers: if you feel this** gives a damper fix with **Apply** and **Show setting**.
 
-![What changes](img/en/17-what-changes.webp)
+![What changes: three changes for this car, each with its side effects](img/en/17-what-changes.webp)
 
-**From your run.** Once you have timed a run with the current setup (game timer on your own machine), the Symptom view lists, below the phases and symptoms, the symptoms that repeated in the run (at least two corners and a quarter of them), one row each. Open a row to see what happened in the run (for example, at full lock the car turned clearly less than it can in the same run), which part of the suspension acts in that phase (bars, dampers, diff) and the first changes of the symptom rule. **Show the changes** opens the same What changes panel. The phase button and symptom that repeated get a mark. If the previous run was on different values, below it shows how much more or less the car turned in the same corners. Suspension travel and wheel loads are not measured, so the balance findings are ◐.
+**Car bottoming out or bouncing over bumps?** The line at the top shows the bump-stop margin front and rear. When it is under 10 mm, a **bottoming** chip warns you before anything else.
+
+**From your run: the race engineer (◐, new in 0.20).** Once you have timed runs with the current car, the Symptom view lists the symptoms that repeated in your runs:
+
+- Symptoms are **sorted by the seconds they cost**, and the most expensive one is marked **Start here**. Each row shows the time lost and in how many corners it happened (for example *0.45 s · 8/26 corners*).
+- Understeer is judged **against your own runs in this car**, not against a fixed limit.
+- Corners lost to a **driving error** (contact, a late brake, a tighter line, at least 0.10 s lost) are listed separately and do not count as a car symptom. A symptom in only one corner points you to your line in Analyse instead.
+- Suggestions weigh the **corner phase and speed**: mechanical grip and the diff in slow corners, bars and springs in fast ones, no dampers at the apex, no brake bias on exit.
+- **Did the change help?** After you apply a suggested change and drive, Touge pools up to five timed runs before and after it on the same values. The card says **Helped**, **Trade-off** or **Did not help**, and offers **Keep the change**, **Keep and take another step** (when the symptom still repeats), **Undo**, or **Undo and try option #2**. The **Next** bar shows an open test until you have driven it.
+- **Tried changes** lists what you decided for this car (kept, another step, undone), also after a restart, and changes that did not help are listed last for that symptom. **Reset tried changes for this car** clears the list.
+- A run that sits on the limiter in top gear, or at low revs at the corner bottoms, suggests a **gearing** change and links to Adjust › Gearing.
+
+If you have changed values since the run, a note says so: the findings describe the run's values until you time the new ones.
 
 **Whole car**, on the right, covers symptoms that are not tied to one corner phase: overall understeer or oversteer, bouncing over bumps, kerbs and gutters, and a limiter or no acceleration on the straights.
 
@@ -266,13 +290,22 @@ Adjust shows every setting with a slider. It has four tabs: **Parts**, **Chassis
 
 **Chassis**
 
-![Adjust: Chassis](img/en/11-adjust-chassis.webp)
+![Adjust: Chassis, with the Character tab on the right](img/en/11-adjust-chassis.webp)
 
 - **Axle** picks **Front**, **Rear** or **Both**.
-- **A · Settings**: weight, front weight, spring length, springs, anti-roll bars, dampers and camber & toe, in game order. Open **How this works** under a group for the mechanism behind it.
-- **C · Balance & KPI**: the dampers' ratio, roll gradient, roll stiffness and ride frequency. Drag the **LLTD** bar or a line in the **balance chart** to move the front/rear split while keeping the total stiffness. The balance chart puts springs (mid corner), slow bump (entry and exit) and fast bump (bumps and kerbs) on one Front–Rear axis, with the level before your change dashed.
-- On a wide screen (from about 1700 px) the sliders flow in two columns and Balance & KPI stays in view while you scroll.
+- **Settings** (left): **General** folds into a one-line summary (weight, front weight, brake balance, pressures). **Springs** and **Anti-roll bars** are open first, then **Dampers**, **Spring length** and **Camber & toe**, in game order. Open **How this works** under a group for the mechanism behind it. Spring-length sliders show the bump-stop zone, and every slider steps and stops like the game's own slider.
+- **Character & balance** (right) has your **monitors** on top and two tabs:
+  - **Character ◐** (new in 0.20) shows how your setup changes the car across six traits measured on the game-physics bench for this car: mid-corner balance, entry rotation, exit wheelspin, body roll, inner-wheel load and travel to the bump stop. The bars follow your drag live, the mark shows where you started this Tune session, and the **entry / mid-corner / exit** chart draws the same per corner phase.
+  - **Balance & numbers** keeps the suspension values (damping ratios, roll gradient, roll stiffness, ride frequency), the **LLTD** bar and the front/rear **balance** meters for springs, slow bump and fast bump. Drag the LLTD bar or a meter line to move the front/rear split while keeping the total stiffness.
+
+![Balance & numbers](img/en/84-balance-numbers.webp)
+
+**Character base setup ◐** (under the character chart) solves a base chassis and diff for this car from its own physics model: a bump-stop floor, a diff preload cap of 3 % of drive torque, and springs and dampers scaled to the build's weight, so a heavy and a light build of the same car keep the same character. It keeps the settings you made yourself, and on a saved setup it leaves the values locked unless you press **Suggest for saved values too**. The proposal lists what changes in the car and every game value old → new; **Apply changes** takes it and **Undo** brings your values back.
+
+![Character base setup: proposed changes against the current setup](img/en/85-base-setup.webp)
+
 - **Save as preset** keeps this chassis as a preset you can pick again later (all your presets are in the Setups window's **Presets** tab, [4.1](#41-presets)). **Read from image** fills the values from a screenshot.
+- The LLTD target route setting is gone in 0.20: the table behind it disagreed with later physics tests, so the route time no longer depends on it.
 
 **What the model used.** Chassis and Gearing both show a line such as *Calculated with 305/30 R17 · BM13 1.3L R (DX8) · 920 kg · 50.0 %*: the tyres, engine, mass and front weight the calculation used. When you change tyres, the engine or its parts after that, the line turns yellow (**Parts changed since the calculation**) and the gears or chassis values are stale. **Recalculate** runs the calculation again with the current parts. In Gearing it replaces your own gear changes; in Chassis it replaces your own chassis changes, and **Undo** brings them back.
 
@@ -284,15 +317,16 @@ Adjust shows every setting with a slider. It has four tabs: **Parts**, **Chassis
 
 - The **sawtooth** shows each gear's rpm against speed, shifting at the limiter. The green band is the power band; a green dot is a shift that lands inside it, a grey dot one that falls below.
 - Pick the gears to work on: **1–3**, **3–4**, **4–5** and so on up to your top gear, or **All**, or tap two gears in the row under the charts to make your own range.
+- The slider under the chart (new in 0.20) does the same as dragging the sawtooth: with one gear picked it is **Gear N ratio** and moves that gear; with a range it is **Gear spacing**, from **Spread** on the left to **Close up** on the right, and the top gear of the range stays.
 - Drag the **circle at the top of a gear** left or right to make that gear shorter or longer. The arrow keys move it 0.01 at a time.
 - Drag the **◂ 1–3 ▸ pill** to move the whole range at once.
 - Drag one of the **end bars** at the bottom to change the spacing: that end moves and the other stays, and the gears in between keep the same proportions.
 - **Close up** and **Spread** tighten or open the range: its top gear stays and the lower gears move toward it or away from it. You see the change before you take it.
 - **Both**, **Rpm** and **Tractive force** choose the charts. Tractive force shows the pull of each gear against speed with the grip limit; **Accelerate** plays a full-throttle run through the gears.
 - The big numbers under the chart are the game's gear ratios, with the overall ratio and the rpm drop under each.
-- On the right, the **gearing profile**, **final drive** and **shift time**. **Effect** gives top speed, 0–100 km/h, how many shifts land in the power band and the rpm drop for each shift.
+- **Final drive** has its own wide slider under the chart. On the right, the **gearing profile** and a compact **shift time**. **Effect** gives top speed, 0–100 km/h, how many shifts land in the power band and the rpm drop for each shift.
 - The **diff** sits below: lock on acceleration, lock on deceleration and preload. Drag the arcs on the wheel diagram, or use the sliders.
-- **Use in route time** runs the new ratios on the route; **Reset** restores the original ratios.
+- Changes update the route time automatically (press **Save** in the top bar to keep them); **Reset** restores the original ratios.
 
 **Other**
 
@@ -300,7 +334,7 @@ Adjust shows every setting with a slider. It has four tabs: **Parts**, **Chassis
 
 Steering (caster, Ackermann, steering angle), brakes, spacers, tyre sizes and your game readings for weight. The car diagram shows track, wheelbase and how much room the tyre has inside the fender, so you can stay within the usual players' rule of no tyres poking out.
 
-Press **Done** when you are happy; it takes you to Overview.
+Press **Overview →** at the bottom when you are happy; **Done · save** is on Overview.
 
 ### 5.3 Overview
 
@@ -324,7 +358,7 @@ Overview is the list you follow with the game open next to Touge.
 |---|---|
 | **Settings only** | every setting on one screen, no charts |
 | **Simple** | the settings and the key meters |
-| **Advanced** | every chart and detail; in Chassis a chart column **B** joins between the settings and Balance & KPI |
+| **Advanced** | every chart and detail; in Chassis a chart column **B** joins between the settings and Character & balance |
 
 ![Advanced view: Chassis](img/en/16-view-advanced.webp)
 
@@ -340,7 +374,7 @@ In **Advanced**, the chart in column B follows the group you open: springs, spri
 |---|---|---|
 | Any setting slider | the knob, or the mouse wheel after a click | sets the value; **Shift** + wheel moves 10 steps |
 | Weight, front weight, final drive, shift time | the row's slider | the same as − and + |
-| Chassis · C Balance & KPI · **LLTD** | the bar | moves the anti-roll bar split front to rear with the total kept |
+| Chassis · Character & balance › Balance & numbers · **LLTD** | the bar | moves the anti-roll bar split front to rear with the total kept |
 | Chassis · **Balance chart** | a line | moves the front/rear split of springs or dampers with the axle sum kept |
 | Camber & toe chart (Advanced) | a wheel | front view tilts it for camber, top view turns it for toe |
 | Gearing · sawtooth | gear circle, range pill, end bars | see Gearing above |
@@ -351,18 +385,20 @@ In **Advanced**, the chart in column B follows the group you open: springs, spri
 
 Values go to the game list when you let go, and the model time updates without redrawing the page, so nothing jumps and keyboard focus stays where it was. To type an exact value instead, click the number next to a slider.
 
-**Density.** Settings › General › Density › **Compact** fits more sliders on the screen (a Chassis slider row is 44–48 px instead of 68 px).
+**Density.** Settings › General › Density › **Compact** fits more sliders on the screen (a slider row is 32 px instead of 40 px).
 
 ### 5.5 My view
 
 ![My view](img/en/70-my-view.webp)
 
-**My view** puts the sliders and numbers you use most on one page. It is the same for every car, so the sliders you set every time are always in the same place.
+**My view** puts the sliders, numbers and charts you use most on one page, your own cockpit for tuning. It is the same for every car, so the sliders you set every time are always in the same place.
 
-- **My sliders** on the left work like the sliders in Adjust. By default they are the springs, the anti-roll bars and the slow bump dampers.
-- **My monitors** on the right show the numbers you want to watch, for example the model reference time, the roll stiffness split, the roll gradient and the ride frequencies. The same monitors also show at the top of the Chassis result column in Adjust.
+- **My sliders** on the left work like the sliders in Adjust. By default they are the springs, the anti-roll bars, the slow bump dampers, the diff locks, the final drive and the wheel offsets. Add or remove any slider with its pin.
+- **My monitors** on top of the right column are a strip of numbers to watch, for example the model reference time, roll stiffness front share, roll gradient, ride frequency and top speed. The same strip shows at the top of Character & balance in Adjust.
+- **Widgets** below are the bigger pictures: **Car character ◐**, **Balance & numbers**, a low **Gearing · sawtooth** chart and a **Differential lock** card whose arcs you can drag.
+- **Auto-Focus Lens** follows the last slider you touched and shows the numbers that slider moves, so one view is enough while you tune: springs and bars show roll gradient, ride frequency and front roll-stiffness share; dampers a bump force line and damping ratios; spring length the bump-stop margin; diff sliders the lock split and preload against the 3 % limit; final drive the limiter in top gear and top speed; wheel offsets the room left inside the fender.
 - To add a slider, press the pin on its row in Adjust.
-- **Edit** opens the list of everything you can add, grouped like Adjust. Tick what you want, remove with **×**, and drag the ⠿ handle (or use the arrow keys on it) to change the order. **Reset to default** brings back the starting set, and **Done** closes the editor.
+- **Edit** opens the list of everything you can add, grouped as **Actions**, **Widgets** and **Monitors**. Tick what you want, remove with **×**, and drag the ⠿ handle (or use the arrow keys on it) to change the order. **Reset to default** brings back the starting set, and **Done** closes the editor.
 
 ![Editing My view](img/en/71-my-view-edit.webp)
 
@@ -370,11 +406,9 @@ Values go to the game list when you let go, and the model time updates without r
 
 ### 6.1 Drive
 
-![Drive](img/en/20-drive.webp)
-
 Drive fits on one screen in three columns: the clock and its splits on the left, the route map and your latest runs in the middle, and the readiness check on the right. The **session row** above them holds the route, **Race against** (your record with this car, the route record, your median or the model), the car and setup, and your record, median and number of runs. **Timer settings** sits at the right end of the row.
 
-**Ready to time?** Before you start, Drive checks what timing needs: the game timer, the screen reader, the window mode, the controller, free disk space and, when Game physics is on, the game file. Only the rows that need work are listed, each with a button that fixes it or takes you there; the rest fold into one line such as **4 checks passed**. If the game is not found the clock says so, and **Time by hand** starts the in-app stopwatch instead. The same rows are in Settings › Timing.
+**Ready to time?** Before you start, Drive checks what timing needs: the game timer, the screen reader, the window mode, the controller and free disk space. From 0.20 it no longer asks for the game's folder or files. Only the rows that need work are listed, each with a button that fixes it or takes you there; the rest fold into one line such as **4 checks passed**. If the game is not found the clock says so, and **Time by hand** starts the in-app stopwatch instead. The same rows are in Settings › Timing.
 
 ![Ready to time?](img/en/76-readiness.webp)
 
@@ -383,7 +417,11 @@ Drive fits on one screen in three columns: the clock and its splits on the left,
 3. Stop at the start and press **F9** (or your controller button). The timer starts when the car moves; auto splits mark the sections.
 4. **F10** splits by hand, **F11** finishes. **Space** runs the in-app stopwatch when the game timer is not running.
 
-**During a run** the big number is your gap to the run you race against, and between splits it follows the car (from the autosplit position, or from the game's odometer when there is no reference run yet). The **Split** button names the next split point, and on the last one it becomes **Finish**. Every split in the list has the route's name for it, with its distance, time and gap. On the map a filled dot is you and a dashed ring is the run you race against at the same moment. A shared ghost's gap shows under the clock.
+**During a run** the big number is your gap to the run you race against (current-run distance is scaled like saved runs, so live split gaps compare at the same place on the route), and between splits it follows the car (from the autosplit position, or from the game's odometer when there is no reference run yet). The **Split** button names the next split point, and on the last one it becomes **Finish**. Every split in the list has the route's name for it, with its distance, time and gap. On the map a filled dot is you and a dashed ring is the run you race against at the same moment. A shared ghost's gap shows under the clock.
+
+**On a second monitor.** Drive is made to sit on a second screen next to the game: the clock, the gap to the run you race against, the next split and your dot on the map, with the ghost's dashed ring beside it, all follow the car live. With one monitor, the small timer window (F8) shows the time and gap on top of the game instead.
+
+![Drive during a run: live gap, auto splits and the map](img/en/20-drive.webp)
 
 **Abort** stops the clock at once. For 10 seconds you can press **Undo** and the run carries on as if nothing happened; **Discard now** drops it. After that an aborted run with at least one split is kept as an aborted run: it shows in the history but never becomes a record. The controller's abort button works the same way.
 
@@ -419,12 +457,12 @@ The leaderboard is now a tab of the corner table on Analyse (see 6.3): record, m
 
 After a finished run, open **Analyse**. It compares the run against your own record and median, corner by corner. Whether runs are waiting for analysis, and the **Refresh** button, sit at the right end of the tabs.
 
-![Analyse](img/en/23-analyse.webp)
+![Analyse: the map, corner strip, where this run lost time and the Next card with one setup change](img/en/23-analyse.webp)
 
 - The **session row** at the top is the same as on Drive: route, the **Run** you look at, **Compare with**, the car filter, the gap and the time available. Change the route here without going back to Drive.
 - The **map** colours each corner green (faster) or red (slower) than the comparison, turned to fill its box. Under it, the **corner strip** shows the same as bars, and the **time gap** and **speed** charts follow on the same distance axis.
 - Hover a corner anywhere (strip, map, list or chart) and the same corner lights up in all of them.
-- The right column holds the verdict, **Next** (one thing to do: practise a corner with **Open corner**, or **Open Tune** when the same pattern repeats across your runs, with **What did the car do?** next to it), **Where this run lost time** and **Target**. When the big map scrolls out of view, a mini map stays at the top of the column.
+- The right column holds the verdict, **Next** (one thing to do: practise a corner with **Open corner**, or, when a car symptom repeats across your runs, **Try a setup change** with the same one change the symptom advisor gives and **Open Tune**, which opens that symptom), **Where this run lost time** and **Target**. When the big map scrolls out of view, a mini map stays at the top of the column.
 - When the run is the same as the one you compare with (your only run, for example), Analyse shows the run's own numbers and suggests comparing with the median or another run instead of a column of ±0.00.
 
 ![Speed on route](img/en/26-speed-on-route.webp)
@@ -451,7 +489,7 @@ Below it, the **latest run** card sums up the run in words, and **Next** names o
 
 ![Routes](img/en/27-routes.webp)
 
-Routes is one screen in three columns, and the map in the middle stays in place:
+Routes is one screen in three columns, and the map in the middle stays in place. From 0.20 the maps face north like the game's map, here and in the route editor:
 
 - **Left: the route list.** Search by name, area or code, or pick a filter: **Driven**, **Own**, **Sprint**, **Circuit** or **Drift**. **Your routes** (your own and every route you have driven) come first with their runs and record. **Game routes** are grouped by type; a group opens in place and shows 40 routes at a time. **Show reverse routes** adds the reverse directions of your own routes.
 - **Middle: the route.** Name, length, splits, corners, record and runs, with **Drive this route** and **Analyse**. **Edit**, **Share** and **Delete** are separate buttons (a game route has **Make own route** instead). The **Map** shows where the route lies on the whole map with numbered split points and pins for the start and the finish; **Show the whole map** and **Zoom to the route** switch between the two.
@@ -484,7 +522,7 @@ Your own routes are saved in the `Routes` folder.
 - **General**: language, text size, view level for Adjust, **Density** (Comfortable or Compact), animations, **Units** (km/h and kg, or mph and lb: Touge still calculates in metric and changes only the numbers shown; charts and help texts stay metric), **Background map** (Normal, Dim or Off), **Start page** (the last page you used, Build, Tune, My view or Time), **Header** and **Reset layout** (puts panel order, hidden and collapsed panels, Tune mode and folder back to default; My view and settings are kept).
 - **Data and backups**: where your data is, a button to open the folder, **Export all setups** and, if you came from Touge 0.12 or older, **Old run files**: the size of `Data\Legacy\Runs`, which nothing reads any more, and **Remove…** to delete it after you confirm. Your times, runs and analysis are kept elsewhere.
 - **Timing**: the same readiness rows as the Drive view, then the screen reader options.
-- **Game physics** (Experimental): appears when Touge finds the game's own physics file; it lets Touge test settings with the game's physics. Its results are uncalibrated (◐).
+- **Game physics** (Experimental, off by default): lets Touge test settings with the game's car physics. From 0.20 it runs on Touge's own Rust implementation of that physics, which gives the same results as the game's physics library on all 126 cars, so the game no longer has to be installed in a findable folder. Its results are uncalibrated (◐).
 - **Start and shut down**: shut down Touge and the game timer together.
 - **About**: version, update options (**Notify me about new versions**, and **Offer preview versions too** for versions released for testing a little before everyone else), **Report a problem**, **What's new in this version**, feedback links and licences.
 
@@ -532,7 +570,7 @@ Every file you save goes to the **`Shared`** folder next to Project Touge.exe. F
 3. The name field below holds the name the other driver sees. Changing it changes only the shared copy, not your own setup or preset.
 4. If you like, type **Your name (optional)**. It is shown to the person who opens the file. Leave it empty to share without a name.
 5. **Save as file** saves the file. Touge says where it saved it, for example `Shared\Touge AE86.tune.json`.
-6. **Or share as text** is the other way: the field holds a line of text that starts with `TOUGE2:`, and its length is shown next to the heading. **Copy code** copies it and confirms with "Copied" in place; paste it straight into a chat message. A tune is about 1 100 characters, so it fits in one Discord message. Routes are shared as a file only, because they hold images.
+6. **Or share as text** is the other way: the field holds a line of text that starts with `TOUGE2:`, and its length is shown next to the heading. **Copy code** copies it and confirms with "Copied" in place; paste it straight into a chat message. A tune is about 1 100–1 500 characters, so it fits in one Discord message. Routes are shared as a file only, because they hold images.
 
 Codes from older versions (`TOUGE1:`) still import, but 0.13.0 and older cannot read a `TOUGE2:` code: ask the receiver to update, or share the file instead.
 
@@ -630,7 +668,7 @@ Project Touge\
    │  └─ Ghosts\         ghosts you have added
    ├─ Logs\              attach these when you report a problem
    │  └─ Reader\         screen reader logs; minimap images only if turned on
-   ├─ Cache\             only with Game physics (Experimental)
+   ├─ Cache\             temporary files (normally empty)
    └─ Legacy\            files from older versions that Touge no longer reads
                          (Settings › Data and backups › Old run files removes Legacy\Runs)
 ```
@@ -638,7 +676,7 @@ Project Touge\
 - **Nothing outside the folder.** Touge writes only here. The one exception is Windows' WebView2, which keeps the window's browser cache in `%LOCALAPPDATA%\fi.projecttouge.app`. It holds no tunes or runs.
 - **Updating keeps everything.** The first start of 0.13 moves your tunes, runs, routes and settings into `Data` and lists every move in `Data\Logs\migration.txt`. Nothing is deleted, files Touge no longer reads go to `Data\Legacy`, and an older version cannot read the new folder.
 - **Earlier versions are only read.** On first start Touge looks for an earlier Project Touge next to it and on your Desktop, Downloads and Documents and copies your data from it. The old folder stays as it was.
-- **The game is not touched.** Touge never writes to the game or its folder. Game physics only copies the game's physics file into `Data\Cache\`.
+- **The game is not touched.** Touge never writes to the game or its folder, and from 0.20 Game physics needs no file from the game at all.
 
 **Update**: press **Update now**, or replace `Project Touge.exe` and keep `Data` and `Shared` (see [Updating from 0.9.x](#1-before-you-start)). **Move or back up**: copy the whole folder. **Uninstall**: delete the folder, and the cache folder above if you want it gone too.
 

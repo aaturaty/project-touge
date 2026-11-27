@@ -85,6 +85,13 @@ def main(out):
     shutil.copytree(GUIDE, os.path.join(out, 'guide'), ignore=shutil.ignore_patterns('*.py', 'template.html', '*.md'))
     shutil.copytree(SHARING, os.path.join(out, 'sharing'))
     shutil.copytree(os.path.join(GUIDE, 'assets'), os.path.join(out, 'assets'))
+    back = ('<a href="../index.html" style="position:fixed;left:12px;bottom:12px;z-index:50;padding:6px 12px;'
+            'background:#03120e;border:1px solid #3d4a43;color:#c9d2b8;font:400 13px \'IBM Plex Mono\',monospace;'
+            'text-decoration:none">← All guides</a>')
+    for sub in ('guide', 'sharing'):          # the guide and sharing pages are standalone; give them a way back to the landing
+        f = os.path.join(out, sub, 'index.html')
+        t = open(f, encoding='utf-8').read()
+        open(f, 'w', encoding='utf-8').write(t.replace('<body>', '<body>\n' + back, 1) if '<body>' in t else re.sub(r'(<body[^>]*>)', lambda m: m.group(1) + back, t, count=1))
     render_bible(out)
     shutil.copy2(os.path.join(BIBLE, 'banner.png'), os.path.join(out, 'assets', 'bible-banner.png'))
     landing = open(os.path.join(HERE, 'index.html'), encoding='utf-8').read()

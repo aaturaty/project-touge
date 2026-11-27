@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.20.1 beta (unreleased)
+## 0.20.1 beta (2026-11-27)
 
 **0.16 → 0.20.1 in short.** 0.18 and 0.20.0 were never published on their own, so 0.20.1 carries them all:
 

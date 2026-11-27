@@ -37,6 +37,7 @@ Gearing decides which rpm the engine is at in each corner and on each straight. 
 
 1. **Gearbox first.** In the simulation model the T50S won with every build, and the gap came mostly from mass (35 vs 50 kg) and shift delay ◐. In the native simulation gearbox mass cost 0.04–0.07 s per kg on a North lap, so 15 kg is about 0.6–1.0 s ◐. The best 8-speed (Lexus RC F) was about 1 s behind the T50S in the model ◐. In the native simulation (17 Nov, 8 repetitions, S15 and AE86) the 8-speeds were 1.1–2.9 s and the T70 0.8–2.2 s slower than the T50S, with all ratios searched to the route's top speed ◐. So the 8-speed advantage does not show in C3 on North v2.
 2. **Top gear to the route's top speed.** Every gear in use, and top gear runs out just above the route's top speed ●.
+   From 0.20.1 Touge's generated gearing ends top gear in a route-specific limiter band: 255–260 km/h on North Touge, Full Touge Run, Lighthouse Run and Touge Loop, 236–240 km/h on Fujiwara Run, and no band on Sunset Speedway ◐.
 3. **Gear steps.** Sets proven good in the game are progressive: the lowest steps may stretch to 1.55, steps 3→4 and 4→5 at most about 1.30, and the last at most 1.35 ◐. An even 1.34 on every step made the upper gear steps too long ●.
 4. **FD last**, to suit the engine curve. A wide power band tolerates a wider gearbox: on the Mini the 5-speed T50 was as good as the T50S in the model ◐.
 
@@ -66,7 +67,7 @@ Pick a light gearbox (T50S), size the top gear to the route's top speed and corr
 
 - The 8-speeds' shift time in the native simulation is scaled from the game's delay (0.16 s × delay / 0.25), so the result is not confirmed in the game ◐.
 - The wide spread the model favoured (short first, long sixth) did not show up in the game, so it is not recommended ◐.
-- Sources: analyysi/valityslaskin, analyysi/north_c3 (130 gearboxes), analyysi/optimointi_1111/tulokset/haku_1611.
+- Sources: Touge's gearing calculator and a search over 130 gearboxes on North Touge in C3.
 
 ---
 

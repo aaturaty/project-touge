@@ -37,6 +37,7 @@ Välitykset päättävät, millä kierroksilla moottori on kussakin mutkassa ja 
 
 1. **Laatikko ensin.** Simulaatiomallissa T50S voitti kaikilla buildeilla, ja ero tuli lähinnä massasta (35 vs 50 kg) ja vaihtoviiveestä ◐. Natiivissa laatikon massa maksoi 0,04–0,07 s / kg North-kierroksella, joten 15 kg on noin 0,6–1,0 s ◐. Paras 8-vaihteinen (Lexus RC F) oli mallissa noin 1 s T50S:n takana ◐. Natiivissa (17.11., 8 toistoa, S15 ja AE86) 8-vaihteiset olivat 1,1–2,9 s ja T70 0,8–2,2 s T50S:ää hitaampia; kaikilla välitykset haettu reitin huippuun ◐. 8-vaihteisen etu ei siis näy C3:ssa North v2:lla.
 2. **Ylin vaihde reitin huippuun.** Kaikki vaihteet käyttöön ja ylin vaihde loppuu juuri reitin huippunopeuden yli ●.
+   Versiosta 0.20.1 alkaen Tougen tuottamat välitykset päättävät ylimmän vaihteen reittikohtaiseen rajoitinkaistaan: North Touge, Full Touge Run, Lighthouse Run ja Touge Loop 255–260 km/h, Fujiwara Run 236–240 km/h, Sunset Speedwaylla ei kaistaa ◐.
 3. **Porrastus.** Pelissä hyviksi todetut sarjat ovat progressiivisia: alimmat välit saavat venyä 1,55:een, portaat 3→4 ja 4→5 enintään noin 1,30 ja viimeinen enintään 1,35 ◐. Tasainen 1,34 joka välissä teki ylävaihteista liian pitkät portaat ●.
 4. **FD viimeisenä** moottorin käyrän mukaan. Leveä tehoalue sietää harvemman laatikon: Minillä 5-vaihteinen T50 oli mallissa yhtä hyvä kuin T50S ◐.
 
@@ -66,7 +67,7 @@ Valitse kevyt laatikko (T50S), mitoita ylin vaihde reitin huippuun ja korjaa FD 
 
 - 8-vaihteisten vaihtoaika natiivissa on skaalattu pelin viiveestä (0,16 s × viive / 0,25), joten tulos ei ole pelissä varmistettu ◐.
 - Mallin suosima laaja porrastus (lyhyt ykkönen, pitkä kuutonen) ei näkynyt pelissä, joten sitä ei suositella ◐.
-- Lähteet: analyysi/valityslaskin, analyysi/north_c3 (130 laatikkoa), analyysi/optimointi_1111/tulokset/haku_1611.
+- Lähteet: Tougen välityslaskin ja haku 130 vaihdelaatikolla North Tougella C3:ssa.
 
 ---
 

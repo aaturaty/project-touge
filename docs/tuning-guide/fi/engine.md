@@ -14,8 +14,8 @@ Luokka lasketaan huipputehosta, joten luokan rajalla nopein moottori on se, joka
 2. Osat ja liukurit summautuvat, eivät kerro: statti = perusarvo × (1 + Σ (osan kerroin − 1) × f + Σ askeleet × (askeleen kerroin − 1) × f) ●. Sama pätee massaan ●.
 3. f on moottorin **osakerroin** (part_stat_factors). Se on jokaisella moottorilla oma ja paikkakohtainen, eikä peli näytä sitä missään ●. Taulukko on tämän luvun lopussa.
 4. Teho voi laskea vakiosta vain Prototype-osien liukureilla. Muiden osien liukurit menevät vain plussalle ●.
-5. Luokka lasketaan huipputehosta vakiopolttoaineella (hv / tonni, C3 = 200–250). Huipputeho luetaan käyräpisteistä rajoittimeen asti ●.
-6. Kilpapolttoaine venyttää käyrää kierrosakselilla (vääntö ×1,10 ja rajoitin ×1,05). Se ei muuta luokkaa, mutta tuo lisää tehoa korkeille kierroksille ●.
+5. Luokka lasketaan huipputehosta vakiopolttoaineella (PS / tonni, C3 = 200–250). Huipputeho luetaan käyräpisteistä rajoittimeen asti ●.
+6. Kilpapolttoaine venyttää käyrää kierrosakselilla: vääntökäyrä siirtyy 1,10-kertaisille kierroksille ja kasvaa 1,10-kertaiseksi, ja rajoitin nousee 5 % ●. Se ei muuta luokkaa eikä moottorin hitausmomenttia, mutta tuo lisää tehoa korkeille kierroksille ◐. Pelin valikkoarvot ja Tougen moottoriluvut 0.20:sta alkaen ovat ilman kilpapolttoainetta; Touge näyttää kilpapolttoaineen vaikutuksen erikseen ●.
 7. Turbon ahto on täysi noin 3150–5400 rpm ja hiipuu sen yläpuolella ●. Tehdasturbon ahtoa voi laskea vain Prototype-ECU:lla ●.
 
 **Prototype-osien liukurit ● (askeleet: miinus / plus):**
@@ -34,7 +34,7 @@ Luokka lasketaan huipputehosta, joten luokan rajalla nopein moottori on se, joka
 | Muutos | Odota | Liikaa | Kokemus |
 | --- | --- | --- | --- |
 | Low ylös, High alas | Käyrä tasoittuu: sama huipputeho, mutta enemmän tehoa mutkista ulos. | Huippu siirtyy alas ja yläpää loppuu ennen vaihtoa. | ◐ Kaikkien parhaiden C3-buildien liukurit olivat tätä muotoa, esim. Mini S15:ssä Low +5,6, Mid −8,4, High −16. |
-| Rajoitin | Vaihe pitenee ja vaihtoja tulee vähemmän. | Jos käyrä on jo taittunut, rajoittimen lisäkierroksilla ei ole tehoa. | ◐ Haku nosti rajoitinta useimmilla koneilla (Mini +3,6, ND +3,4, Lotus ja 4A-GE +6), mutta Datsunilla ja S02:lla laski. |
+| Rajoitin | Vaihde pitenee ja vaihtoja tulee vähemmän. | Jos käyrä on jo taittunut, rajoittimen lisäkierroksilla ei ole tehoa. | ◐ Haku nosti rajoitinta useimmilla koneilla (Mini +3,6, ND +3,4, Lotus ja 4A-GE +6), mutta Datsunilla ja S02:lla laski. |
 | Ahto alas | Keskikierrosten huippu laskee, ja luokkaan mahtuu kevyempänä. | Alapää tyhjenee. | ◐ RDA ja Mini käyttivät 0,35–0,63 bar. |
 | Peak RPM | Taittuma siirtyy ylös, ja yläpää kantaa pidempään. | Huipputeho nousee ja luokka ylittyy. | ◐ Parhaissa buildeissa usein alas (−6), jotta huipputeho pysyy rajalla. |
 
@@ -56,7 +56,7 @@ Luokka lasketaan huipputehosta, joten luokan rajalla nopein moottori on se, joka
 
 ## Moottorit luokan rajalla (◐, alustava)
 
-Haku 17.11. Tougen reittimallilla North v2:lla C3:ssa (S15 ja AE86). Jokaisella moottorilla haettiin osat, liukurit, kevennys ja säiliö 12 lähtöpisteestä, ja tulosta verrattiin Tougen omaan sovitukseen. Simulaatiomallin tulos, ei vielä natiivissa tai pelissä ajettu.
+Haku 17.11. Tougen reittimallilla North v2:lla C3:ssa (S15 ja AE86). Jokaisella moottorilla haettiin osat, liukurit, kevennys ja säiliö 12 lähtöpisteestä, ja tulosta verrattiin Tougen omaan sovitukseen. Simulaatiomallin tulos; natiivi- ja pelitarkistus ovat taulukon alla.
 
 | Moottori | Vakiona autossa | S15 ero kärkeen | AE86 ero kärkeen | Ero Tougen omaan sovitukseen | Natiivi S15 / AE86 vs nykyinen |
 | --- | --- | --- | --- | --- | --- |
@@ -70,11 +70,11 @@ Haku 17.11. Tougen reittimallilla North v2:lla C3:ssa (S15 ja AE86). Jokaisella 
 | S02 | 20R | +2,9 | +2,8 | −4…−6 s | – |
 | BM13 | DX8 | +2,4 | +4,1 | −0,2…−0,4 s | – |
 
-**Natiivi 17.11. (8 toistoa, ◐):** malli ja natiivi eivät ole samaa mieltä. S15:ssä nykyinen ND-säätö oli nopein, ja Mini oli 1,7 s hitaampi. AE86:ssa ND-moottori mallin säädöillä oli 0,9 ± 0,1 s nykyistä 4A-GE-säätöä nopeampi, ja Mini oli kohinan sisällä. Mallin kärkijärjestystä ei siis voi vielä käyttää; varmin löydös on ND-moottori (PV2) kevyessä takavetoisessa. Uusinta AE86:n nykyisellä setupilla (välitykset 2,91/2,04/1,51/1,15/0,97/0,86, jarrulukko 0,28) antoi FD 4,50:llä ±0, FD 4,35:llä −1,0 ± 0,1 s ja muilla FD:illä −0,3…−0,4 s, joten etu riippuu välityksistä eikä ole vielä varma. **Pelikoe 17.11. (●, AE86, North v2):** GE4 ajot 43–44 371,36 / 371,20 s. PV2 pelaajan omalla säädöllä (rajoitin 8687 ja Peak RPM 9742 täysillä, High 218, Medium 281, Low 332): FD 4,52 ajot 45–46 372,97 / 370,97 s, **FD 4,35 ajot 47–48 369,03 / 369,22 s (−2,1 s GE4:ään, toistui)**. Natiivi ennusti FD 4,35:lle −1,0 ± 0,1 s, eli suunta osui. Mallin Part Setup -arvoja ei ajettu pelissä. Pelaaja vaihtaa ylös noin 8800–9000 rpm:ssä ja ajaa 15–25 % kierroksesta yli 8500 rpm:n, joten rajoittimen laskeminen on todennäköisesti haitallista, vaikka mallit eivät sitä näe ◐. Toistaiseksi luotettavin linja: rajoitin ja Peak RPM ylös, Low ylös, Mid ja High alas, kunnes luokka täyttyy. Mallin mukaan korkean osakertoimen moottorit (Mini 0,84 + turbo 1,6, ND ja Datsun 0,89) hyötyvät liukureista eniten. Tougen nykyinen sovitus jättää niistä 3–10 s.
+**Natiivi 17.11. (8 toistoa, ◐):** malli ja natiivi eivät ole samaa mieltä. S15:ssä nykyinen ND-säätö oli nopein, ja Mini oli 1,7 s hitaampi. AE86:ssa ND-moottori mallin säädöillä oli 0,9 ± 0,1 s nykyistä 4A-GE-säätöä nopeampi, ja Mini oli kohinan sisällä. Mallin kärkijärjestystä ei siis voi vielä käyttää; varmin löydös on ND-moottori (PV2) kevyessä takavetoisessa. Uusinta AE86:n nykyisellä setupilla (välitykset 2,91/2,04/1,51/1,15/0,97/0,86, jarrulukko 0,28) antoi FD 4,50:llä ±0, FD 4,35:llä −1,0 ± 0,1 s ja muilla FD:illä −0,3…−0,4 s, joten etu riippuu välityksistä eikä ole vielä varma. **Pelikoe 17.11. (●, AE86, North v2):** GE4 ajot 43–44 371,36 / 371,20 s. PV2 pelaajan omalla säädöllä (rajoitin 8687 ja Peak RPM 9742 täysillä, High 218, Medium 281, Low 332): FD 4,52 ajot 45–46 372,97 / 370,97 s, **FD 4,35 ajot 47–48 369,03 / 369,22 s (−2,1 s GE4:ään, toistui)**. Natiivi ennusti FD 4,35:lle −1,0 ± 0,1 s, eli suunta osui. Mallin Part Setup -arvoja ei ajettu pelissä. Pelaaja vaihtaa ylös noin 8800–9000 rpm:ssä ja ajaa 15–25 % kierroksesta yli 8500 rpm:n, joten rajoittimen laskeminen on todennäköisesti haitallista, vaikka mallit eivät sitä näe ◐. Toistaiseksi luotettavin linja: rajoitin ja Peak RPM ylös, Low ylös, Mid ja High alas, kunnes luokka täyttyy. Mallin mukaan korkean osakertoimen moottorit (Mini 0,84 + turbo 1,6, ND ja Datsun 0,89) hyötyvät liukureista eniten. Tougen silloinen sovitus (17.11.) jätti niistä 3–10 s; moottorivalintaa muutettiin 18.11. (alla).
 
 ## Miksi sama luokka, eri aika (Supra-testi 17.11., ◐)
 
-Luokka mittaa huipputehoa painoon nähden (hv/t), mutta Northilla aika ratkeaa mutkista ulos kiihdytettäessä. Testissä 30 suosittua moottoria (kaksi erää) Supra A90:ssä (paino riittää kaikille), jokainen säädetty mallissa luokan rajalle omilla välityksillään ja ajettu natiivissa (8 toistoa, North v2) sekä suoralla kiihdytyskokeella tasaisella tiellä.
+Luokka mittaa huipputehoa painoon nähden (PS/t), mutta Northilla aika ratkeaa mutkista ulos kiihdytettäessä. Testissä 30 suosittua moottoria (kaksi erää) Supra A90:ssä (paino riittää kaikille), jokainen säädetty mallissa luokan rajalle omilla välityksillään ja ajettu natiivissa (8 toistoa, North v2) sekä suoralla kiihdytyskokeella tasaisella tiellä.
 
 | Moottori | Vakiona autossa | North ero (s) | 60–150 km/h (s) | 100–200 km/h (s) | Huippunopeus (km/h) | Massa (kg) | Turbo |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -123,7 +123,7 @@ Touge käyttää tätä moottorivalinnassa 0.12.0:sta alkaen ◐. Malli vaihtaa 
 
 Kaksi tarkennusta 18.11. ◐. **Kierrosrajaa ei lasketa valinnassa:** 50–120-sovitus laski turbomoottoreilla rajoittimen liukuria (Forester 7432 → 6630 rpm) ja osti sillä vähän vääntöä, mutta natiivissa matala raja hävisi nopeissa osioissa: Forester AE86 −1,8 s ja S15 −0,4 s, kun rajaa ei lasketa, ja Suprassa korkean rajan build oli 4,0 s nopeampi. **Viimeistely:** kolme parasta ehdokasta hiotaan lopuksi reittiajalla käyttäjän kevennys- ja säiliöasetuksilla, ja build lukitaan. Natiivissa viimeistelty Forester oli S15:ssä 3,9 s ja Suprassa 4,0 s nopeampi kuin viimeistelemätön. Suprassa Tougen suositus (ND tai Forester) oli natiivissa 2,6–2,8 s nykyistä säätöä (GT-R-moottori) nopeampi. AE86:ssa ja S15:ssä nykyinen ND-moottori pysyi nopeimpana: mallin ehdotukset jäivät siitä natiivissa 0,7–2,8 s. Malli siis löytää hyvät moottorit, mutta alle 1 s:n erot sen ennusteissa eivät ole luotettavia. Kokeile suositusta pelissä ennen kuin vaihdat toimivan moottorin.
 
-Data: analyysi/moottorihaku_1711/supra/ ja supra2/ (natiivi/v.json, testi2/tulos.json, testi2/ulostulo.json). Pelissä varmistamatta.
+Pelissä varmistamatta.
 
 ## Osakertoimet moottoreittain ●
 
@@ -273,7 +273,7 @@ Kaikki 137 moottoria pelidatasta (part_stat_factors), suurimmasta pienimpään. 
 
 - Moottorivertailu on Tougen reittimallista (◐). Natiivi (17.11., 8 toistoa) ei vahvistanut mallin järjestystä; ND-moottori AE86:ssa (−0,9 s) kannattaa pelikokeeseen.
 - Selittääkö osakerroin pelaajien kokemuksen Minin ja S02:n "piilostatistiikasta", on päätelmä (◐). S02:n kerroin 0,80 on keskitason yläpuolella, mutta mallissa se jäi kärjestä 2,8 s raskaan massansa (199 kg) vuoksi.
-- Lähteet: analyysi/moottorihaku_1711, analyysi/moottorikomponentit, analyysi/c3_build_periaatteet.md, tyokalu/data/moottorit.json.
+- Lähteet: Tougen moottorihaut ja pelin moottorikomponenttien data.
 
 ---
 

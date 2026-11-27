@@ -8,7 +8,7 @@
 
 Camber and toe are small levers in this game. In the simulation model camber changes lateral grip by at most about 3.5 % and costs braking and traction grip 0.5 % per degree ●. In our experience camber −2 vs −5 was within noise on several cars ◐, but a front camber close to zero has cost more than a second ◐. Toe is a slightly bigger lever: rear toe-in calms the rear and rear toe-out costs grip, but on a full lap the difference stays under a second ◐. Refine bars, springs and the diff first, and use camber and toe to finish.
 
-The game has two differences from a real car. The camber you set is not the tyre's actual camber, because the game adds −3…+5° to it depending on spring extension ●. And the game's physics code has a rigid-axle suspension type on which the camber setting does nothing ●. Which of the game's suspension types (Mcferson or Doublewishbone) maps to the rigid axle is not yet known.
+The game has two differences from a real car. The camber you set is not the tyre's actual camber, because the game adds −3…+5° to it depending on spring extension ●. And the game's physics code has a rigid-axle suspension type (Dependent) on which the camber setting does nothing ●, but no car in the game uses it: every axle is Mcferson or Doublewishbone, and camber acts on both ●.
 
 Markers: ● confirmed in game or in the game code, ◐ from Touge's simulation model or inferred, not tested in the game, ○ real-car theory.
 
@@ -20,7 +20,7 @@ Markers: ● confirmed in game or in the game code, ◐ from Touge's simulation 
 2. Camber changes with travel by 8° / stroke, so with a 100 mm stroke it goes 0.8° more negative for every centimetre of compression ●. In a corner the outer wheel compresses and goes more negative, but the body rolls outwards and takes it more positive. On one test car these almost cancelled: at the limit the outer wheel was at about setting + 3.4° to the ground ◐.
 3. In the tyre, camber does not raise the lateral peak. It stiffens the grip build-up: −5° gives 14 % more cornering stiffness, which feels like a sharper initial response ●. Lateral force also gets a small offset (−3° → +0.15°) with no practical effect ●.
 4. Longitudinal grip (braking and traction) is multiplied by 1 − 0.005 · |camber|, so it drops 0.5 % per degree ●. At the front a large camber lengthens braking, at the rear it weakens traction.
-5. The physics code's suspension type 1 is a rigid axle: the wheels follow the axle's roll, and the camber setting and camber curve are zeroed ●. The game passes the car data's type to the game's physics code as such, but whether Doublewishbone is type 1 is not known ◐. If it is, camber does nothing on cars with Doublewishbone at that end.
+5. The game's suspension types are Mcferson = 0, Dependent = 1 and Doublewishbone = 2, and the game passes the car data's type to the physics code as such ●. Type 1 is a rigid axle on which camber is zeroed, but no car uses it ●. Touge's earlier simulations ran Doublewishbone axles as type 1 by mistake; from 0.20 they run as type 2 and camber counts in the model ◐.
 6. The adjustment range comes from the control arm parts. The base part gives −4.5° camber, and an adjustable part gives ±3.5°. With Prototype arms the limit is about −21.5° front and −22.5° rear ●.
 
 **When you add negative camber:**
@@ -60,7 +60,7 @@ Camber depends on the suspension, so set it after springs and bars. Toe is nearl
 | Ackermann | Front toe is added on top of the Ackermann angle ●, so change them one at a time. |
 | Differential and brakes | Camber costs 0.5 % longitudinal grip per degree ●. Rear camber weakens exit traction in the same direction as a too-high throttle lock, and front camber lengthens braking. Rear toe-in calms trail braking in the same direction as a more front-biased brake balance ◐. |
 | Tyres | The camber coefficient is the same on all tyres ●. In the game formula, width does not change the camber effect ◐. |
-| Suspension type | A rigid axle (type 1 in the physics code) zeroes camber ●. Check your car's suspension type before refining camber (see Not yet confirmed). |
+| Suspension type | Camber acts on both Mcferson and Doublewishbone axles ●. Results from before 0.20 that showed no camber effect on Doublewishbone cars came from a simulation error, not from the game. |
 
 ## Symptoms
 
@@ -81,13 +81,10 @@ Change camber by 0.5° and toe by 0.1° at a time, and drive the same corner in 
 
 Camber −3.5 / −3.5 has been in every setup that worked well in our in-game tests ●. On screen it looks like a lot, but at rest it is about 2–3° more positive than the number. Keep front toe at zero and rear toe at 0…+0.1, and change them only by symptom.
 
-If you do not know whether camber affects your car, do a quick test: front camber −3.5 → −8 and drive the same corner. If the feel does not change at all, the front axle is probably the physics code's rigid axle.
-
-**Simulation experience ◐ (Touge's simulation model, not tested in the game):** front camber −4.6 → 0 was 1.4 s slower, mostly in medium-speed corners, and with a stiff front bar even more (2.3 s together). −6.5 brought nothing over −4.6. So front camber is more than a finishing touch when it starts near zero. Rear camber and front toe did not show in lap time. Rear toe-in +0.3 was 0.7 s slower.
+**Simulation experience ◐ (Touge's simulation model, not tested in the game; runs from before 0.20, when Doublewishbone axles were simulated as rigid, so they hold for Mcferson axles):** front camber −4.6 → 0 was 1.4 s slower, mostly in medium-speed corners, and with a stiff front bar even more (2.3 s together). −6.5 brought nothing over −4.6. So front camber is more than a finishing touch when it starts near zero. Rear camber and front toe did not show in lap time. Rear toe-in +0.3 was 0.7 s slower.
 
 ## Not yet confirmed
 
-- The suspension type is the main open question: is Doublewishbone the physics code's type 1, the rigid axle? The game metadata is encrypted, so a game test decides it (front camber −3.5 vs −8).
 - The rest camber examples assume the stroke equals the spring length. That is inferred from the bottoming formula, not read from the game's physics code.
 - The grip results are from the simulation. There is no separate game test of camber or toe alone; the game tests changed another setting at the same time.
 - Toe drag on the straight is inferred, not measured.

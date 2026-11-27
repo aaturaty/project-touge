@@ -38,7 +38,7 @@ Muutama pelin fysiikan piirre muuttaa tavallisia säätöneuvoja. Ne toistuvat l
 ## Näin käytät sitä Tougen kanssa
 
 1. **Rakenna** auto Tougen Rakenna-välilehdellä tai syötä se kuvakaappauksistasi.
-2. **Aloita** Tougen Base setupista (Tune → Chassis), ja aja pelissä muutama kierros.
+2. **Aloita** Tougen perusalustasta (Säädä → Alusta), ja aja pelissä muutama kierros.
 3. **Etsi vaihe**, jossa auto ei tee mitä haluat: jarrutus, sisääntulo, keskikohta, ulostulo, suora tai kuopat ja gutterit.
 4. **Valitse oire** Säädä-välilehden Oire-näkymässä. Se näyttää ensin ja sitten kokeiltavan muutoksen ja linkittää tämän oppaan lukuun, joka selittää sen.
 5. **Muuta yhtä asiaa kerrallaan** ja aja sama mutka samalla vaihteella. Aseta säätö pelissä Yleiskuva-näkymän listan mukaan.

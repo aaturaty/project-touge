@@ -94,11 +94,11 @@ Painojakauman tulos näyttää, että vakaajajako ja painojakauma tekevät samaa
 
 ## Dimensioista lähtöarvoihin
 
-Näin siirrät toimivan setupin uuteen autoon sen dimensioiden avulla. Näin siirretyt setupit ovat toimineet pelissä ●, ja Tougen Base setup tekee saman auton omasta fysiikasta ◐.
+Näin siirrät toimivan setupin uuteen autoon sen dimensioiden avulla. Näin siirretyt setupit ovat toimineet pelissä ●, ja Tougen perusalusta tekee saman auton omasta fysiikasta ◐.
 
 1. **Kirjaa auton tiedot:** akseliväli, etu- ja takaraide, massa, etupaino ja Center of Mass Height (Part Setup).
 2. **Jouset massasta:** pidä sama ominaistaajuus kuin toimivassa autossa. Noin 30 % raskaampi pyörä tarvitsee noin 30 % jäykemmän jousen ◐ laskettu.
-3. **Jousen pituus auton oletuksesta:** etu ×1,07 ja taka ×0,90, kuten pelissä toimineissa setupeissa ●.
+3. **Jousen pituus:** aloita Tougen perusalustasta, joka jättää rajoittimeen vähintään 19 mm joustovaraa ◐. Etu ×1,07 ja taka ×0,90 auton oletuksesta toimi pelissä ennen 0.20:aa ●.
 4. **Vakaajajako akselivälistä:** käytä Akseliväli-osion taulukkoa. Kokonaisjäykkyys tulee halutusta kallistuksesta, ja korkea painopiste tarvitsee enemmän ◐.
 5. **Raide lokasuojan sisällä:** offset niin leveäksi kuin lokasuoja sallii. Takavetoisessa takaraiteen levennys auttaa enemmän kuin etu ◐.
 6. **Vaimentimet vaimennussuhteella:** sama ζ kuin toimivassa autossa, jolloin luvut kasvavat √(k · m):n mukana ◐.

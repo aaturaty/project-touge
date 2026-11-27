@@ -98,7 +98,7 @@ This is how to move a working setup to a new car using its dimensions. Setups mo
 
 1. **Note the car's data:** wheelbase, front and rear track, mass, front weight and Center of Mass Height (Part Setup).
 2. **Springs from mass:** keep the same natural frequency as on the working car. A wheel about 30 % heavier needs a spring about 30 % stiffer ◐ calculated.
-3. **Spring length from the car's default:** front ×1.07 and rear ×0.90, as in the setups that worked in game ●.
+3. **Spring length:** start from Touge's Base setup, which keeps at least 19 mm of travel to the bump stop ◐. Front ×1.07 and rear ×0.90 of the car's default worked in game before 0.20 ●.
 4. **Bar split from wheelbase:** use the table in the Wheelbase section. The total stiffness comes from the roll you want, and a high centre of gravity needs more ◐.
 5. **Track inside the fender:** offset as wide as the fender allows. On a rear-drive car widening the rear track helps more than the front ◐.
 6. **Dampers by damping ratio:** the same ζ as on the working car, so the numbers grow with √(k · m) ◐.

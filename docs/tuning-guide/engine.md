@@ -14,8 +14,8 @@ Class is calculated from peak power, so at the class limit the fastest engine is
 2. Parts and sliders add up, they do not multiply: stat = base × (1 + Σ (part multiplier − 1) × f + Σ steps × (step multiplier − 1) × f) ●. Mass works the same way ●.
 3. f is the engine's **part factor** (part_stat_factors). Each engine has its own, per part slot, and the game shows it nowhere ●. The table is at the end of this chapter.
 4. Power can drop below stock only with the Prototype part sliders. Sliders on other parts only go positive ●.
-5. Class is calculated from peak power on standard fuel (hp per tonne, C3 = 200–250). Peak power is read from the curve points up to the rev limiter ●.
-6. Racing fuel stretches the curve along the rpm axis (torque ×1.10, limiter ×1.05). It does not change the class but adds power at high rpm ●.
+5. Class is calculated from peak power on standard fuel (PS per tonne, C3 = 200–250). Peak power is read from the curve points up to the rev limiter ●.
+6. Racing fuel stretches the curve along the rpm axis: the torque curve moves to 1.10 × the rpm and grows 1.10 ×, and the limiter rises 5 % ●. It does not change the class or the engine's inertia, but adds power at high rpm ◐. The game's menu values, and Touge's engine figures from 0.20, are without racing fuel; Touge shows the racing-fuel effect separately ●.
 7. Turbo boost is full at roughly 3150–5400 rpm and fades above that ●. Factory turbo boost can only be lowered with the Prototype ECU ●.
 
 **Prototype part sliders ● (steps: minus / plus):**
@@ -56,7 +56,7 @@ Class is calculated from peak power, so at the class limit the fastest engine is
 
 ## Engines at the class limit (◐, preliminary)
 
-Search on 17 Nov with the Touge route model on North v2 in C3 (S15 and AE86). For each engine, parts, sliders, lightening and tank were searched from 12 starting points and the result was compared with Touge's own fit. These are simulation model results, not yet run in the native simulation or in the game.
+Search on 17 Nov with the Touge route model on North v2 in C3 (S15 and AE86). For each engine, parts, sliders, lightening and tank were searched from 12 starting points and the result was compared with Touge's own fit. These are simulation model results; the native and in-game checks are below the table.
 
 | Engine | Stock in | S15 gap to best | AE86 gap to best | Gain over Touge's own fit | Native S15 / AE86 vs current |
 | --- | --- | --- | --- | --- | --- |
@@ -70,11 +70,11 @@ Search on 17 Nov with the Touge route model on North v2 in C3 (S15 and AE86). Fo
 | S02 | 20R | +2.9 | +2.8 | −4…−6 s | – |
 | BM13 | DX8 | +2.4 | +4.1 | −0.2…−0.4 s | – |
 
-**Native 17 Nov (8 repetitions, ◐):** the model and the native simulation disagree. In the S15 the current ND tune was fastest and the Mini was 1.7 s slower. In the AE86 the ND engine with the model's tune was 0.9 ± 0.1 s faster than the current 4A-GE tune, and the Mini was within the noise. So the model's ranking cannot be used yet; the most robust finding is the ND engine (PV2) in a light RWD car. A rerun with the AE86's current setup (ratios 2.91/2.04/1.51/1.15/0.97/0.86, decel lock 0.28) gave ±0 at FD 4.50, −1.0 ± 0.1 s at FD 4.35 and −0.3…−0.4 s at other FDs, so the gain depends on gearing and is not yet certain. **In-game test 17 Nov (●, AE86, North v2):** GE4 runs 43–44 371.36 / 371.20 s. PV2 with the player's own tune (limiter 8687 and Peak RPM 9742 at max, High 218, Medium 281, Low 332): FD 4.52 runs 45–46 372.97 / 370.97 s, **FD 4.35 runs 47–48 369.03 / 369.22 s (−2.1 s vs the GE4, repeated)**. The native simulation predicted −1.0 ± 0.1 s for FD 4.35, so the direction was right. The model's Part Setup values were not run in the game. The player shifts up at about 8800–9000 rpm and spends 15–25 % of the lap above 8500 rpm, so lowering the limiter is probably harmful even though the models do not see it ◐. For now the most reliable line: limiter and Peak RPM up, Low up, Mid and High down until the class is filled. According to the model, engines with a high part factor (Mini 0.84 + turbo 1.6, ND and Datsun 0.89) gain the most from the sliders. Touge's current fit leaves 3–10 s on them.
+**Native 17 Nov (8 repetitions, ◐):** the model and the native simulation disagree. In the S15 the current ND tune was fastest and the Mini was 1.7 s slower. In the AE86 the ND engine with the model's tune was 0.9 ± 0.1 s faster than the current 4A-GE tune, and the Mini was within the noise. So the model's ranking cannot be used yet; the most robust finding is the ND engine (PV2) in a light RWD car. A rerun with the AE86's current setup (ratios 2.91/2.04/1.51/1.15/0.97/0.86, decel lock 0.28) gave ±0 at FD 4.50, −1.0 ± 0.1 s at FD 4.35 and −0.3…−0.4 s at other FDs, so the gain depends on gearing and is not yet certain. **In-game test 17 Nov (●, AE86, North v2):** GE4 runs 43–44 371.36 / 371.20 s. PV2 with the player's own tune (limiter 8687 and Peak RPM 9742 at max, High 218, Medium 281, Low 332): FD 4.52 runs 45–46 372.97 / 370.97 s, **FD 4.35 runs 47–48 369.03 / 369.22 s (−2.1 s vs the GE4, repeated)**. The native simulation predicted −1.0 ± 0.1 s for FD 4.35, so the direction was right. The model's Part Setup values were not run in the game. The player shifts up at about 8800–9000 rpm and spends 15–25 % of the lap above 8500 rpm, so lowering the limiter is probably harmful even though the models do not see it ◐. For now the most reliable line: limiter and Peak RPM up, Low up, Mid and High down until the class is filled. According to the model, engines with a high part factor (Mini 0.84 + turbo 1.6, ND and Datsun 0.89) gain the most from the sliders. Touge's fit at the time (17 Nov) left 3–10 s on them; engine selection was changed on 18 Nov (below).
 
 ## Why the same class gives different lap times (Supra test 17 Nov, ◐)
 
-The class measures peak power per weight (hp/t), but on North the lap is decided accelerating out of corners. The test put 30 popular engines (two batches) in a Supra A90 (heavy enough for all of them), each tuned in the model to the class limit with its own gearing, and ran them in the native simulation (8 repetitions, North v2) and in a straight-line test on a flat road.
+The class measures peak power per weight (PS/t), but on North the lap is decided accelerating out of corners. The test put 30 popular engines (two batches) in a Supra A90 (heavy enough for all of them), each tuned in the model to the class limit with its own gearing, and ran them in the native simulation (8 repetitions, North v2) and in a straight-line test on a flat road.
 
 | Engine | Stock in | North diff (s) | 60–150 km/h (s) | 100–200 km/h (s) | Top speed (km/h) | Mass (kg) | Turbo |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -121,9 +121,9 @@ The North difference is against an S02 tune driven in the game (975 kg); the mod
 
 Touge uses this in engine selection from 0.12.0 ◐. The model now shifts up at about 0.90 × the limiter, like the player and the native sim, and parts and sliders are fitted to the class for the shortest acceleration time and lowest mass instead of the highest average power. In the native sim the best predictor is the native 60–150 itself, but in the model 50–120 km/h + mass follows the native North time best (Supra 90 builds r 0.85, S15 r 0.92; the model's 60–150 r 0.73), because the model and the native sim differ in 1st-gear acceleration. Native check on North v2: in the Supra the new builds were 0.4 s faster on average than the earlier search, and 6 of the native sim's 8 best engines are in the selection's top 12 (2 before). In the S15 the selection's top four were 0.35 s faster on average than before, but the best single build (Forester, old fit) beat the new one by 0.5 s. No candidate was faster than the current S15 setup (ND engine).
 
-Two refinements on 18.11. ◐. **The rev limiter is not lowered in selection:** the 50–120 fit lowered the limiter slider on turbo engines (Forester 7432 → 6630 rpm) to buy a little torque, but in the native sim the low limiter lost in the fast sections: keeping the limiter made the Forester 1.8 s faster in the AE86 and 0.4 s faster in the S15, and in the Supra the high-limiter build was 4.0 s faster. **Finishing:** the top three candidates are finally tuned on route time with the user's weight-reduction and fuel-tank settings, and the build is locked. In the native sim the finished Forester was 3.9 s faster in the S15 and 4.0 s faster in the Supra than the unfinished one. In the Supra, Touge's recommendation (ND or Forester) was 2.6–2.8 s faster natively than the current setup (GT-R engine). In the AE86 and S15 the current ND engine stayed fastest: the model's suggestions were 0.7–2.8 s behind it natively. So the model finds good engines, but differences under 1 s in its predictions are not reliable. Try the recommendation in the game before replacing an engine that works.
+Two refinements (18 Nov) ◐. **The rev limiter is not lowered in selection:** the 50–120 fit lowered the limiter slider on turbo engines (Forester 7432 → 6630 rpm) to buy a little torque, but in the native sim the low limiter lost in the fast sections: keeping the limiter made the Forester 1.8 s faster in the AE86 and 0.4 s faster in the S15, and in the Supra the high-limiter build was 4.0 s faster. **Finishing:** the top three candidates are finally tuned on route time with the user's weight-reduction and fuel-tank settings, and the build is locked. In the native sim the finished Forester was 3.9 s faster in the S15 and 4.0 s faster in the Supra than the unfinished one. In the Supra, Touge's recommendation (ND or Forester) was 2.6–2.8 s faster natively than the current setup (GT-R engine). In the AE86 and S15 the current ND engine stayed fastest: the model's suggestions were 0.7–2.8 s behind it natively. So the model finds good engines, but differences under 1 s in its predictions are not reliable. Try the recommendation in the game before replacing an engine that works.
 
-Data: analyysi/moottorihaku_1711/supra/ and supra2/ (natiivi/v.json, testi2/tulos.json, testi2/ulostulo.json). Not yet confirmed in the game.
+Not yet confirmed in the game.
 
 ## Part factors by engine ●
 
@@ -273,7 +273,7 @@ All 137 engines from the game data (part_stat_factors), largest first. The part 
 
 - The engine comparison comes from the Touge route model (◐). The native simulation (17 Nov, 8 repetitions) did not confirm the model's ranking; the ND engine in the AE86 (−0.9 s) is worth an in-game test.
 - Whether the part factor explains players' experience of "hidden stats" on the Mini and S02 is an inference (◐). The S02's factor of 0.80 is above average, but in the model it finished 2.8 s off the best because of its heavy mass (199 kg).
-- Sources: analyysi/moottorihaku_1711, analyysi/moottorikomponentit, analyysi/c3_build_periaatteet.md, tyokalu/data/moottorit.json.
+- Sources: Touge's engine searches and the game's engine component data.
 
 ---
 

@@ -93,7 +93,8 @@ Simulaatiomallissa diffisäädöt tuskin muuttivat kierrosaikaa; vain kaasulukko
 
 - Testaa aina samassa mutkassa samalla vaihteella, koska vaihde määrää lukon voiman.
 - Jos auto pyörähtää täydellä kaasulla, katso ensin kaasulukkoa ja sitten preloadia. Molemmat työntävät perää ulos.
-- Kokemuksemme mukaan kaasulukko 0,25–0,30, moottorijarrulukko 0,12–0,20 ja preload 45–100 on ollut pelissä helposti ajettava lähtöalue ●. Tougen diffipresetit kattavat tämän alueen sekä pehmeämmät ja jäykemmät sen ympärillä.
+- Kokemuksemme mukaan kaasulukko 0,25–0,30, moottorijarrulukko 0,12–0,20 ja preload 45–100 on ollut pelissä helposti ajettava lähtöalue ●. Tougen diffiluonteet (Forgiving, Touge, Precise, Track) kattavat tämän alueen sekä pehmeämmät ja jäykemmät sen ympärillä.
+- 0.20:sta alkaen Tougen perusalusta ja oireneuvoja pitävät preloadin enintään 3 %:ssa vetomomentista eivätkä ehdota alle 0,22:n lukkoa ◐. Pienitehoisessa autossa katto voi olla alle 100; preload-liukuri näyttää sen.
 
 **Simulaatiokokemus ◐ (Tougen simulaatiomalli, ei testattu pelissä):** kun kaasulukko on yli 0, lukot ja preload ovat tuntumasäätöjä: kaasulukko 0,15–1,0, moottorijarrulukko 0–0,5 ja preload 0–250 pysyivät kaikki 0,4 s:n sisällä. Avoin diffi (kaasulukko 0) oli 2,4 s hitaampi, eniten hitaissa mutkissa. Poikkeus on jäykkä takavakaaja, joka halusi vähintään noin 0,3:n kaasulukon (ks. vakaajaluku).
 

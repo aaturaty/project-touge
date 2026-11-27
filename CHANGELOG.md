@@ -50,6 +50,7 @@ Project Touge\
 - **Local server hardening:** requests that change data need a per-session token and must come from Touge's own page.
 
 **Fixed**
+- Game physics (Experimental): race-fuel builds now top out in each gear at the same speed as in the game (the limiter came from the race-fuel multiplier instead of the base limiter), and the tyre profile setting counts in the tyre size (ADR 0029). Cached Game physics reference speeds are recalculated after updating.
 - Autosplit no longer slides on long full-speed sections (for example North Touge's Full speed downhill): the live gap could jump by 8–10 s around a split and the split itself could land seconds off. The alignment now also follows the distance you have driven (◐ checked on 101 recorded North Touge runs).
 - Opening an older saved setup no longer shows unsaved changes before you touch anything.
 - Drive → latest runs and the Tune timeline show only runs made with the selected car.

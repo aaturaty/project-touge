@@ -69,6 +69,7 @@ Project Touge\
 - Number keys no longer switch tabs on the Build page, and the Build tab returns to an unfinished build.
 - Start new build no longer carries the previous car's tuning into the new build.
 - Corner radius sign in segment analysis, and the standard error of Game physics runs that stop early.
+- Build Wizard: the engine step shows the engine's own weight (it read 0 kg on a stock engine), and power uses the car's own engine brake value.
 - Build Wizard: engine power, torque and weight changes are measured against the stock engine (they could show a huge time loss or 0 kg), weights follow imperial units, **Build now** starts the later steps fresh, and saving a model build checks that the file was written.
 - Saving a setup backup that clashes with another one says so, instead of saying Touge is not running.
 - The engine card's peak power and Component Features show the game menu values (without race fuel), also while you drag a part slider; the race fuel value is shown beside them.
